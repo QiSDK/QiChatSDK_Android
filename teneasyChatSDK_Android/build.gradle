@@ -88,16 +88,16 @@ protobuf {
     }
 }*/
 
-afterEvaluate {
+/*afterEvaluate {
     publishing {
         publications {
             // Creates a Maven publication called "release".
             release(MavenPublication) {
                 from components.release
-                groupId = 'com.github.tianxuefeng'
+                groupId = 'com.github.QiSDK'
                 artifactId = 'teneasy-chatsdk'
-                version = '1.1.7'
+                version = '1.0.1'
             }
         }
     }
-}
+}*/
