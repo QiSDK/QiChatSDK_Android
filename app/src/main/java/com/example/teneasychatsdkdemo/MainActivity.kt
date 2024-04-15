@@ -4,8 +4,11 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import com.example.teneasychatsdk.databinding.ActivityMainBinding
 import com.teneasy.sdk.ChatLib
+import com.teneasy.sdk.LineDelegate
+import com.teneasy.sdk.LineLib
 import com.teneasy.sdk.Result
 import com.teneasy.sdk.TeneasySDKDelegate
 import com.teneasyChat.api.common.CMessage
@@ -20,7 +23,20 @@ class MainActivity : AppCompatActivity(), TeneasySDKDelegate {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        val lines = arrayOf("https://www.baidu.com", "https://csapi.xdev.stream/1.txt", "https://www.jiudux2.com/1.txt") ;
+        val lineLib = LineLib(lines, object : LineDelegate {
+            override fun useTheLine(line: String) {
+                initChatSDK(line)
+            }
+            override fun lineError(error: String) {
+                Toast.makeText(this@MainActivity, error, Toast.LENGTH_LONG)
+            }
+        })
+        lineLib.getLine()
+    }
 
+    private fun initChatSDK(baseUrl: String){
+        var wssUrl = "wss://" + baseUrl + "/v1/gateway/h5?token="
         /*
         老token，一直有效，很好
         CCcQARgOICIowqaSjeIw.9rO3unQwFrUUa-vJ6HvUQAbiAZN7XWBbaE_Oyd48C0Ae4xhzWWSriIGZZdVSvOajS1h_RFlQHZiFzadgBBuwDQ
@@ -33,7 +49,7 @@ class MainActivity : AppCompatActivity(), TeneasySDKDelegate {
         1125324  1125397 1125417
         //1125324, "9zgd9YUc"
          */
-        chatLib = ChatLib("CCcQARgOICIowqaSjeIw.9rO3unQwFrUUa-vJ6HvUQAbiAZN7XWBbaE_Oyd48C0Ae4xhzWWSriIGZZdVSvOajS1h_RFlQHZiFzadgBBuwDQ", "wss://csapi.xdev.stream/v1/gateway/h5?token=", 1125324, "9zgd9YUc")
+        chatLib = ChatLib("CCcQARgOICIowqaSjeIw.9rO3unQwFrUUa-vJ6HvUQAbiAZN7XWBbaE_Oyd48C0Ae4xhzWWSriIGZZdVSvOajS1h_RFlQHZiFzadgBBuwDQ", wssUrl, 1125324, "9zgd9YUc")
         chatLib.listener = this
         chatLib.makeConnect()
 

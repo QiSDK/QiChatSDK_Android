@@ -12,37 +12,46 @@ import java.io.IOException
 import java.util.Random
 
 interface LineDelegate {
-
     // 收到消息
-    fun useTheLine(line: Object)
+    fun useTheLine(line: String)
     fun lineError(error: String)
 }
-class LineLib {
-    private val lineList = ArrayList<String>()
-    val TAG = "LineLib"
-    private fun getLine() {
+class LineLib constructor(lines: Array<String>, linstener: LineDelegate) {
+    private val lineList = lines
+    private val TAG = "LineLib"
+    private val listener: LineDelegate? = linstener
+    //  private val
+    fun getLine() {
         val anInt: Int = Random().nextInt(10000)
-
         Log.i(TAG, lineList.toString())
+        var found = false
         for (hostUrl in lineList) {
+            if (found){
+                break
+            }
             val url = "$hostUrl?v=$anInt"
             val client: OkHttpClient = OkHttpClient.Builder().build()
             val request: Request = Request.Builder().url(url).build()
             val call: okhttp3.Call = client.newCall(request)
             call.enqueue(object : Callback {
                 override fun onFailure(call: okhttp3.Call, e: IOException) {
-                   // TODO("Not yet implemented")
+                    print(call.request().url.host + " failed")
                 }
-
                 override fun onResponse(call: okhttp3.Call, response: Response) {
-                   // TODO("Not yet implemented")
                     if (response.isSuccessful) {
                         val str: String = response.message
-                        if (!str.contains("getJSONP._JSONP")) {
-                            return
+//                        if (str.contains("getJSONP._JSONP")) {
+//                            return
+//                        }
+                        if (str.length > 1) {
+                            //call.request().url.host
+                            print(call.request().url.host + " 成功")
+                            //listener?.useTheLine(call.request().url.host)
+                            listener?.useTheLine("csapi.xdev.stream")
+                            found = true
                         }
                     }
-                   // break ;
+                    // break ;
                 }
             })
         }
