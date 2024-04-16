@@ -3,8 +3,10 @@ package com.example.teneasychatsdk
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Looper
 import android.util.Log
 import android.widget.Toast
+import androidx.annotation.UiThread
 import com.example.teneasychatsdk.databinding.ActivityMainBinding
 import com.teneasy.sdk.ChatLib
 import com.teneasy.sdk.LineDelegate
@@ -23,13 +25,16 @@ class MainActivity : AppCompatActivity(), TeneasySDKDelegate {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        val lines = arrayOf("https://csapi.xdev.stream/verify", "https://csapi.xdev.stream/1.txt", "https://www.jiudux2.com/1.txt") ;
+        val lines = arrayOf("https://csapi.xdev.stream/1.txt", "https://csapi.xdev.stream/verify/d", "https://www.jiudux2.com/1.txt", "https://csapi.xdev.stream/verify/d2", "https://csapi.xdev.stream/verify", "https://csapi.xdev.stream/verifyh", "https://csapi.xdev.stream/verify/d4", "https://csapi.xdev.stream/verify/d5") ;
         val lineLib = LineLib(lines, object : LineDelegate {
             override fun useTheLine(line: String) {
                 initChatSDK(line)
             }
             override fun lineError(error: String) {
-                Toast.makeText(this@MainActivity, error, Toast.LENGTH_LONG)
+                this@MainActivity.runOnUiThread{
+                    binding.tvContent.append(error + "\n")
+                    Toast.makeText(this@MainActivity, error, Toast.LENGTH_LONG).show()
+                }
             }
         })
         lineLib.getLine()
