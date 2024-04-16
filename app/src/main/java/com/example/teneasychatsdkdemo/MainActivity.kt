@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity(), TeneasySDKDelegate {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        val lines = arrayOf("https://www.baidu.com", "https://csapi.xdev.stream/1.txt", "https://www.jiudux2.com/1.txt") ;
+        val lines = arrayOf("https://csapi.xdev.stream/verify", "https://csapi.xdev.stream/1.txt", "https://www.jiudux2.com/1.txt") ;
         val lineLib = LineLib(lines, object : LineDelegate {
             override fun useTheLine(line: String) {
                 initChatSDK(line)

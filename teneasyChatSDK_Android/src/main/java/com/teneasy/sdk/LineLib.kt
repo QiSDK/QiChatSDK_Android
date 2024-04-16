@@ -35,21 +35,25 @@ class LineLib constructor(lines: Array<String>, linstener: LineDelegate) {
             val call: okhttp3.Call = client.newCall(request)
             call.enqueue(object : Callback {
                 override fun onFailure(call: okhttp3.Call, e: IOException) {
-                    print(call.request().url.host + " failed")
+                    print(call.request().url.host + " line failed")
                 }
                 override fun onResponse(call: okhttp3.Call, response: Response) {
                     if (response.isSuccessful) {
-                        val str: String = response.message
+                        //val str: String = response.message
+                        //val str: String = response.body.string()
 //                        if (str.contains("getJSONP._JSONP")) {
 //                            return
 //                        }
-                        if (str.length > 1) {
-                            //call.request().url.host
-                            print(call.request().url.host + " 成功")
-                            //listener?.useTheLine(call.request().url.host)
-                            listener?.useTheLine("csapi.xdev.stream")
-                            found = true
+                        response.body?.let {
+                            if (it.string().contains("10010")) {
+                                //call.request().url.host
+                                print(call.request().url.host + " 成功")
+                                listener?.useTheLine(call.request().url.host)
+                                //listener?.useTheLine("csapi.xdev.stream")
+                                found = true
+                            }
                         }
+
                     }
                     // break ;
                 }
