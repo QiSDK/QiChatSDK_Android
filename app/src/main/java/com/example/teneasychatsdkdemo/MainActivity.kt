@@ -25,8 +25,8 @@ class MainActivity : AppCompatActivity(), TeneasySDKDelegate {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        //https://csapi.xdev.stream
-        //https://csapi.hfxg.xyz
+        //https://qlqiniu.quyou.tech/gw3config.json
+        //https://ydqlacc.weletter05.com/gw3config.json
         val lines = arrayOf("https://dtest/gw3config.json", "https://qlqiniu.quyou.tech/gw3config.json", "https://ddtest/gw3config.json",  "https://ydqlacc.weletter05.com/gw3config.json", "https://ddtest/gw3config.json", "https://ddtest.com/gw3config.json", "https://ddtest.x/gw3config.json", "https://ddtest.cx/verify/d5", "https://ddtest.net/gw3config.json") ;
         //val lines = arrayOf("https://ydqlacc.weletter05.com/gw3config.json")
         val lineLib = LineLib(lines, object : LineDelegate {

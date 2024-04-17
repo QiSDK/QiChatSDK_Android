@@ -16,10 +16,7 @@ interface LineDelegate {
     fun useTheLine(line: String)
     fun lineError(error: String)
 }
-/*
-https://qlqiniu.quyou.tech/gw3config.json
-https://ydqlacc.weletter05.com/gw3config.json
- */
+
 class LineLib constructor(lines: Array<String>, linstener: LineDelegate) {
     private val lineList = lines
     private val TAG = "LineLib"
@@ -40,7 +37,7 @@ class LineLib constructor(lines: Array<String>, linstener: LineDelegate) {
             val call: okhttp3.Call = client.newCall(request)
             call.enqueue(object : Callback {
                 override fun onFailure(call: okhttp3.Call, e: IOException) {
-                    print(call.request().url.host + " line failed")
+                    //print(call.request().url.host + " line failed")
                     triedTimes += 1
                     if (triedTimes == lineList.size){
                         listener?.lineError("没有可用线路")
@@ -50,7 +47,6 @@ class LineLib constructor(lines: Array<String>, linstener: LineDelegate) {
                     var f = false
                     var body = response.body?.string()
                     if (response.isSuccessful && body != null && body.contains("VITE_API_BASE_URL")) {
-                       // Group group = JSON.parseObject(jsonString, Group.class);
                         val gson = Gson()
                         val appConfig = gson.fromJson(body, AppConfig::class.java)
                         if (appConfig != null) {
@@ -59,11 +55,10 @@ class LineLib constructor(lines: Array<String>, linstener: LineDelegate) {
                            for (l in lines){
                                if (l.VITE_API_BASE_URL.contains("https")){
                                    lineStrs.add(l.VITE_API_BASE_URL)
-                                   step2(lineStrs, triedTimes)
                                    f = true
-                                   break
                                }
                             }
+                            step2(lineStrs, triedTimes)
                         }
 
                         if (!f){
@@ -72,15 +67,12 @@ class LineLib constructor(lines: Array<String>, linstener: LineDelegate) {
                                 listener?.lineError("没有可用线路")
                             }
                         }
-                       //  ConfigBean configBean = GsonUtils.fromJson(substring, ConfigBean.class);
-                       // listener?.useTheLine(call.request().url.host)
                     }else{
                         triedTimes += 1
                         if (triedTimes == lineList.size){
                             listener?.lineError("没有可用线路")
                         }
                     }
-                    // break ;
                 }
             })
         }
@@ -100,9 +92,9 @@ class LineLib constructor(lines: Array<String>, linstener: LineDelegate) {
             val call: okhttp3.Call = client.newCall(request)
             call.enqueue(object : Callback {
                 override fun onFailure(call: okhttp3.Call, e: IOException) {
-                    print(call.request().url.host + " line failed")
+                    //print(call.request().url.host + " line failed")
                     triedTimes += 1
-                    if (triedTimes == lines.size && index == lineList.count()){
+                    if (triedTimes == lines.size && (index + 1) == lineList.count()){
                         listener?.lineError("没有可用线路")
                     }
                 }
@@ -120,7 +112,7 @@ class LineLib constructor(lines: Array<String>, linstener: LineDelegate) {
                     if (!f) {
                         triedTimes += 1
                     }
-                    if (triedTimes == lines.size && index == lineList.count()){
+                    if (triedTimes == lines.size && (index + 1) == lineList.count()){
                         listener?.lineError("没有可用线路")
                     }
                 }
