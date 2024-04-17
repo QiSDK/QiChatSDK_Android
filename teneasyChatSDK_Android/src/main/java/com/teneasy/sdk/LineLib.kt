@@ -1,9 +1,8 @@
 package com.teneasy.sdk
 
-import android.provider.SyncStateContract.Constants
-import android.telecom.Call
+import AppConfig
 import android.util.Log
-import com.teneasyChat.api.common.CMessage
+import com.google.gson.Gson
 import okhttp3.Callback
 import okhttp3.OkHttpClient
 import okhttp3.Request
@@ -17,21 +16,25 @@ interface LineDelegate {
     fun useTheLine(line: String)
     fun lineError(error: String)
 }
+/*
+https://qlqiniu.quyou.tech/gw3config.json
+https://ydqlacc.weletter05.com/gw3config.json
+ */
 class LineLib constructor(lines: Array<String>, linstener: LineDelegate) {
     private val lineList = lines
     private val TAG = "LineLib"
     private val listener: LineDelegate? = linstener
+    private var usedLine = false
     //  private val
     fun getLine() {
-        val anInt: Int = Random().nextInt(10000)
         Log.i(TAG, lineList.toString())
         var found = false
         var triedTimes = 0
         for (hostUrl in lineList) {
-            if (found){
+            if (found || usedLine){
                 break
             }
-            val url = "$hostUrl?v=$anInt"
+            val url = "$hostUrl"
             val client: OkHttpClient = OkHttpClient.Builder().connectTimeout(2, TimeUnit.SECONDS).build()
             val request: Request = Request.Builder().url(url).build()
             val call: okhttp3.Call = client.newCall(request)
@@ -44,18 +47,33 @@ class LineLib constructor(lines: Array<String>, linstener: LineDelegate) {
                     }
                 }
                 override fun onResponse(call: okhttp3.Call, response: Response) {
-                    if (response.isSuccessful && response.body != null && response.body!!.string().contains("10010")) {
-
-                        listener?.useTheLine(call.request().url.host)
-                        /*response.body?.let {
-                            if (it.string().contains("10010")) {
-                                //call.request().url.host
-                                print(call.request().url.host + " 成功")
-                                listener?.useTheLine(call.request().url.host)
-                                //listener?.useTheLine("csapi.xdev.stream")
-                                found = true
+                    var f = false
+                    var body = response.body?.string()
+                    if (response.isSuccessful && body != null && body.contains("VITE_API_BASE_URL")) {
+                       // Group group = JSON.parseObject(jsonString, Group.class);
+                        val gson = Gson()
+                        val appConfig = gson.fromJson(body, AppConfig::class.java)
+                        if (appConfig != null) {
+                            val lines = appConfig.lines
+                            var lineStrs = mutableListOf<String>();
+                           for (l in lines){
+                               if (l.VITE_API_BASE_URL.contains("https")){
+                                   lineStrs.add(l.VITE_API_BASE_URL)
+                                   step2(lineStrs, triedTimes)
+                                   f = true
+                                   break
+                               }
                             }
-                        }*/
+                        }
+
+                        if (!f){
+                            triedTimes += 1
+                            if (triedTimes == lineList.size){
+                                listener?.lineError("没有可用线路")
+                            }
+                        }
+                       //  ConfigBean configBean = GsonUtils.fromJson(substring, ConfigBean.class);
+                       // listener?.useTheLine(call.request().url.host)
                     }else{
                         triedTimes += 1
                         if (triedTimes == lineList.size){
@@ -63,6 +81,48 @@ class LineLib constructor(lines: Array<String>, linstener: LineDelegate) {
                         }
                     }
                     // break ;
+                }
+            })
+        }
+    }
+
+    fun step2(lines: MutableList<String>, index: Int) {
+        Log.i(TAG, lines.toString())
+        var found = false
+        var triedTimes = 0
+        for (hostUrl in lines) {
+            if (found || usedLine){
+                break
+            }
+            val url = "$hostUrl" + "/verify"
+            val client: OkHttpClient = OkHttpClient.Builder().connectTimeout(2, TimeUnit.SECONDS).build()
+            val request: Request = Request.Builder().url(url ).build()
+            val call: okhttp3.Call = client.newCall(request)
+            call.enqueue(object : Callback {
+                override fun onFailure(call: okhttp3.Call, e: IOException) {
+                    print(call.request().url.host + " line failed")
+                    triedTimes += 1
+                    if (triedTimes == lines.size && index == lineList.count()){
+                        listener?.lineError("没有可用线路")
+                    }
+                }
+                override fun onResponse(call: okhttp3.Call, response: Response) {
+                    var f = false
+                    var body = response.body?.string()
+                    if (response.isSuccessful && body != null && body!!.contains("10010")) {
+                       if (!usedLine) {
+                           usedLine = true
+                           found = true
+                           f = true
+                           listener?.useTheLine(call.request().url.host)
+                       }
+                    }
+                    if (!f) {
+                        triedTimes += 1
+                    }
+                    if (triedTimes == lines.size && index == lineList.count()){
+                        listener?.lineError("没有可用线路")
+                    }
                 }
             })
         }

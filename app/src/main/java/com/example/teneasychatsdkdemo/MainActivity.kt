@@ -25,7 +25,10 @@ class MainActivity : AppCompatActivity(), TeneasySDKDelegate {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        val lines = arrayOf("https://csapi.xdev.stream/1.txt", "https://csapi.xdev.stream/verify/d", "https://www.jiudux2.com/1.txt", "https://csapi.xdev.stream/verify/d2", "https://csapi.xdev.stream/verify", "https://csapi.xdev.stream/verifyh", "https://csapi.xdev.stream/verify/d4", "https://csapi.xdev.stream/verifyx", "https://csapi.xdev.stream/verify/dd4", "https://csapi.xdev.stream/verify/d5") ;
+        //https://csapi.xdev.stream
+        //https://csapi.hfxg.xyz
+        val lines = arrayOf("https://dtest/gw3config.json", "https://qlqiniu.quyou.tech/gw3config.json", "https://ddtest/gw3config.json",  "https://ydqlacc.weletter05.com/gw3config.json", "https://ddtest/gw3config.json", "https://ddtest.com/gw3config.json", "https://ddtest.x/gw3config.json", "https://ddtest.cx/verify/d5", "https://ddtest.net/gw3config.json") ;
+        //val lines = arrayOf("https://ydqlacc.weletter05.com/gw3config.json")
         val lineLib = LineLib(lines, object : LineDelegate {
             override fun useTheLine(line: String) {
                 initChatSDK(line)
