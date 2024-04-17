@@ -27,8 +27,15 @@ class MainActivity : AppCompatActivity(), TeneasySDKDelegate {
         setContentView(binding.root)
         //https://qlqiniu.quyou.tech/gw3config.json
         //https://ydqlacc.weletter05.com/gw3config.json
-        val lines = arrayOf("https://dtest/gw3config.json", "https://qlqiniu.quyou.tech/gw3config.json", "https://ddtest/gw3config.json",  "https://ydqlacc.weletter05.com/gw3config.json", "https://ddtest/gw3config.json", "https://ddtest.com/gw3config.json", "https://ddtest.x/gw3config.json", "https://ddtest.cx/verify/d5", "https://ddtest.net/gw3config.json") ;
+        val lines = arrayOf("https://dtest/gw3config.json", "https://qlqiniu.quyou.tech/gw3config.json","https://ydqlacc.weletter05.com/gw3config.json",  "https://ydqlacc.weletter05.com/gw3config.json", "https://ddtest/gw3config.json", "https://ddtest.com/gw3config.json", "https://ddtest.x/gw3config.json", "https://ddtest.cx/verify/d5", "https://ddtest.net/gw3config.json") ;
         //val lines = arrayOf("https://ydqlacc.weletter05.com/gw3config.json")
+
+        //生产的线路
+        //val lines = arrayOf("https://qlqiniu.quyou.tech/gw1config.json","https://ydqlacc.weletter05.com/gw1config.json")
+
+        //测试的线路
+        //val lines = arrayOf("https://qlqiniu.quyou.tech/gw3config.json","https://ydqlacc.weletter05.com/gw3config.json")
+
         val lineLib = LineLib(lines, object : LineDelegate {
             override fun useTheLine(line: String) {
                 initChatSDK(line)
@@ -136,7 +143,9 @@ class MainActivity : AppCompatActivity(), TeneasySDKDelegate {
 
     override fun onDestroy() {
         super.onDestroy()
-        chatLib.disConnect()
+        if (chatLib != null) {
+            chatLib.disConnect()
+        }
     }
 
 }
