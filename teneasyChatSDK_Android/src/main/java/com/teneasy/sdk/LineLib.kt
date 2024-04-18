@@ -23,6 +23,7 @@ class LineLib constructor(lines: Array<String>, linstener: LineDelegate) {
     private val TAG = "LineLib"
     private val listener: LineDelegate? = linstener
     private var usedLine = false
+    private var retryTimes = 0
     //  private val
     fun getLine() {
         Log.i(TAG, lineList.toString())
@@ -40,7 +41,7 @@ class LineLib constructor(lines: Array<String>, linstener: LineDelegate) {
                 override fun onFailure(call: okhttp3.Call, e: IOException) {
                     triedTimes += 1
                     if (triedTimes == lineList.size){
-                        listener?.lineError("没有可用线路")
+                        failedAndRetry()
                     }
                 }
                 override fun onResponse(call: okhttp3.Call, response: Response) {
@@ -48,11 +49,11 @@ class LineLib constructor(lines: Array<String>, linstener: LineDelegate) {
 
                     if (response.isSuccessful) {
                         //未加密
-                        //var body = response.body?.string()
+                        var body = response.body?.string()
 
                         //有加密
-                        var contents  = response.body?.string()
-                        var body = contents?.let { decryptBase64ToString(it) }
+                        //var contents  = response.body?.string()
+                        //var body = contents?.let { decryptBase64ToString(it) }
 
                         if (body != null && body.contains("VITE_API_BASE_URL")) {
                             val gson = Gson()
@@ -74,13 +75,13 @@ class LineLib constructor(lines: Array<String>, linstener: LineDelegate) {
                         if (!f){
                             triedTimes += 1
                             if (triedTimes == lineList.size){
-                                listener?.lineError("没有可用线路")
+                                failedAndRetry()
                             }
                         }
                     }else{
                         triedTimes += 1
                         if (triedTimes == lineList.size){
-                            listener?.lineError("没有可用线路")
+                            failedAndRetry()
                         }
                     }
                 }
@@ -105,7 +106,7 @@ class LineLib constructor(lines: Array<String>, linstener: LineDelegate) {
                     //print(call.request().url.host + " line failed")
                     triedTimes += 1
                     if (triedTimes == lines.size && (index + 1) == lineList.count()){
-                        listener?.lineError("没有可用线路")
+                        failedAndRetry()
                     }
                 }
                 override fun onResponse(call: okhttp3.Call, response: Response) {
@@ -124,10 +125,20 @@ class LineLib constructor(lines: Array<String>, linstener: LineDelegate) {
                         triedTimes += 1
                     }
                     if (triedTimes == lines.size && (index + 1) == lineList.count()){
-                        listener?.lineError("没有可用线路")
+                        failedAndRetry()
                     }
                 }
             })
+        }
+    }
+
+    private fun failedAndRetry(){
+        if (retryTimes < 3){
+            retryTimes += 1
+            listener?.lineError("线路获取失败，重试" + retryTimes)
+            getLine()
+        }else{
+            listener?.lineError("没有可用线路")
         }
     }
     fun decryptBase64ToString(base64String: String): String {
