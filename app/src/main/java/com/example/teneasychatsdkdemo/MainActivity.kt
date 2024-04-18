@@ -39,11 +39,14 @@ class MainActivity : AppCompatActivity(), TeneasySDKDelegate {
         val lineLib = LineLib(lines, object : LineDelegate {
             override fun useTheLine(line: String) {
                 initChatSDK(line)
-            }
-            override fun lineError(error: String) {
                 this@MainActivity.runOnUiThread{
-                    binding.tvContent.append(error + "\n")
-                    Toast.makeText(this@MainActivity, error, Toast.LENGTH_LONG).show()
+                    binding.tvContent.append(line + "\n")
+                }
+            }
+            override fun lineError(error: Result) {
+                this@MainActivity.runOnUiThread{
+                    binding.tvContent.append(error.message + "\n")
+                    Toast.makeText(this@MainActivity, error.message, Toast.LENGTH_LONG).show()
                 }
             }
         })

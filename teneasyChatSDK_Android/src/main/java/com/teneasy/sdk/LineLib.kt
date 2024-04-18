@@ -15,7 +15,7 @@ import android.util.Base64
 interface LineDelegate {
     // 收到消息
     fun useTheLine(line: String)
-    fun lineError(error: String)
+    fun lineError(error: Result)
 }
 
 class LineLib constructor(lines: Array<String>, linstener: LineDelegate) {
@@ -49,11 +49,11 @@ class LineLib constructor(lines: Array<String>, linstener: LineDelegate) {
 
                     if (response.isSuccessful) {
                         //未加密
-                        //var body = response.body?.string()
+                        var body = response.body?.string()
 
                         //有加密
-                        var contents  = response.body?.string()
-                        var body = contents?.let { decryptBase64ToString(it) }
+                        //var contents  = response.body?.string()
+                        //var body = contents?.let { decryptBase64ToString(it) }
 
                         if (body != null && body.contains("VITE_API_BASE_URL")) {
                             val gson = Gson()
@@ -133,12 +133,17 @@ class LineLib constructor(lines: Array<String>, linstener: LineDelegate) {
     }
 
     private fun failedAndRetry(){
+        val result = Result();
         if (retryTimes < 3){
             retryTimes += 1
-            listener?.lineError("线路获取失败，重试" + retryTimes)
+            result.code = 1009
+            result.message = "线路获取失败，重试" + retryTimes
+            listener?.lineError(result)
             getLine()
         }else{
-            listener?.lineError("没有可用线路")
+            result.code = 1008
+            result.message = "没有可用线路"
+            listener?.lineError(result)
         }
     }
     fun decryptBase64ToString(base64String: String): String {
