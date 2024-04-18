@@ -25,16 +25,16 @@ class MainActivity : AppCompatActivity(), TeneasySDKDelegate {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        //https://qlqiniu.quyou.tech/gw3config.json
-        //https://ydqlacc.weletter05.com/gw3config.json
-        val lines = arrayOf("https://dtest/gw3config.json", "https://qlqiniu.quyou.tech/gw3config.json","https://ydqlacc.weletter05.com/gw3config.json",  "https://ydqlacc.weletter05.com/gw3config.json", "https://ddtest/gw3config.json", "https://ddtest.com/gw3config.json", "https://ddtest.x/gw3config.json", "https://ddtest.cx/verify/d5", "https://ddtest.net/gw3config.json") ;
-        //val lines = arrayOf("https://ydqlacc.weletter05.com/gw3config.json")
+        //https://qlqiniu.quyou.tech/gw3config.txt
+        //https://ydqlacc.weletter05.com/gw3config.txt
+        val lines = arrayOf("https://dtest/gw3config.txt", "https://qlqiniu.quyou.tech/gw3config.txt","https://ydqlacc.weletter05.com/gw3config.txt",  "https://ydqlacc.weletter05.com/gw3config.txt", "https://ddtest/gw3config.txt", "https://ddtest.com/gw3config.txt", "https://ddtest.x/gw3config.txt", "https://ddtest.cx/verify/d5", "https://ddtest.net/gw3config.txt") ;
+        //val lines = arrayOf("https://ydqlacc.weletter05.com/gw3config.txt")
 
         //生产的线路
-        //val lines = arrayOf("https://qlqiniu.quyou.tech/gw1config.json","https://ydqlacc.weletter05.com/gw1config.json")
+        //val lines = arrayOf("https://qlqiniu.quyou.tech/gw1config.txt","https://ydqlacc.weletter05.com/gw1config.txt")
 
         //测试的线路
-        //val lines = arrayOf("https://qlqiniu.quyou.tech/gw3config.json","https://ydqlacc.weletter05.com/gw3config.json")
+        //val lines = arrayOf("https://qlqiniu.quyou.tech/gw3config.txt","https://ydqlacc.weletter05.com/gw3config.txt")
 
         val lineLib = LineLib(lines, object : LineDelegate {
             override fun useTheLine(line: String) {

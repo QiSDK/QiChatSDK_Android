@@ -49,11 +49,11 @@ class LineLib constructor(lines: Array<String>, linstener: LineDelegate) {
 
                     if (response.isSuccessful) {
                         //未加密
-                        var body = response.body?.string()
+                        //var body = response.body?.string()
 
                         //有加密
-                        //var contents  = response.body?.string()
-                        //var body = contents?.let { decryptBase64ToString(it) }
+                        var contents  = response.body?.string()
+                        var body = contents?.let { decryptBase64ToString(it) }
 
                         if (body != null && body.contains("VITE_API_BASE_URL")) {
                             val gson = Gson()
