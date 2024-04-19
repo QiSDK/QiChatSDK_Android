@@ -9,6 +9,7 @@ import android.widget.Toast
 import androidx.annotation.UiThread
 import com.example.teneasychatsdk.databinding.ActivityMainBinding
 import com.teneasy.sdk.ChatLib
+import com.teneasy.sdk.Line
 import com.teneasy.sdk.LineDelegate
 import com.teneasy.sdk.LineLib
 import com.teneasy.sdk.Result
@@ -37,11 +38,13 @@ class MainActivity : AppCompatActivity(), TeneasySDKDelegate {
         //val lines = arrayOf("https://qlqiniu.quyou.tech/gw3config.txt","https://ydqlacc.weletter05.com/gw3config.txt")
 
         val lineLib = LineLib(lines, object : LineDelegate {
-            override fun useTheLine(line: String) {
-                initChatSDK(line)
+            override fun useTheLine(line: Line) {
                 this@MainActivity.runOnUiThread{
-                    binding.tvContent.append(line + "\n")
+                    binding.tvContent.append("Api: " + line.VITE_API_BASE_URL + "\n")
+                    binding.tvContent.append("Img: " + line.VITE_IMG_URL + "\n")
+                    binding.tvContent.append("Wss: " + line.VITE_WSS_HOST + "\n")
                 }
+                initChatSDK(line.VITE_WSS_HOST)
             }
             override fun lineError(error: Result) {
                 this@MainActivity.runOnUiThread{

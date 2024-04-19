@@ -8,13 +8,12 @@ import okhttp3.OkHttpClient
 import okhttp3.Request
 import okhttp3.Response
 import java.io.IOException
-import java.util.Random
 import java.util.concurrent.TimeUnit
 import android.util.Base64
 
 interface LineDelegate {
     // 收到消息
-    fun useTheLine(line: String)
+    fun useTheLine(line: Line)
     fun lineError(error: Result)
 }
 
@@ -28,7 +27,7 @@ class LineLib constructor(lines: Array<String>, linstener: LineDelegate) {
     fun getLine() {
         Log.i(TAG, lineList.toString())
         var found = false
-        var triedTimes = 0
+        var myIndex = 0
         for (hostUrl in lineList) {
             if (found || usedLine){
                 break
@@ -39,8 +38,8 @@ class LineLib constructor(lines: Array<String>, linstener: LineDelegate) {
             val call: okhttp3.Call = client.newCall(request)
             call.enqueue(object : Callback {
                 override fun onFailure(call: okhttp3.Call, e: IOException) {
-                    triedTimes += 1
-                    if (triedTimes == lineList.size){
+                    myIndex += 1
+                    if (myIndex == lineList.size){
                         failedAndRetry()
                     }
                 }
@@ -60,27 +59,27 @@ class LineLib constructor(lines: Array<String>, linstener: LineDelegate) {
                             val appConfig = gson.fromJson(body, AppConfig::class.java)
                             if (appConfig != null) {
                                 val lines = appConfig.lines
-                                var lineStrs = mutableListOf<String>();
+                                var lineStrs = mutableListOf<Line>();
                                 for (l in lines){
                                     if (l.VITE_API_BASE_URL.contains("https")){
-                                        lineStrs.add(l.VITE_API_BASE_URL)
+                                        lineStrs.add(l)
                                         f = true
                                     }
                                 }
                                 Log.i("LineLib", "txt："+ call.request().url.host)
-                                step2(lineStrs, triedTimes)
+                                step2(lineStrs, myIndex)
                             }
                         }
 
                         if (!f){
-                            triedTimes += 1
-                            if (triedTimes == lineList.size){
+                            myIndex += 1
+                            if (myIndex == lineList.size){
                                 failedAndRetry()
                             }
                         }
                     }else{
-                        triedTimes += 1
-                        if (triedTimes == lineList.size){
+                        myIndex += 1
+                        if (myIndex == lineList.size){
                             failedAndRetry()
                         }
                     }
@@ -89,23 +88,23 @@ class LineLib constructor(lines: Array<String>, linstener: LineDelegate) {
         }
     }
 
-    fun step2(lines: MutableList<String>, index: Int) {
+    fun step2(lines: MutableList<Line>, index: Int) {
         Log.i(TAG, lines.toString())
         var found = false
-        var triedTimes = 0
+        var step2Index = 0
         for (hostUrl in lines) {
             if (found || usedLine){
                 break
             }
-            val url = "$hostUrl" + "/verify"
+            val url = "${hostUrl.VITE_API_BASE_URL}" + "/verify"
             val client: OkHttpClient = OkHttpClient.Builder().connectTimeout(2, TimeUnit.SECONDS).build()
             val request: Request = Request.Builder().url(url ).build()
             val call: okhttp3.Call = client.newCall(request)
             call.enqueue(object : Callback {
                 override fun onFailure(call: okhttp3.Call, e: IOException) {
                     //print(call.request().url.host + " line failed")
-                    triedTimes += 1
-                    if (triedTimes == lines.size && (index + 1) == lineList.count()){
+                    step2Index += 1
+                    if (step2Index == lines.size && (index + 1) == lineList.count()){
                         failedAndRetry()
                     }
                 }
@@ -117,14 +116,15 @@ class LineLib constructor(lines: Array<String>, linstener: LineDelegate) {
                            usedLine = true
                            found = true
                            f = true
-                           listener?.useTheLine(call.request().url.host)
+                           //listener?.useTheLine(call.request().url.host)
+                           listener?.useTheLine(lines[step2Index])
                            Log.i("LineLib", "使用线路："+ call.request().url.host)
                        }
                     }
                     if (!f) {
-                        triedTimes += 1
+                        step2Index += 1
                     }
-                    if (triedTimes == lines.size && (index + 1) == lineList.count()){
+                    if (step2Index == lines.size && (index + 1) == lineList.count()){
                         failedAndRetry()
                     }
                 }
