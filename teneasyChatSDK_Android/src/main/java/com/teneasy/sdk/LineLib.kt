@@ -29,7 +29,7 @@ class LineLib constructor(lines: Array<String>, linstener: LineDelegate) {
         var found = false
         var myIndex = 0
         for (hostUrl in lineList) {
-            if (found || usedLine){
+            if (usedLine){
                 break
             }
             val url = "$hostUrl"
@@ -71,8 +71,9 @@ class LineLib constructor(lines: Array<String>, linstener: LineDelegate) {
                             }
                         }
 
+                        myIndex += 1
+
                         if (!f){
-                            myIndex += 1
                             if (myIndex == lineList.size){
                                 failedAndRetry()
                             }
@@ -92,11 +93,11 @@ class LineLib constructor(lines: Array<String>, linstener: LineDelegate) {
         Log.i(TAG, lines.toString())
         var found = false
         var step2Index = 0
-        for (hostUrl in lines) {
+        for (line in lines) {
             if (found || usedLine){
                 break
             }
-            val url = "${hostUrl.VITE_API_BASE_URL}" + "/verify"
+            val url = "${line.VITE_API_BASE_URL}" + "/verify"
             val client: OkHttpClient = OkHttpClient.Builder().connectTimeout(2, TimeUnit.SECONDS).build()
             val request: Request = Request.Builder().url(url ).build()
             val call: okhttp3.Call = client.newCall(request)
@@ -117,14 +118,14 @@ class LineLib constructor(lines: Array<String>, linstener: LineDelegate) {
                            found = true
                            f = true
                            //listener?.useTheLine(call.request().url.host)
-                           listener?.useTheLine(lines[step2Index])
+                           listener?.useTheLine(line)
                            Log.i("LineLib", "使用线路："+ call.request().url.host)
                        }
                     }
-                    if (!f) {
-                        step2Index += 1
-                    }
-                    if (step2Index == lines.size && (index + 1) == lineList.count()){
+
+                    step2Index += 1
+
+                    if (!f && step2Index == lines.size && (index + 1) == lineList.count()){
                         failedAndRetry()
                     }
                 }
@@ -133,6 +134,9 @@ class LineLib constructor(lines: Array<String>, linstener: LineDelegate) {
     }
 
     private fun failedAndRetry(){
+        if (usedLine){
+            return
+        }
         val result = Result();
         if (retryTimes < 3){
             retryTimes += 1
