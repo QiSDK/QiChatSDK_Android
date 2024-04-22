@@ -10,6 +10,9 @@ import okhttp3.Response
 import java.io.IOException
 import java.util.concurrent.TimeUnit
 import android.util.Base64
+import okhttp3.MediaType.Companion.toMediaTypeOrNull
+import okhttp3.RequestBody
+import kotlin.random.Random
 
 interface LineDelegate {
     // 收到消息
@@ -17,22 +20,29 @@ interface LineDelegate {
     fun lineError(error: Result)
 }
 
-class LineLib constructor(lines: Array<String>, linstener: LineDelegate) {
+class LineLib constructor(lines: Array<String>, linstener: LineDelegate, tenantId: Int) {
     private val lineList = lines
     private val TAG = "LineLib"
     private val listener: LineDelegate? = linstener
     private var usedLine = false
     private var retryTimes = 0
+    private var tenantId = tenantId
+    private var bodyStr = ""
     //  private val
     fun getLine() {
+        val verifyBody = VerifyBody("wcs", tenantId)
+        val gson = Gson()
+        bodyStr = gson.toJson(verifyBody)
+
         Log.i(TAG, lineList.toString())
         var found = false
+        var r = Random.nextInt(100000)
         var myIndex = 0
         for (hostUrl in lineList) {
             if (usedLine){
                 break
             }
-            val url = "$hostUrl"
+            val url = "$hostUrl?r=$r"
             val client: OkHttpClient = OkHttpClient.Builder().connectTimeout(2, TimeUnit.SECONDS).build()
             val request: Request = Request.Builder().url(url).build()
             val call: okhttp3.Call = client.newCall(request)
@@ -92,14 +102,18 @@ class LineLib constructor(lines: Array<String>, linstener: LineDelegate) {
     fun step2(lines: MutableList<Line>, index: Int) {
         Log.i(TAG, lines.toString())
         var found = false
+        var r = Random.nextInt(100000)
         var step2Index = 0
         for (line in lines) {
             if (found || usedLine){
                 break
             }
-            val url = "${line.VITE_API_BASE_URL}" + "/verify"
+            val url = "${line.VITE_API_BASE_URL}" + "/v1/api/verify?r=$r"
             val client: OkHttpClient = OkHttpClient.Builder().connectTimeout(2, TimeUnit.SECONDS).build()
-            val request: Request = Request.Builder().url(url ).build()
+            val requestBody = RequestBody.create("application/json".toMediaTypeOrNull(), bodyStr)
+            val request: Request = Request.Builder()
+                .post(requestBody)
+                .url(url).build()
             val call: okhttp3.Call = client.newCall(request)
             call.enqueue(object : Callback {
                 override fun onFailure(call: okhttp3.Call, e: IOException) {
@@ -111,8 +125,8 @@ class LineLib constructor(lines: Array<String>, linstener: LineDelegate) {
                 }
                 override fun onResponse(call: okhttp3.Call, response: Response) {
                     var f = false
-                    var body = response.body?.string()
-                    if (response.isSuccessful && body != null && body!!.contains("10010")) {
+                    var body = response.body?.string()//为了更快的速度，没做反序列化
+                    if (response.isSuccessful && body != null && body!!.contains(bodyStr)) {
                        if (!usedLine) {
                            usedLine = true
                            found = true
@@ -120,6 +134,7 @@ class LineLib constructor(lines: Array<String>, linstener: LineDelegate) {
                            //listener?.useTheLine(call.request().url.host)
                            listener?.useTheLine(line)
                            Log.i("LineLib", "使用线路："+ call.request().url.host)
+                           Log.i("LineLib", "使用线路wss："+ line.VITE_WSS_HOST)
                        }
                     }
 
@@ -141,12 +156,12 @@ class LineLib constructor(lines: Array<String>, linstener: LineDelegate) {
         if (retryTimes < 3){
             retryTimes += 1
             result.code = 1009
-            result.message = "线路获取失败，重试" + retryTimes
+            result.msg = "线路获取失败，重试" + retryTimes
             listener?.lineError(result)
             getLine()
         }else{
             result.code = 1008
-            result.message = "没有可用线路"
+            result.msg = "没有可用线路"
             listener?.lineError(result)
         }
     }

@@ -1,12 +1,9 @@
 package com.example.teneasychatsdk
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Looper
 import android.util.Log
 import android.widget.Toast
-import androidx.annotation.UiThread
 import com.example.teneasychatsdk.databinding.ActivityMainBinding
 import com.teneasy.sdk.ChatLib
 import com.teneasy.sdk.Line
@@ -28,7 +25,7 @@ class MainActivity : AppCompatActivity(), TeneasySDKDelegate {
         setContentView(binding.root)
         //https://qlqiniu.quyou.tech/gw3config.txt
         //https://ydqlacc.weletter05.com/gw3config.txt
-        val lines = arrayOf("https://dtest/gw3config.txt", "https://qlqiniu.quyou.tech/gw3config.txt","https://ydqlacc.weletter05.com/gw3config.txt",  "https://ydqlacc.weletter05.com/gw3config.txt", "https://ddtest/gw3config.txt", "https://ddtest.com/gw3config.txt", "https://ddtest.x/gw3config.txt", "https://ddtest.cx/verify/d5", "https://ddtest.net/gw3config.txt") ;
+        //val lines = arrayOf("https://dtest/gw3config.txt", "https://qlqiniu.quyou.tech/gw3config.txt","https://ydqlacc.weletter05.com/gw3config.txt",  "https://ydqlacc.weletter05.com/gw3config.txt", "https://ddtest/gw3config.txt", "https://ddtest.com/gw3config.txt", "https://ddtest.x/gw3config.txt", "https://ddtest.cx/verify/d5", "https://ddtest.net/gw3config.txt") ;
         //val lines = arrayOf("https://ydqlacc.weletter05.com/gw3config.txt")
 
         //生产的线路
@@ -36,9 +33,11 @@ class MainActivity : AppCompatActivity(), TeneasySDKDelegate {
 
         //测试的线路
         //val lines = arrayOf("https://qlqiniu.quyou.tech/gw3config.txt","https://ydqlacc.weletter05.com/gw3config.txt")
+        var lines = arrayOf("https://ydqlacc.weletter05.com/gw3config.txt", "https://qlqiniu.quyou.tech/gw3config.txt")
 
-        val lineLib = LineLib(lines, object : LineDelegate {
+        val lineLib = LineLib(lines,  object : LineDelegate {
             override fun useTheLine(line: Line) {
+                Log.i("LineLib", "使用线路："+ line)
                 this@MainActivity.runOnUiThread{
                     binding.tvContent.append("Api: " + line.VITE_API_BASE_URL + "\n")
                     binding.tvContent.append("Img: " + line.VITE_IMG_URL + "\n")
@@ -48,11 +47,11 @@ class MainActivity : AppCompatActivity(), TeneasySDKDelegate {
             }
             override fun lineError(error: Result) {
                 this@MainActivity.runOnUiThread{
-                    binding.tvContent.append(error.message + "\n")
-                    Toast.makeText(this@MainActivity, error.message, Toast.LENGTH_LONG).show()
+                    binding.tvContent.append(error.msg + "\n")
+                    Toast.makeText(this@MainActivity, error.msg, Toast.LENGTH_LONG).show()
                 }
             }
-        })
+        }, 123)
         lineLib.getLine()
     }
 
@@ -129,8 +128,8 @@ class MainActivity : AppCompatActivity(), TeneasySDKDelegate {
 
     override fun systemMsg(msg: Result) {
         //TODO("Not yet implemented")
-        Log.i("MainAct systemMsg", msg.message)
-        binding.tvContent.append(msg.message + "\n")
+        Log.i("MainAct systemMsg", msg.msg)
+        binding.tvContent.append(msg.msg + "\n")
     }
 
     //成功连接，并返回相关信息，例如workerId

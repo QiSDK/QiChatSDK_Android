@@ -1,9 +1,6 @@
 package com.teneasy.sdk
 
-import android.content.Context
-import android.content.LocusId
 import android.util.Log
-import android.widget.Toast
 import com.google.protobuf.Timestamp
 import com.teneasyChat.api.common.CEntrance.ClientType
 import com.teneasyChat.api.common.CMessage
@@ -15,15 +12,12 @@ import com.teneasyChat.gateway.GPayload
 //import io.crossbar.autobahn.websocket.WebSocketConnection
 //import io.crossbar.autobahn.websocket.WebSocketConnectionHandler
 //import io.crossbar.autobahn.websocket.types.ConnectionResponse
-import org.greenrobot.eventbus.EventBus
 import org.java_websocket.client.WebSocketClient
 import org.java_websocket.drafts.Draft_6455
 import org.java_websocket.handshake.ServerHandshake
-import org.json.JSONObject
 import java.net.URI
 import java.nio.ByteBuffer
 import java.util.*
-import kotlin.math.floor
 
 
 interface TeneasySDKDelegate {
@@ -118,12 +112,12 @@ rd === 随即数 Math.floor(Math.random() * 1000000)
                 }
                 override fun onOpen(handshake: ServerHandshake?) {
                     Log.i(TAG, "opened connection")
-                    result.message = "已连接上服务器"
+                    result.msg = "已连接上服务器"
                     listener?.systemMsg(result)
                 }
                 override fun onClose(code: Int, reason: String, remote: Boolean) {
                     result.code = 1001
-                    result.message = "已断开通信"
+                    result.msg = "已断开通信"
                     listener?.systemMsg(result)
                 }
                 override fun onError(ex: Exception) {
