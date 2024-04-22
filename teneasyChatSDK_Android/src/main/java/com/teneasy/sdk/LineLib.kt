@@ -126,7 +126,8 @@ class LineLib constructor(lines: Array<String>, linstener: LineDelegate, tenantI
                 override fun onResponse(call: okhttp3.Call, response: Response) {
                     var f = false
                     var body = response.body?.string()//为了更快的速度，没做反序列化
-                    if (response.isSuccessful && body != null && body!!.contains(bodyStr)) {
+                    //{"code":0,"msg":"OK","data":{"gnsId":"wcs","tenantId":123}}
+                    if (response.isSuccessful && body != null && body!!.contains("tenantId")) {
                        if (!usedLine) {
                            usedLine = true
                            found = true
@@ -137,9 +138,7 @@ class LineLib constructor(lines: Array<String>, linstener: LineDelegate, tenantI
                            Log.i("LineLib", "使用线路wss："+ line.VITE_WSS_HOST)
                        }
                     }
-
                     step2Index += 1
-
                     if (!f && step2Index == lines.size && (index + 1) == lineList.count()){
                         failedAndRetry()
                     }
