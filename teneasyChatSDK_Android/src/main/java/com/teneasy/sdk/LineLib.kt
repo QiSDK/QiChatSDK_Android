@@ -12,6 +12,7 @@ import java.util.concurrent.TimeUnit
 import android.util.Base64
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.RequestBody
+import okhttp3.RequestBody.Companion.toRequestBody
 import kotlin.random.Random
 
 interface LineDelegate {
@@ -33,6 +34,8 @@ class LineLib constructor(lines: Array<String>, linstener: LineDelegate, tenantI
         val verifyBody = VerifyBody("wcs", tenantId)
         val gson = Gson()
         bodyStr = gson.toJson(verifyBody)
+        retryTimes = 0
+        usedLine = false
 
         Log.i(TAG, lineList.toString())
         var found = false
@@ -110,7 +113,7 @@ class LineLib constructor(lines: Array<String>, linstener: LineDelegate, tenantI
             }
             val url = "${line.VITE_API_BASE_URL}" + "/v1/api/verify?r=$r"
             val client: OkHttpClient = OkHttpClient.Builder().connectTimeout(2, TimeUnit.SECONDS).build()
-            val requestBody = RequestBody.create("application/json".toMediaTypeOrNull(), bodyStr)
+            val requestBody = bodyStr.toRequestBody("application/json".toMediaTypeOrNull())
             val request: Request = Request.Builder()
                 .post(requestBody)
                 .url(url).build()
@@ -137,6 +140,8 @@ class LineLib constructor(lines: Array<String>, linstener: LineDelegate, tenantI
                            listener?.useTheLine(line)
                            Log.i(TAG, "使用线路："+ call.request().url.host)
                            Log.i(TAG, "使用线路wss："+ line.VITE_WSS_HOST)
+                       }else{
+                           Log.i(TAG, "线路已使用")
                        }
                     }
                     step2Index += 1
