@@ -128,7 +128,7 @@ class LineLib constructor(lines: Array<String>, linstener: LineDelegate, tenantI
                     var body = response.body?.string()//为了更快的速度，没做反序列化
                     //{"code":0,"msg":"OK","data":{"gnsId":"wcs","tenantId":123}}
                     Log.i(TAG, "成功body："+ body)
-                    if (response.isSuccessful && body != null && body!!.contains("tenantId")) {
+                    if (response.isSuccessful && body != null && body!!.lowercase().contains("tenantid")) {
                        if (!usedLine) {
                            usedLine = true
                            found = true
