@@ -76,7 +76,7 @@ class LineLib constructor(lines: Array<String>, linstener: LineDelegate, tenantI
                                         f = true
                                     }
                                 }
-                                Log.i("LineLib", "txt："+ call.request().url.host)
+                                Log.i(TAG, "txt："+ call.request().url.host)
                                 step2(lineStrs, myIndex)
                             }
                         }
@@ -127,6 +127,7 @@ class LineLib constructor(lines: Array<String>, linstener: LineDelegate, tenantI
                     var f = false
                     var body = response.body?.string()//为了更快的速度，没做反序列化
                     //{"code":0,"msg":"OK","data":{"gnsId":"wcs","tenantId":123}}
+                    Log.i(TAG, "成功body："+ body)
                     if (response.isSuccessful && body != null && body!!.contains("tenantId")) {
                        if (!usedLine) {
                            usedLine = true
@@ -134,8 +135,8 @@ class LineLib constructor(lines: Array<String>, linstener: LineDelegate, tenantI
                            f = true
                            //listener?.useTheLine(call.request().url.host)
                            listener?.useTheLine(line)
-                           Log.i("LineLib", "使用线路："+ call.request().url.host)
-                           Log.i("LineLib", "使用线路wss："+ line.VITE_WSS_HOST)
+                           Log.i(TAG, "使用线路："+ call.request().url.host)
+                           Log.i(TAG, "使用线路wss："+ line.VITE_WSS_HOST)
                        }
                     }
                     step2Index += 1
