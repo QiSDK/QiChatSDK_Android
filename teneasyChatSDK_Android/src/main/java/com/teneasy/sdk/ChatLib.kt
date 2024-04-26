@@ -132,7 +132,7 @@ rd === 随即数 Math.floor(Math.random() * 1000000)
      * 发送文本类型的消息
      * @param msg   消息内容或图片url,音频url,视频url...
      */
-     fun sendMessage(msg: String, type: MessageFormat, replyMsgId: Long = 0) {
+     fun sendMessage(msg: String, type: MessageFormat, consultId: Long, replyMsgId: Long = 0) {
         this.replyMsgId = replyMsgId;
       if (type == MessageFormat.MSG_TEXT){
           sendTextMessage(msg)
