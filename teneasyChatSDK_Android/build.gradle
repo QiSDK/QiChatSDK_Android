@@ -68,7 +68,7 @@ dependencies {
     implementation 'org.jetbrains.kotlinx:kotlinx-serialization-json:1.2.1'
     //implementation 'com.google.protobuf:protobuf-kotlin:3.21.12'
 //    implementation 'com.google.protobuf:protobuf-javalite:3.21.12'
-    implementation 'com.google.protobuf:protobuf-java:3.22.2'
+    implementation 'com.google.protobuf:protobuf-java:4.26.1'
     //implementation 'com.google.protobuf:protobuf-javalite:3.14.0'
     implementation("org.greenrobot:eventbus:3.3.1")
     implementation("com.squareup.okhttp3:okhttp:4.12.0")
