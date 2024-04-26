@@ -10016,6 +10016,16 @@ public final class WorkerOuterClass {
      * @return The workerId.
      */
     int getWorkerId();
+
+    /**
+     * <pre>
+     * 咨询id
+     * </pre>
+     *
+     * <code>uint32 consult_id = 3;</code>
+     * @return The consultId.
+     */
+    int getConsultId();
   }
   /**
    * <pre>
@@ -10080,6 +10090,21 @@ public final class WorkerOuterClass {
       return workerId_;
     }
 
+    public static final int CONSULT_ID_FIELD_NUMBER = 3;
+    private int consultId_ = 0;
+    /**
+     * <pre>
+     * 咨询id
+     * </pre>
+     *
+     * <code>uint32 consult_id = 3;</code>
+     * @return The consultId.
+     */
+    @java.lang.Override
+    public int getConsultId() {
+      return consultId_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -10100,6 +10125,9 @@ public final class WorkerOuterClass {
       if (workerId_ != 0) {
         output.writeInt32(2, workerId_);
       }
+      if (consultId_ != 0) {
+        output.writeUInt32(3, consultId_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -10116,6 +10144,10 @@ public final class WorkerOuterClass {
       if (workerId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(2, workerId_);
+      }
+      if (consultId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(3, consultId_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -10136,6 +10168,8 @@ public final class WorkerOuterClass {
           != other.getChatId()) return false;
       if (getWorkerId()
           != other.getWorkerId()) return false;
+      if (getConsultId()
+          != other.getConsultId()) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -10152,6 +10186,8 @@ public final class WorkerOuterClass {
           getChatId());
       hash = (37 * hash) + WORKER_ID_FIELD_NUMBER;
       hash = (53 * hash) + getWorkerId();
+      hash = (37 * hash) + CONSULT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getConsultId();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -10289,6 +10325,7 @@ public final class WorkerOuterClass {
         bitField0_ = 0;
         chatId_ = 0L;
         workerId_ = 0;
+        consultId_ = 0;
         return this;
       }
 
@@ -10328,6 +10365,9 @@ public final class WorkerOuterClass {
         if (((from_bitField0_ & 0x00000002) != 0)) {
           result.workerId_ = workerId_;
         }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.consultId_ = consultId_;
+        }
       }
 
       @java.lang.Override
@@ -10347,6 +10387,9 @@ public final class WorkerOuterClass {
         }
         if (other.getWorkerId() != 0) {
           setWorkerId(other.getWorkerId());
+        }
+        if (other.getConsultId() != 0) {
+          setConsultId(other.getConsultId());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -10384,6 +10427,11 @@ public final class WorkerOuterClass {
                 bitField0_ |= 0x00000002;
                 break;
               } // case 16
+              case 24: {
+                consultId_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 24
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -10461,6 +10509,50 @@ public final class WorkerOuterClass {
       public Builder clearWorkerId() {
         bitField0_ = (bitField0_ & ~0x00000002);
         workerId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int consultId_ ;
+      /**
+       * <pre>
+       * 咨询id
+       * </pre>
+       *
+       * <code>uint32 consult_id = 3;</code>
+       * @return The consultId.
+       */
+      @java.lang.Override
+      public int getConsultId() {
+        return consultId_;
+      }
+      /**
+       * <pre>
+       * 咨询id
+       * </pre>
+       *
+       * <code>uint32 consult_id = 3;</code>
+       * @param value The consultId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setConsultId(int value) {
+
+        consultId_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 咨询id
+       * </pre>
+       *
+       * <code>uint32 consult_id = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearConsultId() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        consultId_ = 0;
         onChanged();
         return this;
       }
@@ -34105,164 +34197,164 @@ public final class WorkerOuterClass {
       "\n\rconnect_state\030\003 \001(\0162\030.api.common.Conne" +
       "ctState\022-\n\014online_state\030\004 \001(\0162\027.api.comm" +
       "on.OnlineState\"5\n\023WorkerDeleteRequest\022\036\n" +
-      "\tworker_id\030\001 \001(\005B\013\372B\010\032\006\030\377\377\001 \001\"Q\n\025WorkerT" +
+      "\tworker_id\030\001 \001(\005B\013\372B\010\032\006\030\377\377\001 \001\"e\n\025WorkerT" +
       "ransferRequest\022\030\n\007chat_id\030\001 \001(\003B\007\372B\004\"\002 \000" +
-      "\022\036\n\tworker_id\030\002 \001(\005B\013\372B\010\032\006\030\377\377\001 \000\"^\n\035Work" +
-      "erTransferConsultsRequest\022\030\n\007chat_id\030\001 \001" +
-      "(\003B\007\372B\004\"\002 \000\022\017\n\007groupid\030\002 \003(\003\022\022\n\nconsult_" +
-      "id\030\003 \001(\r\"D\n\036WorkerTransferConsultsRespon" +
-      "se\022\"\n\006worker\030\001 \001(\0132\022.api.common.Worker\"Q" +
-      "\n\025BlacklistApplyRequest\022\030\n\007chat_id\030\001 \001(\003" +
-      "B\007\372B\004\"\002 \000\022\036\n\tworker_id\030\002 \001(\005B\013\372B\010\032\006\030\377\377\001 " +
-      "\000\"3\n\027BlacklistConfirmRequest\022\030\n\007chat_id\030" +
-      "\001 \001(\003B\007\372B\004\"\002 \000\"3\n\027BlacklistRecoverReques" +
-      "t\022\030\n\007chat_id\030\001 \001(\003B\007\372B\004\"\002 \000\"?\n\031CheckWork" +
-      "erStatusResponse\022\"\n\006worker\030\001 \001(\0132\022.api.c" +
-      "ommon.Worker\"7\n\030CheckWorkerStatusRequest" +
-      "\022\033\n\nconsult_id\030\001 \001(\rB\007\372B\004*\002 \000\"\331\001\n\026GetWor" +
-      "kerStatusRequest\022\036\n\tworker_id\030\001 \001(\005B\013\372B\010" +
-      "\032\006\030\377\377\001 \000\022>\n\rconnect_state\030\002 \001(\0162\030.api.co" +
-      "mmon.ConnectStateB\010\372B\005\202\001\002\020\001H\000\210\001\001\022<\n\014onli" +
-      "ne_state\030\003 \001(\0162\027.api.common.OnlineStateB" +
-      "\010\372B\005\202\001\002\020\001H\001\210\001\001B\020\n\016_connect_stateB\017\n\r_onl" +
-      "ine_state\"J\n\027GetWorkerStatusResponse\022/\n\016" +
-      "worker_session\030\001 \003(\0132\027.api.core.WorkerSe" +
-      "ssion\"Q\n\026SetWorkerStatusRequest\0227\n\014onlin" +
-      "e_state\030\001 \001(\0162\027.api.common.OnlineStateB\010" +
-      "\372B\005\202\001\002\020\001\"<\n\026WorkerTransferResponse\022\"\n\006wo" +
-      "rker\030\001 \001(\0132\022.api.common.Worker\"S\n\017Passwo" +
-      "rdRequest\022\037\n\014old_password\030\001 \001(\tB\t\372B\006r\004 \006" +
-      "(\024\022\037\n\014new_password\030\002 \001(\tB\t\372B\006r\004 \006(\024\"h\n\023Q" +
-      "ueryFronterRequest\022\034\n\004name\030\001 \001(\tB\t\372B\006r\004\020" +
-      "\001\030\nH\000\210\001\001\022*\n\005batch\030\002 \001(\0132\021.api.common.Bat" +
-      "chB\010\372B\005\212\001\002\020\001B\007\n\005_name\"P\n\024QueryFronterRes" +
-      "ponse\022)\n\005items\030\001 \003(\0132\032.api.core.QueryFro" +
-      "nterItem\022\r\n\005total\030\002 \001(\005\"f\n\020QueryFronterI" +
-      "tem\022\014\n\004name\030\001 \001(\t\022\017\n\007account\030\002 \001(\t\022\r\n\005gr" +
-      "oup\030\003 \003(\t\022\021\n\tisManager\030\004 \001(\010\022\021\n\tworker_i" +
-      "d\030\005 \001(\005\"\212\002\n\020DataQueryRequest\022\"\n\nstart_ti" +
-      "me\030\001 \001(\tB\t\372B\006r\004\020\001\030@H\000\210\001\001\022 \n\010end_time\030\002 \001" +
-      "(\tB\t\372B\006r\004\020\001\030@H\001\210\001\001\022\020\n\010group_id\030\003 \003(\005\022D\n\017" +
-      "worker_identity\030\004 \001(\0162\034.api.common.Worke" +
-      "rPermissionB\010\372B\005\202\001\002 \000H\002\210\001\001\022(\n\004page\030\005 \001(\013" +
-      "2\020.api.common.PageB\010\372B\005\212\001\002\020\001B\r\n\013_start_t" +
-      "imeB\013\n\t_end_timeB\022\n\020_worker_identity\"\224\002\n" +
-      "\021DataQueryResponse\022%\n\004item\030\001 \003(\0132\027.api.c" +
-      "ore.DataQueryItem\022\r\n\005total\030\002 \001(\005\022\024\n\014coun" +
-      "t_player\030\003 \001(\005\022\022\n\nthree_rate\030\004 \001(\002\022\025\n\rre" +
-      "sponse_time\030\005 \001(\002\022\023\n\013server_time\030\006 \001(\002\022\031" +
-      "\n\021count_online_time\030\007 \001(\002\022\024\n\014accepted_nu" +
-      "m\030\010 \001(\005\022\025\n\rtransfer_task\030\t \001(\005\022\023\n\013worker" +
-      "Limit\030\n \001(\005\022\026\n\016currentWorkers\030\013 \001(\005\"\225\002\n\r" +
-      "DataQueryItem\022\014\n\004name\030\001 \001(\t\022\021\n\tmatch_num" +
-      "\030\002 \001(\005\022\033\n\023three_response_rate\030\003 \001(\t\022\026\n\016s" +
-      "witching_task\030\004 \001(\005\022\031\n\021accept_assignment" +
-      "\030\005 \001(\005\022\032\n\022corresponding_time\030\006 \001(\002\022\024\n\014be" +
-      "long_group\030\007 \003(\t\022\022\n\nfirst_line\030\010 \001(\010\022\022\n\n" +
-      "is_manager\030\t \001(\010\022\024\n\014average_time\030\n \001(\002\022#" +
-      "\n\033accumulated_online_duration\030\013 \001(\002\"g\n\032Q" +
-      "uerySpecPermWorkerRequest\0228\n\004perm\030\001 \001(\0162" +
-      "\034.api.common.WorkerPermissionB\014\372B\t\202\001\006\020\001\030" +
-      "\020\030@\022\017\n\007chat_id\030\002 \001(\003\"_\n\021WorkerListByGrou" +
-      "p\022&\n\005group\030\001 \001(\0132\027.api.common.WorkerGrou" +
-      "p\022\"\n\006worker\030\002 \003(\0132\022.api.common.Worker\"J\n" +
-      "\033QuerySpecPermWorkerResponse\022+\n\006groups\030\001" +
-      " \003(\0132\033.api.core.WorkerListByGroup\"3\n Try" +
-      "CleanupAssignedWorkerResponse\022\017\n\007cleaned" +
-      "\030\001 \001(\010\")\n\026UnfreezeSessionRequest\022\017\n\007chat" +
-      "_id\030\001 \001(\003\"c\n\027UnfreezeSessionResponse\022$\n\005" +
-      "state\030\001 \001(\0162\025.api.common.ChatState\022\"\n\004ch" +
-      "at\030\002 \001(\0132\024.api.common.ChatItem\"&\n\023QueryS" +
-      "essionRequest\022\017\n\007chat_id\030\001 \001(\003\":\n\024QueryS" +
-      "essionResponse\022\"\n\004chat\030\001 \001(\0132\024.api.commo" +
-      "n.ChatItem\"F\n\024NotifyMessageRequest\022\021\n\tco" +
-      "nsultid\030\003 \001(\005\022\016\n\006userid\030\004 \001(\005\022\013\n\003msg\030\005 \001" +
-      "(\t\"$\n\022TransferMessageReq\022\016\n\006chatId\030\001 \001(\003" +
-      "\"i\n\010WithDraw\022\n\n\002id\030\001 \001(\003\022\017\n\007orderNo\030\002 \001(" +
-      "\t\022\016\n\006userid\030\003 \001(\003\022\r\n\005money\030\004 \001(\t\022\016\n\006stat" +
-      "us\030\005 \001(\003\022\021\n\tapplyTime\030\006 \001(\003\"6\n\022TransferM" +
-      "essageRsp\022 \n\004data\030\001 \003(\0132\022.api.core.WithD" +
-      "raw\",\n\030QueryChildByGroupRequest\022\020\n\010group" +
-      "_id\030\001 \001(\003\"C\n\031QueryChildByGroupResponse\022&" +
-      "\n\005group\030\001 \003(\0132\027.api.common.WorkerGroup2\272" +
-      "\027\n\006Worker\022i\n\tDataQuery\022\032.api.core.DataQu" +
-      "eryRequest\032\033.api.core.DataQueryResponse\"" +
-      "#\272\276\031\037\010\377\003\030\001\262\006\n2022-12-10\322\014\ndata-query\022u\n\014" +
-      "QueryFronter\022\035.api.core.QueryFronterRequ" +
-      "est\032\036.api.core.QueryFronterResponse\"&\272\276\031" +
-      "\"\010\364\003\030\001\262\006\n2022-12-10\322\014\rquery-fronted\022d\n\005Q" +
-      "uery\022\034.api.core.WorkerQueryRequest\032\035.api" +
-      ".core.WorkerQueryResponse\"\036\272\276\031\032\010\364\003\030\001\262\006\n2" +
-      "022-12-10\322\014\005query\022`\n\006Create\022\035.api.core.W" +
-      "orkerCreateRequest\032\026.google.protobuf.Emp" +
-      "ty\"\037\272\276\031\033\010\365\003\030\001\262\006\n2022-12-10\322\014\006create\022`\n\006U" +
-      "pdate\022\035.api.core.WorkerUpdateRequest\032\026.g" +
-      "oogle.protobuf.Empty\"\037\272\276\031\033\010\366\003\030\001\262\006\n2022-1" +
-      "2-10\322\014\006update\022`\n\006Delete\022\035.api.core.Worke" +
-      "rDeleteRequest\032\026.google.protobuf.Empty\"\037" +
-      "\272\276\031\033\010\367\003\030\001\262\006\n2022-12-10\322\014\006delete\022k\n\010Trans" +
-      "fer\022\037.api.core.WorkerTransferRequest\032\026.g" +
-      "oogle.protobuf.Empty\"&\272\276\031\"\010\370\003\030\001\262\006\n2022-1" +
-      "2-30\312\014\002\020\004\322\014\010transfer\022\226\001\n\020TransferConsult" +
-      "s\022\'.api.core.WorkerTransferConsultsReque" +
-      "st\032(.api.core.WorkerTransferConsultsResp" +
-      "onse\"/\272\276\031+\010\370\003\030\001\262\006\n2022-12-30\312\014\002\020\004\322\014\021tran" +
-      "sfer-Consults\022\207\001\n\017GetWorkerStatus\022 .api." +
-      "core.GetWorkerStatusRequest\032!.api.core.G" +
-      "etWorkerStatusResponse\"/\272\276\031+\010\371\003\030\001\262\006\n2022" +
-      "-12-30\312\014\002\020\004\322\014\021get-worker-status\022|\n\017SetWo" +
-      "rkerStatus\022 .api.core.SetWorkerStatusReq" +
-      "uest\032\026.google.protobuf.Empty\"/\272\276\031+\010\372\003\030\001\262" +
-      "\006\n2022-12-30\312\014\002\020\004\322\014\021set-worker-status\022\202\001" +
-      "\n\021CheckWorkerStatus\022\".api.core.CheckWork" +
-      "erStatusRequest\032\026.google.protobuf.Empty\"" +
-      "1\272\276\031-\010\373\003\030\001\262\006\n2022-12-30\312\014\002\020\004\322\014\023check-wor" +
-      "ker-status\022e\n\010Password\022\031.api.core.Passwo" +
-      "rdRequest\032\026.google.protobuf.Empty\"&\272\276\031\"\010" +
-      "\374\003\030\001\262\006\n2023-01-09\312\014\002\020\004\322\014\010password\022y\n\016Bla" +
-      "cklistApply\022\037.api.core.BlacklistApplyReq" +
-      "uest\032\026.google.protobuf.Empty\".\272\276\031*\010\375\003\030\001\262" +
-      "\006\n2023-01-10\312\014\002\020\004\322\014\020black-list-apply\022\177\n\020" +
-      "BlacklistConfirm\022!.api.core.BlacklistCon" +
-      "firmRequest\032\026.google.protobuf.Empty\"0\272\276\031" +
-      ",\010\376\003\030\001\262\006\n2023-01-10\312\014\002\020\004\322\014\022black-list-co" +
-      "nfirm\022\177\n\020BlacklistRecover\022!.api.core.Bla" +
-      "cklistRecoverRequest\032\026.google.protobuf.E" +
-      "mpty\"0\272\276\031,\010\377\003\030\001\262\006\n2023-01-28\312\014\002\020\004\322\014\022blac" +
-      "k-list-recover\022\207\001\n\013QueryByPerm\022$.api.cor" +
-      "e.QuerySpecPermWorkerRequest\032%.api.core." +
-      "QuerySpecPermWorkerResponse\"+\272\276\031\'\010\200\004\030\001\262\006" +
-      "\n2023-01-10\312\014\002\020\004\322\014\rquery-by-perm\022\231\001\n\030Try" +
-      "CleanupAssignedWorker\022\026.google.protobuf." +
-      "Empty\032*.api.core.TryCleanupAssignedWorke" +
-      "rResponse\"9\272\276\0315\010\201\004\030\001\262\006\n2023-02-09\312\014\002\001\004\322\014" +
-      "\033try-cleanup-assigned-worker\022p\n\tQuerySel" +
-      "f\022\026.google.protobuf.Empty\032!.api.core.Wor" +
-      "kerQuerySelfResponse\"(\272\276\031$\010\202\004\030\001\262\006\n2023-0" +
-      "3-04\312\014\002\020\004\322\014\nquery-self\022\205\001\n\017UnfreezeSessi" +
-      "on\022 .api.core.UnfreezeSessionRequest\032!.a" +
-      "pi.core.UnfreezeSessionResponse\"-\272\276\031)\010\203\004" +
-      "\030\001\262\006\n2023-04-19\312\014\001\004\322\014\020unfreeze-session\022z" +
-      "\n\014QuerySession\022\035.api.core.QuerySessionRe" +
-      "quest\032\036.api.core.QuerySessionResponse\"+\272" +
-      "\276\031\'\010\204\004\030\001\262\006\n2023-04-21\312\014\002\020\004\322\014\rquery-sessi" +
-      "on\022~\n\020CreateNimAccount\022\033.api.core.NIMAcc" +
-      "ountRequest\032\034.api.core.NIMAccountRespons" +
-      "e\"/\272\276\031+\010\204\004\030\001\262\006\n2023-11-06\312\014\002\020\004\322\014\021create-" +
-      "nimaccount\022u\n\rNotifyMessage\022\036.api.core.N" +
-      "otifyMessageRequest\032\026.google.protobuf.Em" +
-      "pty\",\272\276\031(\010\205\004\030\001\262\006\n2024-01-09\312\014\002\002\004\322\014\016notif" +
-      "y-message\022\203\001\n\022TransferWithDraWal\022\034.api.c" +
-      "ore.TransferMessageReq\032\034.api.core.Transf" +
-      "erMessageRsp\"1\272\276\031-\010\205\004\030\001\262\006\n2024-04-05\312\014\002\002" +
-      "\004\322\014\023transfer-withdrawal\022\215\001\n\021QueryChildBy" +
-      "Group\022\".api.core.QueryChildByGroupReques" +
-      "t\032#.api.core.QueryChildByGroupResponse\"/" +
-      "\272\276\031+\010\200\004\030\001\262\006\n2023-01-10\312\014\002\020\004\322\014\021query-grou" +
-      "p-child\032\"\272\276\031\036\272\006\006worker\312\014\001\020\322\014\016/tenant/wor" +
-      "kerBE\n\030com.teneasyChat.api.coreZ\021wcs/api" +
-      "/core;core\272\276\031\024\242\006\004jeff\262\006\n2022-12-06b\006prot" +
-      "o3"
+      "\022\036\n\tworker_id\030\002 \001(\005B\013\372B\010\032\006\030\377\377\001 \000\022\022\n\ncons" +
+      "ult_id\030\003 \001(\r\"^\n\035WorkerTransferConsultsRe" +
+      "quest\022\030\n\007chat_id\030\001 \001(\003B\007\372B\004\"\002 \000\022\017\n\007group" +
+      "id\030\002 \003(\003\022\022\n\nconsult_id\030\003 \001(\r\"D\n\036WorkerTr" +
+      "ansferConsultsResponse\022\"\n\006worker\030\001 \001(\0132\022" +
+      ".api.common.Worker\"Q\n\025BlacklistApplyRequ" +
+      "est\022\030\n\007chat_id\030\001 \001(\003B\007\372B\004\"\002 \000\022\036\n\tworker_" +
+      "id\030\002 \001(\005B\013\372B\010\032\006\030\377\377\001 \000\"3\n\027BlacklistConfir" +
+      "mRequest\022\030\n\007chat_id\030\001 \001(\003B\007\372B\004\"\002 \000\"3\n\027Bl" +
+      "acklistRecoverRequest\022\030\n\007chat_id\030\001 \001(\003B\007" +
+      "\372B\004\"\002 \000\"?\n\031CheckWorkerStatusResponse\022\"\n\006" +
+      "worker\030\001 \001(\0132\022.api.common.Worker\"7\n\030Chec" +
+      "kWorkerStatusRequest\022\033\n\nconsult_id\030\001 \001(\r" +
+      "B\007\372B\004*\002 \000\"\331\001\n\026GetWorkerStatusRequest\022\036\n\t" +
+      "worker_id\030\001 \001(\005B\013\372B\010\032\006\030\377\377\001 \000\022>\n\rconnect_" +
+      "state\030\002 \001(\0162\030.api.common.ConnectStateB\010\372" +
+      "B\005\202\001\002\020\001H\000\210\001\001\022<\n\014online_state\030\003 \001(\0162\027.api" +
+      ".common.OnlineStateB\010\372B\005\202\001\002\020\001H\001\210\001\001B\020\n\016_c" +
+      "onnect_stateB\017\n\r_online_state\"J\n\027GetWork" +
+      "erStatusResponse\022/\n\016worker_session\030\001 \003(\013" +
+      "2\027.api.core.WorkerSession\"Q\n\026SetWorkerSt" +
+      "atusRequest\0227\n\014online_state\030\001 \001(\0162\027.api." +
+      "common.OnlineStateB\010\372B\005\202\001\002\020\001\"<\n\026WorkerTr" +
+      "ansferResponse\022\"\n\006worker\030\001 \001(\0132\022.api.com" +
+      "mon.Worker\"S\n\017PasswordRequest\022\037\n\014old_pas" +
+      "sword\030\001 \001(\tB\t\372B\006r\004 \006(\024\022\037\n\014new_password\030\002" +
+      " \001(\tB\t\372B\006r\004 \006(\024\"h\n\023QueryFronterRequest\022\034" +
+      "\n\004name\030\001 \001(\tB\t\372B\006r\004\020\001\030\nH\000\210\001\001\022*\n\005batch\030\002 " +
+      "\001(\0132\021.api.common.BatchB\010\372B\005\212\001\002\020\001B\007\n\005_nam" +
+      "e\"P\n\024QueryFronterResponse\022)\n\005items\030\001 \003(\013" +
+      "2\032.api.core.QueryFronterItem\022\r\n\005total\030\002 " +
+      "\001(\005\"f\n\020QueryFronterItem\022\014\n\004name\030\001 \001(\t\022\017\n" +
+      "\007account\030\002 \001(\t\022\r\n\005group\030\003 \003(\t\022\021\n\tisManag" +
+      "er\030\004 \001(\010\022\021\n\tworker_id\030\005 \001(\005\"\212\002\n\020DataQuer" +
+      "yRequest\022\"\n\nstart_time\030\001 \001(\tB\t\372B\006r\004\020\001\030@H" +
+      "\000\210\001\001\022 \n\010end_time\030\002 \001(\tB\t\372B\006r\004\020\001\030@H\001\210\001\001\022\020" +
+      "\n\010group_id\030\003 \003(\005\022D\n\017worker_identity\030\004 \001(" +
+      "\0162\034.api.common.WorkerPermissionB\010\372B\005\202\001\002 " +
+      "\000H\002\210\001\001\022(\n\004page\030\005 \001(\0132\020.api.common.PageB\010" +
+      "\372B\005\212\001\002\020\001B\r\n\013_start_timeB\013\n\t_end_timeB\022\n\020" +
+      "_worker_identity\"\224\002\n\021DataQueryResponse\022%" +
+      "\n\004item\030\001 \003(\0132\027.api.core.DataQueryItem\022\r\n" +
+      "\005total\030\002 \001(\005\022\024\n\014count_player\030\003 \001(\005\022\022\n\nth" +
+      "ree_rate\030\004 \001(\002\022\025\n\rresponse_time\030\005 \001(\002\022\023\n" +
+      "\013server_time\030\006 \001(\002\022\031\n\021count_online_time\030" +
+      "\007 \001(\002\022\024\n\014accepted_num\030\010 \001(\005\022\025\n\rtransfer_" +
+      "task\030\t \001(\005\022\023\n\013workerLimit\030\n \001(\005\022\026\n\016curre" +
+      "ntWorkers\030\013 \001(\005\"\225\002\n\rDataQueryItem\022\014\n\004nam" +
+      "e\030\001 \001(\t\022\021\n\tmatch_num\030\002 \001(\005\022\033\n\023three_resp" +
+      "onse_rate\030\003 \001(\t\022\026\n\016switching_task\030\004 \001(\005\022" +
+      "\031\n\021accept_assignment\030\005 \001(\005\022\032\n\022correspond" +
+      "ing_time\030\006 \001(\002\022\024\n\014belong_group\030\007 \003(\t\022\022\n\n" +
+      "first_line\030\010 \001(\010\022\022\n\nis_manager\030\t \001(\010\022\024\n\014" +
+      "average_time\030\n \001(\002\022#\n\033accumulated_online" +
+      "_duration\030\013 \001(\002\"g\n\032QuerySpecPermWorkerRe" +
+      "quest\0228\n\004perm\030\001 \001(\0162\034.api.common.WorkerP" +
+      "ermissionB\014\372B\t\202\001\006\020\001\030\020\030@\022\017\n\007chat_id\030\002 \001(\003" +
+      "\"_\n\021WorkerListByGroup\022&\n\005group\030\001 \001(\0132\027.a" +
+      "pi.common.WorkerGroup\022\"\n\006worker\030\002 \003(\0132\022." +
+      "api.common.Worker\"J\n\033QuerySpecPermWorker" +
+      "Response\022+\n\006groups\030\001 \003(\0132\033.api.core.Work" +
+      "erListByGroup\"3\n TryCleanupAssignedWorke" +
+      "rResponse\022\017\n\007cleaned\030\001 \001(\010\")\n\026UnfreezeSe" +
+      "ssionRequest\022\017\n\007chat_id\030\001 \001(\003\"c\n\027Unfreez" +
+      "eSessionResponse\022$\n\005state\030\001 \001(\0162\025.api.co" +
+      "mmon.ChatState\022\"\n\004chat\030\002 \001(\0132\024.api.commo" +
+      "n.ChatItem\"&\n\023QuerySessionRequest\022\017\n\007cha" +
+      "t_id\030\001 \001(\003\":\n\024QuerySessionResponse\022\"\n\004ch" +
+      "at\030\001 \001(\0132\024.api.common.ChatItem\"F\n\024Notify" +
+      "MessageRequest\022\021\n\tconsultid\030\003 \001(\005\022\016\n\006use" +
+      "rid\030\004 \001(\005\022\013\n\003msg\030\005 \001(\t\"$\n\022TransferMessag" +
+      "eReq\022\016\n\006chatId\030\001 \001(\003\"i\n\010WithDraw\022\n\n\002id\030\001" +
+      " \001(\003\022\017\n\007orderNo\030\002 \001(\t\022\016\n\006userid\030\003 \001(\003\022\r\n" +
+      "\005money\030\004 \001(\t\022\016\n\006status\030\005 \001(\003\022\021\n\tapplyTim" +
+      "e\030\006 \001(\003\"6\n\022TransferMessageRsp\022 \n\004data\030\001 " +
+      "\003(\0132\022.api.core.WithDraw\",\n\030QueryChildByG" +
+      "roupRequest\022\020\n\010group_id\030\001 \001(\003\"C\n\031QueryCh" +
+      "ildByGroupResponse\022&\n\005group\030\001 \003(\0132\027.api." +
+      "common.WorkerGroup2\272\027\n\006Worker\022i\n\tDataQue" +
+      "ry\022\032.api.core.DataQueryRequest\032\033.api.cor" +
+      "e.DataQueryResponse\"#\272\276\031\037\010\377\003\030\001\262\006\n2022-12" +
+      "-10\322\014\ndata-query\022u\n\014QueryFronter\022\035.api.c" +
+      "ore.QueryFronterRequest\032\036.api.core.Query" +
+      "FronterResponse\"&\272\276\031\"\010\364\003\030\001\262\006\n2022-12-10\322" +
+      "\014\rquery-fronted\022d\n\005Query\022\034.api.core.Work" +
+      "erQueryRequest\032\035.api.core.WorkerQueryRes" +
+      "ponse\"\036\272\276\031\032\010\364\003\030\001\262\006\n2022-12-10\322\014\005query\022`\n" +
+      "\006Create\022\035.api.core.WorkerCreateRequest\032\026" +
+      ".google.protobuf.Empty\"\037\272\276\031\033\010\365\003\030\001\262\006\n2022" +
+      "-12-10\322\014\006create\022`\n\006Update\022\035.api.core.Wor" +
+      "kerUpdateRequest\032\026.google.protobuf.Empty" +
+      "\"\037\272\276\031\033\010\366\003\030\001\262\006\n2022-12-10\322\014\006update\022`\n\006Del" +
+      "ete\022\035.api.core.WorkerDeleteRequest\032\026.goo" +
+      "gle.protobuf.Empty\"\037\272\276\031\033\010\367\003\030\001\262\006\n2022-12-" +
+      "10\322\014\006delete\022k\n\010Transfer\022\037.api.core.Worke" +
+      "rTransferRequest\032\026.google.protobuf.Empty" +
+      "\"&\272\276\031\"\010\370\003\030\001\262\006\n2022-12-30\312\014\002\020\004\322\014\010transfer" +
+      "\022\226\001\n\020TransferConsults\022\'.api.core.WorkerT" +
+      "ransferConsultsRequest\032(.api.core.Worker" +
+      "TransferConsultsResponse\"/\272\276\031+\010\370\003\030\001\262\006\n20" +
+      "22-12-30\312\014\002\020\004\322\014\021transfer-Consults\022\207\001\n\017Ge" +
+      "tWorkerStatus\022 .api.core.GetWorkerStatus" +
+      "Request\032!.api.core.GetWorkerStatusRespon" +
+      "se\"/\272\276\031+\010\371\003\030\001\262\006\n2022-12-30\312\014\002\020\004\322\014\021get-wo" +
+      "rker-status\022|\n\017SetWorkerStatus\022 .api.cor" +
+      "e.SetWorkerStatusRequest\032\026.google.protob" +
+      "uf.Empty\"/\272\276\031+\010\372\003\030\001\262\006\n2022-12-30\312\014\002\020\004\322\014\021" +
+      "set-worker-status\022\202\001\n\021CheckWorkerStatus\022" +
+      "\".api.core.CheckWorkerStatusRequest\032\026.go" +
+      "ogle.protobuf.Empty\"1\272\276\031-\010\373\003\030\001\262\006\n2022-12" +
+      "-30\312\014\002\020\004\322\014\023check-worker-status\022e\n\010Passwo" +
+      "rd\022\031.api.core.PasswordRequest\032\026.google.p" +
+      "rotobuf.Empty\"&\272\276\031\"\010\374\003\030\001\262\006\n2023-01-09\312\014\002" +
+      "\020\004\322\014\010password\022y\n\016BlacklistApply\022\037.api.co" +
+      "re.BlacklistApplyRequest\032\026.google.protob" +
+      "uf.Empty\".\272\276\031*\010\375\003\030\001\262\006\n2023-01-10\312\014\002\020\004\322\014\020" +
+      "black-list-apply\022\177\n\020BlacklistConfirm\022!.a" +
+      "pi.core.BlacklistConfirmRequest\032\026.google" +
+      ".protobuf.Empty\"0\272\276\031,\010\376\003\030\001\262\006\n2023-01-10\312" +
+      "\014\002\020\004\322\014\022black-list-confirm\022\177\n\020BlacklistRe" +
+      "cover\022!.api.core.BlacklistRecoverRequest" +
+      "\032\026.google.protobuf.Empty\"0\272\276\031,\010\377\003\030\001\262\006\n20" +
+      "23-01-28\312\014\002\020\004\322\014\022black-list-recover\022\207\001\n\013Q" +
+      "ueryByPerm\022$.api.core.QuerySpecPermWorke" +
+      "rRequest\032%.api.core.QuerySpecPermWorkerR" +
+      "esponse\"+\272\276\031\'\010\200\004\030\001\262\006\n2023-01-10\312\014\002\020\004\322\014\rq" +
+      "uery-by-perm\022\231\001\n\030TryCleanupAssignedWorke" +
+      "r\022\026.google.protobuf.Empty\032*.api.core.Try" +
+      "CleanupAssignedWorkerResponse\"9\272\276\0315\010\201\004\030\001" +
+      "\262\006\n2023-02-09\312\014\002\001\004\322\014\033try-cleanup-assigne" +
+      "d-worker\022p\n\tQuerySelf\022\026.google.protobuf." +
+      "Empty\032!.api.core.WorkerQuerySelfResponse" +
+      "\"(\272\276\031$\010\202\004\030\001\262\006\n2023-03-04\312\014\002\020\004\322\014\nquery-se" +
+      "lf\022\205\001\n\017UnfreezeSession\022 .api.core.Unfree" +
+      "zeSessionRequest\032!.api.core.UnfreezeSess" +
+      "ionResponse\"-\272\276\031)\010\203\004\030\001\262\006\n2023-04-19\312\014\001\004\322" +
+      "\014\020unfreeze-session\022z\n\014QuerySession\022\035.api" +
+      ".core.QuerySessionRequest\032\036.api.core.Que" +
+      "rySessionResponse\"+\272\276\031\'\010\204\004\030\001\262\006\n2023-04-2" +
+      "1\312\014\002\020\004\322\014\rquery-session\022~\n\020CreateNimAccou" +
+      "nt\022\033.api.core.NIMAccountRequest\032\034.api.co" +
+      "re.NIMAccountResponse\"/\272\276\031+\010\204\004\030\001\262\006\n2023-" +
+      "11-06\312\014\002\020\004\322\014\021create-nimaccount\022u\n\rNotify" +
+      "Message\022\036.api.core.NotifyMessageRequest\032" +
+      "\026.google.protobuf.Empty\",\272\276\031(\010\205\004\030\001\262\006\n202" +
+      "4-01-09\312\014\002\002\004\322\014\016notify-message\022\203\001\n\022Transf" +
+      "erWithDraWal\022\034.api.core.TransferMessageR" +
+      "eq\032\034.api.core.TransferMessageRsp\"1\272\276\031-\010\205" +
+      "\004\030\001\262\006\n2024-04-05\312\014\002\002\004\322\014\023transfer-withdra" +
+      "wal\022\215\001\n\021QueryChildByGroup\022\".api.core.Que" +
+      "ryChildByGroupRequest\032#.api.core.QueryCh" +
+      "ildByGroupResponse\"/\272\276\031+\010\200\004\030\001\262\006\n2023-01-" +
+      "10\312\014\002\020\004\322\014\021query-group-child\032\"\272\276\031\036\272\006\006work" +
+      "er\312\014\001\020\322\014\016/tenant/workerBE\n\030com.teneasyCh" +
+      "at.api.coreZ\021wcs/api/core;core\272\276\031\024\242\006\004jef" +
+      "f\262\006\n2022-12-06b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -34335,7 +34427,7 @@ public final class WorkerOuterClass {
     internal_static_api_core_WorkerTransferRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_core_WorkerTransferRequest_descriptor,
-        new java.lang.String[] { "ChatId", "WorkerId", });
+        new java.lang.String[] { "ChatId", "WorkerId", "ConsultId", });
     internal_static_api_core_WorkerTransferConsultsRequest_descriptor =
       getDescriptor().getMessageTypes().get(10);
     internal_static_api_core_WorkerTransferConsultsRequest_fieldAccessorTable = new

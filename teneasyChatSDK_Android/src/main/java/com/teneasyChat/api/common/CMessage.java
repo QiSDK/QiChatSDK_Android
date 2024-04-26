@@ -9806,6 +9806,16 @@ public final class CMessage {
      * @return The state.
      */
     com.teneasyChat.api.common.CMessage.ChatState getState();
+
+    /**
+     * <pre>
+     * 咨询类型
+     * </pre>
+     *
+     * <code>int64 consult_id = 7;</code>
+     * @return The consultId.
+     */
+    long getConsultId();
   }
   /**
    * Protobuf type {@code api.common.MessageWorkerChanged}
@@ -10013,6 +10023,21 @@ public final class CMessage {
       return result == null ? com.teneasyChat.api.common.CMessage.ChatState.UNRECOGNIZED : result;
     }
 
+    public static final int CONSULT_ID_FIELD_NUMBER = 7;
+    private long consultId_ = 0L;
+    /**
+     * <pre>
+     * 咨询类型
+     * </pre>
+     *
+     * <code>int64 consult_id = 7;</code>
+     * @return The consultId.
+     */
+    @java.lang.Override
+    public long getConsultId() {
+      return consultId_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -10045,6 +10070,9 @@ public final class CMessage {
       if (state_ != com.teneasyChat.api.common.CMessage.ChatState.CHAT_STATE_COMMON.getNumber()) {
         output.writeEnum(6, state_);
       }
+      if (consultId_ != 0L) {
+        output.writeInt64(7, consultId_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -10075,6 +10103,10 @@ public final class CMessage {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(6, state_);
       }
+      if (consultId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(7, consultId_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -10101,6 +10133,8 @@ public final class CMessage {
       if (!getGreeting()
           .equals(other.getGreeting())) return false;
       if (state_ != other.state_) return false;
+      if (getConsultId()
+          != other.getConsultId()) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -10125,6 +10159,9 @@ public final class CMessage {
       hash = (53 * hash) + getGreeting().hashCode();
       hash = (37 * hash) + STATE_FIELD_NUMBER;
       hash = (53 * hash) + state_;
+      hash = (37 * hash) + CONSULT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getConsultId());
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -10262,6 +10299,7 @@ public final class CMessage {
         avatar_ = "";
         greeting_ = "";
         state_ = 0;
+        consultId_ = 0L;
         return this;
       }
 
@@ -10313,6 +10351,9 @@ public final class CMessage {
         if (((from_bitField0_ & 0x00000020) != 0)) {
           result.state_ = state_;
         }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.consultId_ = consultId_;
+        }
       }
 
       @java.lang.Override
@@ -10350,6 +10391,9 @@ public final class CMessage {
         }
         if (other.state_ != 0) {
           setStateValue(other.getStateValue());
+        }
+        if (other.getConsultId() != 0L) {
+          setConsultId(other.getConsultId());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -10407,6 +10451,11 @@ public final class CMessage {
                 bitField0_ |= 0x00000020;
                 break;
               } // case 48
+              case 56: {
+                consultId_ = input.readInt64();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 56
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -10773,6 +10822,50 @@ public final class CMessage {
       public Builder clearState() {
         bitField0_ = (bitField0_ & ~0x00000020);
         state_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private long consultId_ ;
+      /**
+       * <pre>
+       * 咨询类型
+       * </pre>
+       *
+       * <code>int64 consult_id = 7;</code>
+       * @return The consultId.
+       */
+      @java.lang.Override
+      public long getConsultId() {
+        return consultId_;
+      }
+      /**
+       * <pre>
+       * 咨询类型
+       * </pre>
+       *
+       * <code>int64 consult_id = 7;</code>
+       * @param value The consultId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setConsultId(long value) {
+
+        consultId_ = value;
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 咨询类型
+       * </pre>
+       *
+       * <code>int64 consult_id = 7;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearConsultId() {
+        bitField0_ = (bitField0_ & ~0x00000040);
+        consultId_ = 0L;
         onChanged();
         return this;
       }
@@ -15445,6 +15538,16 @@ public final class CMessage {
      */
     com.google.protobuf.ByteString
         getWorkerAvatarBytes();
+
+    /**
+     * <pre>
+     * 咨询类型
+     * </pre>
+     *
+     * <code>uint32 consult_id = 4;</code>
+     * @return The consultId.
+     */
+    int getConsultId();
   }
   /**
    * Protobuf type {@code api.common.WorkerTransfer}
@@ -15574,6 +15677,21 @@ public final class CMessage {
       }
     }
 
+    public static final int CONSULT_ID_FIELD_NUMBER = 4;
+    private int consultId_ = 0;
+    /**
+     * <pre>
+     * 咨询类型
+     * </pre>
+     *
+     * <code>uint32 consult_id = 4;</code>
+     * @return The consultId.
+     */
+    @java.lang.Override
+    public int getConsultId() {
+      return consultId_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -15597,6 +15715,9 @@ public final class CMessage {
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(workerAvatar_)) {
         com.google.protobuf.GeneratedMessage.writeString(output, 3, workerAvatar_);
       }
+      if (consultId_ != 0) {
+        output.writeUInt32(4, consultId_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -15615,6 +15736,10 @@ public final class CMessage {
       }
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(workerAvatar_)) {
         size += com.google.protobuf.GeneratedMessage.computeStringSize(3, workerAvatar_);
+      }
+      if (consultId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(4, consultId_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -15637,6 +15762,8 @@ public final class CMessage {
           .equals(other.getWorkerName())) return false;
       if (!getWorkerAvatar()
           .equals(other.getWorkerAvatar())) return false;
+      if (getConsultId()
+          != other.getConsultId()) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -15654,6 +15781,8 @@ public final class CMessage {
       hash = (53 * hash) + getWorkerName().hashCode();
       hash = (37 * hash) + WORKER_AVATAR_FIELD_NUMBER;
       hash = (53 * hash) + getWorkerAvatar().hashCode();
+      hash = (37 * hash) + CONSULT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getConsultId();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -15788,6 +15917,7 @@ public final class CMessage {
         workerId_ = 0;
         workerName_ = "";
         workerAvatar_ = "";
+        consultId_ = 0;
         return this;
       }
 
@@ -15830,6 +15960,9 @@ public final class CMessage {
         if (((from_bitField0_ & 0x00000004) != 0)) {
           result.workerAvatar_ = workerAvatar_;
         }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.consultId_ = consultId_;
+        }
       }
 
       @java.lang.Override
@@ -15856,6 +15989,9 @@ public final class CMessage {
           workerAvatar_ = other.workerAvatar_;
           bitField0_ |= 0x00000004;
           onChanged();
+        }
+        if (other.getConsultId() != 0) {
+          setConsultId(other.getConsultId());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -15898,6 +16034,11 @@ public final class CMessage {
                 bitField0_ |= 0x00000004;
                 break;
               } // case 26
+              case 32: {
+                consultId_ = input.readUInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 32
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -16087,6 +16228,50 @@ public final class CMessage {
         checkByteStringIsUtf8(value);
         workerAvatar_ = value;
         bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      private int consultId_ ;
+      /**
+       * <pre>
+       * 咨询类型
+       * </pre>
+       *
+       * <code>uint32 consult_id = 4;</code>
+       * @return The consultId.
+       */
+      @java.lang.Override
+      public int getConsultId() {
+        return consultId_;
+      }
+      /**
+       * <pre>
+       * 咨询类型
+       * </pre>
+       *
+       * <code>uint32 consult_id = 4;</code>
+       * @param value The consultId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setConsultId(int value) {
+
+        consultId_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 咨询类型
+       * </pre>
+       *
+       * <code>uint32 consult_id = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearConsultId() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        consultId_ = 0;
         onChanged();
         return this;
       }
@@ -17185,35 +17370,36 @@ public final class CMessage {
       "delay_sec\030\003 \001(\005\022*\n\002qa\030\004 \003(\0132\036.api.common" +
       ".MessageAutoReplyQA\"-\n\nMessageKey\022\017\n\007cha" +
       "t_id\030\001 \001(\003\022\016\n\006msg_id\030\002 \001(\003\"1\n\024MessageAut" +
-      "oReplyFlag\022\n\n\002id\030\001 \001(\003\022\r\n\005qa_id\030\002 \001(\005\"\231\001" +
+      "oReplyFlag\022\n\n\002id\030\001 \001(\003\022\r\n\005qa_id\030\002 \001(\005\"\255\001" +
       "\n\024MessageWorkerChanged\022\030\n\020worker_client_" +
       "id\030\001 \001(\003\022\021\n\tworker_id\030\002 \001(\005\022\014\n\004name\030\003 \001(" +
       "\t\022\016\n\006avatar\030\004 \001(\t\022\020\n\010greeting\030\005 \001(\t\022$\n\005S" +
-      "tate\030\006 \001(\0162\025.api.common.ChatState\"\326\006\n\007Me" +
-      "ssage\022\017\n\007chat_id\030\001 \001(\003\022\016\n\006msg_id\030\002 \001(\003\022," +
-      "\n\010msg_time\030\003 \001(\0132\032.google.protobuf.Times" +
-      "tamp\022\016\n\006sender\030\004 \001(\003\022\024\n\014reply_msg_id\030\005 \001" +
-      "(\003\022*\n\006msg_op\030\006 \001(\0162\032.api.common.MessageO" +
-      "perate\022\016\n\006worker\030\007 \001(\005\0229\n\017auto_reply_fla" +
-      "g\030\010 \001(\0132 .api.common.MessageAutoReplyFla" +
-      "g\022*\n\007msg_fmt\030\t \001(\0162\031.api.common.MessageF" +
-      "ormat\022\022\n\nconsult_id\030\n \001(\003\022-\n\007content\030d \001" +
-      "(\0132\032.api.common.MessageContentH\000\022)\n\005imag" +
-      "e\030e \001(\0132\030.api.common.MessageImageH\000\022)\n\005a" +
-      "udio\030f \001(\0132\030.api.common.MessageAudioH\000\022)" +
-      "\n\005video\030g \001(\0132\030.api.common.MessageVideoH" +
-      "\000\022%\n\003geo\030h \001(\0132\026.api.common.MessageGeoH\000" +
-      "\022\'\n\004file\030i \001(\0132\027.api.common.MessageFileH" +
-      "\000\0222\n\014worker_trans\030j \001(\0132\032.api.common.Wor" +
-      "kerTransferH\000\0225\n\017blacklist_apply\030k \001(\0132\032" +
-      ".api.common.BlackListApplyH\000\0229\n\021blacklis" +
-      "t_confirm\030l \001(\0132\034.api.common.BlackListCo" +
-      "nfirmH\000\0222\n\nauto_reply\030m \001(\0132\034.api.common" +
-      ".MessageAutoReplyH\000\022:\n\016worker_changed\030n " +
-      "\001(\0132 .api.common.MessageWorkerChangedH\000B" +
-      "\t\n\007payload\"O\n\016WorkerTransfer\022\021\n\tworker_i" +
-      "d\030\001 \001(\005\022\023\n\013worker_name\030\002 \001(\t\022\025\n\rworker_a" +
-      "vatar\030\003 \001(\t\"#\n\016BlackListApply\022\021\n\tworker_" +
+      "tate\030\006 \001(\0162\025.api.common.ChatState\022\022\n\ncon" +
+      "sult_id\030\007 \001(\003\"\326\006\n\007Message\022\017\n\007chat_id\030\001 \001" +
+      "(\003\022\016\n\006msg_id\030\002 \001(\003\022,\n\010msg_time\030\003 \001(\0132\032.g" +
+      "oogle.protobuf.Timestamp\022\016\n\006sender\030\004 \001(\003" +
+      "\022\024\n\014reply_msg_id\030\005 \001(\003\022*\n\006msg_op\030\006 \001(\0162\032" +
+      ".api.common.MessageOperate\022\016\n\006worker\030\007 \001" +
+      "(\005\0229\n\017auto_reply_flag\030\010 \001(\0132 .api.common" +
+      ".MessageAutoReplyFlag\022*\n\007msg_fmt\030\t \001(\0162\031" +
+      ".api.common.MessageFormat\022\022\n\nconsult_id\030" +
+      "\n \001(\003\022-\n\007content\030d \001(\0132\032.api.common.Mess" +
+      "ageContentH\000\022)\n\005image\030e \001(\0132\030.api.common" +
+      ".MessageImageH\000\022)\n\005audio\030f \001(\0132\030.api.com" +
+      "mon.MessageAudioH\000\022)\n\005video\030g \001(\0132\030.api." +
+      "common.MessageVideoH\000\022%\n\003geo\030h \001(\0132\026.api" +
+      ".common.MessageGeoH\000\022\'\n\004file\030i \001(\0132\027.api" +
+      ".common.MessageFileH\000\0222\n\014worker_trans\030j " +
+      "\001(\0132\032.api.common.WorkerTransferH\000\0225\n\017bla" +
+      "cklist_apply\030k \001(\0132\032.api.common.BlackLis" +
+      "tApplyH\000\0229\n\021blacklist_confirm\030l \001(\0132\034.ap" +
+      "i.common.BlackListConfirmH\000\0222\n\nauto_repl" +
+      "y\030m \001(\0132\034.api.common.MessageAutoReplyH\000\022" +
+      ":\n\016worker_changed\030n \001(\0132 .api.common.Mes" +
+      "sageWorkerChangedH\000B\t\n\007payload\"c\n\016Worker" +
+      "Transfer\022\021\n\tworker_id\030\001 \001(\005\022\023\n\013worker_na" +
+      "me\030\002 \001(\t\022\025\n\rworker_avatar\030\003 \001(\t\022\022\n\nconsu" +
+      "lt_id\030\004 \001(\r\"#\n\016BlackListApply\022\021\n\tworker_" +
       "id\030\001 \001(\005\"%\n\020BlackListConfirm\022\021\n\tworker_i" +
       "d\030\001 \001(\005*\322\001\n\tChatState\022\025\n\021CHAT_STATE_COMM" +
       "ON\020\000\022\027\n\023CHAT_STATE_TRANSFER\020\001\022\037\n\033CHAT_ST" +
@@ -17311,7 +17497,7 @@ public final class CMessage {
     internal_static_api_common_MessageWorkerChanged_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_common_MessageWorkerChanged_descriptor,
-        new java.lang.String[] { "WorkerClientId", "WorkerId", "Name", "Avatar", "Greeting", "State", });
+        new java.lang.String[] { "WorkerClientId", "WorkerId", "Name", "Avatar", "Greeting", "State", "ConsultId", });
     internal_static_api_common_Message_descriptor =
       getDescriptor().getMessageTypes().get(12);
     internal_static_api_common_Message_fieldAccessorTable = new
@@ -17323,7 +17509,7 @@ public final class CMessage {
     internal_static_api_common_WorkerTransfer_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_common_WorkerTransfer_descriptor,
-        new java.lang.String[] { "WorkerId", "WorkerName", "WorkerAvatar", });
+        new java.lang.String[] { "WorkerId", "WorkerName", "WorkerAvatar", "ConsultId", });
     internal_static_api_common_BlackListApply_descriptor =
       getDescriptor().getMessageTypes().get(14);
     internal_static_api_common_BlackListApply_fieldAccessorTable = new

@@ -9644,6 +9644,16 @@ public final class GGateway {
      * @return The reason.
      */
     com.teneasyChat.gateway.GGateway.WorkerChangedReason getReason();
+
+    /**
+     * <pre>
+     * 咨询id
+     * </pre>
+     *
+     * <code>int64 consult_id = 6;</code>
+     * @return The consultId.
+     */
+    long getConsultId();
   }
   /**
    * Protobuf type {@code gateway.SCWorkerChanged}
@@ -9803,6 +9813,21 @@ public final class GGateway {
       return result == null ? com.teneasyChat.gateway.GGateway.WorkerChangedReason.UNRECOGNIZED : result;
     }
 
+    public static final int CONSULT_ID_FIELD_NUMBER = 6;
+    private long consultId_ = 0L;
+    /**
+     * <pre>
+     * 咨询id
+     * </pre>
+     *
+     * <code>int64 consult_id = 6;</code>
+     * @return The consultId.
+     */
+    @java.lang.Override
+    public long getConsultId() {
+      return consultId_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -9832,6 +9857,9 @@ public final class GGateway {
       if (reason_ != com.teneasyChat.gateway.GGateway.WorkerChangedReason.WorkerChangedReasonUnknown.getNumber()) {
         output.writeEnum(5, reason_);
       }
+      if (consultId_ != 0L) {
+        output.writeInt64(6, consultId_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -9859,6 +9887,10 @@ public final class GGateway {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(5, reason_);
       }
+      if (consultId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(6, consultId_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -9883,6 +9915,8 @@ public final class GGateway {
       if (getTarget()
           != other.getTarget()) return false;
       if (reason_ != other.reason_) return false;
+      if (getConsultId()
+          != other.getConsultId()) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -9905,6 +9939,9 @@ public final class GGateway {
           getTarget());
       hash = (37 * hash) + REASON_FIELD_NUMBER;
       hash = (53 * hash) + reason_;
+      hash = (37 * hash) + CONSULT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getConsultId());
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -10041,6 +10078,7 @@ public final class GGateway {
         workerAvatar_ = "";
         target_ = 0L;
         reason_ = 0;
+        consultId_ = 0L;
         return this;
       }
 
@@ -10089,6 +10127,9 @@ public final class GGateway {
         if (((from_bitField0_ & 0x00000010) != 0)) {
           result.reason_ = reason_;
         }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.consultId_ = consultId_;
+        }
       }
 
       @java.lang.Override
@@ -10121,6 +10162,9 @@ public final class GGateway {
         }
         if (other.reason_ != 0) {
           setReasonValue(other.getReasonValue());
+        }
+        if (other.getConsultId() != 0L) {
+          setConsultId(other.getConsultId());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -10173,6 +10217,11 @@ public final class GGateway {
                 bitField0_ |= 0x00000010;
                 break;
               } // case 40
+              case 48: {
+                consultId_ = input.readInt64();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 48
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -10447,6 +10496,50 @@ public final class GGateway {
       public Builder clearReason() {
         bitField0_ = (bitField0_ & ~0x00000010);
         reason_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private long consultId_ ;
+      /**
+       * <pre>
+       * 咨询id
+       * </pre>
+       *
+       * <code>int64 consult_id = 6;</code>
+       * @return The consultId.
+       */
+      @java.lang.Override
+      public long getConsultId() {
+        return consultId_;
+      }
+      /**
+       * <pre>
+       * 咨询id
+       * </pre>
+       *
+       * <code>int64 consult_id = 6;</code>
+       * @param value The consultId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setConsultId(long value) {
+
+        consultId_ = value;
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 咨询id
+       * </pre>
+       *
+       * <code>int64 consult_id = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearConsultId() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        consultId_ = 0L;
         onChanged();
         return this;
       }
@@ -12926,24 +13019,25 @@ public final class GGateway {
       "(\0132\024.api.common.ChatItem\022\016\n\006target\030\005 \001(\003" +
       "\"d\n\027SCUserConnectionChanged\022\021\n\tclient_id" +
       "\030\001 \001(\003\022&\n\004conn\030\002 \001(\0162\030.api.common.Connec" +
-      "tState\022\016\n\006target\030\003 \001(\003\"\216\001\n\017SCWorkerChang" +
+      "tState\022\016\n\006target\030\003 \001(\003\"\242\001\n\017SCWorkerChang" +
       "ed\022\021\n\tworker_id\030\001 \001(\005\022\023\n\013worker_name\030\002 \001" +
       "(\t\022\025\n\rworker_avatar\030\003 \001(\t\022\016\n\006target\030\004 \001(" +
       "\003\022,\n\006reason\030\005 \001(\0162\034.gateway.WorkerChange" +
-      "dReason\"=\n\006SCKick\022\016\n\006target\030\001 \001(\003\022#\n\006rea" +
-      "son\030\002 \001(\0162\023.gateway.KickReason\"U\n\020SCSimS" +
-      "endMessage\022!\n\004msgs\030\001 \003(\0132\023.api.common.Me" +
-      "ssage\022\016\n\006worker\030\002 \001(\003\022\016\n\006target\030\003 \001(\003\"M\n" +
-      "\030SCSimSendMessageToWorker\022!\n\004msgs\030\001 \003(\0132" +
-      "\023.api.common.Message\022\016\n\006target\030\002 \001(\003*\255\001\n" +
-      "\023WorkerChangedReason\022\036\n\032WorkerChangedRea" +
-      "sonUnknown\020\000\022)\n%WorkerChangedReasonMissA" +
-      "ssignedWorker\020\001\022%\n!WorkerChangedReasonTr" +
-      "ansferWorker\020\002\022$\n WorkerChangedReasonWor" +
-      "kerDeleted\020\003*=\n\nKickReason\022\024\n\020KickReason" +
-      "Common\020\000\022\031\n\025KickReasonPermChanged\020\001B@\n\027c" +
-      "om.teneasyChat.gatewayZ%wcs/service/gate" +
-      "way/protocol;protocolb\006proto3"
+      "dReason\022\022\n\nconsult_id\030\006 \001(\003\"=\n\006SCKick\022\016\n" +
+      "\006target\030\001 \001(\003\022#\n\006reason\030\002 \001(\0162\023.gateway." +
+      "KickReason\"U\n\020SCSimSendMessage\022!\n\004msgs\030\001" +
+      " \003(\0132\023.api.common.Message\022\016\n\006worker\030\002 \001(" +
+      "\003\022\016\n\006target\030\003 \001(\003\"M\n\030SCSimSendMessageToW" +
+      "orker\022!\n\004msgs\030\001 \003(\0132\023.api.common.Message" +
+      "\022\016\n\006target\030\002 \001(\003*\255\001\n\023WorkerChangedReason" +
+      "\022\036\n\032WorkerChangedReasonUnknown\020\000\022)\n%Work" +
+      "erChangedReasonMissAssignedWorker\020\001\022%\n!W" +
+      "orkerChangedReasonTransferWorker\020\002\022$\n Wo" +
+      "rkerChangedReasonWorkerDeleted\020\003*=\n\nKick" +
+      "Reason\022\024\n\020KickReasonCommon\020\000\022\031\n\025KickReas" +
+      "onPermChanged\020\001B@\n\027com.teneasyChat.gatew" +
+      "ayZ%wcs/service/gateway/protocol;protoco" +
+      "lb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -13042,7 +13136,7 @@ public final class GGateway {
     internal_static_gateway_SCWorkerChanged_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_gateway_SCWorkerChanged_descriptor,
-        new java.lang.String[] { "WorkerId", "WorkerName", "WorkerAvatar", "Target", "Reason", });
+        new java.lang.String[] { "WorkerId", "WorkerName", "WorkerAvatar", "Target", "Reason", "ConsultId", });
     internal_static_gateway_SCKick_descriptor =
       getDescriptor().getMessageTypes().get(15);
     internal_static_gateway_SCKick_fieldAccessorTable = new
