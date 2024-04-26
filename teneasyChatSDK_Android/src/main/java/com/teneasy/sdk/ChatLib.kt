@@ -69,6 +69,7 @@ class ChatLib constructor(token:String, baseUrl:String = "", userId: Int, sign:S
     var payloadId = 0L
     private val msgList: MutableMap<Long, CMessage.Message> = mutableMapOf()
     var replyMsgId: Long = 0L
+    var consultId: Long = 0L
 
     init {
         this.chatId = chatID
@@ -155,6 +156,7 @@ rd === 随即数 Math.floor(Math.random() * 1000000)
         val msg = CMessage.Message.newBuilder()
         msg.msgId = MsgId
         msg.chatId = chatId
+        msg.setConsultId(this.consultId)
         msg.setMsgOp(CMessage.MessageOperate.MSG_OP_DELETE)
         sendingMessage = msg.build()
         sendingMessage?.let {
@@ -166,13 +168,16 @@ rd === 随即数 Math.floor(Math.random() * 1000000)
      * 发送文本类型的消息
      * @param msg   消息内容
      */
-   private fun sendTextMessage(msg: String) {
+   private fun sendTextMessage(msg: String, consultId: Long = 0) {
+
+       this.consultId = consultId
         //第一层
         val content = CMessage.MessageContent.newBuilder()
         content.data = msg
 
         //第二层
         val msg = CMessage.Message.newBuilder()
+        msg.setConsultId(this.consultId)
         msg.setContent(content)
         msg.sender = 0
         msg.replyMsgId = this.replyMsgId
@@ -194,6 +199,7 @@ rd === 随即数 Math.floor(Math.random() * 1000000)
 
         //第二层
         val msg = CMessage.Message.newBuilder()
+        msg.setConsultId(this.consultId)
         msg.setImage(content)
         msg.replyMsgId = this.replyMsgId
         msg.sender = 0
@@ -215,6 +221,7 @@ rd === 随即数 Math.floor(Math.random() * 1000000)
 
         //第二层
         val msg = CMessage.Message.newBuilder()
+        msg.setConsultId(this.consultId)
         msg.setVideo(content)
         msg.sender = 0
         msg.replyMsgId = this.replyMsgId
@@ -236,6 +243,7 @@ rd === 随即数 Math.floor(Math.random() * 1000000)
 
         //第二层
         val msg = CMessage.Message.newBuilder()
+        msg.setConsultId(this.consultId)
         msg.setAudio(content)
         msg.sender = 0
         msg.replyMsgId = this.replyMsgId
@@ -257,6 +265,7 @@ rd === 随即数 Math.floor(Math.random() * 1000000)
 
         //第二层
         val msg = CMessage.Message.newBuilder()
+        msg.setConsultId(this.consultId)
         msg.setFile(content)
         msg.sender = 0
         msg.replyMsgId = this.replyMsgId
@@ -286,7 +295,6 @@ rd === 随即数 Math.floor(Math.random() * 1000000)
             failedToSend()
             return
         }
-
         // 第三层
         val cSendMsg = GGateway.CSSendMessage.newBuilder()
         cSendMsg.msg = cMsg
@@ -392,6 +400,7 @@ rd === 随即数 Math.floor(Math.random() * 1000000)
                 Log.i(TAG, "消息ID: ${scMsg.msgId}")
             } else if(payLoad.act == GAction.Action.ActionSCWorkerChanged){
                 val scMsg = GGateway.SCWorkerChanged.parseFrom(msgData)
+                consultId = scMsg.consultId
                 scMsg.apply {
                     listener?.workChanged(scMsg);
                 }
