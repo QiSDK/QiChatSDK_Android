@@ -8,13 +8,23 @@
         android:layout_height="match_parent"
         tools:context=".MainActivity" >
 
+        <EditText
+            android:id="@+id/etInput"
+            android:hint="输入线路txt文件地址，以逗号分开"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            app:layout_constraintTop_toTopOf="parent"
+            >
+
+        </EditText>
+
     <androidx.constraintlayout.utils.widget.MotionButton
         android:id="@+id/btn_send"
         android:layout_marginTop="20dp"
         android:layout_width="wrap_content"
         android:layout_height="36dp"
         android:background="@color/yellow"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etInput"
         app:layout_constraintLeft_toLeftOf="parent"
         android:textColor="@color/black"
         android:layout_marginEnd="5dp"

@@ -169,9 +169,7 @@ rd === 随即数 Math.floor(Math.random() * 1000000)
      * 发送文本类型的消息
      * @param msg   消息内容
      */
-   private fun sendTextMessage(msg: String, consultId: Long = 0) {
-
-       this.consultId = consultId
+   private fun sendTextMessage(msg: String) {
         //第一层
         val content = CMessage.MessageContent.newBuilder()
         content.data = msg

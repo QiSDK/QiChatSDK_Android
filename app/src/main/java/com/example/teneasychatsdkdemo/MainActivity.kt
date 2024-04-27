@@ -82,7 +82,7 @@ class MainActivity : AppCompatActivity(), TeneasySDKDelegate {
         val sayHello = "你好！今天去哪玩？"
         //val msgItem = chatLib.composeALocalMessage(sayHello)
         //addMsgItem(msgItem)
-        chatLib.sendMessage(sayHello, CMessage.MessageFormat.MSG_TEXT, 100)
+        chatLib.sendMessage(sayHello, CMessage.MessageFormat.MSG_TEXT, 100, 12)
         val payloadId = chatLib.payloadId
         val sendingMsg = chatLib.sendingMessage
 
