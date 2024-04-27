@@ -134,7 +134,7 @@ rd === 随即数 Math.floor(Math.random() * 1000000)
      */
      fun sendMessage(msg: String, type: MessageFormat, consultId: Long, replyMsgId: Long = 0) {
         this.replyMsgId = replyMsgId;
-         this.consultId = counsultId;
+         this.consultId = consultId;
       if (type == MessageFormat.MSG_TEXT){
           sendTextMessage(msg)
       }else if (type == MessageFormat.MSG_IMG){
