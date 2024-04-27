@@ -43,35 +43,39 @@ class MainActivity : AppCompatActivity(), TeneasySDKDelegate {
 
         binding.btnReadTxt.setOnClickListener {
             var lines = mutableListOf<String>("")
-            var lineStr =  binding.etInput.text.toString()
-            if (lineStr.isNotEmpty()){
-                var  ar = lineStr.split(",").toTypedArray()
+            var lineStr = binding.etInput.text.toString()
+            if (lineStr.isNotEmpty()) {
+                var ar = lineStr.split(",").toTypedArray()
                 lines.clear()
-                for (l in ar){
+                for (l in ar) {
                     if (l.trim().isNotEmpty()) {
                         lines.add(l.trim())
                     }
                 }
-            }else{
+            } else {
                 binding.etInput.hint = "请输入线路，以逗号分开";
             }
 
             if (!verifyLines(lines.toTypedArray())) {
-
                 return@setOnClickListener
             }
 
-           var lib = ReadTxtLib(lines.toTypedArray(), object : ReadTextDelegate {
-               override fun receivedMsg(msg: String) {
-                   this@MainActivity.runOnUiThread {
-                       binding.tvContent.append(msg)
-                   }
-               }
-           })
+            var lib = ReadTxtLib(lines.toTypedArray(), object : ReadTextDelegate {
+                override fun receivedMsg(msg: String) {
+                    appendText(msg)
+                }
+            })
             lib.getLine()
 
-            binding.btnTestLine.visibility = View.GONE
-            binding.btnSend.visibility = View.GONE
+//            binding.btnTestLine.visibility = View.GONE
+//            binding.btnSend.visibility = View.GONE
+        }
+    }
+
+    private fun appendText(msg: String){
+        this@MainActivity.runOnUiThread {
+            binding.tvContent.append(msg)
+            binding.tvContent.scrollTo(0, binding.tvContent.height + 30)
         }
     }
 
@@ -95,23 +99,25 @@ class MainActivity : AppCompatActivity(), TeneasySDKDelegate {
             return
         }
 
+        val shanghuNo = binding.etShangHuNo.text.toString();
+        if (shanghuNo.isEmpty()){
+            Toast.makeText(this, "请输入商户号", Toast.LENGTH_LONG).show()
+            return
+        }
+
         val lineLib = LineLib(lines.toTypedArray(),  object : LineDelegate {
             override fun useTheLine(line: Line) {
                 Log.i("LineLib", "使用线路："+ line)
-                this@MainActivity.runOnUiThread{
-                    binding.tvContent.append("Api: " + line.VITE_API_BASE_URL + "\n")
-                    binding.tvContent.append("Img: " + line.VITE_IMG_URL + "\n")
-                    binding.tvContent.append("Wss: " + line.VITE_WSS_HOST + "\n")
-                }
+                appendText("Api: " + line.VITE_API_BASE_URL + "\n")
+                appendText("Img: " + line.VITE_IMG_URL + "\n")
+                appendText("Wss: " + line.VITE_WSS_HOST + "\n")
                 initChatSDK(line.VITE_WSS_HOST)
             }
             override fun lineError(error: Result) {
-                this@MainActivity.runOnUiThread{
-                    binding.tvContent.append(error.msg + "\n")
-                    Toast.makeText(this@MainActivity, error.msg, Toast.LENGTH_LONG).show()
-                }
+                appendText(error.msg + "\n")
+                Toast.makeText(this@MainActivity, error.msg, Toast.LENGTH_LONG).show()
             }
-        }, 123)
+        }, shanghuNo.toInt())
         lineLib.getLine()
     }
 
@@ -159,9 +165,9 @@ class MainActivity : AppCompatActivity(), TeneasySDKDelegate {
 
     override fun receivedMsg(msg: CMessage.Message) {
         if (msg.content != null) {
-            binding.tvContent.append(msg.content.toString() + "\n")
+            appendText(msg.content.toString() + "\n")
         }else if (msg.video != null){
-            binding.tvContent.append(msg.video.toString() + "\n")
+            appendText(msg.video.toString() + "\n")
         }
         println(msg)
     }
@@ -172,24 +178,24 @@ class MainActivity : AppCompatActivity(), TeneasySDKDelegate {
         println("payloadId："  + payloadId.toString()   +suc)
         runOnUiThread({
             if (msg.content.toString() != "") {
-                binding.tvContent.append(msg.content.toString() )
+                appendText(msg.content.toString() + "\n")
             }else if (msg.video.toString() != ""){
-                binding.tvContent.append(msg.video.toString() )
+                appendText(msg.video.toString() + "\n")
             }else if (msg.audio.toString() != ""){
-                binding.tvContent.append(msg.audio.toString() )
+                appendText(msg.audio.toString() + "\n")
             }
 
             if (msgId > 0){
                 lastMsgId = msgId
             }
-            binding.tvContent.append(payloadId.toString() + " msgId:" + msgId + " " + errMsg + " "+ suc +"\n")
+            appendText(payloadId.toString() + " msgId:" + msgId + " " + errMsg + " "+ suc +"\n")
         })
     }
 
     override fun systemMsg(msg: Result) {
         //TODO("Not yet implemented")
         Log.i("MainAct systemMsg", msg.msg)
-        binding.tvContent.append(msg.msg + "\n")
+        appendText(msg.msg + "\n")
     }
 
     //成功连接，并返回相关信息，例如workerId
@@ -197,13 +203,12 @@ class MainActivity : AppCompatActivity(), TeneasySDKDelegate {
         val workerId = c.workerId
         Log.i("MainAct connected", "成功连接")
         //chatLib.sendMessage("1.mp4", CMessage.MessageFormat.MSG_VIDEO)
-        runOnUiThread({
-            binding.tvContent.append("成功连接\n")
-        })
+        appendText("成功连接\n")
     }
 
     override fun workChanged(msg: GGateway.SCWorkerChanged) {
         Log.i("MainAct connected", "已经更换客服")
+        appendText("已经更换客服\n")
     }
 
     fun verifyLines(lines : Array<String>) : Boolean{

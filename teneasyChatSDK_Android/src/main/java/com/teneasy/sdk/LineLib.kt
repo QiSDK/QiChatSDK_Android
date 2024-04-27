@@ -23,7 +23,7 @@ interface LineDelegate {
 
 class LineLib constructor(lines: Array<String>, linstener: LineDelegate, tenantId: Int) {
     private val lineList = lines
-    private val TAG = "LineLib"
+    private val TAG = "LineLib:"
     private val listener: LineDelegate? = linstener
     private var usedLine = false
     private var retryTimes = 0
