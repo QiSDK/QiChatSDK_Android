@@ -67,6 +67,7 @@
             android:id="@+id/tv_content"
             app:layout_constraintTop_toBottomOf="@id/btnReadTxt"
             android:lines="50"
+            android:scrollbars = "vertical"
             android:textIsSelectable="true"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
