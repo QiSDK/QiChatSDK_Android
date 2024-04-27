@@ -3,8 +3,11 @@ package com.example.teneasychatsdk
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.Toast
 import com.example.teneasychatsdk.databinding.ActivityMainBinding
+import com.example.teneasychatsdkdemo.ReadTextDelegate
+import com.example.teneasychatsdkdemo.ReadTxtLib
 import com.teneasy.sdk.ChatLib
 import com.teneasy.sdk.Line
 import com.teneasy.sdk.LineDelegate
@@ -33,9 +36,66 @@ class MainActivity : AppCompatActivity(), TeneasySDKDelegate {
 
         //测试的线路
         //val lines = arrayOf("https://qlqiniu.quyou.tech/gw3config.txt","https://ydqlacc.weletter05.com/gw3config.txt")
-        var lines = arrayOf("https://ydqlacc.weletter05.com/gw3config.txt", "https://qlqiniu.quyou.tech/gw3config.txt")
 
-        val lineLib = LineLib(lines,  object : LineDelegate {
+        binding.btnTestLine.setOnClickListener {
+            initLine()
+        }
+
+        binding.btnReadTxt.setOnClickListener {
+            var lines = mutableListOf<String>("")
+            var lineStr =  binding.etInput.text.toString()
+            if (lineStr.isNotEmpty()){
+                var  ar = lineStr.split(",").toTypedArray()
+                lines.clear()
+                for (l in ar){
+                    if (l.trim().isNotEmpty()) {
+                        lines.add(l.trim())
+                    }
+                }
+            }else{
+                binding.etInput.hint = "请输入线路，以逗号分开";
+            }
+
+            if (!verifyLines(lines.toTypedArray())) {
+
+                return@setOnClickListener
+            }
+
+           var lib = ReadTxtLib(lines.toTypedArray(), object : ReadTextDelegate {
+               override fun receivedMsg(msg: String) {
+                   this@MainActivity.runOnUiThread {
+                       binding.tvContent.append(msg)
+                   }
+               }
+           })
+            lib.getLine()
+
+            binding.btnTestLine.visibility = View.GONE
+            binding.btnSend.visibility = View.GONE
+        }
+    }
+
+    private fun initLine(){
+        var lines = mutableListOf<String>("")
+        var lineStr =  binding.etInput.text.toString()
+        if (lineStr.isNotEmpty()){
+            var  ar = lineStr.split(",").toTypedArray()
+            lines.clear()
+            for (l in ar){
+                if (l.trim().isNotEmpty()) {
+                    lines.add(l.trim())
+                }
+            }
+        }else{
+            binding.etInput.hint = "请输入线路，以逗号分开";
+        }
+
+        if (!verifyLines(lines.toTypedArray())) {
+
+            return
+        }
+
+        val lineLib = LineLib(lines.toTypedArray(),  object : LineDelegate {
             override fun useTheLine(line: Line) {
                 Log.i("LineLib", "使用线路："+ line)
                 this@MainActivity.runOnUiThread{
@@ -144,6 +204,17 @@ class MainActivity : AppCompatActivity(), TeneasySDKDelegate {
 
     override fun workChanged(msg: GGateway.SCWorkerChanged) {
         Log.i("MainAct connected", "已经更换客服")
+    }
+
+    fun verifyLines(lines : Array<String>) : Boolean{
+        var verify = true
+        for (line in lines){
+            if (!line.startsWith("https:")){
+                Toast.makeText(this, "线路格式错误", Toast.LENGTH_LONG).show()
+                verify = false
+            }
+        }
+        return verify
     }
 
     override fun onDestroy() {

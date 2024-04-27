@@ -10,13 +10,28 @@
 
         <EditText
             android:id="@+id/etInput"
+            android:layout_margin="10dp"
             android:hint="输入线路txt文件地址，以逗号分开"
+            android:text="https://ydqlacc.weletter05.com/gw3config.txt"
             android:layout_width="match_parent"
             android:layout_height="150dp"
-            app:layout_constraintTop_toTopOf="parent"
-            >
+            app:layout_constraintTop_toTopOf="parent">
 
         </EditText>
+
+        <androidx.constraintlayout.utils.widget.MotionButton
+            android:id="@+id/btnTestLine"
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:background="@color/yellow"
+            app:layout_constraintTop_toBottomOf="@id/etInput"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:textColor="@color/black"
+            android:layout_marginEnd="5dp"
+            android:visibility="gone"
+            android:text="测试线路"
+            />
 
     <androidx.constraintlayout.utils.widget.MotionButton
         android:id="@+id/btn_send"
@@ -24,18 +39,35 @@
         android:layout_width="wrap_content"
         android:layout_height="36dp"
         android:background="@color/yellow"
-        app:layout_constraintTop_toBottomOf="@id/etInput"
+        app:layout_constraintTop_toBottomOf="@id/btnTestLine"
         app:layout_constraintLeft_toLeftOf="parent"
         android:textColor="@color/black"
         android:layout_marginEnd="5dp"
-        android:text="测试"
+        android:visibility="gone"
+        android:text="发消息"
         />
+
+        <androidx.constraintlayout.utils.widget.MotionButton
+            android:id="@+id/btnReadTxt"
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:background="@color/yellow"
+            app:layout_constraintTop_toBottomOf="@id/btn_send"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:textColor="@color/black"
+            android:layout_marginEnd="5dp"
+            android:text="读取txt"
+            />
+
+
 
         <androidx.appcompat.widget.AppCompatTextView
 
             android:id="@+id/tv_content"
-            app:layout_constraintTop_toBottomOf="@id/btn_send"
+            app:layout_constraintTop_toBottomOf="@id/btnReadTxt"
             android:lines="50"
+            android:textIsSelectable="true"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
