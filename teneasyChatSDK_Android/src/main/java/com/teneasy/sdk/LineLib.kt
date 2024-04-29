@@ -167,6 +167,7 @@ class LineLib constructor(lines: Array<String>, linstener: LineDelegate, tenantI
         }else{
             result.code = 1008
             result.msg = "没有可用线路"
+            retryTimes = 0
             listener?.lineError(result)
         }
     }

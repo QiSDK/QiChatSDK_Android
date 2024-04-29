@@ -132,7 +132,13 @@ class MainActivity : AppCompatActivity(), TeneasySDKDelegate {
 //                }
             }
             override fun lineError(error: Result) {
-                appendText(error.msg + "\n")
+                if (error.code == 1008){
+                    runOnUiThread({
+                        binding.tvContent.text = error.msg + "\n";
+                    });
+                }else {
+                    appendText(error.msg + "\n")
+                }
                 //Toast.makeText(this@MainActivity, error.msg, Toast.LENGTH_LONG).show()
             }
         }, shanghuNo.toInt())
