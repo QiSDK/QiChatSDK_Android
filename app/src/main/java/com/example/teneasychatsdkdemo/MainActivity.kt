@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import com.example.teneasychatsdk.databinding.ActivityMainBinding
 import com.example.teneasychatsdkdemo.ReadTextDelegate
@@ -70,11 +71,19 @@ class MainActivity : AppCompatActivity(), TeneasySDKDelegate {
 //            binding.btnTestLine.visibility = View.GONE
 //            binding.btnSend.visibility = View.GONE
         }
+
+        binding.root.setOnTouchListener(
+            View.OnTouchListener { v, event ->
+                binding.etInput.clearFocus()
+                val imm = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
+                imm.hideSoftInputFromWindow(binding.etInput.windowToken, 0)
+                false
+        })
     }
 
     private fun appendText(msg: String){
         this@MainActivity.runOnUiThread {
-            binding.tvContent.append(msg)
+            binding.tvContent.append(msg + "\n")
             binding.tvContent.scrollTo(0, binding.tvContent.height + 30)
         }
     }
@@ -115,7 +124,7 @@ class MainActivity : AppCompatActivity(), TeneasySDKDelegate {
             }
             override fun lineError(error: Result) {
                 appendText(error.msg + "\n")
-                Toast.makeText(this@MainActivity, error.msg, Toast.LENGTH_LONG).show()
+                //Toast.makeText(this@MainActivity, error.msg, Toast.LENGTH_LONG).show()
             }
         }, shanghuNo.toInt())
         lineLib.getLine()

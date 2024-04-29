@@ -118,7 +118,7 @@ rd === 随即数 Math.floor(Math.random() * 1000000)
                 }
                 override fun onClose(code: Int, reason: String, remote: Boolean) {
                     result.code = 1001
-                    result.msg = "已断开通信"
+                    result.msg = "已断开通信，请检查Cert等参数"
                     listener?.systemMsg(result)
                 }
                 override fun onError(ex: Exception) {
