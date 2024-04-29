@@ -39,10 +39,12 @@ class MainActivity : AppCompatActivity(), TeneasySDKDelegate {
         //val lines = arrayOf("https://qlqiniu.quyou.tech/gw3config.txt","https://ydqlacc.weletter05.com/gw3config.txt")
 
         binding.btnTestLine.setOnClickListener {
+            //binding.tvContent.text = ""
             initLine()
         }
 
         binding.btnReadTxt.setOnClickListener {
+            binding.tvContent.text = ""
             var lines = mutableListOf<String>("")
             var lineStr = binding.etInput.text.toString()
             if (lineStr.isNotEmpty()) {
@@ -79,6 +81,10 @@ class MainActivity : AppCompatActivity(), TeneasySDKDelegate {
                 imm.hideSoftInputFromWindow(binding.etInput.windowToken, 0)
                 false
         })
+
+//        if (!BuildConfig.DEBUG) {
+           binding.btnSend.visibility = View.GONE
+//        }
     }
 
     private fun appendText(msg: String){
@@ -120,7 +126,10 @@ class MainActivity : AppCompatActivity(), TeneasySDKDelegate {
                 appendText("Api: " + line.VITE_API_BASE_URL + "\n")
                 appendText("Img: " + line.VITE_IMG_URL + "\n")
                 appendText("Wss: " + line.VITE_WSS_HOST + "\n")
-                initChatSDK(line.VITE_WSS_HOST)
+
+//                if (BuildConfig.DEBUG) {
+//                    initChatSDK(line.VITE_WSS_HOST)
+//                }
             }
             override fun lineError(error: Result) {
                 appendText(error.msg + "\n")

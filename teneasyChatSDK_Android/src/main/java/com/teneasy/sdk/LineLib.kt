@@ -34,7 +34,7 @@ class LineLib constructor(lines: Array<String>, linstener: LineDelegate, tenantI
         val verifyBody = VerifyBody("wcs", tenantId)
         val gson = Gson()
         bodyStr = gson.toJson(verifyBody)
-        retryTimes = 0
+        //retryTimes = 0
         usedLine = false
 
         Log.i(TAG, lineList.toString())
