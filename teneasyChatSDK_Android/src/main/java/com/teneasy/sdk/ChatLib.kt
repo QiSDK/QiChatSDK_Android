@@ -117,12 +117,14 @@ rd === 随即数 Math.floor(Math.random() * 1000000)
                     listener?.systemMsg(result)
                 }
                 override fun onClose(code: Int, reason: String, remote: Boolean) {
-                    result.code = 1001
+                    result.code = 1002
                     result.msg = "已断开通信，请检查Cert等参数"
                     listener?.systemMsg(result)
                 }
                 override fun onError(ex: Exception) {
-                    ex.printStackTrace()
+                    result.code = 1004
+                    result.msg = ex.message ?:"未知错误"
+                    //ex.printStackTrace()
                 }
             }
         socket.connect()
@@ -290,8 +292,8 @@ rd === 随即数 Math.floor(Math.random() * 1000000)
      */
     private fun doSendMsg(cMsg: CMessage.Message, act: GAction.Action = GAction.Action.ActionCSSendMsg, payload_Id: Long = 0) {
         if(!isConnection()) {
-            makeConnect()
             failedToSend()
+            makeConnect()
             return
         }
         // 第三层
@@ -335,8 +337,9 @@ rd === 随即数 Math.floor(Math.random() * 1000000)
      * @param data
      */
     private fun receiveMsg(data: ByteArray) {
-        if(data.size == 1)
+        if(data.size == 1) {
             Log.i(TAG, "在别处登录了")
+        }
         else {
             val payLoad = GPayload.Payload.parseFrom(data)
             val msgData = payLoad.data
@@ -444,6 +447,10 @@ rd === 随即数 Math.floor(Math.random() * 1000000)
 //            eventBus.setData(it)
 //            EventBus.getDefault().post(eventBus)
 //        }
+        var result = Result();
+        result.code = 1004
+        result.msg = "已断开通信"
+        listener?.systemMsg(result)
     }
 
     /**
