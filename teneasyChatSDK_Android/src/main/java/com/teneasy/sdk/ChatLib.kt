@@ -340,7 +340,7 @@ rd === 随即数 Math.floor(Math.random() * 1000000)
         if(data.size == 1) {
             Log.i(TAG, "在别处登录了/或无效的Token")
             var result = Result();
-            result.code = 1002
+            result.code = 1003
             result.msg = "在别处登录了/或无效的Token"
             listener?.systemMsg(result)
         }
