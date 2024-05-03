@@ -338,7 +338,11 @@ rd === 随即数 Math.floor(Math.random() * 1000000)
      */
     private fun receiveMsg(data: ByteArray) {
         if(data.size == 1) {
-            Log.i(TAG, "在别处登录了")
+            Log.i(TAG, "在别处登录了/或无效的Token")
+            var result = Result();
+            result.code = 1002
+            result.msg = "在别处登录了/或无效的Token"
+            listener?.systemMsg(result)
         }
         else {
             val payLoad = GPayload.Payload.parseFrom(data)
