@@ -173,3 +173,7 @@ override fun workChanged(msg: GGateway.SCWorkerChanged) {
    Log.i("MainAct connected", "已经更换客服")
 }
 ```
+**发送心跳：**
+```
+chatLib.sendHeartBeat()
+```
