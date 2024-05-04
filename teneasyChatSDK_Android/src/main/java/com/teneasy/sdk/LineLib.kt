@@ -111,7 +111,7 @@ class LineLib constructor(lines: Array<String>, linstener: LineDelegate, tenantI
             if (found || usedLine){
                 break
             }
-            val url = "${line.VITE_API_BASE_URL}" + "/v1/api/verify?r=$r"
+            val url = line.VITE_API_BASE_URL + "/v1/api/verify?r=$r"
             val client: OkHttpClient = OkHttpClient.Builder().connectTimeout(2, TimeUnit.SECONDS).build()
             val requestBody = bodyStr.toRequestBody("application/json".toMediaTypeOrNull())
             val request: Request = Request.Builder()
