@@ -146,27 +146,27 @@ class MainActivity : AppCompatActivity(), TeneasySDKDelegate {
     }
 
     private fun initChatSDK(baseUrl: String){
-        //var wssUrl = "wss://" + baseUrl + "/v1/gateway/h5?token="
-        var wssUrl = "wss://" + baseUrl + "/v1/gateway/h5?cert="
-        /*
-        老token，一直有效，很好
-        CCcQARgOICIowqaSjeIw.9rO3unQwFrUUa-vJ6HvUQAbiAZN7XWBbaE_Oyd48C0Ae4xhzWWSriIGZZdVSvOajS1h_RFlQHZiFzadgBBuwDQ
-
-        CH0QARiX9w4gogEo9MS-08wx.R07hSs5oXQxe9s0bV0WsaislYcvHDNYvUYT-2JNEo4wcBC1LNEHmHAFSjCoY8g60oW31zZiIs1kZhejQEaEhBQ
-
-       CH0QARib9w4gogEo8_nL1cwx.gXxoS2IK7cv4JWQb8LRmGI-cSEFHwfyBmoyErwSw0h1BXdkotxH4OgoiHvi6B6CON8LX7ei5AKwn3v1epXB9Cg
-         */
-        /*
-        1125324  1125397 1125417
-        //1125324, "9zgd9YUc"
-         */
-        chatLib = ChatLib("COYBEAUYASDwASja5o2V9DE.9Fhv9o1HueJOkqzylMJoUggw7PjsoBtF38-vncusatONba9rgIv3LcrMZj7kjTA_79IvBOYpGTx-ygEt2wpSDA", wssUrl, 1125324, "9zgd9YUc")
+        var wssUrl = "wss://" + baseUrl + "/v1/gateway/h5?"
+        chatLib = ChatLib("COYBEAUYASDwASja5o2V9DE.9Fhv9o1HueJOkqzylMJoUggw7PjsoBtF38-vncusatONba9rgIv3LcrMZj7kjTA_79IvBOYpGTx-ygEt2wpSDA", "", wssUrl, 1125324, "9zgd9YUc")
         chatLib.listener = this
         chatLib.makeConnect()
 
         binding.btnSend.setOnClickListener {
             sendMsg()
         }
+
+        /*
+      老token，一直有效，很好
+      CCcQARgOICIowqaSjeIw.9rO3unQwFrUUa-vJ6HvUQAbiAZN7XWBbaE_Oyd48C0Ae4xhzWWSriIGZZdVSvOajS1h_RFlQHZiFzadgBBuwDQ
+
+      CH0QARiX9w4gogEo9MS-08wx.R07hSs5oXQxe9s0bV0WsaislYcvHDNYvUYT-2JNEo4wcBC1LNEHmHAFSjCoY8g60oW31zZiIs1kZhejQEaEhBQ
+
+     CH0QARib9w4gogEo8_nL1cwx.gXxoS2IK7cv4JWQb8LRmGI-cSEFHwfyBmoyErwSw0h1BXdkotxH4OgoiHvi6B6CON8LX7ei5AKwn3v1epXB9Cg
+       */
+        /*
+        1125324  1125397 1125417
+        //1125324, "9zgd9YUc"
+         */
     }
 
     private fun sendMsg(){
