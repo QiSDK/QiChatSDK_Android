@@ -49,7 +49,7 @@ class ReadTxtLib constructor(lines: Array<String>, lisener: ReadTextDelegate) {
             val call: okhttp3.Call = client.newCall(request)
             call.enqueue(object : Callback {
                 override fun onFailure(call: okhttp3.Call, e: IOException) {
-
+println(e.message)
                 }
                 override fun onResponse(call: okhttp3.Call, response: Response) {
                     var f = false
