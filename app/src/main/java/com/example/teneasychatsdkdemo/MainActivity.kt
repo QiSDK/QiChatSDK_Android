@@ -128,7 +128,6 @@ class MainActivity : AppCompatActivity(), TeneasySDKDelegate {
                 appendText("Wss: " + line.VITE_WSS_HOST + "\n")
 
                 if (BuildConfig.DEBUG) {
-                    //initChatSDK("csapi.xdev.stream")
                     initChatSDK(line.VITE_WSS_HOST)
                 }
             }
@@ -147,7 +146,8 @@ class MainActivity : AppCompatActivity(), TeneasySDKDelegate {
     }
 
     private fun initChatSDK(baseUrl: String){
-        var wssUrl = "wss://" + baseUrl + "/v1/gateway/h5?token="
+        //var wssUrl = "wss://" + baseUrl + "/v1/gateway/h5?token="
+        var wssUrl = "wss://" + baseUrl + "/v1/gateway/h5?cert="
         /*
         老token，一直有效，很好
         CCcQARgOICIowqaSjeIw.9rO3unQwFrUUa-vJ6HvUQAbiAZN7XWBbaE_Oyd48C0Ae4xhzWWSriIGZZdVSvOajS1h_RFlQHZiFzadgBBuwDQ
@@ -160,10 +160,7 @@ class MainActivity : AppCompatActivity(), TeneasySDKDelegate {
         1125324  1125397 1125417
         //1125324, "9zgd9YUc"
          */
-        //海鹏给我的
-        chatLib = ChatLib("CCcQARgKIBwotaa8vuAw.TM241ffJsCLGVTPSv-G65MuEKXuOcPqUKzpVtiDoAnOCORwC0AbAQoATJ1z_tZaWDil9iz2dE4q5TyIwNcIVCQ", wssUrl, 1125324, "9zgd9YUc")
-        //Vencen给我的
-        //chatLib = ChatLib("COEBEAUYASDjASiewpj-8TE.-1R9Mw9xzDNrSxoQ5owopxciklACjBUe43NANibVuy-XPlhqnhAOEaZpxjvTyJ6n79P5bUBCGxO7PcEFQ9p9Cg", wssUrl, 364227, "zgd9YUc")
+        chatLib = ChatLib("COYBEAUYASDwASja5o2V9DE.9Fhv9o1HueJOkqzylMJoUggw7PjsoBtF38-vncusatONba9rgIv3LcrMZj7kjTA_79IvBOYpGTx-ygEt2wpSDA", wssUrl, 1125324, "9zgd9YUc")
         chatLib.listener = this
         chatLib.makeConnect()
 
