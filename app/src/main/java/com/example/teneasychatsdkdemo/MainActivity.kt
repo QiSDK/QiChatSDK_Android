@@ -105,7 +105,7 @@ class MainActivity : AppCompatActivity(), TeneasySDKDelegate {
             return
         }
 
-        val lineLib = LineDetectLib(lineStr,  object : LineDetectDelegate {
+        val lineLib = LineDetectLib("httpo://csh5.hfxg.xyz,http://csh5.hfxg.xyz,https://csapi.xdev.stream,https://xx.xdev.stream",  object : LineDetectDelegate {
             override fun useTheLine(line: String) {
                 Log.i("LineLib", "使用线路："+ line)
                 appendText("Wss: " + line + "\n")

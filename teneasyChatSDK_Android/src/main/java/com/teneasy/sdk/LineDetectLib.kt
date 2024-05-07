@@ -10,6 +10,7 @@ import okhttp3.Response
 import java.io.IOException
 import java.util.concurrent.TimeUnit
 import android.util.Base64
+import android.util.Patterns
 import android.widget.Toast
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.RequestBody
@@ -44,10 +45,10 @@ class LineDetectLib constructor(lines: String, linstener: LineDetectDelegate, te
             if (found || usedLine){
                 break
             }
-            if (!line.startsWith("http")){
+            if (!Patterns.WEB_URL.matcher(line).matches()){
                 val result = Result();
                 result.code = 1009
-                result.msg = line + " 线路获取失败，必须以https开头"
+                result.msg = line + " 无效的url"
                 listener?.lineError(result)
                 continue
             }
