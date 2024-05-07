@@ -10,108 +10,48 @@ import okhttp3.Response
 import java.io.IOException
 import java.util.concurrent.TimeUnit
 import android.util.Base64
+import android.widget.Toast
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.RequestBody
 import okhttp3.RequestBody.Companion.toRequestBody
 import kotlin.random.Random
 
-interface LineDelegate {
+interface LineDetectDelegate {
     // 收到消息
-    fun useTheLine(line: Line)
+    fun useTheLine(line: String)
     fun lineError(error: Result)
 }
 
-private class LineLib constructor(lines: Array<String>, linstener: LineDelegate, tenantId: Int) {
-    private val lineList = lines
+class LineDetectLib constructor(lines: String, linstener: LineDetectDelegate, tenantId: Int) {
+    private val lineList = lines.split(",")
     private val TAG = "LineLib:"
-    private val listener: LineDelegate? = linstener
+    private val listener: LineDetectDelegate? = linstener
     private var usedLine = false
     private var retryTimes = 0
     private var tenantId = tenantId
     private var bodyStr = ""
-    //  private val
+
     fun getLine() {
         val verifyBody = VerifyBody("wcs", tenantId)
         val gson = Gson()
         bodyStr = gson.toJson(verifyBody)
-        //retryTimes = 0
-        usedLine = false
 
         Log.i(TAG, lineList.toString())
         var found = false
         var r = Random.nextInt(100000)
-        var myIndex = 0
-        for (hostUrl in lineList) {
-            if (usedLine){
-                break
-            }
-            val url = "$hostUrl?r=$r"
-            val client: OkHttpClient = OkHttpClient.Builder().connectTimeout(2, TimeUnit.SECONDS).build()
-            val request: Request = Request.Builder().url(url).build()
-            val call: okhttp3.Call = client.newCall(request)
-            call.enqueue(object : Callback {
-                override fun onFailure(call: okhttp3.Call, e: IOException) {
-                    myIndex += 1
-                    if (myIndex == lineList.size){
-                        failedAndRetry()
-                    }
-                }
-                override fun onResponse(call: okhttp3.Call, response: Response) {
-                    var f = false
-
-                    if (response.isSuccessful) {
-                        //未加密
-                        //var body = response.body?.string()
-
-                        //有加密
-                        var contents  = response.body?.string()
-                        var body = contents?.let { decryptBase64ToString(it) }
-
-                        if (body != null && body.contains("VITE_API_BASE_URL")) {
-                            val gson = Gson()
-                            val appConfig = gson.fromJson(body, AppConfig::class.java)
-                            if (appConfig != null) {
-                                val lines = appConfig.lines
-                                var lineStrs = mutableListOf<Line>();
-                                for (l in lines){
-                                    if (l.VITE_API_BASE_URL.contains("https")){
-                                        lineStrs.add(l)
-                                        f = true
-                                    }
-                                }
-                                Log.i(TAG, "txt："+ call.request().url.host)
-                                step2(lineStrs, myIndex)
-                            }
-                        }
-
-                        myIndex += 1
-
-                        if (!f){
-                            if (myIndex == lineList.size){
-                                failedAndRetry()
-                            }
-                        }
-                    }else{
-                        myIndex += 1
-                        if (myIndex == lineList.size){
-                            failedAndRetry()
-                        }
-                    }
-                }
-            })
-        }
-    }
-
-    fun step2(lines: MutableList<Line>, index: Int) {
-        Log.i(TAG, lines.toString())
-        var found = false
-        var r = Random.nextInt(100000)
         var step2Index = 0
-        for (line in lines) {
+        for (line in lineList) {
             if (found || usedLine){
                 break
             }
-            val url = line.VITE_API_BASE_URL + "/v1/api/verify?r=$r"
+            if (!line.startsWith("http")){
+                val result = Result();
+                result.code = 1009
+                result.msg = line + " 线路获取失败，必须以https开头"
+                listener?.lineError(result)
+                continue
+            }
+            val url = line.trim() + "/v1/api/verify?r=$r"
             val client: OkHttpClient = OkHttpClient.Builder().connectTimeout(2, TimeUnit.SECONDS).build()
             val requestBody = bodyStr.toRequestBody("application/json".toMediaTypeOrNull())
             val request: Request = Request.Builder()
@@ -122,7 +62,7 @@ private class LineLib constructor(lines: Array<String>, linstener: LineDelegate,
                 override fun onFailure(call: okhttp3.Call, e: IOException) {
                     //print(call.request().url.host + " line failed")
                     step2Index += 1
-                    if (step2Index == lines.size && (index + 1) == lineList.count()){
+                    if (step2Index == lineList.size){
                         failedAndRetry()
                     }
                 }
@@ -137,15 +77,15 @@ private class LineLib constructor(lines: Array<String>, linstener: LineDelegate,
                            found = true
                            f = true
                            //listener?.useTheLine(call.request().url.host)
-                           listener?.useTheLine(line)
+                           listener?.useTheLine(call.request().url.host)
                            Log.i(TAG, "使用线路："+ call.request().url.host)
-                           Log.i(TAG, "使用线路wss："+ line.VITE_WSS_HOST)
+                           Log.i(TAG, "使用线路wss："+ line)
                        }else{
                            Log.i(TAG, "线路已使用")
                        }
                     }
                     step2Index += 1
-                    if (!f && step2Index == lines.size && (index + 1) == lineList.count()){
+                    if (!f && step2Index == lineList.size){
                         failedAndRetry()
                     }
                 }

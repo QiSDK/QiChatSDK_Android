@@ -12,7 +12,8 @@ import com.example.teneasychatsdkdemo.ReadTxtLib
 import com.teneasy.sdk.ChatLib
 import com.teneasy.sdk.Line
 import com.teneasy.sdk.LineDelegate
-import com.teneasy.sdk.LineLib
+import com.teneasy.sdk.LineDetectDelegate
+import com.teneasy.sdk.LineDetectLib
 import com.teneasy.sdk.Result
 import com.teneasy.sdk.TeneasySDKDelegate
 import com.teneasyChat.api.common.CMessage
@@ -97,22 +98,6 @@ class MainActivity : AppCompatActivity(), TeneasySDKDelegate {
     private fun initLine(){
         var lines = mutableListOf<String>("")
         var lineStr =  binding.etInput.text.toString()
-        if (lineStr.isNotEmpty()){
-            var  ar = lineStr.split(",").toTypedArray()
-            lines.clear()
-            for (l in ar){
-                if (l.trim().isNotEmpty()) {
-                    lines.add(l.trim())
-                }
-            }
-        }else{
-            binding.etInput.hint = "请输入线路，以逗号分开";
-        }
-
-        if (!verifyLines(lines.toTypedArray())) {
-
-            return
-        }
 
         val shanghuNo = binding.etShangHuNo.text.toString();
         if (shanghuNo.isEmpty()){
@@ -120,15 +105,12 @@ class MainActivity : AppCompatActivity(), TeneasySDKDelegate {
             return
         }
 
-        val lineLib = LineLib(lines.toTypedArray(),  object : LineDelegate {
-            override fun useTheLine(line: Line) {
+        val lineLib = LineDetectLib(lineStr,  object : LineDetectDelegate {
+            override fun useTheLine(line: String) {
                 Log.i("LineLib", "使用线路："+ line)
-                appendText("Api: " + line.VITE_API_BASE_URL + "\n")
-                appendText("Img: " + line.VITE_IMG_URL + "\n")
-                appendText("Wss: " + line.VITE_WSS_HOST + "\n")
-
+                appendText("Wss: " + line + "\n")
                 if (BuildConfig.DEBUG) {
-                    initChatSDK(line.VITE_WSS_HOST)
+                    initChatSDK(line)
                 }
             }
             override fun lineError(error: Result) {
@@ -139,7 +121,6 @@ class MainActivity : AppCompatActivity(), TeneasySDKDelegate {
                 }else {
                     appendText(error.msg + "\n")
                 }
-                //Toast.makeText(this@MainActivity, error.msg, Toast.LENGTH_LONG).show()
             }
         }, shanghuNo.toInt())
         lineLib.getLine()
