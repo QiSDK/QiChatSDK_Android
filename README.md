@@ -11,7 +11,7 @@ repositories {
    }
 }
 
-implementation 'com.github.QiSDK:QiChatSDK_Android:1.2.8'
+implementation 'com.github.QiSDK:QiChatSDK_Android:1.2.9'
 （版本号会不断递增，文档只是例子)
 ```
 
@@ -21,21 +21,15 @@ implementation 'com.github.QiSDK:QiChatSDK_Android:1.2.8'
 **侦测线路：**
 ```
 override fun onCreate(savedInstanceState: Bundle?) {
-
-val lines = arrayOf(["https://qlqiniu.quyou.tech/gw3config.txt","https://ydqlacc.weletter05.com/gw3config.txt"]) ;
-val lineLib = LineLib(lines, object : LineDelegate {
-   override fun useTheLine(line: Line) {
-       initChatSDK(line.VITE_WSS_HOST)
-   }
-   override fun lineError(error: Result) {
-       this@MainActivity.runOnUiThread{
-           //binding.tvContent.append(error.message + "\n")
-           Toast.makeText(this@MainActivity, error, Toast.LENGTH_LONG).show()
-       }
-   }
-}, 123) //123是商户id
-lineLib.getLine()
-}
+//线路地址，以逗号分开
+ val lineLib = LineDetectLib("http://www.yy.net,http://xxx.com",  object : LineDetectDelegate {
+            override fun useTheLine(line: String) {
+                    initChatSDK(line)
+            }
+            override fun lineError(error: Result) {
+            }
+        }, 123) //123是商户号
+        lineLib.getLine()
 ```
 
 
