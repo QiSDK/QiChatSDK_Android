@@ -11,7 +11,7 @@ repositories {
    }
 }
 
-implementation 'com.github.QiSDK:QiChatSDK_Android:1.2.7'
+implementation 'com.github.QiSDK:QiChatSDK_Android:1.2.8'
 （版本号会不断递增，文档只是例子)
 ```
 
@@ -44,14 +44,11 @@ lineLib.getLine()
 private lateinit var chatLib: ChatLib
 
 private fun initChatSDK(baseUrl: String){
-   var wssUrl = "wss://" + baseUrl + "/v1/gateway/h5?token="
-
-// 上线前token需要替换为真实token, 第二个参数baseUrl也需要替换，第三个参数是userid, 第四个参数Sign
-
-chatLib = ChatLib("CCcQARgOICIowqaSjeIw.9rO3unQwFrUUa-vJ6HvUQAbiAZN7XWBbaE_Oyd48C0Ae4xhzWWSriIGZZdVSvOajS1h_RFlQHZiFzadgBBuwDQ", wssUrl, 1125324, "9zgd9YUc")
-
-chatLib.listener = this
-chatLib?.makeConnect()
+    var wssUrl = "wss://" + baseUrl + "/v1/gateway/h5?"
+   //第四个参数是userid, 第五个参数是Sign
+   chatLib = ChatLib("cert", "token", wssUrl, 1125324, "9zgd9YUc")
+   chatLib.listener = this
+   chatLib?.makeConnect()
 }
 ```
 
