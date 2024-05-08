@@ -49,6 +49,8 @@ class LineDetectLib constructor(lines: String, linstener: LineDetectDelegate, te
                 val result = Result();
                 result.code = 1009
                 result.msg = line + " 无效的url"
+                Log.i(TAG, line + " 无效的url")
+                step2Index += 1
                 listener?.lineError(result)
                 continue
             }
@@ -66,6 +68,7 @@ class LineDetectLib constructor(lines: String, linstener: LineDetectDelegate, te
                     if (step2Index == lineList.size){
                         failedAndRetry()
                     }
+                    Log.i(TAG, "检测线路失败："+ url)
                 }
                 override fun onResponse(call: okhttp3.Call, response: Response) {
                     var f = false

@@ -104,8 +104,9 @@ class MainActivity : AppCompatActivity(), TeneasySDKDelegate {
             Toast.makeText(this, "请输入商户号", Toast.LENGTH_LONG).show()
             return
         }
-
-        val lineLib = LineDetectLib("httpo://csh5.hfxg.xyz,http://csh5.hfxg.xyz,https://csapi.xdev.stream,https://xx.xdev.stream",  object : LineDetectDelegate {
+//httos://csh5.hfxg.xyz,https://csapi.dev.stream
+        //httpo://csh5.hfxg.xyz,http://csh5.hfxg.xyz,https://csapi.xdev.stream,https://xx.xdev.stream
+        val lineLib = LineDetectLib("httos://csh5.hfxg.xyz,https://csapi.dev.stream",  object : LineDetectDelegate {
             override fun useTheLine(line: String) {
                 Log.i("LineLib", "使用线路："+ line)
                 appendText("Wss: " + line + "\n")
@@ -116,7 +117,8 @@ class MainActivity : AppCompatActivity(), TeneasySDKDelegate {
             override fun lineError(error: Result) {
                 if (error.code == 1008){
                     runOnUiThread({
-                        binding.tvContent.text = error.msg + "\n";
+                        //binding.tvContent.text = error.msg + "\n";
+                        appendText(error.msg + "\n")
                     });
                 }else {
                     appendText(error.msg + "\n")
