@@ -85,6 +85,7 @@ class ChatLib constructor(cert: String, token:String, baseUrl:String = "", userI
     private val msgList: MutableMap<Long, CMessage.Message> = mutableMapOf()
     var replyMsgId: Long = 0L
     var consultId: Long = 0L
+    private var timer: Timer? = null
 
     init {
         this.chatId = chatID
@@ -136,16 +137,11 @@ rd === 随即数 Math.floor(Math.random() * 1000000)
                     listener?.systemMsg(result)
                 }
                 override fun onClose(code: Int, reason: String, remote: Boolean) {
-                    result.code = code
-                    if (code == 0){
-                        result.code = 1006
-                    }
-                    result.msg = "已断开通信"
-                    listener?.systemMsg(result)
+                    disConnected()
                 }
                 override fun onError(ex: Exception) {
-                    result.code = 1004
-                    result.msg = ex.message ?:"未知错误"
+                    disConnected()
+                    println(ex.message ?:"未知错误")
                     //ex.printStackTrace()
                 }
             }
@@ -318,7 +314,7 @@ rd === 随即数 Math.floor(Math.random() * 1000000)
      */
     private fun doSendMsg(cMsg: CMessage.Message, act: GAction.Action = GAction.Action.ActionCSSendMsg, payload_Id: Long = 0) {
         if(!isConnection()) {
-            failedToSend()
+            disConnected()
             makeConnect()
             return
         }
@@ -390,6 +386,7 @@ rd === 随即数 Math.floor(Math.random() * 1000000)
                 payloadId = payLoad.id
                 print("初始payloadId:" + payloadId + "\n")
                 listener?.connected(msg)
+                startTimer()
             } else if(payLoad.act == GAction.Action.ActionForward) {
                 val msg = GGateway.CSForward.parseFrom(msgData)
                 Log.i(TAG, "forward: ${msg.data}")
@@ -468,25 +465,40 @@ rd === 随即数 Math.floor(Math.random() * 1000000)
 
         return cMsg.build()
     }
-
-
-    private fun failedToSend(){
-//        sendingMessageItem?.let {
-//            var eventBus = MessageEventBus<MessageItem>()
-//            it.sendStatus = MessageSendState.发送失败
-//            eventBus.setData(it)
-//            EventBus.getDefault().post(eventBus)
-//        }
+    
+    private fun disConnected(){
         var result = Result();
-        result.code = 1004
+        result.code = 1006
         result.msg = "已断开通信"
         listener?.systemMsg(result)
+        closeTimer()
+    }
+
+    // 启动计时器，持续调用心跳方法
+    private fun startTimer() {
+        closeTimer()
+        timer?.schedule(object : TimerTask() {
+            override fun run() {
+                //需要执行的任务
+                sendHeartBeat()
+            }
+        }, 0,30000)    //每隔5秒发送心跳
+    }
+
+    // 关闭计时器
+    private fun closeTimer() {
+        if(timer != null) {
+            timer?.cancel()
+            timer = null
+        }
     }
 
     /**
      * 关闭socket连接，在停止使用时，需调用该方法。
      */
     fun disConnect(){
+        closeTimer()
+        if (socket == null) return
         socket.close()
     }
 }

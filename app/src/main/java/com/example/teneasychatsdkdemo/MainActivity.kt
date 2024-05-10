@@ -106,7 +106,7 @@ class MainActivity : AppCompatActivity(), TeneasySDKDelegate {
         }
 //httos://csh5.hfxg.xyz,https://csapi.dev.stream
         //httpo://csh5.hfxg.xyz,http://csh5.hfxg.xyz,https://csapi.xdev.stream,https://xx.xdev.stream
-        val lineLib = LineDetectLib("httos://csh5.hfxg.xyz,https://csapi.dev.stream",  object : LineDetectDelegate {
+        val lineLib = LineDetectLib("https://csh5.hfxg.xyz,https://csapi.xdev.stream",  object : LineDetectDelegate {
             override fun useTheLine(line: String) {
                 Log.i("LineLib", "使用线路："+ line)
                 appendText("Wss: " + line + "\n")
@@ -200,6 +200,12 @@ class MainActivity : AppCompatActivity(), TeneasySDKDelegate {
         })
     }
 
+    override fun msgDeleted(msg: CMessage.Message, payloadId: Long, msgId: Long, errMsg: String) {
+        runOnUiThread({
+            appendText("删除成功")
+        })
+    }
+
     override fun systemMsg(msg: Result) {
         //TODO("Not yet implemented")
         Log.i("MainAct systemMsg", msg.msg)
@@ -216,7 +222,7 @@ class MainActivity : AppCompatActivity(), TeneasySDKDelegate {
 
     override fun workChanged(msg: GGateway.SCWorkerChanged) {
         Log.i("MainAct connected", "已经更换客服")
-        appendText("已经更换客服\n")
+        //appendText("已经更换客服\n")
     }
 
     fun verifyLines(lines : Array<String>) : Boolean{
