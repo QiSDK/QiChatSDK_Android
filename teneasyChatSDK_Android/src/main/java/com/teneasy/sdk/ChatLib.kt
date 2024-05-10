@@ -391,7 +391,7 @@ rd === 随即数 Math.floor(Math.random() * 1000000)
                 val recvMsg = GGateway.SCRecvMessage.parseFrom(msgData)
                 //收到对方撤回消息
                 if (recvMsg.msg.msgOp == CMessage.MessageOperate.MSG_OP_DELETE){
-                    listener?.msgReceipt(recvMsg.msg, payLoad.id, -1)
+                    listener?.msgDeleted(recvMsg.msg, payLoad.id, -1)
                 }else{
                     recvMsg.msg.let {
                         listener?.receivedMsg(it)
