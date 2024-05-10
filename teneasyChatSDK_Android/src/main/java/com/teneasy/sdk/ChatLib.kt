@@ -32,10 +32,24 @@ interface TeneasySDKDelegate {
     */
     fun msgReceipt(msg: CMessage.Message, payloadId: Long, msgId: Long, errMsg: String = "") // 使用Long代替UInt64
 
-    // 系统消息，用于显示Tip
+    /**
+    消息删除回执
+    @msg 已发送的消息
+    @payloadId
+    @msgId
+     */
+    fun msgDeleted(msg: CMessage.Message, payloadId: Long, msgId: Long, errMsg: String = "") // 使用Long代替UInt64
+
+    /**
+     * 系统消息，用于显示Tip
+     * @param msg
+     */
     fun systemMsg(msg: Result)
 
-    // 连接状态
+    /**
+     * 连接成功回调
+     * @param SCHi
+     */
     fun connected(c: GGateway.SCHi)
 
     // 客服更换回调
@@ -163,6 +177,10 @@ rd === 随即数 Math.floor(Math.random() * 1000000)
         }
     }
 
+    /**
+     * 删除消息
+     * @param MsgId 消息ID
+     */
     fun deleteMessage(MsgId: Long){
         val msg = CMessage.Message.newBuilder()
         msg.msgId = MsgId
@@ -385,14 +403,14 @@ rd === 随即数 Math.floor(Math.random() * 1000000)
                 var cMsg = msgList[payLoad.id]
                 if (cMsg != null) {
                     Log.i(TAG, "删除成功")
-                    listener?.msgReceipt(msg.build(), payLoad.id, -1)
+                    listener?.msgDeleted(msg.build(), payLoad.id, -1)
                 }
             }  else if(payLoad.act == GAction.Action.ActionSCDeleteMsg) {
                 val scMsg = GGateway.SCRecvMessage.parseFrom(msgData)
                 val msg = CMessage.Message.newBuilder()
                 msg.msgId = scMsg.msg.msgId;
                 msg.msgOp == CMessage.MessageOperate.MSG_OP_DELETE
-                listener?.msgReceipt(msg.build(), payLoad.id, -1)
+                listener?.msgDeleted(msg.build(), payLoad.id, -1)
                 Log.i(TAG, "对方删除了消息： payload ID${payLoad.id}")
             } else if(payLoad.act == GAction.Action.ActionSCSendMsgACK) {//消息回执
                 val scMsg = GGateway.SCSendMessage.parseFrom(msgData)
@@ -405,7 +423,7 @@ rd === 随即数 Math.floor(Math.random() * 1000000)
                         listener?.msgReceipt(cMsg, payLoad.id, -2, scMsg.errMsg)
                     }
                     else if (sendingMessage?.msgOp == CMessage.MessageOperate.MSG_OP_DELETE){
-                        listener?.msgReceipt(cMsg, payLoad.id, -1)
+                        listener?.msgDeleted(cMsg, payLoad.id, -1)
                         Log.i(TAG, "删除成功")
                     }else{
                         listener?.msgReceipt(cMsg, payLoad.id, scMsg.msgId)
