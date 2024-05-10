@@ -87,6 +87,10 @@ class ChatLib constructor(cert: String, token:String, baseUrl:String = "", userI
     var consultId: Long = 0L
     private var timer: Timer? = null
 
+    private var sessionTime: Int = 0
+    private var beatTimes = 0
+    private var maxSessionMinutes = 90
+
     init {
         this.chatId = chatID
         if (token.length > 10) {
@@ -344,13 +348,26 @@ rd === 随即数 Math.floor(Math.random() * 1000000)
         socket.send(payload.build().toByteArray())
     }
 
+   fun updateSecond() {
+        sessionTime++
+        if (sessionTime % 30 == 0) { // Send a heartbeat every 8 seconds
+            beatTimes++
+            // Log the sending of the heartbeat
+            Log.d(TAG, "Sending heartbeat $beatTimes")
+            sendHeartBeat()
+        }
+
+        if (sessionTime > maxSessionMinutes * 60) { // Stop sending heartbeats after the maximum session time
+           disConnect()
+        }
+    }
+
     /**
      *  心跳，一般建议每隔60秒调用
      */
     fun sendHeartBeat(){
         val buffer = ByteArray(1)
         buffer[0] = 0
-        Log.i(TAG, "sending heart beat")
         socket.send(buffer)
     }
 
@@ -477,12 +494,15 @@ rd === 随即数 Math.floor(Math.random() * 1000000)
     // 启动计时器，持续调用心跳方法
     private fun startTimer() {
         closeTimer()
+        if (timer == null) {
+            timer = Timer()
+        }
         timer?.schedule(object : TimerTask() {
             override fun run() {
                 //需要执行的任务
-                sendHeartBeat()
+                updateSecond()
             }
-        }, 0,30000)    //每隔5秒发送心跳
+        }, 0,1000)
     }
 
     // 关闭计时器
