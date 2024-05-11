@@ -66,8 +66,10 @@ class ChatLib constructor(cert: String, token:String, baseUrl:String = "", userI
    private fun isConnection() : Boolean {
         if (socket == null) return false
         try {
+            println("Socket is open: ${socket.isOpen}")
             return socket.isOpen
         }catch (e: Exception) {
+            println(e.message)
             return false;
         }
     }
@@ -89,7 +91,7 @@ class ChatLib constructor(cert: String, token:String, baseUrl:String = "", userI
 
     private var sessionTime: Int = 0
     private var beatTimes = 0
-    private var maxSessionMinutes = 90
+    private var maxSessionMinutes = 1 //测试放1分钟，上线放120或90
 
     init {
         this.chatId = chatID
@@ -137,15 +139,17 @@ rd === 随即数 Math.floor(Math.random() * 1000000)
                 }
                 override fun onOpen(handshake: ServerHandshake?) {
                     Log.i(TAG, "opened connection")
+
                     result.msg = "已连接上服务器"
                     listener?.systemMsg(result)
                 }
                 override fun onClose(code: Int, reason: String, remote: Boolean) {
-                    disConnected()
+                    Log.i(TAG, "closed connection\ncode: $code reason: $reason")
+                    disConnected(code)
                 }
                 override fun onError(ex: Exception) {
                     disConnected()
-                    println(ex.message ?:"未知错误")
+                    Log.i(TAG, ex.message ?:"未知错误")
                     //ex.printStackTrace()
                 }
             }
@@ -318,7 +322,7 @@ rd === 随即数 Math.floor(Math.random() * 1000000)
      */
     private fun doSendMsg(cMsg: CMessage.Message, act: GAction.Action = GAction.Action.ActionCSSendMsg, payload_Id: Long = 0) {
         if(!isConnection()) {
-            disConnected()
+            //disConnected()
             makeConnect()
             return
         }
@@ -344,7 +348,7 @@ rd === 随即数 Math.floor(Math.random() * 1000000)
         }else {
             payload.id = payloadId
         }
-        Log.i(TAG, "send payloadId: ${payloadId}")
+        Log.i(TAG, "sending payloadId: ${payloadId}")
         socket.send(payload.build().toByteArray())
     }
 
@@ -400,6 +404,10 @@ rd === 随即数 Math.floor(Math.random() * 1000000)
             } else if(payLoad.act == GAction.Action.ActionSCHi) {
                 val msg = GGateway.SCHi.parseFrom(msgData)
                 token = msg.token
+                sendingMessage?.let {
+                    resendMSg(it, this.payloadId)
+                    Log.i(TAG, "重发消息$payloadId")
+                }
                 payloadId = payLoad.id
                 print("初始payloadId:" + payloadId + "\n")
                 listener?.connected(msg)
@@ -483,12 +491,13 @@ rd === 随即数 Math.floor(Math.random() * 1000000)
         return cMsg.build()
     }
     
-    private fun disConnected(){
+    private fun disConnected(code: Int = 1006){
         var result = Result();
-        result.code = 1006
+        result.code = code
         result.msg = "已断开通信"
         listener?.systemMsg(result)
         closeTimer()
+        sendingMessage = null
     }
 
     // 启动计时器，持续调用心跳方法
@@ -507,6 +516,8 @@ rd === 随即数 Math.floor(Math.random() * 1000000)
 
     // 关闭计时器
     private fun closeTimer() {
+        sessionTime = 0
+        beatTimes = 0
         if(timer != null) {
             timer?.cancel()
             timer = null

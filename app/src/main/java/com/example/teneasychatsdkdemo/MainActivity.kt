@@ -215,7 +215,7 @@ class MainActivity : AppCompatActivity(), TeneasySDKDelegate {
     //成功连接，并返回相关信息，例如workerId
     override fun connected(c: GGateway.SCHi) {
         val workerId = c.workerId
-        Log.i("MainAct connected", "成功连接")
+        //Log.i("MainAct connected", "成功连接")
         //chatLib.sendMessage("1.mp4", CMessage.MessageFormat.MSG_VIDEO)
         appendText("成功连接\n")
     }
