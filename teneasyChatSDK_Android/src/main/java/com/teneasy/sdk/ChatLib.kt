@@ -321,6 +321,11 @@ rd === 随即数 Math.floor(Math.random() * 1000000)
      * @param textMsg MessageItem
      */
     private fun doSendMsg(cMsg: CMessage.Message, act: GAction.Action = GAction.Action.ActionCSSendMsg, payload_Id: Long = 0) {
+        //payload_id != 0的时候，可能是重发，重发不需要+1
+        if (sendingMessage?.msgOp == CMessage.MessageOperate.MSG_OP_POST && payload_Id == 0L) {
+            payloadId += 1
+            msgList[payloadId] = cMsg
+        }
         if(!isConnection()) {
             //disConnected()
             makeConnect()
@@ -336,12 +341,6 @@ rd === 随即数 Math.floor(Math.random() * 1000000)
         val payload = GPayload.Payload.newBuilder()
         payload.data = cSendMsgData
         payload.act = act
-
-        //payload_id != 0的时候，可能是重发，重发不需要+1
-        if (sendingMessage?.msgOp == CMessage.MessageOperate.MSG_OP_POST && payload_Id == 0L) {
-            payloadId += 1
-            msgList[payloadId] = cMsg
-        }
 
         if (payload_Id != 0L){
             payload.id = payload_Id;
@@ -437,10 +436,11 @@ rd === 随即数 Math.floor(Math.random() * 1000000)
             } else if(payLoad.act == GAction.Action.ActionSCSendMsgACK) {//消息回执
                 val scMsg = GGateway.SCSendMessage.parseFrom(msgData)
                 chatId = scMsg.chatId
-                Log.i(TAG, "收到消息回执B msgId: ${scMsg.msgId}")
+                Log.i(TAG, "收到消息回执 ActionSCSendMsgACK")
 
                 var cMsg = msgList[payLoad.id]
                 if (cMsg != null){
+                    Log.i(TAG, "收到消息回执: ${scMsg.msgId} : ${payLoad.id}")
                     if (scMsg.errMsg != null && !scMsg.errMsg.isNullOrEmpty()){
                         listener?.msgReceipt(cMsg, payLoad.id, -2, scMsg.errMsg)
                     }
