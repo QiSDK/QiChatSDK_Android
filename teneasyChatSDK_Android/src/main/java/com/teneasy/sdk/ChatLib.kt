@@ -91,7 +91,7 @@ class ChatLib constructor(cert: String, token:String, baseUrl:String = "", userI
 
     private var sessionTime: Int = 0
     private var beatTimes = 0
-    private var maxSessionMinutes = 90 //测试放1分钟，上线放120或90
+    private var maxSessionMinutes = 9000000//相当于不设置会话实际限制 //测试放1分钟，上线放120或90
 
     init {
         this.chatId = chatID
