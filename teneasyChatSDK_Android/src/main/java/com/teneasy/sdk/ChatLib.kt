@@ -139,7 +139,7 @@ rd === 随即数 Math.floor(Math.random() * 1000000)
                 }
                 override fun onOpen(handshake: ServerHandshake?) {
                     Log.i(TAG, "opened connection")
-
+                    result.code = 0
                     result.msg = "已连接上服务器"
                     listener?.systemMsg(result)
                 }
