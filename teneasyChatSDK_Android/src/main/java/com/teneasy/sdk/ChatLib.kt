@@ -386,7 +386,7 @@ rd === 随即数 Math.floor(Math.random() * 1000000)
             var result = Result()
             if (data[0].toInt() == 2){
                 result.code = 1000
-                result.msg = "无效的Token"
+                result.msg = "无效的Cert/Token"
                 Log.i(TAG, result.msg)
                 listener?.systemMsg(result)
             }
