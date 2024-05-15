@@ -141,9 +141,10 @@ rd === 随即数 Math.floor(Math.random() * 1000000)
                 }
                 override fun onOpen(handshake: ServerHandshake?) {
                     Log.i(TAG, "opened connection")
-                    result.code = 0
+                    //onOpen可能判断不正确，所以注释掉
+                    /*result.code = 0
                     result.msg = "已连接上服务器"
-                    listener?.systemMsg(result)
+                    listener?.systemMsg(result)*/
                 }
                 override fun onClose(code: Int, reason: String, remote: Boolean) {
                     Log.i(TAG, "closed connection\ncode: $code reason: $reason")
@@ -387,6 +388,7 @@ rd === 随即数 Math.floor(Math.random() * 1000000)
                 result.code = 1000
                 result.msg = "无效的Token"
                 Log.i(TAG, result.msg)
+                listener?.systemMsg(result)
             }
             /*else if (data[0].toInt() == 0){
                 result.code = 0
@@ -394,8 +396,8 @@ rd === 随即数 Math.floor(Math.random() * 1000000)
             }*/
             else {
                 result.code = 0
-                result.msg = "收到无效消息"
-                Log.i(TAG, "收到无效消息")
+                result.msg = "收到心跳回执"
+                Log.i(TAG, "收到心跳回执")
             }
             //listener?.systemMsg(result)
         }
@@ -517,13 +519,13 @@ rd === 随即数 Math.floor(Math.random() * 1000000)
     private fun startTimer() {
         if (heartTimer == null) {
             heartTimer = Timer()
+            heartTimer?.schedule(object : TimerTask() {
+                override fun run() {
+                    //需要执行的任务
+                    updateSecond()
+                }
+            }, 0,1000)
         }
-        heartTimer?.schedule(object : TimerTask() {
-            override fun run() {
-                //需要执行的任务
-                updateSecond()
-            }
-        }, 0,1000)
     }
 
     // 关闭计时器
