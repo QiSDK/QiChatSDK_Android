@@ -24,6 +24,9 @@ class MainActivity : AppCompatActivity(), TeneasySDKDelegate {
     private lateinit var chatLib: ChatLib
     private lateinit var binding: ActivityMainBinding
     private var lastMsgId: Long = 0
+    private val Tag = "MainActivity"
+    private var domain: String? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -106,10 +109,11 @@ class MainActivity : AppCompatActivity(), TeneasySDKDelegate {
         }
 //httos://csh5.hfxg.xyz,https://csapi.dev.stream
         //httpo://csh5.hfxg.xyz,http://csh5.hfxg.xyz,https://csapi.xdev.stream,https://xx.xdev.stream
-        val lineLib = LineDetectLib("https://csh5.hfxg.xyz,https://csapi.xdev.stream",  object : LineDetectDelegate {
+        val lineLib = LineDetectLib("https://csapi.xdev.stream,https://wcsapi.qixin14.xyz",  object : LineDetectDelegate {
             override fun useTheLine(line: String) {
                 Log.i("LineLib", "使用线路："+ line)
                 appendText("Wss: " + line + "\n")
+                domain = line
                 if (BuildConfig.DEBUG) {
                     initChatSDK(line)
                 }
@@ -130,7 +134,7 @@ class MainActivity : AppCompatActivity(), TeneasySDKDelegate {
 
     private fun initChatSDK(baseUrl: String){
         var wssUrl = "wss://" + baseUrl + "/v1/gateway/h5?"
-        chatLib = ChatLib("COYBEAUYASDwASja5o2V9DE.9Fhv9o1HueJOkqzylMJoUggw7PjsoBtF38-vncusatONba9rgIv3LcrMZj7kjTA_79IvBOYpGTx-ygEt2wpSDA", "", wssUrl, 1125324, "9zgd9YUc")
+        chatLib = ChatLib("COYBEAUYASDyASiG2piD9zE.te46qua5ha2r-Caz03Vx2JXH5OLSRRV2GqdYcn9UslwibsxBSP98GhUKSGEI0Z84FRMkp16ZK8eS-y72QVE2AQ————dd", "ddd", wssUrl, 1125324, "9zgd9YUc")
         chatLib.listener = this
         chatLib.makeConnect()
 
@@ -208,7 +212,6 @@ class MainActivity : AppCompatActivity(), TeneasySDKDelegate {
 
     override fun systemMsg(msg: Result) {
         //TODO("Not yet implemented")
-        Log.i("MainAct systemMsg", msg.msg)
         appendText(msg.msg + "\n")
     }
 
@@ -217,6 +220,9 @@ class MainActivity : AppCompatActivity(), TeneasySDKDelegate {
         val workerId = c.workerId
         //Log.i("MainAct connected", "成功连接")
         //chatLib.sendMessage("1.mp4", CMessage.MessageFormat.MSG_VIDEO)
+        //Log.i(Tag, "workerId:" + workerId)
+        Log.i(Tag, "token:" + c.token)
+
         appendText("成功连接\n")
     }
 
@@ -238,6 +244,20 @@ class MainActivity : AppCompatActivity(), TeneasySDKDelegate {
 
     override fun onDestroy() {
         super.onDestroy()
+        if (chatLib != null) {
+            chatLib.disConnect()
+        }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        if (this.domain != null) {
+            initChatSDK(this.domain!!)
+        }
+    }
+
+    override fun onPause() {
+        super.onPause()
         if (chatLib != null) {
             chatLib.disConnect()
         }

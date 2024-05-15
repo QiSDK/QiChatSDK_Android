@@ -87,7 +87,7 @@ class ChatLib constructor(cert: String, token:String, baseUrl:String = "", userI
     private val msgList: MutableMap<Long, CMessage.Message> = mutableMapOf()
     var replyMsgId: Long = 0L
     var consultId: Long = 0L
-    private var timer: Timer? = null
+    private var heartTimer: Timer? = null
 
     private var sessionTime: Int = 0
     private var beatTimes = 0
@@ -108,6 +108,8 @@ class ChatLib constructor(cert: String, token:String, baseUrl:String = "", userI
         if (cert.length > 10) {
             this.cert = cert
         }
+        sessionTime = 0
+        beatTimes = 0
     }
 
     /**
@@ -142,6 +144,7 @@ rd === 随即数 Math.floor(Math.random() * 1000000)
                     result.code = 0
                     result.msg = "已连接上服务器"
                     listener?.systemMsg(result)
+                    startTimer()
                 }
                 override fun onClose(code: Int, reason: String, remote: Boolean) {
                     Log.i(TAG, "closed connection\ncode: $code reason: $reason")
@@ -380,10 +383,10 @@ rd === 随即数 Math.floor(Math.random() * 1000000)
      */
     private fun receiveMsg(data: ByteArray) {
         if(data.size == 1) {
-            Log.i(TAG, "在别处登录了/或无效的Token")
+            Log.i(TAG, "在别处登录了/或无效的Token/或收到无效消息")
             var result = Result();
-            result.code = 1003
-            result.msg = "在别处登录了/或无效的Token"
+            result.code = 0
+            result.msg = "在别处登录了/或无效的Token/或收到无效消息"
             listener?.systemMsg(result)
         }
         else {
@@ -410,7 +413,6 @@ rd === 随即数 Math.floor(Math.random() * 1000000)
                 payloadId = payLoad.id
                 print("初始payloadId:" + payloadId + "\n")
                 listener?.connected(msg)
-                startTimer()
             } else if(payLoad.act == GAction.Action.ActionForward) {
                 val msg = GGateway.CSForward.parseFrom(msgData)
                 Log.i(TAG, "forward: ${msg.data}")
@@ -502,11 +504,10 @@ rd === 随即数 Math.floor(Math.random() * 1000000)
 
     // 启动计时器，持续调用心跳方法
     private fun startTimer() {
-        closeTimer()
-        if (timer == null) {
-            timer = Timer()
+        if (heartTimer == null) {
+            heartTimer = Timer()
         }
-        timer?.schedule(object : TimerTask() {
+        heartTimer?.schedule(object : TimerTask() {
             override fun run() {
                 //需要执行的任务
                 updateSecond()
@@ -518,9 +519,9 @@ rd === 随即数 Math.floor(Math.random() * 1000000)
     private fun closeTimer() {
         sessionTime = 0
         beatTimes = 0
-        if(timer != null) {
-            timer?.cancel()
-            timer = null
+        if(heartTimer != null) {
+            heartTimer?.cancel()
+            heartTimer = null
         }
     }
 
