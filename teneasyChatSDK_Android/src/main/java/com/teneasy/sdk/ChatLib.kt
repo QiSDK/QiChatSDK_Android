@@ -63,7 +63,8 @@ class ChatLib constructor(cert: String, token:String, baseUrl:String = "", userI
     private val TAG = "ChatLib"
     // 通讯地址
    private var baseUrl = ""
-   private fun isConnection() : Boolean {
+     var isConnected = false
+   /*private fun isConnection() : Boolean {
         if (socket == null) return false
         try {
             println("Socket is open: ${socket.isOpen}")
@@ -72,7 +73,7 @@ class ChatLib constructor(cert: String, token:String, baseUrl:String = "", userI
             println(e.message)
             return false;
         }
-    }
+    }*/
 
     // 当前发送的消息实体，便于上层调用的逻辑处理
     var sendingMessage: CMessage.Message? = null
@@ -329,7 +330,7 @@ rd === 随即数 Math.floor(Math.random() * 1000000)
             payloadId += 1
             msgList[payloadId] = cMsg
         }
-        if(!isConnection()) {
+        if(!isConnected) {
             //disConnected()
             makeConnect()
             return
@@ -388,6 +389,7 @@ rd === 随即数 Math.floor(Math.random() * 1000000)
                 result.code = 1000
                 result.msg = "无效的Cert/Token"
                 Log.i(TAG, result.msg)
+                isConnected = false
                 listener?.systemMsg(result)
             }
             /*else if (data[0].toInt() == 0){
@@ -425,6 +427,7 @@ rd === 随即数 Math.floor(Math.random() * 1000000)
                 payloadId = payLoad.id
                 print("初始payloadId:" + payloadId + "\n")
                 listener?.connected(msg)
+                isConnected = true
                 startTimer()
             } else if(payLoad.act == GAction.Action.ActionForward) {
                 val msg = GGateway.CSForward.parseFrom(msgData)
@@ -513,6 +516,7 @@ rd === 随即数 Math.floor(Math.random() * 1000000)
         listener?.systemMsg(result)
         closeTimer()
         sendingMessage = null
+        isConnected = false
     }
 
     // 启动计时器，持续调用心跳方法
