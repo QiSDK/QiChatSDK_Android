@@ -144,7 +144,6 @@ rd === 随即数 Math.floor(Math.random() * 1000000)
                     result.code = 0
                     result.msg = "已连接上服务器"
                     listener?.systemMsg(result)
-                    startTimer()
                 }
                 override fun onClose(code: Int, reason: String, remote: Boolean) {
                     Log.i(TAG, "closed connection\ncode: $code reason: $reason")
@@ -388,15 +387,17 @@ rd === 随即数 Math.floor(Math.random() * 1000000)
                 result.code = 1000
                 result.msg = "无效的Token"
                 Log.i(TAG, result.msg)
-            }else if (data[0].toInt() == 0){
+            }
+            /*else if (data[0].toInt() == 0){
                 result.code = 0
                 result.msg = "在别处登录了(可能无需处理）"
-            }else {
+            }*/
+            else {
                 result.code = 0
                 result.msg = "收到无效消息"
                 Log.i(TAG, "收到无效消息")
             }
-            listener?.systemMsg(result)
+            //listener?.systemMsg(result)
         }
         else {
             val payLoad = GPayload.Payload.parseFrom(data)
@@ -422,6 +423,7 @@ rd === 随即数 Math.floor(Math.random() * 1000000)
                 payloadId = payLoad.id
                 print("初始payloadId:" + payloadId + "\n")
                 listener?.connected(msg)
+                startTimer()
             } else if(payLoad.act == GAction.Action.ActionForward) {
                 val msg = GGateway.CSForward.parseFrom(msgData)
                 Log.i(TAG, "forward: ${msg.data}")
