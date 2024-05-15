@@ -383,10 +383,19 @@ rd === 随即数 Math.floor(Math.random() * 1000000)
      */
     private fun receiveMsg(data: ByteArray) {
         if(data.size == 1) {
-            Log.i(TAG, "在别处登录了/或无效的Token/或收到无效消息")
-            var result = Result();
-            result.code = 0
-            result.msg = "在别处登录了/或无效的Token/或收到无效消息"
+            var result = Result()
+            if (data[0].toInt() == 2){
+                result.code = 1000
+                result.msg = "无效的Token"
+                Log.i(TAG, result.msg)
+            }else if (data[0].toInt() == 0){
+                result.code = 0
+                result.msg = "在别处登录了(可能无需处理）"
+            }else {
+                result.code = 0
+                result.msg = "收到无效消息"
+                Log.i(TAG, "收到无效消息")
+            }
             listener?.systemMsg(result)
         }
         else {
