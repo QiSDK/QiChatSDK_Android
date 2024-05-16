@@ -82,7 +82,7 @@ class ChatLib constructor(cert: String, token:String, baseUrl:String = "", userI
     private var cert: String? = ""
     private var userId: Int = 0
     private var mySign: String? = ""//qi xin
-    private lateinit var socket: WebSocketClient
+    private var socket: WebSocketClient? = null
     var listener: TeneasySDKDelegate? = null
     var payloadId = 0L
     private val msgList: MutableMap<Long, CMessage.Message> = mutableMapOf()
@@ -157,7 +157,7 @@ rd === 随即数 Math.floor(Math.random() * 1000000)
                     //ex.printStackTrace()
                 }
             }
-        socket.connect()
+        socket?.connect()
     }
 
     /**
@@ -352,7 +352,7 @@ rd === 随即数 Math.floor(Math.random() * 1000000)
             payload.id = payloadId
         }
         Log.i(TAG, "sending payloadId: ${payloadId}")
-        socket.send(payload.build().toByteArray())
+        socket?.send(payload.build().toByteArray())
     }
 
    fun updateSecond() {
@@ -375,7 +375,7 @@ rd === 随即数 Math.floor(Math.random() * 1000000)
     fun sendHeartBeat(){
         val buffer = ByteArray(1)
         buffer[0] = 0
-        socket.send(buffer)
+        socket?.send(buffer)
     }
 
     /**
@@ -546,7 +546,5 @@ rd === 随即数 Math.floor(Math.random() * 1000000)
      */
     fun disConnect(){
         stopTimer()
-        if (socket == null) return
-        socket.close()
     }
 }

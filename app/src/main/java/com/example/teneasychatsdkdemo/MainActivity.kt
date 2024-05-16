@@ -26,6 +26,7 @@ class MainActivity : AppCompatActivity(), TeneasySDKDelegate {
     private var lastMsgId: Long = 0
     private val Tag = "MainActivity"
     private var domain: String? = null
+    private var isConnected = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -213,6 +214,11 @@ class MainActivity : AppCompatActivity(), TeneasySDKDelegate {
 
     override fun systemMsg(msg: Result) {
         //TODO("Not yet implemented")
+        if (msg.code >= 1000 && msg.code < 1010) {
+            isConnected = false
+            //失去链接，重试连接
+            //startTimer()
+        }
         appendText(msg.msg + "\n")
     }
 
@@ -223,7 +229,7 @@ class MainActivity : AppCompatActivity(), TeneasySDKDelegate {
         //chatLib.sendMessage("1.mp4", CMessage.MessageFormat.MSG_VIDEO)
         //Log.i(Tag, "workerId:" + workerId)
         Log.i(Tag, "token:" + c.token)
-
+        isConnected = true
         appendText("成功连接\n")
     }
 
@@ -252,16 +258,14 @@ class MainActivity : AppCompatActivity(), TeneasySDKDelegate {
 
     override fun onResume() {
         super.onResume()
-        if (this.domain != null) {
+        if (!isConnected && domain != null) {
             initChatSDK(this.domain!!)
         }
     }
 
     override fun onPause() {
         super.onPause()
-        if (chatLib != null) {
-            chatLib.disConnect()
-        }
+
     }
 
 }
