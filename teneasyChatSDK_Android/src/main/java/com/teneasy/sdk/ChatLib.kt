@@ -546,5 +546,9 @@ rd === 随即数 Math.floor(Math.random() * 1000000)
      */
     fun disConnect(){
         stopTimer()
+        if (socket != null) {
+            socket?.close()
+            socket = null
+        }
     }
 }
