@@ -149,7 +149,7 @@ rd === 随即数 Math.floor(Math.random() * 1000000)
                 }
                 override fun onClose(code: Int, reason: String, remote: Boolean) {
                     Log.i(TAG, "closed connection\ncode: $code reason: $reason")
-                    disConnected(code)
+                    disConnected(1001)
                 }
                 override fun onError(ex: Exception) {
                     disConnected()
