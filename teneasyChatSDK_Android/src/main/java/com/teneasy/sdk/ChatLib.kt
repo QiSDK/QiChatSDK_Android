@@ -389,8 +389,7 @@ rd === 随即数 Math.floor(Math.random() * 1000000)
                 result.code = 1000
                 result.msg = "无效的Cert/Token"
                 Log.i(TAG, result.msg)
-                isConnected = false
-                listener?.systemMsg(result)
+                disConnected(1000)
             }
             /*else if (data[0].toInt() == 0){
                 result.code = 0
@@ -514,7 +513,7 @@ rd === 随即数 Math.floor(Math.random() * 1000000)
         result.code = code
         result.msg = "已断开通信"
         listener?.systemMsg(result)
-        closeTimer()
+        disConnect()
         sendingMessage = null
         isConnected = false
     }
@@ -533,7 +532,7 @@ rd === 随即数 Math.floor(Math.random() * 1000000)
     }
 
     // 关闭计时器
-    private fun closeTimer() {
+    private fun stopTimer() {
         sessionTime = 0
         beatTimes = 0
         if(heartTimer != null) {
@@ -546,7 +545,7 @@ rd === 随即数 Math.floor(Math.random() * 1000000)
      * 关闭socket连接，在停止使用时，需调用该方法。
      */
     fun disConnect(){
-        closeTimer()
+        stopTimer()
         if (socket == null) return
         socket.close()
     }
