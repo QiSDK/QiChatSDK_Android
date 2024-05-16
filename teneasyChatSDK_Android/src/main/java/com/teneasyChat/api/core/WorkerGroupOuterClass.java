@@ -8807,13 +8807,13 @@ public final class WorkerGroupOuterClass {
       "oto\"B\n\030WorkerGroupQueryResponse\022&\n\005items" +
       "\030\001 \003(\0132\027.api.common.WorkerGroup\"|\n\030Worke" +
       "rGroupCreateRequest\022\027\n\004name\030\001 \001(\tB\t\372B\006r\004" +
-      "\020\001\030\n\022\034\n\010priority\030\002 \001(\005B\n\372B\007\032\005\020\350\007(\000\022)\n\010ch" +
+      "\020\001\030\024\022\034\n\010priority\030\002 \001(\005B\n\372B\007\032\005\020\350\007(\000\022)\n\010ch" +
       "ildren\030\003 \003(\0132\027.api.common.WorkerGroup\"r\n" +
       "\031WorkerGroupCreateResponse\022\n\n\002id\030\001 \001(\003\022\014" +
       "\n\004name\030\002 \001(\t\022\020\n\010priority\030\003 \001(\005\022)\n\010childr" +
       "en\030\004 \003(\0132\027.api.common.WorkerGroup\"\210\001\n\030Wo" +
       "rkerGroupUpdateRequest\022\n\n\002id\030\001 \001(\003\022\027\n\004na" +
-      "me\030\002 \001(\tB\t\372B\006r\004\020\001\030\n\022\034\n\010priority\030\003 \001(\005B\n\372" +
+      "me\030\002 \001(\tB\t\372B\006r\004\020\001\030\024\022\034\n\010priority\030\003 \001(\005B\n\372" +
       "B\007\032\005\020\350\007(\000\022)\n\010children\030\004 \003(\0132\027.api.common" +
       ".WorkerGroup\"r\n\031WorkerGroupUpdateRespons" +
       "e\022\n\n\002id\030\001 \001(\003\022\014\n\004name\030\002 \001(\t\022\020\n\010priority\030" +

@@ -693,6 +693,1346 @@ public final class CWorker {
     // @@protoc_insertion_point(enum_scope:api.common.OnlineState)
   }
 
+  /**
+   * Protobuf enum {@code api.common.WorkerState}
+   */
+  public enum WorkerState
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <pre>
+     * 未登录
+     * </pre>
+     *
+     * <code>WORKER_OFFLINE = 0;</code>
+     */
+    WORKER_OFFLINE(0),
+    /**
+     * <pre>
+     * 就绪
+     * </pre>
+     *
+     * <code>WORKER_READY = 1;</code>
+     */
+    WORKER_READY(1),
+    /**
+     * <pre>
+     * 忙碌
+     * </pre>
+     *
+     * <code>WORKER_BUSY = 2;</code>
+     */
+    WORKER_BUSY(2),
+    /**
+     * <pre>
+     * 链接断开
+     * </pre>
+     *
+     * <code>WORKER_LOST = 3;</code>
+     */
+    WORKER_LOST(3),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 26,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        WorkerState.class.getName());
+    }
+    /**
+     * <pre>
+     * 未登录
+     * </pre>
+     *
+     * <code>WORKER_OFFLINE = 0;</code>
+     */
+    public static final int WORKER_OFFLINE_VALUE = 0;
+    /**
+     * <pre>
+     * 就绪
+     * </pre>
+     *
+     * <code>WORKER_READY = 1;</code>
+     */
+    public static final int WORKER_READY_VALUE = 1;
+    /**
+     * <pre>
+     * 忙碌
+     * </pre>
+     *
+     * <code>WORKER_BUSY = 2;</code>
+     */
+    public static final int WORKER_BUSY_VALUE = 2;
+    /**
+     * <pre>
+     * 链接断开
+     * </pre>
+     *
+     * <code>WORKER_LOST = 3;</code>
+     */
+    public static final int WORKER_LOST_VALUE = 3;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static WorkerState valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static WorkerState forNumber(int value) {
+      switch (value) {
+        case 0: return WORKER_OFFLINE;
+        case 1: return WORKER_READY;
+        case 2: return WORKER_BUSY;
+        case 3: return WORKER_LOST;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<WorkerState>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        WorkerState> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<WorkerState>() {
+            public WorkerState findValueByNumber(int number) {
+              return WorkerState.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return com.teneasyChat.api.common.CWorker.getDescriptor().getEnumTypes().get(4);
+    }
+
+    private static final WorkerState[] VALUES = values();
+
+    public static WorkerState valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private WorkerState(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:api.common.WorkerState)
+  }
+
+  /**
+   * Protobuf enum {@code api.common.WorkerEventType}
+   */
+  public enum WorkerEventType
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <pre>
+     * 客服建立链接
+     * </pre>
+     *
+     * <code>WORKER_EVENT_ONLINE = 0;</code>
+     */
+    WORKER_EVENT_ONLINE(0),
+    /**
+     * <pre>
+     * 收到客服PING
+     * </pre>
+     *
+     * <code>WORKER_EVENT_PING = 1;</code>
+     */
+    WORKER_EVENT_PING(1),
+    /**
+     * <pre>
+     * 客服链接错误
+     * </pre>
+     *
+     * <code>WORKER_EVENT_ERROR = 2;</code>
+     */
+    WORKER_EVENT_ERROR(2),
+    /**
+     * <pre>
+     * 客服切换到离开状态
+     * </pre>
+     *
+     * <code>WORKER_EVENT_AWAY = 3;</code>
+     */
+    WORKER_EVENT_AWAY(3),
+    /**
+     * <pre>
+     * 客服切换到繁忙状态
+     * </pre>
+     *
+     * <code>WORKER_EVENT_BUSY = 4;</code>
+     */
+    WORKER_EVENT_BUSY(4),
+    /**
+     * <pre>
+     * 客服退出登录
+     * </pre>
+     *
+     * <code>WORKER_EVENT_LOGOUT = 5;</code>
+     */
+    WORKER_EVENT_LOGOUT(5),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 26,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        WorkerEventType.class.getName());
+    }
+    /**
+     * <pre>
+     * 客服建立链接
+     * </pre>
+     *
+     * <code>WORKER_EVENT_ONLINE = 0;</code>
+     */
+    public static final int WORKER_EVENT_ONLINE_VALUE = 0;
+    /**
+     * <pre>
+     * 收到客服PING
+     * </pre>
+     *
+     * <code>WORKER_EVENT_PING = 1;</code>
+     */
+    public static final int WORKER_EVENT_PING_VALUE = 1;
+    /**
+     * <pre>
+     * 客服链接错误
+     * </pre>
+     *
+     * <code>WORKER_EVENT_ERROR = 2;</code>
+     */
+    public static final int WORKER_EVENT_ERROR_VALUE = 2;
+    /**
+     * <pre>
+     * 客服切换到离开状态
+     * </pre>
+     *
+     * <code>WORKER_EVENT_AWAY = 3;</code>
+     */
+    public static final int WORKER_EVENT_AWAY_VALUE = 3;
+    /**
+     * <pre>
+     * 客服切换到繁忙状态
+     * </pre>
+     *
+     * <code>WORKER_EVENT_BUSY = 4;</code>
+     */
+    public static final int WORKER_EVENT_BUSY_VALUE = 4;
+    /**
+     * <pre>
+     * 客服退出登录
+     * </pre>
+     *
+     * <code>WORKER_EVENT_LOGOUT = 5;</code>
+     */
+    public static final int WORKER_EVENT_LOGOUT_VALUE = 5;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static WorkerEventType valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static WorkerEventType forNumber(int value) {
+      switch (value) {
+        case 0: return WORKER_EVENT_ONLINE;
+        case 1: return WORKER_EVENT_PING;
+        case 2: return WORKER_EVENT_ERROR;
+        case 3: return WORKER_EVENT_AWAY;
+        case 4: return WORKER_EVENT_BUSY;
+        case 5: return WORKER_EVENT_LOGOUT;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<WorkerEventType>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        WorkerEventType> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<WorkerEventType>() {
+            public WorkerEventType findValueByNumber(int number) {
+              return WorkerEventType.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return com.teneasyChat.api.common.CWorker.getDescriptor().getEnumTypes().get(5);
+    }
+
+    private static final WorkerEventType[] VALUES = values();
+
+    public static WorkerEventType valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private WorkerEventType(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:api.common.WorkerEventType)
+  }
+
+  public interface WorkerEventOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:api.common.WorkerEvent)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * 商户ID
+     * </pre>
+     *
+     * <code>int32 tenant_id = 1;</code>
+     * @return The tenantId.
+     */
+    int getTenantId();
+
+    /**
+     * <pre>
+     * 客户ID
+     * </pre>
+     *
+     * <code>int32 worker_id = 2;</code>
+     * @return The workerId.
+     */
+    int getWorkerId();
+
+    /**
+     * <pre>
+     * 链接ID
+     * </pre>
+     *
+     * <code>uint64 socket_id = 3;</code>
+     * @return The socketId.
+     */
+    long getSocketId();
+
+    /**
+     * <pre>
+     * 网关ID
+     * </pre>
+     *
+     * <code>int32 gateway_id = 6;</code>
+     * @return The gatewayId.
+     */
+    int getGatewayId();
+
+    /**
+     * <pre>
+     * 客户事件类型
+     * </pre>
+     *
+     * <code>.api.common.WorkerEventType event_type = 4;</code>
+     * @return The enum numeric value on the wire for eventType.
+     */
+    int getEventTypeValue();
+    /**
+     * <pre>
+     * 客户事件类型
+     * </pre>
+     *
+     * <code>.api.common.WorkerEventType event_type = 4;</code>
+     * @return The eventType.
+     */
+    com.teneasyChat.api.common.CWorker.WorkerEventType getEventType();
+
+    /**
+     * <pre>
+     * 客户事件错误码
+     * </pre>
+     *
+     * <code>int32 event_code = 5;</code>
+     * @return The eventCode.
+     */
+    int getEventCode();
+  }
+  /**
+   * <pre>
+   * kafka 客服事件队列存储消息类型
+   * </pre>
+   *
+   * Protobuf type {@code api.common.WorkerEvent}
+   */
+  public static final class WorkerEvent extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:api.common.WorkerEvent)
+      WorkerEventOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 26,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        WorkerEvent.class.getName());
+    }
+    // Use WorkerEvent.newBuilder() to construct.
+    private WorkerEvent(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private WorkerEvent() {
+      eventType_ = 0;
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.teneasyChat.api.common.CWorker.internal_static_api_common_WorkerEvent_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.teneasyChat.api.common.CWorker.internal_static_api_common_WorkerEvent_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.teneasyChat.api.common.CWorker.WorkerEvent.class, com.teneasyChat.api.common.CWorker.WorkerEvent.Builder.class);
+    }
+
+    public static final int TENANT_ID_FIELD_NUMBER = 1;
+    private int tenantId_ = 0;
+    /**
+     * <pre>
+     * 商户ID
+     * </pre>
+     *
+     * <code>int32 tenant_id = 1;</code>
+     * @return The tenantId.
+     */
+    @java.lang.Override
+    public int getTenantId() {
+      return tenantId_;
+    }
+
+    public static final int WORKER_ID_FIELD_NUMBER = 2;
+    private int workerId_ = 0;
+    /**
+     * <pre>
+     * 客户ID
+     * </pre>
+     *
+     * <code>int32 worker_id = 2;</code>
+     * @return The workerId.
+     */
+    @java.lang.Override
+    public int getWorkerId() {
+      return workerId_;
+    }
+
+    public static final int SOCKET_ID_FIELD_NUMBER = 3;
+    private long socketId_ = 0L;
+    /**
+     * <pre>
+     * 链接ID
+     * </pre>
+     *
+     * <code>uint64 socket_id = 3;</code>
+     * @return The socketId.
+     */
+    @java.lang.Override
+    public long getSocketId() {
+      return socketId_;
+    }
+
+    public static final int GATEWAY_ID_FIELD_NUMBER = 6;
+    private int gatewayId_ = 0;
+    /**
+     * <pre>
+     * 网关ID
+     * </pre>
+     *
+     * <code>int32 gateway_id = 6;</code>
+     * @return The gatewayId.
+     */
+    @java.lang.Override
+    public int getGatewayId() {
+      return gatewayId_;
+    }
+
+    public static final int EVENT_TYPE_FIELD_NUMBER = 4;
+    private int eventType_ = 0;
+    /**
+     * <pre>
+     * 客户事件类型
+     * </pre>
+     *
+     * <code>.api.common.WorkerEventType event_type = 4;</code>
+     * @return The enum numeric value on the wire for eventType.
+     */
+    @java.lang.Override public int getEventTypeValue() {
+      return eventType_;
+    }
+    /**
+     * <pre>
+     * 客户事件类型
+     * </pre>
+     *
+     * <code>.api.common.WorkerEventType event_type = 4;</code>
+     * @return The eventType.
+     */
+    @java.lang.Override public com.teneasyChat.api.common.CWorker.WorkerEventType getEventType() {
+      com.teneasyChat.api.common.CWorker.WorkerEventType result = com.teneasyChat.api.common.CWorker.WorkerEventType.forNumber(eventType_);
+      return result == null ? com.teneasyChat.api.common.CWorker.WorkerEventType.UNRECOGNIZED : result;
+    }
+
+    public static final int EVENT_CODE_FIELD_NUMBER = 5;
+    private int eventCode_ = 0;
+    /**
+     * <pre>
+     * 客户事件错误码
+     * </pre>
+     *
+     * <code>int32 event_code = 5;</code>
+     * @return The eventCode.
+     */
+    @java.lang.Override
+    public int getEventCode() {
+      return eventCode_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (tenantId_ != 0) {
+        output.writeInt32(1, tenantId_);
+      }
+      if (workerId_ != 0) {
+        output.writeInt32(2, workerId_);
+      }
+      if (socketId_ != 0L) {
+        output.writeUInt64(3, socketId_);
+      }
+      if (eventType_ != com.teneasyChat.api.common.CWorker.WorkerEventType.WORKER_EVENT_ONLINE.getNumber()) {
+        output.writeEnum(4, eventType_);
+      }
+      if (eventCode_ != 0) {
+        output.writeInt32(5, eventCode_);
+      }
+      if (gatewayId_ != 0) {
+        output.writeInt32(6, gatewayId_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (tenantId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, tenantId_);
+      }
+      if (workerId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, workerId_);
+      }
+      if (socketId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(3, socketId_);
+      }
+      if (eventType_ != com.teneasyChat.api.common.CWorker.WorkerEventType.WORKER_EVENT_ONLINE.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(4, eventType_);
+      }
+      if (eventCode_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(5, eventCode_);
+      }
+      if (gatewayId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(6, gatewayId_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.teneasyChat.api.common.CWorker.WorkerEvent)) {
+        return super.equals(obj);
+      }
+      com.teneasyChat.api.common.CWorker.WorkerEvent other = (com.teneasyChat.api.common.CWorker.WorkerEvent) obj;
+
+      if (getTenantId()
+          != other.getTenantId()) return false;
+      if (getWorkerId()
+          != other.getWorkerId()) return false;
+      if (getSocketId()
+          != other.getSocketId()) return false;
+      if (getGatewayId()
+          != other.getGatewayId()) return false;
+      if (eventType_ != other.eventType_) return false;
+      if (getEventCode()
+          != other.getEventCode()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + TENANT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getTenantId();
+      hash = (37 * hash) + WORKER_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getWorkerId();
+      hash = (37 * hash) + SOCKET_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getSocketId());
+      hash = (37 * hash) + GATEWAY_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getGatewayId();
+      hash = (37 * hash) + EVENT_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + eventType_;
+      hash = (37 * hash) + EVENT_CODE_FIELD_NUMBER;
+      hash = (53 * hash) + getEventCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.teneasyChat.api.common.CWorker.WorkerEvent parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.common.CWorker.WorkerEvent parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.common.CWorker.WorkerEvent parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.common.CWorker.WorkerEvent parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.common.CWorker.WorkerEvent parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.common.CWorker.WorkerEvent parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.common.CWorker.WorkerEvent parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.teneasyChat.api.common.CWorker.WorkerEvent parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.teneasyChat.api.common.CWorker.WorkerEvent parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.teneasyChat.api.common.CWorker.WorkerEvent parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.teneasyChat.api.common.CWorker.WorkerEvent parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.teneasyChat.api.common.CWorker.WorkerEvent parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.teneasyChat.api.common.CWorker.WorkerEvent prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * kafka 客服事件队列存储消息类型
+     * </pre>
+     *
+     * Protobuf type {@code api.common.WorkerEvent}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:api.common.WorkerEvent)
+        com.teneasyChat.api.common.CWorker.WorkerEventOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.teneasyChat.api.common.CWorker.internal_static_api_common_WorkerEvent_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.teneasyChat.api.common.CWorker.internal_static_api_common_WorkerEvent_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.teneasyChat.api.common.CWorker.WorkerEvent.class, com.teneasyChat.api.common.CWorker.WorkerEvent.Builder.class);
+      }
+
+      // Construct using com.teneasyChat.api.common.CWorker.WorkerEvent.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        tenantId_ = 0;
+        workerId_ = 0;
+        socketId_ = 0L;
+        gatewayId_ = 0;
+        eventType_ = 0;
+        eventCode_ = 0;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.teneasyChat.api.common.CWorker.internal_static_api_common_WorkerEvent_descriptor;
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.common.CWorker.WorkerEvent getDefaultInstanceForType() {
+        return com.teneasyChat.api.common.CWorker.WorkerEvent.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.common.CWorker.WorkerEvent build() {
+        com.teneasyChat.api.common.CWorker.WorkerEvent result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.common.CWorker.WorkerEvent buildPartial() {
+        com.teneasyChat.api.common.CWorker.WorkerEvent result = new com.teneasyChat.api.common.CWorker.WorkerEvent(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.teneasyChat.api.common.CWorker.WorkerEvent result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.tenantId_ = tenantId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.workerId_ = workerId_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.socketId_ = socketId_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.gatewayId_ = gatewayId_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.eventType_ = eventType_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.eventCode_ = eventCode_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.teneasyChat.api.common.CWorker.WorkerEvent) {
+          return mergeFrom((com.teneasyChat.api.common.CWorker.WorkerEvent)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.teneasyChat.api.common.CWorker.WorkerEvent other) {
+        if (other == com.teneasyChat.api.common.CWorker.WorkerEvent.getDefaultInstance()) return this;
+        if (other.getTenantId() != 0) {
+          setTenantId(other.getTenantId());
+        }
+        if (other.getWorkerId() != 0) {
+          setWorkerId(other.getWorkerId());
+        }
+        if (other.getSocketId() != 0L) {
+          setSocketId(other.getSocketId());
+        }
+        if (other.getGatewayId() != 0) {
+          setGatewayId(other.getGatewayId());
+        }
+        if (other.eventType_ != 0) {
+          setEventTypeValue(other.getEventTypeValue());
+        }
+        if (other.getEventCode() != 0) {
+          setEventCode(other.getEventCode());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                tenantId_ = input.readInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 16: {
+                workerId_ = input.readInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
+              case 24: {
+                socketId_ = input.readUInt64();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 24
+              case 32: {
+                eventType_ = input.readEnum();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 32
+              case 40: {
+                eventCode_ = input.readInt32();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 40
+              case 48: {
+                gatewayId_ = input.readInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 48
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private int tenantId_ ;
+      /**
+       * <pre>
+       * 商户ID
+       * </pre>
+       *
+       * <code>int32 tenant_id = 1;</code>
+       * @return The tenantId.
+       */
+      @java.lang.Override
+      public int getTenantId() {
+        return tenantId_;
+      }
+      /**
+       * <pre>
+       * 商户ID
+       * </pre>
+       *
+       * <code>int32 tenant_id = 1;</code>
+       * @param value The tenantId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTenantId(int value) {
+
+        tenantId_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 商户ID
+       * </pre>
+       *
+       * <code>int32 tenant_id = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTenantId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        tenantId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int workerId_ ;
+      /**
+       * <pre>
+       * 客户ID
+       * </pre>
+       *
+       * <code>int32 worker_id = 2;</code>
+       * @return The workerId.
+       */
+      @java.lang.Override
+      public int getWorkerId() {
+        return workerId_;
+      }
+      /**
+       * <pre>
+       * 客户ID
+       * </pre>
+       *
+       * <code>int32 worker_id = 2;</code>
+       * @param value The workerId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setWorkerId(int value) {
+
+        workerId_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 客户ID
+       * </pre>
+       *
+       * <code>int32 worker_id = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearWorkerId() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        workerId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private long socketId_ ;
+      /**
+       * <pre>
+       * 链接ID
+       * </pre>
+       *
+       * <code>uint64 socket_id = 3;</code>
+       * @return The socketId.
+       */
+      @java.lang.Override
+      public long getSocketId() {
+        return socketId_;
+      }
+      /**
+       * <pre>
+       * 链接ID
+       * </pre>
+       *
+       * <code>uint64 socket_id = 3;</code>
+       * @param value The socketId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSocketId(long value) {
+
+        socketId_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 链接ID
+       * </pre>
+       *
+       * <code>uint64 socket_id = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSocketId() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        socketId_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private int gatewayId_ ;
+      /**
+       * <pre>
+       * 网关ID
+       * </pre>
+       *
+       * <code>int32 gateway_id = 6;</code>
+       * @return The gatewayId.
+       */
+      @java.lang.Override
+      public int getGatewayId() {
+        return gatewayId_;
+      }
+      /**
+       * <pre>
+       * 网关ID
+       * </pre>
+       *
+       * <code>int32 gateway_id = 6;</code>
+       * @param value The gatewayId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGatewayId(int value) {
+
+        gatewayId_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 网关ID
+       * </pre>
+       *
+       * <code>int32 gateway_id = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearGatewayId() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        gatewayId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int eventType_ = 0;
+      /**
+       * <pre>
+       * 客户事件类型
+       * </pre>
+       *
+       * <code>.api.common.WorkerEventType event_type = 4;</code>
+       * @return The enum numeric value on the wire for eventType.
+       */
+      @java.lang.Override public int getEventTypeValue() {
+        return eventType_;
+      }
+      /**
+       * <pre>
+       * 客户事件类型
+       * </pre>
+       *
+       * <code>.api.common.WorkerEventType event_type = 4;</code>
+       * @param value The enum numeric value on the wire for eventType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEventTypeValue(int value) {
+        eventType_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 客户事件类型
+       * </pre>
+       *
+       * <code>.api.common.WorkerEventType event_type = 4;</code>
+       * @return The eventType.
+       */
+      @java.lang.Override
+      public com.teneasyChat.api.common.CWorker.WorkerEventType getEventType() {
+        com.teneasyChat.api.common.CWorker.WorkerEventType result = com.teneasyChat.api.common.CWorker.WorkerEventType.forNumber(eventType_);
+        return result == null ? com.teneasyChat.api.common.CWorker.WorkerEventType.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * 客户事件类型
+       * </pre>
+       *
+       * <code>.api.common.WorkerEventType event_type = 4;</code>
+       * @param value The eventType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEventType(com.teneasyChat.api.common.CWorker.WorkerEventType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000010;
+        eventType_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 客户事件类型
+       * </pre>
+       *
+       * <code>.api.common.WorkerEventType event_type = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearEventType() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        eventType_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int eventCode_ ;
+      /**
+       * <pre>
+       * 客户事件错误码
+       * </pre>
+       *
+       * <code>int32 event_code = 5;</code>
+       * @return The eventCode.
+       */
+      @java.lang.Override
+      public int getEventCode() {
+        return eventCode_;
+      }
+      /**
+       * <pre>
+       * 客户事件错误码
+       * </pre>
+       *
+       * <code>int32 event_code = 5;</code>
+       * @param value The eventCode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEventCode(int value) {
+
+        eventCode_ = value;
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 客户事件错误码
+       * </pre>
+       *
+       * <code>int32 event_code = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearEventCode() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        eventCode_ = 0;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:api.common.WorkerEvent)
+    }
+
+    // @@protoc_insertion_point(class_scope:api.common.WorkerEvent)
+    private static final com.teneasyChat.api.common.CWorker.WorkerEvent DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.teneasyChat.api.common.CWorker.WorkerEvent();
+    }
+
+    public static com.teneasyChat.api.common.CWorker.WorkerEvent getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<WorkerEvent>
+        PARSER = new com.google.protobuf.AbstractParser<WorkerEvent>() {
+      @java.lang.Override
+      public WorkerEvent parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<WorkerEvent> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<WorkerEvent> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.teneasyChat.api.common.CWorker.WorkerEvent getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface WorkerOrBuilder extends
       // @@protoc_insertion_point(interface_extends:api.common.Worker)
       com.google.protobuf.MessageOrBuilder {
@@ -982,6 +2322,35 @@ public final class CWorker {
      */
     com.google.protobuf.ByteString
         getTipsBytes();
+
+    /**
+     * <pre>
+     * 所属咨询类型id
+     * </pre>
+     *
+     * <code>repeated uint32 consult_ids = 16;</code>
+     * @return A list containing the consultIds.
+     */
+    java.util.List<java.lang.Integer> getConsultIdsList();
+    /**
+     * <pre>
+     * 所属咨询类型id
+     * </pre>
+     *
+     * <code>repeated uint32 consult_ids = 16;</code>
+     * @return The count of consultIds.
+     */
+    int getConsultIdsCount();
+    /**
+     * <pre>
+     * 所属咨询类型id
+     * </pre>
+     *
+     * <code>repeated uint32 consult_ids = 16;</code>
+     * @param index The index of the element to return.
+     * @return The consultIds at the given index.
+     */
+    int getConsultIds(int index);
   }
   /**
    * Protobuf type {@code api.common.Worker}
@@ -1016,6 +2385,7 @@ public final class CWorker {
       workerNimsession_ = "";
       groupChild_ = java.util.Collections.emptyList();
       tips_ = "";
+      consultIds_ = emptyIntList();
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
@@ -1574,6 +2944,48 @@ public final class CWorker {
       }
     }
 
+    public static final int CONSULT_IDS_FIELD_NUMBER = 16;
+    @SuppressWarnings("serial")
+    private com.google.protobuf.Internal.IntList consultIds_ =
+        emptyIntList();
+    /**
+     * <pre>
+     * 所属咨询类型id
+     * </pre>
+     *
+     * <code>repeated uint32 consult_ids = 16;</code>
+     * @return A list containing the consultIds.
+     */
+    @java.lang.Override
+    public java.util.List<java.lang.Integer>
+        getConsultIdsList() {
+      return consultIds_;
+    }
+    /**
+     * <pre>
+     * 所属咨询类型id
+     * </pre>
+     *
+     * <code>repeated uint32 consult_ids = 16;</code>
+     * @return The count of consultIds.
+     */
+    public int getConsultIdsCount() {
+      return consultIds_.size();
+    }
+    /**
+     * <pre>
+     * 所属咨询类型id
+     * </pre>
+     *
+     * <code>repeated uint32 consult_ids = 16;</code>
+     * @param index The index of the element to return.
+     * @return The consultIds at the given index.
+     */
+    public int getConsultIds(int index) {
+      return consultIds_.getInt(index);
+    }
+    private int consultIdsMemoizedSerializedSize = -1;
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -1588,6 +3000,7 @@ public final class CWorker {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      getSerializedSize();
       if (workerId_ != 0) {
         output.writeInt32(1, workerId_);
       }
@@ -1632,6 +3045,13 @@ public final class CWorker {
       }
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(tips_)) {
         com.google.protobuf.GeneratedMessage.writeString(output, 15, tips_);
+      }
+      if (getConsultIdsList().size() > 0) {
+        output.writeUInt32NoTag(130);
+        output.writeUInt32NoTag(consultIdsMemoizedSerializedSize);
+      }
+      for (int i = 0; i < consultIds_.size(); i++) {
+        output.writeUInt32NoTag(consultIds_.getInt(i));
       }
       getUnknownFields().writeTo(output);
     }
@@ -1695,6 +3115,20 @@ public final class CWorker {
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(tips_)) {
         size += com.google.protobuf.GeneratedMessage.computeStringSize(15, tips_);
       }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < consultIds_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeUInt32SizeNoTag(consultIds_.getInt(i));
+        }
+        size += dataSize;
+        if (!getConsultIdsList().isEmpty()) {
+          size += 2;
+          size += com.google.protobuf.CodedOutputStream
+              .computeInt32SizeNoTag(dataSize);
+        }
+        consultIdsMemoizedSerializedSize = dataSize;
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -1738,6 +3172,8 @@ public final class CWorker {
           .equals(other.getGroupChildList())) return false;
       if (!getTips()
           .equals(other.getTips())) return false;
+      if (!getConsultIdsList()
+          .equals(other.getConsultIdsList())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -1784,6 +3220,10 @@ public final class CWorker {
       }
       hash = (37 * hash) + TIPS_FIELD_NUMBER;
       hash = (53 * hash) + getTips().hashCode();
+      if (getConsultIdsCount() > 0) {
+        hash = (37 * hash) + CONSULT_IDS_FIELD_NUMBER;
+        hash = (53 * hash) + getConsultIdsList().hashCode();
+      }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1942,6 +3382,7 @@ public final class CWorker {
         }
         bitField0_ = (bitField0_ & ~0x00002000);
         tips_ = "";
+        consultIds_ = emptyIntList();
         return this;
       }
 
@@ -2035,6 +3476,10 @@ public final class CWorker {
         }
         if (((from_bitField0_ & 0x00004000) != 0)) {
           result.tips_ = tips_;
+        }
+        if (((from_bitField0_ & 0x00008000) != 0)) {
+          consultIds_.makeImmutable();
+          result.consultIds_ = consultIds_;
         }
       }
 
@@ -2155,6 +3600,17 @@ public final class CWorker {
           bitField0_ |= 0x00004000;
           onChanged();
         }
+        if (!other.consultIds_.isEmpty()) {
+          if (consultIds_.isEmpty()) {
+            consultIds_ = other.consultIds_;
+            consultIds_.makeImmutable();
+            bitField0_ |= 0x00008000;
+          } else {
+            ensureConsultIdsIsMutable();
+            consultIds_.addAll(other.consultIds_);
+          }
+          onChanged();
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -2272,6 +3728,22 @@ public final class CWorker {
                 bitField0_ |= 0x00004000;
                 break;
               } // case 122
+              case 128: {
+                int v = input.readUInt32();
+                ensureConsultIdsIsMutable();
+                consultIds_.addInt(v);
+                break;
+              } // case 128
+              case 130: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureConsultIdsIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  consultIds_.addInt(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 130
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -3823,6 +5295,118 @@ public final class CWorker {
         checkByteStringIsUtf8(value);
         tips_ = value;
         bitField0_ |= 0x00004000;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.Internal.IntList consultIds_ = emptyIntList();
+      private void ensureConsultIdsIsMutable() {
+        if (!consultIds_.isModifiable()) {
+          consultIds_ = makeMutableCopy(consultIds_);
+        }
+        bitField0_ |= 0x00008000;
+      }
+      /**
+       * <pre>
+       * 所属咨询类型id
+       * </pre>
+       *
+       * <code>repeated uint32 consult_ids = 16;</code>
+       * @return A list containing the consultIds.
+       */
+      public java.util.List<java.lang.Integer>
+          getConsultIdsList() {
+        consultIds_.makeImmutable();
+        return consultIds_;
+      }
+      /**
+       * <pre>
+       * 所属咨询类型id
+       * </pre>
+       *
+       * <code>repeated uint32 consult_ids = 16;</code>
+       * @return The count of consultIds.
+       */
+      public int getConsultIdsCount() {
+        return consultIds_.size();
+      }
+      /**
+       * <pre>
+       * 所属咨询类型id
+       * </pre>
+       *
+       * <code>repeated uint32 consult_ids = 16;</code>
+       * @param index The index of the element to return.
+       * @return The consultIds at the given index.
+       */
+      public int getConsultIds(int index) {
+        return consultIds_.getInt(index);
+      }
+      /**
+       * <pre>
+       * 所属咨询类型id
+       * </pre>
+       *
+       * <code>repeated uint32 consult_ids = 16;</code>
+       * @param index The index to set the value at.
+       * @param value The consultIds to set.
+       * @return This builder for chaining.
+       */
+      public Builder setConsultIds(
+          int index, int value) {
+
+        ensureConsultIdsIsMutable();
+        consultIds_.setInt(index, value);
+        bitField0_ |= 0x00008000;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 所属咨询类型id
+       * </pre>
+       *
+       * <code>repeated uint32 consult_ids = 16;</code>
+       * @param value The consultIds to add.
+       * @return This builder for chaining.
+       */
+      public Builder addConsultIds(int value) {
+
+        ensureConsultIdsIsMutable();
+        consultIds_.addInt(value);
+        bitField0_ |= 0x00008000;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 所属咨询类型id
+       * </pre>
+       *
+       * <code>repeated uint32 consult_ids = 16;</code>
+       * @param values The consultIds to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllConsultIds(
+          java.lang.Iterable<? extends java.lang.Integer> values) {
+        ensureConsultIdsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, consultIds_);
+        bitField0_ |= 0x00008000;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 所属咨询类型id
+       * </pre>
+       *
+       * <code>repeated uint32 consult_ids = 16;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearConsultIds() {
+        consultIds_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00008000);
         onChanged();
         return this;
       }
@@ -6132,6 +7716,11 @@ public final class CWorker {
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_api_common_WorkerEvent_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_api_common_WorkerEvent_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_api_common_Worker_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -6162,37 +7751,48 @@ public final class CWorker {
     java.lang.String[] descriptorData = {
       "\n\031api/common/c_worker.proto\022\napi.common\032" +
       "\027api/common/c_base.proto\032\027validate/valid" +
-      "ate.proto\"\211\003\n\006Worker\022\021\n\tworker_id\030\001 \001(\005\022" +
-      "\017\n\007account\030\002 \001(\t\022&\n\005group\030\003 \003(\0132\027.api.co" +
-      "mmon.WorkerGroup\022\021\n\tperm_mask\030\004 \001(\005\022\014\n\004n" +
-      "ame\030\005 \001(\t\022\016\n\006avatar\030\006 \001(\t\022-\n\014online_stat" +
-      "e\030\007 \001(\0162\027.api.common.OnlineState\022\020\n\010pass" +
-      "word\030\010 \001(\t\022/\n\rconnect_state\030\t \001(\0162\030.api." +
-      "common.ConnectState\022\021\n\ttenant_id\030\n \001(\005\022\024" +
-      "\n\014worker_nimid\030\013 \001(\t\022\031\n\021worker_nimsessio" +
-      "n\030\014 \001(\t\022\020\n\010bneednim\030\r \001(\010\022,\n\013group_child" +
-      "\030\016 \003(\0132\027.api.common.WorkerGroup\022\014\n\004tips\030" +
-      "\017 \001(\t\"\210\001\n\013WorkerGroup\022\n\n\002id\030\001 \001(\003\022\014\n\004nam" +
-      "e\030\002 \001(\t\022\020\n\010priority\030\003 \001(\005\022\r\n\005count\030\004 \001(\005" +
-      "\022\020\n\010parentId\030\005 \001(\003\022\030\n\005ratio\030\006 \001(\005B\t\372B\006\032\004" +
-      "\030d(\000\022\022\n\nconsult_id\030\007 \001(\r\":\n\014Distribution" +
-      "\022\n\n\002id\030\001 \001(\003\022\014\n\004name\030\002 \001(\t\022\020\n\010priority\030\003" +
-      " \001(\005\":\n\014TenantClique\022\n\n\002id\030\001 \001(\005\022\014\n\004name" +
-      "\030\002 \001(\t\022\020\n\010priority\030\003 \001(\005*y\n\020Distribution" +
-      "Type\022\030\n\024DISTRIBUTION_LEISURE\020\000\022\025\n\021DISTRI" +
-      "BUTION_BUSY\020\001\022\030\n\024DISTRIBUTION_OFFLINE\020\002\022" +
-      "\032\n\026DISTRIBUTION_NOT_LOGIN\020\003*\322\001\n\020WorkerPe" +
-      "rmission\022\024\n\020WORKER_PERM_NONE\020\000\022\023\n\017WORKER" +
-      "_PERM_TOP\020\001\022\025\n\021WORKER_PERM_ADMIN\020\002\022\026\n\022WO" +
-      "RKER_PERM_LEADER\020\004\022\027\n\023WORKER_PERM_FRONTE" +
-      "R\020\010\022\030\n\024WORKER_PERM_TRANSFER\020\020\022\030\n\024WORKER_" +
-      "PERM_SEARCHER\020 \022\027\n\023WORKER_PERM_BLACKER\020@" +
-      "*C\n\014ConnectState\022\031\n\025CONNECT_STATE_OFFLIN" +
-      "E\020\000\022\030\n\024CONNECT_STATE_ONLINE\020\001*Q\n\013OnlineS" +
-      "tate\022\025\n\021ONLINE_STATE_IDLE\020\000\022\025\n\021ONLINE_ST" +
-      "ATE_BUSY\020\001\022\024\n\020ONLINE_STATE_AFK\020\002B3\n\032com." +
-      "teneasyChat.api.commonZ\025wcs/api/common;c" +
-      "ommonb\006proto3"
+      "ate.proto\"\237\001\n\013WorkerEvent\022\021\n\ttenant_id\030\001" +
+      " \001(\005\022\021\n\tworker_id\030\002 \001(\005\022\021\n\tsocket_id\030\003 \001" +
+      "(\004\022\022\n\ngateway_id\030\006 \001(\005\022/\n\nevent_type\030\004 \001" +
+      "(\0162\033.api.common.WorkerEventType\022\022\n\nevent" +
+      "_code\030\005 \001(\005\"\236\003\n\006Worker\022\021\n\tworker_id\030\001 \001(" +
+      "\005\022\017\n\007account\030\002 \001(\t\022&\n\005group\030\003 \003(\0132\027.api." +
+      "common.WorkerGroup\022\021\n\tperm_mask\030\004 \001(\005\022\014\n" +
+      "\004name\030\005 \001(\t\022\016\n\006avatar\030\006 \001(\t\022-\n\014online_st" +
+      "ate\030\007 \001(\0162\027.api.common.OnlineState\022\020\n\010pa" +
+      "ssword\030\010 \001(\t\022/\n\rconnect_state\030\t \001(\0162\030.ap" +
+      "i.common.ConnectState\022\021\n\ttenant_id\030\n \001(\005" +
+      "\022\024\n\014worker_nimid\030\013 \001(\t\022\031\n\021worker_nimsess" +
+      "ion\030\014 \001(\t\022\020\n\010bneednim\030\r \001(\010\022,\n\013group_chi" +
+      "ld\030\016 \003(\0132\027.api.common.WorkerGroup\022\014\n\004tip" +
+      "s\030\017 \001(\t\022\023\n\013consult_ids\030\020 \003(\r\"\210\001\n\013WorkerG" +
+      "roup\022\n\n\002id\030\001 \001(\003\022\014\n\004name\030\002 \001(\t\022\020\n\010priori" +
+      "ty\030\003 \001(\005\022\r\n\005count\030\004 \001(\005\022\020\n\010parentId\030\005 \001(" +
+      "\003\022\030\n\005ratio\030\006 \001(\005B\t\372B\006\032\004\030d(\000\022\022\n\nconsult_i" +
+      "d\030\007 \001(\r\":\n\014Distribution\022\n\n\002id\030\001 \001(\003\022\014\n\004n" +
+      "ame\030\002 \001(\t\022\020\n\010priority\030\003 \001(\005\":\n\014TenantCli" +
+      "que\022\n\n\002id\030\001 \001(\005\022\014\n\004name\030\002 \001(\t\022\020\n\010priorit" +
+      "y\030\003 \001(\005*y\n\020DistributionType\022\030\n\024DISTRIBUT" +
+      "ION_LEISURE\020\000\022\025\n\021DISTRIBUTION_BUSY\020\001\022\030\n\024" +
+      "DISTRIBUTION_OFFLINE\020\002\022\032\n\026DISTRIBUTION_N" +
+      "OT_LOGIN\020\003*\322\001\n\020WorkerPermission\022\024\n\020WORKE" +
+      "R_PERM_NONE\020\000\022\023\n\017WORKER_PERM_TOP\020\001\022\025\n\021WO" +
+      "RKER_PERM_ADMIN\020\002\022\026\n\022WORKER_PERM_LEADER\020" +
+      "\004\022\027\n\023WORKER_PERM_FRONTER\020\010\022\030\n\024WORKER_PER" +
+      "M_TRANSFER\020\020\022\030\n\024WORKER_PERM_SEARCHER\020 \022\027" +
+      "\n\023WORKER_PERM_BLACKER\020@*C\n\014ConnectState\022" +
+      "\031\n\025CONNECT_STATE_OFFLINE\020\000\022\030\n\024CONNECT_ST" +
+      "ATE_ONLINE\020\001*Q\n\013OnlineState\022\025\n\021ONLINE_ST" +
+      "ATE_IDLE\020\000\022\025\n\021ONLINE_STATE_BUSY\020\001\022\024\n\020ONL" +
+      "INE_STATE_AFK\020\002*U\n\013WorkerState\022\022\n\016WORKER" +
+      "_OFFLINE\020\000\022\020\n\014WORKER_READY\020\001\022\017\n\013WORKER_B" +
+      "USY\020\002\022\017\n\013WORKER_LOST\020\003*\240\001\n\017WorkerEventTy" +
+      "pe\022\027\n\023WORKER_EVENT_ONLINE\020\000\022\025\n\021WORKER_EV" +
+      "ENT_PING\020\001\022\026\n\022WORKER_EVENT_ERROR\020\002\022\025\n\021WO" +
+      "RKER_EVENT_AWAY\020\003\022\025\n\021WORKER_EVENT_BUSY\020\004" +
+      "\022\027\n\023WORKER_EVENT_LOGOUT\020\005B3\n\032com.teneasy" +
+      "Chat.api.commonZ\025wcs/api/common;commonb\006" +
+      "proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -6200,26 +7800,32 @@ public final class CWorker {
           com.teneasyChat.api.common.CBase.getDescriptor(),
           io.envoyproxy.pgv.validate.Validate.getDescriptor(),
         });
-    internal_static_api_common_Worker_descriptor =
+    internal_static_api_common_WorkerEvent_descriptor =
       getDescriptor().getMessageTypes().get(0);
+    internal_static_api_common_WorkerEvent_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_api_common_WorkerEvent_descriptor,
+        new java.lang.String[] { "TenantId", "WorkerId", "SocketId", "GatewayId", "EventType", "EventCode", });
+    internal_static_api_common_Worker_descriptor =
+      getDescriptor().getMessageTypes().get(1);
     internal_static_api_common_Worker_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_common_Worker_descriptor,
-        new java.lang.String[] { "WorkerId", "Account", "Group", "PermMask", "Name", "Avatar", "OnlineState", "Password", "ConnectState", "TenantId", "WorkerNimid", "WorkerNimsession", "Bneednim", "GroupChild", "Tips", });
+        new java.lang.String[] { "WorkerId", "Account", "Group", "PermMask", "Name", "Avatar", "OnlineState", "Password", "ConnectState", "TenantId", "WorkerNimid", "WorkerNimsession", "Bneednim", "GroupChild", "Tips", "ConsultIds", });
     internal_static_api_common_WorkerGroup_descriptor =
-      getDescriptor().getMessageTypes().get(1);
+      getDescriptor().getMessageTypes().get(2);
     internal_static_api_common_WorkerGroup_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_common_WorkerGroup_descriptor,
         new java.lang.String[] { "Id", "Name", "Priority", "Count", "ParentId", "Ratio", "ConsultId", });
     internal_static_api_common_Distribution_descriptor =
-      getDescriptor().getMessageTypes().get(2);
+      getDescriptor().getMessageTypes().get(3);
     internal_static_api_common_Distribution_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_common_Distribution_descriptor,
         new java.lang.String[] { "Id", "Name", "Priority", });
     internal_static_api_common_TenantClique_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(4);
     internal_static_api_common_TenantClique_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_common_TenantClique_descriptor,

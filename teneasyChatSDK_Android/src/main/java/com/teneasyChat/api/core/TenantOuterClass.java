@@ -3378,6 +3378,16 @@ public final class TenantOuterClass {
      * <code>.api.common.Worker items = 2;</code>
      */
     com.teneasyChat.api.common.CWorker.WorkerOrBuilder getItemsOrBuilder();
+
+    /**
+     * <pre>
+     * 过期时间（分）
+     * </pre>
+     *
+     * <code>int32 chat_expire_time = 3;</code>
+     * @return The chatExpireTime.
+     */
+    int getChatExpireTime();
   }
   /**
    * Protobuf type {@code api.core.LoginResponse}
@@ -3503,6 +3513,21 @@ public final class TenantOuterClass {
       return items_ == null ? com.teneasyChat.api.common.CWorker.Worker.getDefaultInstance() : items_;
     }
 
+    public static final int CHAT_EXPIRE_TIME_FIELD_NUMBER = 3;
+    private int chatExpireTime_ = 0;
+    /**
+     * <pre>
+     * 过期时间（分）
+     * </pre>
+     *
+     * <code>int32 chat_expire_time = 3;</code>
+     * @return The chatExpireTime.
+     */
+    @java.lang.Override
+    public int getChatExpireTime() {
+      return chatExpireTime_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -3523,6 +3548,9 @@ public final class TenantOuterClass {
       if (((bitField0_ & 0x00000001) != 0)) {
         output.writeMessage(2, getItems());
       }
+      if (chatExpireTime_ != 0) {
+        output.writeInt32(3, chatExpireTime_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -3538,6 +3566,10 @@ public final class TenantOuterClass {
       if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, getItems());
+      }
+      if (chatExpireTime_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(3, chatExpireTime_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -3561,6 +3593,8 @@ public final class TenantOuterClass {
         if (!getItems()
             .equals(other.getItems())) return false;
       }
+      if (getChatExpireTime()
+          != other.getChatExpireTime()) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -3578,6 +3612,8 @@ public final class TenantOuterClass {
         hash = (37 * hash) + ITEMS_FIELD_NUMBER;
         hash = (53 * hash) + getItems().hashCode();
       }
+      hash = (37 * hash) + CHAT_EXPIRE_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getChatExpireTime();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -3721,6 +3757,7 @@ public final class TenantOuterClass {
           itemsBuilder_.dispose();
           itemsBuilder_ = null;
         }
+        chatExpireTime_ = 0;
         return this;
       }
 
@@ -3764,6 +3801,9 @@ public final class TenantOuterClass {
               : itemsBuilder_.build();
           to_bitField0_ |= 0x00000001;
         }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.chatExpireTime_ = chatExpireTime_;
+        }
         result.bitField0_ |= to_bitField0_;
       }
 
@@ -3786,6 +3826,9 @@ public final class TenantOuterClass {
         }
         if (other.hasItems()) {
           mergeItems(other.getItems());
+        }
+        if (other.getChatExpireTime() != 0) {
+          setChatExpireTime(other.getChatExpireTime());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -3825,6 +3868,11 @@ public final class TenantOuterClass {
                 bitField0_ |= 0x00000002;
                 break;
               } // case 18
+              case 24: {
+                chatExpireTime_ = input.readInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 24
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -4089,6 +4137,50 @@ public final class TenantOuterClass {
           items_ = null;
         }
         return itemsBuilder_;
+      }
+
+      private int chatExpireTime_ ;
+      /**
+       * <pre>
+       * 过期时间（分）
+       * </pre>
+       *
+       * <code>int32 chat_expire_time = 3;</code>
+       * @return The chatExpireTime.
+       */
+      @java.lang.Override
+      public int getChatExpireTime() {
+        return chatExpireTime_;
+      }
+      /**
+       * <pre>
+       * 过期时间（分）
+       * </pre>
+       *
+       * <code>int32 chat_expire_time = 3;</code>
+       * @param value The chatExpireTime to set.
+       * @return This builder for chaining.
+       */
+      public Builder setChatExpireTime(int value) {
+
+        chatExpireTime_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 过期时间（分）
+       * </pre>
+       *
+       * <code>int32 chat_expire_time = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearChatExpireTime() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        chatExpireTime_ = 0;
+        onChanged();
+        return this;
       }
 
       // @@protoc_insertion_point(builder_scope:api.core.LoginResponse)
@@ -26025,138 +26117,138 @@ public final class TenantOuterClass {
       "\003 \001(\005\"4\n\rRouteResponse\022#\n\006routes\030\001 \003(\0132\023" +
       ".api.core.RouteItem\"G\n\014LoginRequest\022\032\n\007a" +
       "ccount\030\001 \001(\tB\t\372B\006r\004\020\003\030\020\022\033\n\010password\030\002 \001(" +
-      "\tB\t\372B\006r\004 \006(\024\"A\n\rLoginResponse\022\r\n\005token\030\001" +
-      " \001(\t\022!\n\005items\030\002 \001(\0132\022.api.common.Worker\"" +
-      "1\n\023ManagerLoginRequest\022\032\n\tworker_id\030\001 \001(" +
-      "\005B\007\372B\004\032\002 \000\"H\n\024ManagerLoginResponse\022\r\n\005to" +
-      "ken\030\001 \001(\t\022!\n\005items\030\002 \001(\0132\022.api.common.Wo" +
-      "rker\"\321\001\n\023TenantCreateRequest\022\027\n\004name\030\001 \001" +
-      "(\tB\t\372B\006r\004\020\001\030\020\022\032\n\007account\030\002 \001(\tB\t\372B\006r\004\020\003\030" +
-      "\020\022\033\n\010password\030\003 \001(\tB\t\372B\006r\004 \006(\020\022#\n\017worker" +
-      "_capacity\030\004 \001(\005B\n\372B\007\032\005\030\217N(\000\022\'\n\026daily_ser" +
-      "vice_capacity\030\005 \001(\005B\007\372B\004\032\002(\000\022\032\n\tclique_i" +
-      "d\030\006 \001(\005B\007\372B\004\032\002(\000\"l\n\022TenantQueryRequest\022*" +
-      "\n\005batch\030\001 \001(\0132\021.api.common.BatchB\010\372B\005\212\001\002" +
-      "\020\001\022\020\n\010group_id\030\002 \001(\005\022\030\n\007keyword\030\003 \001(\tB\007\372" +
-      "B\004r\002\030@\"\235\001\n\023TenantQueryResponse\022 \n\005batch\030" +
-      "\001 \001(\0132\021.api.common.Batch\022\020\n\010group_id\030\002 \001" +
-      "(\005\022\030\n\007keyword\030\003 \001(\tB\007\372B\004r\002\030@\022)\n\013tenant_i" +
-      "tem\030\004 \003(\0132\024.api.core.TenantItem\022\r\n\005total" +
-      "\030\005 \001(\005\"R\n\023DeleteTenantRequest\022\036\n\ttenant_" +
-      "id\030\001 \001(\rB\013\372B\010*\006\030\377\377\001 \000\022\033\n\010password\030\002 \001(\tB" +
-      "\t\372B\006r\004\020\001\030 \"\306\003\n\nTenantItem\022\021\n\ttenant_id\030\001" +
-      " \001(\r\022\031\n\021tenant_public_key\030\002 \001(\t\022\014\n\004name\030" +
-      "\003 \001(\t\022\030\n\020workers_capacity\030\004 \001(\005\022\036\n\026daily" +
-      "_service_capacity\030\005 \001(\005\022\024\n\014entrance_num\030" +
-      "\006 \001(\005\022\021\n\tuser_name\030\007 \001(\t\022\027\n\017average_mont" +
-      "hly\030\010 \001(\005\022\031\n\021cumulative_volume\030\t \001(\005\022\020\n\010" +
-      "password\030\n \001(\t\022-\n\tcreate_at\030\013 \001(\0132\032.goog" +
-      "le.protobuf.Timestamp\022-\n\tdelete_at\030\014 \001(\013" +
-      "2\032.google.protobuf.Timestamp\022\022\n\ngroup_na" +
-      "me\030\r \001(\t\022\021\n\tclique_Id\030\016 \001(\005\022\027\n\017api_reque" +
-      "st_url\030\017 \001(\t\022\020\n\010api_name\030\020 \001(\t\022\017\n\007api_pw" +
-      "d\030\021 \001(\t\022\022\n\napi_pubKey\030\022 \001(\t\"6\n\021AdminLogi" +
-      "nRequest\022\017\n\007account\030\001 \001(\t\022\020\n\010password\030\002 " +
-      "\001(\t\"#\n\022AdminLoginResponse\022\r\n\005token\030\001 \001(\t" +
-      "\"\346\001\n\023UpdateTenantRequest\022\036\n\ttenant_id\030\001 " +
-      "\001(\rB\013\372B\010*\006\030\377\377\001 \000\022\027\n\004name\030\002 \001(\tB\t\372B\006r\004\020\001\030" +
-      "\020\022#\n\017worker_capacity\030\003 \001(\005B\n\372B\007\032\005\030\217N(\000\022\'" +
-      "\n\026daily_service_capacity\030\004 \001(\005B\007\372B\004\032\002(\000\022" +
-      "\033\n\010password\030\005 \001(\tB\t\372B\006r\004 \005(d\022\032\n\tclique_i" +
-      "d\030\006 \001(\005B\007\372B\004\032\002(\000\022\017\n\007nimprex\030\007 \001(\t\"\"\n\021Pub" +
-      "licKeyResponse\022\r\n\005token\030\001 \001(\t\"=\n\027QueryTe" +
-      "nantInfoResponse\022\"\n\004item\030\001 \001(\0132\024.api.cor" +
-      "e.TenantItem\"K\n\024UpdateNimInfoRequest\022\020\n\010" +
-      "workerId\030\001 \001(\005\022\r\n\005nimid\030\002 \001(\t\022\022\n\nnimsess" +
-      "ion\030\003 \001(\t\"\374\001\n\016VersionRequest\022\027\n\nversion_" +
-      "id\030\001 \001(\005H\000\210\001\001\022*\n\006optype\030\002 \001(\0162\032.api.comm" +
-      "on.OperationsType\022\020\n\010softname\030\003 \001(\t\022\025\n\rm" +
-      "ajor_version\030\004 \001(\t\022\025\n\rminer_version\030\005 \001(" +
-      "\t\022\r\n\005force\030\006 \001(\010\022\024\n\014download_url\030\007 \001(\t\022\021" +
-      "\n\tplist_url\030\010 \001(\t\022\016\n\006remark\030\t \001(\t\022\016\n\006sta" +
-      "tus\030\n \001(\005B\r\n\013_version_id\"\331\002\n\017VersionResp" +
-      "onse\022\022\n\nversion_id\030\001 \001(\005\022*\n\006optype\030\002 \001(\016" +
-      "2\032.api.common.OperationsType\022\020\n\010softname" +
-      "\030\003 \001(\t\022\025\n\rmajor_version\030\004 \001(\t\022\025\n\rminer_v" +
-      "ersion\030\005 \001(\t\022\r\n\005force\030\006 \001(\010\022\024\n\014download_" +
-      "url\030\007 \001(\t\022\021\n\tplist_url\030\010 \001(\t\022\016\n\006remark\030\t" +
-      " \001(\t\022-\n\tcreate_at\030\n \001(\0132\032.google.protobu" +
-      "f.Timestamp\022-\n\tupdate_at\030\013 \001(\0132\032.google." +
-      "protobuf.Timestamp\022\016\n\006status\030\014 \001(\005\022\020\n\010op" +
-      "erator\030\r \001(\t\"\337\001\n\025CreateVersionResponse\022\022" +
-      "\n\nversion_id\030\001 \001(\005\022*\n\006optype\030\002 \001(\0162\032.api" +
-      ".common.OperationsType\022\020\n\010softname\030\003 \001(\t" +
-      "\022\025\n\rmajor_version\030\004 \001(\t\022\025\n\rminer_version" +
-      "\030\005 \001(\t\022\r\n\005force\030\006 \001(\010\022\024\n\014download_url\030\007 " +
-      "\001(\t\022\021\n\tplist_url\030\010 \001(\t\022\016\n\006remark\030\t \001(\t\"\275" +
-      "\002\n\025UpdateVersionResponse\022\022\n\nversion_id\030\001" +
+      "\tB\t\372B\006r\004 \006(\024\"[\n\rLoginResponse\022\r\n\005token\030\001" +
+      " \001(\t\022!\n\005items\030\002 \001(\0132\022.api.common.Worker\022" +
+      "\030\n\020chat_expire_time\030\003 \001(\005\"1\n\023ManagerLogi" +
+      "nRequest\022\032\n\tworker_id\030\001 \001(\005B\007\372B\004\032\002 \000\"H\n\024" +
+      "ManagerLoginResponse\022\r\n\005token\030\001 \001(\t\022!\n\005i" +
+      "tems\030\002 \001(\0132\022.api.common.Worker\"\321\001\n\023Tenan" +
+      "tCreateRequest\022\027\n\004name\030\001 \001(\tB\t\372B\006r\004\020\001\030\020\022" +
+      "\032\n\007account\030\002 \001(\tB\t\372B\006r\004\020\003\030\020\022\033\n\010password\030" +
+      "\003 \001(\tB\t\372B\006r\004 \006(\020\022#\n\017worker_capacity\030\004 \001(" +
+      "\005B\n\372B\007\032\005\030\217N(\000\022\'\n\026daily_service_capacity\030" +
+      "\005 \001(\005B\007\372B\004\032\002(\000\022\032\n\tclique_id\030\006 \001(\005B\007\372B\004\032\002" +
+      "(\000\"l\n\022TenantQueryRequest\022*\n\005batch\030\001 \001(\0132" +
+      "\021.api.common.BatchB\010\372B\005\212\001\002\020\001\022\020\n\010group_id" +
+      "\030\002 \001(\005\022\030\n\007keyword\030\003 \001(\tB\007\372B\004r\002\030@\"\235\001\n\023Ten" +
+      "antQueryResponse\022 \n\005batch\030\001 \001(\0132\021.api.co" +
+      "mmon.Batch\022\020\n\010group_id\030\002 \001(\005\022\030\n\007keyword\030" +
+      "\003 \001(\tB\007\372B\004r\002\030@\022)\n\013tenant_item\030\004 \003(\0132\024.ap" +
+      "i.core.TenantItem\022\r\n\005total\030\005 \001(\005\"R\n\023Dele" +
+      "teTenantRequest\022\036\n\ttenant_id\030\001 \001(\rB\013\372B\010*" +
+      "\006\030\377\377\001 \000\022\033\n\010password\030\002 \001(\tB\t\372B\006r\004\020\001\030 \"\306\003\n" +
+      "\nTenantItem\022\021\n\ttenant_id\030\001 \001(\r\022\031\n\021tenant" +
+      "_public_key\030\002 \001(\t\022\014\n\004name\030\003 \001(\t\022\030\n\020worke" +
+      "rs_capacity\030\004 \001(\005\022\036\n\026daily_service_capac" +
+      "ity\030\005 \001(\005\022\024\n\014entrance_num\030\006 \001(\005\022\021\n\tuser_" +
+      "name\030\007 \001(\t\022\027\n\017average_monthly\030\010 \001(\005\022\031\n\021c" +
+      "umulative_volume\030\t \001(\005\022\020\n\010password\030\n \001(\t" +
+      "\022-\n\tcreate_at\030\013 \001(\0132\032.google.protobuf.Ti" +
+      "mestamp\022-\n\tdelete_at\030\014 \001(\0132\032.google.prot" +
+      "obuf.Timestamp\022\022\n\ngroup_name\030\r \001(\t\022\021\n\tcl" +
+      "ique_Id\030\016 \001(\005\022\027\n\017api_request_url\030\017 \001(\t\022\020" +
+      "\n\010api_name\030\020 \001(\t\022\017\n\007api_pwd\030\021 \001(\t\022\022\n\napi" +
+      "_pubKey\030\022 \001(\t\"6\n\021AdminLoginRequest\022\017\n\007ac" +
+      "count\030\001 \001(\t\022\020\n\010password\030\002 \001(\t\"#\n\022AdminLo" +
+      "ginResponse\022\r\n\005token\030\001 \001(\t\"\346\001\n\023UpdateTen" +
+      "antRequest\022\036\n\ttenant_id\030\001 \001(\rB\013\372B\010*\006\030\377\377\001" +
+      " \000\022\027\n\004name\030\002 \001(\tB\t\372B\006r\004\020\001\030\020\022#\n\017worker_ca" +
+      "pacity\030\003 \001(\005B\n\372B\007\032\005\030\217N(\000\022\'\n\026daily_servic" +
+      "e_capacity\030\004 \001(\005B\007\372B\004\032\002(\000\022\033\n\010password\030\005 " +
+      "\001(\tB\t\372B\006r\004 \005(d\022\032\n\tclique_id\030\006 \001(\005B\007\372B\004\032\002" +
+      "(\000\022\017\n\007nimprex\030\007 \001(\t\"\"\n\021PublicKeyResponse" +
+      "\022\r\n\005token\030\001 \001(\t\"=\n\027QueryTenantInfoRespon" +
+      "se\022\"\n\004item\030\001 \001(\0132\024.api.core.TenantItem\"K" +
+      "\n\024UpdateNimInfoRequest\022\020\n\010workerId\030\001 \001(\005" +
+      "\022\r\n\005nimid\030\002 \001(\t\022\022\n\nnimsession\030\003 \001(\t\"\374\001\n\016" +
+      "VersionRequest\022\027\n\nversion_id\030\001 \001(\005H\000\210\001\001\022" +
+      "*\n\006optype\030\002 \001(\0162\032.api.common.OperationsT" +
+      "ype\022\020\n\010softname\030\003 \001(\t\022\025\n\rmajor_version\030\004" +
+      " \001(\t\022\025\n\rminer_version\030\005 \001(\t\022\r\n\005force\030\006 \001" +
+      "(\010\022\024\n\014download_url\030\007 \001(\t\022\021\n\tplist_url\030\010 " +
+      "\001(\t\022\016\n\006remark\030\t \001(\t\022\016\n\006status\030\n \001(\005B\r\n\013_" +
+      "version_id\"\331\002\n\017VersionResponse\022\022\n\nversio" +
+      "n_id\030\001 \001(\005\022*\n\006optype\030\002 \001(\0162\032.api.common." +
+      "OperationsType\022\020\n\010softname\030\003 \001(\t\022\025\n\rmajo" +
+      "r_version\030\004 \001(\t\022\025\n\rminer_version\030\005 \001(\t\022\r" +
+      "\n\005force\030\006 \001(\010\022\024\n\014download_url\030\007 \001(\t\022\021\n\tp" +
+      "list_url\030\010 \001(\t\022\016\n\006remark\030\t \001(\t\022-\n\tcreate" +
+      "_at\030\n \001(\0132\032.google.protobuf.Timestamp\022-\n" +
+      "\tupdate_at\030\013 \001(\0132\032.google.protobuf.Times" +
+      "tamp\022\016\n\006status\030\014 \001(\005\022\020\n\010operator\030\r \001(\t\"\337" +
+      "\001\n\025CreateVersionResponse\022\022\n\nversion_id\030\001" +
       " \001(\005\022*\n\006optype\030\002 \001(\0162\032.api.common.Operat" +
       "ionsType\022\020\n\010softname\030\003 \001(\t\022\025\n\rmajor_vers" +
       "ion\030\004 \001(\t\022\025\n\rminer_version\030\005 \001(\t\022\r\n\005forc" +
       "e\030\006 \001(\010\022\024\n\014download_url\030\007 \001(\t\022\021\n\tplist_u" +
-      "rl\030\010 \001(\t\022\016\n\006remark\030\t \001(\t\022-\n\tcreate_at\030\n " +
-      "\001(\0132\032.google.protobuf.Timestamp\022-\n\tupdat" +
-      "e_at\030\013 \001(\0132\032.google.protobuf.Timestamp\"=" +
-      "\n\022GetVersionResponse\022\'\n\004list\030\001 \003(\0132\031.api" +
-      ".core.VersionResponse\"\204\001\n\022TenantThirdSet" +
-      "ting\022\036\n\ttenant_id\030\001 \001(\rB\013\372B\010*\006\030\377\377\001 \000\022\027\n\017" +
-      "api_request_url\030\002 \001(\t\022\020\n\010api_name\030\003 \001(\t\022" +
-      "\017\n\007api_pwd\030\004 \001(\t\022\022\n\napi_pubKey\030\005 \001(\t*O\n\t" +
-      "RoleRoute\022\025\n\021Role_ROUTE_WORKER\020\000\022\027\n\023Role" +
-      "_ROUTE_CUSTOMER\020\001\022\022\n\016Role_ROUTE_ALL\020\0022\320\017" +
-      "\n\006Tenant\022p\n\nAdminLogin\022\033.api.core.AdminL" +
-      "oginRequest\032\034.api.core.AdminLoginRespons" +
-      "e\"\'\272\276\031#\010k\030\001\262\006\n2022-12-10\312\014\001\002\322\014\013admin-log" +
-      "in\022[\n\005Login\022\026.api.core.LoginRequest\032\027.ap" +
-      "i.core.LoginResponse\"!\272\276\031\035\010d\030\001\262\006\n2022-12" +
-      "-10\312\014\001\002\322\014\005login\022\\\n\006Logout\022\026.google.proto" +
-      "buf.Empty\032\026.google.protobuf.Empty\"\"\272\276\031\036\010" +
-      "e\030\001\262\006\n2022-12-10\312\014\001\002\322\014\006logout\022c\n\006Create\022" +
-      "\035.api.core.TenantCreateRequest\032\026.google." +
-      "protobuf.Empty\"\"\272\276\031\036\010f\030\001\262\006\n2022-12-10\312\014\001" +
-      "\002\322\014\006create\022g\n\005Query\022\034.api.core.TenantQue" +
-      "ryRequest\032\035.api.core.TenantQueryResponse" +
-      "\"!\272\276\031\035\010h\030\001\262\006\n2022-12-10\312\014\001 \322\014\005query\022i\n\014U" +
-      "pdateTenant\022\035.api.core.UpdateTenantReque" +
-      "st\032\026.google.protobuf.Empty\"\"\272\276\031\036\010i\030\001\262\006\n2" +
-      "022-12-10\312\014\001 \322\014\006update\022i\n\014DeleteTenant\022\035" +
-      ".api.core.DeleteTenantRequest\032\026.google.p" +
-      "rotobuf.Empty\"\"\272\276\031\036\010j\030\001\262\006\n2022-12-10\312\014\001 " +
-      "\322\014\006delete\022t\n\014ManagerLogin\022\035.api.core.Man" +
-      "agerLoginRequest\032\036.api.core.ManagerLogin" +
-      "Response\"%\272\276\031!\010g\030\001\262\006\n2022-12-12\322\014\rmanage" +
-      "r-login\022c\n\tGetRoutes\022\026.api.core.RouteReq" +
-      "uest\032\027.api.core.RouteResponse\"%\272\276\031!\010l\030\001\262" +
-      "\006\n2023-04-06\312\014\001\000\322\014\tgetroutes\022t\n\017CreatePu" +
-      "blicKey\022\026.google.protobuf.Empty\032\033.api.co" +
-      "re.PublicKeyResponse\",\272\276\031(\010m\030\001\262\006\n2023-09" +
-      "-28\312\014\001\000\322\014\020create-publickey\022v\n\rQuerySelfI" +
-      "nfo\022\026.google.protobuf.Empty\032!.api.core.Q" +
-      "ueryTenantInfoResponse\"*\272\276\031&\010n\030\001\262\006\n2023-" +
-      "09-28\312\014\001\000\322\014\016query-selfinfo\022s\n\rUpdateNimI" +
-      "nfo\022\036.api.core.UpdateNimInfoRequest\032\026.go" +
-      "ogle.protobuf.Empty\"*\272\276\031&\010o\030\001\262\006\n2023-12-" +
-      "22\312\014\001\000\322\014\016update-niminfo\022n\n\017ExportUsersLi" +
-      "st\022\026.google.protobuf.Empty\032\026.google.prot" +
-      "obuf.Empty\"+\272\276\031\'\010p\030\001\262\006\t2024-2-12\312\014\001\000\322\014\020e" +
-      "xport-userslist\022v\n\016create_version\022\030.api." +
-      "core.VersionRequest\032\037.api.core.CreateVer" +
-      "sionResponse\")\272\276\031%\010q\030\001\262\006\t2024-2-12\312\014\001 \322\014" +
-      "\016create-version\022v\n\016update_version\022\030.api." +
-      "core.VersionRequest\032\037.api.core.UpdateVer" +
-      "sionResponse\")\272\276\031%\010r\030\001\262\006\t2024-2-12\312\014\001 \322\014" +
-      "\016update-version\022p\n\rgetallversion\022\026.googl" +
-      "e.protobuf.Empty\032\034.api.core.GetVersionRe" +
-      "sponse\")\272\276\031%\010s\030\001\262\006\t2024-2-12\312\014\001\000\322\014\016getal" +
-      "l-version\022c\n\007version\022\026.google.protobuf.E" +
-      "mpty\032\034.api.core.GetVersionResponse\"\"\272\276\031\036" +
-      "\010t\030\001\262\006\t2024-2-12\312\014\001\000\322\014\007version\022c\n\007api_se" +
-      "t\022\034.api.core.TenantThirdSetting\032\026.google" +
-      ".protobuf.Empty\"\"\272\276\031\036\010u\030\001\262\006\t2024-4-11\312\014\001" +
-      " \322\014\007api-set\032\033\272\276\031\027\272\006\006tenant\312\014\001\020\322\014\007/tenant" +
-      "BG\n\030com.teneasyChat.api.coreZ\021wcs/api/co" +
-      "re;core\272\276\031\026\242\006\006calvin\262\006\n2022-12-03b\006proto" +
-      "3"
+      "rl\030\010 \001(\t\022\016\n\006remark\030\t \001(\t\"\275\002\n\025UpdateVersi" +
+      "onResponse\022\022\n\nversion_id\030\001 \001(\005\022*\n\006optype" +
+      "\030\002 \001(\0162\032.api.common.OperationsType\022\020\n\010so" +
+      "ftname\030\003 \001(\t\022\025\n\rmajor_version\030\004 \001(\t\022\025\n\rm" +
+      "iner_version\030\005 \001(\t\022\r\n\005force\030\006 \001(\010\022\024\n\014dow" +
+      "nload_url\030\007 \001(\t\022\021\n\tplist_url\030\010 \001(\t\022\016\n\006re" +
+      "mark\030\t \001(\t\022-\n\tcreate_at\030\n \001(\0132\032.google.p" +
+      "rotobuf.Timestamp\022-\n\tupdate_at\030\013 \001(\0132\032.g" +
+      "oogle.protobuf.Timestamp\"=\n\022GetVersionRe" +
+      "sponse\022\'\n\004list\030\001 \003(\0132\031.api.core.VersionR" +
+      "esponse\"\204\001\n\022TenantThirdSetting\022\036\n\ttenant" +
+      "_id\030\001 \001(\rB\013\372B\010*\006\030\377\377\001 \000\022\027\n\017api_request_ur" +
+      "l\030\002 \001(\t\022\020\n\010api_name\030\003 \001(\t\022\017\n\007api_pwd\030\004 \001" +
+      "(\t\022\022\n\napi_pubKey\030\005 \001(\t*O\n\tRoleRoute\022\025\n\021R" +
+      "ole_ROUTE_WORKER\020\000\022\027\n\023Role_ROUTE_CUSTOME" +
+      "R\020\001\022\022\n\016Role_ROUTE_ALL\020\0022\320\017\n\006Tenant\022p\n\nAd" +
+      "minLogin\022\033.api.core.AdminLoginRequest\032\034." +
+      "api.core.AdminLoginResponse\"\'\272\276\031#\010k\030\001\262\006\n" +
+      "2022-12-10\312\014\001\002\322\014\013admin-login\022[\n\005Login\022\026." +
+      "api.core.LoginRequest\032\027.api.core.LoginRe" +
+      "sponse\"!\272\276\031\035\010d\030\001\262\006\n2022-12-10\312\014\001\002\322\014\005logi" +
+      "n\022\\\n\006Logout\022\026.google.protobuf.Empty\032\026.go" +
+      "ogle.protobuf.Empty\"\"\272\276\031\036\010e\030\001\262\006\n2022-12-" +
+      "10\312\014\001\002\322\014\006logout\022c\n\006Create\022\035.api.core.Ten" +
+      "antCreateRequest\032\026.google.protobuf.Empty" +
+      "\"\"\272\276\031\036\010f\030\001\262\006\n2022-12-10\312\014\001\002\322\014\006create\022g\n\005" +
+      "Query\022\034.api.core.TenantQueryRequest\032\035.ap" +
+      "i.core.TenantQueryResponse\"!\272\276\031\035\010h\030\001\262\006\n2" +
+      "022-12-10\312\014\001 \322\014\005query\022i\n\014UpdateTenant\022\035." +
+      "api.core.UpdateTenantRequest\032\026.google.pr" +
+      "otobuf.Empty\"\"\272\276\031\036\010i\030\001\262\006\n2022-12-10\312\014\001 \322" +
+      "\014\006update\022i\n\014DeleteTenant\022\035.api.core.Dele" +
+      "teTenantRequest\032\026.google.protobuf.Empty\"" +
+      "\"\272\276\031\036\010j\030\001\262\006\n2022-12-10\312\014\001 \322\014\006delete\022t\n\014M" +
+      "anagerLogin\022\035.api.core.ManagerLoginReque" +
+      "st\032\036.api.core.ManagerLoginResponse\"%\272\276\031!" +
+      "\010g\030\001\262\006\n2022-12-12\322\014\rmanager-login\022c\n\tGet" +
+      "Routes\022\026.api.core.RouteRequest\032\027.api.cor" +
+      "e.RouteResponse\"%\272\276\031!\010l\030\001\262\006\n2023-04-06\312\014" +
+      "\001\000\322\014\tgetroutes\022t\n\017CreatePublicKey\022\026.goog" +
+      "le.protobuf.Empty\032\033.api.core.PublicKeyRe" +
+      "sponse\",\272\276\031(\010m\030\001\262\006\n2023-09-28\312\014\001\000\322\014\020crea" +
+      "te-publickey\022v\n\rQuerySelfInfo\022\026.google.p" +
+      "rotobuf.Empty\032!.api.core.QueryTenantInfo" +
+      "Response\"*\272\276\031&\010n\030\001\262\006\n2023-09-28\312\014\001\000\322\014\016qu" +
+      "ery-selfinfo\022s\n\rUpdateNimInfo\022\036.api.core" +
+      ".UpdateNimInfoRequest\032\026.google.protobuf." +
+      "Empty\"*\272\276\031&\010o\030\001\262\006\n2023-12-22\312\014\001\000\322\014\016updat" +
+      "e-niminfo\022n\n\017ExportUsersList\022\026.google.pr" +
+      "otobuf.Empty\032\026.google.protobuf.Empty\"+\272\276" +
+      "\031\'\010p\030\001\262\006\t2024-2-12\312\014\001\000\322\014\020export-userslis" +
+      "t\022v\n\016create_version\022\030.api.core.VersionRe" +
+      "quest\032\037.api.core.CreateVersionResponse\")" +
+      "\272\276\031%\010q\030\001\262\006\t2024-2-12\312\014\001 \322\014\016create-versio" +
+      "n\022v\n\016update_version\022\030.api.core.VersionRe" +
+      "quest\032\037.api.core.UpdateVersionResponse\")" +
+      "\272\276\031%\010r\030\001\262\006\t2024-2-12\312\014\001 \322\014\016update-versio" +
+      "n\022p\n\rgetallversion\022\026.google.protobuf.Emp" +
+      "ty\032\034.api.core.GetVersionResponse\")\272\276\031%\010s" +
+      "\030\001\262\006\t2024-2-12\312\014\001\000\322\014\016getall-version\022c\n\007v" +
+      "ersion\022\026.google.protobuf.Empty\032\034.api.cor" +
+      "e.GetVersionResponse\"\"\272\276\031\036\010t\030\001\262\006\t2024-2-" +
+      "12\312\014\001\000\322\014\007version\022c\n\007api_set\022\034.api.core.T" +
+      "enantThirdSetting\032\026.google.protobuf.Empt" +
+      "y\"\"\272\276\031\036\010u\030\001\262\006\t2024-4-11\312\014\001 \322\014\007api-set\032\033\272" +
+      "\276\031\027\272\006\006tenant\312\014\001\020\322\014\007/tenantBG\n\030com.teneas" +
+      "yChat.api.coreZ\021wcs/api/core;core\272\276\031\026\242\006\006" +
+      "calvin\262\006\n2022-12-03b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -26204,7 +26296,7 @@ public final class TenantOuterClass {
     internal_static_api_core_LoginResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_core_LoginResponse_descriptor,
-        new java.lang.String[] { "Token", "Items", });
+        new java.lang.String[] { "Token", "Items", "ChatExpireTime", });
     internal_static_api_core_ManagerLoginRequest_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_api_core_ManagerLoginRequest_fieldAccessorTable = new

@@ -86,6 +86,14 @@ public final class CMessage {
      * <code>CHAT_STATE_BLACKLIST_CONFIRMED = 6;</code>
      */
     CHAT_STATE_BLACKLIST_CONFIRMED(6),
+    /**
+     * <pre>
+     * 未绑定状态
+     * </pre>
+     *
+     * <code>CHAT_STATE_FREE = 7;</code>
+     */
+    CHAT_STATE_FREE(7),
     UNRECOGNIZED(-1),
     ;
 
@@ -155,6 +163,14 @@ public final class CMessage {
      * <code>CHAT_STATE_BLACKLIST_CONFIRMED = 6;</code>
      */
     public static final int CHAT_STATE_BLACKLIST_CONFIRMED_VALUE = 6;
+    /**
+     * <pre>
+     * 未绑定状态
+     * </pre>
+     *
+     * <code>CHAT_STATE_FREE = 7;</code>
+     */
+    public static final int CHAT_STATE_FREE_VALUE = 7;
 
 
     public final int getNumber() {
@@ -188,6 +204,7 @@ public final class CMessage {
         case 4: return CHAT_STATE_PROCESSED;
         case 5: return CHAT_STATE_BLACKLIST_APPLY;
         case 6: return CHAT_STATE_BLACKLIST_CONFIRMED;
+        case 7: return CHAT_STATE_FREE;
         default: return null;
       }
     }
@@ -17401,21 +17418,21 @@ public final class CMessage {
       "me\030\002 \001(\t\022\025\n\rworker_avatar\030\003 \001(\t\022\022\n\nconsu" +
       "lt_id\030\004 \001(\r\"#\n\016BlackListApply\022\021\n\tworker_" +
       "id\030\001 \001(\005\"%\n\020BlackListConfirm\022\021\n\tworker_i" +
-      "d\030\001 \001(\005*\322\001\n\tChatState\022\025\n\021CHAT_STATE_COMM" +
+      "d\030\001 \001(\005*\347\001\n\tChatState\022\025\n\021CHAT_STATE_COMM" +
       "ON\020\000\022\027\n\023CHAT_STATE_TRANSFER\020\001\022\037\n\033CHAT_ST" +
       "ATE_UNPROCESSED_3MIN\020\002\022\026\n\022CHAT_STATE_TIM" +
       "EOUT\020\003\022\030\n\024CHAT_STATE_PROCESSED\020\004\022\036\n\032CHAT" +
       "_STATE_BLACKLIST_APPLY\020\005\022\"\n\036CHAT_STATE_B" +
-      "LACKLIST_CONFIRMED\020\006*c\n\rMessageFormat\022\014\n" +
-      "\010MSG_TEXT\020\000\022\013\n\007MSG_IMG\020\001\022\r\n\tMSG_VOICE\020\002\022" +
-      "\r\n\tMSG_VIDEO\020\003\022\013\n\007MSG_GEO\020\004\022\014\n\010MSG_FILE\020" +
-      "\006*f\n\013MessageRole\022\023\n\017MSG_ROLE_SYSTEM\020\000\022\023\n" +
-      "\017MSG_ROLE_WORKER\020\001\022\025\n\021MSG_ROLE_CUSTOMER\020" +
-      "\002\022\026\n\022MSG_ROLE_ANONYMOUS\020\003*E\n\016MessageOper" +
-      "ate\022\017\n\013MSG_OP_POST\020\000\022\017\n\013MSG_OP_EDIT\020\001\022\021\n" +
-      "\rMSG_OP_DELETE\020\002B<\n\032com.teneasyChat.api." +
-      "commonZ\025wcs/api/common;common\272\002\006Commonb\006" +
-      "proto3"
+      "LACKLIST_CONFIRMED\020\006\022\023\n\017CHAT_STATE_FREE\020" +
+      "\007*c\n\rMessageFormat\022\014\n\010MSG_TEXT\020\000\022\013\n\007MSG_" +
+      "IMG\020\001\022\r\n\tMSG_VOICE\020\002\022\r\n\tMSG_VIDEO\020\003\022\013\n\007M" +
+      "SG_GEO\020\004\022\014\n\010MSG_FILE\020\006*f\n\013MessageRole\022\023\n" +
+      "\017MSG_ROLE_SYSTEM\020\000\022\023\n\017MSG_ROLE_WORKER\020\001\022" +
+      "\025\n\021MSG_ROLE_CUSTOMER\020\002\022\026\n\022MSG_ROLE_ANONY" +
+      "MOUS\020\003*E\n\016MessageOperate\022\017\n\013MSG_OP_POST\020" +
+      "\000\022\017\n\013MSG_OP_EDIT\020\001\022\021\n\rMSG_OP_DELETE\020\002B<\n" +
+      "\032com.teneasyChat.api.commonZ\025wcs/api/com" +
+      "mon;common\272\002\006Commonb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

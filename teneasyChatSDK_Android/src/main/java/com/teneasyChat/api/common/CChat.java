@@ -324,6 +324,25 @@ public final class CChat {
      * @return The userid.
      */
     int getUserid();
+
+    /**
+     * <pre>
+     * 聊天状态
+     * </pre>
+     *
+     * <code>.api.common.ChatState state = 16;</code>
+     * @return The enum numeric value on the wire for state.
+     */
+    int getStateValue();
+    /**
+     * <pre>
+     * 聊天状态
+     * </pre>
+     *
+     * <code>.api.common.ChatState state = 16;</code>
+     * @return The state.
+     */
+    com.teneasyChat.api.common.CMessage.ChatState getState();
   }
   /**
    * Protobuf type {@code api.common.ChatDetail}
@@ -356,6 +375,7 @@ public final class CChat {
       appeal_ = "";
       ownerRole_ = 0;
       nimName_ = "";
+      state_ = 0;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
@@ -943,6 +963,32 @@ public final class CChat {
       return userid_;
     }
 
+    public static final int STATE_FIELD_NUMBER = 16;
+    private int state_ = 0;
+    /**
+     * <pre>
+     * 聊天状态
+     * </pre>
+     *
+     * <code>.api.common.ChatState state = 16;</code>
+     * @return The enum numeric value on the wire for state.
+     */
+    @java.lang.Override public int getStateValue() {
+      return state_;
+    }
+    /**
+     * <pre>
+     * 聊天状态
+     * </pre>
+     *
+     * <code>.api.common.ChatState state = 16;</code>
+     * @return The state.
+     */
+    @java.lang.Override public com.teneasyChat.api.common.CMessage.ChatState getState() {
+      com.teneasyChat.api.common.CMessage.ChatState result = com.teneasyChat.api.common.CMessage.ChatState.forNumber(state_);
+      return result == null ? com.teneasyChat.api.common.CMessage.ChatState.UNRECOGNIZED : result;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -1001,6 +1047,9 @@ public final class CChat {
       }
       if (userid_ != 0) {
         output.writeInt32(15, userid_);
+      }
+      if (state_ != com.teneasyChat.api.common.CMessage.ChatState.CHAT_STATE_COMMON.getNumber()) {
+        output.writeEnum(16, state_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -1063,6 +1112,10 @@ public final class CChat {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(15, userid_);
       }
+      if (state_ != com.teneasyChat.api.common.CMessage.ChatState.CHAT_STATE_COMMON.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(16, state_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -1119,6 +1172,7 @@ public final class CChat {
       }
       if (getUserid()
           != other.getUserid()) return false;
+      if (state_ != other.state_) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -1169,6 +1223,8 @@ public final class CChat {
       }
       hash = (37 * hash) + USERID_FIELD_NUMBER;
       hash = (53 * hash) + getUserid();
+      hash = (37 * hash) + STATE_FIELD_NUMBER;
+      hash = (53 * hash) + state_;
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1335,6 +1391,7 @@ public final class CChat {
         ownerRole_ = 0;
         nimName_ = "";
         userid_ = 0;
+        state_ = 0;
         return this;
       }
 
@@ -1424,6 +1481,9 @@ public final class CChat {
         if (((from_bitField0_ & 0x00004000) != 0)) {
           result.userid_ = userid_;
         }
+        if (((from_bitField0_ & 0x00008000) != 0)) {
+          result.state_ = state_;
+        }
         result.bitField0_ |= to_bitField0_;
       }
 
@@ -1499,6 +1559,9 @@ public final class CChat {
         }
         if (other.getUserid() != 0) {
           setUserid(other.getUserid());
+        }
+        if (other.state_ != 0) {
+          setStateValue(other.getStateValue());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -1607,6 +1670,11 @@ public final class CChat {
                 bitField0_ |= 0x00004000;
                 break;
               } // case 120
+              case 128: {
+                state_ = input.readEnum();
+                bitField0_ |= 0x00008000;
+                break;
+              } // case 128
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -3036,6 +3104,79 @@ public final class CChat {
       public Builder clearUserid() {
         bitField0_ = (bitField0_ & ~0x00004000);
         userid_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int state_ = 0;
+      /**
+       * <pre>
+       * 聊天状态
+       * </pre>
+       *
+       * <code>.api.common.ChatState state = 16;</code>
+       * @return The enum numeric value on the wire for state.
+       */
+      @java.lang.Override public int getStateValue() {
+        return state_;
+      }
+      /**
+       * <pre>
+       * 聊天状态
+       * </pre>
+       *
+       * <code>.api.common.ChatState state = 16;</code>
+       * @param value The enum numeric value on the wire for state to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStateValue(int value) {
+        state_ = value;
+        bitField0_ |= 0x00008000;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 聊天状态
+       * </pre>
+       *
+       * <code>.api.common.ChatState state = 16;</code>
+       * @return The state.
+       */
+      @java.lang.Override
+      public com.teneasyChat.api.common.CMessage.ChatState getState() {
+        com.teneasyChat.api.common.CMessage.ChatState result = com.teneasyChat.api.common.CMessage.ChatState.forNumber(state_);
+        return result == null ? com.teneasyChat.api.common.CMessage.ChatState.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * 聊天状态
+       * </pre>
+       *
+       * <code>.api.common.ChatState state = 16;</code>
+       * @param value The state to set.
+       * @return This builder for chaining.
+       */
+      public Builder setState(com.teneasyChat.api.common.CMessage.ChatState value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00008000;
+        state_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 聊天状态
+       * </pre>
+       *
+       * <code>.api.common.ChatState state = 16;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearState() {
+        bitField0_ = (bitField0_ & ~0x00008000);
+        state_ = 0;
         onChanged();
         return this;
       }
@@ -4973,7 +5114,7 @@ public final class CChat {
       "\n\027api/common/c_chat.proto\022\napi.common\032\027v" +
       "alidate/validate.proto\032\037google/protobuf/" +
       "timestamp.proto\032\031api/common/c_worker.pro" +
-      "to\032\032api/common/c_message.proto\"\216\003\n\nChatD" +
+      "to\032\032api/common/c_message.proto\"\264\003\n\nChatD" +
       "etail\022\017\n\007chat_id\030\001 \001(\003\022\023\n\013entrance_id\030\002 " +
       "\001(\r\022\025\n\rentrance_name\030\003 \001(\t\022\020\n\010platform\030\004" +
       " \001(\t\022\n\n\002ip\030\005 \001(\t\022-\n\tcreate_at\030\006 \001(\0132\032.go" +
@@ -4983,17 +5124,18 @@ public final class CChat {
       "peal\030\013 \001(\t\022,\n\010reset_at\030\014 \001(\0132\032.google.pr" +
       "otobuf.Timestamp\022+\n\nowner_role\030\r \001(\0162\027.a" +
       "pi.common.MessageRole\022\024\n\007nimName\030\016 \001(\tH\000" +
-      "\210\001\001\022\016\n\006userid\030\017 \001(\005B\n\n\010_nimName\"\257\002\n\010Chat" +
-      "Item\022\017\n\007chat_id\030\001 \001(\003\022$\n\005state\030\002 \001(\0162\025.a" +
-      "pi.common.ChatState\022\016\n\006unread\030\003 \001(\005\022\'\n\nl" +
-      "atest_msg\030\004 \001(\0132\023.api.common.Message\022-\n\t" +
-      "create_at\030\005 \001(\0132\032.google.protobuf.Timest" +
-      "amp\022.\n\nservice_at\030\006 \001(\0132\032.google.protobu" +
-      "f.Timestamp\022&\n\006detail\030\007 \001(\0132\026.api.common" +
-      ".ChatDetail\022,\n\010reset_at\030\010 \001(\0132\032.google.p" +
-      "rotobuf.TimestampB<\n\032com.teneasyChat.api" +
-      ".commonZ\025wcs/api/common;common\272\002\006Commonb" +
-      "\006proto3"
+      "\210\001\001\022\016\n\006userid\030\017 \001(\005\022$\n\005state\030\020 \001(\0162\025.api" +
+      ".common.ChatStateB\n\n\010_nimName\"\257\002\n\010ChatIt" +
+      "em\022\017\n\007chat_id\030\001 \001(\003\022$\n\005state\030\002 \001(\0162\025.api" +
+      ".common.ChatState\022\016\n\006unread\030\003 \001(\005\022\'\n\nlat" +
+      "est_msg\030\004 \001(\0132\023.api.common.Message\022-\n\tcr" +
+      "eate_at\030\005 \001(\0132\032.google.protobuf.Timestam" +
+      "p\022.\n\nservice_at\030\006 \001(\0132\032.google.protobuf." +
+      "Timestamp\022&\n\006detail\030\007 \001(\0132\026.api.common.C" +
+      "hatDetail\022,\n\010reset_at\030\010 \001(\0132\032.google.pro" +
+      "tobuf.TimestampB<\n\032com.teneasyChat.api.c" +
+      "ommonZ\025wcs/api/common;common\272\002\006Commonb\006p" +
+      "roto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -5008,7 +5150,7 @@ public final class CChat {
     internal_static_api_common_ChatDetail_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_common_ChatDetail_descriptor,
-        new java.lang.String[] { "ChatId", "EntranceId", "EntranceName", "Platform", "Ip", "CreateAt", "UpdateAt", "Name", "Avatar", "Nick", "Appeal", "ResetAt", "OwnerRole", "NimName", "Userid", });
+        new java.lang.String[] { "ChatId", "EntranceId", "EntranceName", "Platform", "Ip", "CreateAt", "UpdateAt", "Name", "Avatar", "Nick", "Appeal", "ResetAt", "OwnerRole", "NimName", "Userid", "State", });
     internal_static_api_common_ChatItem_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_api_common_ChatItem_fieldAccessorTable = new

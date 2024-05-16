@@ -1748,6 +1748,16 @@ public final class ChatOuterClass {
      * <code>.api.common.Batch batch = 4;</code>
      */
     com.teneasyChat.api.common.CBase.BatchOrBuilder getBatchOrBuilder();
+
+    /**
+     * <pre>
+     * 咨询id
+     * </pre>
+     *
+     * <code>uint32 consult_id = 5;</code>
+     * @return The consultId.
+     */
+    int getConsultId();
   }
   /**
    * <pre>
@@ -1904,6 +1914,21 @@ public final class ChatOuterClass {
       return batch_ == null ? com.teneasyChat.api.common.CBase.Batch.getDefaultInstance() : batch_;
     }
 
+    public static final int CONSULT_ID_FIELD_NUMBER = 5;
+    private int consultId_ = 0;
+    /**
+     * <pre>
+     * 咨询id
+     * </pre>
+     *
+     * <code>uint32 consult_id = 5;</code>
+     * @return The consultId.
+     */
+    @java.lang.Override
+    public int getConsultId() {
+      return consultId_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -1930,6 +1955,9 @@ public final class ChatOuterClass {
       if (((bitField0_ & 0x00000004) != 0)) {
         output.writeMessage(4, getBatch());
       }
+      if (consultId_ != 0) {
+        output.writeUInt32(5, consultId_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -1954,6 +1982,10 @@ public final class ChatOuterClass {
       if (((bitField0_ & 0x00000004) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(4, getBatch());
+      }
+      if (consultId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(5, consultId_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -1987,6 +2019,8 @@ public final class ChatOuterClass {
         if (!getBatch()
             .equals(other.getBatch())) return false;
       }
+      if (getConsultId()
+          != other.getConsultId()) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -2012,6 +2046,8 @@ public final class ChatOuterClass {
         hash = (37 * hash) + BATCH_FIELD_NUMBER;
         hash = (53 * hash) + getBatch().hashCode();
       }
+      hash = (37 * hash) + CONSULT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getConsultId();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -2171,6 +2207,7 @@ public final class ChatOuterClass {
           batchBuilder_.dispose();
           batchBuilder_ = null;
         }
+        consultId_ = 0;
         return this;
       }
 
@@ -2226,6 +2263,9 @@ public final class ChatOuterClass {
               : batchBuilder_.build();
           to_bitField0_ |= 0x00000004;
         }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.consultId_ = consultId_;
+        }
         result.bitField0_ |= to_bitField0_;
       }
 
@@ -2252,6 +2292,9 @@ public final class ChatOuterClass {
         }
         if (other.hasBatch()) {
           mergeBatch(other.getBatch());
+        }
+        if (other.getConsultId() != 0) {
+          setConsultId(other.getConsultId());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -2305,6 +2348,11 @@ public final class ChatOuterClass {
                 bitField0_ |= 0x00000008;
                 break;
               } // case 34
+              case 40: {
+                consultId_ = input.readUInt32();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 40
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -2787,6 +2835,50 @@ public final class ChatOuterClass {
           batch_ = null;
         }
         return batchBuilder_;
+      }
+
+      private int consultId_ ;
+      /**
+       * <pre>
+       * 咨询id
+       * </pre>
+       *
+       * <code>uint32 consult_id = 5;</code>
+       * @return The consultId.
+       */
+      @java.lang.Override
+      public int getConsultId() {
+        return consultId_;
+      }
+      /**
+       * <pre>
+       * 咨询id
+       * </pre>
+       *
+       * <code>uint32 consult_id = 5;</code>
+       * @param value The consultId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setConsultId(int value) {
+
+        consultId_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 咨询id
+       * </pre>
+       *
+       * <code>uint32 consult_id = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearConsultId() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        consultId_ = 0;
+        onChanged();
+        return this;
       }
 
       // @@protoc_insertion_point(builder_scope:api.core.ChatListHistoryRequest)
@@ -6615,6 +6707,16 @@ public final class ChatOuterClass {
      * @return The chatId.
      */
     long getChatId();
+
+    /**
+     * <pre>
+     * 咨询类型
+     * </pre>
+     *
+     * <code>int64 consult_id = 2;</code>
+     * @return The consultId.
+     */
+    long getConsultId();
   }
   /**
    * Protobuf type {@code api.core.MarkRepliedRequest}
@@ -6664,6 +6766,21 @@ public final class ChatOuterClass {
       return chatId_;
     }
 
+    public static final int CONSULT_ID_FIELD_NUMBER = 2;
+    private long consultId_ = 0L;
+    /**
+     * <pre>
+     * 咨询类型
+     * </pre>
+     *
+     * <code>int64 consult_id = 2;</code>
+     * @return The consultId.
+     */
+    @java.lang.Override
+    public long getConsultId() {
+      return consultId_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -6681,6 +6798,9 @@ public final class ChatOuterClass {
       if (chatId_ != 0L) {
         output.writeInt64(1, chatId_);
       }
+      if (consultId_ != 0L) {
+        output.writeInt64(2, consultId_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -6693,6 +6813,10 @@ public final class ChatOuterClass {
       if (chatId_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(1, chatId_);
+      }
+      if (consultId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(2, consultId_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -6711,6 +6835,8 @@ public final class ChatOuterClass {
 
       if (getChatId()
           != other.getChatId()) return false;
+      if (getConsultId()
+          != other.getConsultId()) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -6725,6 +6851,9 @@ public final class ChatOuterClass {
       hash = (37 * hash) + CHAT_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getChatId());
+      hash = (37 * hash) + CONSULT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getConsultId());
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -6857,6 +6986,7 @@ public final class ChatOuterClass {
         super.clear();
         bitField0_ = 0;
         chatId_ = 0L;
+        consultId_ = 0L;
         return this;
       }
 
@@ -6893,6 +7023,9 @@ public final class ChatOuterClass {
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.chatId_ = chatId_;
         }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.consultId_ = consultId_;
+        }
       }
 
       @java.lang.Override
@@ -6909,6 +7042,9 @@ public final class ChatOuterClass {
         if (other == com.teneasyChat.api.core.ChatOuterClass.MarkRepliedRequest.getDefaultInstance()) return this;
         if (other.getChatId() != 0L) {
           setChatId(other.getChatId());
+        }
+        if (other.getConsultId() != 0L) {
+          setConsultId(other.getConsultId());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -6941,6 +7077,11 @@ public final class ChatOuterClass {
                 bitField0_ |= 0x00000001;
                 break;
               } // case 8
+              case 16: {
+                consultId_ = input.readInt64();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -6986,6 +7127,50 @@ public final class ChatOuterClass {
       public Builder clearChatId() {
         bitField0_ = (bitField0_ & ~0x00000001);
         chatId_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long consultId_ ;
+      /**
+       * <pre>
+       * 咨询类型
+       * </pre>
+       *
+       * <code>int64 consult_id = 2;</code>
+       * @return The consultId.
+       */
+      @java.lang.Override
+      public long getConsultId() {
+        return consultId_;
+      }
+      /**
+       * <pre>
+       * 咨询类型
+       * </pre>
+       *
+       * <code>int64 consult_id = 2;</code>
+       * @param value The consultId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setConsultId(long value) {
+
+        consultId_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 咨询类型
+       * </pre>
+       *
+       * <code>int64 consult_id = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearConsultId() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        consultId_ = 0L;
         onChanged();
         return this;
       }
@@ -7547,6 +7732,534 @@ public final class ChatOuterClass {
 
   }
 
+  public interface OrphanReqOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:api.core.OrphanReq)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>int64 chat_id = 1 [(.validate.rules) = { ... }</code>
+     * @return The chatId.
+     */
+    long getChatId();
+
+    /**
+     * <pre>
+     * 咨询类型
+     * </pre>
+     *
+     * <code>int64 consult_id = 2;</code>
+     * @return The consultId.
+     */
+    long getConsultId();
+  }
+  /**
+   * Protobuf type {@code api.core.OrphanReq}
+   */
+  public static final class OrphanReq extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:api.core.OrphanReq)
+      OrphanReqOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 26,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        OrphanReq.class.getName());
+    }
+    // Use OrphanReq.newBuilder() to construct.
+    private OrphanReq(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private OrphanReq() {
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.teneasyChat.api.core.ChatOuterClass.internal_static_api_core_OrphanReq_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.teneasyChat.api.core.ChatOuterClass.internal_static_api_core_OrphanReq_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.teneasyChat.api.core.ChatOuterClass.OrphanReq.class, com.teneasyChat.api.core.ChatOuterClass.OrphanReq.Builder.class);
+    }
+
+    public static final int CHAT_ID_FIELD_NUMBER = 1;
+    private long chatId_ = 0L;
+    /**
+     * <code>int64 chat_id = 1 [(.validate.rules) = { ... }</code>
+     * @return The chatId.
+     */
+    @java.lang.Override
+    public long getChatId() {
+      return chatId_;
+    }
+
+    public static final int CONSULT_ID_FIELD_NUMBER = 2;
+    private long consultId_ = 0L;
+    /**
+     * <pre>
+     * 咨询类型
+     * </pre>
+     *
+     * <code>int64 consult_id = 2;</code>
+     * @return The consultId.
+     */
+    @java.lang.Override
+    public long getConsultId() {
+      return consultId_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (chatId_ != 0L) {
+        output.writeInt64(1, chatId_);
+      }
+      if (consultId_ != 0L) {
+        output.writeInt64(2, consultId_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (chatId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(1, chatId_);
+      }
+      if (consultId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(2, consultId_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.teneasyChat.api.core.ChatOuterClass.OrphanReq)) {
+        return super.equals(obj);
+      }
+      com.teneasyChat.api.core.ChatOuterClass.OrphanReq other = (com.teneasyChat.api.core.ChatOuterClass.OrphanReq) obj;
+
+      if (getChatId()
+          != other.getChatId()) return false;
+      if (getConsultId()
+          != other.getConsultId()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + CHAT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getChatId());
+      hash = (37 * hash) + CONSULT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getConsultId());
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.teneasyChat.api.core.ChatOuterClass.OrphanReq parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.core.ChatOuterClass.OrphanReq parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.ChatOuterClass.OrphanReq parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.core.ChatOuterClass.OrphanReq parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.ChatOuterClass.OrphanReq parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.core.ChatOuterClass.OrphanReq parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.ChatOuterClass.OrphanReq parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.teneasyChat.api.core.ChatOuterClass.OrphanReq parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.teneasyChat.api.core.ChatOuterClass.OrphanReq parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.teneasyChat.api.core.ChatOuterClass.OrphanReq parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.ChatOuterClass.OrphanReq parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.teneasyChat.api.core.ChatOuterClass.OrphanReq parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.teneasyChat.api.core.ChatOuterClass.OrphanReq prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code api.core.OrphanReq}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:api.core.OrphanReq)
+        com.teneasyChat.api.core.ChatOuterClass.OrphanReqOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.teneasyChat.api.core.ChatOuterClass.internal_static_api_core_OrphanReq_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.teneasyChat.api.core.ChatOuterClass.internal_static_api_core_OrphanReq_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.teneasyChat.api.core.ChatOuterClass.OrphanReq.class, com.teneasyChat.api.core.ChatOuterClass.OrphanReq.Builder.class);
+      }
+
+      // Construct using com.teneasyChat.api.core.ChatOuterClass.OrphanReq.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        chatId_ = 0L;
+        consultId_ = 0L;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.teneasyChat.api.core.ChatOuterClass.internal_static_api_core_OrphanReq_descriptor;
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.core.ChatOuterClass.OrphanReq getDefaultInstanceForType() {
+        return com.teneasyChat.api.core.ChatOuterClass.OrphanReq.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.core.ChatOuterClass.OrphanReq build() {
+        com.teneasyChat.api.core.ChatOuterClass.OrphanReq result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.core.ChatOuterClass.OrphanReq buildPartial() {
+        com.teneasyChat.api.core.ChatOuterClass.OrphanReq result = new com.teneasyChat.api.core.ChatOuterClass.OrphanReq(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.teneasyChat.api.core.ChatOuterClass.OrphanReq result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.chatId_ = chatId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.consultId_ = consultId_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.teneasyChat.api.core.ChatOuterClass.OrphanReq) {
+          return mergeFrom((com.teneasyChat.api.core.ChatOuterClass.OrphanReq)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.teneasyChat.api.core.ChatOuterClass.OrphanReq other) {
+        if (other == com.teneasyChat.api.core.ChatOuterClass.OrphanReq.getDefaultInstance()) return this;
+        if (other.getChatId() != 0L) {
+          setChatId(other.getChatId());
+        }
+        if (other.getConsultId() != 0L) {
+          setConsultId(other.getConsultId());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                chatId_ = input.readInt64();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 16: {
+                consultId_ = input.readInt64();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private long chatId_ ;
+      /**
+       * <code>int64 chat_id = 1 [(.validate.rules) = { ... }</code>
+       * @return The chatId.
+       */
+      @java.lang.Override
+      public long getChatId() {
+        return chatId_;
+      }
+      /**
+       * <code>int64 chat_id = 1 [(.validate.rules) = { ... }</code>
+       * @param value The chatId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setChatId(long value) {
+
+        chatId_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 chat_id = 1 [(.validate.rules) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearChatId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        chatId_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long consultId_ ;
+      /**
+       * <pre>
+       * 咨询类型
+       * </pre>
+       *
+       * <code>int64 consult_id = 2;</code>
+       * @return The consultId.
+       */
+      @java.lang.Override
+      public long getConsultId() {
+        return consultId_;
+      }
+      /**
+       * <pre>
+       * 咨询类型
+       * </pre>
+       *
+       * <code>int64 consult_id = 2;</code>
+       * @param value The consultId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setConsultId(long value) {
+
+        consultId_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 咨询类型
+       * </pre>
+       *
+       * <code>int64 consult_id = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearConsultId() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        consultId_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:api.core.OrphanReq)
+    }
+
+    // @@protoc_insertion_point(class_scope:api.core.OrphanReq)
+    private static final com.teneasyChat.api.core.ChatOuterClass.OrphanReq DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.teneasyChat.api.core.ChatOuterClass.OrphanReq();
+    }
+
+    public static com.teneasyChat.api.core.ChatOuterClass.OrphanReq getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<OrphanReq>
+        PARSER = new com.google.protobuf.AbstractParser<OrphanReq>() {
+      @java.lang.Override
+      public OrphanReq parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<OrphanReq> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<OrphanReq> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.teneasyChat.api.core.ChatOuterClass.OrphanReq getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_api_core_Pagination_descriptor;
   private static final 
@@ -7602,6 +8315,11 @@ public final class ChatOuterClass {
   private static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_api_core_ChatListQueryUserRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_api_core_OrphanReq_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_api_core_OrphanReq_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -7621,49 +8339,52 @@ public final class ChatOuterClass {
       "\004page\030\001 \001(\005\022\020\n\010pagesize\030\002 \001(\005\")\n\024ChatLis" +
       "tQueryRequest\022\021\n\tworker_id\030\001 \001(\005\"Q\n\030Chat" +
       "ListQueryPageRequest\022\"\n\004page\030\001 \001(\0132\024.api" +
-      ".core.Pagination\022\021\n\tworker_id\030\002 \001(\005\"\241\001\n\026" +
+      ".core.Pagination\022\021\n\tworker_id\030\002 \001(\005\"\265\001\n\026" +
       "ChatListHistoryRequest\022\021\n\tworker_id\030\001 \001(" +
       "\005\022)\n\005start\030\002 \001(\0132\032.google.protobuf.Times" +
       "tamp\022\'\n\003end\030\003 \001(\0132\032.google.protobuf.Time" +
-      "stamp\022 \n\005batch\030\004 \001(\0132\021.api.common.Batch\"" +
-      "o\n\027ChatListHistoryResponse\022#\n\005chats\030\001 \003(" +
-      "\0132\024.api.common.ChatItem\022 \n\005batch\030\002 \001(\0132\021" +
-      ".api.common.Batch\022\r\n\005total\030\003 \001(\005\"<\n\025Chat" +
-      "ListQueryResponse\022#\n\005chats\030\001 \003(\0132\024.api.c" +
-      "ommon.ChatItem\"O\n\031ChatListQueryPageRespo" +
-      "nse\022\r\n\005total\030\001 \001(\005\022#\n\005chats\030\002 \003(\0132\024.api." +
-      "common.ChatItem\"/\n\023ChatMarkReadRequest\022\030" +
-      "\n\007chat_id\030\001 \001(\003B\007\372B\004\"\002 \000\"A\n\016OrphanRespon" +
-      "se\022\021\n\tworker_id\030\001 \001(\005\022\014\n\004nick\030\002 \001(\t\022\016\n\006a" +
-      "vatar\030\003 \001(\t\".\n\022MarkRepliedRequest\022\030\n\007cha" +
-      "t_id\030\001 \001(\003B\007\372B\004\"\002 \000\"B\n\030ChatListQueryUser" +
+      "stamp\022 \n\005batch\030\004 \001(\0132\021.api.common.Batch\022" +
+      "\022\n\nconsult_id\030\005 \001(\r\"o\n\027ChatListHistoryRe" +
+      "sponse\022#\n\005chats\030\001 \003(\0132\024.api.common.ChatI" +
+      "tem\022 \n\005batch\030\002 \001(\0132\021.api.common.Batch\022\r\n" +
+      "\005total\030\003 \001(\005\"<\n\025ChatListQueryResponse\022#\n" +
+      "\005chats\030\001 \003(\0132\024.api.common.ChatItem\"O\n\031Ch" +
+      "atListQueryPageResponse\022\r\n\005total\030\001 \001(\005\022#" +
+      "\n\005chats\030\002 \003(\0132\024.api.common.ChatItem\"/\n\023C" +
+      "hatMarkReadRequest\022\030\n\007chat_id\030\001 \001(\003B\007\372B\004" +
+      "\"\002 \000\"A\n\016OrphanResponse\022\021\n\tworker_id\030\001 \001(" +
+      "\005\022\014\n\004nick\030\002 \001(\t\022\016\n\006avatar\030\003 \001(\t\"B\n\022MarkR" +
+      "epliedRequest\022\030\n\007chat_id\030\001 \001(\003B\007\372B\004\"\002 \000\022" +
+      "\022\n\nconsult_id\030\002 \001(\003\"B\n\030ChatListQueryUser" +
       "Request\022\017\n\007user_id\030\001 \001(\005\022\025\n\rregister_typ" +
-      "e\030\002 \001(\0052\254\007\n\004Chat\022h\n\005Query\022\036.api.core.Cha" +
-      "tListQueryRequest\032\037.api.core.ChatListQue" +
-      "ryResponse\"\036\272\276\031\032\010\350\007\030\001\262\006\n2023-01-02\322\014\005que" +
-      "ry\022y\n\rQueryByUserId\022\".api.core.ChatListQ" +
-      "ueryUserRequest\032\037.api.core.ChatListQuery" +
-      "Response\"#\272\276\031\037\010\357\007\030\001\262\006\n2024-04-15\322\014\nquery" +
-      "-user\022e\n\010MarkRead\022\035.api.core.ChatMarkRea" +
-      "dRequest\032\026.google.protobuf.Empty\"\"\272\276\031\036\010\351" +
-      "\007\030\001\262\006\n2023-01-02\322\014\tmark-read\022_\n\006Orphan\022\026" +
-      ".google.protobuf.Empty\032\030.api.core.Orphan" +
-      "Response\"#\272\276\031\037\010\352\007\030\001\262\006\n2023-01-17\312\014\001\004\322\014\006o" +
-      "rphan\022n\n\013MarkReplied\022\034.api.core.MarkRepl" +
-      "iedRequest\032\026.google.protobuf.Empty\")\272\276\031%" +
-      "\010\353\007\030\001\262\006\n2023-02-03\312\014\001\004\322\014\014mark-replied\022o\n" +
-      "\016ResetChatState\022\026.google.protobuf.Empty\032" +
-      "\026.google.protobuf.Empty\"-\272\276\031)\010\354\007\030\001\262\006\n202" +
-      "3-02-15\312\014\001\004\322\014\020reset-chat-state\022x\n\tPageQu" +
-      "ery\022\".api.core.ChatListQueryPageRequest\032" +
-      "#.api.core.ChatListQueryPageResponse\"\"\272\276" +
-      "\031\036\010\355\007\030\001\262\006\n2023-04-11\322\014\tpagequery\022{\n\014Hist" +
-      "oryQuery\022 .api.core.ChatListHistoryReque" +
-      "st\032!.api.core.ChatListHistoryResponse\"&\272" +
-      "\276\031\"\010\356\007\030\001\262\006\n2023-01-02\322\014\rhistory-query\032\037\272" +
-      "\276\031\033\272\006\004chat\312\014\002\020\004\322\014\014/tenant/chatBE\n\030com.te" +
-      "neasyChat.api.coreZ\021wcs/api/core;core\272\276\031" +
-      "\024\242\006\004jeff\262\006\n2023-01-02b\006proto3"
+      "e\030\002 \001(\005\"9\n\tOrphanReq\022\030\n\007chat_id\030\001 \001(\003B\007\372" +
+      "B\004\"\002 \000\022\022\n\nconsult_id\030\002 \001(\0032\251\007\n\004Chat\022h\n\005Q" +
+      "uery\022\036.api.core.ChatListQueryRequest\032\037.a" +
+      "pi.core.ChatListQueryResponse\"\036\272\276\031\032\010\350\007\030\001" +
+      "\262\006\n2023-01-02\322\014\005query\022y\n\rQueryByUserId\022\"" +
+      ".api.core.ChatListQueryUserRequest\032\037.api" +
+      ".core.ChatListQueryResponse\"#\272\276\031\037\010\357\007\030\001\262\006" +
+      "\n2024-04-15\322\014\nquery-user\022e\n\010MarkRead\022\035.a" +
+      "pi.core.ChatMarkReadRequest\032\026.google.pro" +
+      "tobuf.Empty\"\"\272\276\031\036\010\351\007\030\001\262\006\n2023-01-02\322\014\tma" +
+      "rk-read\022\\\n\006Orphan\022\023.api.core.OrphanReq\032\030" +
+      ".api.core.OrphanResponse\"#\272\276\031\037\010\352\007\030\001\262\006\n20" +
+      "23-01-17\312\014\001\004\322\014\006orphan\022n\n\013MarkReplied\022\034.a" +
+      "pi.core.MarkRepliedRequest\032\026.google.prot" +
+      "obuf.Empty\")\272\276\031%\010\353\007\030\001\262\006\n2023-02-03\312\014\001\004\322\014" +
+      "\014mark-replied\022o\n\016ResetChatState\022\026.google" +
+      ".protobuf.Empty\032\026.google.protobuf.Empty\"" +
+      "-\272\276\031)\010\354\007\030\001\262\006\n2023-02-15\312\014\001\004\322\014\020reset-chat" +
+      "-state\022x\n\tPageQuery\022\".api.core.ChatListQ" +
+      "ueryPageRequest\032#.api.core.ChatListQuery" +
+      "PageResponse\"\"\272\276\031\036\010\355\007\030\001\262\006\n2023-04-11\322\014\tp" +
+      "agequery\022{\n\014HistoryQuery\022 .api.core.Chat" +
+      "ListHistoryRequest\032!.api.core.ChatListHi" +
+      "storyResponse\"&\272\276\031\"\010\356\007\030\001\262\006\n2023-01-02\322\014\r" +
+      "history-query\032\037\272\276\031\033\272\006\004chat\312\014\002\020\004\322\014\014/tenan" +
+      "t/chatBE\n\030com.teneasyChat.api.coreZ\021wcs/" +
+      "api/core;core\272\276\031\024\242\006\004jeff\262\006\n2023-01-02b\006p" +
+      "roto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -7701,7 +8422,7 @@ public final class ChatOuterClass {
     internal_static_api_core_ChatListHistoryRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_core_ChatListHistoryRequest_descriptor,
-        new java.lang.String[] { "WorkerId", "Start", "End", "Batch", });
+        new java.lang.String[] { "WorkerId", "Start", "End", "Batch", "ConsultId", });
     internal_static_api_core_ChatListHistoryResponse_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_api_core_ChatListHistoryResponse_fieldAccessorTable = new
@@ -7737,13 +8458,19 @@ public final class ChatOuterClass {
     internal_static_api_core_MarkRepliedRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_core_MarkRepliedRequest_descriptor,
-        new java.lang.String[] { "ChatId", });
+        new java.lang.String[] { "ChatId", "ConsultId", });
     internal_static_api_core_ChatListQueryUserRequest_descriptor =
       getDescriptor().getMessageTypes().get(10);
     internal_static_api_core_ChatListQueryUserRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_core_ChatListQueryUserRequest_descriptor,
         new java.lang.String[] { "UserId", "RegisterType", });
+    internal_static_api_core_OrphanReq_descriptor =
+      getDescriptor().getMessageTypes().get(11);
+    internal_static_api_core_OrphanReq_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_api_core_OrphanReq_descriptor,
+        new java.lang.String[] { "ChatId", "ConsultId", });
     descriptor.resolveAllFeaturesImmutable();
     com.google.protobuf.EmptyProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();

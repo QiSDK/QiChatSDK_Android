@@ -339,6 +339,12 @@ public final class GGateway {
      * @return The workerId.
      */
     int getWorkerId();
+
+    /**
+     * <code>int64 chat_expire_time = 4;</code>
+     * @return The chatExpireTime.
+     */
+    long getChatExpireTime();
   }
   /**
    * <pre>
@@ -455,6 +461,17 @@ public final class GGateway {
       return workerId_;
     }
 
+    public static final int CHAT_EXPIRE_TIME_FIELD_NUMBER = 4;
+    private long chatExpireTime_ = 0L;
+    /**
+     * <code>int64 chat_expire_time = 4;</code>
+     * @return The chatExpireTime.
+     */
+    @java.lang.Override
+    public long getChatExpireTime() {
+      return chatExpireTime_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -478,6 +495,9 @@ public final class GGateway {
       if (workerId_ != 0) {
         output.writeInt32(3, workerId_);
       }
+      if (chatExpireTime_ != 0L) {
+        output.writeInt64(4, chatExpireTime_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -497,6 +517,10 @@ public final class GGateway {
       if (workerId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(3, workerId_);
+      }
+      if (chatExpireTime_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(4, chatExpireTime_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -519,6 +543,8 @@ public final class GGateway {
           .equals(other.getToken())) return false;
       if (getWorkerId()
           != other.getWorkerId()) return false;
+      if (getChatExpireTime()
+          != other.getChatExpireTime()) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -537,6 +563,9 @@ public final class GGateway {
       hash = (53 * hash) + getToken().hashCode();
       hash = (37 * hash) + WORKER_ID_FIELD_NUMBER;
       hash = (53 * hash) + getWorkerId();
+      hash = (37 * hash) + CHAT_EXPIRE_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getChatExpireTime());
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -675,6 +704,7 @@ public final class GGateway {
         id_ = 0L;
         token_ = "";
         workerId_ = 0;
+        chatExpireTime_ = 0L;
         return this;
       }
 
@@ -717,6 +747,9 @@ public final class GGateway {
         if (((from_bitField0_ & 0x00000004) != 0)) {
           result.workerId_ = workerId_;
         }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.chatExpireTime_ = chatExpireTime_;
+        }
       }
 
       @java.lang.Override
@@ -741,6 +774,9 @@ public final class GGateway {
         }
         if (other.getWorkerId() != 0) {
           setWorkerId(other.getWorkerId());
+        }
+        if (other.getChatExpireTime() != 0L) {
+          setChatExpireTime(other.getChatExpireTime());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -783,6 +819,11 @@ public final class GGateway {
                 bitField0_ |= 0x00000004;
                 break;
               } // case 24
+              case 32: {
+                chatExpireTime_ = input.readInt64();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 32
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -964,6 +1005,38 @@ public final class GGateway {
       public Builder clearWorkerId() {
         bitField0_ = (bitField0_ & ~0x00000004);
         workerId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private long chatExpireTime_ ;
+      /**
+       * <code>int64 chat_expire_time = 4;</code>
+       * @return The chatExpireTime.
+       */
+      @java.lang.Override
+      public long getChatExpireTime() {
+        return chatExpireTime_;
+      }
+      /**
+       * <code>int64 chat_expire_time = 4;</code>
+       * @param value The chatExpireTime to set.
+       * @return This builder for chaining.
+       */
+      public Builder setChatExpireTime(long value) {
+
+        chatExpireTime_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 chat_expire_time = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearChatExpireTime() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        chatExpireTime_ = 0L;
         onChanged();
         return this;
       }
@@ -12994,50 +13067,50 @@ public final class GGateway {
       "\n\027gateway/g_gateway.proto\022\007gateway\032\037goog" +
       "le/protobuf/timestamp.proto\032\032api/common/" +
       "c_message.proto\032\031api/common/c_worker.pro" +
-      "to\032\027api/common/c_chat.proto\"4\n\004SCHi\022\n\n\002i" +
+      "to\032\027api/common/c_chat.proto\"N\n\004SCHi\022\n\n\002i" +
       "d\030\001 \001(\003\022\r\n\005token\030\002 \001(\t\022\021\n\tworker_id\030\003 \001(" +
-      "\005\"C\n\tCSForward\022\r\n\005appId\030\001 \001(\t\022\013\n\003url\030\002 \001" +
-      "(\t\022\014\n\004verb\030\003 \001(\t\022\014\n\004data\030\004 \001(\014\"&\n\tSCForw" +
-      "ard\022\013\n\003err\030\002 \001(\t\022\014\n\004data\030\003 \001(\014\"1\n\rCSSend" +
-      "Message\022 \n\003msg\030\001 \001(\0132\023.api.common.Messag" +
-      "e\"o\n\rSCSendMessage\022\017\n\007chat_id\030\001 \001(\003\022\016\n\006m" +
-      "sg_id\030\002 \001(\003\022,\n\010msg_time\030\003 \001(\0132\032.google.p" +
-      "rotobuf.Timestamp\022\017\n\007err_msg\030\004 \001(\t\"A\n\rSC" +
-      "RecvMessage\022 \n\003msg\030\001 \001(\0132\023.api.common.Me" +
-      "ssage\022\016\n\006target\030\002 \001(\003\"0\n\rCSRecvMessage\022\017" +
-      "\n\007chat_id\030\001 \001(\003\022\016\n\006msg_id\030\002 \001(\003\"0\n\rCSRea" +
-      "dMessage\022\017\n\007chat_id\030\001 \001(\003\022\016\n\006msg_id\030\002 \001(" +
-      "\003\"0\n\rSCReadMessage\022\017\n\007chat_id\030\001 \001(\003\022\016\n\006m" +
-      "sg_id\030\002 \001(\003\"Z\n\016InputtingBegin\022\014\n\004self\030\001 " +
-      "\001(\003\022\016\n\006target\030\002 \001(\003\022*\n\007msg_fmt\030\003 \001(\0162\031.a" +
-      "pi.common.MessageFormat\",\n\014InputtingEnd\022" +
-      "\014\n\004self\030\001 \001(\003\022\016\n\006target\030\002 \001(\003\"2\n\016WorkerT" +
-      "ransfer\022 \n\003msg\030\001 \001(\0132\023.api.common.Messag" +
-      "e\"\234\001\n\rSCChatChanged\022#\n\004from\030\001 \001(\0162\025.api." +
-      "common.ChatState\022!\n\002to\030\002 \001(\0162\025.api.commo" +
-      "n.ChatState\022\017\n\007chat_id\030\003 \001(\003\022\"\n\004chat\030\004 \001" +
-      "(\0132\024.api.common.ChatItem\022\016\n\006target\030\005 \001(\003" +
-      "\"d\n\027SCUserConnectionChanged\022\021\n\tclient_id" +
-      "\030\001 \001(\003\022&\n\004conn\030\002 \001(\0162\030.api.common.Connec" +
-      "tState\022\016\n\006target\030\003 \001(\003\"\242\001\n\017SCWorkerChang" +
-      "ed\022\021\n\tworker_id\030\001 \001(\005\022\023\n\013worker_name\030\002 \001" +
-      "(\t\022\025\n\rworker_avatar\030\003 \001(\t\022\016\n\006target\030\004 \001(" +
-      "\003\022,\n\006reason\030\005 \001(\0162\034.gateway.WorkerChange" +
-      "dReason\022\022\n\nconsult_id\030\006 \001(\003\"=\n\006SCKick\022\016\n" +
-      "\006target\030\001 \001(\003\022#\n\006reason\030\002 \001(\0162\023.gateway." +
-      "KickReason\"U\n\020SCSimSendMessage\022!\n\004msgs\030\001" +
-      " \003(\0132\023.api.common.Message\022\016\n\006worker\030\002 \001(" +
-      "\003\022\016\n\006target\030\003 \001(\003\"M\n\030SCSimSendMessageToW" +
-      "orker\022!\n\004msgs\030\001 \003(\0132\023.api.common.Message" +
-      "\022\016\n\006target\030\002 \001(\003*\255\001\n\023WorkerChangedReason" +
-      "\022\036\n\032WorkerChangedReasonUnknown\020\000\022)\n%Work" +
-      "erChangedReasonMissAssignedWorker\020\001\022%\n!W" +
-      "orkerChangedReasonTransferWorker\020\002\022$\n Wo" +
-      "rkerChangedReasonWorkerDeleted\020\003*=\n\nKick" +
-      "Reason\022\024\n\020KickReasonCommon\020\000\022\031\n\025KickReas" +
-      "onPermChanged\020\001B@\n\027com.teneasyChat.gatew" +
-      "ayZ%wcs/service/gateway/protocol;protoco" +
-      "lb\006proto3"
+      "\005\022\030\n\020chat_expire_time\030\004 \001(\003\"C\n\tCSForward" +
+      "\022\r\n\005appId\030\001 \001(\t\022\013\n\003url\030\002 \001(\t\022\014\n\004verb\030\003 \001" +
+      "(\t\022\014\n\004data\030\004 \001(\014\"&\n\tSCForward\022\013\n\003err\030\002 \001" +
+      "(\t\022\014\n\004data\030\003 \001(\014\"1\n\rCSSendMessage\022 \n\003msg" +
+      "\030\001 \001(\0132\023.api.common.Message\"o\n\rSCSendMes" +
+      "sage\022\017\n\007chat_id\030\001 \001(\003\022\016\n\006msg_id\030\002 \001(\003\022,\n" +
+      "\010msg_time\030\003 \001(\0132\032.google.protobuf.Timest" +
+      "amp\022\017\n\007err_msg\030\004 \001(\t\"A\n\rSCRecvMessage\022 \n" +
+      "\003msg\030\001 \001(\0132\023.api.common.Message\022\016\n\006targe" +
+      "t\030\002 \001(\003\"0\n\rCSRecvMessage\022\017\n\007chat_id\030\001 \001(" +
+      "\003\022\016\n\006msg_id\030\002 \001(\003\"0\n\rCSReadMessage\022\017\n\007ch" +
+      "at_id\030\001 \001(\003\022\016\n\006msg_id\030\002 \001(\003\"0\n\rSCReadMes" +
+      "sage\022\017\n\007chat_id\030\001 \001(\003\022\016\n\006msg_id\030\002 \001(\003\"Z\n" +
+      "\016InputtingBegin\022\014\n\004self\030\001 \001(\003\022\016\n\006target\030" +
+      "\002 \001(\003\022*\n\007msg_fmt\030\003 \001(\0162\031.api.common.Mess" +
+      "ageFormat\",\n\014InputtingEnd\022\014\n\004self\030\001 \001(\003\022" +
+      "\016\n\006target\030\002 \001(\003\"2\n\016WorkerTransfer\022 \n\003msg" +
+      "\030\001 \001(\0132\023.api.common.Message\"\234\001\n\rSCChatCh" +
+      "anged\022#\n\004from\030\001 \001(\0162\025.api.common.ChatSta" +
+      "te\022!\n\002to\030\002 \001(\0162\025.api.common.ChatState\022\017\n" +
+      "\007chat_id\030\003 \001(\003\022\"\n\004chat\030\004 \001(\0132\024.api.commo" +
+      "n.ChatItem\022\016\n\006target\030\005 \001(\003\"d\n\027SCUserConn" +
+      "ectionChanged\022\021\n\tclient_id\030\001 \001(\003\022&\n\004conn" +
+      "\030\002 \001(\0162\030.api.common.ConnectState\022\016\n\006targ" +
+      "et\030\003 \001(\003\"\242\001\n\017SCWorkerChanged\022\021\n\tworker_i" +
+      "d\030\001 \001(\005\022\023\n\013worker_name\030\002 \001(\t\022\025\n\rworker_a" +
+      "vatar\030\003 \001(\t\022\016\n\006target\030\004 \001(\003\022,\n\006reason\030\005 " +
+      "\001(\0162\034.gateway.WorkerChangedReason\022\022\n\ncon" +
+      "sult_id\030\006 \001(\003\"=\n\006SCKick\022\016\n\006target\030\001 \001(\003\022" +
+      "#\n\006reason\030\002 \001(\0162\023.gateway.KickReason\"U\n\020" +
+      "SCSimSendMessage\022!\n\004msgs\030\001 \003(\0132\023.api.com" +
+      "mon.Message\022\016\n\006worker\030\002 \001(\003\022\016\n\006target\030\003 " +
+      "\001(\003\"M\n\030SCSimSendMessageToWorker\022!\n\004msgs\030" +
+      "\001 \003(\0132\023.api.common.Message\022\016\n\006target\030\002 \001" +
+      "(\003*\255\001\n\023WorkerChangedReason\022\036\n\032WorkerChan" +
+      "gedReasonUnknown\020\000\022)\n%WorkerChangedReaso" +
+      "nMissAssignedWorker\020\001\022%\n!WorkerChangedRe" +
+      "asonTransferWorker\020\002\022$\n WorkerChangedRea" +
+      "sonWorkerDeleted\020\003*=\n\nKickReason\022\024\n\020Kick" +
+      "ReasonCommon\020\000\022\031\n\025KickReasonPermChanged\020" +
+      "\001B@\n\027com.teneasyChat.gatewayZ%wcs/servic" +
+      "e/gateway/protocol;protocolb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -13052,7 +13125,7 @@ public final class GGateway {
     internal_static_gateway_SCHi_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_gateway_SCHi_descriptor,
-        new java.lang.String[] { "Id", "Token", "WorkerId", });
+        new java.lang.String[] { "Id", "Token", "WorkerId", "ChatExpireTime", });
     internal_static_gateway_CSForward_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_gateway_CSForward_fieldAccessorTable = new

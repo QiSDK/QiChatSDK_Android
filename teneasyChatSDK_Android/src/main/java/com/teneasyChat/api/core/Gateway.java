@@ -6581,6 +6581,12 @@ public final class Gateway {
      * @return The websocketFlag.
      */
     boolean getWebsocketFlag();
+
+    /**
+     * <code>int64 chat_expire_time = 7;</code>
+     * @return The chatExpireTime.
+     */
+    long getChatExpireTime();
   }
   /**
    * Protobuf type {@code api.core.NewUserConnectResponse}
@@ -6714,6 +6720,17 @@ public final class Gateway {
       return websocketFlag_;
     }
 
+    public static final int CHAT_EXPIRE_TIME_FIELD_NUMBER = 7;
+    private long chatExpireTime_ = 0L;
+    /**
+     * <code>int64 chat_expire_time = 7;</code>
+     * @return The chatExpireTime.
+     */
+    @java.lang.Override
+    public long getChatExpireTime() {
+      return chatExpireTime_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -6745,6 +6762,9 @@ public final class Gateway {
       }
       if (websocketFlag_ != false) {
         output.writeBool(6, websocketFlag_);
+      }
+      if (chatExpireTime_ != 0L) {
+        output.writeInt64(7, chatExpireTime_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -6778,6 +6798,10 @@ public final class Gateway {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(6, websocketFlag_);
       }
+      if (chatExpireTime_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(7, chatExpireTime_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -6805,6 +6829,8 @@ public final class Gateway {
           != other.getWebsocketTime()) return false;
       if (getWebsocketFlag()
           != other.getWebsocketFlag()) return false;
+      if (getChatExpireTime()
+          != other.getChatExpireTime()) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -6832,6 +6858,9 @@ public final class Gateway {
       hash = (37 * hash) + WEBSOCKET_FLAG_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getWebsocketFlag());
+      hash = (37 * hash) + CHAT_EXPIRE_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getChatExpireTime());
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -6969,6 +6998,7 @@ public final class Gateway {
         websocketId_ = 0L;
         websocketTime_ = 0L;
         websocketFlag_ = false;
+        chatExpireTime_ = 0L;
         return this;
       }
 
@@ -7020,6 +7050,9 @@ public final class Gateway {
         if (((from_bitField0_ & 0x00000020) != 0)) {
           result.websocketFlag_ = websocketFlag_;
         }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.chatExpireTime_ = chatExpireTime_;
+        }
       }
 
       @java.lang.Override
@@ -7053,6 +7086,9 @@ public final class Gateway {
         }
         if (other.getWebsocketFlag() != false) {
           setWebsocketFlag(other.getWebsocketFlag());
+        }
+        if (other.getChatExpireTime() != 0L) {
+          setChatExpireTime(other.getChatExpireTime());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -7110,6 +7146,11 @@ public final class Gateway {
                 bitField0_ |= 0x00000020;
                 break;
               } // case 48
+              case 56: {
+                chatExpireTime_ = input.readInt64();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 56
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -7355,6 +7396,38 @@ public final class Gateway {
       public Builder clearWebsocketFlag() {
         bitField0_ = (bitField0_ & ~0x00000020);
         websocketFlag_ = false;
+        onChanged();
+        return this;
+      }
+
+      private long chatExpireTime_ ;
+      /**
+       * <code>int64 chat_expire_time = 7;</code>
+       * @return The chatExpireTime.
+       */
+      @java.lang.Override
+      public long getChatExpireTime() {
+        return chatExpireTime_;
+      }
+      /**
+       * <code>int64 chat_expire_time = 7;</code>
+       * @param value The chatExpireTime to set.
+       * @return This builder for chaining.
+       */
+      public Builder setChatExpireTime(long value) {
+
+        chatExpireTime_ = value;
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 chat_expire_time = 7;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearChatExpireTime() {
+        bitField0_ = (bitField0_ & ~0x00000040);
+        chatExpireTime_ = 0L;
         onChanged();
         return this;
       }
@@ -8052,37 +8125,39 @@ public final class Gateway {
       "id\030\003 \001(\004\022\026\n\016websocket_time\030\004 \001(\003\022\026\n\016webs" +
       "ocket_flag\030\005 \001(\010\"F\n\025NewUserConnectReques" +
       "t\022\022\n\ngateway_id\030\001 \001(\005\022\r\n\005query\030\002 \001(\t\022\n\n\002" +
-      "ip\030\003 \001(\t\"\223\001\n\026NewUserConnectResponse\022\021\n\tc" +
+      "ip\030\003 \001(\t\"\255\001\n\026NewUserConnectResponse\022\021\n\tc" +
       "lient_id\030\001 \001(\003\022\r\n\005token\030\002 \001(\t\022\021\n\tworker_" +
       "id\030\003 \001(\005\022\024\n\014websocket_id\030\004 \001(\004\022\026\n\016websoc" +
-      "ket_time\030\005 \001(\003\022\026\n\016websocket_flag\030\006 \001(\010\")" +
-      "\n\024NewDisconnectRequest\022\021\n\tclient_id\030\001 \003(" +
-      "\0032\237\007\n\016GatewayManager\022R\n\006Beacon\022\036.api.cor" +
-      "e.GatewayBeaconRequest\032\026.google.protobuf" +
-      ".Empty\"\020\272\276\031\014\010\240\006\322\014\006beacon\022c\n\010Register\022 .a" +
-      "pi.core.GatewayRegisterRequest\032!.api.cor" +
-      "e.GatewayRegisterResponse\"\022\272\276\031\016\010\241\006\322\014\010reg" +
-      "ister\022X\n\010Teardown\022 .api.core.GatewayTear" +
-      "downRequest\032\026.google.protobuf.Empty\"\022\272\276\031" +
-      "\016\010\242\006\322\014\010teardown\022P\n\tPubSubSYN\022\034.api.core." +
-      "GatewayNodeRequest\032\026.google.protobuf.Emp" +
-      "ty\"\r\272\276\031\t\010\243\006\322\014\003syn\022P\n\tPubSubACK\022\034.api.cor" +
-      "e.GatewayNodeRequest\032\026.google.protobuf.E" +
-      "mpty\"\r\272\276\031\t\010\244\006\322\014\003ack\022t\n\020NewWorkerConnect\022" +
-      "!.api.core.NewWorkerConnectRequest\032\".api" +
-      ".core.NewWorkerConnectResponse\"\031\272\276\031\025\010\245\006\322" +
-      "\014\017new-worker-conn\022l\n\016NewUserConnect\022\037.ap" +
-      "i.core.NewUserConnectRequest\032 .api.core." +
-      "NewUserConnectResponse\"\027\272\276\031\023\010\246\006\322\014\rnew-us" +
-      "er-conn\022p\n\020NewUserConnectV2\022\037.api.core.N" +
-      "ewUserConnectRequest\032 .api.core.NewUserC" +
-      "onnectResponse\"\031\272\276\031\025\010\246\006\322\014\017new-user-connV" +
-      "2\022a\n\rNewDisconnect\022\036.api.core.NewDisconn" +
-      "ectRequest\032\026.google.protobuf.Empty\"\030\272\276\031\024" +
-      "\010\247\006\322\014\016new-disconnect\032\035\272\276\031\031\272\006\007gateway\312\014\001\004" +
-      "\322\014\010/gatewayBG\n\030com.teneasyChat.api.coreZ" +
-      "\021wcs/api/core;core\272\276\031\026\242\006\006calvin\262\006\n2022-1" +
-      "2-15b\006proto3"
+      "ket_time\030\005 \001(\003\022\026\n\016websocket_flag\030\006 \001(\010\022\030" +
+      "\n\020chat_expire_time\030\007 \001(\003\")\n\024NewDisconnec" +
+      "tRequest\022\021\n\tclient_id\030\001 \003(\0032\360\007\n\016GatewayM" +
+      "anager\022R\n\006Beacon\022\036.api.core.GatewayBeaco" +
+      "nRequest\032\026.google.protobuf.Empty\"\020\272\276\031\014\010\240" +
+      "\006\322\014\006beacon\022c\n\010Register\022 .api.core.Gatewa" +
+      "yRegisterRequest\032!.api.core.GatewayRegis" +
+      "terResponse\"\022\272\276\031\016\010\241\006\322\014\010register\022X\n\010Teard" +
+      "own\022 .api.core.GatewayTeardownRequest\032\026." +
+      "google.protobuf.Empty\"\022\272\276\031\016\010\242\006\322\014\010teardow" +
+      "n\022P\n\tPubSubSYN\022\034.api.core.GatewayNodeReq" +
+      "uest\032\026.google.protobuf.Empty\"\r\272\276\031\t\010\243\006\322\014\003" +
+      "syn\022P\n\tPubSubACK\022\034.api.core.GatewayNodeR" +
+      "equest\032\026.google.protobuf.Empty\"\r\272\276\031\t\010\244\006\322" +
+      "\014\003ack\022t\n\020NewWorkerConnect\022!.api.core.New" +
+      "WorkerConnectRequest\032\".api.core.NewWorke" +
+      "rConnectResponse\"\031\272\276\031\025\010\245\006\322\014\017new-worker-c" +
+      "onn\022l\n\016NewUserConnect\022\037.api.core.NewUser" +
+      "ConnectRequest\032 .api.core.NewUserConnect" +
+      "Response\"\027\272\276\031\023\010\246\006\322\014\rnew-user-conn\022p\n\020New" +
+      "UserConnectV2\022\037.api.core.NewUserConnectR" +
+      "equest\032 .api.core.NewUserConnectResponse" +
+      "\"\031\272\276\031\025\010\246\006\322\014\017new-user-connV2\022a\n\rNewDiscon" +
+      "nect\022\036.api.core.NewDisconnectRequest\032\026.g" +
+      "oogle.protobuf.Empty\"\030\272\276\031\024\010\247\006\322\014\016new-disc" +
+      "onnect\022O\n\010WsLogOut\022\026.google.protobuf.Emp" +
+      "ty\032\026.google.protobuf.Empty\"\023\272\276\031\017\010\247\006\322\014\tws" +
+      "-logout\032\035\272\276\031\031\272\006\007gateway\312\014\001\004\322\014\010/gatewayBG" +
+      "\n\030com.teneasyChat.api.coreZ\021wcs/api/core" +
+      ";core\272\276\031\026\242\006\006calvin\262\006\n2022-12-15b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -8151,7 +8226,7 @@ public final class Gateway {
     internal_static_api_core_NewUserConnectResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_core_NewUserConnectResponse_descriptor,
-        new java.lang.String[] { "ClientId", "Token", "WorkerId", "WebsocketId", "WebsocketTime", "WebsocketFlag", });
+        new java.lang.String[] { "ClientId", "Token", "WorkerId", "WebsocketId", "WebsocketTime", "WebsocketFlag", "ChatExpireTime", });
     internal_static_api_core_NewDisconnectRequest_descriptor =
       getDescriptor().getMessageTypes().get(10);
     internal_static_api_core_NewDisconnectRequest_fieldAccessorTable = new

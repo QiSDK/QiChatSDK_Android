@@ -230,12 +230,13 @@ class MainActivity : AppCompatActivity(), TeneasySDKDelegate {
         //Log.i(Tag, "workerId:" + workerId)
         Log.i(Tag, "token:" + c.token)
         isConnected = true
-        appendText("成功连接\n")
+        appendText("成功连接 workerId:" + workerId)
     }
 
     override fun workChanged(msg: GGateway.SCWorkerChanged) {
         Log.i("MainAct connected", "已经更换客服")
         //appendText("已经更换客服\n")
+        appendText(msg.workerName + "\n")
     }
 
     fun verifyLines(lines : Array<String>) : Boolean{
