@@ -148,11 +148,11 @@ rd === 随即数 Math.floor(Math.random() * 1000000)
                     listener?.systemMsg(result)*/
                 }
                 override fun onClose(code: Int, reason: String, remote: Boolean) {
-                    Log.i(TAG, "closed connection\ncode: $code reason: $reason")
-                    disConnected(1001)
+                    Log.i(TAG, "closed connection code: $code reason: $reason")
+                    disConnected(code)
                 }
                 override fun onError(ex: Exception) {
-                    disConnected()
+                    disConnected(1001,"未知错误")
                     Log.i(TAG, ex.message ?:"未知错误")
                     //ex.printStackTrace()
                 }
@@ -383,21 +383,30 @@ rd === 随即数 Math.floor(Math.random() * 1000000)
      * @param data
      */
     private fun receiveMsg(data: ByteArray) {
+        /*
+        walter, [17 May 2024 at 3:32:00 PM (17 May 2024 at 3:32:23 PM)]:
+...HeartBeatFlag         = 0x0
+KickFlag              = 0x1
+InvalidTokenFlag      = 0x2
+PermChangedFlag       = 0x3
+EntranceNotExistsFlag = 0x4
+
+如果这个字节的值是 0 ，表示心跳...
+         */
         if(data.size == 1) {
-            var result = Result()
+            if (data[0].toInt() == 1){
+                Log.i(TAG, "已在别处登录了")
+                disConnected(1003, "已在别处登录了")
+            }
             if (data[0].toInt() == 2){
-                result.code = 1000
-                result.msg = "无效的Cert/Token"
-                Log.i(TAG, result.msg)
-                disConnected(1000)
+                Log.i(TAG, "无效的Cert/Token")
+                disConnected(1000, "无效的Cert/Token")
             }
             /*else if (data[0].toInt() == 0){
                 result.code = 0
                 result.msg = "在别处登录了(可能无需处理）"
             }*/
             else {
-                result.code = 0
-                result.msg = "收到心跳回执"
                 Log.i(TAG, "收到心跳回执")
             }
             //listener?.systemMsg(result)
@@ -421,9 +430,13 @@ rd === 随即数 Math.floor(Math.random() * 1000000)
                 token = msg.token
                 sendingMessage?.let {
                     resendMSg(it, this.payloadId)
-                    Log.i(TAG, "重发消息$payloadId")
+                    Log.i(TAG, "自动重发未发出的最后一个消息$payloadId")
                 }
-                payloadId = payLoad.id
+                //如果有未发消息，继续使用这消息的payload作为最后一个消息的payload，不然使用系统产生的id
+                if (sendingMessage == null) {
+                    payloadId = payLoad.id
+                }
+                //payloadId = payLoad.id
                 print("初始payloadId:" + payloadId + "\n")
                 listener?.connected(msg)
                 isConnected = true
@@ -508,10 +521,10 @@ rd === 随即数 Math.floor(Math.random() * 1000000)
         return cMsg.build()
     }
     
-    private fun disConnected(code: Int = 1006){
+    private fun disConnected(code: Int = 1002, msg: String = "已断开通信"){
         var result = Result();
         result.code = code
-        result.msg = "已断开通信"
+        result.msg = msg
         listener?.systemMsg(result)
         disConnect()
         sendingMessage = null
