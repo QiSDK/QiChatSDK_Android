@@ -17,6 +17,7 @@ import org.java_websocket.drafts.Draft_6455
 import org.java_websocket.handshake.ServerHandshake
 import java.net.URI
 import java.nio.ByteBuffer
+import java.nio.charset.StandardCharsets
 import java.util.*
 
 
@@ -393,23 +394,25 @@ EntranceNotExistsFlag = 0x4
 
 如果这个字节的值是 0 ，表示心跳...
          */
-        if(data.size == 1) {
-            if (data[0].toInt() == 1){
-                Log.i(TAG, "已在别处登录了")
-                disConnected(1003, "已在别处登录了")
+        if (data.size == 1) {
+            val d = String(data, StandardCharsets.UTF_8)
+
+            when {
+                d.contains("\u0000") -> {
+                    println("收到心跳回执0\n")
+                }
+                d.contains("\u0001") -> {
+                    disConnected(1003, "在别处登录了")
+                    println("收到1字节回执$d 在别处登录了\n")
+                }
+                d.contains("\u0002") -> {
+                    disConnected(1000, "无效的Token\n")
+                    println("收到1字节回执$d 无效的Token\n")
+                }
+                else -> {
+                    println("收到1字节回执$d\n")
+                }
             }
-            if (data[0].toInt() == 2){
-                Log.i(TAG, "无效的Cert/Token")
-                disConnected(1000, "无效的Cert/Token")
-            }
-            /*else if (data[0].toInt() == 0){
-                result.code = 0
-                result.msg = "在别处登录了(可能无需处理）"
-            }*/
-            else {
-                Log.i(TAG, "收到心跳回执")
-            }
-            //listener?.systemMsg(result)
         }
         else {
             val payLoad = GPayload.Payload.parseFrom(data)
