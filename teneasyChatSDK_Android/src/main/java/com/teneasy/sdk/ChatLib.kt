@@ -329,6 +329,7 @@ rd === 随即数 Math.floor(Math.random() * 1000000)
         //payload_id != 0的时候，可能是重发，重发不需要+1
         if (sendingMessage?.msgOp == CMessage.MessageOperate.MSG_OP_POST && payload_Id == 0L) {
             payloadId += 1
+            print("payloadId + 1" + payloadId)
             msgList[payloadId] = cMsg
         }
         if(!isConnected) {
@@ -523,7 +524,7 @@ EntranceNotExistsFlag = 0x4
 
         return cMsg.build()
     }
-    
+
     private fun disConnected(code: Int = 1002, msg: String = "已断开通信"){
         var result = Result();
         result.code = code
