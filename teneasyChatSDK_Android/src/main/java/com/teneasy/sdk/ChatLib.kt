@@ -400,18 +400,22 @@ EntranceNotExistsFlag = 0x4
 
             when {
                 d.contains("\u0000") -> {
-                    println("收到心跳回执0\n")
+                    Log.i(TAG, "收到心跳回执0\n")
                 }
                 d.contains("\u0001") -> {
-                    disConnected(1003, "在别处登录了")
-                    println("收到1字节回执$d 在别处登录了\n")
+                    disConnected(1010, "在别处登录了")
+                    Log.i(TAG, "收到1字节回执$d 在别处登录了\n{$token")
                 }
                 d.contains("\u0002") -> {
-                    disConnected(1000, "无效的Token\n")
-                    println("收到1字节回执$d 无效的Token\n")
+                    disConnected(1002, "无效的Token\n")
+                    Log.i(TAG, "收到1字节回执$d 无效的Token\n")
+                }
+                d.contains("\u0003") -> {
+                    //disConnected(1003, "PermChangedFlag\n")
+                    Log.i(TAG, "收到1字节回执 0003")
                 }
                 else -> {
-                    println("收到1字节回执$d\n")
+                    Log.i(TAG, "收到1字节回执$d\n")
                 }
             }
         }
@@ -525,7 +529,7 @@ EntranceNotExistsFlag = 0x4
         return cMsg.build()
     }
 
-    private fun disConnected(code: Int = 1002, msg: String = "已断开通信"){
+    private fun disConnected(code: Int = 1006, msg: String = "已断开通信"){
         var result = Result();
         result.code = code
         result.msg = msg
