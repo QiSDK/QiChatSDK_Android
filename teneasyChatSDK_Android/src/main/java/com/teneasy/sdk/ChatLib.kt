@@ -118,19 +118,9 @@ class ChatLib constructor(cert: String, token:String, baseUrl:String = "", userI
      * 启动socket连接
       */
     fun makeConnect(){
-//        val obj = JSONObject()
-//        obj.put("event", "addChannel")
-//        obj.put("channel", "ok_btccny_ticker")
-
-        /*
-        dt==当前日期 Date.now()
-rd === 随即数 Math.floor(Math.random() * 1000000)
-         */
         var rd = Random().nextInt(1000000) + 1000000
         var dt = Date().time
         val url = baseUrl + "cert=" + this.cert + "&token=" + token + "&userid=" + this.userId + "&ty=" + ClientType.CLIENT_TYPE_USER_APP.number + "&dt=" + dt + "&sign=" + mySign + "&rd=" + rd
-
-       var result = Result();
         socket =
             object : WebSocketClient(URI(url), Draft_6455()) {
                 override fun onMessage(message: String) {
@@ -138,6 +128,7 @@ rd === 随即数 Math.floor(Math.random() * 1000000)
 
                 override fun onMessage(bytes: ByteBuffer?) {
                     super.onMessage(bytes)
+                    if (this@ChatLib.socket != this) return
                     if (bytes != null)
                         receiveMsg(bytes.array())
                 }
@@ -147,15 +138,17 @@ rd === 随即数 Math.floor(Math.random() * 1000000)
                     /*result.code = 0
                     result.msg = "已连接上服务器"
                     listener?.systemMsg(result)*/
+                    if (this@ChatLib.socket != this) return
                 }
                 override fun onClose(code: Int, reason: String, remote: Boolean) {
                     Log.i(TAG, "closed connection code: $code reason: $reason")
+                    if (this@ChatLib.socket != this) return
                     disConnected(code)
                 }
                 override fun onError(ex: Exception) {
-                    disConnected(1001,"未知错误")
+                    if (this@ChatLib.socket != this) return
+                    disConnected(1001,"网络断线")
                     Log.i(TAG, ex.message ?:"未知错误")
-                    //ex.printStackTrace()
                 }
             }
         socket?.connect()
@@ -400,7 +393,7 @@ EntranceNotExistsFlag = 0x4
 
             when {
                 d.contains("\u0000") -> {
-                    Log.i(TAG, "收到心跳回执0\n")
+                    Log.i(TAG, "收到心跳回执\n")
                 }
                 d.contains("\u0001") -> {
                     disConnected(1010, "在别处登录了")
