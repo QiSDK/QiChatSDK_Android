@@ -121,6 +121,7 @@ class ChatLib constructor(cert: String, token:String, baseUrl:String = "", userI
         var rd = Random().nextInt(1000000) + 1000000
         var dt = Date().time
         val url = baseUrl + "cert=" + this.cert + "&token=" + token + "&userid=" + this.userId + "&ty=" + ClientType.CLIENT_TYPE_USER_APP.number + "&dt=" + dt + "&sign=" + mySign + "&rd=" + rd
+        Log.i(TAG, "连接WSS")
         socket =
             object : WebSocketClient(URI(url), Draft_6455()) {
                 override fun onMessage(message: String) {
@@ -147,7 +148,7 @@ class ChatLib constructor(cert: String, token:String, baseUrl:String = "", userI
                 }
                 override fun onError(ex: Exception) {
                     if (this@ChatLib.socket != this) return
-                    disConnected(1001,"网络断线")
+                    disConnected(1001,"未知错误")
                     Log.i(TAG, ex.message ?:"未知错误")
                 }
             }
