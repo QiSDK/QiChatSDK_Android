@@ -327,8 +327,7 @@ class ChatLib constructor(cert: String, token:String, baseUrl:String = "", userI
             msgList[payloadId] = cMsg
         }
         if(!isConnected) {
-            //disConnected()
-            makeConnect()
+            reConnect()
             return
         }
         // 第三层
@@ -351,7 +350,7 @@ class ChatLib constructor(cert: String, token:String, baseUrl:String = "", userI
         socket?.send(payload.build().toByteArray())
     }
 
-   fun updateSecond() {
+  private fun updateSecond() {
         sessionTime++
         if (sessionTime % 30 == 0) { // Send a heartbeat every 8 seconds
             beatTimes++
@@ -365,10 +364,12 @@ class ChatLib constructor(cert: String, token:String, baseUrl:String = "", userI
         }
     }
 
+
+
     /**
      *  心跳，一般建议每隔60秒调用
      */
-    fun sendHeartBeat(){
+   private fun sendHeartBeat(){
         val buffer = ByteArray(1)
         buffer[0] = 0
         socket?.send(buffer)
@@ -553,6 +554,14 @@ EntranceNotExistsFlag = 0x4
         if(heartTimer != null) {
             heartTimer?.cancel()
             heartTimer = null
+        }
+    }
+
+    fun reConnect(){
+        if (socket == null){
+            makeConnect()
+        }else{
+            socket?.reconnect()
         }
     }
 
