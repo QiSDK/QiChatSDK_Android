@@ -11,7 +11,7 @@ repositories {
    }
 }
 
-implementation 'com.github.QiSDK:QiChatSDK_Android:1.2.9'
+implementation 'com.github.QiSDK:QiChatSDK_Android:1.5.3'
 （版本号会不断递增，文档只是例子)
 ```
 
