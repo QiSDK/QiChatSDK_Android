@@ -67,7 +67,7 @@ object TimeUtil {
             val srcDay = gcSrc[GregorianCalendar.DAY_OF_MONTH]
 
             // 要额外显示的时间分钟
-            val timeExtraStr = if (mustIncludeTime) " " + getTimeString(srcDate, "HH:mm") else ""
+            val timeExtraStr = if (mustIncludeTime) " " + getTimeString(srcDate, "HH:mm:ss") else ""
 
             // 当年
             ret = if (currentYear == srcYear) {
@@ -81,7 +81,7 @@ object TimeUtil {
 //                    if (delta < 60 * 1000)
 //                        ret = "刚刚";
 //                    else
-                    getTimeString(srcDate, "HH:mm")
+                    getTimeString(srcDate, "HH:mm:ss")
                 } else {
                     // 昨天（以“现在”的时候为基准-1天）
                     val yesterdayDate = GregorianCalendar()
