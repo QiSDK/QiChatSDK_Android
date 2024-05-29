@@ -327,7 +327,7 @@ class ChatLib constructor(cert: String, token:String, baseUrl:String = "", userI
             msgList[payloadId] = cMsg
         }
         if(!isConnected) {
-            reConnect()
+            makeConnect()
             return
         }
         // 第三层
@@ -554,14 +554,6 @@ EntranceNotExistsFlag = 0x4
         if(heartTimer != null) {
             heartTimer?.cancel()
             heartTimer = null
-        }
-    }
-
-    fun reConnect(){
-        if (socket == null){
-            makeConnect()
-        }else{
-            socket?.reconnect()
         }
     }
 
