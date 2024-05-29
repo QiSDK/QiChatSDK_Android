@@ -6,6 +6,7 @@ import android.util.Log
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
+import androidx.lifecycle.lifecycleScope
 import com.example.teneasychatsdk.databinding.ActivityMainBinding
 import com.example.teneasychatsdkdemo.ReadTextDelegate
 import com.example.teneasychatsdkdemo.ReadTxtLib
@@ -18,6 +19,9 @@ import com.teneasy.sdk.Result
 import com.teneasy.sdk.TeneasySDKDelegate
 import com.teneasyChat.api.common.CMessage
 import com.teneasyChat.gateway.GGateway
+import kotlinx.coroutines.coroutineScope
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity(), TeneasySDKDelegate {
 
@@ -261,7 +265,10 @@ class MainActivity : AppCompatActivity(), TeneasySDKDelegate {
     override fun onResume() {
         super.onResume()
         if (!isConnected && domain != null) {
-            initChatSDK(this.domain!!)
+            lifecycleScope.launch {
+                delay(3000)
+                initChatSDK(domain!!)
+            }
         }
     }
 

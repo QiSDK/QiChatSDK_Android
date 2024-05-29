@@ -326,7 +326,7 @@ class ChatLib constructor(cert: String, token:String, baseUrl:String = "", userI
             print("payloadId + 1" + payloadId)
             msgList[payloadId] = cMsg
         }
-        if(!isConnected) {
+        if(!isConnected && payload_Id == 0L) {
             makeConnect()
             return
         }
