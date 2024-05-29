@@ -12,7 +12,6 @@ repositories {
 }
 
 implementation 'com.github.QiSDK:QiChatSDK_Android:1.5.3'
-（版本号会不断递增，文档只是例子)
 ```
 
 如果要使用没有线路智能选择的版本，请指定到1.0.3
