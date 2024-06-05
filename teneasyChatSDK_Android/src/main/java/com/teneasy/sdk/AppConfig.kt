@@ -1,6 +1,5 @@
 
 import com.teneasy.sdk.Line
-import kotlin.io.encoding.Base64
 
 data class AppConfig(
   val code: Long,

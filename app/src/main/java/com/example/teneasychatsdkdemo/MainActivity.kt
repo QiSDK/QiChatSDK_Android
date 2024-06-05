@@ -12,7 +12,6 @@ import com.example.teneasychatsdkdemo.ReadTextDelegate
 import com.example.teneasychatsdkdemo.ReadTxtLib
 import com.teneasy.sdk.ChatLib
 import com.teneasy.sdk.Line
-import com.teneasy.sdk.LineDelegate
 import com.teneasy.sdk.LineDetectDelegate
 import com.teneasy.sdk.LineDetectLib
 import com.teneasy.sdk.Result

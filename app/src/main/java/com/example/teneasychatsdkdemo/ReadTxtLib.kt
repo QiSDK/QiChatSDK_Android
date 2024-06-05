@@ -10,11 +10,7 @@ import okhttp3.Response
 import java.io.IOException
 import java.util.concurrent.TimeUnit
 import android.util.Base64
-import com.teneasy.sdk.Line
-import com.teneasyChat.api.common.CMessage
-import okhttp3.MediaType.Companion.toMediaTypeOrNull
-import okhttp3.RequestBody
-import okhttp3.RequestBody.Companion.toRequestBody
+
 import kotlin.random.Random
 
 interface ReadTextDelegate {
@@ -59,8 +55,8 @@ println(e.message)
                         //var body = response.body?.string()
 
                         //有加密
-                        var contents  = response.body?.string()
-                        var body = contents?.let { decryptBase64ToString(it) }
+                        var contents  = response.body()
+                        var body = contents?.let { decryptBase64ToString(it.toString()) }
                         body?.apply {
                             lisener?.receivedMsg(body);
                         }
