@@ -4094,6 +4094,589 @@ public final class EntranceOuterClass {
 
   }
 
+  public interface DisableEntranceRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:api.core.DisableEntranceRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>uint32 id = 1 [(.validate.rules) = { ... }</code>
+     * @return The id.
+     */
+    int getId();
+
+    /**
+     * <pre>
+     * 禁用/启用
+     * </pre>
+     *
+     * <code>.api.common.DisableStatus disable_status = 2 [(.validate.rules) = { ... }</code>
+     * @return The enum numeric value on the wire for disableStatus.
+     */
+    int getDisableStatusValue();
+    /**
+     * <pre>
+     * 禁用/启用
+     * </pre>
+     *
+     * <code>.api.common.DisableStatus disable_status = 2 [(.validate.rules) = { ... }</code>
+     * @return The disableStatus.
+     */
+    com.teneasyChat.api.common.CBase.DisableStatus getDisableStatus();
+  }
+  /**
+   * <pre>
+   * 禁用/启用入口
+   * </pre>
+   *
+   * Protobuf type {@code api.core.DisableEntranceRequest}
+   */
+  public static final class DisableEntranceRequest extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:api.core.DisableEntranceRequest)
+      DisableEntranceRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 26,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        DisableEntranceRequest.class.getName());
+    }
+    // Use DisableEntranceRequest.newBuilder() to construct.
+    private DisableEntranceRequest(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private DisableEntranceRequest() {
+      disableStatus_ = 0;
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.teneasyChat.api.core.EntranceOuterClass.internal_static_api_core_DisableEntranceRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.teneasyChat.api.core.EntranceOuterClass.internal_static_api_core_DisableEntranceRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.teneasyChat.api.core.EntranceOuterClass.DisableEntranceRequest.class, com.teneasyChat.api.core.EntranceOuterClass.DisableEntranceRequest.Builder.class);
+    }
+
+    public static final int ID_FIELD_NUMBER = 1;
+    private int id_ = 0;
+    /**
+     * <code>uint32 id = 1 [(.validate.rules) = { ... }</code>
+     * @return The id.
+     */
+    @java.lang.Override
+    public int getId() {
+      return id_;
+    }
+
+    public static final int DISABLE_STATUS_FIELD_NUMBER = 2;
+    private int disableStatus_ = 0;
+    /**
+     * <pre>
+     * 禁用/启用
+     * </pre>
+     *
+     * <code>.api.common.DisableStatus disable_status = 2 [(.validate.rules) = { ... }</code>
+     * @return The enum numeric value on the wire for disableStatus.
+     */
+    @java.lang.Override public int getDisableStatusValue() {
+      return disableStatus_;
+    }
+    /**
+     * <pre>
+     * 禁用/启用
+     * </pre>
+     *
+     * <code>.api.common.DisableStatus disable_status = 2 [(.validate.rules) = { ... }</code>
+     * @return The disableStatus.
+     */
+    @java.lang.Override public com.teneasyChat.api.common.CBase.DisableStatus getDisableStatus() {
+      com.teneasyChat.api.common.CBase.DisableStatus result = com.teneasyChat.api.common.CBase.DisableStatus.forNumber(disableStatus_);
+      return result == null ? com.teneasyChat.api.common.CBase.DisableStatus.UNRECOGNIZED : result;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (id_ != 0) {
+        output.writeUInt32(1, id_);
+      }
+      if (disableStatus_ != com.teneasyChat.api.common.CBase.DisableStatus.DEFAULT.getNumber()) {
+        output.writeEnum(2, disableStatus_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (id_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(1, id_);
+      }
+      if (disableStatus_ != com.teneasyChat.api.common.CBase.DisableStatus.DEFAULT.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(2, disableStatus_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.teneasyChat.api.core.EntranceOuterClass.DisableEntranceRequest)) {
+        return super.equals(obj);
+      }
+      com.teneasyChat.api.core.EntranceOuterClass.DisableEntranceRequest other = (com.teneasyChat.api.core.EntranceOuterClass.DisableEntranceRequest) obj;
+
+      if (getId()
+          != other.getId()) return false;
+      if (disableStatus_ != other.disableStatus_) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId();
+      hash = (37 * hash) + DISABLE_STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + disableStatus_;
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.teneasyChat.api.core.EntranceOuterClass.DisableEntranceRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.core.EntranceOuterClass.DisableEntranceRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.EntranceOuterClass.DisableEntranceRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.core.EntranceOuterClass.DisableEntranceRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.EntranceOuterClass.DisableEntranceRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.core.EntranceOuterClass.DisableEntranceRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.EntranceOuterClass.DisableEntranceRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.teneasyChat.api.core.EntranceOuterClass.DisableEntranceRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.teneasyChat.api.core.EntranceOuterClass.DisableEntranceRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.teneasyChat.api.core.EntranceOuterClass.DisableEntranceRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.EntranceOuterClass.DisableEntranceRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.teneasyChat.api.core.EntranceOuterClass.DisableEntranceRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.teneasyChat.api.core.EntranceOuterClass.DisableEntranceRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * 禁用/启用入口
+     * </pre>
+     *
+     * Protobuf type {@code api.core.DisableEntranceRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:api.core.DisableEntranceRequest)
+        com.teneasyChat.api.core.EntranceOuterClass.DisableEntranceRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.teneasyChat.api.core.EntranceOuterClass.internal_static_api_core_DisableEntranceRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.teneasyChat.api.core.EntranceOuterClass.internal_static_api_core_DisableEntranceRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.teneasyChat.api.core.EntranceOuterClass.DisableEntranceRequest.class, com.teneasyChat.api.core.EntranceOuterClass.DisableEntranceRequest.Builder.class);
+      }
+
+      // Construct using com.teneasyChat.api.core.EntranceOuterClass.DisableEntranceRequest.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        id_ = 0;
+        disableStatus_ = 0;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.teneasyChat.api.core.EntranceOuterClass.internal_static_api_core_DisableEntranceRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.core.EntranceOuterClass.DisableEntranceRequest getDefaultInstanceForType() {
+        return com.teneasyChat.api.core.EntranceOuterClass.DisableEntranceRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.core.EntranceOuterClass.DisableEntranceRequest build() {
+        com.teneasyChat.api.core.EntranceOuterClass.DisableEntranceRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.core.EntranceOuterClass.DisableEntranceRequest buildPartial() {
+        com.teneasyChat.api.core.EntranceOuterClass.DisableEntranceRequest result = new com.teneasyChat.api.core.EntranceOuterClass.DisableEntranceRequest(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.teneasyChat.api.core.EntranceOuterClass.DisableEntranceRequest result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.id_ = id_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.disableStatus_ = disableStatus_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.teneasyChat.api.core.EntranceOuterClass.DisableEntranceRequest) {
+          return mergeFrom((com.teneasyChat.api.core.EntranceOuterClass.DisableEntranceRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.teneasyChat.api.core.EntranceOuterClass.DisableEntranceRequest other) {
+        if (other == com.teneasyChat.api.core.EntranceOuterClass.DisableEntranceRequest.getDefaultInstance()) return this;
+        if (other.getId() != 0) {
+          setId(other.getId());
+        }
+        if (other.disableStatus_ != 0) {
+          setDisableStatusValue(other.getDisableStatusValue());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                id_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 16: {
+                disableStatus_ = input.readEnum();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private int id_ ;
+      /**
+       * <code>uint32 id = 1 [(.validate.rules) = { ... }</code>
+       * @return The id.
+       */
+      @java.lang.Override
+      public int getId() {
+        return id_;
+      }
+      /**
+       * <code>uint32 id = 1 [(.validate.rules) = { ... }</code>
+       * @param value The id to set.
+       * @return This builder for chaining.
+       */
+      public Builder setId(int value) {
+
+        id_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 id = 1 [(.validate.rules) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        id_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int disableStatus_ = 0;
+      /**
+       * <pre>
+       * 禁用/启用
+       * </pre>
+       *
+       * <code>.api.common.DisableStatus disable_status = 2 [(.validate.rules) = { ... }</code>
+       * @return The enum numeric value on the wire for disableStatus.
+       */
+      @java.lang.Override public int getDisableStatusValue() {
+        return disableStatus_;
+      }
+      /**
+       * <pre>
+       * 禁用/启用
+       * </pre>
+       *
+       * <code>.api.common.DisableStatus disable_status = 2 [(.validate.rules) = { ... }</code>
+       * @param value The enum numeric value on the wire for disableStatus to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDisableStatusValue(int value) {
+        disableStatus_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 禁用/启用
+       * </pre>
+       *
+       * <code>.api.common.DisableStatus disable_status = 2 [(.validate.rules) = { ... }</code>
+       * @return The disableStatus.
+       */
+      @java.lang.Override
+      public com.teneasyChat.api.common.CBase.DisableStatus getDisableStatus() {
+        com.teneasyChat.api.common.CBase.DisableStatus result = com.teneasyChat.api.common.CBase.DisableStatus.forNumber(disableStatus_);
+        return result == null ? com.teneasyChat.api.common.CBase.DisableStatus.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * 禁用/启用
+       * </pre>
+       *
+       * <code>.api.common.DisableStatus disable_status = 2 [(.validate.rules) = { ... }</code>
+       * @param value The disableStatus to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDisableStatus(com.teneasyChat.api.common.CBase.DisableStatus value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000002;
+        disableStatus_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 禁用/启用
+       * </pre>
+       *
+       * <code>.api.common.DisableStatus disable_status = 2 [(.validate.rules) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDisableStatus() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        disableStatus_ = 0;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:api.core.DisableEntranceRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:api.core.DisableEntranceRequest)
+    private static final com.teneasyChat.api.core.EntranceOuterClass.DisableEntranceRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.teneasyChat.api.core.EntranceOuterClass.DisableEntranceRequest();
+    }
+
+    public static com.teneasyChat.api.core.EntranceOuterClass.DisableEntranceRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<DisableEntranceRequest>
+        PARSER = new com.google.protobuf.AbstractParser<DisableEntranceRequest>() {
+      @java.lang.Override
+      public DisableEntranceRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<DisableEntranceRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<DisableEntranceRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.teneasyChat.api.core.EntranceOuterClass.DisableEntranceRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface GetDistributionResponseOrBuilder extends
       // @@protoc_insertion_point(interface_extends:api.core.GetDistributionResponse)
       com.google.protobuf.MessageOrBuilder {
@@ -6009,6 +6592,11 @@ public final class EntranceOuterClass {
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_api_core_DeleteEntranceRequest_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_api_core_DisableEntranceRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_api_core_DisableEntranceRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_api_core_GetDistributionResponse_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -6047,41 +6635,47 @@ public final class EntranceOuterClass {
       "reateEntranceResponse\022\n\n\002id\030\001 \001(\r\"J\n\025Upd" +
       "ateEntranceRequest\0221\n\tentrances\030\001 \001(\0132\024." +
       "api.common.EntranceB\010\372B\005\212\001\002\020\001\",\n\025DeleteE" +
-      "ntranceRequest\022\023\n\002id\030\001 \001(\rB\007\372B\004*\002 \000\"G\n\027G" +
-      "etDistributionResponse\022\021\n\ttenant_id\030\001 \001(" +
-      "\005\022\031\n\021distribution_type\030\002 \001(\t\"R\n\027SaveDist" +
-      "ributionRequest\0227\n\021distribution_type\030\003 \003" +
-      "(\0162\034.api.common.DistributionType\"L\n\025Entr" +
-      "anceExistsRequest\022\025\n\013entrance_id\030\001 \001(\005H\000" +
-      "\022\023\n\tclient_id\030\002 \001(\003H\000B\007\n\005based2\214\010\n\010Entra" +
-      "nce\022}\n\030GetDistributionMechanism\022\026.google" +
-      ".protobuf.Empty\032!.api.core.GetDistributi" +
-      "onResponse\"&\272\276\031\"\010\334\004\030\001\322\014\032get-distribution" +
-      "-mechanism\022\211\001\n\031SaveDistributionMechanism" +
-      "\022!.api.core.SaveDistributionRequest\032 .ap" +
-      "i.core.DownloadDomainResponse\"\'\272\276\031#\010\334\004\030\001" +
-      "\322\014\033save-distribution-mechanism\022g\n\016Downlo" +
-      "adDomain\022\026.google.protobuf.Empty\032 .api.c" +
-      "ore.DownloadDomainResponse\"\033\272\276\031\027\010\334\004\030\001\322\014\017" +
-      "download-domain\022d\n\rQueryEntrance\022\026.googl" +
-      "e.protobuf.Empty\032\037.api.core.EntranceQuer" +
-      "yResponse\"\032\272\276\031\026\010\330\004\030\001\322\014\016query-entrance\022b\n" +
-      "\017QueryEntranceV1\022\020.api.common.Page\032\037.api" +
-      ".core.EntranceQueryResponse\"\034\272\276\031\030\010\330\004\030\001\322\014" +
-      "\020query-entrancev1\022p\n\016CreateEntrance\022\037.ap" +
-      "i.core.CreateEntranceRequest\032 .api.core." +
-      "CreateEntranceResponse\"\033\272\276\031\027\010\331\004\030\001\322\014\017crea" +
-      "te-entrance\022f\n\016UpdateEntrance\022\037.api.core" +
-      ".UpdateEntranceRequest\032\026.google.protobuf" +
-      ".Empty\"\033\272\276\031\027\010\332\004\030\001\322\014\017update-entrance\022f\n\016D" +
-      "eleteEntrance\022\037.api.core.DeleteEntranceR" +
-      "equest\032\026.google.protobuf.Empty\"\033\272\276\031\027\010\333\004\030" +
-      "\001\322\014\017delete-entrance\022Y\n\006Exists\022\037.api.core" +
-      ".EntranceExistsRequest\032\026.google.protobuf" +
-      ".Empty\"\026\272\276\031\022\010\334\004\030\001\312\014\001\004\322\014\006exists\032%\272\276\031!\272\006\010e" +
-      "ntrance\312\014\001\020\322\014\017tenant/entranceBL\n\030com.ten" +
-      "easyChat.api.coreZ\021wcs/api/core;core\272\276\031\033" +
-      "\242\006\013mango,bland\262\006\n2022-12-12b\006proto3"
+      "ntranceRequest\022\023\n\002id\030\001 \001(\rB\007\372B\004*\002 \000\"h\n\026D" +
+      "isableEntranceRequest\022\023\n\002id\030\001 \001(\rB\007\372B\004*\002" +
+      " \000\0229\n\016disable_status\030\002 \001(\0162\031.api.common." +
+      "DisableStatusB\006\372B\003\202\001\000\"G\n\027GetDistribution" +
+      "Response\022\021\n\ttenant_id\030\001 \001(\005\022\031\n\021distribut" +
+      "ion_type\030\002 \001(\t\"R\n\027SaveDistributionReques" +
+      "t\0227\n\021distribution_type\030\003 \003(\0162\034.api.commo" +
+      "n.DistributionType\"L\n\025EntranceExistsRequ" +
+      "est\022\025\n\013entrance_id\030\001 \001(\005H\000\022\023\n\tclient_id\030" +
+      "\002 \001(\003H\000B\007\n\005based2\367\010\n\010Entrance\022}\n\030GetDist" +
+      "ributionMechanism\022\026.google.protobuf.Empt" +
+      "y\032!.api.core.GetDistributionResponse\"&\272\276" +
+      "\031\"\010\334\004\030\001\322\014\032get-distribution-mechanism\022\211\001\n" +
+      "\031SaveDistributionMechanism\022!.api.core.Sa" +
+      "veDistributionRequest\032 .api.core.Downloa" +
+      "dDomainResponse\"\'\272\276\031#\010\334\004\030\001\322\014\033save-distri" +
+      "bution-mechanism\022g\n\016DownloadDomain\022\026.goo" +
+      "gle.protobuf.Empty\032 .api.core.DownloadDo" +
+      "mainResponse\"\033\272\276\031\027\010\334\004\030\001\322\014\017download-domai" +
+      "n\022d\n\rQueryEntrance\022\026.google.protobuf.Emp" +
+      "ty\032\037.api.core.EntranceQueryResponse\"\032\272\276\031" +
+      "\026\010\330\004\030\001\322\014\016query-entrance\022b\n\017QueryEntrance" +
+      "V1\022\020.api.common.Page\032\037.api.core.Entrance" +
+      "QueryResponse\"\034\272\276\031\030\010\330\004\030\001\322\014\020query-entranc" +
+      "ev1\022p\n\016CreateEntrance\022\037.api.core.CreateE" +
+      "ntranceRequest\032 .api.core.CreateEntrance" +
+      "Response\"\033\272\276\031\027\010\331\004\030\001\322\014\017create-entrance\022f\n" +
+      "\016UpdateEntrance\022\037.api.core.UpdateEntranc" +
+      "eRequest\032\026.google.protobuf.Empty\"\033\272\276\031\027\010\332" +
+      "\004\030\001\322\014\017update-entrance\022f\n\016DeleteEntrance\022" +
+      "\037.api.core.DeleteEntranceRequest\032\026.googl" +
+      "e.protobuf.Empty\"\033\272\276\031\027\010\333\004\030\001\322\014\017delete-ent" +
+      "rance\022Y\n\006Exists\022\037.api.core.EntranceExist" +
+      "sRequest\032\026.google.protobuf.Empty\"\026\272\276\031\022\010\334" +
+      "\004\030\001\312\014\001\004\322\014\006exists\022i\n\017DisableEntrance\022 .ap" +
+      "i.core.DisableEntranceRequest\032\026.google.p" +
+      "rotobuf.Empty\"\034\272\276\031\030\010\335\004\030\001\322\014\020disable-entra" +
+      "nce\032%\272\276\031!\272\006\010entrance\312\014\001\020\322\014\017tenant/entran" +
+      "ceBL\n\030com.teneasyChat.api.coreZ\021wcs/api/" +
+      "core;core\272\276\031\033\242\006\013mango,bland\262\006\n2022-12-12" +
+      "b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -6136,20 +6730,26 @@ public final class EntranceOuterClass {
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_core_DeleteEntranceRequest_descriptor,
         new java.lang.String[] { "Id", });
-    internal_static_api_core_GetDistributionResponse_descriptor =
+    internal_static_api_core_DisableEntranceRequest_descriptor =
       getDescriptor().getMessageTypes().get(7);
+    internal_static_api_core_DisableEntranceRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_api_core_DisableEntranceRequest_descriptor,
+        new java.lang.String[] { "Id", "DisableStatus", });
+    internal_static_api_core_GetDistributionResponse_descriptor =
+      getDescriptor().getMessageTypes().get(8);
     internal_static_api_core_GetDistributionResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_core_GetDistributionResponse_descriptor,
         new java.lang.String[] { "TenantId", "DistributionType", });
     internal_static_api_core_SaveDistributionRequest_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_api_core_SaveDistributionRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_core_SaveDistributionRequest_descriptor,
         new java.lang.String[] { "DistributionType", });
     internal_static_api_core_EntranceExistsRequest_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_api_core_EntranceExistsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_core_EntranceExistsRequest_descriptor,

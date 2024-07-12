@@ -2862,16 +2862,45 @@ public final class QuickReplyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string name = 1 [(.validate.rules) = { ... }</code>
-     * @return The name.
+     * <pre>
+     * string name = 1 [(validate.rules).string.min_bytes = 1];
+     * </pre>
+     *
+     * <code>repeated string name = 1 [(.validate.rules) = { ... }</code>
+     * @return A list containing the name.
      */
-    java.lang.String getName();
+    java.util.List<java.lang.String>
+        getNameList();
     /**
-     * <code>string name = 1 [(.validate.rules) = { ... }</code>
-     * @return The bytes for name.
+     * <pre>
+     * string name = 1 [(validate.rules).string.min_bytes = 1];
+     * </pre>
+     *
+     * <code>repeated string name = 1 [(.validate.rules) = { ... }</code>
+     * @return The count of name.
+     */
+    int getNameCount();
+    /**
+     * <pre>
+     * string name = 1 [(validate.rules).string.min_bytes = 1];
+     * </pre>
+     *
+     * <code>repeated string name = 1 [(.validate.rules) = { ... }</code>
+     * @param index The index of the element to return.
+     * @return The name at the given index.
+     */
+    java.lang.String getName(int index);
+    /**
+     * <pre>
+     * string name = 1 [(validate.rules).string.min_bytes = 1];
+     * </pre>
+     *
+     * <code>repeated string name = 1 [(.validate.rules) = { ... }</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the name at the given index.
      */
     com.google.protobuf.ByteString
-        getNameBytes();
+        getNameBytes(int index);
   }
   /**
    * <pre>
@@ -2899,7 +2928,8 @@ public final class QuickReplyOuterClass {
       super(builder);
     }
     private QuickReplyGroupDeleteRequest() {
-      name_ = "";
+      name_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
@@ -2917,41 +2947,55 @@ public final class QuickReplyOuterClass {
 
     public static final int NAME_FIELD_NUMBER = 1;
     @SuppressWarnings("serial")
-    private volatile java.lang.Object name_ = "";
+    private com.google.protobuf.LazyStringArrayList name_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
-     * <code>string name = 1 [(.validate.rules) = { ... }</code>
-     * @return The name.
+     * <pre>
+     * string name = 1 [(validate.rules).string.min_bytes = 1];
+     * </pre>
+     *
+     * <code>repeated string name = 1 [(.validate.rules) = { ... }</code>
+     * @return A list containing the name.
      */
-    @java.lang.Override
-    public java.lang.String getName() {
-      java.lang.Object ref = name_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        name_ = s;
-        return s;
-      }
+    public com.google.protobuf.ProtocolStringList
+        getNameList() {
+      return name_;
     }
     /**
-     * <code>string name = 1 [(.validate.rules) = { ... }</code>
-     * @return The bytes for name.
+     * <pre>
+     * string name = 1 [(validate.rules).string.min_bytes = 1];
+     * </pre>
+     *
+     * <code>repeated string name = 1 [(.validate.rules) = { ... }</code>
+     * @return The count of name.
      */
-    @java.lang.Override
+    public int getNameCount() {
+      return name_.size();
+    }
+    /**
+     * <pre>
+     * string name = 1 [(validate.rules).string.min_bytes = 1];
+     * </pre>
+     *
+     * <code>repeated string name = 1 [(.validate.rules) = { ... }</code>
+     * @param index The index of the element to return.
+     * @return The name at the given index.
+     */
+    public java.lang.String getName(int index) {
+      return name_.get(index);
+    }
+    /**
+     * <pre>
+     * string name = 1 [(validate.rules).string.min_bytes = 1];
+     * </pre>
+     *
+     * <code>repeated string name = 1 [(.validate.rules) = { ... }</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the name at the given index.
+     */
     public com.google.protobuf.ByteString
-        getNameBytes() {
-      java.lang.Object ref = name_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        name_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+        getNameBytes(int index) {
+      return name_.getByteString(index);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -2968,8 +3012,8 @@ public final class QuickReplyOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 1, name_);
+      for (int i = 0; i < name_.size(); i++) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 1, name_.getRaw(i));
       }
       getUnknownFields().writeTo(output);
     }
@@ -2980,8 +3024,13 @@ public final class QuickReplyOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(1, name_);
+      {
+        int dataSize = 0;
+        for (int i = 0; i < name_.size(); i++) {
+          dataSize += computeStringSizeNoTag(name_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getNameList().size();
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -2998,8 +3047,8 @@ public final class QuickReplyOuterClass {
       }
       com.teneasyChat.api.core.QuickReplyOuterClass.QuickReplyGroupDeleteRequest other = (com.teneasyChat.api.core.QuickReplyOuterClass.QuickReplyGroupDeleteRequest) obj;
 
-      if (!getName()
-          .equals(other.getName())) return false;
+      if (!getNameList()
+          .equals(other.getNameList())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -3011,8 +3060,10 @@ public final class QuickReplyOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + NAME_FIELD_NUMBER;
-      hash = (53 * hash) + getName().hashCode();
+      if (getNameCount() > 0) {
+        hash = (37 * hash) + NAME_FIELD_NUMBER;
+        hash = (53 * hash) + getNameList().hashCode();
+      }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -3148,7 +3199,8 @@ public final class QuickReplyOuterClass {
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
-        name_ = "";
+        name_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
         return this;
       }
 
@@ -3183,6 +3235,7 @@ public final class QuickReplyOuterClass {
       private void buildPartial0(com.teneasyChat.api.core.QuickReplyOuterClass.QuickReplyGroupDeleteRequest result) {
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
+          name_.makeImmutable();
           result.name_ = name_;
         }
       }
@@ -3199,9 +3252,14 @@ public final class QuickReplyOuterClass {
 
       public Builder mergeFrom(com.teneasyChat.api.core.QuickReplyOuterClass.QuickReplyGroupDeleteRequest other) {
         if (other == com.teneasyChat.api.core.QuickReplyOuterClass.QuickReplyGroupDeleteRequest.getDefaultInstance()) return this;
-        if (!other.getName().isEmpty()) {
-          name_ = other.name_;
-          bitField0_ |= 0x00000001;
+        if (!other.name_.isEmpty()) {
+          if (name_.isEmpty()) {
+            name_ = other.name_;
+            bitField0_ |= 0x00000001;
+          } else {
+            ensureNameIsMutable();
+            name_.addAll(other.name_);
+          }
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -3231,8 +3289,9 @@ public final class QuickReplyOuterClass {
                 done = true;
                 break;
               case 10: {
-                name_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureNameIsMutable();
+                name_.add(s);
                 break;
               } // case 10
               default: {
@@ -3252,73 +3311,148 @@ public final class QuickReplyOuterClass {
       }
       private int bitField0_;
 
-      private java.lang.Object name_ = "";
-      /**
-       * <code>string name = 1 [(.validate.rules) = { ... }</code>
-       * @return The name.
-       */
-      public java.lang.String getName() {
-        java.lang.Object ref = name_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          name_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
+      private com.google.protobuf.LazyStringArrayList name_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+      private void ensureNameIsMutable() {
+        if (!name_.isModifiable()) {
+          name_ = new com.google.protobuf.LazyStringArrayList(name_);
         }
+        bitField0_ |= 0x00000001;
       }
       /**
-       * <code>string name = 1 [(.validate.rules) = { ... }</code>
-       * @return The bytes for name.
+       * <pre>
+       * string name = 1 [(validate.rules).string.min_bytes = 1];
+       * </pre>
+       *
+       * <code>repeated string name = 1 [(.validate.rules) = { ... }</code>
+       * @return A list containing the name.
+       */
+      public com.google.protobuf.ProtocolStringList
+          getNameList() {
+        name_.makeImmutable();
+        return name_;
+      }
+      /**
+       * <pre>
+       * string name = 1 [(validate.rules).string.min_bytes = 1];
+       * </pre>
+       *
+       * <code>repeated string name = 1 [(.validate.rules) = { ... }</code>
+       * @return The count of name.
+       */
+      public int getNameCount() {
+        return name_.size();
+      }
+      /**
+       * <pre>
+       * string name = 1 [(validate.rules).string.min_bytes = 1];
+       * </pre>
+       *
+       * <code>repeated string name = 1 [(.validate.rules) = { ... }</code>
+       * @param index The index of the element to return.
+       * @return The name at the given index.
+       */
+      public java.lang.String getName(int index) {
+        return name_.get(index);
+      }
+      /**
+       * <pre>
+       * string name = 1 [(validate.rules).string.min_bytes = 1];
+       * </pre>
+       *
+       * <code>repeated string name = 1 [(.validate.rules) = { ... }</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the name at the given index.
        */
       public com.google.protobuf.ByteString
-          getNameBytes() {
-        java.lang.Object ref = name_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          name_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
+          getNameBytes(int index) {
+        return name_.getByteString(index);
       }
       /**
-       * <code>string name = 1 [(.validate.rules) = { ... }</code>
+       * <pre>
+       * string name = 1 [(validate.rules).string.min_bytes = 1];
+       * </pre>
+       *
+       * <code>repeated string name = 1 [(.validate.rules) = { ... }</code>
+       * @param index The index to set the value at.
        * @param value The name to set.
        * @return This builder for chaining.
        */
       public Builder setName(
-          java.lang.String value) {
+          int index, java.lang.String value) {
         if (value == null) { throw new NullPointerException(); }
-        name_ = value;
+        ensureNameIsMutable();
+        name_.set(index, value);
         bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
       /**
-       * <code>string name = 1 [(.validate.rules) = { ... }</code>
+       * <pre>
+       * string name = 1 [(validate.rules).string.min_bytes = 1];
+       * </pre>
+       *
+       * <code>repeated string name = 1 [(.validate.rules) = { ... }</code>
+       * @param value The name to add.
        * @return This builder for chaining.
        */
-      public Builder clearName() {
-        name_ = getDefaultInstance().getName();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      public Builder addName(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        ensureNameIsMutable();
+        name_.add(value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
       /**
-       * <code>string name = 1 [(.validate.rules) = { ... }</code>
-       * @param value The bytes for name to set.
+       * <pre>
+       * string name = 1 [(validate.rules).string.min_bytes = 1];
+       * </pre>
+       *
+       * <code>repeated string name = 1 [(.validate.rules) = { ... }</code>
+       * @param values The name to add.
        * @return This builder for chaining.
        */
-      public Builder setNameBytes(
+      public Builder addAllName(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureNameIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, name_);
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * string name = 1 [(validate.rules).string.min_bytes = 1];
+       * </pre>
+       *
+       * <code>repeated string name = 1 [(.validate.rules) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearName() {
+        name_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * string name = 1 [(validate.rules).string.min_bytes = 1];
+       * </pre>
+       *
+       * <code>repeated string name = 1 [(.validate.rules) = { ... }</code>
+       * @param value The bytes of the name to add.
+       * @return This builder for chaining.
+       */
+      public Builder addNameBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) { throw new NullPointerException(); }
         checkByteStringIsUtf8(value);
-        name_ = value;
+        ensureNameIsMutable();
+        name_.add(value);
         bitField0_ |= 0x00000001;
         onChanged();
         return this;
@@ -3528,6 +3662,67 @@ public final class QuickReplyOuterClass {
      * @return The groupId.
      */
     long getGroupId();
+
+    /**
+     * <pre>
+     * 客服组name
+     * </pre>
+     *
+     * <code>string customer_group_name = 9;</code>
+     * @return The customerGroupName.
+     */
+    java.lang.String getCustomerGroupName();
+    /**
+     * <pre>
+     * 客服组name
+     * </pre>
+     *
+     * <code>string customer_group_name = 9;</code>
+     * @return The bytes for customerGroupName.
+     */
+    com.google.protobuf.ByteString
+        getCustomerGroupNameBytes();
+
+    /**
+     * <pre>
+     * 便签内容数组
+     * </pre>
+     *
+     * <code>repeated string contents = 10;</code>
+     * @return A list containing the contents.
+     */
+    java.util.List<java.lang.String>
+        getContentsList();
+    /**
+     * <pre>
+     * 便签内容数组
+     * </pre>
+     *
+     * <code>repeated string contents = 10;</code>
+     * @return The count of contents.
+     */
+    int getContentsCount();
+    /**
+     * <pre>
+     * 便签内容数组
+     * </pre>
+     *
+     * <code>repeated string contents = 10;</code>
+     * @param index The index of the element to return.
+     * @return The contents at the given index.
+     */
+    java.lang.String getContents(int index);
+    /**
+     * <pre>
+     * 便签内容数组
+     * </pre>
+     *
+     * <code>repeated string contents = 10;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the contents at the given index.
+     */
+    com.google.protobuf.ByteString
+        getContentsBytes(int index);
   }
   /**
    * <pre>
@@ -3560,6 +3755,9 @@ public final class QuickReplyOuterClass {
       groupName_ = "";
       content_ = "";
       items_ = java.util.Collections.emptyList();
+      customerGroupName_ = "";
+      contents_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
@@ -3843,6 +4041,106 @@ public final class QuickReplyOuterClass {
       return groupId_;
     }
 
+    public static final int CUSTOMER_GROUP_NAME_FIELD_NUMBER = 9;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object customerGroupName_ = "";
+    /**
+     * <pre>
+     * 客服组name
+     * </pre>
+     *
+     * <code>string customer_group_name = 9;</code>
+     * @return The customerGroupName.
+     */
+    @java.lang.Override
+    public java.lang.String getCustomerGroupName() {
+      java.lang.Object ref = customerGroupName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        customerGroupName_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * 客服组name
+     * </pre>
+     *
+     * <code>string customer_group_name = 9;</code>
+     * @return The bytes for customerGroupName.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getCustomerGroupNameBytes() {
+      java.lang.Object ref = customerGroupName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        customerGroupName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CONTENTS_FIELD_NUMBER = 10;
+    @SuppressWarnings("serial")
+    private com.google.protobuf.LazyStringArrayList contents_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+    /**
+     * <pre>
+     * 便签内容数组
+     * </pre>
+     *
+     * <code>repeated string contents = 10;</code>
+     * @return A list containing the contents.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getContentsList() {
+      return contents_;
+    }
+    /**
+     * <pre>
+     * 便签内容数组
+     * </pre>
+     *
+     * <code>repeated string contents = 10;</code>
+     * @return The count of contents.
+     */
+    public int getContentsCount() {
+      return contents_.size();
+    }
+    /**
+     * <pre>
+     * 便签内容数组
+     * </pre>
+     *
+     * <code>repeated string contents = 10;</code>
+     * @param index The index of the element to return.
+     * @return The contents at the given index.
+     */
+    public java.lang.String getContents(int index) {
+      return contents_.get(index);
+    }
+    /**
+     * <pre>
+     * 便签内容数组
+     * </pre>
+     *
+     * <code>repeated string contents = 10;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the contents at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getContentsBytes(int index) {
+      return contents_.getByteString(index);
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -3880,6 +4178,12 @@ public final class QuickReplyOuterClass {
       }
       if (groupId_ != 0L) {
         output.writeInt64(8, groupId_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(customerGroupName_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 9, customerGroupName_);
+      }
+      for (int i = 0; i < contents_.size(); i++) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 10, contents_.getRaw(i));
       }
       getUnknownFields().writeTo(output);
     }
@@ -3919,6 +4223,17 @@ public final class QuickReplyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(8, groupId_);
       }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(customerGroupName_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(9, customerGroupName_);
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < contents_.size(); i++) {
+          dataSize += computeStringSizeNoTag(contents_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getContentsList().size();
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -3950,6 +4265,10 @@ public final class QuickReplyOuterClass {
           != other.getIsCustom()) return false;
       if (getGroupId()
           != other.getGroupId()) return false;
+      if (!getCustomerGroupName()
+          .equals(other.getCustomerGroupName())) return false;
+      if (!getContentsList()
+          .equals(other.getContentsList())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -3982,6 +4301,12 @@ public final class QuickReplyOuterClass {
       hash = (37 * hash) + GROUP_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getGroupId());
+      hash = (37 * hash) + CUSTOMER_GROUP_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getCustomerGroupName().hashCode();
+      if (getContentsCount() > 0) {
+        hash = (37 * hash) + CONTENTS_FIELD_NUMBER;
+        hash = (53 * hash) + getContentsList().hashCode();
+      }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -4132,6 +4457,9 @@ public final class QuickReplyOuterClass {
         bitField0_ = (bitField0_ & ~0x00000020);
         isCustom_ = false;
         groupId_ = 0L;
+        customerGroupName_ = "";
+        contents_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
         return this;
       }
 
@@ -4199,6 +4527,13 @@ public final class QuickReplyOuterClass {
         if (((from_bitField0_ & 0x00000080) != 0)) {
           result.groupId_ = groupId_;
         }
+        if (((from_bitField0_ & 0x00000100) != 0)) {
+          result.customerGroupName_ = customerGroupName_;
+        }
+        if (((from_bitField0_ & 0x00000200) != 0)) {
+          contents_.makeImmutable();
+          result.contents_ = contents_;
+        }
       }
 
       @java.lang.Override
@@ -4265,6 +4600,21 @@ public final class QuickReplyOuterClass {
         }
         if (other.getGroupId() != 0L) {
           setGroupId(other.getGroupId());
+        }
+        if (!other.getCustomerGroupName().isEmpty()) {
+          customerGroupName_ = other.customerGroupName_;
+          bitField0_ |= 0x00000100;
+          onChanged();
+        }
+        if (!other.contents_.isEmpty()) {
+          if (contents_.isEmpty()) {
+            contents_ = other.contents_;
+            bitField0_ |= 0x00000200;
+          } else {
+            ensureContentsIsMutable();
+            contents_.addAll(other.contents_);
+          }
+          onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -4340,6 +4690,17 @@ public final class QuickReplyOuterClass {
                 bitField0_ |= 0x00000080;
                 break;
               } // case 64
+              case 74: {
+                customerGroupName_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 74
+              case 82: {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureContentsIsMutable();
+                contents_.add(s);
+                break;
+              } // case 82
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -5135,6 +5496,245 @@ public final class QuickReplyOuterClass {
       public Builder clearGroupId() {
         bitField0_ = (bitField0_ & ~0x00000080);
         groupId_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object customerGroupName_ = "";
+      /**
+       * <pre>
+       * 客服组name
+       * </pre>
+       *
+       * <code>string customer_group_name = 9;</code>
+       * @return The customerGroupName.
+       */
+      public java.lang.String getCustomerGroupName() {
+        java.lang.Object ref = customerGroupName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          customerGroupName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * 客服组name
+       * </pre>
+       *
+       * <code>string customer_group_name = 9;</code>
+       * @return The bytes for customerGroupName.
+       */
+      public com.google.protobuf.ByteString
+          getCustomerGroupNameBytes() {
+        java.lang.Object ref = customerGroupName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          customerGroupName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * 客服组name
+       * </pre>
+       *
+       * <code>string customer_group_name = 9;</code>
+       * @param value The customerGroupName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCustomerGroupName(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        customerGroupName_ = value;
+        bitField0_ |= 0x00000100;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 客服组name
+       * </pre>
+       *
+       * <code>string customer_group_name = 9;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCustomerGroupName() {
+        customerGroupName_ = getDefaultInstance().getCustomerGroupName();
+        bitField0_ = (bitField0_ & ~0x00000100);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 客服组name
+       * </pre>
+       *
+       * <code>string customer_group_name = 9;</code>
+       * @param value The bytes for customerGroupName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCustomerGroupNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        customerGroupName_ = value;
+        bitField0_ |= 0x00000100;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringArrayList contents_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+      private void ensureContentsIsMutable() {
+        if (!contents_.isModifiable()) {
+          contents_ = new com.google.protobuf.LazyStringArrayList(contents_);
+        }
+        bitField0_ |= 0x00000200;
+      }
+      /**
+       * <pre>
+       * 便签内容数组
+       * </pre>
+       *
+       * <code>repeated string contents = 10;</code>
+       * @return A list containing the contents.
+       */
+      public com.google.protobuf.ProtocolStringList
+          getContentsList() {
+        contents_.makeImmutable();
+        return contents_;
+      }
+      /**
+       * <pre>
+       * 便签内容数组
+       * </pre>
+       *
+       * <code>repeated string contents = 10;</code>
+       * @return The count of contents.
+       */
+      public int getContentsCount() {
+        return contents_.size();
+      }
+      /**
+       * <pre>
+       * 便签内容数组
+       * </pre>
+       *
+       * <code>repeated string contents = 10;</code>
+       * @param index The index of the element to return.
+       * @return The contents at the given index.
+       */
+      public java.lang.String getContents(int index) {
+        return contents_.get(index);
+      }
+      /**
+       * <pre>
+       * 便签内容数组
+       * </pre>
+       *
+       * <code>repeated string contents = 10;</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the contents at the given index.
+       */
+      public com.google.protobuf.ByteString
+          getContentsBytes(int index) {
+        return contents_.getByteString(index);
+      }
+      /**
+       * <pre>
+       * 便签内容数组
+       * </pre>
+       *
+       * <code>repeated string contents = 10;</code>
+       * @param index The index to set the value at.
+       * @param value The contents to set.
+       * @return This builder for chaining.
+       */
+      public Builder setContents(
+          int index, java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        ensureContentsIsMutable();
+        contents_.set(index, value);
+        bitField0_ |= 0x00000200;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 便签内容数组
+       * </pre>
+       *
+       * <code>repeated string contents = 10;</code>
+       * @param value The contents to add.
+       * @return This builder for chaining.
+       */
+      public Builder addContents(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        ensureContentsIsMutable();
+        contents_.add(value);
+        bitField0_ |= 0x00000200;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 便签内容数组
+       * </pre>
+       *
+       * <code>repeated string contents = 10;</code>
+       * @param values The contents to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllContents(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureContentsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, contents_);
+        bitField0_ |= 0x00000200;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 便签内容数组
+       * </pre>
+       *
+       * <code>repeated string contents = 10;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearContents() {
+        contents_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000200);;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 便签内容数组
+       * </pre>
+       *
+       * <code>repeated string contents = 10;</code>
+       * @param value The bytes of the contents to add.
+       * @return This builder for chaining.
+       */
+      public Builder addContentsBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        ensureContentsIsMutable();
+        contents_.add(value);
+        bitField0_ |= 0x00000200;
         onChanged();
         return this;
       }
@@ -9408,39 +10008,35 @@ public final class QuickReplyOuterClass {
 
   }
 
-  public interface DeleteQuickReplyRequestOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:api.core.DeleteQuickReplyRequest)
+  public interface DQuickReplyOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:api.core.DQuickReply)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int64 quick_reply_id = 1 [(.validate.rules) = { ... }</code>
-     * @return The quickReplyId.
+     * <code>int64 id = 1;</code>
+     * @return The id.
      */
-    long getQuickReplyId();
+    long getId();
 
     /**
-     * <code>string name = 2 [(.validate.rules) = { ... }</code>
+     * <code>string name = 2;</code>
      * @return The name.
      */
     java.lang.String getName();
     /**
-     * <code>string name = 2 [(.validate.rules) = { ... }</code>
+     * <code>string name = 2;</code>
      * @return The bytes for name.
      */
     com.google.protobuf.ByteString
         getNameBytes();
   }
   /**
-   * <pre>
-   * 删除标签
-   * </pre>
-   *
-   * Protobuf type {@code api.core.DeleteQuickReplyRequest}
+   * Protobuf type {@code api.core.DQuickReply}
    */
-  public static final class DeleteQuickReplyRequest extends
+  public static final class DQuickReply extends
       com.google.protobuf.GeneratedMessage implements
-      // @@protoc_insertion_point(message_implements:api.core.DeleteQuickReplyRequest)
-      DeleteQuickReplyRequestOrBuilder {
+      // @@protoc_insertion_point(message_implements:api.core.DQuickReply)
+      DQuickReplyOrBuilder {
   private static final long serialVersionUID = 0L;
     static {
       com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
@@ -9449,45 +10045,45 @@ public final class QuickReplyOuterClass {
         /* minor= */ 26,
         /* patch= */ 1,
         /* suffix= */ "",
-        DeleteQuickReplyRequest.class.getName());
+        DQuickReply.class.getName());
     }
-    // Use DeleteQuickReplyRequest.newBuilder() to construct.
-    private DeleteQuickReplyRequest(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+    // Use DQuickReply.newBuilder() to construct.
+    private DQuickReply(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
     }
-    private DeleteQuickReplyRequest() {
+    private DQuickReply() {
       name_ = "";
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.teneasyChat.api.core.QuickReplyOuterClass.internal_static_api_core_DeleteQuickReplyRequest_descriptor;
+      return com.teneasyChat.api.core.QuickReplyOuterClass.internal_static_api_core_DQuickReply_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.teneasyChat.api.core.QuickReplyOuterClass.internal_static_api_core_DeleteQuickReplyRequest_fieldAccessorTable
+      return com.teneasyChat.api.core.QuickReplyOuterClass.internal_static_api_core_DQuickReply_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.teneasyChat.api.core.QuickReplyOuterClass.DeleteQuickReplyRequest.class, com.teneasyChat.api.core.QuickReplyOuterClass.DeleteQuickReplyRequest.Builder.class);
+              com.teneasyChat.api.core.QuickReplyOuterClass.DQuickReply.class, com.teneasyChat.api.core.QuickReplyOuterClass.DQuickReply.Builder.class);
     }
 
-    public static final int QUICK_REPLY_ID_FIELD_NUMBER = 1;
-    private long quickReplyId_ = 0L;
+    public static final int ID_FIELD_NUMBER = 1;
+    private long id_ = 0L;
     /**
-     * <code>int64 quick_reply_id = 1 [(.validate.rules) = { ... }</code>
-     * @return The quickReplyId.
+     * <code>int64 id = 1;</code>
+     * @return The id.
      */
     @java.lang.Override
-    public long getQuickReplyId() {
-      return quickReplyId_;
+    public long getId() {
+      return id_;
     }
 
     public static final int NAME_FIELD_NUMBER = 2;
     @SuppressWarnings("serial")
     private volatile java.lang.Object name_ = "";
     /**
-     * <code>string name = 2 [(.validate.rules) = { ... }</code>
+     * <code>string name = 2;</code>
      * @return The name.
      */
     @java.lang.Override
@@ -9504,7 +10100,7 @@ public final class QuickReplyOuterClass {
       }
     }
     /**
-     * <code>string name = 2 [(.validate.rules) = { ... }</code>
+     * <code>string name = 2;</code>
      * @return The bytes for name.
      */
     @java.lang.Override
@@ -9536,8 +10132,8 @@ public final class QuickReplyOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (quickReplyId_ != 0L) {
-        output.writeInt64(1, quickReplyId_);
+      if (id_ != 0L) {
+        output.writeInt64(1, id_);
       }
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
         com.google.protobuf.GeneratedMessage.writeString(output, 2, name_);
@@ -9551,12 +10147,590 @@ public final class QuickReplyOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (quickReplyId_ != 0L) {
+      if (id_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(1, quickReplyId_);
+          .computeInt64Size(1, id_);
       }
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
         size += com.google.protobuf.GeneratedMessage.computeStringSize(2, name_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.teneasyChat.api.core.QuickReplyOuterClass.DQuickReply)) {
+        return super.equals(obj);
+      }
+      com.teneasyChat.api.core.QuickReplyOuterClass.DQuickReply other = (com.teneasyChat.api.core.QuickReplyOuterClass.DQuickReply) obj;
+
+      if (getId()
+          != other.getId()) return false;
+      if (!getName()
+          .equals(other.getName())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getId());
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.teneasyChat.api.core.QuickReplyOuterClass.DQuickReply parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.core.QuickReplyOuterClass.DQuickReply parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.QuickReplyOuterClass.DQuickReply parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.core.QuickReplyOuterClass.DQuickReply parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.QuickReplyOuterClass.DQuickReply parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.core.QuickReplyOuterClass.DQuickReply parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.QuickReplyOuterClass.DQuickReply parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.teneasyChat.api.core.QuickReplyOuterClass.DQuickReply parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.teneasyChat.api.core.QuickReplyOuterClass.DQuickReply parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.teneasyChat.api.core.QuickReplyOuterClass.DQuickReply parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.QuickReplyOuterClass.DQuickReply parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.teneasyChat.api.core.QuickReplyOuterClass.DQuickReply parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.teneasyChat.api.core.QuickReplyOuterClass.DQuickReply prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code api.core.DQuickReply}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:api.core.DQuickReply)
+        com.teneasyChat.api.core.QuickReplyOuterClass.DQuickReplyOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.teneasyChat.api.core.QuickReplyOuterClass.internal_static_api_core_DQuickReply_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.teneasyChat.api.core.QuickReplyOuterClass.internal_static_api_core_DQuickReply_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.teneasyChat.api.core.QuickReplyOuterClass.DQuickReply.class, com.teneasyChat.api.core.QuickReplyOuterClass.DQuickReply.Builder.class);
+      }
+
+      // Construct using com.teneasyChat.api.core.QuickReplyOuterClass.DQuickReply.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        id_ = 0L;
+        name_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.teneasyChat.api.core.QuickReplyOuterClass.internal_static_api_core_DQuickReply_descriptor;
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.core.QuickReplyOuterClass.DQuickReply getDefaultInstanceForType() {
+        return com.teneasyChat.api.core.QuickReplyOuterClass.DQuickReply.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.core.QuickReplyOuterClass.DQuickReply build() {
+        com.teneasyChat.api.core.QuickReplyOuterClass.DQuickReply result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.core.QuickReplyOuterClass.DQuickReply buildPartial() {
+        com.teneasyChat.api.core.QuickReplyOuterClass.DQuickReply result = new com.teneasyChat.api.core.QuickReplyOuterClass.DQuickReply(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.teneasyChat.api.core.QuickReplyOuterClass.DQuickReply result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.id_ = id_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.name_ = name_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.teneasyChat.api.core.QuickReplyOuterClass.DQuickReply) {
+          return mergeFrom((com.teneasyChat.api.core.QuickReplyOuterClass.DQuickReply)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.teneasyChat.api.core.QuickReplyOuterClass.DQuickReply other) {
+        if (other == com.teneasyChat.api.core.QuickReplyOuterClass.DQuickReply.getDefaultInstance()) return this;
+        if (other.getId() != 0L) {
+          setId(other.getId());
+        }
+        if (!other.getName().isEmpty()) {
+          name_ = other.name_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                id_ = input.readInt64();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 18: {
+                name_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private long id_ ;
+      /**
+       * <code>int64 id = 1;</code>
+       * @return The id.
+       */
+      @java.lang.Override
+      public long getId() {
+        return id_;
+      }
+      /**
+       * <code>int64 id = 1;</code>
+       * @param value The id to set.
+       * @return This builder for chaining.
+       */
+      public Builder setId(long value) {
+
+        id_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 id = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        id_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object name_ = "";
+      /**
+       * <code>string name = 2;</code>
+       * @return The name.
+       */
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          name_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string name = 2;</code>
+       * @return The bytes for name.
+       */
+      public com.google.protobuf.ByteString
+          getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string name = 2;</code>
+       * @param value The name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setName(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        name_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string name = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearName() {
+        name_ = getDefaultInstance().getName();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string name = 2;</code>
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        name_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:api.core.DQuickReply)
+    }
+
+    // @@protoc_insertion_point(class_scope:api.core.DQuickReply)
+    private static final com.teneasyChat.api.core.QuickReplyOuterClass.DQuickReply DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.teneasyChat.api.core.QuickReplyOuterClass.DQuickReply();
+    }
+
+    public static com.teneasyChat.api.core.QuickReplyOuterClass.DQuickReply getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<DQuickReply>
+        PARSER = new com.google.protobuf.AbstractParser<DQuickReply>() {
+      @java.lang.Override
+      public DQuickReply parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<DQuickReply> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<DQuickReply> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.teneasyChat.api.core.QuickReplyOuterClass.DQuickReply getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface DeleteQuickReplyRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:api.core.DeleteQuickReplyRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>repeated .api.core.DQuickReply items = 1;</code>
+     */
+    java.util.List<com.teneasyChat.api.core.QuickReplyOuterClass.DQuickReply> 
+        getItemsList();
+    /**
+     * <code>repeated .api.core.DQuickReply items = 1;</code>
+     */
+    com.teneasyChat.api.core.QuickReplyOuterClass.DQuickReply getItems(int index);
+    /**
+     * <code>repeated .api.core.DQuickReply items = 1;</code>
+     */
+    int getItemsCount();
+    /**
+     * <code>repeated .api.core.DQuickReply items = 1;</code>
+     */
+    java.util.List<? extends com.teneasyChat.api.core.QuickReplyOuterClass.DQuickReplyOrBuilder> 
+        getItemsOrBuilderList();
+    /**
+     * <code>repeated .api.core.DQuickReply items = 1;</code>
+     */
+    com.teneasyChat.api.core.QuickReplyOuterClass.DQuickReplyOrBuilder getItemsOrBuilder(
+        int index);
+  }
+  /**
+   * <pre>
+   * 删除标签
+   * </pre>
+   *
+   * Protobuf type {@code api.core.DeleteQuickReplyRequest}
+   */
+  public static final class DeleteQuickReplyRequest extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:api.core.DeleteQuickReplyRequest)
+      DeleteQuickReplyRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 26,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        DeleteQuickReplyRequest.class.getName());
+    }
+    // Use DeleteQuickReplyRequest.newBuilder() to construct.
+    private DeleteQuickReplyRequest(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private DeleteQuickReplyRequest() {
+      items_ = java.util.Collections.emptyList();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.teneasyChat.api.core.QuickReplyOuterClass.internal_static_api_core_DeleteQuickReplyRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.teneasyChat.api.core.QuickReplyOuterClass.internal_static_api_core_DeleteQuickReplyRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.teneasyChat.api.core.QuickReplyOuterClass.DeleteQuickReplyRequest.class, com.teneasyChat.api.core.QuickReplyOuterClass.DeleteQuickReplyRequest.Builder.class);
+    }
+
+    public static final int ITEMS_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
+    private java.util.List<com.teneasyChat.api.core.QuickReplyOuterClass.DQuickReply> items_;
+    /**
+     * <code>repeated .api.core.DQuickReply items = 1;</code>
+     */
+    @java.lang.Override
+    public java.util.List<com.teneasyChat.api.core.QuickReplyOuterClass.DQuickReply> getItemsList() {
+      return items_;
+    }
+    /**
+     * <code>repeated .api.core.DQuickReply items = 1;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends com.teneasyChat.api.core.QuickReplyOuterClass.DQuickReplyOrBuilder> 
+        getItemsOrBuilderList() {
+      return items_;
+    }
+    /**
+     * <code>repeated .api.core.DQuickReply items = 1;</code>
+     */
+    @java.lang.Override
+    public int getItemsCount() {
+      return items_.size();
+    }
+    /**
+     * <code>repeated .api.core.DQuickReply items = 1;</code>
+     */
+    @java.lang.Override
+    public com.teneasyChat.api.core.QuickReplyOuterClass.DQuickReply getItems(int index) {
+      return items_.get(index);
+    }
+    /**
+     * <code>repeated .api.core.DQuickReply items = 1;</code>
+     */
+    @java.lang.Override
+    public com.teneasyChat.api.core.QuickReplyOuterClass.DQuickReplyOrBuilder getItemsOrBuilder(
+        int index) {
+      return items_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < items_.size(); i++) {
+        output.writeMessage(1, items_.get(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < items_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, items_.get(i));
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -9573,10 +10747,8 @@ public final class QuickReplyOuterClass {
       }
       com.teneasyChat.api.core.QuickReplyOuterClass.DeleteQuickReplyRequest other = (com.teneasyChat.api.core.QuickReplyOuterClass.DeleteQuickReplyRequest) obj;
 
-      if (getQuickReplyId()
-          != other.getQuickReplyId()) return false;
-      if (!getName()
-          .equals(other.getName())) return false;
+      if (!getItemsList()
+          .equals(other.getItemsList())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -9588,11 +10760,10 @@ public final class QuickReplyOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + QUICK_REPLY_ID_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getQuickReplyId());
-      hash = (37 * hash) + NAME_FIELD_NUMBER;
-      hash = (53 * hash) + getName().hashCode();
+      if (getItemsCount() > 0) {
+        hash = (37 * hash) + ITEMS_FIELD_NUMBER;
+        hash = (53 * hash) + getItemsList().hashCode();
+      }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -9728,8 +10899,13 @@ public final class QuickReplyOuterClass {
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
-        quickReplyId_ = 0L;
-        name_ = "";
+        if (itemsBuilder_ == null) {
+          items_ = java.util.Collections.emptyList();
+        } else {
+          items_ = null;
+          itemsBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -9756,19 +10932,26 @@ public final class QuickReplyOuterClass {
       @java.lang.Override
       public com.teneasyChat.api.core.QuickReplyOuterClass.DeleteQuickReplyRequest buildPartial() {
         com.teneasyChat.api.core.QuickReplyOuterClass.DeleteQuickReplyRequest result = new com.teneasyChat.api.core.QuickReplyOuterClass.DeleteQuickReplyRequest(this);
+        buildPartialRepeatedFields(result);
         if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
       }
 
+      private void buildPartialRepeatedFields(com.teneasyChat.api.core.QuickReplyOuterClass.DeleteQuickReplyRequest result) {
+        if (itemsBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            items_ = java.util.Collections.unmodifiableList(items_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.items_ = items_;
+        } else {
+          result.items_ = itemsBuilder_.build();
+        }
+      }
+
       private void buildPartial0(com.teneasyChat.api.core.QuickReplyOuterClass.DeleteQuickReplyRequest result) {
         int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.quickReplyId_ = quickReplyId_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.name_ = name_;
-        }
       }
 
       @java.lang.Override
@@ -9783,13 +10966,31 @@ public final class QuickReplyOuterClass {
 
       public Builder mergeFrom(com.teneasyChat.api.core.QuickReplyOuterClass.DeleteQuickReplyRequest other) {
         if (other == com.teneasyChat.api.core.QuickReplyOuterClass.DeleteQuickReplyRequest.getDefaultInstance()) return this;
-        if (other.getQuickReplyId() != 0L) {
-          setQuickReplyId(other.getQuickReplyId());
-        }
-        if (!other.getName().isEmpty()) {
-          name_ = other.name_;
-          bitField0_ |= 0x00000002;
-          onChanged();
+        if (itemsBuilder_ == null) {
+          if (!other.items_.isEmpty()) {
+            if (items_.isEmpty()) {
+              items_ = other.items_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureItemsIsMutable();
+              items_.addAll(other.items_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.items_.isEmpty()) {
+            if (itemsBuilder_.isEmpty()) {
+              itemsBuilder_.dispose();
+              itemsBuilder_ = null;
+              items_ = other.items_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              itemsBuilder_ = 
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
+                   getItemsFieldBuilder() : null;
+            } else {
+              itemsBuilder_.addAllMessages(other.items_);
+            }
+          }
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -9817,16 +11018,19 @@ public final class QuickReplyOuterClass {
               case 0:
                 done = true;
                 break;
-              case 8: {
-                quickReplyId_ = input.readInt64();
-                bitField0_ |= 0x00000001;
+              case 10: {
+                com.teneasyChat.api.core.QuickReplyOuterClass.DQuickReply m =
+                    input.readMessage(
+                        com.teneasyChat.api.core.QuickReplyOuterClass.DQuickReply.parser(),
+                        extensionRegistry);
+                if (itemsBuilder_ == null) {
+                  ensureItemsIsMutable();
+                  items_.add(m);
+                } else {
+                  itemsBuilder_.addMessage(m);
+                }
                 break;
-              } // case 8
-              case 18: {
-                name_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 18
+              } // case 10
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -9844,108 +11048,244 @@ public final class QuickReplyOuterClass {
       }
       private int bitField0_;
 
-      private long quickReplyId_ ;
-      /**
-       * <code>int64 quick_reply_id = 1 [(.validate.rules) = { ... }</code>
-       * @return The quickReplyId.
-       */
-      @java.lang.Override
-      public long getQuickReplyId() {
-        return quickReplyId_;
-      }
-      /**
-       * <code>int64 quick_reply_id = 1 [(.validate.rules) = { ... }</code>
-       * @param value The quickReplyId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setQuickReplyId(long value) {
-
-        quickReplyId_ = value;
-        bitField0_ |= 0x00000001;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int64 quick_reply_id = 1 [(.validate.rules) = { ... }</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearQuickReplyId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        quickReplyId_ = 0L;
-        onChanged();
-        return this;
+      private java.util.List<com.teneasyChat.api.core.QuickReplyOuterClass.DQuickReply> items_ =
+        java.util.Collections.emptyList();
+      private void ensureItemsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          items_ = new java.util.ArrayList<com.teneasyChat.api.core.QuickReplyOuterClass.DQuickReply>(items_);
+          bitField0_ |= 0x00000001;
+         }
       }
 
-      private java.lang.Object name_ = "";
+      private com.google.protobuf.RepeatedFieldBuilder<
+          com.teneasyChat.api.core.QuickReplyOuterClass.DQuickReply, com.teneasyChat.api.core.QuickReplyOuterClass.DQuickReply.Builder, com.teneasyChat.api.core.QuickReplyOuterClass.DQuickReplyOrBuilder> itemsBuilder_;
+
       /**
-       * <code>string name = 2 [(.validate.rules) = { ... }</code>
-       * @return The name.
+       * <code>repeated .api.core.DQuickReply items = 1;</code>
        */
-      public java.lang.String getName() {
-        java.lang.Object ref = name_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          name_ = s;
-          return s;
+      public java.util.List<com.teneasyChat.api.core.QuickReplyOuterClass.DQuickReply> getItemsList() {
+        if (itemsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(items_);
         } else {
-          return (java.lang.String) ref;
+          return itemsBuilder_.getMessageList();
         }
       }
       /**
-       * <code>string name = 2 [(.validate.rules) = { ... }</code>
-       * @return The bytes for name.
+       * <code>repeated .api.core.DQuickReply items = 1;</code>
        */
-      public com.google.protobuf.ByteString
-          getNameBytes() {
-        java.lang.Object ref = name_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          name_ = b;
-          return b;
+      public int getItemsCount() {
+        if (itemsBuilder_ == null) {
+          return items_.size();
         } else {
-          return (com.google.protobuf.ByteString) ref;
+          return itemsBuilder_.getCount();
         }
       }
       /**
-       * <code>string name = 2 [(.validate.rules) = { ... }</code>
-       * @param value The name to set.
-       * @return This builder for chaining.
+       * <code>repeated .api.core.DQuickReply items = 1;</code>
        */
-      public Builder setName(
-          java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
-        name_ = value;
-        bitField0_ |= 0x00000002;
-        onChanged();
+      public com.teneasyChat.api.core.QuickReplyOuterClass.DQuickReply getItems(int index) {
+        if (itemsBuilder_ == null) {
+          return items_.get(index);
+        } else {
+          return itemsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .api.core.DQuickReply items = 1;</code>
+       */
+      public Builder setItems(
+          int index, com.teneasyChat.api.core.QuickReplyOuterClass.DQuickReply value) {
+        if (itemsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureItemsIsMutable();
+          items_.set(index, value);
+          onChanged();
+        } else {
+          itemsBuilder_.setMessage(index, value);
+        }
         return this;
       }
       /**
-       * <code>string name = 2 [(.validate.rules) = { ... }</code>
-       * @return This builder for chaining.
+       * <code>repeated .api.core.DQuickReply items = 1;</code>
        */
-      public Builder clearName() {
-        name_ = getDefaultInstance().getName();
-        bitField0_ = (bitField0_ & ~0x00000002);
-        onChanged();
+      public Builder setItems(
+          int index, com.teneasyChat.api.core.QuickReplyOuterClass.DQuickReply.Builder builderForValue) {
+        if (itemsBuilder_ == null) {
+          ensureItemsIsMutable();
+          items_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          itemsBuilder_.setMessage(index, builderForValue.build());
+        }
         return this;
       }
       /**
-       * <code>string name = 2 [(.validate.rules) = { ... }</code>
-       * @param value The bytes for name to set.
-       * @return This builder for chaining.
+       * <code>repeated .api.core.DQuickReply items = 1;</code>
        */
-      public Builder setNameBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
-        name_ = value;
-        bitField0_ |= 0x00000002;
-        onChanged();
+      public Builder addItems(com.teneasyChat.api.core.QuickReplyOuterClass.DQuickReply value) {
+        if (itemsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureItemsIsMutable();
+          items_.add(value);
+          onChanged();
+        } else {
+          itemsBuilder_.addMessage(value);
+        }
         return this;
+      }
+      /**
+       * <code>repeated .api.core.DQuickReply items = 1;</code>
+       */
+      public Builder addItems(
+          int index, com.teneasyChat.api.core.QuickReplyOuterClass.DQuickReply value) {
+        if (itemsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureItemsIsMutable();
+          items_.add(index, value);
+          onChanged();
+        } else {
+          itemsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .api.core.DQuickReply items = 1;</code>
+       */
+      public Builder addItems(
+          com.teneasyChat.api.core.QuickReplyOuterClass.DQuickReply.Builder builderForValue) {
+        if (itemsBuilder_ == null) {
+          ensureItemsIsMutable();
+          items_.add(builderForValue.build());
+          onChanged();
+        } else {
+          itemsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .api.core.DQuickReply items = 1;</code>
+       */
+      public Builder addItems(
+          int index, com.teneasyChat.api.core.QuickReplyOuterClass.DQuickReply.Builder builderForValue) {
+        if (itemsBuilder_ == null) {
+          ensureItemsIsMutable();
+          items_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          itemsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .api.core.DQuickReply items = 1;</code>
+       */
+      public Builder addAllItems(
+          java.lang.Iterable<? extends com.teneasyChat.api.core.QuickReplyOuterClass.DQuickReply> values) {
+        if (itemsBuilder_ == null) {
+          ensureItemsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, items_);
+          onChanged();
+        } else {
+          itemsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .api.core.DQuickReply items = 1;</code>
+       */
+      public Builder clearItems() {
+        if (itemsBuilder_ == null) {
+          items_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          itemsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .api.core.DQuickReply items = 1;</code>
+       */
+      public Builder removeItems(int index) {
+        if (itemsBuilder_ == null) {
+          ensureItemsIsMutable();
+          items_.remove(index);
+          onChanged();
+        } else {
+          itemsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .api.core.DQuickReply items = 1;</code>
+       */
+      public com.teneasyChat.api.core.QuickReplyOuterClass.DQuickReply.Builder getItemsBuilder(
+          int index) {
+        return getItemsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .api.core.DQuickReply items = 1;</code>
+       */
+      public com.teneasyChat.api.core.QuickReplyOuterClass.DQuickReplyOrBuilder getItemsOrBuilder(
+          int index) {
+        if (itemsBuilder_ == null) {
+          return items_.get(index);  } else {
+          return itemsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .api.core.DQuickReply items = 1;</code>
+       */
+      public java.util.List<? extends com.teneasyChat.api.core.QuickReplyOuterClass.DQuickReplyOrBuilder> 
+           getItemsOrBuilderList() {
+        if (itemsBuilder_ != null) {
+          return itemsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(items_);
+        }
+      }
+      /**
+       * <code>repeated .api.core.DQuickReply items = 1;</code>
+       */
+      public com.teneasyChat.api.core.QuickReplyOuterClass.DQuickReply.Builder addItemsBuilder() {
+        return getItemsFieldBuilder().addBuilder(
+            com.teneasyChat.api.core.QuickReplyOuterClass.DQuickReply.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .api.core.DQuickReply items = 1;</code>
+       */
+      public com.teneasyChat.api.core.QuickReplyOuterClass.DQuickReply.Builder addItemsBuilder(
+          int index) {
+        return getItemsFieldBuilder().addBuilder(
+            index, com.teneasyChat.api.core.QuickReplyOuterClass.DQuickReply.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .api.core.DQuickReply items = 1;</code>
+       */
+      public java.util.List<com.teneasyChat.api.core.QuickReplyOuterClass.DQuickReply.Builder> 
+           getItemsBuilderList() {
+        return getItemsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilder<
+          com.teneasyChat.api.core.QuickReplyOuterClass.DQuickReply, com.teneasyChat.api.core.QuickReplyOuterClass.DQuickReply.Builder, com.teneasyChat.api.core.QuickReplyOuterClass.DQuickReplyOrBuilder> 
+          getItemsFieldBuilder() {
+        if (itemsBuilder_ == null) {
+          itemsBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
+              com.teneasyChat.api.core.QuickReplyOuterClass.DQuickReply, com.teneasyChat.api.core.QuickReplyOuterClass.DQuickReply.Builder, com.teneasyChat.api.core.QuickReplyOuterClass.DQuickReplyOrBuilder>(
+                  items_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          items_ = null;
+        }
+        return itemsBuilder_;
       }
 
       // @@protoc_insertion_point(builder_scope:api.core.DeleteQuickReplyRequest)
@@ -13594,6 +14934,11 @@ public final class QuickReplyOuterClass {
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_api_core_UpdateQuickReplyRequest_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_api_core_DQuickReply_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_api_core_DQuickReply_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_api_core_DeleteQuickReplyRequest_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -13645,75 +14990,77 @@ public final class QuickReplyOuterClass {
       "priority\030\002 \001(\005B\020\372B\r\032\013 \376\377\377\377\377\377\377\377\377\001\"x\n\034Quic" +
       "kReplyGroupUpdateRequest\022\031\n\010old_name\030\001 \001" +
       "(\tB\007\372B\004r\002 \001\022\031\n\010new_name\030\002 \001(\tB\007\372B\004r\002 \001\022\"" +
-      "\n\010priority\030\003 \001(\005B\020\372B\r\032\013 \376\377\377\377\377\377\377\377\377\001\"5\n\034Qu" +
-      "ickReplyGroupDeleteRequest\022\025\n\004name\030\001 \001(\t" +
-      "B\007\372B\004r\002 \001\"\316\001\n\016QuickReplyItem\022\n\n\002id\030\001 \001(\003" +
-      "\022\025\n\004name\030\002 \001(\tB\007\372B\004r\002 \001\022\033\n\ngroup_name\030\003 " +
-      "\001(\tB\007\372B\004r\002 \001\022\"\n\010priority\030\004 \001(\005B\020\372B\r\032\013 \376\377" +
-      "\377\377\377\377\377\377\377\001\022\017\n\007content\030\005 \001(\t\022\"\n\005items\030\006 \003(\013" +
-      "2\023.api.common.Message\022\021\n\tis_custom\030\007 \001(\010" +
-      "\022\020\n\010group_id\030\010 \001(\003\"Q\n\027QuickReplyQueryRes" +
-      "ponse\022\'\n\005items\030\001 \003(\0132\030.api.core.QuickRep" +
-      "lyItem\022\r\n\005total\030\002 \001(\005\"B\n\027CreateQuickRepl" +
-      "yRequest\022\'\n\005reply\030\001 \001(\0132\030.api.core.Quick" +
-      "ReplyItem\"C\n\030CreateQuickReplyResponse\022\'\n" +
-      "\005reply\030\001 \001(\0132\030.api.core.QuickReplyItem\"D" +
-      "\n\031CreateQuickReplyRequestV1\022\'\n\005reply\030\001 \003" +
-      "(\0132\030.api.core.QuickReplyItem\"E\n\032CreateQu" +
-      "ickReplyResponseV1\022\'\n\005reply\030\001 \003(\0132\030.api." +
-      "core.QuickReplyItem\"c\n\027UpdateQuickReplyR" +
-      "equest\022\'\n\005reply\030\001 \001(\0132\030.api.core.QuickRe" +
-      "plyItem\022\037\n\016old_group_name\030\002 \001(\tB\007\372B\004r\002 \001" +
-      "\"Q\n\027DeleteQuickReplyRequest\022\037\n\016quick_rep" +
-      "ly_id\030\001 \001(\003B\007\372B\004\"\002 \000\022\025\n\004name\030\002 \001(\tB\007\372B\004r" +
-      "\002 \001\"+\n\021PushCommonRequest\022\026\n\016quick_reply_" +
-      "id\030\001 \001(\003\"*\n\020PopCommonRequest\022\026\n\016quick_re" +
-      "ply_id\030\001 \001(\003\"D\n\023QueryCommonResponse\022-\n\013q" +
-      "uick_reply\030\001 \003(\0132\030.api.core.QuickReplyIt" +
-      "em\"d\n\023QuickReplyItemGroup\022\022\n\ngroup_name\030" +
-      "\001 \001(\t\022\020\n\010priority\030\002 \001(\005\022\'\n\005items\030\003 \003(\0132\030" +
-      ".api.core.QuickReplyItem\"E\n\025QueryByWorke" +
-      "rResponse\022,\n\005group\030\001 \003(\0132\035.api.core.Quic" +
-      "kReplyItemGroup2\274\013\n\nQuickReply\022h\n\nQueryG" +
-      "roup\022\026.google.protobuf.Empty\032&.api.core." +
-      "QuickReplyGroupQueryResponse\"\032\272\276\031\026\010\254\002\030\001\240" +
-      "\001\001\322\014\013query-group\022g\n\013CreateGroup\022&.api.co" +
-      "re.QuickReplyGroupCreateRequest\032\026.google" +
-      ".protobuf.Empty\"\030\272\276\031\024\010\255\002\030\001\322\014\014create-grou" +
-      "p\022g\n\013UpdateGroup\022&.api.core.QuickReplyGr" +
-      "oupUpdateRequest\032\026.google.protobuf.Empty" +
-      "\"\030\272\276\031\024\010\256\002\030\001\322\014\014update-group\022g\n\013DeleteGrou" +
-      "p\022&.api.core.QuickReplyGroupDeleteReques" +
-      "t\032\026.google.protobuf.Empty\"\030\272\276\031\024\010\257\002\030\001\322\014\014d" +
-      "elete-group\022Z\n\nQueryReply\022\020.api.common.P" +
-      "age\032!.api.core.QuickReplyQueryResponse\"\027" +
-      "\272\276\031\023\010\260\002\030\001\322\014\013query-reply\022n\n\013CreateReply\022!" +
-      ".api.core.CreateQuickReplyRequest\032\".api." +
-      "core.CreateQuickReplyResponse\"\030\272\276\031\024\010\261\002\030\001" +
-      "\322\014\014create-reply\022v\n\rCreateReplyV1\022#.api.c" +
-      "ore.CreateQuickReplyRequestV1\032$.api.core" +
-      ".CreateQuickReplyResponseV1\"\032\272\276\031\026\010\261\002\030\001\322\014" +
-      "\016create-replyv1\022b\n\013UpdateReply\022!.api.cor" +
-      "e.UpdateQuickReplyRequest\032\026.google.proto" +
-      "buf.Empty\"\030\272\276\031\024\010\262\002\030\001\322\014\014update-reply\022b\n\013D" +
-      "eleteReply\022!.api.core.DeleteQuickReplyRe" +
-      "quest\032\026.google.protobuf.Empty\"\030\272\276\031\024\010\263\002\030\001" +
-      "\322\014\014delete-reply\022S\n\tInitGroup\022\026.google.pr" +
-      "otobuf.Empty\032\026.google.protobuf.Empty\"\026\272\276" +
-      "\031\022\010\264\002\030\001\322\014\ninit-group\022Z\n\nPushCommon\022\033.api" +
-      ".core.PushCommonRequest\032\026.google.protobu" +
-      "f.Empty\"\027\272\276\031\023\010\265\002\030\001\322\014\013push-common\022W\n\tPopC" +
-      "ommon\022\032.api.core.PopCommonRequest\032\026.goog" +
-      "le.protobuf.Empty\"\026\272\276\031\022\010\266\002\030\001\322\014\npop-commo" +
-      "n\022^\n\013QueryCommon\022\026.google.protobuf.Empty" +
-      "\032\035.api.core.QueryCommonResponse\"\030\272\276\031\024\010\267\002" +
-      "\030\001\322\014\014query-common\022e\n\rQueryByWorker\022\026.goo" +
-      "gle.protobuf.Empty\032\037.api.core.QueryByWor" +
-      "kerResponse\"\033\272\276\031\027\010\270\002\030\001\322\014\017query-by-worker" +
-      "\032,\272\276\031(\272\006\013quick_reply\312\014\001\020\322\014\023/tenant/quick" +
-      "-replyBM\n\030com.teneasyChat.api.coreZ\021wcs/" +
-      "api/core;core\272\276\031\034\242\006\005mango\242\006\004jeff\262\006\n2022-" +
-      "12-10b\006proto3"
+      "\n\010priority\030\003 \001(\005B\020\372B\r\032\013 \376\377\377\377\377\377\377\377\377\001\"6\n\034Qu" +
+      "ickReplyGroupDeleteRequest\022\026\n\004name\030\001 \003(\t" +
+      "B\010\372B\005\222\001\002\010\001\"\375\001\n\016QuickReplyItem\022\n\n\002id\030\001 \001(" +
+      "\003\022\025\n\004name\030\002 \001(\tB\007\372B\004r\002 \001\022\033\n\ngroup_name\030\003" +
+      " \001(\tB\007\372B\004r\002 \001\022\"\n\010priority\030\004 \001(\005B\020\372B\r\032\013 \376" +
+      "\377\377\377\377\377\377\377\377\001\022\017\n\007content\030\005 \001(\t\022\"\n\005items\030\006 \003(" +
+      "\0132\023.api.common.Message\022\021\n\tis_custom\030\007 \001(" +
+      "\010\022\020\n\010group_id\030\010 \001(\003\022\033\n\023customer_group_na" +
+      "me\030\t \001(\t\022\020\n\010contents\030\n \003(\t\"Q\n\027QuickReply" +
+      "QueryResponse\022\'\n\005items\030\001 \003(\0132\030.api.core." +
+      "QuickReplyItem\022\r\n\005total\030\002 \001(\005\"B\n\027CreateQ" +
+      "uickReplyRequest\022\'\n\005reply\030\001 \001(\0132\030.api.co" +
+      "re.QuickReplyItem\"C\n\030CreateQuickReplyRes" +
+      "ponse\022\'\n\005reply\030\001 \001(\0132\030.api.core.QuickRep" +
+      "lyItem\"D\n\031CreateQuickReplyRequestV1\022\'\n\005r" +
+      "eply\030\001 \003(\0132\030.api.core.QuickReplyItem\"E\n\032" +
+      "CreateQuickReplyResponseV1\022\'\n\005reply\030\001 \003(" +
+      "\0132\030.api.core.QuickReplyItem\"c\n\027UpdateQui" +
+      "ckReplyRequest\022\'\n\005reply\030\001 \001(\0132\030.api.core" +
+      ".QuickReplyItem\022\037\n\016old_group_name\030\002 \001(\tB" +
+      "\007\372B\004r\002 \001\"\'\n\013DQuickReply\022\n\n\002id\030\001 \001(\003\022\014\n\004n" +
+      "ame\030\002 \001(\t\"?\n\027DeleteQuickReplyRequest\022$\n\005" +
+      "items\030\001 \003(\0132\025.api.core.DQuickReply\"+\n\021Pu" +
+      "shCommonRequest\022\026\n\016quick_reply_id\030\001 \001(\003\"" +
+      "*\n\020PopCommonRequest\022\026\n\016quick_reply_id\030\001 " +
+      "\001(\003\"D\n\023QueryCommonResponse\022-\n\013quick_repl" +
+      "y\030\001 \003(\0132\030.api.core.QuickReplyItem\"d\n\023Qui" +
+      "ckReplyItemGroup\022\022\n\ngroup_name\030\001 \001(\t\022\020\n\010" +
+      "priority\030\002 \001(\005\022\'\n\005items\030\003 \003(\0132\030.api.core" +
+      ".QuickReplyItem\"E\n\025QueryByWorkerResponse" +
+      "\022,\n\005group\030\001 \003(\0132\035.api.core.QuickReplyIte" +
+      "mGroup2\274\013\n\nQuickReply\022h\n\nQueryGroup\022\026.go" +
+      "ogle.protobuf.Empty\032&.api.core.QuickRepl" +
+      "yGroupQueryResponse\"\032\272\276\031\026\010\254\002\030\001\240\001\001\322\014\013quer" +
+      "y-group\022g\n\013CreateGroup\022&.api.core.QuickR" +
+      "eplyGroupCreateRequest\032\026.google.protobuf" +
+      ".Empty\"\030\272\276\031\024\010\255\002\030\001\322\014\014create-group\022g\n\013Upda" +
+      "teGroup\022&.api.core.QuickReplyGroupUpdate" +
+      "Request\032\026.google.protobuf.Empty\"\030\272\276\031\024\010\256\002" +
+      "\030\001\322\014\014update-group\022g\n\013DeleteGroup\022&.api.c" +
+      "ore.QuickReplyGroupDeleteRequest\032\026.googl" +
+      "e.protobuf.Empty\"\030\272\276\031\024\010\257\002\030\001\322\014\014delete-gro" +
+      "up\022Z\n\nQueryReply\022\020.api.common.Page\032!.api" +
+      ".core.QuickReplyQueryResponse\"\027\272\276\031\023\010\260\002\030\001" +
+      "\322\014\013query-reply\022n\n\013CreateReply\022!.api.core" +
+      ".CreateQuickReplyRequest\032\".api.core.Crea" +
+      "teQuickReplyResponse\"\030\272\276\031\024\010\261\002\030\001\322\014\014create" +
+      "-reply\022v\n\rCreateReplyV1\022#.api.core.Creat" +
+      "eQuickReplyRequestV1\032$.api.core.CreateQu" +
+      "ickReplyResponseV1\"\032\272\276\031\026\010\261\002\030\001\322\014\016create-r" +
+      "eplyv1\022b\n\013UpdateReply\022!.api.core.UpdateQ" +
+      "uickReplyRequest\032\026.google.protobuf.Empty" +
+      "\"\030\272\276\031\024\010\262\002\030\001\322\014\014update-reply\022b\n\013DeleteRepl" +
+      "y\022!.api.core.DeleteQuickReplyRequest\032\026.g" +
+      "oogle.protobuf.Empty\"\030\272\276\031\024\010\263\002\030\001\322\014\014delete" +
+      "-reply\022S\n\tInitGroup\022\026.google.protobuf.Em" +
+      "pty\032\026.google.protobuf.Empty\"\026\272\276\031\022\010\264\002\030\001\322\014" +
+      "\ninit-group\022Z\n\nPushCommon\022\033.api.core.Pus" +
+      "hCommonRequest\032\026.google.protobuf.Empty\"\027" +
+      "\272\276\031\023\010\265\002\030\001\322\014\013push-common\022W\n\tPopCommon\022\032.a" +
+      "pi.core.PopCommonRequest\032\026.google.protob" +
+      "uf.Empty\"\026\272\276\031\022\010\266\002\030\001\322\014\npop-common\022^\n\013Quer" +
+      "yCommon\022\026.google.protobuf.Empty\032\035.api.co" +
+      "re.QueryCommonResponse\"\030\272\276\031\024\010\267\002\030\001\322\014\014quer" +
+      "y-common\022e\n\rQueryByWorker\022\026.google.proto" +
+      "buf.Empty\032\037.api.core.QueryByWorkerRespon" +
+      "se\"\033\272\276\031\027\010\270\002\030\001\322\014\017query-by-worker\032,\272\276\031(\272\006\013" +
+      "quick_reply\312\014\001\020\322\014\023/tenant/quick-replyBM\n" +
+      "\030com.teneasyChat.api.coreZ\021wcs/api/core;" +
+      "core\272\276\031\034\242\006\005mango\242\006\004jeff\262\006\n2022-12-10b\006pr" +
+      "oto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -13759,7 +15106,7 @@ public final class QuickReplyOuterClass {
     internal_static_api_core_QuickReplyItem_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_core_QuickReplyItem_descriptor,
-        new java.lang.String[] { "Id", "Name", "GroupName", "Priority", "Content", "Items", "IsCustom", "GroupId", });
+        new java.lang.String[] { "Id", "Name", "GroupName", "Priority", "Content", "Items", "IsCustom", "GroupId", "CustomerGroupName", "Contents", });
     internal_static_api_core_QuickReplyQueryResponse_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_api_core_QuickReplyQueryResponse_fieldAccessorTable = new
@@ -13796,38 +15143,44 @@ public final class QuickReplyOuterClass {
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_core_UpdateQuickReplyRequest_descriptor,
         new java.lang.String[] { "Reply", "OldGroupName", });
-    internal_static_api_core_DeleteQuickReplyRequest_descriptor =
+    internal_static_api_core_DQuickReply_descriptor =
       getDescriptor().getMessageTypes().get(12);
+    internal_static_api_core_DQuickReply_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_api_core_DQuickReply_descriptor,
+        new java.lang.String[] { "Id", "Name", });
+    internal_static_api_core_DeleteQuickReplyRequest_descriptor =
+      getDescriptor().getMessageTypes().get(13);
     internal_static_api_core_DeleteQuickReplyRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_core_DeleteQuickReplyRequest_descriptor,
-        new java.lang.String[] { "QuickReplyId", "Name", });
+        new java.lang.String[] { "Items", });
     internal_static_api_core_PushCommonRequest_descriptor =
-      getDescriptor().getMessageTypes().get(13);
+      getDescriptor().getMessageTypes().get(14);
     internal_static_api_core_PushCommonRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_core_PushCommonRequest_descriptor,
         new java.lang.String[] { "QuickReplyId", });
     internal_static_api_core_PopCommonRequest_descriptor =
-      getDescriptor().getMessageTypes().get(14);
+      getDescriptor().getMessageTypes().get(15);
     internal_static_api_core_PopCommonRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_core_PopCommonRequest_descriptor,
         new java.lang.String[] { "QuickReplyId", });
     internal_static_api_core_QueryCommonResponse_descriptor =
-      getDescriptor().getMessageTypes().get(15);
+      getDescriptor().getMessageTypes().get(16);
     internal_static_api_core_QueryCommonResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_core_QueryCommonResponse_descriptor,
         new java.lang.String[] { "QuickReply", });
     internal_static_api_core_QuickReplyItemGroup_descriptor =
-      getDescriptor().getMessageTypes().get(16);
+      getDescriptor().getMessageTypes().get(17);
     internal_static_api_core_QuickReplyItemGroup_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_core_QuickReplyItemGroup_descriptor,
         new java.lang.String[] { "GroupName", "Priority", "Items", });
     internal_static_api_core_QueryByWorkerResponse_descriptor =
-      getDescriptor().getMessageTypes().get(17);
+      getDescriptor().getMessageTypes().get(18);
     internal_static_api_core_QueryByWorkerResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_core_QueryByWorkerResponse_descriptor,

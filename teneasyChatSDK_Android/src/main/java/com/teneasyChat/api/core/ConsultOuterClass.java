@@ -24,6 +24,755 @@ public final class ConsultOuterClass {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
+  /**
+   * <pre>
+   * 入口咨询绑定状态
+   * </pre>
+   *
+   * Protobuf enum {@code api.core.EntranceBindStatus}
+   */
+  public enum EntranceBindStatus
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <pre>
+     * 全部
+     * </pre>
+     *
+     * <code>DEFAULT = 0;</code>
+     */
+    DEFAULT(0),
+    /**
+     * <pre>
+     * 未绑定
+     * </pre>
+     *
+     * <code>UNBIND = 1;</code>
+     */
+    UNBIND(1),
+    /**
+     * <pre>
+     * 已绑定
+     * </pre>
+     *
+     * <code>BINDED = 2;</code>
+     */
+    BINDED(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 26,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        EntranceBindStatus.class.getName());
+    }
+    /**
+     * <pre>
+     * 全部
+     * </pre>
+     *
+     * <code>DEFAULT = 0;</code>
+     */
+    public static final int DEFAULT_VALUE = 0;
+    /**
+     * <pre>
+     * 未绑定
+     * </pre>
+     *
+     * <code>UNBIND = 1;</code>
+     */
+    public static final int UNBIND_VALUE = 1;
+    /**
+     * <pre>
+     * 已绑定
+     * </pre>
+     *
+     * <code>BINDED = 2;</code>
+     */
+    public static final int BINDED_VALUE = 2;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static EntranceBindStatus valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static EntranceBindStatus forNumber(int value) {
+      switch (value) {
+        case 0: return DEFAULT;
+        case 1: return UNBIND;
+        case 2: return BINDED;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<EntranceBindStatus>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        EntranceBindStatus> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<EntranceBindStatus>() {
+            public EntranceBindStatus findValueByNumber(int number) {
+              return EntranceBindStatus.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return com.teneasyChat.api.core.ConsultOuterClass.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final EntranceBindStatus[] VALUES = values();
+
+    public static EntranceBindStatus valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private EntranceBindStatus(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:api.core.EntranceBindStatus)
+  }
+
+  public interface QueryConsultRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:api.core.QueryConsultRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * 入口id
+     * </pre>
+     *
+     * <code>int32 entrance_id = 1;</code>
+     * @return The entranceId.
+     */
+    int getEntranceId();
+
+    /**
+     * <pre>
+     * 入口咨询绑定状态
+     * </pre>
+     *
+     * <code>.api.core.EntranceBindStatus bind_status = 2;</code>
+     * @return The enum numeric value on the wire for bindStatus.
+     */
+    int getBindStatusValue();
+    /**
+     * <pre>
+     * 入口咨询绑定状态
+     * </pre>
+     *
+     * <code>.api.core.EntranceBindStatus bind_status = 2;</code>
+     * @return The bindStatus.
+     */
+    com.teneasyChat.api.core.ConsultOuterClass.EntranceBindStatus getBindStatus();
+  }
+  /**
+   * Protobuf type {@code api.core.QueryConsultRequest}
+   */
+  public static final class QueryConsultRequest extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:api.core.QueryConsultRequest)
+      QueryConsultRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 26,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        QueryConsultRequest.class.getName());
+    }
+    // Use QueryConsultRequest.newBuilder() to construct.
+    private QueryConsultRequest(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private QueryConsultRequest() {
+      bindStatus_ = 0;
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.teneasyChat.api.core.ConsultOuterClass.internal_static_api_core_QueryConsultRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.teneasyChat.api.core.ConsultOuterClass.internal_static_api_core_QueryConsultRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.teneasyChat.api.core.ConsultOuterClass.QueryConsultRequest.class, com.teneasyChat.api.core.ConsultOuterClass.QueryConsultRequest.Builder.class);
+    }
+
+    public static final int ENTRANCE_ID_FIELD_NUMBER = 1;
+    private int entranceId_ = 0;
+    /**
+     * <pre>
+     * 入口id
+     * </pre>
+     *
+     * <code>int32 entrance_id = 1;</code>
+     * @return The entranceId.
+     */
+    @java.lang.Override
+    public int getEntranceId() {
+      return entranceId_;
+    }
+
+    public static final int BIND_STATUS_FIELD_NUMBER = 2;
+    private int bindStatus_ = 0;
+    /**
+     * <pre>
+     * 入口咨询绑定状态
+     * </pre>
+     *
+     * <code>.api.core.EntranceBindStatus bind_status = 2;</code>
+     * @return The enum numeric value on the wire for bindStatus.
+     */
+    @java.lang.Override public int getBindStatusValue() {
+      return bindStatus_;
+    }
+    /**
+     * <pre>
+     * 入口咨询绑定状态
+     * </pre>
+     *
+     * <code>.api.core.EntranceBindStatus bind_status = 2;</code>
+     * @return The bindStatus.
+     */
+    @java.lang.Override public com.teneasyChat.api.core.ConsultOuterClass.EntranceBindStatus getBindStatus() {
+      com.teneasyChat.api.core.ConsultOuterClass.EntranceBindStatus result = com.teneasyChat.api.core.ConsultOuterClass.EntranceBindStatus.forNumber(bindStatus_);
+      return result == null ? com.teneasyChat.api.core.ConsultOuterClass.EntranceBindStatus.UNRECOGNIZED : result;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (entranceId_ != 0) {
+        output.writeInt32(1, entranceId_);
+      }
+      if (bindStatus_ != com.teneasyChat.api.core.ConsultOuterClass.EntranceBindStatus.DEFAULT.getNumber()) {
+        output.writeEnum(2, bindStatus_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (entranceId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, entranceId_);
+      }
+      if (bindStatus_ != com.teneasyChat.api.core.ConsultOuterClass.EntranceBindStatus.DEFAULT.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(2, bindStatus_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.teneasyChat.api.core.ConsultOuterClass.QueryConsultRequest)) {
+        return super.equals(obj);
+      }
+      com.teneasyChat.api.core.ConsultOuterClass.QueryConsultRequest other = (com.teneasyChat.api.core.ConsultOuterClass.QueryConsultRequest) obj;
+
+      if (getEntranceId()
+          != other.getEntranceId()) return false;
+      if (bindStatus_ != other.bindStatus_) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ENTRANCE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getEntranceId();
+      hash = (37 * hash) + BIND_STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + bindStatus_;
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.teneasyChat.api.core.ConsultOuterClass.QueryConsultRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.core.ConsultOuterClass.QueryConsultRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.ConsultOuterClass.QueryConsultRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.core.ConsultOuterClass.QueryConsultRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.ConsultOuterClass.QueryConsultRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.core.ConsultOuterClass.QueryConsultRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.ConsultOuterClass.QueryConsultRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.teneasyChat.api.core.ConsultOuterClass.QueryConsultRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.teneasyChat.api.core.ConsultOuterClass.QueryConsultRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.teneasyChat.api.core.ConsultOuterClass.QueryConsultRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.ConsultOuterClass.QueryConsultRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.teneasyChat.api.core.ConsultOuterClass.QueryConsultRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.teneasyChat.api.core.ConsultOuterClass.QueryConsultRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code api.core.QueryConsultRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:api.core.QueryConsultRequest)
+        com.teneasyChat.api.core.ConsultOuterClass.QueryConsultRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.teneasyChat.api.core.ConsultOuterClass.internal_static_api_core_QueryConsultRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.teneasyChat.api.core.ConsultOuterClass.internal_static_api_core_QueryConsultRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.teneasyChat.api.core.ConsultOuterClass.QueryConsultRequest.class, com.teneasyChat.api.core.ConsultOuterClass.QueryConsultRequest.Builder.class);
+      }
+
+      // Construct using com.teneasyChat.api.core.ConsultOuterClass.QueryConsultRequest.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        entranceId_ = 0;
+        bindStatus_ = 0;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.teneasyChat.api.core.ConsultOuterClass.internal_static_api_core_QueryConsultRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.core.ConsultOuterClass.QueryConsultRequest getDefaultInstanceForType() {
+        return com.teneasyChat.api.core.ConsultOuterClass.QueryConsultRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.core.ConsultOuterClass.QueryConsultRequest build() {
+        com.teneasyChat.api.core.ConsultOuterClass.QueryConsultRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.core.ConsultOuterClass.QueryConsultRequest buildPartial() {
+        com.teneasyChat.api.core.ConsultOuterClass.QueryConsultRequest result = new com.teneasyChat.api.core.ConsultOuterClass.QueryConsultRequest(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.teneasyChat.api.core.ConsultOuterClass.QueryConsultRequest result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.entranceId_ = entranceId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.bindStatus_ = bindStatus_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.teneasyChat.api.core.ConsultOuterClass.QueryConsultRequest) {
+          return mergeFrom((com.teneasyChat.api.core.ConsultOuterClass.QueryConsultRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.teneasyChat.api.core.ConsultOuterClass.QueryConsultRequest other) {
+        if (other == com.teneasyChat.api.core.ConsultOuterClass.QueryConsultRequest.getDefaultInstance()) return this;
+        if (other.getEntranceId() != 0) {
+          setEntranceId(other.getEntranceId());
+        }
+        if (other.bindStatus_ != 0) {
+          setBindStatusValue(other.getBindStatusValue());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                entranceId_ = input.readInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 16: {
+                bindStatus_ = input.readEnum();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private int entranceId_ ;
+      /**
+       * <pre>
+       * 入口id
+       * </pre>
+       *
+       * <code>int32 entrance_id = 1;</code>
+       * @return The entranceId.
+       */
+      @java.lang.Override
+      public int getEntranceId() {
+        return entranceId_;
+      }
+      /**
+       * <pre>
+       * 入口id
+       * </pre>
+       *
+       * <code>int32 entrance_id = 1;</code>
+       * @param value The entranceId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEntranceId(int value) {
+
+        entranceId_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 入口id
+       * </pre>
+       *
+       * <code>int32 entrance_id = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearEntranceId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        entranceId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int bindStatus_ = 0;
+      /**
+       * <pre>
+       * 入口咨询绑定状态
+       * </pre>
+       *
+       * <code>.api.core.EntranceBindStatus bind_status = 2;</code>
+       * @return The enum numeric value on the wire for bindStatus.
+       */
+      @java.lang.Override public int getBindStatusValue() {
+        return bindStatus_;
+      }
+      /**
+       * <pre>
+       * 入口咨询绑定状态
+       * </pre>
+       *
+       * <code>.api.core.EntranceBindStatus bind_status = 2;</code>
+       * @param value The enum numeric value on the wire for bindStatus to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBindStatusValue(int value) {
+        bindStatus_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 入口咨询绑定状态
+       * </pre>
+       *
+       * <code>.api.core.EntranceBindStatus bind_status = 2;</code>
+       * @return The bindStatus.
+       */
+      @java.lang.Override
+      public com.teneasyChat.api.core.ConsultOuterClass.EntranceBindStatus getBindStatus() {
+        com.teneasyChat.api.core.ConsultOuterClass.EntranceBindStatus result = com.teneasyChat.api.core.ConsultOuterClass.EntranceBindStatus.forNumber(bindStatus_);
+        return result == null ? com.teneasyChat.api.core.ConsultOuterClass.EntranceBindStatus.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * 入口咨询绑定状态
+       * </pre>
+       *
+       * <code>.api.core.EntranceBindStatus bind_status = 2;</code>
+       * @param value The bindStatus to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBindStatus(com.teneasyChat.api.core.ConsultOuterClass.EntranceBindStatus value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000002;
+        bindStatus_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 入口咨询绑定状态
+       * </pre>
+       *
+       * <code>.api.core.EntranceBindStatus bind_status = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearBindStatus() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        bindStatus_ = 0;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:api.core.QueryConsultRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:api.core.QueryConsultRequest)
+    private static final com.teneasyChat.api.core.ConsultOuterClass.QueryConsultRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.teneasyChat.api.core.ConsultOuterClass.QueryConsultRequest();
+    }
+
+    public static com.teneasyChat.api.core.ConsultOuterClass.QueryConsultRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<QueryConsultRequest>
+        PARSER = new com.google.protobuf.AbstractParser<QueryConsultRequest>() {
+      @java.lang.Override
+      public QueryConsultRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<QueryConsultRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<QueryConsultRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.teneasyChat.api.core.ConsultOuterClass.QueryConsultRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface QueryConsultResponseOrBuilder extends
       // @@protoc_insertion_point(interface_extends:api.core.QueryConsultResponse)
       com.google.protobuf.MessageOrBuilder {
@@ -2772,6 +3521,594 @@ public final class ConsultOuterClass {
 
   }
 
+  public interface DisableConsultRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:api.core.DisableConsultRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>uint32 id = 1 [(.validate.rules) = { ... }</code>
+     * @return The id.
+     */
+    int getId();
+
+    /**
+     * <pre>
+     * 禁用/启用
+     * </pre>
+     *
+     * <code>.api.common.DisableStatus disable_status = 2 [(.validate.rules) = { ... }</code>
+     * @return The enum numeric value on the wire for disableStatus.
+     */
+    int getDisableStatusValue();
+    /**
+     * <pre>
+     * 禁用/启用
+     * </pre>
+     *
+     * <code>.api.common.DisableStatus disable_status = 2 [(.validate.rules) = { ... }</code>
+     * @return The disableStatus.
+     */
+    com.teneasyChat.api.common.CBase.DisableStatus getDisableStatus();
+  }
+  /**
+   * <pre>
+   * 禁用/启用咨询
+   * </pre>
+   *
+   * Protobuf type {@code api.core.DisableConsultRequest}
+   */
+  public static final class DisableConsultRequest extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:api.core.DisableConsultRequest)
+      DisableConsultRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 26,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        DisableConsultRequest.class.getName());
+    }
+    // Use DisableConsultRequest.newBuilder() to construct.
+    private DisableConsultRequest(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private DisableConsultRequest() {
+      disableStatus_ = 0;
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.teneasyChat.api.core.ConsultOuterClass.internal_static_api_core_DisableConsultRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.teneasyChat.api.core.ConsultOuterClass.internal_static_api_core_DisableConsultRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.teneasyChat.api.core.ConsultOuterClass.DisableConsultRequest.class, com.teneasyChat.api.core.ConsultOuterClass.DisableConsultRequest.Builder.class);
+    }
+
+    public static final int ID_FIELD_NUMBER = 1;
+    private int id_ = 0;
+    /**
+     * <code>uint32 id = 1 [(.validate.rules) = { ... }</code>
+     * @return The id.
+     */
+    @java.lang.Override
+    public int getId() {
+      return id_;
+    }
+
+    public static final int DISABLE_STATUS_FIELD_NUMBER = 2;
+    private int disableStatus_ = 0;
+    /**
+     * <pre>
+     * 禁用/启用
+     * </pre>
+     *
+     * <code>.api.common.DisableStatus disable_status = 2 [(.validate.rules) = { ... }</code>
+     * @return The enum numeric value on the wire for disableStatus.
+     */
+    @java.lang.Override public int getDisableStatusValue() {
+      return disableStatus_;
+    }
+    /**
+     * <pre>
+     * 禁用/启用
+     * </pre>
+     *
+     * <code>.api.common.DisableStatus disable_status = 2 [(.validate.rules) = { ... }</code>
+     * @return The disableStatus.
+     */
+    @java.lang.Override public com.teneasyChat.api.common.CBase.DisableStatus getDisableStatus() {
+      com.teneasyChat.api.common.CBase.DisableStatus result = com.teneasyChat.api.common.CBase.DisableStatus.forNumber(disableStatus_);
+      return result == null ? com.teneasyChat.api.common.CBase.DisableStatus.UNRECOGNIZED : result;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (id_ != 0) {
+        output.writeUInt32(1, id_);
+      }
+      if (disableStatus_ != com.teneasyChat.api.common.CBase.DisableStatus.DEFAULT.getNumber()) {
+        output.writeEnum(2, disableStatus_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (id_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(1, id_);
+      }
+      if (disableStatus_ != com.teneasyChat.api.common.CBase.DisableStatus.DEFAULT.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(2, disableStatus_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.teneasyChat.api.core.ConsultOuterClass.DisableConsultRequest)) {
+        return super.equals(obj);
+      }
+      com.teneasyChat.api.core.ConsultOuterClass.DisableConsultRequest other = (com.teneasyChat.api.core.ConsultOuterClass.DisableConsultRequest) obj;
+
+      if (getId()
+          != other.getId()) return false;
+      if (disableStatus_ != other.disableStatus_) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId();
+      hash = (37 * hash) + DISABLE_STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + disableStatus_;
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.teneasyChat.api.core.ConsultOuterClass.DisableConsultRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.core.ConsultOuterClass.DisableConsultRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.ConsultOuterClass.DisableConsultRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.core.ConsultOuterClass.DisableConsultRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.ConsultOuterClass.DisableConsultRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.core.ConsultOuterClass.DisableConsultRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.ConsultOuterClass.DisableConsultRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.teneasyChat.api.core.ConsultOuterClass.DisableConsultRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.teneasyChat.api.core.ConsultOuterClass.DisableConsultRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.teneasyChat.api.core.ConsultOuterClass.DisableConsultRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.ConsultOuterClass.DisableConsultRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.teneasyChat.api.core.ConsultOuterClass.DisableConsultRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.teneasyChat.api.core.ConsultOuterClass.DisableConsultRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * 禁用/启用咨询
+     * </pre>
+     *
+     * Protobuf type {@code api.core.DisableConsultRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:api.core.DisableConsultRequest)
+        com.teneasyChat.api.core.ConsultOuterClass.DisableConsultRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.teneasyChat.api.core.ConsultOuterClass.internal_static_api_core_DisableConsultRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.teneasyChat.api.core.ConsultOuterClass.internal_static_api_core_DisableConsultRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.teneasyChat.api.core.ConsultOuterClass.DisableConsultRequest.class, com.teneasyChat.api.core.ConsultOuterClass.DisableConsultRequest.Builder.class);
+      }
+
+      // Construct using com.teneasyChat.api.core.ConsultOuterClass.DisableConsultRequest.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        id_ = 0;
+        disableStatus_ = 0;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.teneasyChat.api.core.ConsultOuterClass.internal_static_api_core_DisableConsultRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.core.ConsultOuterClass.DisableConsultRequest getDefaultInstanceForType() {
+        return com.teneasyChat.api.core.ConsultOuterClass.DisableConsultRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.core.ConsultOuterClass.DisableConsultRequest build() {
+        com.teneasyChat.api.core.ConsultOuterClass.DisableConsultRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.core.ConsultOuterClass.DisableConsultRequest buildPartial() {
+        com.teneasyChat.api.core.ConsultOuterClass.DisableConsultRequest result = new com.teneasyChat.api.core.ConsultOuterClass.DisableConsultRequest(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.teneasyChat.api.core.ConsultOuterClass.DisableConsultRequest result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.id_ = id_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.disableStatus_ = disableStatus_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.teneasyChat.api.core.ConsultOuterClass.DisableConsultRequest) {
+          return mergeFrom((com.teneasyChat.api.core.ConsultOuterClass.DisableConsultRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.teneasyChat.api.core.ConsultOuterClass.DisableConsultRequest other) {
+        if (other == com.teneasyChat.api.core.ConsultOuterClass.DisableConsultRequest.getDefaultInstance()) return this;
+        if (other.getId() != 0) {
+          setId(other.getId());
+        }
+        if (other.disableStatus_ != 0) {
+          setDisableStatusValue(other.getDisableStatusValue());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                id_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 16: {
+                disableStatus_ = input.readEnum();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private int id_ ;
+      /**
+       * <code>uint32 id = 1 [(.validate.rules) = { ... }</code>
+       * @return The id.
+       */
+      @java.lang.Override
+      public int getId() {
+        return id_;
+      }
+      /**
+       * <code>uint32 id = 1 [(.validate.rules) = { ... }</code>
+       * @param value The id to set.
+       * @return This builder for chaining.
+       */
+      public Builder setId(int value) {
+
+        id_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 id = 1 [(.validate.rules) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        id_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int disableStatus_ = 0;
+      /**
+       * <pre>
+       * 禁用/启用
+       * </pre>
+       *
+       * <code>.api.common.DisableStatus disable_status = 2 [(.validate.rules) = { ... }</code>
+       * @return The enum numeric value on the wire for disableStatus.
+       */
+      @java.lang.Override public int getDisableStatusValue() {
+        return disableStatus_;
+      }
+      /**
+       * <pre>
+       * 禁用/启用
+       * </pre>
+       *
+       * <code>.api.common.DisableStatus disable_status = 2 [(.validate.rules) = { ... }</code>
+       * @param value The enum numeric value on the wire for disableStatus to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDisableStatusValue(int value) {
+        disableStatus_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 禁用/启用
+       * </pre>
+       *
+       * <code>.api.common.DisableStatus disable_status = 2 [(.validate.rules) = { ... }</code>
+       * @return The disableStatus.
+       */
+      @java.lang.Override
+      public com.teneasyChat.api.common.CBase.DisableStatus getDisableStatus() {
+        com.teneasyChat.api.common.CBase.DisableStatus result = com.teneasyChat.api.common.CBase.DisableStatus.forNumber(disableStatus_);
+        return result == null ? com.teneasyChat.api.common.CBase.DisableStatus.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * 禁用/启用
+       * </pre>
+       *
+       * <code>.api.common.DisableStatus disable_status = 2 [(.validate.rules) = { ... }</code>
+       * @param value The disableStatus to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDisableStatus(com.teneasyChat.api.common.CBase.DisableStatus value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000002;
+        disableStatus_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 禁用/启用
+       * </pre>
+       *
+       * <code>.api.common.DisableStatus disable_status = 2 [(.validate.rules) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDisableStatus() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        disableStatus_ = 0;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:api.core.DisableConsultRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:api.core.DisableConsultRequest)
+    private static final com.teneasyChat.api.core.ConsultOuterClass.DisableConsultRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.teneasyChat.api.core.ConsultOuterClass.DisableConsultRequest();
+    }
+
+    public static com.teneasyChat.api.core.ConsultOuterClass.DisableConsultRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<DisableConsultRequest>
+        PARSER = new com.google.protobuf.AbstractParser<DisableConsultRequest>() {
+      @java.lang.Override
+      public DisableConsultRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<DisableConsultRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<DisableConsultRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.teneasyChat.api.core.ConsultOuterClass.DisableConsultRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_api_core_QueryConsultRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_api_core_QueryConsultRequest_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_api_core_QueryConsultResponse_descriptor;
   private static final 
@@ -2797,6 +4134,11 @@ public final class ConsultOuterClass {
   private static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_api_core_DeleteConsultRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_api_core_DisableConsultRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_api_core_DisableConsultRequest_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -2810,27 +4152,37 @@ public final class ConsultOuterClass {
       "option.proto\032\033google/protobuf/empty.prot" +
       "o\032\027validate/validate.proto\032\033api/common/c" +
       "_entrance.proto\032\030api/common/c_reply.prot" +
-      "o\"?\n\024QueryConsultResponse\022\'\n\nconsultArr\030" +
+      "o\032\027api/common/c_base.proto\"]\n\023QueryConsu" +
+      "ltRequest\022\023\n\013entrance_id\030\001 \001(\005\0221\n\013bind_s" +
+      "tatus\030\002 \001(\0162\034.api.core.EntranceBindStatu" +
+      "s\"?\n\024QueryConsultResponse\022\'\n\nconsultArr\030" +
       "\001 \003(\0132\023.api.common.Consult\"F\n\024CreateCons" +
       "ultRequest\022.\n\007consult\030\001 \001(\0132\023.api.common" +
       ".ConsultB\010\372B\005\212\001\002\020\001\"#\n\025CreateConsultRespo" +
       "nse\022\n\n\002id\030\001 \001(\r\"F\n\024UpdateConsultRequest\022" +
       ".\n\007consult\030\001 \001(\0132\023.api.common.ConsultB\010\372" +
       "B\005\212\001\002\020\001\"+\n\024DeleteConsultRequest\022\023\n\002id\030\001 " +
-      "\001(\rB\007\372B\004*\002 \0002\311\003\n\007Consult\022a\n\014QueryConsult" +
-      "\022\026.google.protobuf.Empty\032\036.api.core.Quer" +
-      "yConsultResponse\"\031\272\276\031\025\010\274\005\030\001\322\014\rquery-cons" +
-      "ult\022l\n\rCreateConsult\022\036.api.core.CreateCo" +
-      "nsultRequest\032\037.api.core.CreateConsultRes" +
-      "ponse\"\032\272\276\031\026\010\275\005\030\001\322\014\016create-consult\022c\n\rUpd" +
-      "ateConsult\022\036.api.core.UpdateConsultReque" +
-      "st\032\026.google.protobuf.Empty\"\032\272\276\031\026\010\276\005\030\001\322\014\016" +
-      "update-consult\022c\n\rDeleteConsult\022\036.api.co" +
-      "re.DeleteConsultRequest\032\026.google.protobu" +
-      "f.Empty\"\032\272\276\031\026\010\277\005\030\001\322\014\016delete-consult\032#\272\276\031" +
-      "\037\272\006\007consult\312\014\001\020\322\014\016tenant/consultBF\n\030com." +
-      "teneasyChat.api.coreZ\021wcs/api/core;core\272" +
-      "\276\031\025\242\006\005mango\262\006\n2022-12-12b\006proto3"
+      "\001(\rB\007\372B\004*\002 \000\"g\n\025DisableConsultRequest\022\023\n" +
+      "\002id\030\001 \001(\rB\007\372B\004*\002 \000\0229\n\016disable_status\030\002 \001" +
+      "(\0162\031.api.common.DisableStatusB\006\372B\003\202\001\000*9\n" +
+      "\022EntranceBindStatus\022\013\n\007DEFAULT\020\000\022\n\n\006UNBI" +
+      "ND\020\001\022\n\n\006BINDED\020\0022\270\004\n\007Consult\022h\n\014QueryCon" +
+      "sult\022\035.api.core.QueryConsultRequest\032\036.ap" +
+      "i.core.QueryConsultResponse\"\031\272\276\031\025\010\274\005\030\001\322\014" +
+      "\rquery-consult\022l\n\rCreateConsult\022\036.api.co" +
+      "re.CreateConsultRequest\032\037.api.core.Creat" +
+      "eConsultResponse\"\032\272\276\031\026\010\275\005\030\001\322\014\016create-con" +
+      "sult\022c\n\rUpdateConsult\022\036.api.core.UpdateC" +
+      "onsultRequest\032\026.google.protobuf.Empty\"\032\272" +
+      "\276\031\026\010\276\005\030\001\322\014\016update-consult\022c\n\rDeleteConsu" +
+      "lt\022\036.api.core.DeleteConsultRequest\032\026.goo" +
+      "gle.protobuf.Empty\"\032\272\276\031\026\010\277\005\030\001\322\014\016delete-c" +
+      "onsult\022f\n\016DisableConsult\022\037.api.core.Disa" +
+      "bleConsultRequest\032\026.google.protobuf.Empt" +
+      "y\"\033\272\276\031\027\010\300\005\030\001\322\014\017disable-consult\032#\272\276\031\037\272\006\007c" +
+      "onsult\312\014\001\020\322\014\016tenant/consultBF\n\030com.tenea" +
+      "syChat.api.coreZ\021wcs/api/core;core\272\276\031\025\242\006" +
+      "\005mango\262\006\n2022-12-12b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -2840,43 +4192,57 @@ public final class ConsultOuterClass {
           io.envoyproxy.pgv.validate.Validate.getDescriptor(),
           com.teneasyChat.api.common.CEntrance.getDescriptor(),
           com.teneasyChat.api.common.CReply.getDescriptor(),
+          com.teneasyChat.api.common.CBase.getDescriptor(),
         });
-    internal_static_api_core_QueryConsultResponse_descriptor =
+    internal_static_api_core_QueryConsultRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
+    internal_static_api_core_QueryConsultRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_api_core_QueryConsultRequest_descriptor,
+        new java.lang.String[] { "EntranceId", "BindStatus", });
+    internal_static_api_core_QueryConsultResponse_descriptor =
+      getDescriptor().getMessageTypes().get(1);
     internal_static_api_core_QueryConsultResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_core_QueryConsultResponse_descriptor,
         new java.lang.String[] { "ConsultArr", });
     internal_static_api_core_CreateConsultRequest_descriptor =
-      getDescriptor().getMessageTypes().get(1);
+      getDescriptor().getMessageTypes().get(2);
     internal_static_api_core_CreateConsultRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_core_CreateConsultRequest_descriptor,
         new java.lang.String[] { "Consult", });
     internal_static_api_core_CreateConsultResponse_descriptor =
-      getDescriptor().getMessageTypes().get(2);
+      getDescriptor().getMessageTypes().get(3);
     internal_static_api_core_CreateConsultResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_core_CreateConsultResponse_descriptor,
         new java.lang.String[] { "Id", });
     internal_static_api_core_UpdateConsultRequest_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(4);
     internal_static_api_core_UpdateConsultRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_core_UpdateConsultRequest_descriptor,
         new java.lang.String[] { "Consult", });
     internal_static_api_core_DeleteConsultRequest_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_api_core_DeleteConsultRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_core_DeleteConsultRequest_descriptor,
         new java.lang.String[] { "Id", });
+    internal_static_api_core_DisableConsultRequest_descriptor =
+      getDescriptor().getMessageTypes().get(6);
+    internal_static_api_core_DisableConsultRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_api_core_DisableConsultRequest_descriptor,
+        new java.lang.String[] { "Id", "DisableStatus", });
     descriptor.resolveAllFeaturesImmutable();
     com.teneasyChat.api.Option.getDescriptor();
     com.google.protobuf.EmptyProto.getDescriptor();
     io.envoyproxy.pgv.validate.Validate.getDescriptor();
     com.teneasyChat.api.common.CEntrance.getDescriptor();
     com.teneasyChat.api.common.CReply.getDescriptor();
+    com.teneasyChat.api.common.CBase.getDescriptor();
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.teneasyChat.api.Option.info);

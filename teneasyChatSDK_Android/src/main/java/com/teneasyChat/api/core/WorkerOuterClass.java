@@ -10001,6 +10001,609 @@ public final class WorkerOuterClass {
 
   }
 
+  public interface WorkerDisableRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:api.core.WorkerDisableRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * worker_id 1 = 商户账号, 不可操作
+     * </pre>
+     *
+     * <code>int32 worker_id = 1 [(.validate.rules) = { ... }</code>
+     * @return The workerId.
+     */
+    int getWorkerId();
+
+    /**
+     * <pre>
+     * 禁用/启用
+     * </pre>
+     *
+     * <code>.api.common.DisableStatus disable_status = 2 [(.validate.rules) = { ... }</code>
+     * @return The enum numeric value on the wire for disableStatus.
+     */
+    int getDisableStatusValue();
+    /**
+     * <pre>
+     * 禁用/启用
+     * </pre>
+     *
+     * <code>.api.common.DisableStatus disable_status = 2 [(.validate.rules) = { ... }</code>
+     * @return The disableStatus.
+     */
+    com.teneasyChat.api.common.CBase.DisableStatus getDisableStatus();
+  }
+  /**
+   * <pre>
+   * 禁用/启用客服
+   * </pre>
+   *
+   * Protobuf type {@code api.core.WorkerDisableRequest}
+   */
+  public static final class WorkerDisableRequest extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:api.core.WorkerDisableRequest)
+      WorkerDisableRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 26,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        WorkerDisableRequest.class.getName());
+    }
+    // Use WorkerDisableRequest.newBuilder() to construct.
+    private WorkerDisableRequest(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private WorkerDisableRequest() {
+      disableStatus_ = 0;
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.teneasyChat.api.core.WorkerOuterClass.internal_static_api_core_WorkerDisableRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.teneasyChat.api.core.WorkerOuterClass.internal_static_api_core_WorkerDisableRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.teneasyChat.api.core.WorkerOuterClass.WorkerDisableRequest.class, com.teneasyChat.api.core.WorkerOuterClass.WorkerDisableRequest.Builder.class);
+    }
+
+    public static final int WORKER_ID_FIELD_NUMBER = 1;
+    private int workerId_ = 0;
+    /**
+     * <pre>
+     * worker_id 1 = 商户账号, 不可操作
+     * </pre>
+     *
+     * <code>int32 worker_id = 1 [(.validate.rules) = { ... }</code>
+     * @return The workerId.
+     */
+    @java.lang.Override
+    public int getWorkerId() {
+      return workerId_;
+    }
+
+    public static final int DISABLE_STATUS_FIELD_NUMBER = 2;
+    private int disableStatus_ = 0;
+    /**
+     * <pre>
+     * 禁用/启用
+     * </pre>
+     *
+     * <code>.api.common.DisableStatus disable_status = 2 [(.validate.rules) = { ... }</code>
+     * @return The enum numeric value on the wire for disableStatus.
+     */
+    @java.lang.Override public int getDisableStatusValue() {
+      return disableStatus_;
+    }
+    /**
+     * <pre>
+     * 禁用/启用
+     * </pre>
+     *
+     * <code>.api.common.DisableStatus disable_status = 2 [(.validate.rules) = { ... }</code>
+     * @return The disableStatus.
+     */
+    @java.lang.Override public com.teneasyChat.api.common.CBase.DisableStatus getDisableStatus() {
+      com.teneasyChat.api.common.CBase.DisableStatus result = com.teneasyChat.api.common.CBase.DisableStatus.forNumber(disableStatus_);
+      return result == null ? com.teneasyChat.api.common.CBase.DisableStatus.UNRECOGNIZED : result;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (workerId_ != 0) {
+        output.writeInt32(1, workerId_);
+      }
+      if (disableStatus_ != com.teneasyChat.api.common.CBase.DisableStatus.DEFAULT.getNumber()) {
+        output.writeEnum(2, disableStatus_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (workerId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, workerId_);
+      }
+      if (disableStatus_ != com.teneasyChat.api.common.CBase.DisableStatus.DEFAULT.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(2, disableStatus_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.teneasyChat.api.core.WorkerOuterClass.WorkerDisableRequest)) {
+        return super.equals(obj);
+      }
+      com.teneasyChat.api.core.WorkerOuterClass.WorkerDisableRequest other = (com.teneasyChat.api.core.WorkerOuterClass.WorkerDisableRequest) obj;
+
+      if (getWorkerId()
+          != other.getWorkerId()) return false;
+      if (disableStatus_ != other.disableStatus_) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + WORKER_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getWorkerId();
+      hash = (37 * hash) + DISABLE_STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + disableStatus_;
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.teneasyChat.api.core.WorkerOuterClass.WorkerDisableRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.WorkerDisableRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.WorkerDisableRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.WorkerDisableRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.WorkerDisableRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.WorkerDisableRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.WorkerDisableRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.WorkerDisableRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.teneasyChat.api.core.WorkerOuterClass.WorkerDisableRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.teneasyChat.api.core.WorkerOuterClass.WorkerDisableRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.WorkerDisableRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.WorkerDisableRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.teneasyChat.api.core.WorkerOuterClass.WorkerDisableRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * 禁用/启用客服
+     * </pre>
+     *
+     * Protobuf type {@code api.core.WorkerDisableRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:api.core.WorkerDisableRequest)
+        com.teneasyChat.api.core.WorkerOuterClass.WorkerDisableRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.teneasyChat.api.core.WorkerOuterClass.internal_static_api_core_WorkerDisableRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.teneasyChat.api.core.WorkerOuterClass.internal_static_api_core_WorkerDisableRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.teneasyChat.api.core.WorkerOuterClass.WorkerDisableRequest.class, com.teneasyChat.api.core.WorkerOuterClass.WorkerDisableRequest.Builder.class);
+      }
+
+      // Construct using com.teneasyChat.api.core.WorkerOuterClass.WorkerDisableRequest.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        workerId_ = 0;
+        disableStatus_ = 0;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.teneasyChat.api.core.WorkerOuterClass.internal_static_api_core_WorkerDisableRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.core.WorkerOuterClass.WorkerDisableRequest getDefaultInstanceForType() {
+        return com.teneasyChat.api.core.WorkerOuterClass.WorkerDisableRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.core.WorkerOuterClass.WorkerDisableRequest build() {
+        com.teneasyChat.api.core.WorkerOuterClass.WorkerDisableRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.core.WorkerOuterClass.WorkerDisableRequest buildPartial() {
+        com.teneasyChat.api.core.WorkerOuterClass.WorkerDisableRequest result = new com.teneasyChat.api.core.WorkerOuterClass.WorkerDisableRequest(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.teneasyChat.api.core.WorkerOuterClass.WorkerDisableRequest result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.workerId_ = workerId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.disableStatus_ = disableStatus_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.teneasyChat.api.core.WorkerOuterClass.WorkerDisableRequest) {
+          return mergeFrom((com.teneasyChat.api.core.WorkerOuterClass.WorkerDisableRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.teneasyChat.api.core.WorkerOuterClass.WorkerDisableRequest other) {
+        if (other == com.teneasyChat.api.core.WorkerOuterClass.WorkerDisableRequest.getDefaultInstance()) return this;
+        if (other.getWorkerId() != 0) {
+          setWorkerId(other.getWorkerId());
+        }
+        if (other.disableStatus_ != 0) {
+          setDisableStatusValue(other.getDisableStatusValue());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                workerId_ = input.readInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 16: {
+                disableStatus_ = input.readEnum();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private int workerId_ ;
+      /**
+       * <pre>
+       * worker_id 1 = 商户账号, 不可操作
+       * </pre>
+       *
+       * <code>int32 worker_id = 1 [(.validate.rules) = { ... }</code>
+       * @return The workerId.
+       */
+      @java.lang.Override
+      public int getWorkerId() {
+        return workerId_;
+      }
+      /**
+       * <pre>
+       * worker_id 1 = 商户账号, 不可操作
+       * </pre>
+       *
+       * <code>int32 worker_id = 1 [(.validate.rules) = { ... }</code>
+       * @param value The workerId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setWorkerId(int value) {
+
+        workerId_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * worker_id 1 = 商户账号, 不可操作
+       * </pre>
+       *
+       * <code>int32 worker_id = 1 [(.validate.rules) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearWorkerId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        workerId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int disableStatus_ = 0;
+      /**
+       * <pre>
+       * 禁用/启用
+       * </pre>
+       *
+       * <code>.api.common.DisableStatus disable_status = 2 [(.validate.rules) = { ... }</code>
+       * @return The enum numeric value on the wire for disableStatus.
+       */
+      @java.lang.Override public int getDisableStatusValue() {
+        return disableStatus_;
+      }
+      /**
+       * <pre>
+       * 禁用/启用
+       * </pre>
+       *
+       * <code>.api.common.DisableStatus disable_status = 2 [(.validate.rules) = { ... }</code>
+       * @param value The enum numeric value on the wire for disableStatus to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDisableStatusValue(int value) {
+        disableStatus_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 禁用/启用
+       * </pre>
+       *
+       * <code>.api.common.DisableStatus disable_status = 2 [(.validate.rules) = { ... }</code>
+       * @return The disableStatus.
+       */
+      @java.lang.Override
+      public com.teneasyChat.api.common.CBase.DisableStatus getDisableStatus() {
+        com.teneasyChat.api.common.CBase.DisableStatus result = com.teneasyChat.api.common.CBase.DisableStatus.forNumber(disableStatus_);
+        return result == null ? com.teneasyChat.api.common.CBase.DisableStatus.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * 禁用/启用
+       * </pre>
+       *
+       * <code>.api.common.DisableStatus disable_status = 2 [(.validate.rules) = { ... }</code>
+       * @param value The disableStatus to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDisableStatus(com.teneasyChat.api.common.CBase.DisableStatus value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000002;
+        disableStatus_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 禁用/启用
+       * </pre>
+       *
+       * <code>.api.common.DisableStatus disable_status = 2 [(.validate.rules) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDisableStatus() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        disableStatus_ = 0;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:api.core.WorkerDisableRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:api.core.WorkerDisableRequest)
+    private static final com.teneasyChat.api.core.WorkerOuterClass.WorkerDisableRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.teneasyChat.api.core.WorkerOuterClass.WorkerDisableRequest();
+    }
+
+    public static com.teneasyChat.api.core.WorkerOuterClass.WorkerDisableRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<WorkerDisableRequest>
+        PARSER = new com.google.protobuf.AbstractParser<WorkerDisableRequest>() {
+      @java.lang.Override
+      public WorkerDisableRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<WorkerDisableRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<WorkerDisableRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.teneasyChat.api.core.WorkerOuterClass.WorkerDisableRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface WorkerTransferRequestOrBuilder extends
       // @@protoc_insertion_point(interface_extends:api.core.WorkerTransferRequest)
       com.google.protobuf.MessageOrBuilder {
@@ -10637,7 +11240,7 @@ public final class WorkerOuterClass {
 
     /**
      * <pre>
-     * 咨询id
+     * 目标咨询id
      * </pre>
      *
      * <code>uint32 consult_id = 3;</code>
@@ -10732,7 +11335,7 @@ public final class WorkerOuterClass {
     private int consultId_ = 0;
     /**
      * <pre>
-     * 咨询id
+     * 目标咨询id
      * </pre>
      *
      * <code>uint32 consult_id = 3;</code>
@@ -11243,7 +11846,7 @@ public final class WorkerOuterClass {
       private int consultId_ ;
       /**
        * <pre>
-       * 咨询id
+       * 目标咨询id
        * </pre>
        *
        * <code>uint32 consult_id = 3;</code>
@@ -11255,7 +11858,7 @@ public final class WorkerOuterClass {
       }
       /**
        * <pre>
-       * 咨询id
+       * 目标咨询id
        * </pre>
        *
        * <code>uint32 consult_id = 3;</code>
@@ -11271,7 +11874,7 @@ public final class WorkerOuterClass {
       }
       /**
        * <pre>
-       * 咨询id
+       * 目标咨询id
        * </pre>
        *
        * <code>uint32 consult_id = 3;</code>
@@ -16233,6 +16836,578 @@ public final class WorkerOuterClass {
 
     @java.lang.Override
     public com.teneasyChat.api.core.WorkerOuterClass.SetWorkerStatusRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ApplyWorkerStateRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:api.core.ApplyWorkerStateRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.api.common.OnlineState apply_state = 1;</code>
+     * @return The enum numeric value on the wire for applyState.
+     */
+    int getApplyStateValue();
+    /**
+     * <code>.api.common.OnlineState apply_state = 1;</code>
+     * @return The applyState.
+     */
+    com.teneasyChat.api.common.CWorker.OnlineState getApplyState();
+
+    /**
+     * <code>.api.common.OnlineState now_state = 2;</code>
+     * @return The enum numeric value on the wire for nowState.
+     */
+    int getNowStateValue();
+    /**
+     * <code>.api.common.OnlineState now_state = 2;</code>
+     * @return The nowState.
+     */
+    com.teneasyChat.api.common.CWorker.OnlineState getNowState();
+  }
+  /**
+   * Protobuf type {@code api.core.ApplyWorkerStateRequest}
+   */
+  public static final class ApplyWorkerStateRequest extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:api.core.ApplyWorkerStateRequest)
+      ApplyWorkerStateRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 26,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        ApplyWorkerStateRequest.class.getName());
+    }
+    // Use ApplyWorkerStateRequest.newBuilder() to construct.
+    private ApplyWorkerStateRequest(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private ApplyWorkerStateRequest() {
+      applyState_ = 0;
+      nowState_ = 0;
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.teneasyChat.api.core.WorkerOuterClass.internal_static_api_core_ApplyWorkerStateRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.teneasyChat.api.core.WorkerOuterClass.internal_static_api_core_ApplyWorkerStateRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.teneasyChat.api.core.WorkerOuterClass.ApplyWorkerStateRequest.class, com.teneasyChat.api.core.WorkerOuterClass.ApplyWorkerStateRequest.Builder.class);
+    }
+
+    public static final int APPLY_STATE_FIELD_NUMBER = 1;
+    private int applyState_ = 0;
+    /**
+     * <code>.api.common.OnlineState apply_state = 1;</code>
+     * @return The enum numeric value on the wire for applyState.
+     */
+    @java.lang.Override public int getApplyStateValue() {
+      return applyState_;
+    }
+    /**
+     * <code>.api.common.OnlineState apply_state = 1;</code>
+     * @return The applyState.
+     */
+    @java.lang.Override public com.teneasyChat.api.common.CWorker.OnlineState getApplyState() {
+      com.teneasyChat.api.common.CWorker.OnlineState result = com.teneasyChat.api.common.CWorker.OnlineState.forNumber(applyState_);
+      return result == null ? com.teneasyChat.api.common.CWorker.OnlineState.UNRECOGNIZED : result;
+    }
+
+    public static final int NOW_STATE_FIELD_NUMBER = 2;
+    private int nowState_ = 0;
+    /**
+     * <code>.api.common.OnlineState now_state = 2;</code>
+     * @return The enum numeric value on the wire for nowState.
+     */
+    @java.lang.Override public int getNowStateValue() {
+      return nowState_;
+    }
+    /**
+     * <code>.api.common.OnlineState now_state = 2;</code>
+     * @return The nowState.
+     */
+    @java.lang.Override public com.teneasyChat.api.common.CWorker.OnlineState getNowState() {
+      com.teneasyChat.api.common.CWorker.OnlineState result = com.teneasyChat.api.common.CWorker.OnlineState.forNumber(nowState_);
+      return result == null ? com.teneasyChat.api.common.CWorker.OnlineState.UNRECOGNIZED : result;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (applyState_ != com.teneasyChat.api.common.CWorker.OnlineState.ONLINE_STATE_IDLE.getNumber()) {
+        output.writeEnum(1, applyState_);
+      }
+      if (nowState_ != com.teneasyChat.api.common.CWorker.OnlineState.ONLINE_STATE_IDLE.getNumber()) {
+        output.writeEnum(2, nowState_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (applyState_ != com.teneasyChat.api.common.CWorker.OnlineState.ONLINE_STATE_IDLE.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(1, applyState_);
+      }
+      if (nowState_ != com.teneasyChat.api.common.CWorker.OnlineState.ONLINE_STATE_IDLE.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(2, nowState_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.teneasyChat.api.core.WorkerOuterClass.ApplyWorkerStateRequest)) {
+        return super.equals(obj);
+      }
+      com.teneasyChat.api.core.WorkerOuterClass.ApplyWorkerStateRequest other = (com.teneasyChat.api.core.WorkerOuterClass.ApplyWorkerStateRequest) obj;
+
+      if (applyState_ != other.applyState_) return false;
+      if (nowState_ != other.nowState_) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + APPLY_STATE_FIELD_NUMBER;
+      hash = (53 * hash) + applyState_;
+      hash = (37 * hash) + NOW_STATE_FIELD_NUMBER;
+      hash = (53 * hash) + nowState_;
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.teneasyChat.api.core.WorkerOuterClass.ApplyWorkerStateRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.ApplyWorkerStateRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.ApplyWorkerStateRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.ApplyWorkerStateRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.ApplyWorkerStateRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.ApplyWorkerStateRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.ApplyWorkerStateRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.ApplyWorkerStateRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.teneasyChat.api.core.WorkerOuterClass.ApplyWorkerStateRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.teneasyChat.api.core.WorkerOuterClass.ApplyWorkerStateRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.ApplyWorkerStateRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.ApplyWorkerStateRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.teneasyChat.api.core.WorkerOuterClass.ApplyWorkerStateRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code api.core.ApplyWorkerStateRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:api.core.ApplyWorkerStateRequest)
+        com.teneasyChat.api.core.WorkerOuterClass.ApplyWorkerStateRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.teneasyChat.api.core.WorkerOuterClass.internal_static_api_core_ApplyWorkerStateRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.teneasyChat.api.core.WorkerOuterClass.internal_static_api_core_ApplyWorkerStateRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.teneasyChat.api.core.WorkerOuterClass.ApplyWorkerStateRequest.class, com.teneasyChat.api.core.WorkerOuterClass.ApplyWorkerStateRequest.Builder.class);
+      }
+
+      // Construct using com.teneasyChat.api.core.WorkerOuterClass.ApplyWorkerStateRequest.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        applyState_ = 0;
+        nowState_ = 0;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.teneasyChat.api.core.WorkerOuterClass.internal_static_api_core_ApplyWorkerStateRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.core.WorkerOuterClass.ApplyWorkerStateRequest getDefaultInstanceForType() {
+        return com.teneasyChat.api.core.WorkerOuterClass.ApplyWorkerStateRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.core.WorkerOuterClass.ApplyWorkerStateRequest build() {
+        com.teneasyChat.api.core.WorkerOuterClass.ApplyWorkerStateRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.core.WorkerOuterClass.ApplyWorkerStateRequest buildPartial() {
+        com.teneasyChat.api.core.WorkerOuterClass.ApplyWorkerStateRequest result = new com.teneasyChat.api.core.WorkerOuterClass.ApplyWorkerStateRequest(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.teneasyChat.api.core.WorkerOuterClass.ApplyWorkerStateRequest result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.applyState_ = applyState_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.nowState_ = nowState_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.teneasyChat.api.core.WorkerOuterClass.ApplyWorkerStateRequest) {
+          return mergeFrom((com.teneasyChat.api.core.WorkerOuterClass.ApplyWorkerStateRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.teneasyChat.api.core.WorkerOuterClass.ApplyWorkerStateRequest other) {
+        if (other == com.teneasyChat.api.core.WorkerOuterClass.ApplyWorkerStateRequest.getDefaultInstance()) return this;
+        if (other.applyState_ != 0) {
+          setApplyStateValue(other.getApplyStateValue());
+        }
+        if (other.nowState_ != 0) {
+          setNowStateValue(other.getNowStateValue());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                applyState_ = input.readEnum();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 16: {
+                nowState_ = input.readEnum();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private int applyState_ = 0;
+      /**
+       * <code>.api.common.OnlineState apply_state = 1;</code>
+       * @return The enum numeric value on the wire for applyState.
+       */
+      @java.lang.Override public int getApplyStateValue() {
+        return applyState_;
+      }
+      /**
+       * <code>.api.common.OnlineState apply_state = 1;</code>
+       * @param value The enum numeric value on the wire for applyState to set.
+       * @return This builder for chaining.
+       */
+      public Builder setApplyStateValue(int value) {
+        applyState_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.api.common.OnlineState apply_state = 1;</code>
+       * @return The applyState.
+       */
+      @java.lang.Override
+      public com.teneasyChat.api.common.CWorker.OnlineState getApplyState() {
+        com.teneasyChat.api.common.CWorker.OnlineState result = com.teneasyChat.api.common.CWorker.OnlineState.forNumber(applyState_);
+        return result == null ? com.teneasyChat.api.common.CWorker.OnlineState.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.api.common.OnlineState apply_state = 1;</code>
+       * @param value The applyState to set.
+       * @return This builder for chaining.
+       */
+      public Builder setApplyState(com.teneasyChat.api.common.CWorker.OnlineState value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000001;
+        applyState_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.api.common.OnlineState apply_state = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearApplyState() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        applyState_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int nowState_ = 0;
+      /**
+       * <code>.api.common.OnlineState now_state = 2;</code>
+       * @return The enum numeric value on the wire for nowState.
+       */
+      @java.lang.Override public int getNowStateValue() {
+        return nowState_;
+      }
+      /**
+       * <code>.api.common.OnlineState now_state = 2;</code>
+       * @param value The enum numeric value on the wire for nowState to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNowStateValue(int value) {
+        nowState_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.api.common.OnlineState now_state = 2;</code>
+       * @return The nowState.
+       */
+      @java.lang.Override
+      public com.teneasyChat.api.common.CWorker.OnlineState getNowState() {
+        com.teneasyChat.api.common.CWorker.OnlineState result = com.teneasyChat.api.common.CWorker.OnlineState.forNumber(nowState_);
+        return result == null ? com.teneasyChat.api.common.CWorker.OnlineState.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.api.common.OnlineState now_state = 2;</code>
+       * @param value The nowState to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNowState(com.teneasyChat.api.common.CWorker.OnlineState value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000002;
+        nowState_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.api.common.OnlineState now_state = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearNowState() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        nowState_ = 0;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:api.core.ApplyWorkerStateRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:api.core.ApplyWorkerStateRequest)
+    private static final com.teneasyChat.api.core.WorkerOuterClass.ApplyWorkerStateRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.teneasyChat.api.core.WorkerOuterClass.ApplyWorkerStateRequest();
+    }
+
+    public static com.teneasyChat.api.core.WorkerOuterClass.ApplyWorkerStateRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ApplyWorkerStateRequest>
+        PARSER = new com.google.protobuf.AbstractParser<ApplyWorkerStateRequest>() {
+      @java.lang.Override
+      public ApplyWorkerStateRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<ApplyWorkerStateRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ApplyWorkerStateRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.teneasyChat.api.core.WorkerOuterClass.ApplyWorkerStateRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -34008,6 +35183,1628 @@ public final class WorkerOuterClass {
 
   }
 
+  public interface GetApplyWorkerStateListReqOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:api.core.GetApplyWorkerStateListReq)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.api.common.Batch batch = 1 [(.validate.rules) = { ... }</code>
+     * @return Whether the batch field is set.
+     */
+    boolean hasBatch();
+    /**
+     * <code>.api.common.Batch batch = 1 [(.validate.rules) = { ... }</code>
+     * @return The batch.
+     */
+    com.teneasyChat.api.common.CBase.Batch getBatch();
+    /**
+     * <code>.api.common.Batch batch = 1 [(.validate.rules) = { ... }</code>
+     */
+    com.teneasyChat.api.common.CBase.BatchOrBuilder getBatchOrBuilder();
+
+    /**
+     * <code>string name = 2;</code>
+     * @return The name.
+     */
+    java.lang.String getName();
+    /**
+     * <code>string name = 2;</code>
+     * @return The bytes for name.
+     */
+    com.google.protobuf.ByteString
+        getNameBytes();
+
+    /**
+     * <pre>
+     * 0,1,2,3,4 全部/待审核/通过/拒绝/通过,无需审核
+     * </pre>
+     *
+     * <code>int32 apply_state = 3;</code>
+     * @return The applyState.
+     */
+    int getApplyState();
+  }
+  /**
+   * Protobuf type {@code api.core.GetApplyWorkerStateListReq}
+   */
+  public static final class GetApplyWorkerStateListReq extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:api.core.GetApplyWorkerStateListReq)
+      GetApplyWorkerStateListReqOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 26,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        GetApplyWorkerStateListReq.class.getName());
+    }
+    // Use GetApplyWorkerStateListReq.newBuilder() to construct.
+    private GetApplyWorkerStateListReq(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private GetApplyWorkerStateListReq() {
+      name_ = "";
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.teneasyChat.api.core.WorkerOuterClass.internal_static_api_core_GetApplyWorkerStateListReq_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.teneasyChat.api.core.WorkerOuterClass.internal_static_api_core_GetApplyWorkerStateListReq_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateListReq.class, com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateListReq.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int BATCH_FIELD_NUMBER = 1;
+    private com.teneasyChat.api.common.CBase.Batch batch_;
+    /**
+     * <code>.api.common.Batch batch = 1 [(.validate.rules) = { ... }</code>
+     * @return Whether the batch field is set.
+     */
+    @java.lang.Override
+    public boolean hasBatch() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     * <code>.api.common.Batch batch = 1 [(.validate.rules) = { ... }</code>
+     * @return The batch.
+     */
+    @java.lang.Override
+    public com.teneasyChat.api.common.CBase.Batch getBatch() {
+      return batch_ == null ? com.teneasyChat.api.common.CBase.Batch.getDefaultInstance() : batch_;
+    }
+    /**
+     * <code>.api.common.Batch batch = 1 [(.validate.rules) = { ... }</code>
+     */
+    @java.lang.Override
+    public com.teneasyChat.api.common.CBase.BatchOrBuilder getBatchOrBuilder() {
+      return batch_ == null ? com.teneasyChat.api.common.CBase.Batch.getDefaultInstance() : batch_;
+    }
+
+    public static final int NAME_FIELD_NUMBER = 2;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object name_ = "";
+    /**
+     * <code>string name = 2;</code>
+     * @return The name.
+     */
+    @java.lang.Override
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string name = 2;</code>
+     * @return The bytes for name.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int APPLY_STATE_FIELD_NUMBER = 3;
+    private int applyState_ = 0;
+    /**
+     * <pre>
+     * 0,1,2,3,4 全部/待审核/通过/拒绝/通过,无需审核
+     * </pre>
+     *
+     * <code>int32 apply_state = 3;</code>
+     * @return The applyState.
+     */
+    @java.lang.Override
+    public int getApplyState() {
+      return applyState_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(1, getBatch());
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 2, name_);
+      }
+      if (applyState_ != 0) {
+        output.writeInt32(3, applyState_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getBatch());
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(2, name_);
+      }
+      if (applyState_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(3, applyState_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateListReq)) {
+        return super.equals(obj);
+      }
+      com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateListReq other = (com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateListReq) obj;
+
+      if (hasBatch() != other.hasBatch()) return false;
+      if (hasBatch()) {
+        if (!getBatch()
+            .equals(other.getBatch())) return false;
+      }
+      if (!getName()
+          .equals(other.getName())) return false;
+      if (getApplyState()
+          != other.getApplyState()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasBatch()) {
+        hash = (37 * hash) + BATCH_FIELD_NUMBER;
+        hash = (53 * hash) + getBatch().hashCode();
+      }
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+      hash = (37 * hash) + APPLY_STATE_FIELD_NUMBER;
+      hash = (53 * hash) + getApplyState();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateListReq parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateListReq parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateListReq parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateListReq parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateListReq parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateListReq parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateListReq parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateListReq parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateListReq parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateListReq parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateListReq parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateListReq parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateListReq prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code api.core.GetApplyWorkerStateListReq}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:api.core.GetApplyWorkerStateListReq)
+        com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateListReqOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.teneasyChat.api.core.WorkerOuterClass.internal_static_api_core_GetApplyWorkerStateListReq_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.teneasyChat.api.core.WorkerOuterClass.internal_static_api_core_GetApplyWorkerStateListReq_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateListReq.class, com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateListReq.Builder.class);
+      }
+
+      // Construct using com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateListReq.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage
+                .alwaysUseFieldBuilders) {
+          getBatchFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        batch_ = null;
+        if (batchBuilder_ != null) {
+          batchBuilder_.dispose();
+          batchBuilder_ = null;
+        }
+        name_ = "";
+        applyState_ = 0;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.teneasyChat.api.core.WorkerOuterClass.internal_static_api_core_GetApplyWorkerStateListReq_descriptor;
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateListReq getDefaultInstanceForType() {
+        return com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateListReq.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateListReq build() {
+        com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateListReq result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateListReq buildPartial() {
+        com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateListReq result = new com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateListReq(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateListReq result) {
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.batch_ = batchBuilder_ == null
+              ? batch_
+              : batchBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.name_ = name_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.applyState_ = applyState_;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateListReq) {
+          return mergeFrom((com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateListReq)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateListReq other) {
+        if (other == com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateListReq.getDefaultInstance()) return this;
+        if (other.hasBatch()) {
+          mergeBatch(other.getBatch());
+        }
+        if (!other.getName().isEmpty()) {
+          name_ = other.name_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        if (other.getApplyState() != 0) {
+          setApplyState(other.getApplyState());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                input.readMessage(
+                    getBatchFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              case 18: {
+                name_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+              case 24: {
+                applyState_ = input.readInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 24
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private com.teneasyChat.api.common.CBase.Batch batch_;
+      private com.google.protobuf.SingleFieldBuilder<
+          com.teneasyChat.api.common.CBase.Batch, com.teneasyChat.api.common.CBase.Batch.Builder, com.teneasyChat.api.common.CBase.BatchOrBuilder> batchBuilder_;
+      /**
+       * <code>.api.common.Batch batch = 1 [(.validate.rules) = { ... }</code>
+       * @return Whether the batch field is set.
+       */
+      public boolean hasBatch() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+      /**
+       * <code>.api.common.Batch batch = 1 [(.validate.rules) = { ... }</code>
+       * @return The batch.
+       */
+      public com.teneasyChat.api.common.CBase.Batch getBatch() {
+        if (batchBuilder_ == null) {
+          return batch_ == null ? com.teneasyChat.api.common.CBase.Batch.getDefaultInstance() : batch_;
+        } else {
+          return batchBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.api.common.Batch batch = 1 [(.validate.rules) = { ... }</code>
+       */
+      public Builder setBatch(com.teneasyChat.api.common.CBase.Batch value) {
+        if (batchBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          batch_ = value;
+        } else {
+          batchBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.api.common.Batch batch = 1 [(.validate.rules) = { ... }</code>
+       */
+      public Builder setBatch(
+          com.teneasyChat.api.common.CBase.Batch.Builder builderForValue) {
+        if (batchBuilder_ == null) {
+          batch_ = builderForValue.build();
+        } else {
+          batchBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.api.common.Batch batch = 1 [(.validate.rules) = { ... }</code>
+       */
+      public Builder mergeBatch(com.teneasyChat.api.common.CBase.Batch value) {
+        if (batchBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0) &&
+            batch_ != null &&
+            batch_ != com.teneasyChat.api.common.CBase.Batch.getDefaultInstance()) {
+            getBatchBuilder().mergeFrom(value);
+          } else {
+            batch_ = value;
+          }
+        } else {
+          batchBuilder_.mergeFrom(value);
+        }
+        if (batch_ != null) {
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       * <code>.api.common.Batch batch = 1 [(.validate.rules) = { ... }</code>
+       */
+      public Builder clearBatch() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        batch_ = null;
+        if (batchBuilder_ != null) {
+          batchBuilder_.dispose();
+          batchBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.api.common.Batch batch = 1 [(.validate.rules) = { ... }</code>
+       */
+      public com.teneasyChat.api.common.CBase.Batch.Builder getBatchBuilder() {
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return getBatchFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.api.common.Batch batch = 1 [(.validate.rules) = { ... }</code>
+       */
+      public com.teneasyChat.api.common.CBase.BatchOrBuilder getBatchOrBuilder() {
+        if (batchBuilder_ != null) {
+          return batchBuilder_.getMessageOrBuilder();
+        } else {
+          return batch_ == null ?
+              com.teneasyChat.api.common.CBase.Batch.getDefaultInstance() : batch_;
+        }
+      }
+      /**
+       * <code>.api.common.Batch batch = 1 [(.validate.rules) = { ... }</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          com.teneasyChat.api.common.CBase.Batch, com.teneasyChat.api.common.CBase.Batch.Builder, com.teneasyChat.api.common.CBase.BatchOrBuilder> 
+          getBatchFieldBuilder() {
+        if (batchBuilder_ == null) {
+          batchBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              com.teneasyChat.api.common.CBase.Batch, com.teneasyChat.api.common.CBase.Batch.Builder, com.teneasyChat.api.common.CBase.BatchOrBuilder>(
+                  getBatch(),
+                  getParentForChildren(),
+                  isClean());
+          batch_ = null;
+        }
+        return batchBuilder_;
+      }
+
+      private java.lang.Object name_ = "";
+      /**
+       * <code>string name = 2;</code>
+       * @return The name.
+       */
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          name_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string name = 2;</code>
+       * @return The bytes for name.
+       */
+      public com.google.protobuf.ByteString
+          getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string name = 2;</code>
+       * @param value The name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setName(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        name_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string name = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearName() {
+        name_ = getDefaultInstance().getName();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string name = 2;</code>
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        name_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      private int applyState_ ;
+      /**
+       * <pre>
+       * 0,1,2,3,4 全部/待审核/通过/拒绝/通过,无需审核
+       * </pre>
+       *
+       * <code>int32 apply_state = 3;</code>
+       * @return The applyState.
+       */
+      @java.lang.Override
+      public int getApplyState() {
+        return applyState_;
+      }
+      /**
+       * <pre>
+       * 0,1,2,3,4 全部/待审核/通过/拒绝/通过,无需审核
+       * </pre>
+       *
+       * <code>int32 apply_state = 3;</code>
+       * @param value The applyState to set.
+       * @return This builder for chaining.
+       */
+      public Builder setApplyState(int value) {
+
+        applyState_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 0,1,2,3,4 全部/待审核/通过/拒绝/通过,无需审核
+       * </pre>
+       *
+       * <code>int32 apply_state = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearApplyState() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        applyState_ = 0;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:api.core.GetApplyWorkerStateListReq)
+    }
+
+    // @@protoc_insertion_point(class_scope:api.core.GetApplyWorkerStateListReq)
+    private static final com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateListReq DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateListReq();
+    }
+
+    public static com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateListReq getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<GetApplyWorkerStateListReq>
+        PARSER = new com.google.protobuf.AbstractParser<GetApplyWorkerStateListReq>() {
+      @java.lang.Override
+      public GetApplyWorkerStateListReq parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<GetApplyWorkerStateListReq> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<GetApplyWorkerStateListReq> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateListReq getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface GetApplyWorkerStateListRespOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:api.core.GetApplyWorkerStateListResp)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>repeated .api.common.ApplyWorkerState applys = 1;</code>
+     */
+    java.util.List<com.teneasyChat.api.common.CWorker.ApplyWorkerState> 
+        getApplysList();
+    /**
+     * <code>repeated .api.common.ApplyWorkerState applys = 1;</code>
+     */
+    com.teneasyChat.api.common.CWorker.ApplyWorkerState getApplys(int index);
+    /**
+     * <code>repeated .api.common.ApplyWorkerState applys = 1;</code>
+     */
+    int getApplysCount();
+    /**
+     * <code>repeated .api.common.ApplyWorkerState applys = 1;</code>
+     */
+    java.util.List<? extends com.teneasyChat.api.common.CWorker.ApplyWorkerStateOrBuilder> 
+        getApplysOrBuilderList();
+    /**
+     * <code>repeated .api.common.ApplyWorkerState applys = 1;</code>
+     */
+    com.teneasyChat.api.common.CWorker.ApplyWorkerStateOrBuilder getApplysOrBuilder(
+        int index);
+
+    /**
+     * <code>int32 total = 2;</code>
+     * @return The total.
+     */
+    int getTotal();
+  }
+  /**
+   * Protobuf type {@code api.core.GetApplyWorkerStateListResp}
+   */
+  public static final class GetApplyWorkerStateListResp extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:api.core.GetApplyWorkerStateListResp)
+      GetApplyWorkerStateListRespOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 26,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        GetApplyWorkerStateListResp.class.getName());
+    }
+    // Use GetApplyWorkerStateListResp.newBuilder() to construct.
+    private GetApplyWorkerStateListResp(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private GetApplyWorkerStateListResp() {
+      applys_ = java.util.Collections.emptyList();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.teneasyChat.api.core.WorkerOuterClass.internal_static_api_core_GetApplyWorkerStateListResp_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.teneasyChat.api.core.WorkerOuterClass.internal_static_api_core_GetApplyWorkerStateListResp_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateListResp.class, com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateListResp.Builder.class);
+    }
+
+    public static final int APPLYS_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
+    private java.util.List<com.teneasyChat.api.common.CWorker.ApplyWorkerState> applys_;
+    /**
+     * <code>repeated .api.common.ApplyWorkerState applys = 1;</code>
+     */
+    @java.lang.Override
+    public java.util.List<com.teneasyChat.api.common.CWorker.ApplyWorkerState> getApplysList() {
+      return applys_;
+    }
+    /**
+     * <code>repeated .api.common.ApplyWorkerState applys = 1;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends com.teneasyChat.api.common.CWorker.ApplyWorkerStateOrBuilder> 
+        getApplysOrBuilderList() {
+      return applys_;
+    }
+    /**
+     * <code>repeated .api.common.ApplyWorkerState applys = 1;</code>
+     */
+    @java.lang.Override
+    public int getApplysCount() {
+      return applys_.size();
+    }
+    /**
+     * <code>repeated .api.common.ApplyWorkerState applys = 1;</code>
+     */
+    @java.lang.Override
+    public com.teneasyChat.api.common.CWorker.ApplyWorkerState getApplys(int index) {
+      return applys_.get(index);
+    }
+    /**
+     * <code>repeated .api.common.ApplyWorkerState applys = 1;</code>
+     */
+    @java.lang.Override
+    public com.teneasyChat.api.common.CWorker.ApplyWorkerStateOrBuilder getApplysOrBuilder(
+        int index) {
+      return applys_.get(index);
+    }
+
+    public static final int TOTAL_FIELD_NUMBER = 2;
+    private int total_ = 0;
+    /**
+     * <code>int32 total = 2;</code>
+     * @return The total.
+     */
+    @java.lang.Override
+    public int getTotal() {
+      return total_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < applys_.size(); i++) {
+        output.writeMessage(1, applys_.get(i));
+      }
+      if (total_ != 0) {
+        output.writeInt32(2, total_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < applys_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, applys_.get(i));
+      }
+      if (total_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, total_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateListResp)) {
+        return super.equals(obj);
+      }
+      com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateListResp other = (com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateListResp) obj;
+
+      if (!getApplysList()
+          .equals(other.getApplysList())) return false;
+      if (getTotal()
+          != other.getTotal()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getApplysCount() > 0) {
+        hash = (37 * hash) + APPLYS_FIELD_NUMBER;
+        hash = (53 * hash) + getApplysList().hashCode();
+      }
+      hash = (37 * hash) + TOTAL_FIELD_NUMBER;
+      hash = (53 * hash) + getTotal();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateListResp parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateListResp parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateListResp parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateListResp parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateListResp parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateListResp parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateListResp parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateListResp parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateListResp parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateListResp parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateListResp parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateListResp parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateListResp prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code api.core.GetApplyWorkerStateListResp}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:api.core.GetApplyWorkerStateListResp)
+        com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateListRespOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.teneasyChat.api.core.WorkerOuterClass.internal_static_api_core_GetApplyWorkerStateListResp_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.teneasyChat.api.core.WorkerOuterClass.internal_static_api_core_GetApplyWorkerStateListResp_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateListResp.class, com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateListResp.Builder.class);
+      }
+
+      // Construct using com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateListResp.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        if (applysBuilder_ == null) {
+          applys_ = java.util.Collections.emptyList();
+        } else {
+          applys_ = null;
+          applysBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000001);
+        total_ = 0;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.teneasyChat.api.core.WorkerOuterClass.internal_static_api_core_GetApplyWorkerStateListResp_descriptor;
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateListResp getDefaultInstanceForType() {
+        return com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateListResp.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateListResp build() {
+        com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateListResp result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateListResp buildPartial() {
+        com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateListResp result = new com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateListResp(this);
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateListResp result) {
+        if (applysBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            applys_ = java.util.Collections.unmodifiableList(applys_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.applys_ = applys_;
+        } else {
+          result.applys_ = applysBuilder_.build();
+        }
+      }
+
+      private void buildPartial0(com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateListResp result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.total_ = total_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateListResp) {
+          return mergeFrom((com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateListResp)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateListResp other) {
+        if (other == com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateListResp.getDefaultInstance()) return this;
+        if (applysBuilder_ == null) {
+          if (!other.applys_.isEmpty()) {
+            if (applys_.isEmpty()) {
+              applys_ = other.applys_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureApplysIsMutable();
+              applys_.addAll(other.applys_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.applys_.isEmpty()) {
+            if (applysBuilder_.isEmpty()) {
+              applysBuilder_.dispose();
+              applysBuilder_ = null;
+              applys_ = other.applys_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              applysBuilder_ = 
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
+                   getApplysFieldBuilder() : null;
+            } else {
+              applysBuilder_.addAllMessages(other.applys_);
+            }
+          }
+        }
+        if (other.getTotal() != 0) {
+          setTotal(other.getTotal());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                com.teneasyChat.api.common.CWorker.ApplyWorkerState m =
+                    input.readMessage(
+                        com.teneasyChat.api.common.CWorker.ApplyWorkerState.parser(),
+                        extensionRegistry);
+                if (applysBuilder_ == null) {
+                  ensureApplysIsMutable();
+                  applys_.add(m);
+                } else {
+                  applysBuilder_.addMessage(m);
+                }
+                break;
+              } // case 10
+              case 16: {
+                total_ = input.readInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private java.util.List<com.teneasyChat.api.common.CWorker.ApplyWorkerState> applys_ =
+        java.util.Collections.emptyList();
+      private void ensureApplysIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          applys_ = new java.util.ArrayList<com.teneasyChat.api.common.CWorker.ApplyWorkerState>(applys_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilder<
+          com.teneasyChat.api.common.CWorker.ApplyWorkerState, com.teneasyChat.api.common.CWorker.ApplyWorkerState.Builder, com.teneasyChat.api.common.CWorker.ApplyWorkerStateOrBuilder> applysBuilder_;
+
+      /**
+       * <code>repeated .api.common.ApplyWorkerState applys = 1;</code>
+       */
+      public java.util.List<com.teneasyChat.api.common.CWorker.ApplyWorkerState> getApplysList() {
+        if (applysBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(applys_);
+        } else {
+          return applysBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .api.common.ApplyWorkerState applys = 1;</code>
+       */
+      public int getApplysCount() {
+        if (applysBuilder_ == null) {
+          return applys_.size();
+        } else {
+          return applysBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .api.common.ApplyWorkerState applys = 1;</code>
+       */
+      public com.teneasyChat.api.common.CWorker.ApplyWorkerState getApplys(int index) {
+        if (applysBuilder_ == null) {
+          return applys_.get(index);
+        } else {
+          return applysBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .api.common.ApplyWorkerState applys = 1;</code>
+       */
+      public Builder setApplys(
+          int index, com.teneasyChat.api.common.CWorker.ApplyWorkerState value) {
+        if (applysBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureApplysIsMutable();
+          applys_.set(index, value);
+          onChanged();
+        } else {
+          applysBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .api.common.ApplyWorkerState applys = 1;</code>
+       */
+      public Builder setApplys(
+          int index, com.teneasyChat.api.common.CWorker.ApplyWorkerState.Builder builderForValue) {
+        if (applysBuilder_ == null) {
+          ensureApplysIsMutable();
+          applys_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          applysBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .api.common.ApplyWorkerState applys = 1;</code>
+       */
+      public Builder addApplys(com.teneasyChat.api.common.CWorker.ApplyWorkerState value) {
+        if (applysBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureApplysIsMutable();
+          applys_.add(value);
+          onChanged();
+        } else {
+          applysBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .api.common.ApplyWorkerState applys = 1;</code>
+       */
+      public Builder addApplys(
+          int index, com.teneasyChat.api.common.CWorker.ApplyWorkerState value) {
+        if (applysBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureApplysIsMutable();
+          applys_.add(index, value);
+          onChanged();
+        } else {
+          applysBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .api.common.ApplyWorkerState applys = 1;</code>
+       */
+      public Builder addApplys(
+          com.teneasyChat.api.common.CWorker.ApplyWorkerState.Builder builderForValue) {
+        if (applysBuilder_ == null) {
+          ensureApplysIsMutable();
+          applys_.add(builderForValue.build());
+          onChanged();
+        } else {
+          applysBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .api.common.ApplyWorkerState applys = 1;</code>
+       */
+      public Builder addApplys(
+          int index, com.teneasyChat.api.common.CWorker.ApplyWorkerState.Builder builderForValue) {
+        if (applysBuilder_ == null) {
+          ensureApplysIsMutable();
+          applys_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          applysBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .api.common.ApplyWorkerState applys = 1;</code>
+       */
+      public Builder addAllApplys(
+          java.lang.Iterable<? extends com.teneasyChat.api.common.CWorker.ApplyWorkerState> values) {
+        if (applysBuilder_ == null) {
+          ensureApplysIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, applys_);
+          onChanged();
+        } else {
+          applysBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .api.common.ApplyWorkerState applys = 1;</code>
+       */
+      public Builder clearApplys() {
+        if (applysBuilder_ == null) {
+          applys_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          applysBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .api.common.ApplyWorkerState applys = 1;</code>
+       */
+      public Builder removeApplys(int index) {
+        if (applysBuilder_ == null) {
+          ensureApplysIsMutable();
+          applys_.remove(index);
+          onChanged();
+        } else {
+          applysBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .api.common.ApplyWorkerState applys = 1;</code>
+       */
+      public com.teneasyChat.api.common.CWorker.ApplyWorkerState.Builder getApplysBuilder(
+          int index) {
+        return getApplysFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .api.common.ApplyWorkerState applys = 1;</code>
+       */
+      public com.teneasyChat.api.common.CWorker.ApplyWorkerStateOrBuilder getApplysOrBuilder(
+          int index) {
+        if (applysBuilder_ == null) {
+          return applys_.get(index);  } else {
+          return applysBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .api.common.ApplyWorkerState applys = 1;</code>
+       */
+      public java.util.List<? extends com.teneasyChat.api.common.CWorker.ApplyWorkerStateOrBuilder> 
+           getApplysOrBuilderList() {
+        if (applysBuilder_ != null) {
+          return applysBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(applys_);
+        }
+      }
+      /**
+       * <code>repeated .api.common.ApplyWorkerState applys = 1;</code>
+       */
+      public com.teneasyChat.api.common.CWorker.ApplyWorkerState.Builder addApplysBuilder() {
+        return getApplysFieldBuilder().addBuilder(
+            com.teneasyChat.api.common.CWorker.ApplyWorkerState.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .api.common.ApplyWorkerState applys = 1;</code>
+       */
+      public com.teneasyChat.api.common.CWorker.ApplyWorkerState.Builder addApplysBuilder(
+          int index) {
+        return getApplysFieldBuilder().addBuilder(
+            index, com.teneasyChat.api.common.CWorker.ApplyWorkerState.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .api.common.ApplyWorkerState applys = 1;</code>
+       */
+      public java.util.List<com.teneasyChat.api.common.CWorker.ApplyWorkerState.Builder> 
+           getApplysBuilderList() {
+        return getApplysFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilder<
+          com.teneasyChat.api.common.CWorker.ApplyWorkerState, com.teneasyChat.api.common.CWorker.ApplyWorkerState.Builder, com.teneasyChat.api.common.CWorker.ApplyWorkerStateOrBuilder> 
+          getApplysFieldBuilder() {
+        if (applysBuilder_ == null) {
+          applysBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
+              com.teneasyChat.api.common.CWorker.ApplyWorkerState, com.teneasyChat.api.common.CWorker.ApplyWorkerState.Builder, com.teneasyChat.api.common.CWorker.ApplyWorkerStateOrBuilder>(
+                  applys_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          applys_ = null;
+        }
+        return applysBuilder_;
+      }
+
+      private int total_ ;
+      /**
+       * <code>int32 total = 2;</code>
+       * @return The total.
+       */
+      @java.lang.Override
+      public int getTotal() {
+        return total_;
+      }
+      /**
+       * <code>int32 total = 2;</code>
+       * @param value The total to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTotal(int value) {
+
+        total_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 total = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTotal() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        total_ = 0;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:api.core.GetApplyWorkerStateListResp)
+    }
+
+    // @@protoc_insertion_point(class_scope:api.core.GetApplyWorkerStateListResp)
+    private static final com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateListResp DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateListResp();
+    }
+
+    public static com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateListResp getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<GetApplyWorkerStateListResp>
+        PARSER = new com.google.protobuf.AbstractParser<GetApplyWorkerStateListResp>() {
+      @java.lang.Override
+      public GetApplyWorkerStateListResp parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<GetApplyWorkerStateListResp> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<GetApplyWorkerStateListResp> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateListResp getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface SessionCustomerQueryRequestOrBuilder extends
       // @@protoc_insertion_point(interface_extends:api.core.SessionCustomerQueryRequest)
       com.google.protobuf.MessageOrBuilder {
@@ -37434,6 +40231,514 @@ public final class WorkerOuterClass {
 
   }
 
+  public interface CheckWorkerStateReqOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:api.core.CheckWorkerStateReq)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>int64 id = 1;</code>
+     * @return The id.
+     */
+    long getId();
+
+    /**
+     * <code>bool access = 2;</code>
+     * @return The access.
+     */
+    boolean getAccess();
+  }
+  /**
+   * Protobuf type {@code api.core.CheckWorkerStateReq}
+   */
+  public static final class CheckWorkerStateReq extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:api.core.CheckWorkerStateReq)
+      CheckWorkerStateReqOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 26,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        CheckWorkerStateReq.class.getName());
+    }
+    // Use CheckWorkerStateReq.newBuilder() to construct.
+    private CheckWorkerStateReq(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private CheckWorkerStateReq() {
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.teneasyChat.api.core.WorkerOuterClass.internal_static_api_core_CheckWorkerStateReq_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.teneasyChat.api.core.WorkerOuterClass.internal_static_api_core_CheckWorkerStateReq_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.teneasyChat.api.core.WorkerOuterClass.CheckWorkerStateReq.class, com.teneasyChat.api.core.WorkerOuterClass.CheckWorkerStateReq.Builder.class);
+    }
+
+    public static final int ID_FIELD_NUMBER = 1;
+    private long id_ = 0L;
+    /**
+     * <code>int64 id = 1;</code>
+     * @return The id.
+     */
+    @java.lang.Override
+    public long getId() {
+      return id_;
+    }
+
+    public static final int ACCESS_FIELD_NUMBER = 2;
+    private boolean access_ = false;
+    /**
+     * <code>bool access = 2;</code>
+     * @return The access.
+     */
+    @java.lang.Override
+    public boolean getAccess() {
+      return access_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (id_ != 0L) {
+        output.writeInt64(1, id_);
+      }
+      if (access_ != false) {
+        output.writeBool(2, access_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (id_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(1, id_);
+      }
+      if (access_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(2, access_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.teneasyChat.api.core.WorkerOuterClass.CheckWorkerStateReq)) {
+        return super.equals(obj);
+      }
+      com.teneasyChat.api.core.WorkerOuterClass.CheckWorkerStateReq other = (com.teneasyChat.api.core.WorkerOuterClass.CheckWorkerStateReq) obj;
+
+      if (getId()
+          != other.getId()) return false;
+      if (getAccess()
+          != other.getAccess()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getId());
+      hash = (37 * hash) + ACCESS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getAccess());
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.teneasyChat.api.core.WorkerOuterClass.CheckWorkerStateReq parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.CheckWorkerStateReq parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.CheckWorkerStateReq parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.CheckWorkerStateReq parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.CheckWorkerStateReq parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.CheckWorkerStateReq parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.CheckWorkerStateReq parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.CheckWorkerStateReq parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.teneasyChat.api.core.WorkerOuterClass.CheckWorkerStateReq parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.teneasyChat.api.core.WorkerOuterClass.CheckWorkerStateReq parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.CheckWorkerStateReq parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.CheckWorkerStateReq parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.teneasyChat.api.core.WorkerOuterClass.CheckWorkerStateReq prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code api.core.CheckWorkerStateReq}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:api.core.CheckWorkerStateReq)
+        com.teneasyChat.api.core.WorkerOuterClass.CheckWorkerStateReqOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.teneasyChat.api.core.WorkerOuterClass.internal_static_api_core_CheckWorkerStateReq_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.teneasyChat.api.core.WorkerOuterClass.internal_static_api_core_CheckWorkerStateReq_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.teneasyChat.api.core.WorkerOuterClass.CheckWorkerStateReq.class, com.teneasyChat.api.core.WorkerOuterClass.CheckWorkerStateReq.Builder.class);
+      }
+
+      // Construct using com.teneasyChat.api.core.WorkerOuterClass.CheckWorkerStateReq.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        id_ = 0L;
+        access_ = false;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.teneasyChat.api.core.WorkerOuterClass.internal_static_api_core_CheckWorkerStateReq_descriptor;
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.core.WorkerOuterClass.CheckWorkerStateReq getDefaultInstanceForType() {
+        return com.teneasyChat.api.core.WorkerOuterClass.CheckWorkerStateReq.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.core.WorkerOuterClass.CheckWorkerStateReq build() {
+        com.teneasyChat.api.core.WorkerOuterClass.CheckWorkerStateReq result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.core.WorkerOuterClass.CheckWorkerStateReq buildPartial() {
+        com.teneasyChat.api.core.WorkerOuterClass.CheckWorkerStateReq result = new com.teneasyChat.api.core.WorkerOuterClass.CheckWorkerStateReq(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.teneasyChat.api.core.WorkerOuterClass.CheckWorkerStateReq result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.id_ = id_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.access_ = access_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.teneasyChat.api.core.WorkerOuterClass.CheckWorkerStateReq) {
+          return mergeFrom((com.teneasyChat.api.core.WorkerOuterClass.CheckWorkerStateReq)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.teneasyChat.api.core.WorkerOuterClass.CheckWorkerStateReq other) {
+        if (other == com.teneasyChat.api.core.WorkerOuterClass.CheckWorkerStateReq.getDefaultInstance()) return this;
+        if (other.getId() != 0L) {
+          setId(other.getId());
+        }
+        if (other.getAccess() != false) {
+          setAccess(other.getAccess());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                id_ = input.readInt64();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 16: {
+                access_ = input.readBool();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private long id_ ;
+      /**
+       * <code>int64 id = 1;</code>
+       * @return The id.
+       */
+      @java.lang.Override
+      public long getId() {
+        return id_;
+      }
+      /**
+       * <code>int64 id = 1;</code>
+       * @param value The id to set.
+       * @return This builder for chaining.
+       */
+      public Builder setId(long value) {
+
+        id_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 id = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        id_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private boolean access_ ;
+      /**
+       * <code>bool access = 2;</code>
+       * @return The access.
+       */
+      @java.lang.Override
+      public boolean getAccess() {
+        return access_;
+      }
+      /**
+       * <code>bool access = 2;</code>
+       * @param value The access to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAccess(boolean value) {
+
+        access_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool access = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAccess() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        access_ = false;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:api.core.CheckWorkerStateReq)
+    }
+
+    // @@protoc_insertion_point(class_scope:api.core.CheckWorkerStateReq)
+    private static final com.teneasyChat.api.core.WorkerOuterClass.CheckWorkerStateReq DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.teneasyChat.api.core.WorkerOuterClass.CheckWorkerStateReq();
+    }
+
+    public static com.teneasyChat.api.core.WorkerOuterClass.CheckWorkerStateReq getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<CheckWorkerStateReq>
+        PARSER = new com.google.protobuf.AbstractParser<CheckWorkerStateReq>() {
+      @java.lang.Override
+      public CheckWorkerStateReq parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<CheckWorkerStateReq> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<CheckWorkerStateReq> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.teneasyChat.api.core.WorkerOuterClass.CheckWorkerStateReq getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_api_core_WorkerQueryRequest_descriptor;
   private static final 
@@ -37479,6 +40784,11 @@ public final class WorkerOuterClass {
   private static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_api_core_WorkerDeleteRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_api_core_WorkerDisableRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_api_core_WorkerDisableRequest_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_api_core_WorkerTransferRequest_descriptor;
   private static final 
@@ -37534,6 +40844,11 @@ public final class WorkerOuterClass {
   private static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_api_core_SetWorkerStatusRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_api_core_ApplyWorkerStateRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_api_core_ApplyWorkerStateRequest_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_api_core_WorkerTransferResponse_descriptor;
   private static final 
@@ -37645,6 +40960,16 @@ public final class WorkerOuterClass {
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_api_core_QueryChildByGroupResponse_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_api_core_GetApplyWorkerStateListReq_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_api_core_GetApplyWorkerStateListReq_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_api_core_GetApplyWorkerStateListResp_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_api_core_GetApplyWorkerStateListResp_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_api_core_SessionCustomerQueryRequest_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -37659,6 +40984,11 @@ public final class WorkerOuterClass {
   private static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_api_core_SessionCustomerQueryResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_api_core_CheckWorkerStateReq_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_api_core_CheckWorkerStateReq_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -37676,7 +41006,7 @@ public final class WorkerOuterClass {
       "sage.proto\032\037google/protobuf/timestamp.pr" +
       "oto\"\331\001\n\022WorkerQueryRequest\022*\n\005batch\030\001 \001(" +
       "\0132\021.api.common.BatchB\010\372B\005\212\001\002\020\001\022\034\n\004name\030\002" +
-      " \001(\tB\t\372B\006r\004\020\001\030\nH\000\210\001\001\022\026\n\tqueryType\030\003 \001(\005H" +
+      " \001(\tB\t\372B\006r\004\020\001\030 H\000\210\001\001\022\026\n\tqueryType\030\003 \001(\005H" +
       "\001\210\001\001\022\026\n\tgroup_pid\030\004 \001(\003H\002\210\001\001\022\026\n\tgroup_ci" +
       "d\030\005 \001(\003H\003\210\001\001B\007\n\005_nameB\014\n\n_queryTypeB\014\n\n_" +
       "group_pidB\014\n\n_group_cid\"i\n\023WorkerQueryRe" +
@@ -37691,7 +41021,7 @@ public final class WorkerOuterClass {
       "\032\n\007account\030\001 \001(\tB\t\372B\006r\004\020\003\030\020\022\033\n\010password\030" +
       "\002 \001(\tB\t\372B\006r\004 \006(\024\022\033\n\tgroup_ids\030\003 \003(\003B\010\372B\005" +
       "\222\001\002\030\001\022\032\n\tperm_mask\030\004 \001(\005B\007\372B\004\032\002 \000\022\027\n\004nam" +
-      "e\030\006 \001(\tB\t\372B\006r\004\020\001\030\n\022\030\n\006avatar\030\007 \001(\tB\010\372B\005r" +
+      "e\030\006 \001(\tB\t\372B\006r\004\020\001\030 \022\030\n\006avatar\030\007 \001(\tB\010\372B\005r" +
       "\003\030\200 \022\025\n\010bneednim\030\010 \001(\010H\000\210\001\001\022\026\n\tavatarurl" +
       "\030\t \001(\tH\001\210\001\001\022\021\n\004tips\030\n \001(\tH\002\210\001\001\022\034\n\ngroup_" +
       "cids\030\013 \003(\003B\010\372B\005\222\001\002\030\001B\013\n\t_bneednimB\014\n\n_av" +
@@ -37700,7 +41030,7 @@ public final class WorkerOuterClass {
       "word\030\002 \001(\tB\t\372B\006r\004 \006(\024H\000\210\001\001\022,\n\tgroup_ids\030" +
       "\003 \001(\0132\024.api.common.SetInt64H\001\210\001\001\022\037\n\tperm" +
       "_mask\030\005 \001(\005B\007\372B\004\032\002 \000H\002\210\001\001\022\034\n\004name\030\006 \001(\tB" +
-      "\t\372B\006r\004\020\001\030\nH\003\210\001\001\022\035\n\006avatar\030\007 \001(\tB\010\372B\005r\003\030\200" +
+      "\t\372B\006r\004\020\001\030 H\003\210\001\001\022\035\n\006avatar\030\007 \001(\tB\010\372B\005r\003\030\200" +
       " H\004\210\001\001\022\022\n\005nimid\030\010 \001(\tH\005\210\001\001\022\025\n\010nimtoken\030\t" +
       " \001(\tH\006\210\001\001\022\021\n\004tips\030\n \001(\tH\007\210\001\001\022\022\n\ngroup_ci" +
       "ds\030\013 \003(\003B\013\n\t_passwordB\014\n\n_group_idsB\014\n\n_" +
@@ -37710,175 +41040,199 @@ public final class WorkerOuterClass {
       "\n\rconnect_state\030\003 \001(\0162\030.api.common.Conne" +
       "ctState\022-\n\014online_state\030\004 \001(\0162\027.api.comm" +
       "on.OnlineState\"5\n\023WorkerDeleteRequest\022\036\n" +
-      "\tworker_id\030\001 \001(\005B\013\372B\010\032\006\030\377\377\001 \001\"e\n\025WorkerT" +
-      "ransferRequest\022\030\n\007chat_id\030\001 \001(\003B\007\372B\004\"\002 \000" +
-      "\022\036\n\tworker_id\030\002 \001(\005B\013\372B\010\032\006\030\377\377\001 \000\022\022\n\ncons" +
-      "ult_id\030\003 \001(\r\"^\n\035WorkerTransferConsultsRe" +
-      "quest\022\030\n\007chat_id\030\001 \001(\003B\007\372B\004\"\002 \000\022\017\n\007group" +
-      "id\030\002 \003(\003\022\022\n\nconsult_id\030\003 \001(\r\"D\n\036WorkerTr" +
-      "ansferConsultsResponse\022\"\n\006worker\030\001 \001(\0132\022" +
-      ".api.common.Worker\"Q\n\025BlacklistApplyRequ" +
-      "est\022\030\n\007chat_id\030\001 \001(\003B\007\372B\004\"\002 \000\022\036\n\tworker_" +
-      "id\030\002 \001(\005B\013\372B\010\032\006\030\377\377\001 \000\"3\n\027BlacklistConfir" +
-      "mRequest\022\030\n\007chat_id\030\001 \001(\003B\007\372B\004\"\002 \000\"3\n\027Bl" +
-      "acklistRecoverRequest\022\030\n\007chat_id\030\001 \001(\003B\007" +
-      "\372B\004\"\002 \000\"?\n\031CheckWorkerStatusResponse\022\"\n\006" +
-      "worker\030\001 \001(\0132\022.api.common.Worker\"7\n\030Chec" +
-      "kWorkerStatusRequest\022\033\n\nconsult_id\030\001 \001(\r" +
-      "B\007\372B\004*\002 \000\"\331\001\n\026GetWorkerStatusRequest\022\036\n\t" +
-      "worker_id\030\001 \001(\005B\013\372B\010\032\006\030\377\377\001 \000\022>\n\rconnect_" +
-      "state\030\002 \001(\0162\030.api.common.ConnectStateB\010\372" +
-      "B\005\202\001\002\020\001H\000\210\001\001\022<\n\014online_state\030\003 \001(\0162\027.api" +
-      ".common.OnlineStateB\010\372B\005\202\001\002\020\001H\001\210\001\001B\020\n\016_c" +
-      "onnect_stateB\017\n\r_online_state\"J\n\027GetWork" +
-      "erStatusResponse\022/\n\016worker_session\030\001 \003(\013" +
-      "2\027.api.core.WorkerSession\"Q\n\026SetWorkerSt" +
-      "atusRequest\0227\n\014online_state\030\001 \001(\0162\027.api." +
-      "common.OnlineStateB\010\372B\005\202\001\002\020\001\"<\n\026WorkerTr" +
-      "ansferResponse\022\"\n\006worker\030\001 \001(\0132\022.api.com" +
-      "mon.Worker\"S\n\017PasswordRequest\022\037\n\014old_pas" +
-      "sword\030\001 \001(\tB\t\372B\006r\004 \006(\024\022\037\n\014new_password\030\002" +
-      " \001(\tB\t\372B\006r\004 \006(\024\"h\n\023QueryFronterRequest\022\034" +
-      "\n\004name\030\001 \001(\tB\t\372B\006r\004\020\001\030\nH\000\210\001\001\022*\n\005batch\030\002 " +
-      "\001(\0132\021.api.common.BatchB\010\372B\005\212\001\002\020\001B\007\n\005_nam" +
-      "e\"P\n\024QueryFronterResponse\022)\n\005items\030\001 \003(\013" +
-      "2\032.api.core.QueryFronterItem\022\r\n\005total\030\002 " +
-      "\001(\005\"f\n\020QueryFronterItem\022\014\n\004name\030\001 \001(\t\022\017\n" +
-      "\007account\030\002 \001(\t\022\r\n\005group\030\003 \003(\t\022\021\n\tisManag" +
-      "er\030\004 \001(\010\022\021\n\tworker_id\030\005 \001(\005\"\212\002\n\020DataQuer" +
-      "yRequest\022\"\n\nstart_time\030\001 \001(\tB\t\372B\006r\004\020\001\030@H" +
-      "\000\210\001\001\022 \n\010end_time\030\002 \001(\tB\t\372B\006r\004\020\001\030@H\001\210\001\001\022\020" +
-      "\n\010group_id\030\003 \003(\005\022D\n\017worker_identity\030\004 \001(" +
-      "\0162\034.api.common.WorkerPermissionB\010\372B\005\202\001\002 " +
-      "\000H\002\210\001\001\022(\n\004page\030\005 \001(\0132\020.api.common.PageB\010" +
-      "\372B\005\212\001\002\020\001B\r\n\013_start_timeB\013\n\t_end_timeB\022\n\020" +
-      "_worker_identity\"\224\002\n\021DataQueryResponse\022%" +
-      "\n\004item\030\001 \003(\0132\027.api.core.DataQueryItem\022\r\n" +
-      "\005total\030\002 \001(\005\022\024\n\014count_player\030\003 \001(\005\022\022\n\nth" +
-      "ree_rate\030\004 \001(\002\022\025\n\rresponse_time\030\005 \001(\002\022\023\n" +
-      "\013server_time\030\006 \001(\002\022\031\n\021count_online_time\030" +
-      "\007 \001(\002\022\024\n\014accepted_num\030\010 \001(\005\022\025\n\rtransfer_" +
-      "task\030\t \001(\005\022\023\n\013workerLimit\030\n \001(\005\022\026\n\016curre" +
-      "ntWorkers\030\013 \001(\005\"\225\002\n\rDataQueryItem\022\014\n\004nam" +
-      "e\030\001 \001(\t\022\021\n\tmatch_num\030\002 \001(\005\022\033\n\023three_resp" +
-      "onse_rate\030\003 \001(\t\022\026\n\016switching_task\030\004 \001(\005\022" +
-      "\031\n\021accept_assignment\030\005 \001(\005\022\032\n\022correspond" +
-      "ing_time\030\006 \001(\002\022\024\n\014belong_group\030\007 \003(\t\022\022\n\n" +
-      "first_line\030\010 \001(\010\022\022\n\nis_manager\030\t \001(\010\022\024\n\014" +
-      "average_time\030\n \001(\002\022#\n\033accumulated_online" +
-      "_duration\030\013 \001(\002\"g\n\032QuerySpecPermWorkerRe" +
-      "quest\0228\n\004perm\030\001 \001(\0162\034.api.common.WorkerP" +
-      "ermissionB\014\372B\t\202\001\006\020\001\030\020\030@\022\017\n\007chat_id\030\002 \001(\003" +
-      "\"_\n\021WorkerListByGroup\022&\n\005group\030\001 \001(\0132\027.a" +
-      "pi.common.WorkerGroup\022\"\n\006worker\030\002 \003(\0132\022." +
-      "api.common.Worker\"J\n\033QuerySpecPermWorker" +
-      "Response\022+\n\006groups\030\001 \003(\0132\033.api.core.Work" +
-      "erListByGroup\"3\n TryCleanupAssignedWorke" +
-      "rResponse\022\017\n\007cleaned\030\001 \001(\010\"<\n\026UnfreezeSe" +
-      "ssionRequest\022\017\n\007chat_id\030\001 \001(\003\022\021\n\tconsult" +
-      "id\030\002 \001(\005\"c\n\027UnfreezeSessionResponse\022$\n\005s" +
-      "tate\030\001 \001(\0162\025.api.common.ChatState\022\"\n\004cha" +
-      "t\030\002 \001(\0132\024.api.common.ChatItem\"&\n\023QuerySe" +
-      "ssionRequest\022\017\n\007chat_id\030\001 \001(\003\":\n\024QuerySe" +
-      "ssionResponse\022\"\n\004chat\030\001 \001(\0132\024.api.common" +
-      ".ChatItem\"F\n\024NotifyMessageRequest\022\021\n\tcon" +
-      "sultid\030\003 \001(\005\022\016\n\006userid\030\004 \001(\005\022\013\n\003msg\030\005 \001(" +
-      "\t\"$\n\022TransferMessageReq\022\016\n\006chatId\030\001 \001(\003\"" +
-      "i\n\010WithDraw\022\n\n\002id\030\001 \001(\003\022\017\n\007orderNo\030\002 \001(\t" +
-      "\022\016\n\006userid\030\003 \001(\003\022\r\n\005money\030\004 \001(\t\022\016\n\006statu" +
-      "s\030\005 \001(\003\022\021\n\tapplyTime\030\006 \001(\003\"6\n\022TransferMe" +
-      "ssageRsp\022 \n\004data\030\001 \003(\0132\022.api.core.WithDr" +
-      "aw\",\n\030QueryChildByGroupRequest\022\020\n\010group_" +
-      "id\030\001 \001(\003\"C\n\031QueryChildByGroupResponse\022&\n" +
-      "\005group\030\001 \003(\0132\027.api.common.WorkerGroup\"w\n" +
-      "\033SessionCustomerQueryRequest\022*\n\005batch\030\001 " +
-      "\001(\0132\021.api.common.BatchB\010\372B\005\212\001\002\020\001\022\030\n\007keyw" +
-      "ord\030\002 \001(\tB\007\372B\004r\002\020\001\022\022\n\nconsult_id\030\003 \001(\r\"\226" +
-      "\001\n\017SessionCustomer\022\013\n\003uid\030\001 \001(\005\022\014\n\004name\030" +
-      "\002 \001(\t\022\016\n\006avatar\030\003 \001(\t\022\014\n\004nick\030\004 \001(\t\022\017\n\007c" +
-      "hat_id\030\005 \001(\003\022\n\n\002ip\030\006 \001(\t\022-\n\tcreate_at\030\007 " +
-      "\001(\0132\032.google.protobuf.Timestamp\"y\n\034Sessi" +
-      "onCustomerQueryResponse\022(\n\005items\030\001 \003(\0132\031" +
-      ".api.core.SessionCustomer\022 \n\005batch\030\002 \001(\013" +
-      "2\021.api.common.Batch\022\r\n\005total\030\003 \001(\0052\304\030\n\006W" +
-      "orker\022i\n\tDataQuery\022\032.api.core.DataQueryR" +
-      "equest\032\033.api.core.DataQueryResponse\"#\272\276\031" +
-      "\037\010\377\003\030\001\262\006\n2022-12-10\322\014\ndata-query\022u\n\014Quer" +
-      "yFronter\022\035.api.core.QueryFronterRequest\032" +
-      "\036.api.core.QueryFronterResponse\"&\272\276\031\"\010\364\003" +
-      "\030\001\262\006\n2022-12-10\322\014\rquery-fronted\022d\n\005Query" +
-      "\022\034.api.core.WorkerQueryRequest\032\035.api.cor" +
-      "e.WorkerQueryResponse\"\036\272\276\031\032\010\364\003\030\001\262\006\n2022-" +
-      "12-10\322\014\005query\022`\n\006Create\022\035.api.core.Worke" +
-      "rCreateRequest\032\026.google.protobuf.Empty\"\037" +
-      "\272\276\031\033\010\365\003\030\001\262\006\n2022-12-10\322\014\006create\022`\n\006Updat" +
-      "e\022\035.api.core.WorkerUpdateRequest\032\026.googl" +
-      "e.protobuf.Empty\"\037\272\276\031\033\010\366\003\030\001\262\006\n2022-12-10" +
-      "\322\014\006update\022`\n\006Delete\022\035.api.core.WorkerDel" +
-      "eteRequest\032\026.google.protobuf.Empty\"\037\272\276\031\033" +
-      "\010\367\003\030\001\262\006\n2022-12-10\322\014\006delete\022k\n\010Transfer\022" +
-      "\037.api.core.WorkerTransferRequest\032\026.googl" +
-      "e.protobuf.Empty\"&\272\276\031\"\010\370\003\030\001\262\006\n2022-12-30" +
-      "\312\014\002\020\004\322\014\010transfer\022\226\001\n\020TransferConsults\022\'." +
-      "api.core.WorkerTransferConsultsRequest\032(" +
-      ".api.core.WorkerTransferConsultsResponse" +
-      "\"/\272\276\031+\010\370\003\030\001\262\006\n2022-12-30\312\014\002\020\004\322\014\021transfer" +
-      "-Consults\022\207\001\n\017GetWorkerStatus\022 .api.core" +
-      ".GetWorkerStatusRequest\032!.api.core.GetWo" +
-      "rkerStatusResponse\"/\272\276\031+\010\371\003\030\001\262\006\n2022-12-" +
-      "30\312\014\002\020\004\322\014\021get-worker-status\022|\n\017SetWorker" +
-      "Status\022 .api.core.SetWorkerStatusRequest" +
-      "\032\026.google.protobuf.Empty\"/\272\276\031+\010\372\003\030\001\262\006\n20" +
-      "22-12-30\312\014\002\020\004\322\014\021set-worker-status\022\202\001\n\021Ch" +
-      "eckWorkerStatus\022\".api.core.CheckWorkerSt" +
-      "atusRequest\032\026.google.protobuf.Empty\"1\272\276\031" +
-      "-\010\373\003\030\001\262\006\n2022-12-30\312\014\002\020\004\322\014\023check-worker-" +
-      "status\022e\n\010Password\022\031.api.core.PasswordRe" +
-      "quest\032\026.google.protobuf.Empty\"&\272\276\031\"\010\374\003\030\001" +
-      "\262\006\n2023-01-09\312\014\002\020\004\322\014\010password\022y\n\016Blackli" +
-      "stApply\022\037.api.core.BlacklistApplyRequest" +
-      "\032\026.google.protobuf.Empty\".\272\276\031*\010\375\003\030\001\262\006\n20" +
-      "23-01-10\312\014\002\020\004\322\014\020black-list-apply\022\177\n\020Blac" +
-      "klistConfirm\022!.api.core.BlacklistConfirm" +
-      "Request\032\026.google.protobuf.Empty\"0\272\276\031,\010\376\003" +
-      "\030\001\262\006\n2023-01-10\312\014\002\020\004\322\014\022black-list-confir" +
-      "m\022\177\n\020BlacklistRecover\022!.api.core.Blackli" +
-      "stRecoverRequest\032\026.google.protobuf.Empty" +
-      "\"0\272\276\031,\010\377\003\030\001\262\006\n2023-01-28\312\014\002\020\004\322\014\022black-li" +
-      "st-recover\022\207\001\n\013QueryByPerm\022$.api.core.Qu" +
-      "erySpecPermWorkerRequest\032%.api.core.Quer" +
-      "ySpecPermWorkerResponse\"+\272\276\031\'\010\200\004\030\001\262\006\n202" +
-      "3-01-10\312\014\002\020\004\322\014\rquery-by-perm\022\231\001\n\030TryClea" +
-      "nupAssignedWorker\022\026.google.protobuf.Empt" +
-      "y\032*.api.core.TryCleanupAssignedWorkerRes" +
-      "ponse\"9\272\276\0315\010\201\004\030\001\262\006\n2023-02-09\312\014\002\001\004\322\014\033try" +
-      "-cleanup-assigned-worker\022p\n\tQuerySelf\022\026." +
-      "google.protobuf.Empty\032!.api.core.WorkerQ" +
-      "uerySelfResponse\"(\272\276\031$\010\202\004\030\001\262\006\n2023-03-04" +
-      "\312\014\002\020\004\322\014\nquery-self\022\205\001\n\017UnfreezeSession\022 " +
-      ".api.core.UnfreezeSessionRequest\032!.api.c" +
-      "ore.UnfreezeSessionResponse\"-\272\276\031)\010\203\004\030\001\262\006" +
-      "\n2023-04-19\312\014\001\004\322\014\020unfreeze-session\022z\n\014Qu" +
-      "erySession\022\035.api.core.QuerySessionReques" +
-      "t\032\036.api.core.QuerySessionResponse\"+\272\276\031\'\010" +
-      "\204\004\030\001\262\006\n2023-04-21\312\014\002\020\004\322\014\rquery-session\022~" +
-      "\n\020CreateNimAccount\022\033.api.core.NIMAccount" +
-      "Request\032\034.api.core.NIMAccountResponse\"/\272" +
-      "\276\031+\010\204\004\030\001\262\006\n2023-11-06\312\014\002\020\004\322\014\021create-nima" +
-      "ccount\022u\n\rNotifyMessage\022\036.api.core.Notif" +
-      "yMessageRequest\032\026.google.protobuf.Empty\"" +
-      ",\272\276\031(\010\205\004\030\001\262\006\n2024-01-09\312\014\002\002\004\322\014\016notify-me" +
-      "ssage\022\203\001\n\022TransferWithDraWal\022\034.api.core." +
-      "TransferMessageReq\032\034.api.core.TransferMe" +
-      "ssageRsp\"1\272\276\031-\010\205\004\030\001\262\006\n2024-04-05\312\014\002\002\004\322\014\023" +
-      "transfer-withdrawal\022\215\001\n\021QueryChildByGrou" +
-      "p\022\".api.core.QueryChildByGroupRequest\032#." +
-      "api.core.QueryChildByGroupResponse\"/\272\276\031+" +
-      "\010\200\004\030\001\262\006\n2023-01-10\312\014\002\020\004\322\014\021query-group-ch" +
-      "ild\022\207\001\n\rQueryCustomer\022%.api.core.Session" +
-      "CustomerQueryRequest\032&.api.core.SessionC" +
-      "ustomerQueryResponse\"\'\272\276\031#\010\201\004\030\001\262\006\n2024-0" +
-      "5-10\322\014\016query-customer\032\"\272\276\031\036\272\006\006worker\312\014\001\020" +
+      "\tworker_id\030\001 \001(\005B\013\372B\010\032\006\030\377\377\001 \001\"q\n\024WorkerD" +
+      "isableRequest\022\036\n\tworker_id\030\001 \001(\005B\013\372B\010\032\006\030" +
+      "\377\377\001 \001\0229\n\016disable_status\030\002 \001(\0162\031.api.comm" +
+      "on.DisableStatusB\006\372B\003\202\001\000\"e\n\025WorkerTransf" +
+      "erRequest\022\030\n\007chat_id\030\001 \001(\003B\007\372B\004\"\002 \000\022\036\n\tw" +
+      "orker_id\030\002 \001(\005B\013\372B\010\032\006\030\377\377\001 \000\022\022\n\nconsult_i" +
+      "d\030\003 \001(\r\"^\n\035WorkerTransferConsultsRequest" +
+      "\022\030\n\007chat_id\030\001 \001(\003B\007\372B\004\"\002 \000\022\017\n\007groupid\030\002 " +
+      "\003(\003\022\022\n\nconsult_id\030\003 \001(\r\"D\n\036WorkerTransfe" +
+      "rConsultsResponse\022\"\n\006worker\030\001 \001(\0132\022.api." +
+      "common.Worker\"Q\n\025BlacklistApplyRequest\022\030" +
+      "\n\007chat_id\030\001 \001(\003B\007\372B\004\"\002 \000\022\036\n\tworker_id\030\002 " +
+      "\001(\005B\013\372B\010\032\006\030\377\377\001 \000\"3\n\027BlacklistConfirmRequ" +
+      "est\022\030\n\007chat_id\030\001 \001(\003B\007\372B\004\"\002 \000\"3\n\027Blackli" +
+      "stRecoverRequest\022\030\n\007chat_id\030\001 \001(\003B\007\372B\004\"\002" +
+      " \000\"?\n\031CheckWorkerStatusResponse\022\"\n\006worke" +
+      "r\030\001 \001(\0132\022.api.common.Worker\"7\n\030CheckWork" +
+      "erStatusRequest\022\033\n\nconsult_id\030\001 \001(\rB\007\372B\004" +
+      "*\002 \000\"\331\001\n\026GetWorkerStatusRequest\022\036\n\tworke" +
+      "r_id\030\001 \001(\005B\013\372B\010\032\006\030\377\377\001 \000\022>\n\rconnect_state" +
+      "\030\002 \001(\0162\030.api.common.ConnectStateB\010\372B\005\202\001\002" +
+      "\020\001H\000\210\001\001\022<\n\014online_state\030\003 \001(\0162\027.api.comm" +
+      "on.OnlineStateB\010\372B\005\202\001\002\020\001H\001\210\001\001B\020\n\016_connec" +
+      "t_stateB\017\n\r_online_state\"J\n\027GetWorkerSta" +
+      "tusResponse\022/\n\016worker_session\030\001 \003(\0132\027.ap" +
+      "i.core.WorkerSession\"Q\n\026SetWorkerStatusR" +
+      "equest\0227\n\014online_state\030\001 \001(\0162\027.api.commo" +
+      "n.OnlineStateB\010\372B\005\202\001\002\020\001\"s\n\027ApplyWorkerSt" +
+      "ateRequest\022,\n\013apply_state\030\001 \001(\0162\027.api.co" +
+      "mmon.OnlineState\022*\n\tnow_state\030\002 \001(\0162\027.ap" +
+      "i.common.OnlineState\"<\n\026WorkerTransferRe" +
+      "sponse\022\"\n\006worker\030\001 \001(\0132\022.api.common.Work" +
+      "er\"S\n\017PasswordRequest\022\037\n\014old_password\030\001 " +
+      "\001(\tB\t\372B\006r\004 \006(\024\022\037\n\014new_password\030\002 \001(\tB\t\372B" +
+      "\006r\004 \006(\024\"h\n\023QueryFronterRequest\022\034\n\004name\030\001" +
+      " \001(\tB\t\372B\006r\004\020\001\030\nH\000\210\001\001\022*\n\005batch\030\002 \001(\0132\021.ap" +
+      "i.common.BatchB\010\372B\005\212\001\002\020\001B\007\n\005_name\"P\n\024Que" +
+      "ryFronterResponse\022)\n\005items\030\001 \003(\0132\032.api.c" +
+      "ore.QueryFronterItem\022\r\n\005total\030\002 \001(\005\"f\n\020Q" +
+      "ueryFronterItem\022\014\n\004name\030\001 \001(\t\022\017\n\007account" +
+      "\030\002 \001(\t\022\r\n\005group\030\003 \003(\t\022\021\n\tisManager\030\004 \001(\010" +
+      "\022\021\n\tworker_id\030\005 \001(\005\"\212\002\n\020DataQueryRequest" +
+      "\022\"\n\nstart_time\030\001 \001(\tB\t\372B\006r\004\020\001\030@H\000\210\001\001\022 \n\010" +
+      "end_time\030\002 \001(\tB\t\372B\006r\004\020\001\030@H\001\210\001\001\022\020\n\010group_" +
+      "id\030\003 \003(\005\022D\n\017worker_identity\030\004 \001(\0162\034.api." +
+      "common.WorkerPermissionB\010\372B\005\202\001\002 \000H\002\210\001\001\022(" +
+      "\n\004page\030\005 \001(\0132\020.api.common.PageB\010\372B\005\212\001\002\020\001" +
+      "B\r\n\013_start_timeB\013\n\t_end_timeB\022\n\020_worker_" +
+      "identity\"\224\002\n\021DataQueryResponse\022%\n\004item\030\001" +
+      " \003(\0132\027.api.core.DataQueryItem\022\r\n\005total\030\002" +
+      " \001(\005\022\024\n\014count_player\030\003 \001(\005\022\022\n\nthree_rate" +
+      "\030\004 \001(\002\022\025\n\rresponse_time\030\005 \001(\002\022\023\n\013server_" +
+      "time\030\006 \001(\002\022\031\n\021count_online_time\030\007 \001(\002\022\024\n" +
+      "\014accepted_num\030\010 \001(\005\022\025\n\rtransfer_task\030\t \001" +
+      "(\005\022\023\n\013workerLimit\030\n \001(\005\022\026\n\016currentWorker" +
+      "s\030\013 \001(\005\"\225\002\n\rDataQueryItem\022\014\n\004name\030\001 \001(\t\022" +
+      "\021\n\tmatch_num\030\002 \001(\005\022\033\n\023three_response_rat" +
+      "e\030\003 \001(\t\022\026\n\016switching_task\030\004 \001(\005\022\031\n\021accep" +
+      "t_assignment\030\005 \001(\005\022\032\n\022corresponding_time" +
+      "\030\006 \001(\002\022\024\n\014belong_group\030\007 \003(\t\022\022\n\nfirst_li" +
+      "ne\030\010 \001(\010\022\022\n\nis_manager\030\t \001(\010\022\024\n\014average_" +
+      "time\030\n \001(\002\022#\n\033accumulated_online_duratio" +
+      "n\030\013 \001(\002\"g\n\032QuerySpecPermWorkerRequest\0228\n" +
+      "\004perm\030\001 \001(\0162\034.api.common.WorkerPermissio" +
+      "nB\014\372B\t\202\001\006\020\001\030\020\030@\022\017\n\007chat_id\030\002 \001(\003\"_\n\021Work" +
+      "erListByGroup\022&\n\005group\030\001 \001(\0132\027.api.commo" +
+      "n.WorkerGroup\022\"\n\006worker\030\002 \003(\0132\022.api.comm" +
+      "on.Worker\"J\n\033QuerySpecPermWorkerResponse" +
+      "\022+\n\006groups\030\001 \003(\0132\033.api.core.WorkerListBy" +
+      "Group\"3\n TryCleanupAssignedWorkerRespons" +
+      "e\022\017\n\007cleaned\030\001 \001(\010\"<\n\026UnfreezeSessionReq" +
+      "uest\022\017\n\007chat_id\030\001 \001(\003\022\021\n\tconsultid\030\002 \001(\005" +
+      "\"c\n\027UnfreezeSessionResponse\022$\n\005state\030\001 \001" +
+      "(\0162\025.api.common.ChatState\022\"\n\004chat\030\002 \001(\0132" +
+      "\024.api.common.ChatItem\"&\n\023QuerySessionReq" +
+      "uest\022\017\n\007chat_id\030\001 \001(\003\":\n\024QuerySessionRes" +
+      "ponse\022\"\n\004chat\030\001 \001(\0132\024.api.common.ChatIte" +
+      "m\"F\n\024NotifyMessageRequest\022\021\n\tconsultid\030\003" +
+      " \001(\005\022\016\n\006userid\030\004 \001(\005\022\013\n\003msg\030\005 \001(\t\"$\n\022Tra" +
+      "nsferMessageReq\022\016\n\006chatId\030\001 \001(\003\"i\n\010WithD" +
+      "raw\022\n\n\002id\030\001 \001(\003\022\017\n\007orderNo\030\002 \001(\t\022\016\n\006user" +
+      "id\030\003 \001(\003\022\r\n\005money\030\004 \001(\t\022\016\n\006status\030\005 \001(\003\022" +
+      "\021\n\tapplyTime\030\006 \001(\003\"6\n\022TransferMessageRsp" +
+      "\022 \n\004data\030\001 \003(\0132\022.api.core.WithDraw\",\n\030Qu" +
+      "eryChildByGroupRequest\022\020\n\010group_id\030\001 \001(\003" +
+      "\"C\n\031QueryChildByGroupResponse\022&\n\005group\030\001" +
+      " \003(\0132\027.api.common.WorkerGroup\"k\n\032GetAppl" +
+      "yWorkerStateListReq\022*\n\005batch\030\001 \001(\0132\021.api" +
+      ".common.BatchB\010\372B\005\212\001\002\020\001\022\014\n\004name\030\002 \001(\t\022\023\n" +
+      "\013apply_state\030\003 \001(\005\"Z\n\033GetApplyWorkerStat" +
+      "eListResp\022,\n\006applys\030\001 \003(\0132\034.api.common.A" +
+      "pplyWorkerState\022\r\n\005total\030\002 \001(\005\"w\n\033Sessio" +
+      "nCustomerQueryRequest\022*\n\005batch\030\001 \001(\0132\021.a" +
+      "pi.common.BatchB\010\372B\005\212\001\002\020\001\022\030\n\007keyword\030\002 \001" +
+      "(\tB\007\372B\004r\002\020\001\022\022\n\nconsult_id\030\003 \001(\r\"\226\001\n\017Sess" +
+      "ionCustomer\022\013\n\003uid\030\001 \001(\005\022\014\n\004name\030\002 \001(\t\022\016" +
+      "\n\006avatar\030\003 \001(\t\022\014\n\004nick\030\004 \001(\t\022\017\n\007chat_id\030" +
+      "\005 \001(\003\022\n\n\002ip\030\006 \001(\t\022-\n\tcreate_at\030\007 \001(\0132\032.g" +
+      "oogle.protobuf.Timestamp\"y\n\034SessionCusto" +
+      "merQueryResponse\022(\n\005items\030\001 \003(\0132\031.api.co" +
+      "re.SessionCustomer\022 \n\005batch\030\002 \001(\0132\021.api." +
+      "common.Batch\022\r\n\005total\030\003 \001(\005\"1\n\023CheckWork" +
+      "erStateReq\022\n\n\002id\030\001 \001(\003\022\016\n\006access\030\002 \001(\0102\240" +
+      "\034\n\006Worker\022i\n\tDataQuery\022\032.api.core.DataQu" +
+      "eryRequest\032\033.api.core.DataQueryResponse\"" +
+      "#\272\276\031\037\010\377\003\030\001\262\006\n2022-12-10\322\014\ndata-query\022u\n\014" +
+      "QueryFronter\022\035.api.core.QueryFronterRequ" +
+      "est\032\036.api.core.QueryFronterResponse\"&\272\276\031" +
+      "\"\010\364\003\030\001\262\006\n2022-12-10\322\014\rquery-fronted\022d\n\005Q" +
+      "uery\022\034.api.core.WorkerQueryRequest\032\035.api" +
+      ".core.WorkerQueryResponse\"\036\272\276\031\032\010\364\003\030\001\262\006\n2" +
+      "022-12-10\322\014\005query\022`\n\006Create\022\035.api.core.W" +
+      "orkerCreateRequest\032\026.google.protobuf.Emp" +
+      "ty\"\037\272\276\031\033\010\365\003\030\001\262\006\n2022-12-10\322\014\006create\022`\n\006U" +
+      "pdate\022\035.api.core.WorkerUpdateRequest\032\026.g" +
+      "oogle.protobuf.Empty\"\037\272\276\031\033\010\366\003\030\001\262\006\n2022-1" +
+      "2-10\322\014\006update\022`\n\006Delete\022\035.api.core.Worke" +
+      "rDeleteRequest\032\026.google.protobuf.Empty\"\037" +
+      "\272\276\031\033\010\367\003\030\001\262\006\n2022-12-10\322\014\006delete\022k\n\010Trans" +
+      "fer\022\037.api.core.WorkerTransferRequest\032\026.g" +
+      "oogle.protobuf.Empty\"&\272\276\031\"\010\370\003\030\001\262\006\n2022-1" +
+      "2-30\312\014\002\020\004\322\014\010transfer\022\226\001\n\020TransferConsult" +
+      "s\022\'.api.core.WorkerTransferConsultsReque" +
+      "st\032(.api.core.WorkerTransferConsultsResp" +
+      "onse\"/\272\276\031+\010\370\003\030\001\262\006\n2022-12-30\312\014\002\020\004\322\014\021tran" +
+      "sfer-Consults\022\207\001\n\017GetWorkerStatus\022 .api." +
+      "core.GetWorkerStatusRequest\032!.api.core.G" +
+      "etWorkerStatusResponse\"/\272\276\031+\010\371\003\030\001\262\006\n2022" +
+      "-12-30\312\014\002\020\004\322\014\021get-worker-status\022|\n\017SetWo" +
+      "rkerStatus\022 .api.core.SetWorkerStatusReq" +
+      "uest\032\026.google.protobuf.Empty\"/\272\276\031+\010\372\003\030\001\262" +
+      "\006\n2022-12-30\312\014\002\020\004\322\014\021set-worker-status\022\202\001" +
+      "\n\021CheckWorkerStatus\022\".api.core.CheckWork" +
+      "erStatusRequest\032\026.google.protobuf.Empty\"" +
+      "1\272\276\031-\010\373\003\030\001\262\006\n2022-12-30\312\014\002\020\004\322\014\023check-wor" +
+      "ker-status\022e\n\010Password\022\031.api.core.Passwo" +
+      "rdRequest\032\026.google.protobuf.Empty\"&\272\276\031\"\010" +
+      "\374\003\030\001\262\006\n2023-01-09\312\014\002\020\004\322\014\010password\022y\n\016Bla" +
+      "cklistApply\022\037.api.core.BlacklistApplyReq" +
+      "uest\032\026.google.protobuf.Empty\".\272\276\031*\010\375\003\030\001\262" +
+      "\006\n2023-01-10\312\014\002\020\004\322\014\020black-list-apply\022\177\n\020" +
+      "BlacklistConfirm\022!.api.core.BlacklistCon" +
+      "firmRequest\032\026.google.protobuf.Empty\"0\272\276\031" +
+      ",\010\376\003\030\001\262\006\n2023-01-10\312\014\002\020\004\322\014\022black-list-co" +
+      "nfirm\022\177\n\020BlacklistRecover\022!.api.core.Bla" +
+      "cklistRecoverRequest\032\026.google.protobuf.E" +
+      "mpty\"0\272\276\031,\010\377\003\030\001\262\006\n2023-01-28\312\014\002\020\004\322\014\022blac" +
+      "k-list-recover\022\207\001\n\013QueryByPerm\022$.api.cor" +
+      "e.QuerySpecPermWorkerRequest\032%.api.core." +
+      "QuerySpecPermWorkerResponse\"+\272\276\031\'\010\200\004\030\001\262\006" +
+      "\n2023-01-10\312\014\002\020\004\322\014\rquery-by-perm\022\231\001\n\030Try" +
+      "CleanupAssignedWorker\022\026.google.protobuf." +
+      "Empty\032*.api.core.TryCleanupAssignedWorke" +
+      "rResponse\"9\272\276\0315\010\201\004\030\001\262\006\n2023-02-09\312\014\002\001\004\322\014" +
+      "\033try-cleanup-assigned-worker\022p\n\tQuerySel" +
+      "f\022\026.google.protobuf.Empty\032!.api.core.Wor" +
+      "kerQuerySelfResponse\"(\272\276\031$\010\202\004\030\001\262\006\n2023-0" +
+      "3-04\312\014\002\020\004\322\014\nquery-self\022\205\001\n\017UnfreezeSessi" +
+      "on\022 .api.core.UnfreezeSessionRequest\032!.a" +
+      "pi.core.UnfreezeSessionResponse\"-\272\276\031)\010\203\004" +
+      "\030\001\262\006\n2023-04-19\312\014\001\004\322\014\020unfreeze-session\022z" +
+      "\n\014QuerySession\022\035.api.core.QuerySessionRe" +
+      "quest\032\036.api.core.QuerySessionResponse\"+\272" +
+      "\276\031\'\010\204\004\030\001\262\006\n2023-04-21\312\014\002\020\004\322\014\rquery-sessi" +
+      "on\022~\n\020CreateNimAccount\022\033.api.core.NIMAcc" +
+      "ountRequest\032\034.api.core.NIMAccountRespons" +
+      "e\"/\272\276\031+\010\204\004\030\001\262\006\n2023-11-06\312\014\002\020\004\322\014\021create-" +
+      "nimaccount\022u\n\rNotifyMessage\022\036.api.core.N" +
+      "otifyMessageRequest\032\026.google.protobuf.Em" +
+      "pty\",\272\276\031(\010\205\004\030\001\262\006\n2024-01-09\312\014\002\002\004\322\014\016notif" +
+      "y-message\022\203\001\n\022TransferWithDraWal\022\034.api.c" +
+      "ore.TransferMessageReq\032\034.api.core.Transf" +
+      "erMessageRsp\"1\272\276\031-\010\205\004\030\001\262\006\n2024-04-05\312\014\002\002" +
+      "\004\322\014\023transfer-withdrawal\022\215\001\n\021QueryChildBy" +
+      "Group\022\".api.core.QueryChildByGroupReques" +
+      "t\032#.api.core.QueryChildByGroupResponse\"/" +
+      "\272\276\031+\010\200\004\030\001\262\006\n2023-01-10\312\014\002\020\004\322\014\021query-grou" +
+      "p-child\022\207\001\n\rQueryCustomer\022%.api.core.Ses" +
+      "sionCustomerQueryRequest\032&.api.core.Sess" +
+      "ionCustomerQueryResponse\"\'\272\276\031#\010\201\004\030\001\262\006\n20" +
+      "24-05-10\322\014\016query-customer\022c\n\007Disable\022\036.a" +
+      "pi.core.WorkerDisableRequest\032\026.google.pr" +
+      "otobuf.Empty\" \272\276\031\034\010\202\004\030\001\262\006\n2024-05-24\322\014\007d" +
+      "isable\022r\n\020ApplyWorkerState\022!.api.core.Ap" +
+      "plyWorkerStateRequest\032\026.google.protobuf." +
+      "Empty\"#\272\276\031\037\010\203\004\030\001\312\014\002\020\004\322\014\022apply-worker-sta" +
+      "te\022\220\001\n\027GetApplyWorkerStateList\022$.api.cor" +
+      "e.GetApplyWorkerStateListReq\032%.api.core." +
+      "GetApplyWorkerStateListResp\"(\272\276\031$\010\204\004\030\001\312\014" +
+      "\002\020\004\322\014\027apply-worker-state-list\022n\n\020CheckWo" +
+      "rkerState\022\035.api.core.CheckWorkerStateReq" +
+      "\032\026.google.protobuf.Empty\"#\272\276\031\037\010\205\004\030\001\312\014\002\020\004" +
+      "\322\014\022check-worker-state\032\"\272\276\031\036\272\006\006worker\312\014\001\020" +
       "\322\014\016/tenant/workerBE\n\030com.teneasyChat.api" +
       ".coreZ\021wcs/api/core;core\272\276\031\024\242\006\004jeff\262\006\n20" +
       "22-12-06b\006proto3"
@@ -37949,222 +41303,252 @@ public final class WorkerOuterClass {
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_core_WorkerDeleteRequest_descriptor,
         new java.lang.String[] { "WorkerId", });
-    internal_static_api_core_WorkerTransferRequest_descriptor =
+    internal_static_api_core_WorkerDisableRequest_descriptor =
       getDescriptor().getMessageTypes().get(9);
+    internal_static_api_core_WorkerDisableRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_api_core_WorkerDisableRequest_descriptor,
+        new java.lang.String[] { "WorkerId", "DisableStatus", });
+    internal_static_api_core_WorkerTransferRequest_descriptor =
+      getDescriptor().getMessageTypes().get(10);
     internal_static_api_core_WorkerTransferRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_core_WorkerTransferRequest_descriptor,
         new java.lang.String[] { "ChatId", "WorkerId", "ConsultId", });
     internal_static_api_core_WorkerTransferConsultsRequest_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_api_core_WorkerTransferConsultsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_core_WorkerTransferConsultsRequest_descriptor,
         new java.lang.String[] { "ChatId", "Groupid", "ConsultId", });
     internal_static_api_core_WorkerTransferConsultsResponse_descriptor =
-      getDescriptor().getMessageTypes().get(11);
+      getDescriptor().getMessageTypes().get(12);
     internal_static_api_core_WorkerTransferConsultsResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_core_WorkerTransferConsultsResponse_descriptor,
         new java.lang.String[] { "Worker", });
     internal_static_api_core_BlacklistApplyRequest_descriptor =
-      getDescriptor().getMessageTypes().get(12);
+      getDescriptor().getMessageTypes().get(13);
     internal_static_api_core_BlacklistApplyRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_core_BlacklistApplyRequest_descriptor,
         new java.lang.String[] { "ChatId", "WorkerId", });
     internal_static_api_core_BlacklistConfirmRequest_descriptor =
-      getDescriptor().getMessageTypes().get(13);
+      getDescriptor().getMessageTypes().get(14);
     internal_static_api_core_BlacklistConfirmRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_core_BlacklistConfirmRequest_descriptor,
         new java.lang.String[] { "ChatId", });
     internal_static_api_core_BlacklistRecoverRequest_descriptor =
-      getDescriptor().getMessageTypes().get(14);
+      getDescriptor().getMessageTypes().get(15);
     internal_static_api_core_BlacklistRecoverRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_core_BlacklistRecoverRequest_descriptor,
         new java.lang.String[] { "ChatId", });
     internal_static_api_core_CheckWorkerStatusResponse_descriptor =
-      getDescriptor().getMessageTypes().get(15);
+      getDescriptor().getMessageTypes().get(16);
     internal_static_api_core_CheckWorkerStatusResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_core_CheckWorkerStatusResponse_descriptor,
         new java.lang.String[] { "Worker", });
     internal_static_api_core_CheckWorkerStatusRequest_descriptor =
-      getDescriptor().getMessageTypes().get(16);
+      getDescriptor().getMessageTypes().get(17);
     internal_static_api_core_CheckWorkerStatusRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_core_CheckWorkerStatusRequest_descriptor,
         new java.lang.String[] { "ConsultId", });
     internal_static_api_core_GetWorkerStatusRequest_descriptor =
-      getDescriptor().getMessageTypes().get(17);
+      getDescriptor().getMessageTypes().get(18);
     internal_static_api_core_GetWorkerStatusRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_core_GetWorkerStatusRequest_descriptor,
         new java.lang.String[] { "WorkerId", "ConnectState", "OnlineState", });
     internal_static_api_core_GetWorkerStatusResponse_descriptor =
-      getDescriptor().getMessageTypes().get(18);
+      getDescriptor().getMessageTypes().get(19);
     internal_static_api_core_GetWorkerStatusResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_core_GetWorkerStatusResponse_descriptor,
         new java.lang.String[] { "WorkerSession", });
     internal_static_api_core_SetWorkerStatusRequest_descriptor =
-      getDescriptor().getMessageTypes().get(19);
+      getDescriptor().getMessageTypes().get(20);
     internal_static_api_core_SetWorkerStatusRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_core_SetWorkerStatusRequest_descriptor,
         new java.lang.String[] { "OnlineState", });
+    internal_static_api_core_ApplyWorkerStateRequest_descriptor =
+      getDescriptor().getMessageTypes().get(21);
+    internal_static_api_core_ApplyWorkerStateRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_api_core_ApplyWorkerStateRequest_descriptor,
+        new java.lang.String[] { "ApplyState", "NowState", });
     internal_static_api_core_WorkerTransferResponse_descriptor =
-      getDescriptor().getMessageTypes().get(20);
+      getDescriptor().getMessageTypes().get(22);
     internal_static_api_core_WorkerTransferResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_core_WorkerTransferResponse_descriptor,
         new java.lang.String[] { "Worker", });
     internal_static_api_core_PasswordRequest_descriptor =
-      getDescriptor().getMessageTypes().get(21);
+      getDescriptor().getMessageTypes().get(23);
     internal_static_api_core_PasswordRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_core_PasswordRequest_descriptor,
         new java.lang.String[] { "OldPassword", "NewPassword", });
     internal_static_api_core_QueryFronterRequest_descriptor =
-      getDescriptor().getMessageTypes().get(22);
+      getDescriptor().getMessageTypes().get(24);
     internal_static_api_core_QueryFronterRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_core_QueryFronterRequest_descriptor,
         new java.lang.String[] { "Name", "Batch", });
     internal_static_api_core_QueryFronterResponse_descriptor =
-      getDescriptor().getMessageTypes().get(23);
+      getDescriptor().getMessageTypes().get(25);
     internal_static_api_core_QueryFronterResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_core_QueryFronterResponse_descriptor,
         new java.lang.String[] { "Items", "Total", });
     internal_static_api_core_QueryFronterItem_descriptor =
-      getDescriptor().getMessageTypes().get(24);
+      getDescriptor().getMessageTypes().get(26);
     internal_static_api_core_QueryFronterItem_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_core_QueryFronterItem_descriptor,
         new java.lang.String[] { "Name", "Account", "Group", "IsManager", "WorkerId", });
     internal_static_api_core_DataQueryRequest_descriptor =
-      getDescriptor().getMessageTypes().get(25);
+      getDescriptor().getMessageTypes().get(27);
     internal_static_api_core_DataQueryRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_core_DataQueryRequest_descriptor,
         new java.lang.String[] { "StartTime", "EndTime", "GroupId", "WorkerIdentity", "Page", });
     internal_static_api_core_DataQueryResponse_descriptor =
-      getDescriptor().getMessageTypes().get(26);
+      getDescriptor().getMessageTypes().get(28);
     internal_static_api_core_DataQueryResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_core_DataQueryResponse_descriptor,
         new java.lang.String[] { "Item", "Total", "CountPlayer", "ThreeRate", "ResponseTime", "ServerTime", "CountOnlineTime", "AcceptedNum", "TransferTask", "WorkerLimit", "CurrentWorkers", });
     internal_static_api_core_DataQueryItem_descriptor =
-      getDescriptor().getMessageTypes().get(27);
+      getDescriptor().getMessageTypes().get(29);
     internal_static_api_core_DataQueryItem_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_core_DataQueryItem_descriptor,
         new java.lang.String[] { "Name", "MatchNum", "ThreeResponseRate", "SwitchingTask", "AcceptAssignment", "CorrespondingTime", "BelongGroup", "FirstLine", "IsManager", "AverageTime", "AccumulatedOnlineDuration", });
     internal_static_api_core_QuerySpecPermWorkerRequest_descriptor =
-      getDescriptor().getMessageTypes().get(28);
+      getDescriptor().getMessageTypes().get(30);
     internal_static_api_core_QuerySpecPermWorkerRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_core_QuerySpecPermWorkerRequest_descriptor,
         new java.lang.String[] { "Perm", "ChatId", });
     internal_static_api_core_WorkerListByGroup_descriptor =
-      getDescriptor().getMessageTypes().get(29);
+      getDescriptor().getMessageTypes().get(31);
     internal_static_api_core_WorkerListByGroup_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_core_WorkerListByGroup_descriptor,
         new java.lang.String[] { "Group", "Worker", });
     internal_static_api_core_QuerySpecPermWorkerResponse_descriptor =
-      getDescriptor().getMessageTypes().get(30);
+      getDescriptor().getMessageTypes().get(32);
     internal_static_api_core_QuerySpecPermWorkerResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_core_QuerySpecPermWorkerResponse_descriptor,
         new java.lang.String[] { "Groups", });
     internal_static_api_core_TryCleanupAssignedWorkerResponse_descriptor =
-      getDescriptor().getMessageTypes().get(31);
+      getDescriptor().getMessageTypes().get(33);
     internal_static_api_core_TryCleanupAssignedWorkerResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_core_TryCleanupAssignedWorkerResponse_descriptor,
         new java.lang.String[] { "Cleaned", });
     internal_static_api_core_UnfreezeSessionRequest_descriptor =
-      getDescriptor().getMessageTypes().get(32);
+      getDescriptor().getMessageTypes().get(34);
     internal_static_api_core_UnfreezeSessionRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_core_UnfreezeSessionRequest_descriptor,
         new java.lang.String[] { "ChatId", "Consultid", });
     internal_static_api_core_UnfreezeSessionResponse_descriptor =
-      getDescriptor().getMessageTypes().get(33);
+      getDescriptor().getMessageTypes().get(35);
     internal_static_api_core_UnfreezeSessionResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_core_UnfreezeSessionResponse_descriptor,
         new java.lang.String[] { "State", "Chat", });
     internal_static_api_core_QuerySessionRequest_descriptor =
-      getDescriptor().getMessageTypes().get(34);
+      getDescriptor().getMessageTypes().get(36);
     internal_static_api_core_QuerySessionRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_core_QuerySessionRequest_descriptor,
         new java.lang.String[] { "ChatId", });
     internal_static_api_core_QuerySessionResponse_descriptor =
-      getDescriptor().getMessageTypes().get(35);
+      getDescriptor().getMessageTypes().get(37);
     internal_static_api_core_QuerySessionResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_core_QuerySessionResponse_descriptor,
         new java.lang.String[] { "Chat", });
     internal_static_api_core_NotifyMessageRequest_descriptor =
-      getDescriptor().getMessageTypes().get(36);
+      getDescriptor().getMessageTypes().get(38);
     internal_static_api_core_NotifyMessageRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_core_NotifyMessageRequest_descriptor,
         new java.lang.String[] { "Consultid", "Userid", "Msg", });
     internal_static_api_core_TransferMessageReq_descriptor =
-      getDescriptor().getMessageTypes().get(37);
+      getDescriptor().getMessageTypes().get(39);
     internal_static_api_core_TransferMessageReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_core_TransferMessageReq_descriptor,
         new java.lang.String[] { "ChatId", });
     internal_static_api_core_WithDraw_descriptor =
-      getDescriptor().getMessageTypes().get(38);
+      getDescriptor().getMessageTypes().get(40);
     internal_static_api_core_WithDraw_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_core_WithDraw_descriptor,
         new java.lang.String[] { "Id", "OrderNo", "Userid", "Money", "Status", "ApplyTime", });
     internal_static_api_core_TransferMessageRsp_descriptor =
-      getDescriptor().getMessageTypes().get(39);
+      getDescriptor().getMessageTypes().get(41);
     internal_static_api_core_TransferMessageRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_core_TransferMessageRsp_descriptor,
         new java.lang.String[] { "Data", });
     internal_static_api_core_QueryChildByGroupRequest_descriptor =
-      getDescriptor().getMessageTypes().get(40);
+      getDescriptor().getMessageTypes().get(42);
     internal_static_api_core_QueryChildByGroupRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_core_QueryChildByGroupRequest_descriptor,
         new java.lang.String[] { "GroupId", });
     internal_static_api_core_QueryChildByGroupResponse_descriptor =
-      getDescriptor().getMessageTypes().get(41);
+      getDescriptor().getMessageTypes().get(43);
     internal_static_api_core_QueryChildByGroupResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_core_QueryChildByGroupResponse_descriptor,
         new java.lang.String[] { "Group", });
+    internal_static_api_core_GetApplyWorkerStateListReq_descriptor =
+      getDescriptor().getMessageTypes().get(44);
+    internal_static_api_core_GetApplyWorkerStateListReq_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_api_core_GetApplyWorkerStateListReq_descriptor,
+        new java.lang.String[] { "Batch", "Name", "ApplyState", });
+    internal_static_api_core_GetApplyWorkerStateListResp_descriptor =
+      getDescriptor().getMessageTypes().get(45);
+    internal_static_api_core_GetApplyWorkerStateListResp_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_api_core_GetApplyWorkerStateListResp_descriptor,
+        new java.lang.String[] { "Applys", "Total", });
     internal_static_api_core_SessionCustomerQueryRequest_descriptor =
-      getDescriptor().getMessageTypes().get(42);
+      getDescriptor().getMessageTypes().get(46);
     internal_static_api_core_SessionCustomerQueryRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_core_SessionCustomerQueryRequest_descriptor,
         new java.lang.String[] { "Batch", "Keyword", "ConsultId", });
     internal_static_api_core_SessionCustomer_descriptor =
-      getDescriptor().getMessageTypes().get(43);
+      getDescriptor().getMessageTypes().get(47);
     internal_static_api_core_SessionCustomer_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_core_SessionCustomer_descriptor,
         new java.lang.String[] { "Uid", "Name", "Avatar", "Nick", "ChatId", "Ip", "CreateAt", });
     internal_static_api_core_SessionCustomerQueryResponse_descriptor =
-      getDescriptor().getMessageTypes().get(44);
+      getDescriptor().getMessageTypes().get(48);
     internal_static_api_core_SessionCustomerQueryResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_core_SessionCustomerQueryResponse_descriptor,
         new java.lang.String[] { "Items", "Batch", "Total", });
+    internal_static_api_core_CheckWorkerStateReq_descriptor =
+      getDescriptor().getMessageTypes().get(49);
+    internal_static_api_core_CheckWorkerStateReq_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_api_core_CheckWorkerStateReq_descriptor,
+        new java.lang.String[] { "Id", "Access", });
     descriptor.resolveAllFeaturesImmutable();
     com.google.protobuf.EmptyProto.getDescriptor();
     io.envoyproxy.pgv.validate.Validate.getDescriptor();

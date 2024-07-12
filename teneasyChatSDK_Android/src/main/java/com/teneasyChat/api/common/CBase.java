@@ -24,6 +24,152 @@ public final class CBase {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
+  /**
+   * <pre>
+   * 禁用/启用
+   * </pre>
+   *
+   * Protobuf enum {@code api.common.DisableStatus}
+   */
+  public enum DisableStatus
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>DEFAULT = 0;</code>
+     */
+    DEFAULT(0),
+    /**
+     * <pre>
+     * 启用
+     * </pre>
+     *
+     * <code>ENABLE = 1;</code>
+     */
+    ENABLE(1),
+    /**
+     * <pre>
+     * 禁用
+     * </pre>
+     *
+     * <code>DISABLE = 2;</code>
+     */
+    DISABLE(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 26,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        DisableStatus.class.getName());
+    }
+    /**
+     * <code>DEFAULT = 0;</code>
+     */
+    public static final int DEFAULT_VALUE = 0;
+    /**
+     * <pre>
+     * 启用
+     * </pre>
+     *
+     * <code>ENABLE = 1;</code>
+     */
+    public static final int ENABLE_VALUE = 1;
+    /**
+     * <pre>
+     * 禁用
+     * </pre>
+     *
+     * <code>DISABLE = 2;</code>
+     */
+    public static final int DISABLE_VALUE = 2;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static DisableStatus valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static DisableStatus forNumber(int value) {
+      switch (value) {
+        case 0: return DEFAULT;
+        case 1: return ENABLE;
+        case 2: return DISABLE;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<DisableStatus>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        DisableStatus> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<DisableStatus>() {
+            public DisableStatus findValueByNumber(int number) {
+              return DisableStatus.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return com.teneasyChat.api.common.CBase.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final DisableStatus[] VALUES = values();
+
+    public static DisableStatus valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private DisableStatus(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:api.common.DisableStatus)
+  }
+
   public interface BaseResponseOrBuilder extends
       // @@protoc_insertion_point(interface_extends:api.common.BaseResponse)
       com.google.protobuf.MessageOrBuilder {
@@ -6292,9 +6438,10 @@ public final class CBase {
       "*\n\010I64Entry\022\013\n\003key\030\001 \001(\003\022\r\n\005value\030\002 \001(\003:" +
       "\0028\001\"d\n\tSetString\022+\n\003str\030\001 \003(\0132\036.api.comm" +
       "on.SetString.StrEntry\032*\n\010StrEntry\022\013\n\003key" +
-      "\030\001 \001(\t\022\r\n\005value\030\002 \001(\003:\0028\001B<\n\032com.teneasy" +
-      "Chat.api.commonZ\025wcs/api/common;common\272\002" +
-      "\006Commonb\006proto3"
+      "\030\001 \001(\t\022\r\n\005value\030\002 \001(\003:\0028\001*5\n\rDisableStat" +
+      "us\022\013\n\007DEFAULT\020\000\022\n\n\006ENABLE\020\001\022\013\n\007DISABLE\020\002" +
+      "B<\n\032com.teneasyChat.api.commonZ\025wcs/api/" +
+      "common;common\272\002\006Commonb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

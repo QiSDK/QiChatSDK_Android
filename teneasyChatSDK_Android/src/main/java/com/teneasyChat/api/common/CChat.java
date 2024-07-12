@@ -3303,7 +3303,7 @@ public final class CChat {
 
     /**
      * <pre>
-     * 第一次服务时间
+     * 24小时未回复超时时间
      * </pre>
      *
      * <code>.google.protobuf.Timestamp service_at = 6;</code>
@@ -3312,7 +3312,7 @@ public final class CChat {
     boolean hasServiceAt();
     /**
      * <pre>
-     * 第一次服务时间
+     * 24小时未回复超时时间
      * </pre>
      *
      * <code>.google.protobuf.Timestamp service_at = 6;</code>
@@ -3321,12 +3321,39 @@ public final class CChat {
     com.google.protobuf.Timestamp getServiceAt();
     /**
      * <pre>
-     * 第一次服务时间
+     * 24小时未回复超时时间
      * </pre>
      *
      * <code>.google.protobuf.Timestamp service_at = 6;</code>
      */
     com.google.protobuf.TimestampOrBuilder getServiceAtOrBuilder();
+
+    /**
+     * <pre>
+     * 三分钟超时开始时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp begin_at = 10;</code>
+     * @return Whether the beginAt field is set.
+     */
+    boolean hasBeginAt();
+    /**
+     * <pre>
+     * 三分钟超时开始时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp begin_at = 10;</code>
+     * @return The beginAt.
+     */
+    com.google.protobuf.Timestamp getBeginAt();
+    /**
+     * <pre>
+     * 三分钟超时开始时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp begin_at = 10;</code>
+     */
+    com.google.protobuf.TimestampOrBuilder getBeginAtOrBuilder();
 
     /**
      * <pre>
@@ -3381,6 +3408,16 @@ public final class CChat {
      * <code>.google.protobuf.Timestamp reset_at = 8;</code>
      */
     com.google.protobuf.TimestampOrBuilder getResetAtOrBuilder();
+
+    /**
+     * <pre>
+     * 是否可见 （转出的已接待任务为不可见状态）
+     * </pre>
+     *
+     * <code>bool visible = 9;</code>
+     * @return The visible.
+     */
+    boolean getVisible();
   }
   /**
    * Protobuf type {@code api.common.ChatItem}
@@ -3529,7 +3566,7 @@ public final class CChat {
     private com.google.protobuf.Timestamp serviceAt_;
     /**
      * <pre>
-     * 第一次服务时间
+     * 24小时未回复超时时间
      * </pre>
      *
      * <code>.google.protobuf.Timestamp service_at = 6;</code>
@@ -3541,7 +3578,7 @@ public final class CChat {
     }
     /**
      * <pre>
-     * 第一次服务时间
+     * 24小时未回复超时时间
      * </pre>
      *
      * <code>.google.protobuf.Timestamp service_at = 6;</code>
@@ -3553,7 +3590,7 @@ public final class CChat {
     }
     /**
      * <pre>
-     * 第一次服务时间
+     * 24小时未回复超时时间
      * </pre>
      *
      * <code>.google.protobuf.Timestamp service_at = 6;</code>
@@ -3561,6 +3598,44 @@ public final class CChat {
     @java.lang.Override
     public com.google.protobuf.TimestampOrBuilder getServiceAtOrBuilder() {
       return serviceAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : serviceAt_;
+    }
+
+    public static final int BEGIN_AT_FIELD_NUMBER = 10;
+    private com.google.protobuf.Timestamp beginAt_;
+    /**
+     * <pre>
+     * 三分钟超时开始时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp begin_at = 10;</code>
+     * @return Whether the beginAt field is set.
+     */
+    @java.lang.Override
+    public boolean hasBeginAt() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+    /**
+     * <pre>
+     * 三分钟超时开始时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp begin_at = 10;</code>
+     * @return The beginAt.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Timestamp getBeginAt() {
+      return beginAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : beginAt_;
+    }
+    /**
+     * <pre>
+     * 三分钟超时开始时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp begin_at = 10;</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.TimestampOrBuilder getBeginAtOrBuilder() {
+      return beginAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : beginAt_;
     }
 
     public static final int DETAIL_FIELD_NUMBER = 7;
@@ -3575,7 +3650,7 @@ public final class CChat {
      */
     @java.lang.Override
     public boolean hasDetail() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      * <pre>
@@ -3613,7 +3688,7 @@ public final class CChat {
      */
     @java.lang.Override
     public boolean hasResetAt() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      * <pre>
@@ -3637,6 +3712,21 @@ public final class CChat {
     @java.lang.Override
     public com.google.protobuf.TimestampOrBuilder getResetAtOrBuilder() {
       return resetAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : resetAt_;
+    }
+
+    public static final int VISIBLE_FIELD_NUMBER = 9;
+    private boolean visible_ = false;
+    /**
+     * <pre>
+     * 是否可见 （转出的已接待任务为不可见状态）
+     * </pre>
+     *
+     * <code>bool visible = 9;</code>
+     * @return The visible.
+     */
+    @java.lang.Override
+    public boolean getVisible() {
+      return visible_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -3671,11 +3761,17 @@ public final class CChat {
       if (((bitField0_ & 0x00000004) != 0)) {
         output.writeMessage(6, getServiceAt());
       }
-      if (((bitField0_ & 0x00000008) != 0)) {
+      if (((bitField0_ & 0x00000010) != 0)) {
         output.writeMessage(7, getDetail());
       }
-      if (((bitField0_ & 0x00000010) != 0)) {
+      if (((bitField0_ & 0x00000020) != 0)) {
         output.writeMessage(8, getResetAt());
+      }
+      if (visible_ != false) {
+        output.writeBool(9, visible_);
+      }
+      if (((bitField0_ & 0x00000008) != 0)) {
+        output.writeMessage(10, getBeginAt());
       }
       getUnknownFields().writeTo(output);
     }
@@ -3710,13 +3806,21 @@ public final class CChat {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(6, getServiceAt());
       }
-      if (((bitField0_ & 0x00000008) != 0)) {
+      if (((bitField0_ & 0x00000010) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(7, getDetail());
       }
-      if (((bitField0_ & 0x00000010) != 0)) {
+      if (((bitField0_ & 0x00000020) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(8, getResetAt());
+      }
+      if (visible_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(9, visible_);
+      }
+      if (((bitField0_ & 0x00000008) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(10, getBeginAt());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -3753,6 +3857,11 @@ public final class CChat {
         if (!getServiceAt()
             .equals(other.getServiceAt())) return false;
       }
+      if (hasBeginAt() != other.hasBeginAt()) return false;
+      if (hasBeginAt()) {
+        if (!getBeginAt()
+            .equals(other.getBeginAt())) return false;
+      }
       if (hasDetail() != other.hasDetail()) return false;
       if (hasDetail()) {
         if (!getDetail()
@@ -3763,6 +3872,8 @@ public final class CChat {
         if (!getResetAt()
             .equals(other.getResetAt())) return false;
       }
+      if (getVisible()
+          != other.getVisible()) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -3793,6 +3904,10 @@ public final class CChat {
         hash = (37 * hash) + SERVICE_AT_FIELD_NUMBER;
         hash = (53 * hash) + getServiceAt().hashCode();
       }
+      if (hasBeginAt()) {
+        hash = (37 * hash) + BEGIN_AT_FIELD_NUMBER;
+        hash = (53 * hash) + getBeginAt().hashCode();
+      }
       if (hasDetail()) {
         hash = (37 * hash) + DETAIL_FIELD_NUMBER;
         hash = (53 * hash) + getDetail().hashCode();
@@ -3801,6 +3916,9 @@ public final class CChat {
         hash = (37 * hash) + RESET_AT_FIELD_NUMBER;
         hash = (53 * hash) + getResetAt().hashCode();
       }
+      hash = (37 * hash) + VISIBLE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getVisible());
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -3934,6 +4052,7 @@ public final class CChat {
           getLatestMsgFieldBuilder();
           getCreateAtFieldBuilder();
           getServiceAtFieldBuilder();
+          getBeginAtFieldBuilder();
           getDetailFieldBuilder();
           getResetAtFieldBuilder();
         }
@@ -3960,6 +4079,11 @@ public final class CChat {
           serviceAtBuilder_.dispose();
           serviceAtBuilder_ = null;
         }
+        beginAt_ = null;
+        if (beginAtBuilder_ != null) {
+          beginAtBuilder_.dispose();
+          beginAtBuilder_ = null;
+        }
         detail_ = null;
         if (detailBuilder_ != null) {
           detailBuilder_.dispose();
@@ -3970,6 +4094,7 @@ public final class CChat {
           resetAtBuilder_.dispose();
           resetAtBuilder_ = null;
         }
+        visible_ = false;
         return this;
       }
 
@@ -4032,16 +4157,25 @@ public final class CChat {
           to_bitField0_ |= 0x00000004;
         }
         if (((from_bitField0_ & 0x00000040) != 0)) {
-          result.detail_ = detailBuilder_ == null
-              ? detail_
-              : detailBuilder_.build();
+          result.beginAt_ = beginAtBuilder_ == null
+              ? beginAt_
+              : beginAtBuilder_.build();
           to_bitField0_ |= 0x00000008;
         }
         if (((from_bitField0_ & 0x00000080) != 0)) {
+          result.detail_ = detailBuilder_ == null
+              ? detail_
+              : detailBuilder_.build();
+          to_bitField0_ |= 0x00000010;
+        }
+        if (((from_bitField0_ & 0x00000100) != 0)) {
           result.resetAt_ = resetAtBuilder_ == null
               ? resetAt_
               : resetAtBuilder_.build();
-          to_bitField0_ |= 0x00000010;
+          to_bitField0_ |= 0x00000020;
+        }
+        if (((from_bitField0_ & 0x00000200) != 0)) {
+          result.visible_ = visible_;
         }
         result.bitField0_ |= to_bitField0_;
       }
@@ -4076,11 +4210,17 @@ public final class CChat {
         if (other.hasServiceAt()) {
           mergeServiceAt(other.getServiceAt());
         }
+        if (other.hasBeginAt()) {
+          mergeBeginAt(other.getBeginAt());
+        }
         if (other.hasDetail()) {
           mergeDetail(other.getDetail());
         }
         if (other.hasResetAt()) {
           mergeResetAt(other.getResetAt());
+        }
+        if (other.getVisible() != false) {
+          setVisible(other.getVisible());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -4148,16 +4288,28 @@ public final class CChat {
                 input.readMessage(
                     getDetailFieldBuilder().getBuilder(),
                     extensionRegistry);
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 58
               case 66: {
                 input.readMessage(
                     getResetAtFieldBuilder().getBuilder(),
                     extensionRegistry);
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 66
+              case 72: {
+                visible_ = input.readBool();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 72
+              case 82: {
+                input.readMessage(
+                    getBeginAtFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 82
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -4575,7 +4727,7 @@ public final class CChat {
           com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> serviceAtBuilder_;
       /**
        * <pre>
-       * 第一次服务时间
+       * 24小时未回复超时时间
        * </pre>
        *
        * <code>.google.protobuf.Timestamp service_at = 6;</code>
@@ -4586,7 +4738,7 @@ public final class CChat {
       }
       /**
        * <pre>
-       * 第一次服务时间
+       * 24小时未回复超时时间
        * </pre>
        *
        * <code>.google.protobuf.Timestamp service_at = 6;</code>
@@ -4601,7 +4753,7 @@ public final class CChat {
       }
       /**
        * <pre>
-       * 第一次服务时间
+       * 24小时未回复超时时间
        * </pre>
        *
        * <code>.google.protobuf.Timestamp service_at = 6;</code>
@@ -4621,7 +4773,7 @@ public final class CChat {
       }
       /**
        * <pre>
-       * 第一次服务时间
+       * 24小时未回复超时时间
        * </pre>
        *
        * <code>.google.protobuf.Timestamp service_at = 6;</code>
@@ -4639,7 +4791,7 @@ public final class CChat {
       }
       /**
        * <pre>
-       * 第一次服务时间
+       * 24小时未回复超时时间
        * </pre>
        *
        * <code>.google.protobuf.Timestamp service_at = 6;</code>
@@ -4664,7 +4816,7 @@ public final class CChat {
       }
       /**
        * <pre>
-       * 第一次服务时间
+       * 24小时未回复超时时间
        * </pre>
        *
        * <code>.google.protobuf.Timestamp service_at = 6;</code>
@@ -4681,7 +4833,7 @@ public final class CChat {
       }
       /**
        * <pre>
-       * 第一次服务时间
+       * 24小时未回复超时时间
        * </pre>
        *
        * <code>.google.protobuf.Timestamp service_at = 6;</code>
@@ -4693,7 +4845,7 @@ public final class CChat {
       }
       /**
        * <pre>
-       * 第一次服务时间
+       * 24小时未回复超时时间
        * </pre>
        *
        * <code>.google.protobuf.Timestamp service_at = 6;</code>
@@ -4708,7 +4860,7 @@ public final class CChat {
       }
       /**
        * <pre>
-       * 第一次服务时间
+       * 24小时未回复超时时间
        * </pre>
        *
        * <code>.google.protobuf.Timestamp service_at = 6;</code>
@@ -4727,6 +4879,163 @@ public final class CChat {
         return serviceAtBuilder_;
       }
 
+      private com.google.protobuf.Timestamp beginAt_;
+      private com.google.protobuf.SingleFieldBuilder<
+          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> beginAtBuilder_;
+      /**
+       * <pre>
+       * 三分钟超时开始时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp begin_at = 10;</code>
+       * @return Whether the beginAt field is set.
+       */
+      public boolean hasBeginAt() {
+        return ((bitField0_ & 0x00000040) != 0);
+      }
+      /**
+       * <pre>
+       * 三分钟超时开始时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp begin_at = 10;</code>
+       * @return The beginAt.
+       */
+      public com.google.protobuf.Timestamp getBeginAt() {
+        if (beginAtBuilder_ == null) {
+          return beginAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : beginAt_;
+        } else {
+          return beginAtBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * 三分钟超时开始时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp begin_at = 10;</code>
+       */
+      public Builder setBeginAt(com.google.protobuf.Timestamp value) {
+        if (beginAtBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          beginAt_ = value;
+        } else {
+          beginAtBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 三分钟超时开始时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp begin_at = 10;</code>
+       */
+      public Builder setBeginAt(
+          com.google.protobuf.Timestamp.Builder builderForValue) {
+        if (beginAtBuilder_ == null) {
+          beginAt_ = builderForValue.build();
+        } else {
+          beginAtBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 三分钟超时开始时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp begin_at = 10;</code>
+       */
+      public Builder mergeBeginAt(com.google.protobuf.Timestamp value) {
+        if (beginAtBuilder_ == null) {
+          if (((bitField0_ & 0x00000040) != 0) &&
+            beginAt_ != null &&
+            beginAt_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getBeginAtBuilder().mergeFrom(value);
+          } else {
+            beginAt_ = value;
+          }
+        } else {
+          beginAtBuilder_.mergeFrom(value);
+        }
+        if (beginAt_ != null) {
+          bitField0_ |= 0x00000040;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 三分钟超时开始时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp begin_at = 10;</code>
+       */
+      public Builder clearBeginAt() {
+        bitField0_ = (bitField0_ & ~0x00000040);
+        beginAt_ = null;
+        if (beginAtBuilder_ != null) {
+          beginAtBuilder_.dispose();
+          beginAtBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 三分钟超时开始时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp begin_at = 10;</code>
+       */
+      public com.google.protobuf.Timestamp.Builder getBeginAtBuilder() {
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return getBeginAtFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * 三分钟超时开始时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp begin_at = 10;</code>
+       */
+      public com.google.protobuf.TimestampOrBuilder getBeginAtOrBuilder() {
+        if (beginAtBuilder_ != null) {
+          return beginAtBuilder_.getMessageOrBuilder();
+        } else {
+          return beginAt_ == null ?
+              com.google.protobuf.Timestamp.getDefaultInstance() : beginAt_;
+        }
+      }
+      /**
+       * <pre>
+       * 三分钟超时开始时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp begin_at = 10;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+          getBeginAtFieldBuilder() {
+        if (beginAtBuilder_ == null) {
+          beginAtBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                  getBeginAt(),
+                  getParentForChildren(),
+                  isClean());
+          beginAt_ = null;
+        }
+        return beginAtBuilder_;
+      }
+
       private com.teneasyChat.api.common.CChat.ChatDetail detail_;
       private com.google.protobuf.SingleFieldBuilder<
           com.teneasyChat.api.common.CChat.ChatDetail, com.teneasyChat.api.common.CChat.ChatDetail.Builder, com.teneasyChat.api.common.CChat.ChatDetailOrBuilder> detailBuilder_;
@@ -4739,7 +5048,7 @@ public final class CChat {
        * @return Whether the detail field is set.
        */
       public boolean hasDetail() {
-        return ((bitField0_ & 0x00000040) != 0);
+        return ((bitField0_ & 0x00000080) != 0);
       }
       /**
        * <pre>
@@ -4772,7 +5081,7 @@ public final class CChat {
         } else {
           detailBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -4790,7 +5099,7 @@ public final class CChat {
         } else {
           detailBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -4803,7 +5112,7 @@ public final class CChat {
        */
       public Builder mergeDetail(com.teneasyChat.api.common.CChat.ChatDetail value) {
         if (detailBuilder_ == null) {
-          if (((bitField0_ & 0x00000040) != 0) &&
+          if (((bitField0_ & 0x00000080) != 0) &&
             detail_ != null &&
             detail_ != com.teneasyChat.api.common.CChat.ChatDetail.getDefaultInstance()) {
             getDetailBuilder().mergeFrom(value);
@@ -4814,7 +5123,7 @@ public final class CChat {
           detailBuilder_.mergeFrom(value);
         }
         if (detail_ != null) {
-          bitField0_ |= 0x00000040;
+          bitField0_ |= 0x00000080;
           onChanged();
         }
         return this;
@@ -4827,7 +5136,7 @@ public final class CChat {
        * <code>.api.common.ChatDetail detail = 7;</code>
        */
       public Builder clearDetail() {
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000080);
         detail_ = null;
         if (detailBuilder_ != null) {
           detailBuilder_.dispose();
@@ -4844,7 +5153,7 @@ public final class CChat {
        * <code>.api.common.ChatDetail detail = 7;</code>
        */
       public com.teneasyChat.api.common.CChat.ChatDetail.Builder getDetailBuilder() {
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
         return getDetailFieldBuilder().getBuilder();
       }
@@ -4896,7 +5205,7 @@ public final class CChat {
        * @return Whether the resetAt field is set.
        */
       public boolean hasResetAt() {
-        return ((bitField0_ & 0x00000080) != 0);
+        return ((bitField0_ & 0x00000100) != 0);
       }
       /**
        * <pre>
@@ -4929,7 +5238,7 @@ public final class CChat {
         } else {
           resetAtBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
@@ -4947,7 +5256,7 @@ public final class CChat {
         } else {
           resetAtBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
@@ -4960,7 +5269,7 @@ public final class CChat {
        */
       public Builder mergeResetAt(com.google.protobuf.Timestamp value) {
         if (resetAtBuilder_ == null) {
-          if (((bitField0_ & 0x00000080) != 0) &&
+          if (((bitField0_ & 0x00000100) != 0) &&
             resetAt_ != null &&
             resetAt_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
             getResetAtBuilder().mergeFrom(value);
@@ -4971,7 +5280,7 @@ public final class CChat {
           resetAtBuilder_.mergeFrom(value);
         }
         if (resetAt_ != null) {
-          bitField0_ |= 0x00000080;
+          bitField0_ |= 0x00000100;
           onChanged();
         }
         return this;
@@ -4984,7 +5293,7 @@ public final class CChat {
        * <code>.google.protobuf.Timestamp reset_at = 8;</code>
        */
       public Builder clearResetAt() {
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00000100);
         resetAt_ = null;
         if (resetAtBuilder_ != null) {
           resetAtBuilder_.dispose();
@@ -5001,7 +5310,7 @@ public final class CChat {
        * <code>.google.protobuf.Timestamp reset_at = 8;</code>
        */
       public com.google.protobuf.Timestamp.Builder getResetAtBuilder() {
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
         return getResetAtFieldBuilder().getBuilder();
       }
@@ -5039,6 +5348,50 @@ public final class CChat {
           resetAt_ = null;
         }
         return resetAtBuilder_;
+      }
+
+      private boolean visible_ ;
+      /**
+       * <pre>
+       * 是否可见 （转出的已接待任务为不可见状态）
+       * </pre>
+       *
+       * <code>bool visible = 9;</code>
+       * @return The visible.
+       */
+      @java.lang.Override
+      public boolean getVisible() {
+        return visible_;
+      }
+      /**
+       * <pre>
+       * 是否可见 （转出的已接待任务为不可见状态）
+       * </pre>
+       *
+       * <code>bool visible = 9;</code>
+       * @param value The visible to set.
+       * @return This builder for chaining.
+       */
+      public Builder setVisible(boolean value) {
+
+        visible_ = value;
+        bitField0_ |= 0x00000200;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 是否可见 （转出的已接待任务为不可见状态）
+       * </pre>
+       *
+       * <code>bool visible = 9;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearVisible() {
+        bitField0_ = (bitField0_ & ~0x00000200);
+        visible_ = false;
+        onChanged();
+        return this;
       }
 
       // @@protoc_insertion_point(builder_scope:api.common.ChatItem)
@@ -5125,17 +5478,18 @@ public final class CChat {
       "otobuf.Timestamp\022+\n\nowner_role\030\r \001(\0162\027.a" +
       "pi.common.MessageRole\022\024\n\007nimName\030\016 \001(\tH\000" +
       "\210\001\001\022\016\n\006userid\030\017 \001(\005\022$\n\005state\030\020 \001(\0162\025.api" +
-      ".common.ChatStateB\n\n\010_nimName\"\257\002\n\010ChatIt" +
+      ".common.ChatStateB\n\n\010_nimName\"\356\002\n\010ChatIt" +
       "em\022\017\n\007chat_id\030\001 \001(\003\022$\n\005state\030\002 \001(\0162\025.api" +
       ".common.ChatState\022\016\n\006unread\030\003 \001(\005\022\'\n\nlat" +
       "est_msg\030\004 \001(\0132\023.api.common.Message\022-\n\tcr" +
       "eate_at\030\005 \001(\0132\032.google.protobuf.Timestam" +
       "p\022.\n\nservice_at\030\006 \001(\0132\032.google.protobuf." +
-      "Timestamp\022&\n\006detail\030\007 \001(\0132\026.api.common.C" +
-      "hatDetail\022,\n\010reset_at\030\010 \001(\0132\032.google.pro" +
-      "tobuf.TimestampB<\n\032com.teneasyChat.api.c" +
-      "ommonZ\025wcs/api/common;common\272\002\006Commonb\006p" +
-      "roto3"
+      "Timestamp\022,\n\010begin_at\030\n \001(\0132\032.google.pro" +
+      "tobuf.Timestamp\022&\n\006detail\030\007 \001(\0132\026.api.co" +
+      "mmon.ChatDetail\022,\n\010reset_at\030\010 \001(\0132\032.goog" +
+      "le.protobuf.Timestamp\022\017\n\007visible\030\t \001(\010B<" +
+      "\n\032com.teneasyChat.api.commonZ\025wcs/api/co" +
+      "mmon;common\272\002\006Commonb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -5156,7 +5510,7 @@ public final class CChat {
     internal_static_api_common_ChatItem_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_common_ChatItem_descriptor,
-        new java.lang.String[] { "ChatId", "State", "Unread", "LatestMsg", "CreateAt", "ServiceAt", "Detail", "ResetAt", });
+        new java.lang.String[] { "ChatId", "State", "Unread", "LatestMsg", "CreateAt", "ServiceAt", "BeginAt", "Detail", "ResetAt", "Visible", });
     descriptor.resolveAllFeaturesImmutable();
     io.envoyproxy.pgv.validate.Validate.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();

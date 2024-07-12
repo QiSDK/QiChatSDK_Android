@@ -83,7 +83,7 @@ public final class Message {
      * 咨询id
      * </pre>
      *
-     * <code>uint32 consult_id = 6;</code>
+     * <code>uint32 consult_id = 6 [(.validate.rules) = { ... }</code>
      * @return The consultId.
      */
     int getConsultId();
@@ -217,7 +217,7 @@ public final class Message {
      * 咨询id
      * </pre>
      *
-     * <code>uint32 consult_id = 6;</code>
+     * <code>uint32 consult_id = 6 [(.validate.rules) = { ... }</code>
      * @return The consultId.
      */
     @java.lang.Override
@@ -900,7 +900,7 @@ public final class Message {
        * 咨询id
        * </pre>
        *
-       * <code>uint32 consult_id = 6;</code>
+       * <code>uint32 consult_id = 6 [(.validate.rules) = { ... }</code>
        * @return The consultId.
        */
       @java.lang.Override
@@ -912,7 +912,7 @@ public final class Message {
        * 咨询id
        * </pre>
        *
-       * <code>uint32 consult_id = 6;</code>
+       * <code>uint32 consult_id = 6 [(.validate.rules) = { ... }</code>
        * @param value The consultId to set.
        * @return This builder for chaining.
        */
@@ -928,7 +928,7 @@ public final class Message {
        * 咨询id
        * </pre>
        *
-       * <code>uint32 consult_id = 6;</code>
+       * <code>uint32 consult_id = 6 [(.validate.rules) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearConsultId() {
@@ -1129,6 +1129,50 @@ public final class Message {
      */
     com.google.protobuf.ByteString
         getNickBytes();
+
+    /**
+     * <pre>
+     * 历史回复消息
+     * </pre>
+     *
+     * <code>repeated .api.common.Message replyList = 5;</code>
+     */
+    java.util.List<com.teneasyChat.api.common.CMessage.Message> 
+        getReplyListList();
+    /**
+     * <pre>
+     * 历史回复消息
+     * </pre>
+     *
+     * <code>repeated .api.common.Message replyList = 5;</code>
+     */
+    com.teneasyChat.api.common.CMessage.Message getReplyList(int index);
+    /**
+     * <pre>
+     * 历史回复消息
+     * </pre>
+     *
+     * <code>repeated .api.common.Message replyList = 5;</code>
+     */
+    int getReplyListCount();
+    /**
+     * <pre>
+     * 历史回复消息
+     * </pre>
+     *
+     * <code>repeated .api.common.Message replyList = 5;</code>
+     */
+    java.util.List<? extends com.teneasyChat.api.common.CMessage.MessageOrBuilder> 
+        getReplyListOrBuilderList();
+    /**
+     * <pre>
+     * 历史回复消息
+     * </pre>
+     *
+     * <code>repeated .api.common.Message replyList = 5;</code>
+     */
+    com.teneasyChat.api.common.CMessage.MessageOrBuilder getReplyListOrBuilder(
+        int index);
   }
   /**
    * Protobuf type {@code api.core.MessageSyncResponse}
@@ -1154,6 +1198,7 @@ public final class Message {
     private MessageSyncResponse() {
       list_ = java.util.Collections.emptyList();
       nick_ = "";
+      replyList_ = java.util.Collections.emptyList();
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
@@ -1323,6 +1368,67 @@ public final class Message {
       }
     }
 
+    public static final int REPLYLIST_FIELD_NUMBER = 5;
+    @SuppressWarnings("serial")
+    private java.util.List<com.teneasyChat.api.common.CMessage.Message> replyList_;
+    /**
+     * <pre>
+     * 历史回复消息
+     * </pre>
+     *
+     * <code>repeated .api.common.Message replyList = 5;</code>
+     */
+    @java.lang.Override
+    public java.util.List<com.teneasyChat.api.common.CMessage.Message> getReplyListList() {
+      return replyList_;
+    }
+    /**
+     * <pre>
+     * 历史回复消息
+     * </pre>
+     *
+     * <code>repeated .api.common.Message replyList = 5;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends com.teneasyChat.api.common.CMessage.MessageOrBuilder> 
+        getReplyListOrBuilderList() {
+      return replyList_;
+    }
+    /**
+     * <pre>
+     * 历史回复消息
+     * </pre>
+     *
+     * <code>repeated .api.common.Message replyList = 5;</code>
+     */
+    @java.lang.Override
+    public int getReplyListCount() {
+      return replyList_.size();
+    }
+    /**
+     * <pre>
+     * 历史回复消息
+     * </pre>
+     *
+     * <code>repeated .api.common.Message replyList = 5;</code>
+     */
+    @java.lang.Override
+    public com.teneasyChat.api.common.CMessage.Message getReplyList(int index) {
+      return replyList_.get(index);
+    }
+    /**
+     * <pre>
+     * 历史回复消息
+     * </pre>
+     *
+     * <code>repeated .api.common.Message replyList = 5;</code>
+     */
+    @java.lang.Override
+    public com.teneasyChat.api.common.CMessage.MessageOrBuilder getReplyListOrBuilder(
+        int index) {
+      return replyList_.get(index);
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -1349,6 +1455,9 @@ public final class Message {
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(nick_)) {
         com.google.protobuf.GeneratedMessage.writeString(output, 4, nick_);
       }
+      for (int i = 0; i < replyList_.size(); i++) {
+        output.writeMessage(5, replyList_.get(i));
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -1372,6 +1481,10 @@ public final class Message {
       }
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(nick_)) {
         size += com.google.protobuf.GeneratedMessage.computeStringSize(4, nick_);
+      }
+      for (int i = 0; i < replyList_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(5, replyList_.get(i));
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -1399,6 +1512,8 @@ public final class Message {
           != other.getLastMsgId()) return false;
       if (!getNick()
           .equals(other.getNick())) return false;
+      if (!getReplyListList()
+          .equals(other.getReplyListList())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -1423,6 +1538,10 @@ public final class Message {
           getLastMsgId());
       hash = (37 * hash) + NICK_FIELD_NUMBER;
       hash = (53 * hash) + getNick().hashCode();
+      if (getReplyListCount() > 0) {
+        hash = (37 * hash) + REPLYLIST_FIELD_NUMBER;
+        hash = (53 * hash) + getReplyListList().hashCode();
+      }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1555,6 +1674,7 @@ public final class Message {
                 .alwaysUseFieldBuilders) {
           getRequestFieldBuilder();
           getListFieldBuilder();
+          getReplyListFieldBuilder();
         }
       }
       @java.lang.Override
@@ -1575,6 +1695,13 @@ public final class Message {
         bitField0_ = (bitField0_ & ~0x00000002);
         lastMsgId_ = 0L;
         nick_ = "";
+        if (replyListBuilder_ == null) {
+          replyList_ = java.util.Collections.emptyList();
+        } else {
+          replyList_ = null;
+          replyListBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000010);
         return this;
       }
 
@@ -1616,6 +1743,15 @@ public final class Message {
           result.list_ = list_;
         } else {
           result.list_ = listBuilder_.build();
+        }
+        if (replyListBuilder_ == null) {
+          if (((bitField0_ & 0x00000010) != 0)) {
+            replyList_ = java.util.Collections.unmodifiableList(replyList_);
+            bitField0_ = (bitField0_ & ~0x00000010);
+          }
+          result.replyList_ = replyList_;
+        } else {
+          result.replyList_ = replyListBuilder_.build();
         }
       }
 
@@ -1686,6 +1822,32 @@ public final class Message {
           bitField0_ |= 0x00000008;
           onChanged();
         }
+        if (replyListBuilder_ == null) {
+          if (!other.replyList_.isEmpty()) {
+            if (replyList_.isEmpty()) {
+              replyList_ = other.replyList_;
+              bitField0_ = (bitField0_ & ~0x00000010);
+            } else {
+              ensureReplyListIsMutable();
+              replyList_.addAll(other.replyList_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.replyList_.isEmpty()) {
+            if (replyListBuilder_.isEmpty()) {
+              replyListBuilder_.dispose();
+              replyListBuilder_ = null;
+              replyList_ = other.replyList_;
+              bitField0_ = (bitField0_ & ~0x00000010);
+              replyListBuilder_ = 
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
+                   getReplyListFieldBuilder() : null;
+            } else {
+              replyListBuilder_.addAllMessages(other.replyList_);
+            }
+          }
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -1742,6 +1904,19 @@ public final class Message {
                 bitField0_ |= 0x00000008;
                 break;
               } // case 34
+              case 42: {
+                com.teneasyChat.api.common.CMessage.Message m =
+                    input.readMessage(
+                        com.teneasyChat.api.common.CMessage.Message.parser(),
+                        extensionRegistry);
+                if (replyListBuilder_ == null) {
+                  ensureReplyListIsMutable();
+                  replyList_.add(m);
+                } else {
+                  replyListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 42
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -2342,6 +2517,318 @@ public final class Message {
         bitField0_ |= 0x00000008;
         onChanged();
         return this;
+      }
+
+      private java.util.List<com.teneasyChat.api.common.CMessage.Message> replyList_ =
+        java.util.Collections.emptyList();
+      private void ensureReplyListIsMutable() {
+        if (!((bitField0_ & 0x00000010) != 0)) {
+          replyList_ = new java.util.ArrayList<com.teneasyChat.api.common.CMessage.Message>(replyList_);
+          bitField0_ |= 0x00000010;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilder<
+          com.teneasyChat.api.common.CMessage.Message, com.teneasyChat.api.common.CMessage.Message.Builder, com.teneasyChat.api.common.CMessage.MessageOrBuilder> replyListBuilder_;
+
+      /**
+       * <pre>
+       * 历史回复消息
+       * </pre>
+       *
+       * <code>repeated .api.common.Message replyList = 5;</code>
+       */
+      public java.util.List<com.teneasyChat.api.common.CMessage.Message> getReplyListList() {
+        if (replyListBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(replyList_);
+        } else {
+          return replyListBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <pre>
+       * 历史回复消息
+       * </pre>
+       *
+       * <code>repeated .api.common.Message replyList = 5;</code>
+       */
+      public int getReplyListCount() {
+        if (replyListBuilder_ == null) {
+          return replyList_.size();
+        } else {
+          return replyListBuilder_.getCount();
+        }
+      }
+      /**
+       * <pre>
+       * 历史回复消息
+       * </pre>
+       *
+       * <code>repeated .api.common.Message replyList = 5;</code>
+       */
+      public com.teneasyChat.api.common.CMessage.Message getReplyList(int index) {
+        if (replyListBuilder_ == null) {
+          return replyList_.get(index);
+        } else {
+          return replyListBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       * 历史回复消息
+       * </pre>
+       *
+       * <code>repeated .api.common.Message replyList = 5;</code>
+       */
+      public Builder setReplyList(
+          int index, com.teneasyChat.api.common.CMessage.Message value) {
+        if (replyListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureReplyListIsMutable();
+          replyList_.set(index, value);
+          onChanged();
+        } else {
+          replyListBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 历史回复消息
+       * </pre>
+       *
+       * <code>repeated .api.common.Message replyList = 5;</code>
+       */
+      public Builder setReplyList(
+          int index, com.teneasyChat.api.common.CMessage.Message.Builder builderForValue) {
+        if (replyListBuilder_ == null) {
+          ensureReplyListIsMutable();
+          replyList_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          replyListBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 历史回复消息
+       * </pre>
+       *
+       * <code>repeated .api.common.Message replyList = 5;</code>
+       */
+      public Builder addReplyList(com.teneasyChat.api.common.CMessage.Message value) {
+        if (replyListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureReplyListIsMutable();
+          replyList_.add(value);
+          onChanged();
+        } else {
+          replyListBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 历史回复消息
+       * </pre>
+       *
+       * <code>repeated .api.common.Message replyList = 5;</code>
+       */
+      public Builder addReplyList(
+          int index, com.teneasyChat.api.common.CMessage.Message value) {
+        if (replyListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureReplyListIsMutable();
+          replyList_.add(index, value);
+          onChanged();
+        } else {
+          replyListBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 历史回复消息
+       * </pre>
+       *
+       * <code>repeated .api.common.Message replyList = 5;</code>
+       */
+      public Builder addReplyList(
+          com.teneasyChat.api.common.CMessage.Message.Builder builderForValue) {
+        if (replyListBuilder_ == null) {
+          ensureReplyListIsMutable();
+          replyList_.add(builderForValue.build());
+          onChanged();
+        } else {
+          replyListBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 历史回复消息
+       * </pre>
+       *
+       * <code>repeated .api.common.Message replyList = 5;</code>
+       */
+      public Builder addReplyList(
+          int index, com.teneasyChat.api.common.CMessage.Message.Builder builderForValue) {
+        if (replyListBuilder_ == null) {
+          ensureReplyListIsMutable();
+          replyList_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          replyListBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 历史回复消息
+       * </pre>
+       *
+       * <code>repeated .api.common.Message replyList = 5;</code>
+       */
+      public Builder addAllReplyList(
+          java.lang.Iterable<? extends com.teneasyChat.api.common.CMessage.Message> values) {
+        if (replyListBuilder_ == null) {
+          ensureReplyListIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, replyList_);
+          onChanged();
+        } else {
+          replyListBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 历史回复消息
+       * </pre>
+       *
+       * <code>repeated .api.common.Message replyList = 5;</code>
+       */
+      public Builder clearReplyList() {
+        if (replyListBuilder_ == null) {
+          replyList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000010);
+          onChanged();
+        } else {
+          replyListBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 历史回复消息
+       * </pre>
+       *
+       * <code>repeated .api.common.Message replyList = 5;</code>
+       */
+      public Builder removeReplyList(int index) {
+        if (replyListBuilder_ == null) {
+          ensureReplyListIsMutable();
+          replyList_.remove(index);
+          onChanged();
+        } else {
+          replyListBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 历史回复消息
+       * </pre>
+       *
+       * <code>repeated .api.common.Message replyList = 5;</code>
+       */
+      public com.teneasyChat.api.common.CMessage.Message.Builder getReplyListBuilder(
+          int index) {
+        return getReplyListFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * 历史回复消息
+       * </pre>
+       *
+       * <code>repeated .api.common.Message replyList = 5;</code>
+       */
+      public com.teneasyChat.api.common.CMessage.MessageOrBuilder getReplyListOrBuilder(
+          int index) {
+        if (replyListBuilder_ == null) {
+          return replyList_.get(index);  } else {
+          return replyListBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * 历史回复消息
+       * </pre>
+       *
+       * <code>repeated .api.common.Message replyList = 5;</code>
+       */
+      public java.util.List<? extends com.teneasyChat.api.common.CMessage.MessageOrBuilder> 
+           getReplyListOrBuilderList() {
+        if (replyListBuilder_ != null) {
+          return replyListBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(replyList_);
+        }
+      }
+      /**
+       * <pre>
+       * 历史回复消息
+       * </pre>
+       *
+       * <code>repeated .api.common.Message replyList = 5;</code>
+       */
+      public com.teneasyChat.api.common.CMessage.Message.Builder addReplyListBuilder() {
+        return getReplyListFieldBuilder().addBuilder(
+            com.teneasyChat.api.common.CMessage.Message.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * 历史回复消息
+       * </pre>
+       *
+       * <code>repeated .api.common.Message replyList = 5;</code>
+       */
+      public com.teneasyChat.api.common.CMessage.Message.Builder addReplyListBuilder(
+          int index) {
+        return getReplyListFieldBuilder().addBuilder(
+            index, com.teneasyChat.api.common.CMessage.Message.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * 历史回复消息
+       * </pre>
+       *
+       * <code>repeated .api.common.Message replyList = 5;</code>
+       */
+      public java.util.List<com.teneasyChat.api.common.CMessage.Message.Builder> 
+           getReplyListBuilderList() {
+        return getReplyListFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilder<
+          com.teneasyChat.api.common.CMessage.Message, com.teneasyChat.api.common.CMessage.Message.Builder, com.teneasyChat.api.common.CMessage.MessageOrBuilder> 
+          getReplyListFieldBuilder() {
+        if (replyListBuilder_ == null) {
+          replyListBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
+              com.teneasyChat.api.common.CMessage.Message, com.teneasyChat.api.common.CMessage.Message.Builder, com.teneasyChat.api.common.CMessage.MessageOrBuilder>(
+                  replyList_,
+                  ((bitField0_ & 0x00000010) != 0),
+                  getParentForChildren(),
+                  isClean());
+          replyList_ = null;
+        }
+        return replyListBuilder_;
       }
 
       // @@protoc_insertion_point(builder_scope:api.core.MessageSyncResponse)
@@ -3686,6 +4173,50 @@ public final class Message {
      */
     com.google.protobuf.ByteString
         getNickBytes();
+
+    /**
+     * <pre>
+     * 历史回复消息
+     * </pre>
+     *
+     * <code>repeated .api.common.Message replyList = 5;</code>
+     */
+    java.util.List<com.teneasyChat.api.common.CMessage.Message> 
+        getReplyListList();
+    /**
+     * <pre>
+     * 历史回复消息
+     * </pre>
+     *
+     * <code>repeated .api.common.Message replyList = 5;</code>
+     */
+    com.teneasyChat.api.common.CMessage.Message getReplyList(int index);
+    /**
+     * <pre>
+     * 历史回复消息
+     * </pre>
+     *
+     * <code>repeated .api.common.Message replyList = 5;</code>
+     */
+    int getReplyListCount();
+    /**
+     * <pre>
+     * 历史回复消息
+     * </pre>
+     *
+     * <code>repeated .api.common.Message replyList = 5;</code>
+     */
+    java.util.List<? extends com.teneasyChat.api.common.CMessage.MessageOrBuilder> 
+        getReplyListOrBuilderList();
+    /**
+     * <pre>
+     * 历史回复消息
+     * </pre>
+     *
+     * <code>repeated .api.common.Message replyList = 5;</code>
+     */
+    com.teneasyChat.api.common.CMessage.MessageOrBuilder getReplyListOrBuilder(
+        int index);
   }
   /**
    * Protobuf type {@code api.core.MessageSyncV2Response}
@@ -3711,6 +4242,7 @@ public final class Message {
     private MessageSyncV2Response() {
       list_ = java.util.Collections.emptyList();
       nick_ = "";
+      replyList_ = java.util.Collections.emptyList();
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
@@ -3880,6 +4412,67 @@ public final class Message {
       }
     }
 
+    public static final int REPLYLIST_FIELD_NUMBER = 5;
+    @SuppressWarnings("serial")
+    private java.util.List<com.teneasyChat.api.common.CMessage.Message> replyList_;
+    /**
+     * <pre>
+     * 历史回复消息
+     * </pre>
+     *
+     * <code>repeated .api.common.Message replyList = 5;</code>
+     */
+    @java.lang.Override
+    public java.util.List<com.teneasyChat.api.common.CMessage.Message> getReplyListList() {
+      return replyList_;
+    }
+    /**
+     * <pre>
+     * 历史回复消息
+     * </pre>
+     *
+     * <code>repeated .api.common.Message replyList = 5;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends com.teneasyChat.api.common.CMessage.MessageOrBuilder> 
+        getReplyListOrBuilderList() {
+      return replyList_;
+    }
+    /**
+     * <pre>
+     * 历史回复消息
+     * </pre>
+     *
+     * <code>repeated .api.common.Message replyList = 5;</code>
+     */
+    @java.lang.Override
+    public int getReplyListCount() {
+      return replyList_.size();
+    }
+    /**
+     * <pre>
+     * 历史回复消息
+     * </pre>
+     *
+     * <code>repeated .api.common.Message replyList = 5;</code>
+     */
+    @java.lang.Override
+    public com.teneasyChat.api.common.CMessage.Message getReplyList(int index) {
+      return replyList_.get(index);
+    }
+    /**
+     * <pre>
+     * 历史回复消息
+     * </pre>
+     *
+     * <code>repeated .api.common.Message replyList = 5;</code>
+     */
+    @java.lang.Override
+    public com.teneasyChat.api.common.CMessage.MessageOrBuilder getReplyListOrBuilder(
+        int index) {
+      return replyList_.get(index);
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -3906,6 +4499,9 @@ public final class Message {
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(nick_)) {
         com.google.protobuf.GeneratedMessage.writeString(output, 4, nick_);
       }
+      for (int i = 0; i < replyList_.size(); i++) {
+        output.writeMessage(5, replyList_.get(i));
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -3929,6 +4525,10 @@ public final class Message {
       }
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(nick_)) {
         size += com.google.protobuf.GeneratedMessage.computeStringSize(4, nick_);
+      }
+      for (int i = 0; i < replyList_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(5, replyList_.get(i));
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -3956,6 +4556,8 @@ public final class Message {
           != other.getLastMsgId()) return false;
       if (!getNick()
           .equals(other.getNick())) return false;
+      if (!getReplyListList()
+          .equals(other.getReplyListList())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -3980,6 +4582,10 @@ public final class Message {
           getLastMsgId());
       hash = (37 * hash) + NICK_FIELD_NUMBER;
       hash = (53 * hash) + getNick().hashCode();
+      if (getReplyListCount() > 0) {
+        hash = (37 * hash) + REPLYLIST_FIELD_NUMBER;
+        hash = (53 * hash) + getReplyListList().hashCode();
+      }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -4112,6 +4718,7 @@ public final class Message {
                 .alwaysUseFieldBuilders) {
           getRequestFieldBuilder();
           getListFieldBuilder();
+          getReplyListFieldBuilder();
         }
       }
       @java.lang.Override
@@ -4132,6 +4739,13 @@ public final class Message {
         bitField0_ = (bitField0_ & ~0x00000002);
         lastMsgId_ = 0L;
         nick_ = "";
+        if (replyListBuilder_ == null) {
+          replyList_ = java.util.Collections.emptyList();
+        } else {
+          replyList_ = null;
+          replyListBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000010);
         return this;
       }
 
@@ -4173,6 +4787,15 @@ public final class Message {
           result.list_ = list_;
         } else {
           result.list_ = listBuilder_.build();
+        }
+        if (replyListBuilder_ == null) {
+          if (((bitField0_ & 0x00000010) != 0)) {
+            replyList_ = java.util.Collections.unmodifiableList(replyList_);
+            bitField0_ = (bitField0_ & ~0x00000010);
+          }
+          result.replyList_ = replyList_;
+        } else {
+          result.replyList_ = replyListBuilder_.build();
         }
       }
 
@@ -4243,6 +4866,32 @@ public final class Message {
           bitField0_ |= 0x00000008;
           onChanged();
         }
+        if (replyListBuilder_ == null) {
+          if (!other.replyList_.isEmpty()) {
+            if (replyList_.isEmpty()) {
+              replyList_ = other.replyList_;
+              bitField0_ = (bitField0_ & ~0x00000010);
+            } else {
+              ensureReplyListIsMutable();
+              replyList_.addAll(other.replyList_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.replyList_.isEmpty()) {
+            if (replyListBuilder_.isEmpty()) {
+              replyListBuilder_.dispose();
+              replyListBuilder_ = null;
+              replyList_ = other.replyList_;
+              bitField0_ = (bitField0_ & ~0x00000010);
+              replyListBuilder_ = 
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
+                   getReplyListFieldBuilder() : null;
+            } else {
+              replyListBuilder_.addAllMessages(other.replyList_);
+            }
+          }
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -4299,6 +4948,19 @@ public final class Message {
                 bitField0_ |= 0x00000008;
                 break;
               } // case 34
+              case 42: {
+                com.teneasyChat.api.common.CMessage.Message m =
+                    input.readMessage(
+                        com.teneasyChat.api.common.CMessage.Message.parser(),
+                        extensionRegistry);
+                if (replyListBuilder_ == null) {
+                  ensureReplyListIsMutable();
+                  replyList_.add(m);
+                } else {
+                  replyListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 42
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -4899,6 +5561,318 @@ public final class Message {
         bitField0_ |= 0x00000008;
         onChanged();
         return this;
+      }
+
+      private java.util.List<com.teneasyChat.api.common.CMessage.Message> replyList_ =
+        java.util.Collections.emptyList();
+      private void ensureReplyListIsMutable() {
+        if (!((bitField0_ & 0x00000010) != 0)) {
+          replyList_ = new java.util.ArrayList<com.teneasyChat.api.common.CMessage.Message>(replyList_);
+          bitField0_ |= 0x00000010;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilder<
+          com.teneasyChat.api.common.CMessage.Message, com.teneasyChat.api.common.CMessage.Message.Builder, com.teneasyChat.api.common.CMessage.MessageOrBuilder> replyListBuilder_;
+
+      /**
+       * <pre>
+       * 历史回复消息
+       * </pre>
+       *
+       * <code>repeated .api.common.Message replyList = 5;</code>
+       */
+      public java.util.List<com.teneasyChat.api.common.CMessage.Message> getReplyListList() {
+        if (replyListBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(replyList_);
+        } else {
+          return replyListBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <pre>
+       * 历史回复消息
+       * </pre>
+       *
+       * <code>repeated .api.common.Message replyList = 5;</code>
+       */
+      public int getReplyListCount() {
+        if (replyListBuilder_ == null) {
+          return replyList_.size();
+        } else {
+          return replyListBuilder_.getCount();
+        }
+      }
+      /**
+       * <pre>
+       * 历史回复消息
+       * </pre>
+       *
+       * <code>repeated .api.common.Message replyList = 5;</code>
+       */
+      public com.teneasyChat.api.common.CMessage.Message getReplyList(int index) {
+        if (replyListBuilder_ == null) {
+          return replyList_.get(index);
+        } else {
+          return replyListBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       * 历史回复消息
+       * </pre>
+       *
+       * <code>repeated .api.common.Message replyList = 5;</code>
+       */
+      public Builder setReplyList(
+          int index, com.teneasyChat.api.common.CMessage.Message value) {
+        if (replyListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureReplyListIsMutable();
+          replyList_.set(index, value);
+          onChanged();
+        } else {
+          replyListBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 历史回复消息
+       * </pre>
+       *
+       * <code>repeated .api.common.Message replyList = 5;</code>
+       */
+      public Builder setReplyList(
+          int index, com.teneasyChat.api.common.CMessage.Message.Builder builderForValue) {
+        if (replyListBuilder_ == null) {
+          ensureReplyListIsMutable();
+          replyList_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          replyListBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 历史回复消息
+       * </pre>
+       *
+       * <code>repeated .api.common.Message replyList = 5;</code>
+       */
+      public Builder addReplyList(com.teneasyChat.api.common.CMessage.Message value) {
+        if (replyListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureReplyListIsMutable();
+          replyList_.add(value);
+          onChanged();
+        } else {
+          replyListBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 历史回复消息
+       * </pre>
+       *
+       * <code>repeated .api.common.Message replyList = 5;</code>
+       */
+      public Builder addReplyList(
+          int index, com.teneasyChat.api.common.CMessage.Message value) {
+        if (replyListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureReplyListIsMutable();
+          replyList_.add(index, value);
+          onChanged();
+        } else {
+          replyListBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 历史回复消息
+       * </pre>
+       *
+       * <code>repeated .api.common.Message replyList = 5;</code>
+       */
+      public Builder addReplyList(
+          com.teneasyChat.api.common.CMessage.Message.Builder builderForValue) {
+        if (replyListBuilder_ == null) {
+          ensureReplyListIsMutable();
+          replyList_.add(builderForValue.build());
+          onChanged();
+        } else {
+          replyListBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 历史回复消息
+       * </pre>
+       *
+       * <code>repeated .api.common.Message replyList = 5;</code>
+       */
+      public Builder addReplyList(
+          int index, com.teneasyChat.api.common.CMessage.Message.Builder builderForValue) {
+        if (replyListBuilder_ == null) {
+          ensureReplyListIsMutable();
+          replyList_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          replyListBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 历史回复消息
+       * </pre>
+       *
+       * <code>repeated .api.common.Message replyList = 5;</code>
+       */
+      public Builder addAllReplyList(
+          java.lang.Iterable<? extends com.teneasyChat.api.common.CMessage.Message> values) {
+        if (replyListBuilder_ == null) {
+          ensureReplyListIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, replyList_);
+          onChanged();
+        } else {
+          replyListBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 历史回复消息
+       * </pre>
+       *
+       * <code>repeated .api.common.Message replyList = 5;</code>
+       */
+      public Builder clearReplyList() {
+        if (replyListBuilder_ == null) {
+          replyList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000010);
+          onChanged();
+        } else {
+          replyListBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 历史回复消息
+       * </pre>
+       *
+       * <code>repeated .api.common.Message replyList = 5;</code>
+       */
+      public Builder removeReplyList(int index) {
+        if (replyListBuilder_ == null) {
+          ensureReplyListIsMutable();
+          replyList_.remove(index);
+          onChanged();
+        } else {
+          replyListBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 历史回复消息
+       * </pre>
+       *
+       * <code>repeated .api.common.Message replyList = 5;</code>
+       */
+      public com.teneasyChat.api.common.CMessage.Message.Builder getReplyListBuilder(
+          int index) {
+        return getReplyListFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * 历史回复消息
+       * </pre>
+       *
+       * <code>repeated .api.common.Message replyList = 5;</code>
+       */
+      public com.teneasyChat.api.common.CMessage.MessageOrBuilder getReplyListOrBuilder(
+          int index) {
+        if (replyListBuilder_ == null) {
+          return replyList_.get(index);  } else {
+          return replyListBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * 历史回复消息
+       * </pre>
+       *
+       * <code>repeated .api.common.Message replyList = 5;</code>
+       */
+      public java.util.List<? extends com.teneasyChat.api.common.CMessage.MessageOrBuilder> 
+           getReplyListOrBuilderList() {
+        if (replyListBuilder_ != null) {
+          return replyListBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(replyList_);
+        }
+      }
+      /**
+       * <pre>
+       * 历史回复消息
+       * </pre>
+       *
+       * <code>repeated .api.common.Message replyList = 5;</code>
+       */
+      public com.teneasyChat.api.common.CMessage.Message.Builder addReplyListBuilder() {
+        return getReplyListFieldBuilder().addBuilder(
+            com.teneasyChat.api.common.CMessage.Message.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * 历史回复消息
+       * </pre>
+       *
+       * <code>repeated .api.common.Message replyList = 5;</code>
+       */
+      public com.teneasyChat.api.common.CMessage.Message.Builder addReplyListBuilder(
+          int index) {
+        return getReplyListFieldBuilder().addBuilder(
+            index, com.teneasyChat.api.common.CMessage.Message.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * 历史回复消息
+       * </pre>
+       *
+       * <code>repeated .api.common.Message replyList = 5;</code>
+       */
+      public java.util.List<com.teneasyChat.api.common.CMessage.Message.Builder> 
+           getReplyListBuilderList() {
+        return getReplyListFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilder<
+          com.teneasyChat.api.common.CMessage.Message, com.teneasyChat.api.common.CMessage.Message.Builder, com.teneasyChat.api.common.CMessage.MessageOrBuilder> 
+          getReplyListFieldBuilder() {
+        if (replyListBuilder_ == null) {
+          replyListBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
+              com.teneasyChat.api.common.CMessage.Message, com.teneasyChat.api.common.CMessage.Message.Builder, com.teneasyChat.api.common.CMessage.MessageOrBuilder>(
+                  replyList_,
+                  ((bitField0_ & 0x00000010) != 0),
+                  getParentForChildren(),
+                  isClean());
+          replyList_ = null;
+        }
+        return replyListBuilder_;
       }
 
       // @@protoc_insertion_point(builder_scope:api.core.MessageSyncV2Response)
@@ -11113,63 +12087,65 @@ com.teneasyChat.api.common.CChat.ChatDetail defaultValue) {
       "oogle/protobuf/empty.proto\032\037google/proto" +
       "buf/timestamp.proto\032\032api/common/c_messag" +
       "e.proto\032\027api/common/c_chat.proto\032\024api/co" +
-      "re/front.proto\"\237\001\n\022MessageSyncRequest\022\017\n" +
+      "re/front.proto\"\250\001\n\022MessageSyncRequest\022\017\n" +
       "\007chat_id\030\001 \001(\003\022\016\n\006msg_id\030\002 \001(\003\022\031\n\005count\030" +
       "\003 \001(\005B\n\372B\007\032\005\030\364\003 \000\022\025\n\rwith_last_one\030\004 \001(\010" +
-      "\022\021\n\tworker_id\030\005 \001(\005\022\022\n\nconsult_id\030\006 \001(\r\022" +
-      "\017\n\007user_id\030\007 \001(\005\"\212\001\n\023MessageSyncResponse" +
-      "\022-\n\007request\030\001 \001(\0132\034.api.core.MessageSync" +
-      "Request\022!\n\004list\030\002 \003(\0132\023.api.common.Messa" +
-      "ge\022\023\n\013last_msg_id\030\003 \001(\003\022\014\n\004nick\030\004 \001(\t\"\325\001" +
-      "\n\024MessageSyncV2Request\022\017\n\007chat_id\030\001 \001(\003\022" +
-      "\016\n\006msg_id\030\002 \001(\003\022\031\n\005count\030\003 \001(\005B\n\372B\007\032\005\030\364\003" +
-      " \000\022\025\n\rwith_last_one\030\004 \001(\010\022\021\n\tworker_id\030\005" +
-      " \001(\005\022\022\n\nconsult_id\030\006 \001(\r\022\017\n\007user_id\030\007 \001(" +
-      "\005\022\031\n\010start_at\030\010 \001(\003B\007\372B\004\"\002 \000\022\027\n\006end_at\030\t" +
-      " \001(\003B\007\372B\004\"\002 \000\"\216\001\n\025MessageSyncV2Response\022" +
-      "/\n\007request\030\001 \001(\0132\036.api.core.MessageSyncV" +
-      "2Request\022!\n\004list\030\002 \003(\0132\023.api.common.Mess" +
-      "age\022\023\n\013last_msg_id\030\003 \001(\003\022\014\n\004nick\030\004 \001(\t\"\307" +
-      "\001\n\024MessageSearchRequest\022\037\n\007content\030\001 \001(\t" +
-      "B\016\372B\013r\t\020\002\030\200\002\272\001\001%\022\017\n\007chat_id\030\002 \001(\003\022\016\n\006msg" +
-      "_id\030\003 \001(\003\022)\n\005start\030\004 \001(\0132\032.google.protob" +
-      "uf.Timestamp\022\'\n\003end\030\005 \001(\0132\032.google.proto" +
-      "buf.Timestamp\022\031\n\005count\030\006 \001(\005B\n\372B\007\032\005\030\200\010 \000" +
-      "\"\204\002\n\025MessageSearchResponse\022/\n\007request\030\001 " +
-      "\001(\0132\036.api.core.MessageSearchRequest\022!\n\004l" +
-      "ist\030\002 \003(\0132\023.api.common.Message\022\023\n\013last_m" +
-      "sg_id\030\003 \001(\003\022;\n\006detail\030\004 \003(\0132+.api.core.M" +
-      "essageSearchResponse.DetailEntry\032E\n\013Deta" +
-      "ilEntry\022\013\n\003key\030\001 \001(\003\022%\n\005value\030\002 \001(\0132\026.ap" +
-      "i.common.ChatDetail:\0028\001\"H\n\023QuerySpecMsgR" +
-      "equest\022\030\n\007chat_id\030\001 \001(\003B\007\372B\004\"\002 \000\022\027\n\006msg_" +
-      "id\030\002 \001(\003B\007\372B\004\"\002 \000\"8\n\024QuerySpecMsgRespons" +
-      "e\022 \n\003msg\030\001 \001(\0132\023.api.common.Message\"j\n\020Q" +
-      "uerySyncRequest\022\017\n\007chat_id\030\002 \001(\003\022\016\n\006msg_" +
-      "id\030\003 \001(\003\022\r\n\005start\030\004 \001(\003\022\013\n\003end\030\005 \001(\003\022\031\n\005" +
-      "count\030\006 \001(\005B\n\372B\007\032\005\030\200\010 \000\"x\n\021QuerySyncResp" +
-      "onse\022+\n\007request\030\001 \001(\0132\032.api.core.QuerySy" +
-      "ncRequest\022!\n\004list\030\002 \003(\0132\023.api.common.Mes" +
-      "sage\022\023\n\013last_msg_id\030\003 \001(\0032\220\001\n\024MessageCli" +
-      "entService\022U\n\004sync\022\034.api.core.MessageSyn" +
-      "cRequest\032\035.api.core.MessageSyncResponse\"" +
-      "\020\272\276\031\014\010\314\010\030\001\322\014\004sync\032!\272\276\031\035\272\006\007message\312\014\002\001\004\322\014" +
-      "\013api/message2\223\004\n\024MessageTenantService\022U\n" +
-      "\004sync\022\034.api.core.MessageSyncRequest\032\035.ap" +
-      "i.core.MessageSyncResponse\"\020\272\276\031\014\010\315\010\030\001\322\014\004" +
-      "sync\022]\n\006syncV2\022\036.api.core.MessageSyncV2R" +
-      "equest\032\037.api.core.MessageSyncV2Response\"" +
-      "\022\272\276\031\016\010\321\010\030\001\322\014\006syncv2\022]\n\006search\022\036.api.core" +
-      ".MessageSearchRequest\032\037.api.core.Message" +
-      "SearchResponse\"\022\272\276\031\016\010\316\010\030\001\322\014\006search\022b\n\tQu" +
-      "erySpec\022\035.api.core.QuerySpecMsgRequest\032\036" +
-      ".api.core.QuerySpecMsgResponse\"\026\272\276\031\022\010\317\010\030" +
-      "\001\322\014\nquery-spec\022\\\n\tQuerySync\022\032.api.core.Q" +
-      "uerySyncRequest\032\033.api.core.QuerySyncResp" +
-      "onse\"\026\272\276\031\022\010\320\010\030\001\322\014\nquery-sync\032$\272\276\031 \272\006\007mes" +
-      "sage\312\014\002\020\004\322\014\016tenant/messageBG\n\030com.teneas" +
-      "yChat.api.coreZ\021wcs/api/core;core\272\276\031\026\242\006\006" +
-      "calvin\262\006\n2022-12-30b\006proto3"
+      "\022\021\n\tworker_id\030\005 \001(\005\022\033\n\nconsult_id\030\006 \001(\rB" +
+      "\007\372B\004*\002 \000\022\017\n\007user_id\030\007 \001(\005\"\262\001\n\023MessageSyn" +
+      "cResponse\022-\n\007request\030\001 \001(\0132\034.api.core.Me" +
+      "ssageSyncRequest\022!\n\004list\030\002 \003(\0132\023.api.com" +
+      "mon.Message\022\023\n\013last_msg_id\030\003 \001(\003\022\014\n\004nick" +
+      "\030\004 \001(\t\022&\n\treplyList\030\005 \003(\0132\023.api.common.M" +
+      "essage\"\325\001\n\024MessageSyncV2Request\022\017\n\007chat_" +
+      "id\030\001 \001(\003\022\016\n\006msg_id\030\002 \001(\003\022\031\n\005count\030\003 \001(\005B" +
+      "\n\372B\007\032\005\030\364\003 \000\022\025\n\rwith_last_one\030\004 \001(\010\022\021\n\two" +
+      "rker_id\030\005 \001(\005\022\022\n\nconsult_id\030\006 \001(\r\022\017\n\007use" +
+      "r_id\030\007 \001(\005\022\031\n\010start_at\030\010 \001(\003B\007\372B\004\"\002 \000\022\027\n" +
+      "\006end_at\030\t \001(\003B\007\372B\004\"\002 \000\"\266\001\n\025MessageSyncV2" +
+      "Response\022/\n\007request\030\001 \001(\0132\036.api.core.Mes" +
+      "sageSyncV2Request\022!\n\004list\030\002 \003(\0132\023.api.co" +
+      "mmon.Message\022\023\n\013last_msg_id\030\003 \001(\003\022\014\n\004nic" +
+      "k\030\004 \001(\t\022&\n\treplyList\030\005 \003(\0132\023.api.common." +
+      "Message\"\307\001\n\024MessageSearchRequest\022\037\n\007cont" +
+      "ent\030\001 \001(\tB\016\372B\013r\t\020\002\030\200\002\272\001\001%\022\017\n\007chat_id\030\002 \001" +
+      "(\003\022\016\n\006msg_id\030\003 \001(\003\022)\n\005start\030\004 \001(\0132\032.goog" +
+      "le.protobuf.Timestamp\022\'\n\003end\030\005 \001(\0132\032.goo" +
+      "gle.protobuf.Timestamp\022\031\n\005count\030\006 \001(\005B\n\372" +
+      "B\007\032\005\030\200\010 \000\"\204\002\n\025MessageSearchResponse\022/\n\007r" +
+      "equest\030\001 \001(\0132\036.api.core.MessageSearchReq" +
+      "uest\022!\n\004list\030\002 \003(\0132\023.api.common.Message\022" +
+      "\023\n\013last_msg_id\030\003 \001(\003\022;\n\006detail\030\004 \003(\0132+.a" +
+      "pi.core.MessageSearchResponse.DetailEntr" +
+      "y\032E\n\013DetailEntry\022\013\n\003key\030\001 \001(\003\022%\n\005value\030\002" +
+      " \001(\0132\026.api.common.ChatDetail:\0028\001\"H\n\023Quer" +
+      "ySpecMsgRequest\022\030\n\007chat_id\030\001 \001(\003B\007\372B\004\"\002 " +
+      "\000\022\027\n\006msg_id\030\002 \001(\003B\007\372B\004\"\002 \000\"8\n\024QuerySpecM" +
+      "sgResponse\022 \n\003msg\030\001 \001(\0132\023.api.common.Mes" +
+      "sage\"j\n\020QuerySyncRequest\022\017\n\007chat_id\030\002 \001(" +
+      "\003\022\016\n\006msg_id\030\003 \001(\003\022\r\n\005start\030\004 \001(\003\022\013\n\003end\030" +
+      "\005 \001(\003\022\031\n\005count\030\006 \001(\005B\n\372B\007\032\005\030\200\010 \000\"x\n\021Quer" +
+      "ySyncResponse\022+\n\007request\030\001 \001(\0132\032.api.cor" +
+      "e.QuerySyncRequest\022!\n\004list\030\002 \003(\0132\023.api.c" +
+      "ommon.Message\022\023\n\013last_msg_id\030\003 \001(\0032\220\001\n\024M" +
+      "essageClientService\022U\n\004sync\022\034.api.core.M" +
+      "essageSyncRequest\032\035.api.core.MessageSync" +
+      "Response\"\020\272\276\031\014\010\314\010\030\001\322\014\004sync\032!\272\276\031\035\272\006\007messa" +
+      "ge\312\014\002\001\004\322\014\013api/message2\223\004\n\024MessageTenantS" +
+      "ervice\022U\n\004sync\022\034.api.core.MessageSyncReq" +
+      "uest\032\035.api.core.MessageSyncResponse\"\020\272\276\031" +
+      "\014\010\315\010\030\001\322\014\004sync\022]\n\006syncV2\022\036.api.core.Messa" +
+      "geSyncV2Request\032\037.api.core.MessageSyncV2" +
+      "Response\"\022\272\276\031\016\010\321\010\030\001\322\014\006syncv2\022]\n\006search\022\036" +
+      ".api.core.MessageSearchRequest\032\037.api.cor" +
+      "e.MessageSearchResponse\"\022\272\276\031\016\010\316\010\030\001\322\014\006sea" +
+      "rch\022b\n\tQuerySpec\022\035.api.core.QuerySpecMsg" +
+      "Request\032\036.api.core.QuerySpecMsgResponse\"" +
+      "\026\272\276\031\022\010\317\010\030\001\322\014\nquery-spec\022\\\n\tQuerySync\022\032.a" +
+      "pi.core.QuerySyncRequest\032\033.api.core.Quer" +
+      "ySyncResponse\"\026\272\276\031\022\010\320\010\030\001\322\014\nquery-sync\032$\272" +
+      "\276\031 \272\006\007message\312\014\002\020\004\322\014\016tenant/messageBG\n\030c" +
+      "om.teneasyChat.api.coreZ\021wcs/api/core;co" +
+      "re\272\276\031\026\242\006\006calvin\262\006\n2022-12-30b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -11193,7 +12169,7 @@ com.teneasyChat.api.common.CChat.ChatDetail defaultValue) {
     internal_static_api_core_MessageSyncResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_core_MessageSyncResponse_descriptor,
-        new java.lang.String[] { "Request", "List", "LastMsgId", "Nick", });
+        new java.lang.String[] { "Request", "List", "LastMsgId", "Nick", "ReplyList", });
     internal_static_api_core_MessageSyncV2Request_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_api_core_MessageSyncV2Request_fieldAccessorTable = new
@@ -11205,7 +12181,7 @@ com.teneasyChat.api.common.CChat.ChatDetail defaultValue) {
     internal_static_api_core_MessageSyncV2Response_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_core_MessageSyncV2Response_descriptor,
-        new java.lang.String[] { "Request", "List", "LastMsgId", "Nick", });
+        new java.lang.String[] { "Request", "List", "LastMsgId", "Nick", "ReplyList", });
     internal_static_api_core_MessageSearchRequest_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_api_core_MessageSearchRequest_fieldAccessorTable = new

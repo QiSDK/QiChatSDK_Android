@@ -24,6 +24,557 @@ public final class WorkerGroupOuterClass {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
+  public interface WorkerGroupQueryByPermRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:api.core.WorkerGroupQueryByPermRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * 禁用/启用
+     * </pre>
+     *
+     * <code>optional .api.common.DisableStatus disable_status = 1;</code>
+     * @return Whether the disableStatus field is set.
+     */
+    boolean hasDisableStatus();
+    /**
+     * <pre>
+     * 禁用/启用
+     * </pre>
+     *
+     * <code>optional .api.common.DisableStatus disable_status = 1;</code>
+     * @return The enum numeric value on the wire for disableStatus.
+     */
+    int getDisableStatusValue();
+    /**
+     * <pre>
+     * 禁用/启用
+     * </pre>
+     *
+     * <code>optional .api.common.DisableStatus disable_status = 1;</code>
+     * @return The disableStatus.
+     */
+    com.teneasyChat.api.common.CBase.DisableStatus getDisableStatus();
+  }
+  /**
+   * <pre>
+   * 查询组
+   * </pre>
+   *
+   * Protobuf type {@code api.core.WorkerGroupQueryByPermRequest}
+   */
+  public static final class WorkerGroupQueryByPermRequest extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:api.core.WorkerGroupQueryByPermRequest)
+      WorkerGroupQueryByPermRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 26,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        WorkerGroupQueryByPermRequest.class.getName());
+    }
+    // Use WorkerGroupQueryByPermRequest.newBuilder() to construct.
+    private WorkerGroupQueryByPermRequest(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private WorkerGroupQueryByPermRequest() {
+      disableStatus_ = 0;
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.teneasyChat.api.core.WorkerGroupOuterClass.internal_static_api_core_WorkerGroupQueryByPermRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.teneasyChat.api.core.WorkerGroupOuterClass.internal_static_api_core_WorkerGroupQueryByPermRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.teneasyChat.api.core.WorkerGroupOuterClass.WorkerGroupQueryByPermRequest.class, com.teneasyChat.api.core.WorkerGroupOuterClass.WorkerGroupQueryByPermRequest.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int DISABLE_STATUS_FIELD_NUMBER = 1;
+    private int disableStatus_ = 0;
+    /**
+     * <pre>
+     * 禁用/启用
+     * </pre>
+     *
+     * <code>optional .api.common.DisableStatus disable_status = 1;</code>
+     * @return Whether the disableStatus field is set.
+     */
+    @java.lang.Override public boolean hasDisableStatus() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     * <pre>
+     * 禁用/启用
+     * </pre>
+     *
+     * <code>optional .api.common.DisableStatus disable_status = 1;</code>
+     * @return The enum numeric value on the wire for disableStatus.
+     */
+    @java.lang.Override public int getDisableStatusValue() {
+      return disableStatus_;
+    }
+    /**
+     * <pre>
+     * 禁用/启用
+     * </pre>
+     *
+     * <code>optional .api.common.DisableStatus disable_status = 1;</code>
+     * @return The disableStatus.
+     */
+    @java.lang.Override public com.teneasyChat.api.common.CBase.DisableStatus getDisableStatus() {
+      com.teneasyChat.api.common.CBase.DisableStatus result = com.teneasyChat.api.common.CBase.DisableStatus.forNumber(disableStatus_);
+      return result == null ? com.teneasyChat.api.common.CBase.DisableStatus.UNRECOGNIZED : result;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeEnum(1, disableStatus_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(1, disableStatus_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.teneasyChat.api.core.WorkerGroupOuterClass.WorkerGroupQueryByPermRequest)) {
+        return super.equals(obj);
+      }
+      com.teneasyChat.api.core.WorkerGroupOuterClass.WorkerGroupQueryByPermRequest other = (com.teneasyChat.api.core.WorkerGroupOuterClass.WorkerGroupQueryByPermRequest) obj;
+
+      if (hasDisableStatus() != other.hasDisableStatus()) return false;
+      if (hasDisableStatus()) {
+        if (disableStatus_ != other.disableStatus_) return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasDisableStatus()) {
+        hash = (37 * hash) + DISABLE_STATUS_FIELD_NUMBER;
+        hash = (53 * hash) + disableStatus_;
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.teneasyChat.api.core.WorkerGroupOuterClass.WorkerGroupQueryByPermRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.core.WorkerGroupOuterClass.WorkerGroupQueryByPermRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.WorkerGroupOuterClass.WorkerGroupQueryByPermRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.core.WorkerGroupOuterClass.WorkerGroupQueryByPermRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.WorkerGroupOuterClass.WorkerGroupQueryByPermRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.core.WorkerGroupOuterClass.WorkerGroupQueryByPermRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.WorkerGroupOuterClass.WorkerGroupQueryByPermRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.teneasyChat.api.core.WorkerGroupOuterClass.WorkerGroupQueryByPermRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.teneasyChat.api.core.WorkerGroupOuterClass.WorkerGroupQueryByPermRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.teneasyChat.api.core.WorkerGroupOuterClass.WorkerGroupQueryByPermRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.WorkerGroupOuterClass.WorkerGroupQueryByPermRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.teneasyChat.api.core.WorkerGroupOuterClass.WorkerGroupQueryByPermRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.teneasyChat.api.core.WorkerGroupOuterClass.WorkerGroupQueryByPermRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * 查询组
+     * </pre>
+     *
+     * Protobuf type {@code api.core.WorkerGroupQueryByPermRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:api.core.WorkerGroupQueryByPermRequest)
+        com.teneasyChat.api.core.WorkerGroupOuterClass.WorkerGroupQueryByPermRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.teneasyChat.api.core.WorkerGroupOuterClass.internal_static_api_core_WorkerGroupQueryByPermRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.teneasyChat.api.core.WorkerGroupOuterClass.internal_static_api_core_WorkerGroupQueryByPermRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.teneasyChat.api.core.WorkerGroupOuterClass.WorkerGroupQueryByPermRequest.class, com.teneasyChat.api.core.WorkerGroupOuterClass.WorkerGroupQueryByPermRequest.Builder.class);
+      }
+
+      // Construct using com.teneasyChat.api.core.WorkerGroupOuterClass.WorkerGroupQueryByPermRequest.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        disableStatus_ = 0;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.teneasyChat.api.core.WorkerGroupOuterClass.internal_static_api_core_WorkerGroupQueryByPermRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.core.WorkerGroupOuterClass.WorkerGroupQueryByPermRequest getDefaultInstanceForType() {
+        return com.teneasyChat.api.core.WorkerGroupOuterClass.WorkerGroupQueryByPermRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.core.WorkerGroupOuterClass.WorkerGroupQueryByPermRequest build() {
+        com.teneasyChat.api.core.WorkerGroupOuterClass.WorkerGroupQueryByPermRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.core.WorkerGroupOuterClass.WorkerGroupQueryByPermRequest buildPartial() {
+        com.teneasyChat.api.core.WorkerGroupOuterClass.WorkerGroupQueryByPermRequest result = new com.teneasyChat.api.core.WorkerGroupOuterClass.WorkerGroupQueryByPermRequest(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.teneasyChat.api.core.WorkerGroupOuterClass.WorkerGroupQueryByPermRequest result) {
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.disableStatus_ = disableStatus_;
+          to_bitField0_ |= 0x00000001;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.teneasyChat.api.core.WorkerGroupOuterClass.WorkerGroupQueryByPermRequest) {
+          return mergeFrom((com.teneasyChat.api.core.WorkerGroupOuterClass.WorkerGroupQueryByPermRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.teneasyChat.api.core.WorkerGroupOuterClass.WorkerGroupQueryByPermRequest other) {
+        if (other == com.teneasyChat.api.core.WorkerGroupOuterClass.WorkerGroupQueryByPermRequest.getDefaultInstance()) return this;
+        if (other.hasDisableStatus()) {
+          setDisableStatus(other.getDisableStatus());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                disableStatus_ = input.readEnum();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private int disableStatus_ = 0;
+      /**
+       * <pre>
+       * 禁用/启用
+       * </pre>
+       *
+       * <code>optional .api.common.DisableStatus disable_status = 1;</code>
+       * @return Whether the disableStatus field is set.
+       */
+      @java.lang.Override public boolean hasDisableStatus() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+      /**
+       * <pre>
+       * 禁用/启用
+       * </pre>
+       *
+       * <code>optional .api.common.DisableStatus disable_status = 1;</code>
+       * @return The enum numeric value on the wire for disableStatus.
+       */
+      @java.lang.Override public int getDisableStatusValue() {
+        return disableStatus_;
+      }
+      /**
+       * <pre>
+       * 禁用/启用
+       * </pre>
+       *
+       * <code>optional .api.common.DisableStatus disable_status = 1;</code>
+       * @param value The enum numeric value on the wire for disableStatus to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDisableStatusValue(int value) {
+        disableStatus_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 禁用/启用
+       * </pre>
+       *
+       * <code>optional .api.common.DisableStatus disable_status = 1;</code>
+       * @return The disableStatus.
+       */
+      @java.lang.Override
+      public com.teneasyChat.api.common.CBase.DisableStatus getDisableStatus() {
+        com.teneasyChat.api.common.CBase.DisableStatus result = com.teneasyChat.api.common.CBase.DisableStatus.forNumber(disableStatus_);
+        return result == null ? com.teneasyChat.api.common.CBase.DisableStatus.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * 禁用/启用
+       * </pre>
+       *
+       * <code>optional .api.common.DisableStatus disable_status = 1;</code>
+       * @param value The disableStatus to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDisableStatus(com.teneasyChat.api.common.CBase.DisableStatus value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000001;
+        disableStatus_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 禁用/启用
+       * </pre>
+       *
+       * <code>optional .api.common.DisableStatus disable_status = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDisableStatus() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        disableStatus_ = 0;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:api.core.WorkerGroupQueryByPermRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:api.core.WorkerGroupQueryByPermRequest)
+    private static final com.teneasyChat.api.core.WorkerGroupOuterClass.WorkerGroupQueryByPermRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.teneasyChat.api.core.WorkerGroupOuterClass.WorkerGroupQueryByPermRequest();
+    }
+
+    public static com.teneasyChat.api.core.WorkerGroupOuterClass.WorkerGroupQueryByPermRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<WorkerGroupQueryByPermRequest>
+        PARSER = new com.google.protobuf.AbstractParser<WorkerGroupQueryByPermRequest>() {
+      @java.lang.Override
+      public WorkerGroupQueryByPermRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<WorkerGroupQueryByPermRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<WorkerGroupQueryByPermRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.teneasyChat.api.core.WorkerGroupOuterClass.WorkerGroupQueryByPermRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface WorkerGroupQueryResponseOrBuilder extends
       // @@protoc_insertion_point(interface_extends:api.core.WorkerGroupQueryResponse)
       com.google.protobuf.MessageOrBuilder {
@@ -5422,6 +5973,610 @@ public final class WorkerGroupOuterClass {
 
   }
 
+  public interface WorkerGroupDisableRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:api.core.WorkerGroupDisableRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * 指定分组id
+     * </pre>
+     *
+     * <code>int64 id = 1 [(.validate.rules) = { ... }</code>
+     * @return The id.
+     */
+    long getId();
+
+    /**
+     * <pre>
+     * 禁用/启用
+     * </pre>
+     *
+     * <code>.api.common.DisableStatus disable_status = 2 [(.validate.rules) = { ... }</code>
+     * @return The enum numeric value on the wire for disableStatus.
+     */
+    int getDisableStatusValue();
+    /**
+     * <pre>
+     * 禁用/启用
+     * </pre>
+     *
+     * <code>.api.common.DisableStatus disable_status = 2 [(.validate.rules) = { ... }</code>
+     * @return The disableStatus.
+     */
+    com.teneasyChat.api.common.CBase.DisableStatus getDisableStatus();
+  }
+  /**
+   * <pre>
+   * 禁用/启用分组
+   * </pre>
+   *
+   * Protobuf type {@code api.core.WorkerGroupDisableRequest}
+   */
+  public static final class WorkerGroupDisableRequest extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:api.core.WorkerGroupDisableRequest)
+      WorkerGroupDisableRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 26,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        WorkerGroupDisableRequest.class.getName());
+    }
+    // Use WorkerGroupDisableRequest.newBuilder() to construct.
+    private WorkerGroupDisableRequest(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private WorkerGroupDisableRequest() {
+      disableStatus_ = 0;
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.teneasyChat.api.core.WorkerGroupOuterClass.internal_static_api_core_WorkerGroupDisableRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.teneasyChat.api.core.WorkerGroupOuterClass.internal_static_api_core_WorkerGroupDisableRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.teneasyChat.api.core.WorkerGroupOuterClass.WorkerGroupDisableRequest.class, com.teneasyChat.api.core.WorkerGroupOuterClass.WorkerGroupDisableRequest.Builder.class);
+    }
+
+    public static final int ID_FIELD_NUMBER = 1;
+    private long id_ = 0L;
+    /**
+     * <pre>
+     * 指定分组id
+     * </pre>
+     *
+     * <code>int64 id = 1 [(.validate.rules) = { ... }</code>
+     * @return The id.
+     */
+    @java.lang.Override
+    public long getId() {
+      return id_;
+    }
+
+    public static final int DISABLE_STATUS_FIELD_NUMBER = 2;
+    private int disableStatus_ = 0;
+    /**
+     * <pre>
+     * 禁用/启用
+     * </pre>
+     *
+     * <code>.api.common.DisableStatus disable_status = 2 [(.validate.rules) = { ... }</code>
+     * @return The enum numeric value on the wire for disableStatus.
+     */
+    @java.lang.Override public int getDisableStatusValue() {
+      return disableStatus_;
+    }
+    /**
+     * <pre>
+     * 禁用/启用
+     * </pre>
+     *
+     * <code>.api.common.DisableStatus disable_status = 2 [(.validate.rules) = { ... }</code>
+     * @return The disableStatus.
+     */
+    @java.lang.Override public com.teneasyChat.api.common.CBase.DisableStatus getDisableStatus() {
+      com.teneasyChat.api.common.CBase.DisableStatus result = com.teneasyChat.api.common.CBase.DisableStatus.forNumber(disableStatus_);
+      return result == null ? com.teneasyChat.api.common.CBase.DisableStatus.UNRECOGNIZED : result;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (id_ != 0L) {
+        output.writeInt64(1, id_);
+      }
+      if (disableStatus_ != com.teneasyChat.api.common.CBase.DisableStatus.DEFAULT.getNumber()) {
+        output.writeEnum(2, disableStatus_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (id_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(1, id_);
+      }
+      if (disableStatus_ != com.teneasyChat.api.common.CBase.DisableStatus.DEFAULT.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(2, disableStatus_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.teneasyChat.api.core.WorkerGroupOuterClass.WorkerGroupDisableRequest)) {
+        return super.equals(obj);
+      }
+      com.teneasyChat.api.core.WorkerGroupOuterClass.WorkerGroupDisableRequest other = (com.teneasyChat.api.core.WorkerGroupOuterClass.WorkerGroupDisableRequest) obj;
+
+      if (getId()
+          != other.getId()) return false;
+      if (disableStatus_ != other.disableStatus_) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getId());
+      hash = (37 * hash) + DISABLE_STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + disableStatus_;
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.teneasyChat.api.core.WorkerGroupOuterClass.WorkerGroupDisableRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.core.WorkerGroupOuterClass.WorkerGroupDisableRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.WorkerGroupOuterClass.WorkerGroupDisableRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.core.WorkerGroupOuterClass.WorkerGroupDisableRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.WorkerGroupOuterClass.WorkerGroupDisableRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.core.WorkerGroupOuterClass.WorkerGroupDisableRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.WorkerGroupOuterClass.WorkerGroupDisableRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.teneasyChat.api.core.WorkerGroupOuterClass.WorkerGroupDisableRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.teneasyChat.api.core.WorkerGroupOuterClass.WorkerGroupDisableRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.teneasyChat.api.core.WorkerGroupOuterClass.WorkerGroupDisableRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.WorkerGroupOuterClass.WorkerGroupDisableRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.teneasyChat.api.core.WorkerGroupOuterClass.WorkerGroupDisableRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.teneasyChat.api.core.WorkerGroupOuterClass.WorkerGroupDisableRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * 禁用/启用分组
+     * </pre>
+     *
+     * Protobuf type {@code api.core.WorkerGroupDisableRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:api.core.WorkerGroupDisableRequest)
+        com.teneasyChat.api.core.WorkerGroupOuterClass.WorkerGroupDisableRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.teneasyChat.api.core.WorkerGroupOuterClass.internal_static_api_core_WorkerGroupDisableRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.teneasyChat.api.core.WorkerGroupOuterClass.internal_static_api_core_WorkerGroupDisableRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.teneasyChat.api.core.WorkerGroupOuterClass.WorkerGroupDisableRequest.class, com.teneasyChat.api.core.WorkerGroupOuterClass.WorkerGroupDisableRequest.Builder.class);
+      }
+
+      // Construct using com.teneasyChat.api.core.WorkerGroupOuterClass.WorkerGroupDisableRequest.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        id_ = 0L;
+        disableStatus_ = 0;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.teneasyChat.api.core.WorkerGroupOuterClass.internal_static_api_core_WorkerGroupDisableRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.core.WorkerGroupOuterClass.WorkerGroupDisableRequest getDefaultInstanceForType() {
+        return com.teneasyChat.api.core.WorkerGroupOuterClass.WorkerGroupDisableRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.core.WorkerGroupOuterClass.WorkerGroupDisableRequest build() {
+        com.teneasyChat.api.core.WorkerGroupOuterClass.WorkerGroupDisableRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.core.WorkerGroupOuterClass.WorkerGroupDisableRequest buildPartial() {
+        com.teneasyChat.api.core.WorkerGroupOuterClass.WorkerGroupDisableRequest result = new com.teneasyChat.api.core.WorkerGroupOuterClass.WorkerGroupDisableRequest(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.teneasyChat.api.core.WorkerGroupOuterClass.WorkerGroupDisableRequest result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.id_ = id_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.disableStatus_ = disableStatus_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.teneasyChat.api.core.WorkerGroupOuterClass.WorkerGroupDisableRequest) {
+          return mergeFrom((com.teneasyChat.api.core.WorkerGroupOuterClass.WorkerGroupDisableRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.teneasyChat.api.core.WorkerGroupOuterClass.WorkerGroupDisableRequest other) {
+        if (other == com.teneasyChat.api.core.WorkerGroupOuterClass.WorkerGroupDisableRequest.getDefaultInstance()) return this;
+        if (other.getId() != 0L) {
+          setId(other.getId());
+        }
+        if (other.disableStatus_ != 0) {
+          setDisableStatusValue(other.getDisableStatusValue());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                id_ = input.readInt64();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 16: {
+                disableStatus_ = input.readEnum();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private long id_ ;
+      /**
+       * <pre>
+       * 指定分组id
+       * </pre>
+       *
+       * <code>int64 id = 1 [(.validate.rules) = { ... }</code>
+       * @return The id.
+       */
+      @java.lang.Override
+      public long getId() {
+        return id_;
+      }
+      /**
+       * <pre>
+       * 指定分组id
+       * </pre>
+       *
+       * <code>int64 id = 1 [(.validate.rules) = { ... }</code>
+       * @param value The id to set.
+       * @return This builder for chaining.
+       */
+      public Builder setId(long value) {
+
+        id_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 指定分组id
+       * </pre>
+       *
+       * <code>int64 id = 1 [(.validate.rules) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        id_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private int disableStatus_ = 0;
+      /**
+       * <pre>
+       * 禁用/启用
+       * </pre>
+       *
+       * <code>.api.common.DisableStatus disable_status = 2 [(.validate.rules) = { ... }</code>
+       * @return The enum numeric value on the wire for disableStatus.
+       */
+      @java.lang.Override public int getDisableStatusValue() {
+        return disableStatus_;
+      }
+      /**
+       * <pre>
+       * 禁用/启用
+       * </pre>
+       *
+       * <code>.api.common.DisableStatus disable_status = 2 [(.validate.rules) = { ... }</code>
+       * @param value The enum numeric value on the wire for disableStatus to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDisableStatusValue(int value) {
+        disableStatus_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 禁用/启用
+       * </pre>
+       *
+       * <code>.api.common.DisableStatus disable_status = 2 [(.validate.rules) = { ... }</code>
+       * @return The disableStatus.
+       */
+      @java.lang.Override
+      public com.teneasyChat.api.common.CBase.DisableStatus getDisableStatus() {
+        com.teneasyChat.api.common.CBase.DisableStatus result = com.teneasyChat.api.common.CBase.DisableStatus.forNumber(disableStatus_);
+        return result == null ? com.teneasyChat.api.common.CBase.DisableStatus.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * 禁用/启用
+       * </pre>
+       *
+       * <code>.api.common.DisableStatus disable_status = 2 [(.validate.rules) = { ... }</code>
+       * @param value The disableStatus to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDisableStatus(com.teneasyChat.api.common.CBase.DisableStatus value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000002;
+        disableStatus_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 禁用/启用
+       * </pre>
+       *
+       * <code>.api.common.DisableStatus disable_status = 2 [(.validate.rules) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDisableStatus() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        disableStatus_ = 0;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:api.core.WorkerGroupDisableRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:api.core.WorkerGroupDisableRequest)
+    private static final com.teneasyChat.api.core.WorkerGroupOuterClass.WorkerGroupDisableRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.teneasyChat.api.core.WorkerGroupOuterClass.WorkerGroupDisableRequest();
+    }
+
+    public static com.teneasyChat.api.core.WorkerGroupOuterClass.WorkerGroupDisableRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<WorkerGroupDisableRequest>
+        PARSER = new com.google.protobuf.AbstractParser<WorkerGroupDisableRequest>() {
+      @java.lang.Override
+      public WorkerGroupDisableRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<WorkerGroupDisableRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<WorkerGroupDisableRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.teneasyChat.api.core.WorkerGroupOuterClass.WorkerGroupDisableRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface GroupQueryModelOrBuilder extends
       // @@protoc_insertion_point(interface_extends:api.core.GroupQueryModel)
       com.google.protobuf.MessageOrBuilder {
@@ -5529,6 +6684,25 @@ public final class WorkerGroupOuterClass {
      */
     com.teneasyChat.api.common.CWorker.WorkerGroupOrBuilder getChildOrBuilder(
         int index);
+
+    /**
+     * <pre>
+     * 禁用/启用
+     * </pre>
+     *
+     * <code>.api.common.DisableStatus disable_status = 8;</code>
+     * @return The enum numeric value on the wire for disableStatus.
+     */
+    int getDisableStatusValue();
+    /**
+     * <pre>
+     * 禁用/启用
+     * </pre>
+     *
+     * <code>.api.common.DisableStatus disable_status = 8;</code>
+     * @return The disableStatus.
+     */
+    com.teneasyChat.api.common.CBase.DisableStatus getDisableStatus();
   }
   /**
    * Protobuf type {@code api.core.GroupQueryModel}
@@ -5558,6 +6732,7 @@ public final class WorkerGroupOuterClass {
       groupLeader_ =
           com.google.protobuf.LazyStringArrayList.emptyList();
       child_ = java.util.Collections.emptyList();
+      disableStatus_ = 0;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
@@ -5760,6 +6935,32 @@ public final class WorkerGroupOuterClass {
       return child_.get(index);
     }
 
+    public static final int DISABLE_STATUS_FIELD_NUMBER = 8;
+    private int disableStatus_ = 0;
+    /**
+     * <pre>
+     * 禁用/启用
+     * </pre>
+     *
+     * <code>.api.common.DisableStatus disable_status = 8;</code>
+     * @return The enum numeric value on the wire for disableStatus.
+     */
+    @java.lang.Override public int getDisableStatusValue() {
+      return disableStatus_;
+    }
+    /**
+     * <pre>
+     * 禁用/启用
+     * </pre>
+     *
+     * <code>.api.common.DisableStatus disable_status = 8;</code>
+     * @return The disableStatus.
+     */
+    @java.lang.Override public com.teneasyChat.api.common.CBase.DisableStatus getDisableStatus() {
+      com.teneasyChat.api.common.CBase.DisableStatus result = com.teneasyChat.api.common.CBase.DisableStatus.forNumber(disableStatus_);
+      return result == null ? com.teneasyChat.api.common.CBase.DisableStatus.UNRECOGNIZED : result;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -5794,6 +6995,9 @@ public final class WorkerGroupOuterClass {
       }
       for (int i = 0; i < child_.size(); i++) {
         output.writeMessage(7, child_.get(i));
+      }
+      if (disableStatus_ != com.teneasyChat.api.common.CBase.DisableStatus.DEFAULT.getNumber()) {
+        output.writeEnum(8, disableStatus_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -5839,6 +7043,10 @@ public final class WorkerGroupOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(7, child_.get(i));
       }
+      if (disableStatus_ != com.teneasyChat.api.common.CBase.DisableStatus.DEFAULT.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(8, disableStatus_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -5868,6 +7076,7 @@ public final class WorkerGroupOuterClass {
           .equals(other.getGroupLeaderList())) return false;
       if (!getChildList()
           .equals(other.getChildList())) return false;
+      if (disableStatus_ != other.disableStatus_) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -5900,6 +7109,8 @@ public final class WorkerGroupOuterClass {
         hash = (37 * hash) + CHILD_FIELD_NUMBER;
         hash = (53 * hash) + getChildList().hashCode();
       }
+      hash = (37 * hash) + DISABLE_STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + disableStatus_;
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -6046,6 +7257,7 @@ public final class WorkerGroupOuterClass {
           childBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000040);
+        disableStatus_ = 0;
         return this;
       }
 
@@ -6111,6 +7323,9 @@ public final class WorkerGroupOuterClass {
         if (((from_bitField0_ & 0x00000020) != 0)) {
           groupLeader_.makeImmutable();
           result.groupLeader_ = groupLeader_;
+        }
+        if (((from_bitField0_ & 0x00000080) != 0)) {
+          result.disableStatus_ = disableStatus_;
         }
       }
 
@@ -6186,6 +7401,9 @@ public final class WorkerGroupOuterClass {
             }
           }
         }
+        if (other.disableStatus_ != 0) {
+          setDisableStatusValue(other.getDisableStatusValue());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -6257,6 +7475,11 @@ public final class WorkerGroupOuterClass {
                 }
                 break;
               } // case 58
+              case 64: {
+                disableStatus_ = input.readEnum();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 64
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -6904,6 +8127,79 @@ public final class WorkerGroupOuterClass {
         return childBuilder_;
       }
 
+      private int disableStatus_ = 0;
+      /**
+       * <pre>
+       * 禁用/启用
+       * </pre>
+       *
+       * <code>.api.common.DisableStatus disable_status = 8;</code>
+       * @return The enum numeric value on the wire for disableStatus.
+       */
+      @java.lang.Override public int getDisableStatusValue() {
+        return disableStatus_;
+      }
+      /**
+       * <pre>
+       * 禁用/启用
+       * </pre>
+       *
+       * <code>.api.common.DisableStatus disable_status = 8;</code>
+       * @param value The enum numeric value on the wire for disableStatus to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDisableStatusValue(int value) {
+        disableStatus_ = value;
+        bitField0_ |= 0x00000080;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 禁用/启用
+       * </pre>
+       *
+       * <code>.api.common.DisableStatus disable_status = 8;</code>
+       * @return The disableStatus.
+       */
+      @java.lang.Override
+      public com.teneasyChat.api.common.CBase.DisableStatus getDisableStatus() {
+        com.teneasyChat.api.common.CBase.DisableStatus result = com.teneasyChat.api.common.CBase.DisableStatus.forNumber(disableStatus_);
+        return result == null ? com.teneasyChat.api.common.CBase.DisableStatus.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * 禁用/启用
+       * </pre>
+       *
+       * <code>.api.common.DisableStatus disable_status = 8;</code>
+       * @param value The disableStatus to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDisableStatus(com.teneasyChat.api.common.CBase.DisableStatus value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000080;
+        disableStatus_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 禁用/启用
+       * </pre>
+       *
+       * <code>.api.common.DisableStatus disable_status = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDisableStatus() {
+        bitField0_ = (bitField0_ & ~0x00000080);
+        disableStatus_ = 0;
+        onChanged();
+        return this;
+      }
+
       // @@protoc_insertion_point(builder_scope:api.core.GroupQueryModel)
     }
 
@@ -6995,6 +8291,34 @@ public final class WorkerGroupOuterClass {
      * <code>.api.common.Batch batch = 3;</code>
      */
     com.teneasyChat.api.common.CBase.BatchOrBuilder getBatchOrBuilder();
+
+    /**
+     * <pre>
+     * 禁用/启用
+     * </pre>
+     *
+     * <code>optional .api.common.DisableStatus disable_status = 4;</code>
+     * @return Whether the disableStatus field is set.
+     */
+    boolean hasDisableStatus();
+    /**
+     * <pre>
+     * 禁用/启用
+     * </pre>
+     *
+     * <code>optional .api.common.DisableStatus disable_status = 4;</code>
+     * @return The enum numeric value on the wire for disableStatus.
+     */
+    int getDisableStatusValue();
+    /**
+     * <pre>
+     * 禁用/启用
+     * </pre>
+     *
+     * <code>optional .api.common.DisableStatus disable_status = 4;</code>
+     * @return The disableStatus.
+     */
+    com.teneasyChat.api.common.CBase.DisableStatus getDisableStatus();
   }
   /**
    * Protobuf type {@code api.core.WorkerGroupQueryRequest}
@@ -7018,6 +8342,7 @@ public final class WorkerGroupOuterClass {
       super(builder);
     }
     private WorkerGroupQueryRequest() {
+      disableStatus_ = 0;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
@@ -7098,6 +8423,43 @@ public final class WorkerGroupOuterClass {
       return batch_ == null ? com.teneasyChat.api.common.CBase.Batch.getDefaultInstance() : batch_;
     }
 
+    public static final int DISABLE_STATUS_FIELD_NUMBER = 4;
+    private int disableStatus_ = 0;
+    /**
+     * <pre>
+     * 禁用/启用
+     * </pre>
+     *
+     * <code>optional .api.common.DisableStatus disable_status = 4;</code>
+     * @return Whether the disableStatus field is set.
+     */
+    @java.lang.Override public boolean hasDisableStatus() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+    /**
+     * <pre>
+     * 禁用/启用
+     * </pre>
+     *
+     * <code>optional .api.common.DisableStatus disable_status = 4;</code>
+     * @return The enum numeric value on the wire for disableStatus.
+     */
+    @java.lang.Override public int getDisableStatusValue() {
+      return disableStatus_;
+    }
+    /**
+     * <pre>
+     * 禁用/启用
+     * </pre>
+     *
+     * <code>optional .api.common.DisableStatus disable_status = 4;</code>
+     * @return The disableStatus.
+     */
+    @java.lang.Override public com.teneasyChat.api.common.CBase.DisableStatus getDisableStatus() {
+      com.teneasyChat.api.common.CBase.DisableStatus result = com.teneasyChat.api.common.CBase.DisableStatus.forNumber(disableStatus_);
+      return result == null ? com.teneasyChat.api.common.CBase.DisableStatus.UNRECOGNIZED : result;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -7121,6 +8483,9 @@ public final class WorkerGroupOuterClass {
       if (((bitField0_ & 0x00000004) != 0)) {
         output.writeMessage(3, getBatch());
       }
+      if (((bitField0_ & 0x00000008) != 0)) {
+        output.writeEnum(4, disableStatus_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -7141,6 +8506,10 @@ public final class WorkerGroupOuterClass {
       if (((bitField0_ & 0x00000004) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, getBatch());
+      }
+      if (((bitField0_ & 0x00000008) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(4, disableStatus_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -7172,6 +8541,10 @@ public final class WorkerGroupOuterClass {
         if (!getBatch()
             .equals(other.getBatch())) return false;
       }
+      if (hasDisableStatus() != other.hasDisableStatus()) return false;
+      if (hasDisableStatus()) {
+        if (disableStatus_ != other.disableStatus_) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -7196,6 +8569,10 @@ public final class WorkerGroupOuterClass {
       if (hasBatch()) {
         hash = (37 * hash) + BATCH_FIELD_NUMBER;
         hash = (53 * hash) + getBatch().hashCode();
+      }
+      if (hasDisableStatus()) {
+        hash = (37 * hash) + DISABLE_STATUS_FIELD_NUMBER;
+        hash = (53 * hash) + disableStatus_;
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -7341,6 +8718,7 @@ public final class WorkerGroupOuterClass {
           batchBuilder_.dispose();
           batchBuilder_ = null;
         }
+        disableStatus_ = 0;
         return this;
       }
 
@@ -7389,6 +8767,10 @@ public final class WorkerGroupOuterClass {
               : batchBuilder_.build();
           to_bitField0_ |= 0x00000004;
         }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.disableStatus_ = disableStatus_;
+          to_bitField0_ |= 0x00000008;
+        }
         result.bitField0_ |= to_bitField0_;
       }
 
@@ -7412,6 +8794,9 @@ public final class WorkerGroupOuterClass {
         }
         if (other.hasBatch()) {
           mergeBatch(other.getBatch());
+        }
+        if (other.hasDisableStatus()) {
+          setDisableStatus(other.getDisableStatus());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -7456,6 +8841,11 @@ public final class WorkerGroupOuterClass {
                 bitField0_ |= 0x00000004;
                 break;
               } // case 26
+              case 32: {
+                disableStatus_ = input.readEnum();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 32
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -7672,6 +9062,90 @@ public final class WorkerGroupOuterClass {
           batch_ = null;
         }
         return batchBuilder_;
+      }
+
+      private int disableStatus_ = 0;
+      /**
+       * <pre>
+       * 禁用/启用
+       * </pre>
+       *
+       * <code>optional .api.common.DisableStatus disable_status = 4;</code>
+       * @return Whether the disableStatus field is set.
+       */
+      @java.lang.Override public boolean hasDisableStatus() {
+        return ((bitField0_ & 0x00000008) != 0);
+      }
+      /**
+       * <pre>
+       * 禁用/启用
+       * </pre>
+       *
+       * <code>optional .api.common.DisableStatus disable_status = 4;</code>
+       * @return The enum numeric value on the wire for disableStatus.
+       */
+      @java.lang.Override public int getDisableStatusValue() {
+        return disableStatus_;
+      }
+      /**
+       * <pre>
+       * 禁用/启用
+       * </pre>
+       *
+       * <code>optional .api.common.DisableStatus disable_status = 4;</code>
+       * @param value The enum numeric value on the wire for disableStatus to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDisableStatusValue(int value) {
+        disableStatus_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 禁用/启用
+       * </pre>
+       *
+       * <code>optional .api.common.DisableStatus disable_status = 4;</code>
+       * @return The disableStatus.
+       */
+      @java.lang.Override
+      public com.teneasyChat.api.common.CBase.DisableStatus getDisableStatus() {
+        com.teneasyChat.api.common.CBase.DisableStatus result = com.teneasyChat.api.common.CBase.DisableStatus.forNumber(disableStatus_);
+        return result == null ? com.teneasyChat.api.common.CBase.DisableStatus.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * 禁用/启用
+       * </pre>
+       *
+       * <code>optional .api.common.DisableStatus disable_status = 4;</code>
+       * @param value The disableStatus to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDisableStatus(com.teneasyChat.api.common.CBase.DisableStatus value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000008;
+        disableStatus_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 禁用/启用
+       * </pre>
+       *
+       * <code>optional .api.common.DisableStatus disable_status = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDisableStatus() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        disableStatus_ = 0;
+        onChanged();
+        return this;
       }
 
       // @@protoc_insertion_point(builder_scope:api.core.WorkerGroupQueryRequest)
@@ -8746,6 +10220,1186 @@ public final class WorkerGroupOuterClass {
 
   }
 
+  public interface QueryWorksByGroupReqOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:api.core.QueryWorksByGroupReq)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>int64 group_pid = 1;</code>
+     * @return The groupPid.
+     */
+    long getGroupPid();
+  }
+  /**
+   * Protobuf type {@code api.core.QueryWorksByGroupReq}
+   */
+  public static final class QueryWorksByGroupReq extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:api.core.QueryWorksByGroupReq)
+      QueryWorksByGroupReqOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 26,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        QueryWorksByGroupReq.class.getName());
+    }
+    // Use QueryWorksByGroupReq.newBuilder() to construct.
+    private QueryWorksByGroupReq(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private QueryWorksByGroupReq() {
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.teneasyChat.api.core.WorkerGroupOuterClass.internal_static_api_core_QueryWorksByGroupReq_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.teneasyChat.api.core.WorkerGroupOuterClass.internal_static_api_core_QueryWorksByGroupReq_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.teneasyChat.api.core.WorkerGroupOuterClass.QueryWorksByGroupReq.class, com.teneasyChat.api.core.WorkerGroupOuterClass.QueryWorksByGroupReq.Builder.class);
+    }
+
+    public static final int GROUP_PID_FIELD_NUMBER = 1;
+    private long groupPid_ = 0L;
+    /**
+     * <code>int64 group_pid = 1;</code>
+     * @return The groupPid.
+     */
+    @java.lang.Override
+    public long getGroupPid() {
+      return groupPid_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (groupPid_ != 0L) {
+        output.writeInt64(1, groupPid_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (groupPid_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(1, groupPid_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.teneasyChat.api.core.WorkerGroupOuterClass.QueryWorksByGroupReq)) {
+        return super.equals(obj);
+      }
+      com.teneasyChat.api.core.WorkerGroupOuterClass.QueryWorksByGroupReq other = (com.teneasyChat.api.core.WorkerGroupOuterClass.QueryWorksByGroupReq) obj;
+
+      if (getGroupPid()
+          != other.getGroupPid()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + GROUP_PID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getGroupPid());
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.teneasyChat.api.core.WorkerGroupOuterClass.QueryWorksByGroupReq parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.core.WorkerGroupOuterClass.QueryWorksByGroupReq parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.WorkerGroupOuterClass.QueryWorksByGroupReq parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.core.WorkerGroupOuterClass.QueryWorksByGroupReq parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.WorkerGroupOuterClass.QueryWorksByGroupReq parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.core.WorkerGroupOuterClass.QueryWorksByGroupReq parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.WorkerGroupOuterClass.QueryWorksByGroupReq parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.teneasyChat.api.core.WorkerGroupOuterClass.QueryWorksByGroupReq parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.teneasyChat.api.core.WorkerGroupOuterClass.QueryWorksByGroupReq parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.teneasyChat.api.core.WorkerGroupOuterClass.QueryWorksByGroupReq parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.WorkerGroupOuterClass.QueryWorksByGroupReq parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.teneasyChat.api.core.WorkerGroupOuterClass.QueryWorksByGroupReq parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.teneasyChat.api.core.WorkerGroupOuterClass.QueryWorksByGroupReq prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code api.core.QueryWorksByGroupReq}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:api.core.QueryWorksByGroupReq)
+        com.teneasyChat.api.core.WorkerGroupOuterClass.QueryWorksByGroupReqOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.teneasyChat.api.core.WorkerGroupOuterClass.internal_static_api_core_QueryWorksByGroupReq_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.teneasyChat.api.core.WorkerGroupOuterClass.internal_static_api_core_QueryWorksByGroupReq_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.teneasyChat.api.core.WorkerGroupOuterClass.QueryWorksByGroupReq.class, com.teneasyChat.api.core.WorkerGroupOuterClass.QueryWorksByGroupReq.Builder.class);
+      }
+
+      // Construct using com.teneasyChat.api.core.WorkerGroupOuterClass.QueryWorksByGroupReq.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        groupPid_ = 0L;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.teneasyChat.api.core.WorkerGroupOuterClass.internal_static_api_core_QueryWorksByGroupReq_descriptor;
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.core.WorkerGroupOuterClass.QueryWorksByGroupReq getDefaultInstanceForType() {
+        return com.teneasyChat.api.core.WorkerGroupOuterClass.QueryWorksByGroupReq.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.core.WorkerGroupOuterClass.QueryWorksByGroupReq build() {
+        com.teneasyChat.api.core.WorkerGroupOuterClass.QueryWorksByGroupReq result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.core.WorkerGroupOuterClass.QueryWorksByGroupReq buildPartial() {
+        com.teneasyChat.api.core.WorkerGroupOuterClass.QueryWorksByGroupReq result = new com.teneasyChat.api.core.WorkerGroupOuterClass.QueryWorksByGroupReq(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.teneasyChat.api.core.WorkerGroupOuterClass.QueryWorksByGroupReq result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.groupPid_ = groupPid_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.teneasyChat.api.core.WorkerGroupOuterClass.QueryWorksByGroupReq) {
+          return mergeFrom((com.teneasyChat.api.core.WorkerGroupOuterClass.QueryWorksByGroupReq)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.teneasyChat.api.core.WorkerGroupOuterClass.QueryWorksByGroupReq other) {
+        if (other == com.teneasyChat.api.core.WorkerGroupOuterClass.QueryWorksByGroupReq.getDefaultInstance()) return this;
+        if (other.getGroupPid() != 0L) {
+          setGroupPid(other.getGroupPid());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                groupPid_ = input.readInt64();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private long groupPid_ ;
+      /**
+       * <code>int64 group_pid = 1;</code>
+       * @return The groupPid.
+       */
+      @java.lang.Override
+      public long getGroupPid() {
+        return groupPid_;
+      }
+      /**
+       * <code>int64 group_pid = 1;</code>
+       * @param value The groupPid to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGroupPid(long value) {
+
+        groupPid_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 group_pid = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearGroupPid() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        groupPid_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:api.core.QueryWorksByGroupReq)
+    }
+
+    // @@protoc_insertion_point(class_scope:api.core.QueryWorksByGroupReq)
+    private static final com.teneasyChat.api.core.WorkerGroupOuterClass.QueryWorksByGroupReq DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.teneasyChat.api.core.WorkerGroupOuterClass.QueryWorksByGroupReq();
+    }
+
+    public static com.teneasyChat.api.core.WorkerGroupOuterClass.QueryWorksByGroupReq getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<QueryWorksByGroupReq>
+        PARSER = new com.google.protobuf.AbstractParser<QueryWorksByGroupReq>() {
+      @java.lang.Override
+      public QueryWorksByGroupReq parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<QueryWorksByGroupReq> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<QueryWorksByGroupReq> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.teneasyChat.api.core.WorkerGroupOuterClass.QueryWorksByGroupReq getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface QueryWorksByGroupRespOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:api.core.QueryWorksByGroupResp)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>repeated .api.common.Worker items = 1;</code>
+     */
+    java.util.List<com.teneasyChat.api.common.CWorker.Worker> 
+        getItemsList();
+    /**
+     * <code>repeated .api.common.Worker items = 1;</code>
+     */
+    com.teneasyChat.api.common.CWorker.Worker getItems(int index);
+    /**
+     * <code>repeated .api.common.Worker items = 1;</code>
+     */
+    int getItemsCount();
+    /**
+     * <code>repeated .api.common.Worker items = 1;</code>
+     */
+    java.util.List<? extends com.teneasyChat.api.common.CWorker.WorkerOrBuilder> 
+        getItemsOrBuilderList();
+    /**
+     * <code>repeated .api.common.Worker items = 1;</code>
+     */
+    com.teneasyChat.api.common.CWorker.WorkerOrBuilder getItemsOrBuilder(
+        int index);
+  }
+  /**
+   * Protobuf type {@code api.core.QueryWorksByGroupResp}
+   */
+  public static final class QueryWorksByGroupResp extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:api.core.QueryWorksByGroupResp)
+      QueryWorksByGroupRespOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 26,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        QueryWorksByGroupResp.class.getName());
+    }
+    // Use QueryWorksByGroupResp.newBuilder() to construct.
+    private QueryWorksByGroupResp(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private QueryWorksByGroupResp() {
+      items_ = java.util.Collections.emptyList();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.teneasyChat.api.core.WorkerGroupOuterClass.internal_static_api_core_QueryWorksByGroupResp_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.teneasyChat.api.core.WorkerGroupOuterClass.internal_static_api_core_QueryWorksByGroupResp_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.teneasyChat.api.core.WorkerGroupOuterClass.QueryWorksByGroupResp.class, com.teneasyChat.api.core.WorkerGroupOuterClass.QueryWorksByGroupResp.Builder.class);
+    }
+
+    public static final int ITEMS_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
+    private java.util.List<com.teneasyChat.api.common.CWorker.Worker> items_;
+    /**
+     * <code>repeated .api.common.Worker items = 1;</code>
+     */
+    @java.lang.Override
+    public java.util.List<com.teneasyChat.api.common.CWorker.Worker> getItemsList() {
+      return items_;
+    }
+    /**
+     * <code>repeated .api.common.Worker items = 1;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends com.teneasyChat.api.common.CWorker.WorkerOrBuilder> 
+        getItemsOrBuilderList() {
+      return items_;
+    }
+    /**
+     * <code>repeated .api.common.Worker items = 1;</code>
+     */
+    @java.lang.Override
+    public int getItemsCount() {
+      return items_.size();
+    }
+    /**
+     * <code>repeated .api.common.Worker items = 1;</code>
+     */
+    @java.lang.Override
+    public com.teneasyChat.api.common.CWorker.Worker getItems(int index) {
+      return items_.get(index);
+    }
+    /**
+     * <code>repeated .api.common.Worker items = 1;</code>
+     */
+    @java.lang.Override
+    public com.teneasyChat.api.common.CWorker.WorkerOrBuilder getItemsOrBuilder(
+        int index) {
+      return items_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < items_.size(); i++) {
+        output.writeMessage(1, items_.get(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < items_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, items_.get(i));
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.teneasyChat.api.core.WorkerGroupOuterClass.QueryWorksByGroupResp)) {
+        return super.equals(obj);
+      }
+      com.teneasyChat.api.core.WorkerGroupOuterClass.QueryWorksByGroupResp other = (com.teneasyChat.api.core.WorkerGroupOuterClass.QueryWorksByGroupResp) obj;
+
+      if (!getItemsList()
+          .equals(other.getItemsList())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getItemsCount() > 0) {
+        hash = (37 * hash) + ITEMS_FIELD_NUMBER;
+        hash = (53 * hash) + getItemsList().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.teneasyChat.api.core.WorkerGroupOuterClass.QueryWorksByGroupResp parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.core.WorkerGroupOuterClass.QueryWorksByGroupResp parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.WorkerGroupOuterClass.QueryWorksByGroupResp parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.core.WorkerGroupOuterClass.QueryWorksByGroupResp parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.WorkerGroupOuterClass.QueryWorksByGroupResp parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.core.WorkerGroupOuterClass.QueryWorksByGroupResp parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.WorkerGroupOuterClass.QueryWorksByGroupResp parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.teneasyChat.api.core.WorkerGroupOuterClass.QueryWorksByGroupResp parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.teneasyChat.api.core.WorkerGroupOuterClass.QueryWorksByGroupResp parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.teneasyChat.api.core.WorkerGroupOuterClass.QueryWorksByGroupResp parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.WorkerGroupOuterClass.QueryWorksByGroupResp parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.teneasyChat.api.core.WorkerGroupOuterClass.QueryWorksByGroupResp parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.teneasyChat.api.core.WorkerGroupOuterClass.QueryWorksByGroupResp prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code api.core.QueryWorksByGroupResp}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:api.core.QueryWorksByGroupResp)
+        com.teneasyChat.api.core.WorkerGroupOuterClass.QueryWorksByGroupRespOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.teneasyChat.api.core.WorkerGroupOuterClass.internal_static_api_core_QueryWorksByGroupResp_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.teneasyChat.api.core.WorkerGroupOuterClass.internal_static_api_core_QueryWorksByGroupResp_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.teneasyChat.api.core.WorkerGroupOuterClass.QueryWorksByGroupResp.class, com.teneasyChat.api.core.WorkerGroupOuterClass.QueryWorksByGroupResp.Builder.class);
+      }
+
+      // Construct using com.teneasyChat.api.core.WorkerGroupOuterClass.QueryWorksByGroupResp.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        if (itemsBuilder_ == null) {
+          items_ = java.util.Collections.emptyList();
+        } else {
+          items_ = null;
+          itemsBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.teneasyChat.api.core.WorkerGroupOuterClass.internal_static_api_core_QueryWorksByGroupResp_descriptor;
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.core.WorkerGroupOuterClass.QueryWorksByGroupResp getDefaultInstanceForType() {
+        return com.teneasyChat.api.core.WorkerGroupOuterClass.QueryWorksByGroupResp.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.core.WorkerGroupOuterClass.QueryWorksByGroupResp build() {
+        com.teneasyChat.api.core.WorkerGroupOuterClass.QueryWorksByGroupResp result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.core.WorkerGroupOuterClass.QueryWorksByGroupResp buildPartial() {
+        com.teneasyChat.api.core.WorkerGroupOuterClass.QueryWorksByGroupResp result = new com.teneasyChat.api.core.WorkerGroupOuterClass.QueryWorksByGroupResp(this);
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(com.teneasyChat.api.core.WorkerGroupOuterClass.QueryWorksByGroupResp result) {
+        if (itemsBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            items_ = java.util.Collections.unmodifiableList(items_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.items_ = items_;
+        } else {
+          result.items_ = itemsBuilder_.build();
+        }
+      }
+
+      private void buildPartial0(com.teneasyChat.api.core.WorkerGroupOuterClass.QueryWorksByGroupResp result) {
+        int from_bitField0_ = bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.teneasyChat.api.core.WorkerGroupOuterClass.QueryWorksByGroupResp) {
+          return mergeFrom((com.teneasyChat.api.core.WorkerGroupOuterClass.QueryWorksByGroupResp)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.teneasyChat.api.core.WorkerGroupOuterClass.QueryWorksByGroupResp other) {
+        if (other == com.teneasyChat.api.core.WorkerGroupOuterClass.QueryWorksByGroupResp.getDefaultInstance()) return this;
+        if (itemsBuilder_ == null) {
+          if (!other.items_.isEmpty()) {
+            if (items_.isEmpty()) {
+              items_ = other.items_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureItemsIsMutable();
+              items_.addAll(other.items_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.items_.isEmpty()) {
+            if (itemsBuilder_.isEmpty()) {
+              itemsBuilder_.dispose();
+              itemsBuilder_ = null;
+              items_ = other.items_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              itemsBuilder_ = 
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
+                   getItemsFieldBuilder() : null;
+            } else {
+              itemsBuilder_.addAllMessages(other.items_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                com.teneasyChat.api.common.CWorker.Worker m =
+                    input.readMessage(
+                        com.teneasyChat.api.common.CWorker.Worker.parser(),
+                        extensionRegistry);
+                if (itemsBuilder_ == null) {
+                  ensureItemsIsMutable();
+                  items_.add(m);
+                } else {
+                  itemsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 10
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private java.util.List<com.teneasyChat.api.common.CWorker.Worker> items_ =
+        java.util.Collections.emptyList();
+      private void ensureItemsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          items_ = new java.util.ArrayList<com.teneasyChat.api.common.CWorker.Worker>(items_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilder<
+          com.teneasyChat.api.common.CWorker.Worker, com.teneasyChat.api.common.CWorker.Worker.Builder, com.teneasyChat.api.common.CWorker.WorkerOrBuilder> itemsBuilder_;
+
+      /**
+       * <code>repeated .api.common.Worker items = 1;</code>
+       */
+      public java.util.List<com.teneasyChat.api.common.CWorker.Worker> getItemsList() {
+        if (itemsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(items_);
+        } else {
+          return itemsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .api.common.Worker items = 1;</code>
+       */
+      public int getItemsCount() {
+        if (itemsBuilder_ == null) {
+          return items_.size();
+        } else {
+          return itemsBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .api.common.Worker items = 1;</code>
+       */
+      public com.teneasyChat.api.common.CWorker.Worker getItems(int index) {
+        if (itemsBuilder_ == null) {
+          return items_.get(index);
+        } else {
+          return itemsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .api.common.Worker items = 1;</code>
+       */
+      public Builder setItems(
+          int index, com.teneasyChat.api.common.CWorker.Worker value) {
+        if (itemsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureItemsIsMutable();
+          items_.set(index, value);
+          onChanged();
+        } else {
+          itemsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .api.common.Worker items = 1;</code>
+       */
+      public Builder setItems(
+          int index, com.teneasyChat.api.common.CWorker.Worker.Builder builderForValue) {
+        if (itemsBuilder_ == null) {
+          ensureItemsIsMutable();
+          items_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          itemsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .api.common.Worker items = 1;</code>
+       */
+      public Builder addItems(com.teneasyChat.api.common.CWorker.Worker value) {
+        if (itemsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureItemsIsMutable();
+          items_.add(value);
+          onChanged();
+        } else {
+          itemsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .api.common.Worker items = 1;</code>
+       */
+      public Builder addItems(
+          int index, com.teneasyChat.api.common.CWorker.Worker value) {
+        if (itemsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureItemsIsMutable();
+          items_.add(index, value);
+          onChanged();
+        } else {
+          itemsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .api.common.Worker items = 1;</code>
+       */
+      public Builder addItems(
+          com.teneasyChat.api.common.CWorker.Worker.Builder builderForValue) {
+        if (itemsBuilder_ == null) {
+          ensureItemsIsMutable();
+          items_.add(builderForValue.build());
+          onChanged();
+        } else {
+          itemsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .api.common.Worker items = 1;</code>
+       */
+      public Builder addItems(
+          int index, com.teneasyChat.api.common.CWorker.Worker.Builder builderForValue) {
+        if (itemsBuilder_ == null) {
+          ensureItemsIsMutable();
+          items_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          itemsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .api.common.Worker items = 1;</code>
+       */
+      public Builder addAllItems(
+          java.lang.Iterable<? extends com.teneasyChat.api.common.CWorker.Worker> values) {
+        if (itemsBuilder_ == null) {
+          ensureItemsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, items_);
+          onChanged();
+        } else {
+          itemsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .api.common.Worker items = 1;</code>
+       */
+      public Builder clearItems() {
+        if (itemsBuilder_ == null) {
+          items_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          itemsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .api.common.Worker items = 1;</code>
+       */
+      public Builder removeItems(int index) {
+        if (itemsBuilder_ == null) {
+          ensureItemsIsMutable();
+          items_.remove(index);
+          onChanged();
+        } else {
+          itemsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .api.common.Worker items = 1;</code>
+       */
+      public com.teneasyChat.api.common.CWorker.Worker.Builder getItemsBuilder(
+          int index) {
+        return getItemsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .api.common.Worker items = 1;</code>
+       */
+      public com.teneasyChat.api.common.CWorker.WorkerOrBuilder getItemsOrBuilder(
+          int index) {
+        if (itemsBuilder_ == null) {
+          return items_.get(index);  } else {
+          return itemsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .api.common.Worker items = 1;</code>
+       */
+      public java.util.List<? extends com.teneasyChat.api.common.CWorker.WorkerOrBuilder> 
+           getItemsOrBuilderList() {
+        if (itemsBuilder_ != null) {
+          return itemsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(items_);
+        }
+      }
+      /**
+       * <code>repeated .api.common.Worker items = 1;</code>
+       */
+      public com.teneasyChat.api.common.CWorker.Worker.Builder addItemsBuilder() {
+        return getItemsFieldBuilder().addBuilder(
+            com.teneasyChat.api.common.CWorker.Worker.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .api.common.Worker items = 1;</code>
+       */
+      public com.teneasyChat.api.common.CWorker.Worker.Builder addItemsBuilder(
+          int index) {
+        return getItemsFieldBuilder().addBuilder(
+            index, com.teneasyChat.api.common.CWorker.Worker.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .api.common.Worker items = 1;</code>
+       */
+      public java.util.List<com.teneasyChat.api.common.CWorker.Worker.Builder> 
+           getItemsBuilderList() {
+        return getItemsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilder<
+          com.teneasyChat.api.common.CWorker.Worker, com.teneasyChat.api.common.CWorker.Worker.Builder, com.teneasyChat.api.common.CWorker.WorkerOrBuilder> 
+          getItemsFieldBuilder() {
+        if (itemsBuilder_ == null) {
+          itemsBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
+              com.teneasyChat.api.common.CWorker.Worker, com.teneasyChat.api.common.CWorker.Worker.Builder, com.teneasyChat.api.common.CWorker.WorkerOrBuilder>(
+                  items_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          items_ = null;
+        }
+        return itemsBuilder_;
+      }
+
+      // @@protoc_insertion_point(builder_scope:api.core.QueryWorksByGroupResp)
+    }
+
+    // @@protoc_insertion_point(class_scope:api.core.QueryWorksByGroupResp)
+    private static final com.teneasyChat.api.core.WorkerGroupOuterClass.QueryWorksByGroupResp DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.teneasyChat.api.core.WorkerGroupOuterClass.QueryWorksByGroupResp();
+    }
+
+    public static com.teneasyChat.api.core.WorkerGroupOuterClass.QueryWorksByGroupResp getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<QueryWorksByGroupResp>
+        PARSER = new com.google.protobuf.AbstractParser<QueryWorksByGroupResp>() {
+      @java.lang.Override
+      public QueryWorksByGroupResp parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<QueryWorksByGroupResp> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<QueryWorksByGroupResp> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.teneasyChat.api.core.WorkerGroupOuterClass.QueryWorksByGroupResp getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_api_core_WorkerGroupQueryByPermRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_api_core_WorkerGroupQueryByPermRequest_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_api_core_WorkerGroupQueryResponse_descriptor;
   private static final 
@@ -8777,6 +11431,11 @@ public final class WorkerGroupOuterClass {
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_api_core_WorkerGroupDeleteRequest_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_api_core_WorkerGroupDisableRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_api_core_WorkerGroupDisableRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_api_core_GroupQueryModel_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -8791,6 +11450,16 @@ public final class WorkerGroupOuterClass {
   private static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_api_core_WorkerGroupQueryResp_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_api_core_QueryWorksByGroupReq_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_api_core_QueryWorksByGroupReq_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_api_core_QueryWorksByGroupResp_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_api_core_QueryWorksByGroupResp_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -8804,48 +11473,65 @@ public final class WorkerGroupOuterClass {
       "\020api/option.proto\032\031api/common/c_worker.p" +
       "roto\032\027api/common/c_base.proto\032\033google/pr" +
       "otobuf/empty.proto\032\027validate/validate.pr" +
-      "oto\"B\n\030WorkerGroupQueryResponse\022&\n\005items" +
-      "\030\001 \003(\0132\027.api.common.WorkerGroup\"|\n\030Worke" +
-      "rGroupCreateRequest\022\027\n\004name\030\001 \001(\tB\t\372B\006r\004" +
-      "\020\001\030\024\022\034\n\010priority\030\002 \001(\005B\n\372B\007\032\005\020\350\007(\000\022)\n\010ch" +
-      "ildren\030\003 \003(\0132\027.api.common.WorkerGroup\"r\n" +
-      "\031WorkerGroupCreateResponse\022\n\n\002id\030\001 \001(\003\022\014" +
-      "\n\004name\030\002 \001(\t\022\020\n\010priority\030\003 \001(\005\022)\n\010childr" +
-      "en\030\004 \003(\0132\027.api.common.WorkerGroup\"\210\001\n\030Wo" +
-      "rkerGroupUpdateRequest\022\n\n\002id\030\001 \001(\003\022\027\n\004na" +
-      "me\030\002 \001(\tB\t\372B\006r\004\020\001\030\024\022\034\n\010priority\030\003 \001(\005B\n\372" +
-      "B\007\032\005\020\350\007(\000\022)\n\010children\030\004 \003(\0132\027.api.common" +
-      ".WorkerGroup\"r\n\031WorkerGroupUpdateRespons" +
-      "e\022\n\n\002id\030\001 \001(\003\022\014\n\004name\030\002 \001(\t\022\020\n\010priority\030" +
-      "\003 \001(\005\022)\n\010children\030\004 \003(\0132\027.api.common.Wor" +
-      "kerGroup\"/\n\030WorkerGroupDeleteRequest\022\023\n\002" +
-      "id\030\001 \001(\003B\007\372B\004\"\002 \000\"\235\001\n\017GroupQueryModel\022\n\n" +
-      "\002id\030\001 \001(\003\022\014\n\004name\030\002 \001(\t\022\020\n\010priority\030\003 \001(" +
-      "\005\022\r\n\005count\030\004 \001(\005\022\022\n\nGroupAdmin\030\005 \003(\t\022\023\n\013" +
-      "GroupLeader\030\006 \003(\t\022&\n\005child\030\007 \003(\0132\027.api.c" +
-      "ommon.WorkerGroup\"\207\001\n\027WorkerGroupQueryRe" +
-      "quest\022\026\n\tgroup_pid\030\001 \001(\003H\000\210\001\001\022\026\n\tgroup_c" +
-      "id\030\002 \001(\003H\001\210\001\001\022 \n\005batch\030\003 \001(\0132\021.api.commo" +
-      "n.BatchB\014\n\n_group_pidB\014\n\n_group_cid\"q\n\024W" +
-      "orkerGroupQueryResp\022(\n\005items\030\001 \003(\0132\031.api" +
-      ".core.GroupQueryModel\022 \n\005batch\030\002 \001(\0132\021.a" +
-      "pi.common.Batch\022\r\n\005total\030\003 \001(\0052\252\004\n\013Worke" +
-      "rGroup\022]\n\005Query\022!.api.core.WorkerGroupQu" +
-      "eryRequest\032\036.api.core.WorkerGroupQueryRe" +
-      "sp\"\021\272\276\031\r\010\220\003\030\001\322\014\005query\022e\n\006Create\022\".api.co" +
-      "re.WorkerGroupCreateRequest\032#.api.core.W" +
-      "orkerGroupCreateResponse\"\022\272\276\031\016\010\221\003\030\001\322\014\006cr" +
-      "eate\022e\n\006Update\022\".api.core.WorkerGroupUpd" +
-      "ateRequest\032#.api.core.WorkerGroupUpdateR" +
-      "esponse\"\022\272\276\031\016\010\222\003\030\001\322\014\006update\022X\n\006Delete\022\"." +
-      "api.core.WorkerGroupDeleteRequest\032\026.goog" +
-      "le.protobuf.Empty\"\022\272\276\031\016\010\223\003\030\001\322\014\006delete\022d\n" +
-      "\013QueryByPerm\022\026.google.protobuf.Empty\032\".a" +
-      "pi.core.WorkerGroupQueryResponse\"\031\272\276\031\025\010\224" +
-      "\003\030\001\322\014\rquery-by-perm\032.\272\276\031*\272\006\014worker_group" +
-      "\312\014\001\020\322\014\024/tenant/worker-groupBE\n\030com.tenea" +
-      "syChat.api.coreZ\021wcs/api/core;core\272\276\031\024\242\006" +
-      "\004jeff\262\006\n2022-12-06b\006proto3"
+      "oto\"j\n\035WorkerGroupQueryByPermRequest\0226\n\016" +
+      "disable_status\030\001 \001(\0162\031.api.common.Disabl" +
+      "eStatusH\000\210\001\001B\021\n\017_disable_status\"B\n\030Worke" +
+      "rGroupQueryResponse\022&\n\005items\030\001 \003(\0132\027.api" +
+      ".common.WorkerGroup\"|\n\030WorkerGroupCreate" +
+      "Request\022\027\n\004name\030\001 \001(\tB\t\372B\006r\004\020\001\030\024\022\034\n\010prio" +
+      "rity\030\002 \001(\005B\n\372B\007\032\005\020\350\007(\000\022)\n\010children\030\003 \003(\013" +
+      "2\027.api.common.WorkerGroup\"r\n\031WorkerGroup" +
+      "CreateResponse\022\n\n\002id\030\001 \001(\003\022\014\n\004name\030\002 \001(\t" +
+      "\022\020\n\010priority\030\003 \001(\005\022)\n\010children\030\004 \003(\0132\027.a" +
+      "pi.common.WorkerGroup\"\210\001\n\030WorkerGroupUpd" +
+      "ateRequest\022\n\n\002id\030\001 \001(\003\022\027\n\004name\030\002 \001(\tB\t\372B" +
+      "\006r\004\020\001\030\024\022\034\n\010priority\030\003 \001(\005B\n\372B\007\032\005\020\350\007(\000\022)\n" +
+      "\010children\030\004 \003(\0132\027.api.common.WorkerGroup" +
+      "\"r\n\031WorkerGroupUpdateResponse\022\n\n\002id\030\001 \001(" +
+      "\003\022\014\n\004name\030\002 \001(\t\022\020\n\010priority\030\003 \001(\005\022)\n\010chi" +
+      "ldren\030\004 \003(\0132\027.api.common.WorkerGroup\"/\n\030" +
+      "WorkerGroupDeleteRequest\022\023\n\002id\030\001 \001(\003B\007\372B" +
+      "\004\"\002 \000\"k\n\031WorkerGroupDisableRequest\022\023\n\002id" +
+      "\030\001 \001(\003B\007\372B\004\"\002 \000\0229\n\016disable_status\030\002 \001(\0162" +
+      "\031.api.common.DisableStatusB\006\372B\003\202\001\000\"\320\001\n\017G" +
+      "roupQueryModel\022\n\n\002id\030\001 \001(\003\022\014\n\004name\030\002 \001(\t" +
+      "\022\020\n\010priority\030\003 \001(\005\022\r\n\005count\030\004 \001(\005\022\022\n\nGro" +
+      "upAdmin\030\005 \003(\t\022\023\n\013GroupLeader\030\006 \003(\t\022&\n\005ch" +
+      "ild\030\007 \003(\0132\027.api.common.WorkerGroup\0221\n\016di" +
+      "sable_status\030\010 \001(\0162\031.api.common.DisableS" +
+      "tatus\"\322\001\n\027WorkerGroupQueryRequest\022\026\n\tgro" +
+      "up_pid\030\001 \001(\003H\000\210\001\001\022\026\n\tgroup_cid\030\002 \001(\003H\001\210\001" +
+      "\001\022 \n\005batch\030\003 \001(\0132\021.api.common.Batch\0226\n\016d" +
+      "isable_status\030\004 \001(\0162\031.api.common.Disable" +
+      "StatusH\002\210\001\001B\014\n\n_group_pidB\014\n\n_group_cidB" +
+      "\021\n\017_disable_status\"q\n\024WorkerGroupQueryRe" +
+      "sp\022(\n\005items\030\001 \003(\0132\031.api.core.GroupQueryM" +
+      "odel\022 \n\005batch\030\002 \001(\0132\021.api.common.Batch\022\r" +
+      "\n\005total\030\003 \001(\005\")\n\024QueryWorksByGroupReq\022\021\n" +
+      "\tgroup_pid\030\001 \001(\003\":\n\025QueryWorksByGroupRes" +
+      "p\022!\n\005items\030\001 \003(\0132\022.api.common.Worker2\215\006\n" +
+      "\013WorkerGroup\022]\n\005Query\022!.api.core.WorkerG" +
+      "roupQueryRequest\032\036.api.core.WorkerGroupQ" +
+      "ueryResp\"\021\272\276\031\r\010\220\003\030\001\322\014\005query\022e\n\006Create\022\"." +
+      "api.core.WorkerGroupCreateRequest\032#.api." +
+      "core.WorkerGroupCreateResponse\"\022\272\276\031\016\010\221\003\030" +
+      "\001\322\014\006create\022e\n\006Update\022\".api.core.WorkerGr" +
+      "oupUpdateRequest\032#.api.core.WorkerGroupU" +
+      "pdateResponse\"\022\272\276\031\016\010\222\003\030\001\322\014\006update\022X\n\006Del" +
+      "ete\022\".api.core.WorkerGroupDeleteRequest\032" +
+      "\026.google.protobuf.Empty\"\022\272\276\031\016\010\223\003\030\001\322\014\006del" +
+      "ete\022u\n\013QueryByPerm\022\'.api.core.WorkerGrou" +
+      "pQueryByPermRequest\032\".api.core.WorkerGro" +
+      "upQueryResponse\"\031\272\276\031\025\010\224\003\030\001\322\014\rquery-by-pe" +
+      "rm\022s\n\021QueryWorksByGroup\022\036.api.core.Query" +
+      "WorksByGroupReq\032\037.api.core.QueryWorksByG" +
+      "roupResp\"\035\272\276\031\031\010\225\003\030\001\322\014\021query-group-works\022" +
+      "[\n\007Disable\022#.api.core.WorkerGroupDisable" +
+      "Request\032\026.google.protobuf.Empty\"\023\272\276\031\017\010\226\003" +
+      "\030\001\322\014\007disable\032.\272\276\031*\272\006\014worker_group\312\014\001\020\322\014\024" +
+      "/tenant/worker-groupBE\n\030com.teneasyChat." +
+      "api.coreZ\021wcs/api/core;core\272\276\031\024\242\006\004jeff\262\006" +
+      "\n2022-12-06b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -8856,60 +11542,84 @@ public final class WorkerGroupOuterClass {
           com.google.protobuf.EmptyProto.getDescriptor(),
           io.envoyproxy.pgv.validate.Validate.getDescriptor(),
         });
-    internal_static_api_core_WorkerGroupQueryResponse_descriptor =
+    internal_static_api_core_WorkerGroupQueryByPermRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
+    internal_static_api_core_WorkerGroupQueryByPermRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_api_core_WorkerGroupQueryByPermRequest_descriptor,
+        new java.lang.String[] { "DisableStatus", });
+    internal_static_api_core_WorkerGroupQueryResponse_descriptor =
+      getDescriptor().getMessageTypes().get(1);
     internal_static_api_core_WorkerGroupQueryResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_core_WorkerGroupQueryResponse_descriptor,
         new java.lang.String[] { "Items", });
     internal_static_api_core_WorkerGroupCreateRequest_descriptor =
-      getDescriptor().getMessageTypes().get(1);
+      getDescriptor().getMessageTypes().get(2);
     internal_static_api_core_WorkerGroupCreateRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_core_WorkerGroupCreateRequest_descriptor,
         new java.lang.String[] { "Name", "Priority", "Children", });
     internal_static_api_core_WorkerGroupCreateResponse_descriptor =
-      getDescriptor().getMessageTypes().get(2);
+      getDescriptor().getMessageTypes().get(3);
     internal_static_api_core_WorkerGroupCreateResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_core_WorkerGroupCreateResponse_descriptor,
         new java.lang.String[] { "Id", "Name", "Priority", "Children", });
     internal_static_api_core_WorkerGroupUpdateRequest_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(4);
     internal_static_api_core_WorkerGroupUpdateRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_core_WorkerGroupUpdateRequest_descriptor,
         new java.lang.String[] { "Id", "Name", "Priority", "Children", });
     internal_static_api_core_WorkerGroupUpdateResponse_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_api_core_WorkerGroupUpdateResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_core_WorkerGroupUpdateResponse_descriptor,
         new java.lang.String[] { "Id", "Name", "Priority", "Children", });
     internal_static_api_core_WorkerGroupDeleteRequest_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(6);
     internal_static_api_core_WorkerGroupDeleteRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_core_WorkerGroupDeleteRequest_descriptor,
         new java.lang.String[] { "Id", });
+    internal_static_api_core_WorkerGroupDisableRequest_descriptor =
+      getDescriptor().getMessageTypes().get(7);
+    internal_static_api_core_WorkerGroupDisableRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_api_core_WorkerGroupDisableRequest_descriptor,
+        new java.lang.String[] { "Id", "DisableStatus", });
     internal_static_api_core_GroupQueryModel_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_api_core_GroupQueryModel_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_core_GroupQueryModel_descriptor,
-        new java.lang.String[] { "Id", "Name", "Priority", "Count", "GroupAdmin", "GroupLeader", "Child", });
+        new java.lang.String[] { "Id", "Name", "Priority", "Count", "GroupAdmin", "GroupLeader", "Child", "DisableStatus", });
     internal_static_api_core_WorkerGroupQueryRequest_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_api_core_WorkerGroupQueryRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_core_WorkerGroupQueryRequest_descriptor,
-        new java.lang.String[] { "GroupPid", "GroupCid", "Batch", });
+        new java.lang.String[] { "GroupPid", "GroupCid", "Batch", "DisableStatus", });
     internal_static_api_core_WorkerGroupQueryResp_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_api_core_WorkerGroupQueryResp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_core_WorkerGroupQueryResp_descriptor,
         new java.lang.String[] { "Items", "Batch", "Total", });
+    internal_static_api_core_QueryWorksByGroupReq_descriptor =
+      getDescriptor().getMessageTypes().get(11);
+    internal_static_api_core_QueryWorksByGroupReq_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_api_core_QueryWorksByGroupReq_descriptor,
+        new java.lang.String[] { "GroupPid", });
+    internal_static_api_core_QueryWorksByGroupResp_descriptor =
+      getDescriptor().getMessageTypes().get(12);
+    internal_static_api_core_QueryWorksByGroupResp_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_api_core_QueryWorksByGroupResp_descriptor,
+        new java.lang.String[] { "Items", });
     descriptor.resolveAllFeaturesImmutable();
     com.teneasyChat.api.Option.getDescriptor();
     com.teneasyChat.api.common.CWorker.getDescriptor();

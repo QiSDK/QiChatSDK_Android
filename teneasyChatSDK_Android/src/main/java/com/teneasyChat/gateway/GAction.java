@@ -198,6 +198,10 @@ public final class GAction {
      * <code>ActionSCSimSend = 19;</code>
      */
     ActionSCSimSend(19),
+    /**
+     * <code>ActionSystem = 20;</code>
+     */
+    ActionSystem(20),
     UNRECOGNIZED(-1),
     ;
 
@@ -374,6 +378,10 @@ public final class GAction {
      * <code>ActionSCSimSend = 19;</code>
      */
     public static final int ActionSCSimSend_VALUE = 19;
+    /**
+     * <code>ActionSystem = 20;</code>
+     */
+    public static final int ActionSystem_VALUE = 20;
 
 
     public final int getNumber() {
@@ -420,6 +428,7 @@ public final class GAction {
         case 17: return ActionSCWorkerChanged;
         case 18: return ActionSCUserConnectionChanged;
         case 19: return ActionSCSimSend;
+        case 20: return ActionSystem;
         default: return null;
       }
     }
@@ -485,7 +494,7 @@ public final class GAction {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\026gateway/g_action.proto\022\007gateway*\327\003\n\006Ac" +
+      "\n\026gateway/g_action.proto\022\007gateway*\351\003\n\006Ac" +
       "tion\022\021\n\rActionForward\020\000\022\016\n\nActionSCHi\020\001\022" +
       "\023\n\017ActionCSSendMsg\020\002\022\026\n\022ActionSCSendMsgA" +
       "CK\020\003\022\023\n\017ActionSCRecvMsg\020\004\022\026\n\022ActionCSRec" +
@@ -497,9 +506,9 @@ public final class GAction {
       "nputtingBegin\020\016\022\026\n\022ActionInputtingEnd\020\017\022" +
       "\027\n\023ActionSCChatChanged\020\020\022\031\n\025ActionSCWork" +
       "erChanged\020\021\022!\n\035ActionSCUserConnectionCha" +
-      "nged\020\022\022\023\n\017ActionSCSimSend\020\023B@\n\027com.tenea" +
-      "syChat.gatewayZ%wcs/service/gateway/prot" +
-      "ocol;protocolb\006proto3"
+      "nged\020\022\022\023\n\017ActionSCSimSend\020\023\022\020\n\014ActionSys" +
+      "tem\020\024B@\n\027com.teneasyChat.gatewayZ%wcs/se" +
+      "rvice/gateway/protocol;protocolb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

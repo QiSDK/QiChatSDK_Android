@@ -677,6 +677,52 @@ public final class CEntrance {
      */
     com.google.protobuf.ByteString
         getWorkerNameBytes(int index);
+
+    /**
+     * <pre>
+     * 删除时间（依次判断是否已删除）
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp delete_at = 17;</code>
+     * @return Whether the deleteAt field is set.
+     */
+    boolean hasDeleteAt();
+    /**
+     * <pre>
+     * 删除时间（依次判断是否已删除）
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp delete_at = 17;</code>
+     * @return The deleteAt.
+     */
+    com.google.protobuf.Timestamp getDeleteAt();
+    /**
+     * <pre>
+     * 删除时间（依次判断是否已删除）
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp delete_at = 17;</code>
+     */
+    com.google.protobuf.TimestampOrBuilder getDeleteAtOrBuilder();
+
+    /**
+     * <pre>
+     * 删除状态
+     * </pre>
+     *
+     * <code>.api.common.DisableStatus disable_status = 18;</code>
+     * @return The enum numeric value on the wire for disableStatus.
+     */
+    int getDisableStatusValue();
+    /**
+     * <pre>
+     * 删除状态
+     * </pre>
+     *
+     * <code>.api.common.DisableStatus disable_status = 18;</code>
+     * @return The disableStatus.
+     */
+    com.teneasyChat.api.common.CBase.DisableStatus getDisableStatus();
   }
   /**
    * Protobuf type {@code api.common.Entrance}
@@ -714,6 +760,7 @@ public final class CEntrance {
       certificate_ = "";
       workerName_ =
           com.google.protobuf.LazyStringArrayList.emptyList();
+      disableStatus_ = 0;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
@@ -729,6 +776,7 @@ public final class CEntrance {
               com.teneasyChat.api.common.CEntrance.Entrance.class, com.teneasyChat.api.common.CEntrance.Entrance.Builder.class);
     }
 
+    private int bitField0_;
     public static final int ENTRANCE_ID_FIELD_NUMBER = 1;
     private int entranceId_ = 0;
     /**
@@ -1371,6 +1419,70 @@ public final class CEntrance {
       return workerName_.getByteString(index);
     }
 
+    public static final int DELETE_AT_FIELD_NUMBER = 17;
+    private com.google.protobuf.Timestamp deleteAt_;
+    /**
+     * <pre>
+     * 删除时间（依次判断是否已删除）
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp delete_at = 17;</code>
+     * @return Whether the deleteAt field is set.
+     */
+    @java.lang.Override
+    public boolean hasDeleteAt() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     * <pre>
+     * 删除时间（依次判断是否已删除）
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp delete_at = 17;</code>
+     * @return The deleteAt.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Timestamp getDeleteAt() {
+      return deleteAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : deleteAt_;
+    }
+    /**
+     * <pre>
+     * 删除时间（依次判断是否已删除）
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp delete_at = 17;</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.TimestampOrBuilder getDeleteAtOrBuilder() {
+      return deleteAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : deleteAt_;
+    }
+
+    public static final int DISABLE_STATUS_FIELD_NUMBER = 18;
+    private int disableStatus_ = 0;
+    /**
+     * <pre>
+     * 删除状态
+     * </pre>
+     *
+     * <code>.api.common.DisableStatus disable_status = 18;</code>
+     * @return The enum numeric value on the wire for disableStatus.
+     */
+    @java.lang.Override public int getDisableStatusValue() {
+      return disableStatus_;
+    }
+    /**
+     * <pre>
+     * 删除状态
+     * </pre>
+     *
+     * <code>.api.common.DisableStatus disable_status = 18;</code>
+     * @return The disableStatus.
+     */
+    @java.lang.Override public com.teneasyChat.api.common.CBase.DisableStatus getDisableStatus() {
+      com.teneasyChat.api.common.CBase.DisableStatus result = com.teneasyChat.api.common.CBase.DisableStatus.forNumber(disableStatus_);
+      return result == null ? com.teneasyChat.api.common.CBase.DisableStatus.UNRECOGNIZED : result;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -1434,6 +1546,12 @@ public final class CEntrance {
       }
       for (int i = 0; i < workerName_.size(); i++) {
         com.google.protobuf.GeneratedMessage.writeString(output, 15, workerName_.getRaw(i));
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(17, getDeleteAt());
+      }
+      if (disableStatus_ != com.teneasyChat.api.common.CBase.DisableStatus.DEFAULT.getNumber()) {
+        output.writeEnum(18, disableStatus_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -1507,6 +1625,14 @@ public final class CEntrance {
         size += dataSize;
         size += 1 * getWorkerNameList().size();
       }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(17, getDeleteAt());
+      }
+      if (disableStatus_ != com.teneasyChat.api.common.CBase.DisableStatus.DEFAULT.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(18, disableStatus_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -1552,6 +1678,12 @@ public final class CEntrance {
           .equals(other.getCertificate())) return false;
       if (!getWorkerNameList()
           .equals(other.getWorkerNameList())) return false;
+      if (hasDeleteAt() != other.hasDeleteAt()) return false;
+      if (hasDeleteAt()) {
+        if (!getDeleteAt()
+            .equals(other.getDeleteAt())) return false;
+      }
+      if (disableStatus_ != other.disableStatus_) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -1597,6 +1729,12 @@ public final class CEntrance {
         hash = (37 * hash) + WORKER_NAME_FIELD_NUMBER;
         hash = (53 * hash) + getWorkerNameList().hashCode();
       }
+      if (hasDeleteAt()) {
+        hash = (37 * hash) + DELETE_AT_FIELD_NUMBER;
+        hash = (53 * hash) + getDeleteAt().hashCode();
+      }
+      hash = (37 * hash) + DISABLE_STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + disableStatus_;
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1716,13 +1854,19 @@ public final class CEntrance {
 
       // Construct using com.teneasyChat.api.common.CEntrance.Entrance.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessage.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage
+                .alwaysUseFieldBuilders) {
+          getDeleteAtFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
@@ -1744,6 +1888,12 @@ public final class CEntrance {
         certificate_ = "";
         workerName_ =
             com.google.protobuf.LazyStringArrayList.emptyList();
+        deleteAt_ = null;
+        if (deleteAtBuilder_ != null) {
+          deleteAtBuilder_.dispose();
+          deleteAtBuilder_ = null;
+        }
+        disableStatus_ = 0;
         return this;
       }
 
@@ -1824,6 +1974,17 @@ public final class CEntrance {
           workerName_.makeImmutable();
           result.workerName_ = workerName_;
         }
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00008000) != 0)) {
+          result.deleteAt_ = deleteAtBuilder_ == null
+              ? deleteAt_
+              : deleteAtBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00010000) != 0)) {
+          result.disableStatus_ = disableStatus_;
+        }
+        result.bitField0_ |= to_bitField0_;
       }
 
       @java.lang.Override
@@ -1919,6 +2080,12 @@ public final class CEntrance {
             workerName_.addAll(other.workerName_);
           }
           onChanged();
+        }
+        if (other.hasDeleteAt()) {
+          mergeDeleteAt(other.getDeleteAt());
+        }
+        if (other.disableStatus_ != 0) {
+          setDisableStatusValue(other.getDisableStatusValue());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -2033,6 +2200,18 @@ public final class CEntrance {
                 workerName_.add(s);
                 break;
               } // case 122
+              case 138: {
+                input.readMessage(
+                    getDeleteAtFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00008000;
+                break;
+              } // case 138
+              case 144: {
+                disableStatus_ = input.readEnum();
+                bitField0_ |= 0x00010000;
+                break;
+              } // case 144
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -3409,6 +3588,236 @@ public final class CEntrance {
         return this;
       }
 
+      private com.google.protobuf.Timestamp deleteAt_;
+      private com.google.protobuf.SingleFieldBuilder<
+          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> deleteAtBuilder_;
+      /**
+       * <pre>
+       * 删除时间（依次判断是否已删除）
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp delete_at = 17;</code>
+       * @return Whether the deleteAt field is set.
+       */
+      public boolean hasDeleteAt() {
+        return ((bitField0_ & 0x00008000) != 0);
+      }
+      /**
+       * <pre>
+       * 删除时间（依次判断是否已删除）
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp delete_at = 17;</code>
+       * @return The deleteAt.
+       */
+      public com.google.protobuf.Timestamp getDeleteAt() {
+        if (deleteAtBuilder_ == null) {
+          return deleteAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : deleteAt_;
+        } else {
+          return deleteAtBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * 删除时间（依次判断是否已删除）
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp delete_at = 17;</code>
+       */
+      public Builder setDeleteAt(com.google.protobuf.Timestamp value) {
+        if (deleteAtBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          deleteAt_ = value;
+        } else {
+          deleteAtBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00008000;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 删除时间（依次判断是否已删除）
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp delete_at = 17;</code>
+       */
+      public Builder setDeleteAt(
+          com.google.protobuf.Timestamp.Builder builderForValue) {
+        if (deleteAtBuilder_ == null) {
+          deleteAt_ = builderForValue.build();
+        } else {
+          deleteAtBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00008000;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 删除时间（依次判断是否已删除）
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp delete_at = 17;</code>
+       */
+      public Builder mergeDeleteAt(com.google.protobuf.Timestamp value) {
+        if (deleteAtBuilder_ == null) {
+          if (((bitField0_ & 0x00008000) != 0) &&
+            deleteAt_ != null &&
+            deleteAt_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getDeleteAtBuilder().mergeFrom(value);
+          } else {
+            deleteAt_ = value;
+          }
+        } else {
+          deleteAtBuilder_.mergeFrom(value);
+        }
+        if (deleteAt_ != null) {
+          bitField0_ |= 0x00008000;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 删除时间（依次判断是否已删除）
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp delete_at = 17;</code>
+       */
+      public Builder clearDeleteAt() {
+        bitField0_ = (bitField0_ & ~0x00008000);
+        deleteAt_ = null;
+        if (deleteAtBuilder_ != null) {
+          deleteAtBuilder_.dispose();
+          deleteAtBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 删除时间（依次判断是否已删除）
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp delete_at = 17;</code>
+       */
+      public com.google.protobuf.Timestamp.Builder getDeleteAtBuilder() {
+        bitField0_ |= 0x00008000;
+        onChanged();
+        return getDeleteAtFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * 删除时间（依次判断是否已删除）
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp delete_at = 17;</code>
+       */
+      public com.google.protobuf.TimestampOrBuilder getDeleteAtOrBuilder() {
+        if (deleteAtBuilder_ != null) {
+          return deleteAtBuilder_.getMessageOrBuilder();
+        } else {
+          return deleteAt_ == null ?
+              com.google.protobuf.Timestamp.getDefaultInstance() : deleteAt_;
+        }
+      }
+      /**
+       * <pre>
+       * 删除时间（依次判断是否已删除）
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp delete_at = 17;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+          getDeleteAtFieldBuilder() {
+        if (deleteAtBuilder_ == null) {
+          deleteAtBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                  getDeleteAt(),
+                  getParentForChildren(),
+                  isClean());
+          deleteAt_ = null;
+        }
+        return deleteAtBuilder_;
+      }
+
+      private int disableStatus_ = 0;
+      /**
+       * <pre>
+       * 删除状态
+       * </pre>
+       *
+       * <code>.api.common.DisableStatus disable_status = 18;</code>
+       * @return The enum numeric value on the wire for disableStatus.
+       */
+      @java.lang.Override public int getDisableStatusValue() {
+        return disableStatus_;
+      }
+      /**
+       * <pre>
+       * 删除状态
+       * </pre>
+       *
+       * <code>.api.common.DisableStatus disable_status = 18;</code>
+       * @param value The enum numeric value on the wire for disableStatus to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDisableStatusValue(int value) {
+        disableStatus_ = value;
+        bitField0_ |= 0x00010000;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 删除状态
+       * </pre>
+       *
+       * <code>.api.common.DisableStatus disable_status = 18;</code>
+       * @return The disableStatus.
+       */
+      @java.lang.Override
+      public com.teneasyChat.api.common.CBase.DisableStatus getDisableStatus() {
+        com.teneasyChat.api.common.CBase.DisableStatus result = com.teneasyChat.api.common.CBase.DisableStatus.forNumber(disableStatus_);
+        return result == null ? com.teneasyChat.api.common.CBase.DisableStatus.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * 删除状态
+       * </pre>
+       *
+       * <code>.api.common.DisableStatus disable_status = 18;</code>
+       * @param value The disableStatus to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDisableStatus(com.teneasyChat.api.common.CBase.DisableStatus value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00010000;
+        disableStatus_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 删除状态
+       * </pre>
+       *
+       * <code>.api.common.DisableStatus disable_status = 18;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDisableStatus() {
+        bitField0_ = (bitField0_ & ~0x00010000);
+        disableStatus_ = 0;
+        onChanged();
+        return this;
+      }
+
       // @@protoc_insertion_point(builder_scope:api.common.Entrance)
     }
 
@@ -3631,6 +4040,74 @@ public final class CEntrance {
      * @return The display.
      */
     int getDisplay();
+
+    /**
+     * <pre>
+     * 兜底
+     * </pre>
+     *
+     * <code>int32 default_worker_id = 10;</code>
+     * @return The defaultWorkerId.
+     */
+    int getDefaultWorkerId();
+
+    /**
+     * <code>string default_worker_name = 11;</code>
+     * @return The defaultWorkerName.
+     */
+    java.lang.String getDefaultWorkerName();
+    /**
+     * <code>string default_worker_name = 11;</code>
+     * @return The bytes for defaultWorkerName.
+     */
+    com.google.protobuf.ByteString
+        getDefaultWorkerNameBytes();
+
+    /**
+     * <pre>
+     * 删除时间（依次判断是否已删除）
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp delete_at = 12;</code>
+     * @return Whether the deleteAt field is set.
+     */
+    boolean hasDeleteAt();
+    /**
+     * <pre>
+     * 删除时间（依次判断是否已删除）
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp delete_at = 12;</code>
+     * @return The deleteAt.
+     */
+    com.google.protobuf.Timestamp getDeleteAt();
+    /**
+     * <pre>
+     * 删除时间（依次判断是否已删除）
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp delete_at = 12;</code>
+     */
+    com.google.protobuf.TimestampOrBuilder getDeleteAtOrBuilder();
+
+    /**
+     * <pre>
+     * 删除状态
+     * </pre>
+     *
+     * <code>.api.common.DisableStatus disable_status = 13;</code>
+     * @return The enum numeric value on the wire for disableStatus.
+     */
+    int getDisableStatusValue();
+    /**
+     * <pre>
+     * 删除状态
+     * </pre>
+     *
+     * <code>.api.common.DisableStatus disable_status = 13;</code>
+     * @return The disableStatus.
+     */
+    com.teneasyChat.api.common.CBase.DisableStatus getDisableStatus();
   }
   /**
    * Protobuf type {@code api.common.Consult}
@@ -3660,6 +4137,8 @@ public final class CEntrance {
       workerIds_ = emptyIntList();
       workerGroupNames_ = "";
       workerNames_ = "";
+      defaultWorkerName_ = "";
+      disableStatus_ = 0;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
@@ -3675,6 +4154,7 @@ public final class CEntrance {
               com.teneasyChat.api.common.CEntrance.Consult.class, com.teneasyChat.api.common.CEntrance.Consult.Builder.class);
     }
 
+    private int bitField0_;
     public static final int CONSULT_ID_FIELD_NUMBER = 1;
     private int consultId_ = 0;
     /**
@@ -3992,6 +4472,124 @@ public final class CEntrance {
       return display_;
     }
 
+    public static final int DEFAULT_WORKER_ID_FIELD_NUMBER = 10;
+    private int defaultWorkerId_ = 0;
+    /**
+     * <pre>
+     * 兜底
+     * </pre>
+     *
+     * <code>int32 default_worker_id = 10;</code>
+     * @return The defaultWorkerId.
+     */
+    @java.lang.Override
+    public int getDefaultWorkerId() {
+      return defaultWorkerId_;
+    }
+
+    public static final int DEFAULT_WORKER_NAME_FIELD_NUMBER = 11;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object defaultWorkerName_ = "";
+    /**
+     * <code>string default_worker_name = 11;</code>
+     * @return The defaultWorkerName.
+     */
+    @java.lang.Override
+    public java.lang.String getDefaultWorkerName() {
+      java.lang.Object ref = defaultWorkerName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        defaultWorkerName_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string default_worker_name = 11;</code>
+     * @return The bytes for defaultWorkerName.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getDefaultWorkerNameBytes() {
+      java.lang.Object ref = defaultWorkerName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        defaultWorkerName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int DELETE_AT_FIELD_NUMBER = 12;
+    private com.google.protobuf.Timestamp deleteAt_;
+    /**
+     * <pre>
+     * 删除时间（依次判断是否已删除）
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp delete_at = 12;</code>
+     * @return Whether the deleteAt field is set.
+     */
+    @java.lang.Override
+    public boolean hasDeleteAt() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     * <pre>
+     * 删除时间（依次判断是否已删除）
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp delete_at = 12;</code>
+     * @return The deleteAt.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Timestamp getDeleteAt() {
+      return deleteAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : deleteAt_;
+    }
+    /**
+     * <pre>
+     * 删除时间（依次判断是否已删除）
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp delete_at = 12;</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.TimestampOrBuilder getDeleteAtOrBuilder() {
+      return deleteAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : deleteAt_;
+    }
+
+    public static final int DISABLE_STATUS_FIELD_NUMBER = 13;
+    private int disableStatus_ = 0;
+    /**
+     * <pre>
+     * 删除状态
+     * </pre>
+     *
+     * <code>.api.common.DisableStatus disable_status = 13;</code>
+     * @return The enum numeric value on the wire for disableStatus.
+     */
+    @java.lang.Override public int getDisableStatusValue() {
+      return disableStatus_;
+    }
+    /**
+     * <pre>
+     * 删除状态
+     * </pre>
+     *
+     * <code>.api.common.DisableStatus disable_status = 13;</code>
+     * @return The disableStatus.
+     */
+    @java.lang.Override public com.teneasyChat.api.common.CBase.DisableStatus getDisableStatus() {
+      com.teneasyChat.api.common.CBase.DisableStatus result = com.teneasyChat.api.common.CBase.DisableStatus.forNumber(disableStatus_);
+      return result == null ? com.teneasyChat.api.common.CBase.DisableStatus.UNRECOGNIZED : result;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -4041,6 +4639,18 @@ public final class CEntrance {
       }
       if (display_ != 0) {
         output.writeInt32(9, display_);
+      }
+      if (defaultWorkerId_ != 0) {
+        output.writeInt32(10, defaultWorkerId_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(defaultWorkerName_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 11, defaultWorkerName_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(12, getDeleteAt());
+      }
+      if (disableStatus_ != com.teneasyChat.api.common.CBase.DisableStatus.DEFAULT.getNumber()) {
+        output.writeEnum(13, disableStatus_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -4103,6 +4713,21 @@ public final class CEntrance {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(9, display_);
       }
+      if (defaultWorkerId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(10, defaultWorkerId_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(defaultWorkerName_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(11, defaultWorkerName_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(12, getDeleteAt());
+      }
+      if (disableStatus_ != com.teneasyChat.api.common.CBase.DisableStatus.DEFAULT.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(13, disableStatus_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -4136,6 +4761,16 @@ public final class CEntrance {
           != other.getPriority()) return false;
       if (getDisplay()
           != other.getDisplay()) return false;
+      if (getDefaultWorkerId()
+          != other.getDefaultWorkerId()) return false;
+      if (!getDefaultWorkerName()
+          .equals(other.getDefaultWorkerName())) return false;
+      if (hasDeleteAt() != other.hasDeleteAt()) return false;
+      if (hasDeleteAt()) {
+        if (!getDeleteAt()
+            .equals(other.getDeleteAt())) return false;
+      }
+      if (disableStatus_ != other.disableStatus_) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -4169,6 +4804,16 @@ public final class CEntrance {
       hash = (53 * hash) + getPriority();
       hash = (37 * hash) + DISPLAY_FIELD_NUMBER;
       hash = (53 * hash) + getDisplay();
+      hash = (37 * hash) + DEFAULT_WORKER_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getDefaultWorkerId();
+      hash = (37 * hash) + DEFAULT_WORKER_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getDefaultWorkerName().hashCode();
+      if (hasDeleteAt()) {
+        hash = (37 * hash) + DELETE_AT_FIELD_NUMBER;
+        hash = (53 * hash) + getDeleteAt().hashCode();
+      }
+      hash = (37 * hash) + DISABLE_STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + disableStatus_;
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -4288,13 +4933,19 @@ public final class CEntrance {
 
       // Construct using com.teneasyChat.api.common.CEntrance.Consult.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessage.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage
+                .alwaysUseFieldBuilders) {
+          getDeleteAtFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
@@ -4309,6 +4960,14 @@ public final class CEntrance {
         workerNames_ = "";
         priority_ = 0;
         display_ = 0;
+        defaultWorkerId_ = 0;
+        defaultWorkerName_ = "";
+        deleteAt_ = null;
+        if (deleteAtBuilder_ != null) {
+          deleteAtBuilder_.dispose();
+          deleteAtBuilder_ = null;
+        }
+        disableStatus_ = 0;
         return this;
       }
 
@@ -4371,6 +5030,23 @@ public final class CEntrance {
         if (((from_bitField0_ & 0x00000100) != 0)) {
           result.display_ = display_;
         }
+        if (((from_bitField0_ & 0x00000200) != 0)) {
+          result.defaultWorkerId_ = defaultWorkerId_;
+        }
+        if (((from_bitField0_ & 0x00000400) != 0)) {
+          result.defaultWorkerName_ = defaultWorkerName_;
+        }
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000800) != 0)) {
+          result.deleteAt_ = deleteAtBuilder_ == null
+              ? deleteAt_
+              : deleteAtBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00001000) != 0)) {
+          result.disableStatus_ = disableStatus_;
+        }
+        result.bitField0_ |= to_bitField0_;
       }
 
       @java.lang.Override
@@ -4435,6 +5111,20 @@ public final class CEntrance {
         }
         if (other.getDisplay() != 0) {
           setDisplay(other.getDisplay());
+        }
+        if (other.getDefaultWorkerId() != 0) {
+          setDefaultWorkerId(other.getDefaultWorkerId());
+        }
+        if (!other.getDefaultWorkerName().isEmpty()) {
+          defaultWorkerName_ = other.defaultWorkerName_;
+          bitField0_ |= 0x00000400;
+          onChanged();
+        }
+        if (other.hasDeleteAt()) {
+          mergeDeleteAt(other.getDeleteAt());
+        }
+        if (other.disableStatus_ != 0) {
+          setDisableStatusValue(other.getDisableStatusValue());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -4529,6 +5219,28 @@ public final class CEntrance {
                 bitField0_ |= 0x00000100;
                 break;
               } // case 72
+              case 80: {
+                defaultWorkerId_ = input.readInt32();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 80
+              case 90: {
+                defaultWorkerName_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 90
+              case 98: {
+                input.readMessage(
+                    getDeleteAtFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 98
+              case 104: {
+                disableStatus_ = input.readEnum();
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 104
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -5270,6 +5982,352 @@ public final class CEntrance {
         return this;
       }
 
+      private int defaultWorkerId_ ;
+      /**
+       * <pre>
+       * 兜底
+       * </pre>
+       *
+       * <code>int32 default_worker_id = 10;</code>
+       * @return The defaultWorkerId.
+       */
+      @java.lang.Override
+      public int getDefaultWorkerId() {
+        return defaultWorkerId_;
+      }
+      /**
+       * <pre>
+       * 兜底
+       * </pre>
+       *
+       * <code>int32 default_worker_id = 10;</code>
+       * @param value The defaultWorkerId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDefaultWorkerId(int value) {
+
+        defaultWorkerId_ = value;
+        bitField0_ |= 0x00000200;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 兜底
+       * </pre>
+       *
+       * <code>int32 default_worker_id = 10;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDefaultWorkerId() {
+        bitField0_ = (bitField0_ & ~0x00000200);
+        defaultWorkerId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object defaultWorkerName_ = "";
+      /**
+       * <code>string default_worker_name = 11;</code>
+       * @return The defaultWorkerName.
+       */
+      public java.lang.String getDefaultWorkerName() {
+        java.lang.Object ref = defaultWorkerName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          defaultWorkerName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string default_worker_name = 11;</code>
+       * @return The bytes for defaultWorkerName.
+       */
+      public com.google.protobuf.ByteString
+          getDefaultWorkerNameBytes() {
+        java.lang.Object ref = defaultWorkerName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          defaultWorkerName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string default_worker_name = 11;</code>
+       * @param value The defaultWorkerName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDefaultWorkerName(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        defaultWorkerName_ = value;
+        bitField0_ |= 0x00000400;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string default_worker_name = 11;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDefaultWorkerName() {
+        defaultWorkerName_ = getDefaultInstance().getDefaultWorkerName();
+        bitField0_ = (bitField0_ & ~0x00000400);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string default_worker_name = 11;</code>
+       * @param value The bytes for defaultWorkerName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDefaultWorkerNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        defaultWorkerName_ = value;
+        bitField0_ |= 0x00000400;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.Timestamp deleteAt_;
+      private com.google.protobuf.SingleFieldBuilder<
+          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> deleteAtBuilder_;
+      /**
+       * <pre>
+       * 删除时间（依次判断是否已删除）
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp delete_at = 12;</code>
+       * @return Whether the deleteAt field is set.
+       */
+      public boolean hasDeleteAt() {
+        return ((bitField0_ & 0x00000800) != 0);
+      }
+      /**
+       * <pre>
+       * 删除时间（依次判断是否已删除）
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp delete_at = 12;</code>
+       * @return The deleteAt.
+       */
+      public com.google.protobuf.Timestamp getDeleteAt() {
+        if (deleteAtBuilder_ == null) {
+          return deleteAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : deleteAt_;
+        } else {
+          return deleteAtBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * 删除时间（依次判断是否已删除）
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp delete_at = 12;</code>
+       */
+      public Builder setDeleteAt(com.google.protobuf.Timestamp value) {
+        if (deleteAtBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          deleteAt_ = value;
+        } else {
+          deleteAtBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000800;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 删除时间（依次判断是否已删除）
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp delete_at = 12;</code>
+       */
+      public Builder setDeleteAt(
+          com.google.protobuf.Timestamp.Builder builderForValue) {
+        if (deleteAtBuilder_ == null) {
+          deleteAt_ = builderForValue.build();
+        } else {
+          deleteAtBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000800;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 删除时间（依次判断是否已删除）
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp delete_at = 12;</code>
+       */
+      public Builder mergeDeleteAt(com.google.protobuf.Timestamp value) {
+        if (deleteAtBuilder_ == null) {
+          if (((bitField0_ & 0x00000800) != 0) &&
+            deleteAt_ != null &&
+            deleteAt_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getDeleteAtBuilder().mergeFrom(value);
+          } else {
+            deleteAt_ = value;
+          }
+        } else {
+          deleteAtBuilder_.mergeFrom(value);
+        }
+        if (deleteAt_ != null) {
+          bitField0_ |= 0x00000800;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 删除时间（依次判断是否已删除）
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp delete_at = 12;</code>
+       */
+      public Builder clearDeleteAt() {
+        bitField0_ = (bitField0_ & ~0x00000800);
+        deleteAt_ = null;
+        if (deleteAtBuilder_ != null) {
+          deleteAtBuilder_.dispose();
+          deleteAtBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 删除时间（依次判断是否已删除）
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp delete_at = 12;</code>
+       */
+      public com.google.protobuf.Timestamp.Builder getDeleteAtBuilder() {
+        bitField0_ |= 0x00000800;
+        onChanged();
+        return getDeleteAtFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * 删除时间（依次判断是否已删除）
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp delete_at = 12;</code>
+       */
+      public com.google.protobuf.TimestampOrBuilder getDeleteAtOrBuilder() {
+        if (deleteAtBuilder_ != null) {
+          return deleteAtBuilder_.getMessageOrBuilder();
+        } else {
+          return deleteAt_ == null ?
+              com.google.protobuf.Timestamp.getDefaultInstance() : deleteAt_;
+        }
+      }
+      /**
+       * <pre>
+       * 删除时间（依次判断是否已删除）
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp delete_at = 12;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+          getDeleteAtFieldBuilder() {
+        if (deleteAtBuilder_ == null) {
+          deleteAtBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                  getDeleteAt(),
+                  getParentForChildren(),
+                  isClean());
+          deleteAt_ = null;
+        }
+        return deleteAtBuilder_;
+      }
+
+      private int disableStatus_ = 0;
+      /**
+       * <pre>
+       * 删除状态
+       * </pre>
+       *
+       * <code>.api.common.DisableStatus disable_status = 13;</code>
+       * @return The enum numeric value on the wire for disableStatus.
+       */
+      @java.lang.Override public int getDisableStatusValue() {
+        return disableStatus_;
+      }
+      /**
+       * <pre>
+       * 删除状态
+       * </pre>
+       *
+       * <code>.api.common.DisableStatus disable_status = 13;</code>
+       * @param value The enum numeric value on the wire for disableStatus to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDisableStatusValue(int value) {
+        disableStatus_ = value;
+        bitField0_ |= 0x00001000;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 删除状态
+       * </pre>
+       *
+       * <code>.api.common.DisableStatus disable_status = 13;</code>
+       * @return The disableStatus.
+       */
+      @java.lang.Override
+      public com.teneasyChat.api.common.CBase.DisableStatus getDisableStatus() {
+        com.teneasyChat.api.common.CBase.DisableStatus result = com.teneasyChat.api.common.CBase.DisableStatus.forNumber(disableStatus_);
+        return result == null ? com.teneasyChat.api.common.CBase.DisableStatus.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * 删除状态
+       * </pre>
+       *
+       * <code>.api.common.DisableStatus disable_status = 13;</code>
+       * @param value The disableStatus to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDisableStatus(com.teneasyChat.api.common.CBase.DisableStatus value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00001000;
+        disableStatus_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 删除状态
+       * </pre>
+       *
+       * <code>.api.common.DisableStatus disable_status = 13;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDisableStatus() {
+        bitField0_ = (bitField0_ & ~0x00001000);
+        disableStatus_ = 0;
+        onChanged();
+        return this;
+      }
+
       // @@protoc_insertion_point(builder_scope:api.common.Consult)
     }
 
@@ -5343,32 +6401,39 @@ public final class CEntrance {
       "\n\033api/common/c_entrance.proto\022\napi.commo" +
       "n\032\031api/common/c_device.proto\032\037google/pro" +
       "tobuf/timestamp.proto\032\027validate/validate" +
-      ".proto\"\322\002\n\010Entrance\022\023\n\013entrance_id\030\001 \001(\r" +
-      "\022\014\n\004name\030\002 \001(\t\022\014\n\004nick\030\003 \001(\t\022\016\n\006avatar\030\004" +
-      " \001(\t\022\r\n\005guide\030\005 \001(\t\022\035\n\013consult_ids\030\006 \003(\005" +
-      "B\010\372B\005\222\001\002\010\001\022\033\n\023change_default_time\030\007 \001(\t\022" +
-      "\017\n\007h5_link\030\010 \001(\t\022\020\n\010web_link\030\t \001(\t\022\033\n\023in" +
-      "ternal_parameters\030\n \001(\t\022\026\n\016app_parameter" +
-      "s\030\013 \001(\t\022\023\n\013access_link\030\014 \001(\t\022#\n\022default_" +
-      "consult_id\030\r \001(\005B\007\372B\004\032\002 \000\022\023\n\013certificate" +
-      "\030\016 \001(\t\022\023\n\013worker_name\030\017 \003(\t\"\275\001\n\007Consult\022" +
-      "\022\n\nconsult_id\030\001 \001(\r\022\014\n\004name\030\002 \001(\t\022\r\n\005gui" +
-      "de\030\003 \001(\t\022\030\n\020worker_group_ids\030\004 \003(\003\022\022\n\nwo" +
-      "rker_ids\030\005 \003(\005\022\032\n\022worker_group_names\030\006 \001" +
-      "(\t\022\024\n\014worker_names\030\007 \001(\t\022\020\n\010priority\030\010 \001" +
-      "(\005\022\017\n\007display\030\t \001(\005*\231\001\n\016OperationsType\022\032" +
-      "\n\026OPERATION_TYPE_UNKNOWN\020\000\022\032\n\026OPERATION_" +
-      "TYPE_WINDOWS\020\n\022\034\n\030OPERATION_TYPE_MAC_INT" +
-      "EL\020\024\022\030\n\024OPERATION_TYPE_MAC_M\020\025\022\027\n\022OPERAT" +
-      "ION_TYPE_END\020\310\001*\376\001\n\nClientType\022\027\n\023CLIENT" +
-      "_TYPE_UNKNOWN\020\000\022\034\n\030CLIENT_TYPE_WORKER_BE" +
-      "GIN\020\001\022\031\n\025CLIENT_TYPE_WORKER_PC\020\002\022\032\n\026CLIE" +
-      "NT_TYPE_WORKER_END\020d\022\032\n\026CLIENT_TYPE_USER" +
-      "_BEGIN\020e\022\027\n\023CLIENT_TYPE_USER_H5\020f\022\030\n\024CLI" +
-      "ENT_TYPE_USER_WEB\020g\022\030\n\024CLIENT_TYPE_USER_" +
-      "APP\020h\022\031\n\024CLIENT_TYPE_USER_END\020\310\001B3\n\032com." +
-      "teneasyChat.api.commonZ\025wcs/api/common;c" +
-      "ommonb\006proto3"
+      ".proto\032\027api/common/c_base.proto\"\264\003\n\010Entr" +
+      "ance\022\023\n\013entrance_id\030\001 \001(\r\022\014\n\004name\030\002 \001(\t\022" +
+      "\014\n\004nick\030\003 \001(\t\022\016\n\006avatar\030\004 \001(\t\022\r\n\005guide\030\005" +
+      " \001(\t\022\035\n\013consult_ids\030\006 \003(\005B\010\372B\005\222\001\002\010\001\022\033\n\023c" +
+      "hange_default_time\030\007 \001(\t\022\017\n\007h5_link\030\010 \001(" +
+      "\t\022\020\n\010web_link\030\t \001(\t\022\033\n\023internal_paramete" +
+      "rs\030\n \001(\t\022\026\n\016app_parameters\030\013 \001(\t\022\023\n\013acce" +
+      "ss_link\030\014 \001(\t\022#\n\022default_consult_id\030\r \001(" +
+      "\005B\007\372B\004\032\002 \000\022\023\n\013certificate\030\016 \001(\t\022\023\n\013worke" +
+      "r_name\030\017 \003(\t\022-\n\tdelete_at\030\021 \001(\0132\032.google" +
+      ".protobuf.Timestamp\0221\n\016disable_status\030\022 " +
+      "\001(\0162\031.api.common.DisableStatus\"\327\002\n\007Consu" +
+      "lt\022\022\n\nconsult_id\030\001 \001(\r\022\014\n\004name\030\002 \001(\t\022\r\n\005" +
+      "guide\030\003 \001(\t\022\030\n\020worker_group_ids\030\004 \003(\003\022\022\n" +
+      "\nworker_ids\030\005 \003(\005\022\032\n\022worker_group_names\030" +
+      "\006 \001(\t\022\024\n\014worker_names\030\007 \001(\t\022\020\n\010priority\030" +
+      "\010 \001(\005\022\017\n\007display\030\t \001(\005\022\031\n\021default_worker" +
+      "_id\030\n \001(\005\022\033\n\023default_worker_name\030\013 \001(\t\022-" +
+      "\n\tdelete_at\030\014 \001(\0132\032.google.protobuf.Time" +
+      "stamp\0221\n\016disable_status\030\r \001(\0162\031.api.comm" +
+      "on.DisableStatus*\231\001\n\016OperationsType\022\032\n\026O" +
+      "PERATION_TYPE_UNKNOWN\020\000\022\032\n\026OPERATION_TYP" +
+      "E_WINDOWS\020\n\022\034\n\030OPERATION_TYPE_MAC_INTEL\020" +
+      "\024\022\030\n\024OPERATION_TYPE_MAC_M\020\025\022\027\n\022OPERATION" +
+      "_TYPE_END\020\310\001*\376\001\n\nClientType\022\027\n\023CLIENT_TY" +
+      "PE_UNKNOWN\020\000\022\034\n\030CLIENT_TYPE_WORKER_BEGIN" +
+      "\020\001\022\031\n\025CLIENT_TYPE_WORKER_PC\020\002\022\032\n\026CLIENT_" +
+      "TYPE_WORKER_END\020d\022\032\n\026CLIENT_TYPE_USER_BE" +
+      "GIN\020e\022\027\n\023CLIENT_TYPE_USER_H5\020f\022\030\n\024CLIENT" +
+      "_TYPE_USER_WEB\020g\022\030\n\024CLIENT_TYPE_USER_APP" +
+      "\020h\022\031\n\024CLIENT_TYPE_USER_END\020\310\001B3\n\032com.ten" +
+      "easyChat.api.commonZ\025wcs/api/common;comm" +
+      "onb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -5376,23 +6441,25 @@ public final class CEntrance {
           com.teneasyChat.api.common.CDevice.getDescriptor(),
           com.google.protobuf.TimestampProto.getDescriptor(),
           io.envoyproxy.pgv.validate.Validate.getDescriptor(),
+          com.teneasyChat.api.common.CBase.getDescriptor(),
         });
     internal_static_api_common_Entrance_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_api_common_Entrance_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_common_Entrance_descriptor,
-        new java.lang.String[] { "EntranceId", "Name", "Nick", "Avatar", "Guide", "ConsultIds", "ChangeDefaultTime", "H5Link", "WebLink", "InternalParameters", "AppParameters", "AccessLink", "DefaultConsultId", "Certificate", "WorkerName", });
+        new java.lang.String[] { "EntranceId", "Name", "Nick", "Avatar", "Guide", "ConsultIds", "ChangeDefaultTime", "H5Link", "WebLink", "InternalParameters", "AppParameters", "AccessLink", "DefaultConsultId", "Certificate", "WorkerName", "DeleteAt", "DisableStatus", });
     internal_static_api_common_Consult_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_api_common_Consult_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_common_Consult_descriptor,
-        new java.lang.String[] { "ConsultId", "Name", "Guide", "WorkerGroupIds", "WorkerIds", "WorkerGroupNames", "WorkerNames", "Priority", "Display", });
+        new java.lang.String[] { "ConsultId", "Name", "Guide", "WorkerGroupIds", "WorkerIds", "WorkerGroupNames", "WorkerNames", "Priority", "Display", "DefaultWorkerId", "DefaultWorkerName", "DeleteAt", "DisableStatus", });
     descriptor.resolveAllFeaturesImmutable();
     com.teneasyChat.api.common.CDevice.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     io.envoyproxy.pgv.validate.Validate.getDescriptor();
+    com.teneasyChat.api.common.CBase.getDescriptor();
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(io.envoyproxy.pgv.validate.Validate.rules);

@@ -448,17 +448,17 @@ EntranceNotExistsFlag = 0x4
                 val msg = GGateway.CSForward.parseFrom(msgData)
                 Log.i(TAG, "forward: ${msg.data}")
             }  else if(payLoad.act == GAction.Action.ActionSCDeleteMsgACK) {
-                //这部分实际没有用上
+                //手机端撤回消息，并收到成功回执
                 val scMsg = GGateway.SCSendMessage.parseFrom(msgData)
-                val msg = CMessage.Message.newBuilder()
+                val msg = Message.newBuilder()
                 msg.msgId = scMsg.msgId;
                 msg.msgOp = CMessage.MessageOperate.MSG_OP_DELETE;
                 Log.i(TAG, "删除回执收到A：消息ID: ${msg.msgId}")
-                var cMsg = msgList[payLoad.id]
-                if (cMsg != null) {
+                //var cMsg = msgList[payLoad.id]
+                //if (cMsg != null) {
                     Log.i(TAG, "删除成功")
                     listener?.msgDeleted(msg.build(), payLoad.id, -1)
-                }
+                //}
             }  else if(payLoad.act == GAction.Action.ActionSCDeleteMsg) {
                 val scMsg = GGateway.SCRecvMessage.parseFrom(msgData)
                 val msg = CMessage.Message.newBuilder()

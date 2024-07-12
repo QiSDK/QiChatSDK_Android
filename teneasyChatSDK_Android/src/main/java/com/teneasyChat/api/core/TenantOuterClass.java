@@ -26117,7 +26117,7 @@ public final class TenantOuterClass {
       "\003 \001(\005\"4\n\rRouteResponse\022#\n\006routes\030\001 \003(\0132\023" +
       ".api.core.RouteItem\"G\n\014LoginRequest\022\032\n\007a" +
       "ccount\030\001 \001(\tB\t\372B\006r\004\020\003\030\020\022\033\n\010password\030\002 \001(" +
-      "\tB\t\372B\006r\004 \006(\024\"[\n\rLoginResponse\022\r\n\005token\030\001" +
+      "\tB\t\372B\006r\004 \006(\037\"[\n\rLoginResponse\022\r\n\005token\030\001" +
       " \001(\t\022!\n\005items\030\002 \001(\0132\022.api.common.Worker\022" +
       "\030\n\020chat_expire_time\030\003 \001(\005\"1\n\023ManagerLogi" +
       "nRequest\022\032\n\tworker_id\030\001 \001(\005B\007\372B\004\032\002 \000\"H\n\024" +
