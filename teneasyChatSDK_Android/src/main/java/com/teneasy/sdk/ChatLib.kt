@@ -31,7 +31,7 @@ interface TeneasySDKDelegate {
     @payloadId
     @msgId, 如果是0，表示服务器没有生成消息id, 发送失败
     */
-    fun msgReceipt(msg: CMessage.Message, payloadId: Long, msgId: Long, errMsg: String = "") // 使用Long代替UInt64
+    fun msgReceipt(msg: CMessage.Message?, payloadId: Long, msgId: Long, errMsg: String = "") // 使用Long代替UInt64
 
     /**
     消息删除回执
@@ -39,7 +39,7 @@ interface TeneasySDKDelegate {
     @payloadId
     @msgId
      */
-    fun msgDeleted(msg: CMessage.Message, payloadId: Long, msgId: Long, errMsg: String = "") // 使用Long代替UInt64
+    fun msgDeleted(msg: CMessage.Message?, payloadId: Long, msgId: Long, errMsg: String = "") // 使用Long代替UInt64
 
     /**
      * 系统消息，用于显示Tip
@@ -471,19 +471,19 @@ EntranceNotExistsFlag = 0x4
                 chatId = scMsg.chatId
                 Log.i(TAG, "收到消息回执 ActionSCSendMsgACK")
 
-                var cMsg = msgList[payLoad.id]
-                if (cMsg != null){
-                    Log.i(TAG, "收到消息回执: ${scMsg.msgId} : ${payLoad.id}")
-                    if (scMsg.errMsg != null && !scMsg.errMsg.isNullOrEmpty()){
-                        listener?.msgReceipt(cMsg, payLoad.id, -2, scMsg.errMsg)
-                    }
-                    else if (sendingMessage?.msgOp == CMessage.MessageOperate.MSG_OP_DELETE){
-                        listener?.msgDeleted(cMsg, payLoad.id, -1)
-                        Log.i(TAG, "删除成功")
-                    }else{
-                        listener?.msgReceipt(cMsg, payLoad.id, scMsg.msgId)
-                    }
+                val cMsg: Message? = msgList[payLoad.id]
+                //if (cMsg != null){
+                Log.i(TAG, "收到消息回执: ${scMsg.msgId} : ${payLoad.id}")
+                if (scMsg.errMsg != null && !scMsg.errMsg.isNullOrEmpty()){
+                    listener?.msgReceipt(cMsg, payLoad.id, -2, scMsg.errMsg)
                 }
+                else if (sendingMessage?.msgOp == CMessage.MessageOperate.MSG_OP_DELETE){
+                    listener?.msgDeleted(cMsg, payLoad.id, -1)
+                    Log.i(TAG, "删除成功")
+                }else{
+                    listener?.msgReceipt(cMsg, payLoad.id, scMsg.msgId)
+                }
+                //}
                 Log.i(TAG, "消息ID: ${scMsg.msgId}")
             } else if(payLoad.act == GAction.Action.ActionSCWorkerChanged){
                 val scMsg = GGateway.SCWorkerChanged.parseFrom(msgData)
