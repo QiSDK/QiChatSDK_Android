@@ -190,18 +190,18 @@ class MainActivity : AppCompatActivity(), TeneasySDKDelegate {
         println(msg)
     }
 
-    override fun msgReceipt(msg: CMessage.Message, payloadId: Long, msgId: Long, errMsg: String) {
+    override fun msgReceipt(msg: CMessage.Message?, payloadId: Long, msgId: Long, errMsg: String) {
         //println(msg)
         val suc = if (msgId == 0L) "发送失败" else "发送成功"
         println("payloadId："  + payloadId.toString()   +suc)
         runOnUiThread({
-            if (msg.content.toString() != "") {
-                appendText(msg.content.toString() + "\n")
-            }else if (msg.video.toString() != ""){
-                appendText(msg.video.toString() + "\n")
-            }else if (msg.audio.toString() != ""){
-                appendText(msg.audio.toString() + "\n")
-            }
+//            if (msg?.content.toString() != "") {
+//                appendText(msg.content.toString() + "\n")
+//            }else if (msg.video.toString() != ""){
+//                appendText(msg.video.toString() + "\n")
+//            }else if (msg.audio.toString() != ""){
+//                appendText(msg.audio.toString() + "\n")
+//            }
 
             if (msgId > 0){
                 lastMsgId = msgId
@@ -210,9 +210,9 @@ class MainActivity : AppCompatActivity(), TeneasySDKDelegate {
         })
     }
 
-    override fun msgDeleted(msg: CMessage.Message, payloadId: Long, msgId: Long, errMsg: String) {
+    override fun msgDeleted(msg: CMessage.Message?, payloadId: Long, msgId: Long, errMsg: String) {
         runOnUiThread({
-            appendText("删除成功 ${msg.msgId}")
+            appendText("删除成功 ${msg?.msgId}")
         })
     }
 
