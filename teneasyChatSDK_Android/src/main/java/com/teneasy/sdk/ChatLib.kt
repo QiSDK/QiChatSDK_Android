@@ -346,7 +346,7 @@ class ChatLib constructor(cert: String, token:String, baseUrl:String = "", userI
         }else {
             payload.id = payloadId
         }
-        Log.i(TAG, "sending payloadId: ${payloadId}")
+        Log.i(TAG, "sending payloadId: ${payload.id}")
         socket?.send(payload.build().toByteArray())
     }
 
@@ -415,20 +415,20 @@ EntranceNotExistsFlag = 0x4
             }
         }
         else {
-            val payLoad = GPayload.Payload.parseFrom(data)
-            val msgData = payLoad.data
+            val recvPayLoad = GPayload.Payload.parseFrom(data)
+            val msgData = recvPayLoad.data
             //收到消息
-            if(payLoad.act == GAction.Action.ActionSCRecvMsg) {
+            if(recvPayLoad.act == GAction.Action.ActionSCRecvMsg) {
                 val recvMsg = GGateway.SCRecvMessage.parseFrom(msgData)
                 //收到对方撤回消息
                 if (recvMsg.msg.msgOp == CMessage.MessageOperate.MSG_OP_DELETE){
-                    listener?.msgDeleted(recvMsg.msg, payLoad.id, -1)
+                    listener?.msgDeleted(recvMsg.msg, recvPayLoad.id, -1)
                 }else{
                     recvMsg.msg.let {
                         listener?.receivedMsg(it)
                     }
                 }
-            } else if(payLoad.act == GAction.Action.ActionSCHi) {
+            } else if(recvPayLoad.act == GAction.Action.ActionSCHi) {
                 val msg = GGateway.SCHi.parseFrom(msgData)
                 token = msg.token
                 sendingMessage?.let {
@@ -437,17 +437,17 @@ EntranceNotExistsFlag = 0x4
                 }
                 //如果有未发消息，继续使用这消息的payload作为最后一个消息的payload，不然使用系统产生的id
                 if (sendingMessage == null) {
-                    payloadId = payLoad.id
+                    payloadId = recvPayLoad.id
                 }
                 //payloadId = payLoad.id
                 print("初始payloadId:" + payloadId + "\n")
                 listener?.connected(msg)
                 isConnected = true
                 startTimer()
-            } else if(payLoad.act == GAction.Action.ActionForward) {
+            } else if(recvPayLoad.act == GAction.Action.ActionForward) {
                 val msg = GGateway.CSForward.parseFrom(msgData)
                 Log.i(TAG, "forward: ${msg.data}")
-            }  else if(payLoad.act == GAction.Action.ActionSCDeleteMsgACK) {
+            }  else if(recvPayLoad.act == GAction.Action.ActionSCDeleteMsgACK) {
                 //手机端撤回消息，并收到成功回执
                 val scMsg = GGateway.SCSendMessage.parseFrom(msgData)
                 val msg = Message.newBuilder()
@@ -457,35 +457,32 @@ EntranceNotExistsFlag = 0x4
                 //var cMsg = msgList[payLoad.id]
                 //if (cMsg != null) {
                     Log.i(TAG, "删除成功")
-                    listener?.msgDeleted(msg.build(), payLoad.id, -1)
+                    listener?.msgDeleted(msg.build(), recvPayLoad.id, -1)
                 //}
-            }  else if(payLoad.act == GAction.Action.ActionSCDeleteMsg) {
+            }  else if(recvPayLoad.act == GAction.Action.ActionSCDeleteMsg) {
                 val scMsg = GGateway.SCRecvMessage.parseFrom(msgData)
                 val msg = CMessage.Message.newBuilder()
                 msg.msgId = scMsg.msg.msgId;
-                msg.msgOp == CMessage.MessageOperate.MSG_OP_DELETE
-                listener?.msgDeleted(msg.build(), payLoad.id, -1)
-                Log.i(TAG, "对方删除了消息： payload ID${payLoad.id}")
-            } else if(payLoad.act == GAction.Action.ActionSCSendMsgACK) {//消息回执
+                msg.msgOp = CMessage.MessageOperate.MSG_OP_DELETE
+                listener?.msgDeleted(msg.build(), recvPayLoad.id, -1)
+                Log.i(TAG, "对方删除了消息： payload ID${recvPayLoad.id}")
+            } else if(recvPayLoad.act == GAction.Action.ActionSCSendMsgACK) {//消息回执
                 val scMsg = GGateway.SCSendMessage.parseFrom(msgData)
                 chatId = scMsg.chatId
                 Log.i(TAG, "收到消息回执 ActionSCSendMsgACK")
 
-                val cMsg: Message? = msgList[payLoad.id]
+                val cMsg: Message? = msgList[recvPayLoad.id]
                 //if (cMsg != null){
-                Log.i(TAG, "收到消息回执: ${scMsg.msgId} : ${payLoad.id}")
-                if (scMsg.errMsg != null && !scMsg.errMsg.isNullOrEmpty()){
-                    listener?.msgReceipt(cMsg, payLoad.id, -2, scMsg.errMsg)
-                }
-                else if (sendingMessage?.msgOp == CMessage.MessageOperate.MSG_OP_DELETE){
-                    listener?.msgDeleted(cMsg, payLoad.id, -1)
+                Log.i(TAG, "收到消息回执: ${scMsg.msgId} : ${recvPayLoad.id}")
+                if (sendingMessage?.msgOp == CMessage.MessageOperate.MSG_OP_DELETE){
+                    listener?.msgDeleted(cMsg, recvPayLoad.id, -1)
                     Log.i(TAG, "删除成功")
                 }else{
-                    listener?.msgReceipt(cMsg, payLoad.id, scMsg.msgId)
+                    listener?.msgReceipt(cMsg, recvPayLoad.id, scMsg.msgId, scMsg.errMsg)
                 }
                 //}
                 Log.i(TAG, "消息ID: ${scMsg.msgId}")
-            } else if(payLoad.act == GAction.Action.ActionSCWorkerChanged){
+            } else if(recvPayLoad.act == GAction.Action.ActionSCWorkerChanged){
                 val scMsg = GGateway.SCWorkerChanged.parseFrom(msgData)
                 consultId = scMsg.consultId
                 scMsg.apply {
