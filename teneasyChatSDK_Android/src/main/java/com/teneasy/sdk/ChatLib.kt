@@ -323,7 +323,7 @@ class ChatLib constructor(cert: String, token:String, baseUrl:String = "", userI
         //payload_id != 0的时候，可能是重发，重发不需要+1
         if (sendingMessage?.msgOp == CMessage.MessageOperate.MSG_OP_POST && payload_Id == 0L) {
             payloadId += 1
-            print("payloadId + 1" + payloadId)
+            Log.i(TAG, "payloadId + 1: ${payloadId}")
             msgList[payloadId] = cMsg
         }
         if(!isConnected && payload_Id == 0L) {
