@@ -431,14 +431,14 @@ EntranceNotExistsFlag = 0x4
             } else if(recvPayLoad.act == GAction.Action.ActionSCHi) {
                 val msg = GGateway.SCHi.parseFrom(msgData)
                 token = msg.token
-                sendingMessage?.let {
-                    resendMSg(it, this.payloadId)
-                    Log.i(TAG, "自动重发未发出的最后一个消息$payloadId")
-                }
-                //如果有未发消息，继续使用这消息的payload作为最后一个消息的payload，不然使用系统产生的id
-                if (sendingMessage == null) {
+//                sendingMessage?.let {
+//                    resendMSg(it, this.payloadId)
+//                    Log.i(TAG, "自动重发未发出的最后一个消息$payloadId")
+//                }
+//                //如果有未发消息，继续使用这消息的payload作为最后一个消息的payload，不然使用系统产生的id
+//                if (sendingMessage == null) {
                     payloadId = recvPayLoad.id
-                }
+                //}
                 //payloadId = payLoad.id
                 print("初始payloadId:" + payloadId + "\n")
                 listener?.connected(msg)
