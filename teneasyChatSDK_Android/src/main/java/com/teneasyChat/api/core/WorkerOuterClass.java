@@ -32318,8 +32318,8 @@ public final class WorkerOuterClass {
 
   }
 
-  public interface WithDrawOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:api.core.WithDraw)
+  public interface ThirdOrderOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:api.core.ThirdOrder)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -32329,12 +32329,12 @@ public final class WorkerOuterClass {
     long getId();
 
     /**
-     * <code>string orderNo = 2;</code>
+     * <code>string order_no = 2;</code>
      * @return The orderNo.
      */
     java.lang.String getOrderNo();
     /**
-     * <code>string orderNo = 2;</code>
+     * <code>string order_no = 2;</code>
      * @return The bytes for orderNo.
      */
     com.google.protobuf.ByteString
@@ -32347,36 +32347,192 @@ public final class WorkerOuterClass {
     long getUserid();
 
     /**
-     * <code>string money = 4;</code>
-     * @return The money.
+     * <code>string is_online_pay_desc = 4;</code>
+     * @return The isOnlinePayDesc.
      */
-    java.lang.String getMoney();
+    java.lang.String getIsOnlinePayDesc();
     /**
-     * <code>string money = 4;</code>
-     * @return The bytes for money.
+     * <code>string is_online_pay_desc = 4;</code>
+     * @return The bytes for isOnlinePayDesc.
      */
     com.google.protobuf.ByteString
-        getMoneyBytes();
+        getIsOnlinePayDescBytes();
 
     /**
-     * <code>int64 status = 5;</code>
-     * @return The status.
+     * <code>string is_matching_pay_desc = 5;</code>
+     * @return The isMatchingPayDesc.
      */
-    long getStatus();
+    java.lang.String getIsMatchingPayDesc();
+    /**
+     * <code>string is_matching_pay_desc = 5;</code>
+     * @return The bytes for isMatchingPayDesc.
+     */
+    com.google.protobuf.ByteString
+        getIsMatchingPayDescBytes();
 
     /**
-     * <code>int64 applyTime = 6;</code>
-     * @return The applyTime.
+     * <code>string type_desc = 6;</code>
+     * @return The typeDesc.
      */
-    long getApplyTime();
+    java.lang.String getTypeDesc();
+    /**
+     * <code>string type_desc = 6;</code>
+     * @return The bytes for typeDesc.
+     */
+    com.google.protobuf.ByteString
+        getTypeDescBytes();
+
+    /**
+     * <code>string status_desc = 7;</code>
+     * @return The statusDesc.
+     */
+    java.lang.String getStatusDesc();
+    /**
+     * <code>string status_desc = 7;</code>
+     * @return The bytes for statusDesc.
+     */
+    com.google.protobuf.ByteString
+        getStatusDescBytes();
+
+    /**
+     * <code>string confirm_desc = 8;</code>
+     * @return The confirmDesc.
+     */
+    java.lang.String getConfirmDesc();
+    /**
+     * <code>string confirm_desc = 8;</code>
+     * @return The bytes for confirmDesc.
+     */
+    com.google.protobuf.ByteString
+        getConfirmDescBytes();
+
+    /**
+     * <code>string create_time = 9;</code>
+     * @return The createTime.
+     */
+    java.lang.String getCreateTime();
+    /**
+     * <code>string create_time = 9;</code>
+     * @return The bytes for createTime.
+     */
+    com.google.protobuf.ByteString
+        getCreateTimeBytes();
+
+    /**
+     * <code>string push_status_desc = 10;</code>
+     * @return The pushStatusDesc.
+     */
+    java.lang.String getPushStatusDesc();
+    /**
+     * <code>string push_status_desc = 10;</code>
+     * @return The bytes for pushStatusDesc.
+     */
+    com.google.protobuf.ByteString
+        getPushStatusDescBytes();
+
+    /**
+     * <code>string finish_time_desc = 11;</code>
+     * @return The finishTimeDesc.
+     */
+    java.lang.String getFinishTimeDesc();
+    /**
+     * <code>string finish_time_desc = 11;</code>
+     * @return The bytes for finishTimeDesc.
+     */
+    com.google.protobuf.ByteString
+        getFinishTimeDescBytes();
+
+    /**
+     * <code>string card_type = 12;</code>
+     * @return The cardType.
+     */
+    java.lang.String getCardType();
+    /**
+     * <code>string card_type = 12;</code>
+     * @return The bytes for cardType.
+     */
+    com.google.protobuf.ByteString
+        getCardTypeBytes();
+
+    /**
+     * <code>string match_status_desc = 13;</code>
+     * @return The matchStatusDesc.
+     */
+    java.lang.String getMatchStatusDesc();
+    /**
+     * <code>string match_status_desc = 13;</code>
+     * @return The bytes for matchStatusDesc.
+     */
+    com.google.protobuf.ByteString
+        getMatchStatusDescBytes();
+
+    /**
+     * <code>string img_upload_time = 14;</code>
+     * @return The imgUploadTime.
+     */
+    java.lang.String getImgUploadTime();
+    /**
+     * <code>string img_upload_time = 14;</code>
+     * @return The bytes for imgUploadTime.
+     */
+    com.google.protobuf.ByteString
+        getImgUploadTimeBytes();
+
+    /**
+     * <code>string receipt_email = 15;</code>
+     * @return The receiptEmail.
+     */
+    java.lang.String getReceiptEmail();
+    /**
+     * <code>string receipt_email = 15;</code>
+     * @return The bytes for receiptEmail.
+     */
+    com.google.protobuf.ByteString
+        getReceiptEmailBytes();
+
+    /**
+     * <code>string amount = 16;</code>
+     * @return The amount.
+     */
+    java.lang.String getAmount();
+    /**
+     * <code>string amount = 16;</code>
+     * @return The bytes for amount.
+     */
+    com.google.protobuf.ByteString
+        getAmountBytes();
+
+    /**
+     * <code>string recharge_name = 17;</code>
+     * @return The rechargeName.
+     */
+    java.lang.String getRechargeName();
+    /**
+     * <code>string recharge_name = 17;</code>
+     * @return The bytes for rechargeName.
+     */
+    com.google.protobuf.ByteString
+        getRechargeNameBytes();
+
+    /**
+     * <code>string account_name = 18;</code>
+     * @return The accountName.
+     */
+    java.lang.String getAccountName();
+    /**
+     * <code>string account_name = 18;</code>
+     * @return The bytes for accountName.
+     */
+    com.google.protobuf.ByteString
+        getAccountNameBytes();
   }
   /**
-   * Protobuf type {@code api.core.WithDraw}
+   * Protobuf type {@code api.core.ThirdOrder}
    */
-  public static final class WithDraw extends
+  public static final class ThirdOrder extends
       com.google.protobuf.GeneratedMessage implements
-      // @@protoc_insertion_point(message_implements:api.core.WithDraw)
-      WithDrawOrBuilder {
+      // @@protoc_insertion_point(message_implements:api.core.ThirdOrder)
+      ThirdOrderOrBuilder {
   private static final long serialVersionUID = 0L;
     static {
       com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
@@ -32385,28 +32541,42 @@ public final class WorkerOuterClass {
         /* minor= */ 26,
         /* patch= */ 1,
         /* suffix= */ "",
-        WithDraw.class.getName());
+        ThirdOrder.class.getName());
     }
-    // Use WithDraw.newBuilder() to construct.
-    private WithDraw(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+    // Use ThirdOrder.newBuilder() to construct.
+    private ThirdOrder(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
     }
-    private WithDraw() {
+    private ThirdOrder() {
       orderNo_ = "";
-      money_ = "";
+      isOnlinePayDesc_ = "";
+      isMatchingPayDesc_ = "";
+      typeDesc_ = "";
+      statusDesc_ = "";
+      confirmDesc_ = "";
+      createTime_ = "";
+      pushStatusDesc_ = "";
+      finishTimeDesc_ = "";
+      cardType_ = "";
+      matchStatusDesc_ = "";
+      imgUploadTime_ = "";
+      receiptEmail_ = "";
+      amount_ = "";
+      rechargeName_ = "";
+      accountName_ = "";
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.teneasyChat.api.core.WorkerOuterClass.internal_static_api_core_WithDraw_descriptor;
+      return com.teneasyChat.api.core.WorkerOuterClass.internal_static_api_core_ThirdOrder_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.teneasyChat.api.core.WorkerOuterClass.internal_static_api_core_WithDraw_fieldAccessorTable
+      return com.teneasyChat.api.core.WorkerOuterClass.internal_static_api_core_ThirdOrder_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.teneasyChat.api.core.WorkerOuterClass.WithDraw.class, com.teneasyChat.api.core.WorkerOuterClass.WithDraw.Builder.class);
+              com.teneasyChat.api.core.WorkerOuterClass.ThirdOrder.class, com.teneasyChat.api.core.WorkerOuterClass.ThirdOrder.Builder.class);
     }
 
     public static final int ID_FIELD_NUMBER = 1;
@@ -32420,11 +32590,11 @@ public final class WorkerOuterClass {
       return id_;
     }
 
-    public static final int ORDERNO_FIELD_NUMBER = 2;
+    public static final int ORDER_NO_FIELD_NUMBER = 2;
     @SuppressWarnings("serial")
     private volatile java.lang.Object orderNo_ = "";
     /**
-     * <code>string orderNo = 2;</code>
+     * <code>string order_no = 2;</code>
      * @return The orderNo.
      */
     @java.lang.Override
@@ -32441,7 +32611,7 @@ public final class WorkerOuterClass {
       }
     }
     /**
-     * <code>string orderNo = 2;</code>
+     * <code>string order_no = 2;</code>
      * @return The bytes for orderNo.
      */
     @java.lang.Override
@@ -32470,65 +32640,589 @@ public final class WorkerOuterClass {
       return userid_;
     }
 
-    public static final int MONEY_FIELD_NUMBER = 4;
+    public static final int IS_ONLINE_PAY_DESC_FIELD_NUMBER = 4;
     @SuppressWarnings("serial")
-    private volatile java.lang.Object money_ = "";
+    private volatile java.lang.Object isOnlinePayDesc_ = "";
     /**
-     * <code>string money = 4;</code>
-     * @return The money.
+     * <code>string is_online_pay_desc = 4;</code>
+     * @return The isOnlinePayDesc.
      */
     @java.lang.Override
-    public java.lang.String getMoney() {
-      java.lang.Object ref = money_;
+    public java.lang.String getIsOnlinePayDesc() {
+      java.lang.Object ref = isOnlinePayDesc_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        money_ = s;
+        isOnlinePayDesc_ = s;
         return s;
       }
     }
     /**
-     * <code>string money = 4;</code>
-     * @return The bytes for money.
+     * <code>string is_online_pay_desc = 4;</code>
+     * @return The bytes for isOnlinePayDesc.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getMoneyBytes() {
-      java.lang.Object ref = money_;
+        getIsOnlinePayDescBytes() {
+      java.lang.Object ref = isOnlinePayDesc_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        money_ = b;
+        isOnlinePayDesc_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
 
-    public static final int STATUS_FIELD_NUMBER = 5;
-    private long status_ = 0L;
+    public static final int IS_MATCHING_PAY_DESC_FIELD_NUMBER = 5;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object isMatchingPayDesc_ = "";
     /**
-     * <code>int64 status = 5;</code>
-     * @return The status.
+     * <code>string is_matching_pay_desc = 5;</code>
+     * @return The isMatchingPayDesc.
      */
     @java.lang.Override
-    public long getStatus() {
-      return status_;
+    public java.lang.String getIsMatchingPayDesc() {
+      java.lang.Object ref = isMatchingPayDesc_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        isMatchingPayDesc_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string is_matching_pay_desc = 5;</code>
+     * @return The bytes for isMatchingPayDesc.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getIsMatchingPayDescBytes() {
+      java.lang.Object ref = isMatchingPayDesc_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        isMatchingPayDesc_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
-    public static final int APPLYTIME_FIELD_NUMBER = 6;
-    private long applyTime_ = 0L;
+    public static final int TYPE_DESC_FIELD_NUMBER = 6;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object typeDesc_ = "";
     /**
-     * <code>int64 applyTime = 6;</code>
-     * @return The applyTime.
+     * <code>string type_desc = 6;</code>
+     * @return The typeDesc.
      */
     @java.lang.Override
-    public long getApplyTime() {
-      return applyTime_;
+    public java.lang.String getTypeDesc() {
+      java.lang.Object ref = typeDesc_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        typeDesc_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string type_desc = 6;</code>
+     * @return The bytes for typeDesc.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getTypeDescBytes() {
+      java.lang.Object ref = typeDesc_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        typeDesc_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int STATUS_DESC_FIELD_NUMBER = 7;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object statusDesc_ = "";
+    /**
+     * <code>string status_desc = 7;</code>
+     * @return The statusDesc.
+     */
+    @java.lang.Override
+    public java.lang.String getStatusDesc() {
+      java.lang.Object ref = statusDesc_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        statusDesc_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string status_desc = 7;</code>
+     * @return The bytes for statusDesc.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getStatusDescBytes() {
+      java.lang.Object ref = statusDesc_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        statusDesc_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CONFIRM_DESC_FIELD_NUMBER = 8;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object confirmDesc_ = "";
+    /**
+     * <code>string confirm_desc = 8;</code>
+     * @return The confirmDesc.
+     */
+    @java.lang.Override
+    public java.lang.String getConfirmDesc() {
+      java.lang.Object ref = confirmDesc_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        confirmDesc_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string confirm_desc = 8;</code>
+     * @return The bytes for confirmDesc.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getConfirmDescBytes() {
+      java.lang.Object ref = confirmDesc_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        confirmDesc_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CREATE_TIME_FIELD_NUMBER = 9;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object createTime_ = "";
+    /**
+     * <code>string create_time = 9;</code>
+     * @return The createTime.
+     */
+    @java.lang.Override
+    public java.lang.String getCreateTime() {
+      java.lang.Object ref = createTime_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        createTime_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string create_time = 9;</code>
+     * @return The bytes for createTime.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getCreateTimeBytes() {
+      java.lang.Object ref = createTime_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        createTime_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PUSH_STATUS_DESC_FIELD_NUMBER = 10;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object pushStatusDesc_ = "";
+    /**
+     * <code>string push_status_desc = 10;</code>
+     * @return The pushStatusDesc.
+     */
+    @java.lang.Override
+    public java.lang.String getPushStatusDesc() {
+      java.lang.Object ref = pushStatusDesc_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        pushStatusDesc_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string push_status_desc = 10;</code>
+     * @return The bytes for pushStatusDesc.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getPushStatusDescBytes() {
+      java.lang.Object ref = pushStatusDesc_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        pushStatusDesc_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int FINISH_TIME_DESC_FIELD_NUMBER = 11;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object finishTimeDesc_ = "";
+    /**
+     * <code>string finish_time_desc = 11;</code>
+     * @return The finishTimeDesc.
+     */
+    @java.lang.Override
+    public java.lang.String getFinishTimeDesc() {
+      java.lang.Object ref = finishTimeDesc_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        finishTimeDesc_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string finish_time_desc = 11;</code>
+     * @return The bytes for finishTimeDesc.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getFinishTimeDescBytes() {
+      java.lang.Object ref = finishTimeDesc_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        finishTimeDesc_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CARD_TYPE_FIELD_NUMBER = 12;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object cardType_ = "";
+    /**
+     * <code>string card_type = 12;</code>
+     * @return The cardType.
+     */
+    @java.lang.Override
+    public java.lang.String getCardType() {
+      java.lang.Object ref = cardType_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        cardType_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string card_type = 12;</code>
+     * @return The bytes for cardType.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getCardTypeBytes() {
+      java.lang.Object ref = cardType_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        cardType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int MATCH_STATUS_DESC_FIELD_NUMBER = 13;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object matchStatusDesc_ = "";
+    /**
+     * <code>string match_status_desc = 13;</code>
+     * @return The matchStatusDesc.
+     */
+    @java.lang.Override
+    public java.lang.String getMatchStatusDesc() {
+      java.lang.Object ref = matchStatusDesc_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        matchStatusDesc_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string match_status_desc = 13;</code>
+     * @return The bytes for matchStatusDesc.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getMatchStatusDescBytes() {
+      java.lang.Object ref = matchStatusDesc_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        matchStatusDesc_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int IMG_UPLOAD_TIME_FIELD_NUMBER = 14;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object imgUploadTime_ = "";
+    /**
+     * <code>string img_upload_time = 14;</code>
+     * @return The imgUploadTime.
+     */
+    @java.lang.Override
+    public java.lang.String getImgUploadTime() {
+      java.lang.Object ref = imgUploadTime_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        imgUploadTime_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string img_upload_time = 14;</code>
+     * @return The bytes for imgUploadTime.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getImgUploadTimeBytes() {
+      java.lang.Object ref = imgUploadTime_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        imgUploadTime_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int RECEIPT_EMAIL_FIELD_NUMBER = 15;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object receiptEmail_ = "";
+    /**
+     * <code>string receipt_email = 15;</code>
+     * @return The receiptEmail.
+     */
+    @java.lang.Override
+    public java.lang.String getReceiptEmail() {
+      java.lang.Object ref = receiptEmail_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        receiptEmail_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string receipt_email = 15;</code>
+     * @return The bytes for receiptEmail.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getReceiptEmailBytes() {
+      java.lang.Object ref = receiptEmail_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        receiptEmail_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int AMOUNT_FIELD_NUMBER = 16;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object amount_ = "";
+    /**
+     * <code>string amount = 16;</code>
+     * @return The amount.
+     */
+    @java.lang.Override
+    public java.lang.String getAmount() {
+      java.lang.Object ref = amount_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        amount_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string amount = 16;</code>
+     * @return The bytes for amount.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getAmountBytes() {
+      java.lang.Object ref = amount_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        amount_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int RECHARGE_NAME_FIELD_NUMBER = 17;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object rechargeName_ = "";
+    /**
+     * <code>string recharge_name = 17;</code>
+     * @return The rechargeName.
+     */
+    @java.lang.Override
+    public java.lang.String getRechargeName() {
+      java.lang.Object ref = rechargeName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        rechargeName_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string recharge_name = 17;</code>
+     * @return The bytes for rechargeName.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getRechargeNameBytes() {
+      java.lang.Object ref = rechargeName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        rechargeName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ACCOUNT_NAME_FIELD_NUMBER = 18;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object accountName_ = "";
+    /**
+     * <code>string account_name = 18;</code>
+     * @return The accountName.
+     */
+    @java.lang.Override
+    public java.lang.String getAccountName() {
+      java.lang.Object ref = accountName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        accountName_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string account_name = 18;</code>
+     * @return The bytes for accountName.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getAccountNameBytes() {
+      java.lang.Object ref = accountName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        accountName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     private byte memoizedIsInitialized = -1;
@@ -32554,14 +33248,50 @@ public final class WorkerOuterClass {
       if (userid_ != 0L) {
         output.writeInt64(3, userid_);
       }
-      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(money_)) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 4, money_);
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(isOnlinePayDesc_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 4, isOnlinePayDesc_);
       }
-      if (status_ != 0L) {
-        output.writeInt64(5, status_);
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(isMatchingPayDesc_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 5, isMatchingPayDesc_);
       }
-      if (applyTime_ != 0L) {
-        output.writeInt64(6, applyTime_);
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(typeDesc_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 6, typeDesc_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(statusDesc_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 7, statusDesc_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(confirmDesc_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 8, confirmDesc_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(createTime_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 9, createTime_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(pushStatusDesc_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 10, pushStatusDesc_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(finishTimeDesc_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 11, finishTimeDesc_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(cardType_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 12, cardType_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(matchStatusDesc_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 13, matchStatusDesc_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(imgUploadTime_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 14, imgUploadTime_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(receiptEmail_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 15, receiptEmail_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(amount_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 16, amount_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(rechargeName_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 17, rechargeName_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(accountName_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 18, accountName_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -32583,16 +33313,50 @@ public final class WorkerOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(3, userid_);
       }
-      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(money_)) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(4, money_);
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(isOnlinePayDesc_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(4, isOnlinePayDesc_);
       }
-      if (status_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(5, status_);
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(isMatchingPayDesc_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(5, isMatchingPayDesc_);
       }
-      if (applyTime_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(6, applyTime_);
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(typeDesc_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(6, typeDesc_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(statusDesc_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(7, statusDesc_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(confirmDesc_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(8, confirmDesc_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(createTime_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(9, createTime_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(pushStatusDesc_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(10, pushStatusDesc_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(finishTimeDesc_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(11, finishTimeDesc_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(cardType_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(12, cardType_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(matchStatusDesc_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(13, matchStatusDesc_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(imgUploadTime_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(14, imgUploadTime_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(receiptEmail_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(15, receiptEmail_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(amount_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(16, amount_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(rechargeName_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(17, rechargeName_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(accountName_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(18, accountName_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -32604,10 +33368,10 @@ public final class WorkerOuterClass {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.teneasyChat.api.core.WorkerOuterClass.WithDraw)) {
+      if (!(obj instanceof com.teneasyChat.api.core.WorkerOuterClass.ThirdOrder)) {
         return super.equals(obj);
       }
-      com.teneasyChat.api.core.WorkerOuterClass.WithDraw other = (com.teneasyChat.api.core.WorkerOuterClass.WithDraw) obj;
+      com.teneasyChat.api.core.WorkerOuterClass.ThirdOrder other = (com.teneasyChat.api.core.WorkerOuterClass.ThirdOrder) obj;
 
       if (getId()
           != other.getId()) return false;
@@ -32615,12 +33379,36 @@ public final class WorkerOuterClass {
           .equals(other.getOrderNo())) return false;
       if (getUserid()
           != other.getUserid()) return false;
-      if (!getMoney()
-          .equals(other.getMoney())) return false;
-      if (getStatus()
-          != other.getStatus()) return false;
-      if (getApplyTime()
-          != other.getApplyTime()) return false;
+      if (!getIsOnlinePayDesc()
+          .equals(other.getIsOnlinePayDesc())) return false;
+      if (!getIsMatchingPayDesc()
+          .equals(other.getIsMatchingPayDesc())) return false;
+      if (!getTypeDesc()
+          .equals(other.getTypeDesc())) return false;
+      if (!getStatusDesc()
+          .equals(other.getStatusDesc())) return false;
+      if (!getConfirmDesc()
+          .equals(other.getConfirmDesc())) return false;
+      if (!getCreateTime()
+          .equals(other.getCreateTime())) return false;
+      if (!getPushStatusDesc()
+          .equals(other.getPushStatusDesc())) return false;
+      if (!getFinishTimeDesc()
+          .equals(other.getFinishTimeDesc())) return false;
+      if (!getCardType()
+          .equals(other.getCardType())) return false;
+      if (!getMatchStatusDesc()
+          .equals(other.getMatchStatusDesc())) return false;
+      if (!getImgUploadTime()
+          .equals(other.getImgUploadTime())) return false;
+      if (!getReceiptEmail()
+          .equals(other.getReceiptEmail())) return false;
+      if (!getAmount()
+          .equals(other.getAmount())) return false;
+      if (!getRechargeName()
+          .equals(other.getRechargeName())) return false;
+      if (!getAccountName()
+          .equals(other.getAccountName())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -32635,62 +33423,84 @@ public final class WorkerOuterClass {
       hash = (37 * hash) + ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getId());
-      hash = (37 * hash) + ORDERNO_FIELD_NUMBER;
+      hash = (37 * hash) + ORDER_NO_FIELD_NUMBER;
       hash = (53 * hash) + getOrderNo().hashCode();
       hash = (37 * hash) + USERID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getUserid());
-      hash = (37 * hash) + MONEY_FIELD_NUMBER;
-      hash = (53 * hash) + getMoney().hashCode();
-      hash = (37 * hash) + STATUS_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getStatus());
-      hash = (37 * hash) + APPLYTIME_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getApplyTime());
+      hash = (37 * hash) + IS_ONLINE_PAY_DESC_FIELD_NUMBER;
+      hash = (53 * hash) + getIsOnlinePayDesc().hashCode();
+      hash = (37 * hash) + IS_MATCHING_PAY_DESC_FIELD_NUMBER;
+      hash = (53 * hash) + getIsMatchingPayDesc().hashCode();
+      hash = (37 * hash) + TYPE_DESC_FIELD_NUMBER;
+      hash = (53 * hash) + getTypeDesc().hashCode();
+      hash = (37 * hash) + STATUS_DESC_FIELD_NUMBER;
+      hash = (53 * hash) + getStatusDesc().hashCode();
+      hash = (37 * hash) + CONFIRM_DESC_FIELD_NUMBER;
+      hash = (53 * hash) + getConfirmDesc().hashCode();
+      hash = (37 * hash) + CREATE_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getCreateTime().hashCode();
+      hash = (37 * hash) + PUSH_STATUS_DESC_FIELD_NUMBER;
+      hash = (53 * hash) + getPushStatusDesc().hashCode();
+      hash = (37 * hash) + FINISH_TIME_DESC_FIELD_NUMBER;
+      hash = (53 * hash) + getFinishTimeDesc().hashCode();
+      hash = (37 * hash) + CARD_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getCardType().hashCode();
+      hash = (37 * hash) + MATCH_STATUS_DESC_FIELD_NUMBER;
+      hash = (53 * hash) + getMatchStatusDesc().hashCode();
+      hash = (37 * hash) + IMG_UPLOAD_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getImgUploadTime().hashCode();
+      hash = (37 * hash) + RECEIPT_EMAIL_FIELD_NUMBER;
+      hash = (53 * hash) + getReceiptEmail().hashCode();
+      hash = (37 * hash) + AMOUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getAmount().hashCode();
+      hash = (37 * hash) + RECHARGE_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getRechargeName().hashCode();
+      hash = (37 * hash) + ACCOUNT_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getAccountName().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static com.teneasyChat.api.core.WorkerOuterClass.WithDraw parseFrom(
+    public static com.teneasyChat.api.core.WorkerOuterClass.ThirdOrder parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.teneasyChat.api.core.WorkerOuterClass.WithDraw parseFrom(
+    public static com.teneasyChat.api.core.WorkerOuterClass.ThirdOrder parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.teneasyChat.api.core.WorkerOuterClass.WithDraw parseFrom(
+    public static com.teneasyChat.api.core.WorkerOuterClass.ThirdOrder parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.teneasyChat.api.core.WorkerOuterClass.WithDraw parseFrom(
+    public static com.teneasyChat.api.core.WorkerOuterClass.ThirdOrder parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.teneasyChat.api.core.WorkerOuterClass.WithDraw parseFrom(byte[] data)
+    public static com.teneasyChat.api.core.WorkerOuterClass.ThirdOrder parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.teneasyChat.api.core.WorkerOuterClass.WithDraw parseFrom(
+    public static com.teneasyChat.api.core.WorkerOuterClass.ThirdOrder parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.teneasyChat.api.core.WorkerOuterClass.WithDraw parseFrom(java.io.InputStream input)
+    public static com.teneasyChat.api.core.WorkerOuterClass.ThirdOrder parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseWithIOException(PARSER, input);
     }
-    public static com.teneasyChat.api.core.WorkerOuterClass.WithDraw parseFrom(
+    public static com.teneasyChat.api.core.WorkerOuterClass.ThirdOrder parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -32698,26 +33508,26 @@ public final class WorkerOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    public static com.teneasyChat.api.core.WorkerOuterClass.WithDraw parseDelimitedFrom(java.io.InputStream input)
+    public static com.teneasyChat.api.core.WorkerOuterClass.ThirdOrder parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseDelimitedWithIOException(PARSER, input);
     }
 
-    public static com.teneasyChat.api.core.WorkerOuterClass.WithDraw parseDelimitedFrom(
+    public static com.teneasyChat.api.core.WorkerOuterClass.ThirdOrder parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.teneasyChat.api.core.WorkerOuterClass.WithDraw parseFrom(
+    public static com.teneasyChat.api.core.WorkerOuterClass.ThirdOrder parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseWithIOException(PARSER, input);
     }
-    public static com.teneasyChat.api.core.WorkerOuterClass.WithDraw parseFrom(
+    public static com.teneasyChat.api.core.WorkerOuterClass.ThirdOrder parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -32730,7 +33540,7 @@ public final class WorkerOuterClass {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.teneasyChat.api.core.WorkerOuterClass.WithDraw prototype) {
+    public static Builder newBuilder(com.teneasyChat.api.core.WorkerOuterClass.ThirdOrder prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -32746,26 +33556,26 @@ public final class WorkerOuterClass {
       return builder;
     }
     /**
-     * Protobuf type {@code api.core.WithDraw}
+     * Protobuf type {@code api.core.ThirdOrder}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:api.core.WithDraw)
-        com.teneasyChat.api.core.WorkerOuterClass.WithDrawOrBuilder {
+        // @@protoc_insertion_point(builder_implements:api.core.ThirdOrder)
+        com.teneasyChat.api.core.WorkerOuterClass.ThirdOrderOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.teneasyChat.api.core.WorkerOuterClass.internal_static_api_core_WithDraw_descriptor;
+        return com.teneasyChat.api.core.WorkerOuterClass.internal_static_api_core_ThirdOrder_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.teneasyChat.api.core.WorkerOuterClass.internal_static_api_core_WithDraw_fieldAccessorTable
+        return com.teneasyChat.api.core.WorkerOuterClass.internal_static_api_core_ThirdOrder_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.teneasyChat.api.core.WorkerOuterClass.WithDraw.class, com.teneasyChat.api.core.WorkerOuterClass.WithDraw.Builder.class);
+                com.teneasyChat.api.core.WorkerOuterClass.ThirdOrder.class, com.teneasyChat.api.core.WorkerOuterClass.ThirdOrder.Builder.class);
       }
 
-      // Construct using com.teneasyChat.api.core.WorkerOuterClass.WithDraw.newBuilder()
+      // Construct using com.teneasyChat.api.core.WorkerOuterClass.ThirdOrder.newBuilder()
       private Builder() {
 
       }
@@ -32782,26 +33592,38 @@ public final class WorkerOuterClass {
         id_ = 0L;
         orderNo_ = "";
         userid_ = 0L;
-        money_ = "";
-        status_ = 0L;
-        applyTime_ = 0L;
+        isOnlinePayDesc_ = "";
+        isMatchingPayDesc_ = "";
+        typeDesc_ = "";
+        statusDesc_ = "";
+        confirmDesc_ = "";
+        createTime_ = "";
+        pushStatusDesc_ = "";
+        finishTimeDesc_ = "";
+        cardType_ = "";
+        matchStatusDesc_ = "";
+        imgUploadTime_ = "";
+        receiptEmail_ = "";
+        amount_ = "";
+        rechargeName_ = "";
+        accountName_ = "";
         return this;
       }
 
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.teneasyChat.api.core.WorkerOuterClass.internal_static_api_core_WithDraw_descriptor;
+        return com.teneasyChat.api.core.WorkerOuterClass.internal_static_api_core_ThirdOrder_descriptor;
       }
 
       @java.lang.Override
-      public com.teneasyChat.api.core.WorkerOuterClass.WithDraw getDefaultInstanceForType() {
-        return com.teneasyChat.api.core.WorkerOuterClass.WithDraw.getDefaultInstance();
+      public com.teneasyChat.api.core.WorkerOuterClass.ThirdOrder getDefaultInstanceForType() {
+        return com.teneasyChat.api.core.WorkerOuterClass.ThirdOrder.getDefaultInstance();
       }
 
       @java.lang.Override
-      public com.teneasyChat.api.core.WorkerOuterClass.WithDraw build() {
-        com.teneasyChat.api.core.WorkerOuterClass.WithDraw result = buildPartial();
+      public com.teneasyChat.api.core.WorkerOuterClass.ThirdOrder build() {
+        com.teneasyChat.api.core.WorkerOuterClass.ThirdOrder result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -32809,14 +33631,14 @@ public final class WorkerOuterClass {
       }
 
       @java.lang.Override
-      public com.teneasyChat.api.core.WorkerOuterClass.WithDraw buildPartial() {
-        com.teneasyChat.api.core.WorkerOuterClass.WithDraw result = new com.teneasyChat.api.core.WorkerOuterClass.WithDraw(this);
+      public com.teneasyChat.api.core.WorkerOuterClass.ThirdOrder buildPartial() {
+        com.teneasyChat.api.core.WorkerOuterClass.ThirdOrder result = new com.teneasyChat.api.core.WorkerOuterClass.ThirdOrder(this);
         if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(com.teneasyChat.api.core.WorkerOuterClass.WithDraw result) {
+      private void buildPartial0(com.teneasyChat.api.core.WorkerOuterClass.ThirdOrder result) {
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.id_ = id_;
@@ -32828,28 +33650,64 @@ public final class WorkerOuterClass {
           result.userid_ = userid_;
         }
         if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.money_ = money_;
+          result.isOnlinePayDesc_ = isOnlinePayDesc_;
         }
         if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.status_ = status_;
+          result.isMatchingPayDesc_ = isMatchingPayDesc_;
         }
         if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.applyTime_ = applyTime_;
+          result.typeDesc_ = typeDesc_;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.statusDesc_ = statusDesc_;
+        }
+        if (((from_bitField0_ & 0x00000080) != 0)) {
+          result.confirmDesc_ = confirmDesc_;
+        }
+        if (((from_bitField0_ & 0x00000100) != 0)) {
+          result.createTime_ = createTime_;
+        }
+        if (((from_bitField0_ & 0x00000200) != 0)) {
+          result.pushStatusDesc_ = pushStatusDesc_;
+        }
+        if (((from_bitField0_ & 0x00000400) != 0)) {
+          result.finishTimeDesc_ = finishTimeDesc_;
+        }
+        if (((from_bitField0_ & 0x00000800) != 0)) {
+          result.cardType_ = cardType_;
+        }
+        if (((from_bitField0_ & 0x00001000) != 0)) {
+          result.matchStatusDesc_ = matchStatusDesc_;
+        }
+        if (((from_bitField0_ & 0x00002000) != 0)) {
+          result.imgUploadTime_ = imgUploadTime_;
+        }
+        if (((from_bitField0_ & 0x00004000) != 0)) {
+          result.receiptEmail_ = receiptEmail_;
+        }
+        if (((from_bitField0_ & 0x00008000) != 0)) {
+          result.amount_ = amount_;
+        }
+        if (((from_bitField0_ & 0x00010000) != 0)) {
+          result.rechargeName_ = rechargeName_;
+        }
+        if (((from_bitField0_ & 0x00020000) != 0)) {
+          result.accountName_ = accountName_;
         }
       }
 
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.teneasyChat.api.core.WorkerOuterClass.WithDraw) {
-          return mergeFrom((com.teneasyChat.api.core.WorkerOuterClass.WithDraw)other);
+        if (other instanceof com.teneasyChat.api.core.WorkerOuterClass.ThirdOrder) {
+          return mergeFrom((com.teneasyChat.api.core.WorkerOuterClass.ThirdOrder)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.teneasyChat.api.core.WorkerOuterClass.WithDraw other) {
-        if (other == com.teneasyChat.api.core.WorkerOuterClass.WithDraw.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.teneasyChat.api.core.WorkerOuterClass.ThirdOrder other) {
+        if (other == com.teneasyChat.api.core.WorkerOuterClass.ThirdOrder.getDefaultInstance()) return this;
         if (other.getId() != 0L) {
           setId(other.getId());
         }
@@ -32861,16 +33719,80 @@ public final class WorkerOuterClass {
         if (other.getUserid() != 0L) {
           setUserid(other.getUserid());
         }
-        if (!other.getMoney().isEmpty()) {
-          money_ = other.money_;
+        if (!other.getIsOnlinePayDesc().isEmpty()) {
+          isOnlinePayDesc_ = other.isOnlinePayDesc_;
           bitField0_ |= 0x00000008;
           onChanged();
         }
-        if (other.getStatus() != 0L) {
-          setStatus(other.getStatus());
+        if (!other.getIsMatchingPayDesc().isEmpty()) {
+          isMatchingPayDesc_ = other.isMatchingPayDesc_;
+          bitField0_ |= 0x00000010;
+          onChanged();
         }
-        if (other.getApplyTime() != 0L) {
-          setApplyTime(other.getApplyTime());
+        if (!other.getTypeDesc().isEmpty()) {
+          typeDesc_ = other.typeDesc_;
+          bitField0_ |= 0x00000020;
+          onChanged();
+        }
+        if (!other.getStatusDesc().isEmpty()) {
+          statusDesc_ = other.statusDesc_;
+          bitField0_ |= 0x00000040;
+          onChanged();
+        }
+        if (!other.getConfirmDesc().isEmpty()) {
+          confirmDesc_ = other.confirmDesc_;
+          bitField0_ |= 0x00000080;
+          onChanged();
+        }
+        if (!other.getCreateTime().isEmpty()) {
+          createTime_ = other.createTime_;
+          bitField0_ |= 0x00000100;
+          onChanged();
+        }
+        if (!other.getPushStatusDesc().isEmpty()) {
+          pushStatusDesc_ = other.pushStatusDesc_;
+          bitField0_ |= 0x00000200;
+          onChanged();
+        }
+        if (!other.getFinishTimeDesc().isEmpty()) {
+          finishTimeDesc_ = other.finishTimeDesc_;
+          bitField0_ |= 0x00000400;
+          onChanged();
+        }
+        if (!other.getCardType().isEmpty()) {
+          cardType_ = other.cardType_;
+          bitField0_ |= 0x00000800;
+          onChanged();
+        }
+        if (!other.getMatchStatusDesc().isEmpty()) {
+          matchStatusDesc_ = other.matchStatusDesc_;
+          bitField0_ |= 0x00001000;
+          onChanged();
+        }
+        if (!other.getImgUploadTime().isEmpty()) {
+          imgUploadTime_ = other.imgUploadTime_;
+          bitField0_ |= 0x00002000;
+          onChanged();
+        }
+        if (!other.getReceiptEmail().isEmpty()) {
+          receiptEmail_ = other.receiptEmail_;
+          bitField0_ |= 0x00004000;
+          onChanged();
+        }
+        if (!other.getAmount().isEmpty()) {
+          amount_ = other.amount_;
+          bitField0_ |= 0x00008000;
+          onChanged();
+        }
+        if (!other.getRechargeName().isEmpty()) {
+          rechargeName_ = other.rechargeName_;
+          bitField0_ |= 0x00010000;
+          onChanged();
+        }
+        if (!other.getAccountName().isEmpty()) {
+          accountName_ = other.accountName_;
+          bitField0_ |= 0x00020000;
+          onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -32914,20 +33836,80 @@ public final class WorkerOuterClass {
                 break;
               } // case 24
               case 34: {
-                money_ = input.readStringRequireUtf8();
+                isOnlinePayDesc_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000008;
                 break;
               } // case 34
-              case 40: {
-                status_ = input.readInt64();
+              case 42: {
+                isMatchingPayDesc_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000010;
                 break;
-              } // case 40
-              case 48: {
-                applyTime_ = input.readInt64();
+              } // case 42
+              case 50: {
+                typeDesc_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000020;
                 break;
-              } // case 48
+              } // case 50
+              case 58: {
+                statusDesc_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 58
+              case 66: {
+                confirmDesc_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 66
+              case 74: {
+                createTime_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 74
+              case 82: {
+                pushStatusDesc_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 82
+              case 90: {
+                finishTimeDesc_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 90
+              case 98: {
+                cardType_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 98
+              case 106: {
+                matchStatusDesc_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 106
+              case 114: {
+                imgUploadTime_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00002000;
+                break;
+              } // case 114
+              case 122: {
+                receiptEmail_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00004000;
+                break;
+              } // case 122
+              case 130: {
+                amount_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00008000;
+                break;
+              } // case 130
+              case 138: {
+                rechargeName_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00010000;
+                break;
+              } // case 138
+              case 146: {
+                accountName_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00020000;
+                break;
+              } // case 146
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -32979,7 +33961,7 @@ public final class WorkerOuterClass {
 
       private java.lang.Object orderNo_ = "";
       /**
-       * <code>string orderNo = 2;</code>
+       * <code>string order_no = 2;</code>
        * @return The orderNo.
        */
       public java.lang.String getOrderNo() {
@@ -32995,7 +33977,7 @@ public final class WorkerOuterClass {
         }
       }
       /**
-       * <code>string orderNo = 2;</code>
+       * <code>string order_no = 2;</code>
        * @return The bytes for orderNo.
        */
       public com.google.protobuf.ByteString
@@ -33012,7 +33994,7 @@ public final class WorkerOuterClass {
         }
       }
       /**
-       * <code>string orderNo = 2;</code>
+       * <code>string order_no = 2;</code>
        * @param value The orderNo to set.
        * @return This builder for chaining.
        */
@@ -33025,7 +34007,7 @@ public final class WorkerOuterClass {
         return this;
       }
       /**
-       * <code>string orderNo = 2;</code>
+       * <code>string order_no = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearOrderNo() {
@@ -33035,7 +34017,7 @@ public final class WorkerOuterClass {
         return this;
       }
       /**
-       * <code>string orderNo = 2;</code>
+       * <code>string order_no = 2;</code>
        * @param value The bytes for orderNo to set.
        * @return This builder for chaining.
        */
@@ -33081,159 +34063,1103 @@ public final class WorkerOuterClass {
         return this;
       }
 
-      private java.lang.Object money_ = "";
+      private java.lang.Object isOnlinePayDesc_ = "";
       /**
-       * <code>string money = 4;</code>
-       * @return The money.
+       * <code>string is_online_pay_desc = 4;</code>
+       * @return The isOnlinePayDesc.
        */
-      public java.lang.String getMoney() {
-        java.lang.Object ref = money_;
+      public java.lang.String getIsOnlinePayDesc() {
+        java.lang.Object ref = isOnlinePayDesc_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          money_ = s;
+          isOnlinePayDesc_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string money = 4;</code>
-       * @return The bytes for money.
+       * <code>string is_online_pay_desc = 4;</code>
+       * @return The bytes for isOnlinePayDesc.
        */
       public com.google.protobuf.ByteString
-          getMoneyBytes() {
-        java.lang.Object ref = money_;
+          getIsOnlinePayDescBytes() {
+        java.lang.Object ref = isOnlinePayDesc_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          money_ = b;
+          isOnlinePayDesc_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string money = 4;</code>
-       * @param value The money to set.
+       * <code>string is_online_pay_desc = 4;</code>
+       * @param value The isOnlinePayDesc to set.
        * @return This builder for chaining.
        */
-      public Builder setMoney(
+      public Builder setIsOnlinePayDesc(
           java.lang.String value) {
         if (value == null) { throw new NullPointerException(); }
-        money_ = value;
+        isOnlinePayDesc_ = value;
         bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
       /**
-       * <code>string money = 4;</code>
+       * <code>string is_online_pay_desc = 4;</code>
        * @return This builder for chaining.
        */
-      public Builder clearMoney() {
-        money_ = getDefaultInstance().getMoney();
+      public Builder clearIsOnlinePayDesc() {
+        isOnlinePayDesc_ = getDefaultInstance().getIsOnlinePayDesc();
         bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
         return this;
       }
       /**
-       * <code>string money = 4;</code>
-       * @param value The bytes for money to set.
+       * <code>string is_online_pay_desc = 4;</code>
+       * @param value The bytes for isOnlinePayDesc to set.
        * @return This builder for chaining.
        */
-      public Builder setMoneyBytes(
+      public Builder setIsOnlinePayDescBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) { throw new NullPointerException(); }
         checkByteStringIsUtf8(value);
-        money_ = value;
+        isOnlinePayDesc_ = value;
         bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
 
-      private long status_ ;
+      private java.lang.Object isMatchingPayDesc_ = "";
       /**
-       * <code>int64 status = 5;</code>
-       * @return The status.
+       * <code>string is_matching_pay_desc = 5;</code>
+       * @return The isMatchingPayDesc.
        */
-      @java.lang.Override
-      public long getStatus() {
-        return status_;
+      public java.lang.String getIsMatchingPayDesc() {
+        java.lang.Object ref = isMatchingPayDesc_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          isMatchingPayDesc_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
-       * <code>int64 status = 5;</code>
-       * @param value The status to set.
+       * <code>string is_matching_pay_desc = 5;</code>
+       * @return The bytes for isMatchingPayDesc.
+       */
+      public com.google.protobuf.ByteString
+          getIsMatchingPayDescBytes() {
+        java.lang.Object ref = isMatchingPayDesc_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          isMatchingPayDesc_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string is_matching_pay_desc = 5;</code>
+       * @param value The isMatchingPayDesc to set.
        * @return This builder for chaining.
        */
-      public Builder setStatus(long value) {
-
-        status_ = value;
+      public Builder setIsMatchingPayDesc(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        isMatchingPayDesc_ = value;
         bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
       /**
-       * <code>int64 status = 5;</code>
+       * <code>string is_matching_pay_desc = 5;</code>
        * @return This builder for chaining.
        */
-      public Builder clearStatus() {
+      public Builder clearIsMatchingPayDesc() {
+        isMatchingPayDesc_ = getDefaultInstance().getIsMatchingPayDesc();
         bitField0_ = (bitField0_ & ~0x00000010);
-        status_ = 0L;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string is_matching_pay_desc = 5;</code>
+       * @param value The bytes for isMatchingPayDesc to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsMatchingPayDescBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        isMatchingPayDesc_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
 
-      private long applyTime_ ;
+      private java.lang.Object typeDesc_ = "";
       /**
-       * <code>int64 applyTime = 6;</code>
-       * @return The applyTime.
+       * <code>string type_desc = 6;</code>
+       * @return The typeDesc.
        */
-      @java.lang.Override
-      public long getApplyTime() {
-        return applyTime_;
+      public java.lang.String getTypeDesc() {
+        java.lang.Object ref = typeDesc_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          typeDesc_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
-       * <code>int64 applyTime = 6;</code>
-       * @param value The applyTime to set.
+       * <code>string type_desc = 6;</code>
+       * @return The bytes for typeDesc.
+       */
+      public com.google.protobuf.ByteString
+          getTypeDescBytes() {
+        java.lang.Object ref = typeDesc_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          typeDesc_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string type_desc = 6;</code>
+       * @param value The typeDesc to set.
        * @return This builder for chaining.
        */
-      public Builder setApplyTime(long value) {
-
-        applyTime_ = value;
+      public Builder setTypeDesc(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        typeDesc_ = value;
         bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
       /**
-       * <code>int64 applyTime = 6;</code>
+       * <code>string type_desc = 6;</code>
        * @return This builder for chaining.
        */
-      public Builder clearApplyTime() {
+      public Builder clearTypeDesc() {
+        typeDesc_ = getDefaultInstance().getTypeDesc();
         bitField0_ = (bitField0_ & ~0x00000020);
-        applyTime_ = 0L;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string type_desc = 6;</code>
+       * @param value The bytes for typeDesc to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTypeDescBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        typeDesc_ = value;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
 
-      // @@protoc_insertion_point(builder_scope:api.core.WithDraw)
+      private java.lang.Object statusDesc_ = "";
+      /**
+       * <code>string status_desc = 7;</code>
+       * @return The statusDesc.
+       */
+      public java.lang.String getStatusDesc() {
+        java.lang.Object ref = statusDesc_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          statusDesc_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string status_desc = 7;</code>
+       * @return The bytes for statusDesc.
+       */
+      public com.google.protobuf.ByteString
+          getStatusDescBytes() {
+        java.lang.Object ref = statusDesc_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          statusDesc_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string status_desc = 7;</code>
+       * @param value The statusDesc to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStatusDesc(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        statusDesc_ = value;
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string status_desc = 7;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearStatusDesc() {
+        statusDesc_ = getDefaultInstance().getStatusDesc();
+        bitField0_ = (bitField0_ & ~0x00000040);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string status_desc = 7;</code>
+       * @param value The bytes for statusDesc to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStatusDescBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        statusDesc_ = value;
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object confirmDesc_ = "";
+      /**
+       * <code>string confirm_desc = 8;</code>
+       * @return The confirmDesc.
+       */
+      public java.lang.String getConfirmDesc() {
+        java.lang.Object ref = confirmDesc_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          confirmDesc_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string confirm_desc = 8;</code>
+       * @return The bytes for confirmDesc.
+       */
+      public com.google.protobuf.ByteString
+          getConfirmDescBytes() {
+        java.lang.Object ref = confirmDesc_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          confirmDesc_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string confirm_desc = 8;</code>
+       * @param value The confirmDesc to set.
+       * @return This builder for chaining.
+       */
+      public Builder setConfirmDesc(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        confirmDesc_ = value;
+        bitField0_ |= 0x00000080;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string confirm_desc = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearConfirmDesc() {
+        confirmDesc_ = getDefaultInstance().getConfirmDesc();
+        bitField0_ = (bitField0_ & ~0x00000080);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string confirm_desc = 8;</code>
+       * @param value The bytes for confirmDesc to set.
+       * @return This builder for chaining.
+       */
+      public Builder setConfirmDescBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        confirmDesc_ = value;
+        bitField0_ |= 0x00000080;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object createTime_ = "";
+      /**
+       * <code>string create_time = 9;</code>
+       * @return The createTime.
+       */
+      public java.lang.String getCreateTime() {
+        java.lang.Object ref = createTime_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          createTime_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string create_time = 9;</code>
+       * @return The bytes for createTime.
+       */
+      public com.google.protobuf.ByteString
+          getCreateTimeBytes() {
+        java.lang.Object ref = createTime_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          createTime_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string create_time = 9;</code>
+       * @param value The createTime to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCreateTime(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        createTime_ = value;
+        bitField0_ |= 0x00000100;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string create_time = 9;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCreateTime() {
+        createTime_ = getDefaultInstance().getCreateTime();
+        bitField0_ = (bitField0_ & ~0x00000100);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string create_time = 9;</code>
+       * @param value The bytes for createTime to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCreateTimeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        createTime_ = value;
+        bitField0_ |= 0x00000100;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object pushStatusDesc_ = "";
+      /**
+       * <code>string push_status_desc = 10;</code>
+       * @return The pushStatusDesc.
+       */
+      public java.lang.String getPushStatusDesc() {
+        java.lang.Object ref = pushStatusDesc_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          pushStatusDesc_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string push_status_desc = 10;</code>
+       * @return The bytes for pushStatusDesc.
+       */
+      public com.google.protobuf.ByteString
+          getPushStatusDescBytes() {
+        java.lang.Object ref = pushStatusDesc_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          pushStatusDesc_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string push_status_desc = 10;</code>
+       * @param value The pushStatusDesc to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPushStatusDesc(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        pushStatusDesc_ = value;
+        bitField0_ |= 0x00000200;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string push_status_desc = 10;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPushStatusDesc() {
+        pushStatusDesc_ = getDefaultInstance().getPushStatusDesc();
+        bitField0_ = (bitField0_ & ~0x00000200);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string push_status_desc = 10;</code>
+       * @param value The bytes for pushStatusDesc to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPushStatusDescBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        pushStatusDesc_ = value;
+        bitField0_ |= 0x00000200;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object finishTimeDesc_ = "";
+      /**
+       * <code>string finish_time_desc = 11;</code>
+       * @return The finishTimeDesc.
+       */
+      public java.lang.String getFinishTimeDesc() {
+        java.lang.Object ref = finishTimeDesc_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          finishTimeDesc_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string finish_time_desc = 11;</code>
+       * @return The bytes for finishTimeDesc.
+       */
+      public com.google.protobuf.ByteString
+          getFinishTimeDescBytes() {
+        java.lang.Object ref = finishTimeDesc_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          finishTimeDesc_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string finish_time_desc = 11;</code>
+       * @param value The finishTimeDesc to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFinishTimeDesc(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        finishTimeDesc_ = value;
+        bitField0_ |= 0x00000400;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string finish_time_desc = 11;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearFinishTimeDesc() {
+        finishTimeDesc_ = getDefaultInstance().getFinishTimeDesc();
+        bitField0_ = (bitField0_ & ~0x00000400);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string finish_time_desc = 11;</code>
+       * @param value The bytes for finishTimeDesc to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFinishTimeDescBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        finishTimeDesc_ = value;
+        bitField0_ |= 0x00000400;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object cardType_ = "";
+      /**
+       * <code>string card_type = 12;</code>
+       * @return The cardType.
+       */
+      public java.lang.String getCardType() {
+        java.lang.Object ref = cardType_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          cardType_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string card_type = 12;</code>
+       * @return The bytes for cardType.
+       */
+      public com.google.protobuf.ByteString
+          getCardTypeBytes() {
+        java.lang.Object ref = cardType_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          cardType_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string card_type = 12;</code>
+       * @param value The cardType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCardType(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        cardType_ = value;
+        bitField0_ |= 0x00000800;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string card_type = 12;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCardType() {
+        cardType_ = getDefaultInstance().getCardType();
+        bitField0_ = (bitField0_ & ~0x00000800);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string card_type = 12;</code>
+       * @param value The bytes for cardType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCardTypeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        cardType_ = value;
+        bitField0_ |= 0x00000800;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object matchStatusDesc_ = "";
+      /**
+       * <code>string match_status_desc = 13;</code>
+       * @return The matchStatusDesc.
+       */
+      public java.lang.String getMatchStatusDesc() {
+        java.lang.Object ref = matchStatusDesc_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          matchStatusDesc_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string match_status_desc = 13;</code>
+       * @return The bytes for matchStatusDesc.
+       */
+      public com.google.protobuf.ByteString
+          getMatchStatusDescBytes() {
+        java.lang.Object ref = matchStatusDesc_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          matchStatusDesc_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string match_status_desc = 13;</code>
+       * @param value The matchStatusDesc to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMatchStatusDesc(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        matchStatusDesc_ = value;
+        bitField0_ |= 0x00001000;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string match_status_desc = 13;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMatchStatusDesc() {
+        matchStatusDesc_ = getDefaultInstance().getMatchStatusDesc();
+        bitField0_ = (bitField0_ & ~0x00001000);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string match_status_desc = 13;</code>
+       * @param value The bytes for matchStatusDesc to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMatchStatusDescBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        matchStatusDesc_ = value;
+        bitField0_ |= 0x00001000;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object imgUploadTime_ = "";
+      /**
+       * <code>string img_upload_time = 14;</code>
+       * @return The imgUploadTime.
+       */
+      public java.lang.String getImgUploadTime() {
+        java.lang.Object ref = imgUploadTime_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          imgUploadTime_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string img_upload_time = 14;</code>
+       * @return The bytes for imgUploadTime.
+       */
+      public com.google.protobuf.ByteString
+          getImgUploadTimeBytes() {
+        java.lang.Object ref = imgUploadTime_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          imgUploadTime_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string img_upload_time = 14;</code>
+       * @param value The imgUploadTime to set.
+       * @return This builder for chaining.
+       */
+      public Builder setImgUploadTime(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        imgUploadTime_ = value;
+        bitField0_ |= 0x00002000;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string img_upload_time = 14;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearImgUploadTime() {
+        imgUploadTime_ = getDefaultInstance().getImgUploadTime();
+        bitField0_ = (bitField0_ & ~0x00002000);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string img_upload_time = 14;</code>
+       * @param value The bytes for imgUploadTime to set.
+       * @return This builder for chaining.
+       */
+      public Builder setImgUploadTimeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        imgUploadTime_ = value;
+        bitField0_ |= 0x00002000;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object receiptEmail_ = "";
+      /**
+       * <code>string receipt_email = 15;</code>
+       * @return The receiptEmail.
+       */
+      public java.lang.String getReceiptEmail() {
+        java.lang.Object ref = receiptEmail_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          receiptEmail_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string receipt_email = 15;</code>
+       * @return The bytes for receiptEmail.
+       */
+      public com.google.protobuf.ByteString
+          getReceiptEmailBytes() {
+        java.lang.Object ref = receiptEmail_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          receiptEmail_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string receipt_email = 15;</code>
+       * @param value The receiptEmail to set.
+       * @return This builder for chaining.
+       */
+      public Builder setReceiptEmail(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        receiptEmail_ = value;
+        bitField0_ |= 0x00004000;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string receipt_email = 15;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearReceiptEmail() {
+        receiptEmail_ = getDefaultInstance().getReceiptEmail();
+        bitField0_ = (bitField0_ & ~0x00004000);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string receipt_email = 15;</code>
+       * @param value The bytes for receiptEmail to set.
+       * @return This builder for chaining.
+       */
+      public Builder setReceiptEmailBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        receiptEmail_ = value;
+        bitField0_ |= 0x00004000;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object amount_ = "";
+      /**
+       * <code>string amount = 16;</code>
+       * @return The amount.
+       */
+      public java.lang.String getAmount() {
+        java.lang.Object ref = amount_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          amount_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string amount = 16;</code>
+       * @return The bytes for amount.
+       */
+      public com.google.protobuf.ByteString
+          getAmountBytes() {
+        java.lang.Object ref = amount_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          amount_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string amount = 16;</code>
+       * @param value The amount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAmount(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        amount_ = value;
+        bitField0_ |= 0x00008000;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string amount = 16;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAmount() {
+        amount_ = getDefaultInstance().getAmount();
+        bitField0_ = (bitField0_ & ~0x00008000);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string amount = 16;</code>
+       * @param value The bytes for amount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAmountBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        amount_ = value;
+        bitField0_ |= 0x00008000;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object rechargeName_ = "";
+      /**
+       * <code>string recharge_name = 17;</code>
+       * @return The rechargeName.
+       */
+      public java.lang.String getRechargeName() {
+        java.lang.Object ref = rechargeName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          rechargeName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string recharge_name = 17;</code>
+       * @return The bytes for rechargeName.
+       */
+      public com.google.protobuf.ByteString
+          getRechargeNameBytes() {
+        java.lang.Object ref = rechargeName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          rechargeName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string recharge_name = 17;</code>
+       * @param value The rechargeName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRechargeName(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        rechargeName_ = value;
+        bitField0_ |= 0x00010000;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string recharge_name = 17;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRechargeName() {
+        rechargeName_ = getDefaultInstance().getRechargeName();
+        bitField0_ = (bitField0_ & ~0x00010000);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string recharge_name = 17;</code>
+       * @param value The bytes for rechargeName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRechargeNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        rechargeName_ = value;
+        bitField0_ |= 0x00010000;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object accountName_ = "";
+      /**
+       * <code>string account_name = 18;</code>
+       * @return The accountName.
+       */
+      public java.lang.String getAccountName() {
+        java.lang.Object ref = accountName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          accountName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string account_name = 18;</code>
+       * @return The bytes for accountName.
+       */
+      public com.google.protobuf.ByteString
+          getAccountNameBytes() {
+        java.lang.Object ref = accountName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          accountName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string account_name = 18;</code>
+       * @param value The accountName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAccountName(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        accountName_ = value;
+        bitField0_ |= 0x00020000;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string account_name = 18;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAccountName() {
+        accountName_ = getDefaultInstance().getAccountName();
+        bitField0_ = (bitField0_ & ~0x00020000);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string account_name = 18;</code>
+       * @param value The bytes for accountName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAccountNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        accountName_ = value;
+        bitField0_ |= 0x00020000;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:api.core.ThirdOrder)
     }
 
-    // @@protoc_insertion_point(class_scope:api.core.WithDraw)
-    private static final com.teneasyChat.api.core.WorkerOuterClass.WithDraw DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:api.core.ThirdOrder)
+    private static final com.teneasyChat.api.core.WorkerOuterClass.ThirdOrder DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.teneasyChat.api.core.WorkerOuterClass.WithDraw();
+      DEFAULT_INSTANCE = new com.teneasyChat.api.core.WorkerOuterClass.ThirdOrder();
     }
 
-    public static com.teneasyChat.api.core.WorkerOuterClass.WithDraw getDefaultInstance() {
+    public static com.teneasyChat.api.core.WorkerOuterClass.ThirdOrder getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<WithDraw>
-        PARSER = new com.google.protobuf.AbstractParser<WithDraw>() {
+    private static final com.google.protobuf.Parser<ThirdOrder>
+        PARSER = new com.google.protobuf.AbstractParser<ThirdOrder>() {
       @java.lang.Override
-      public WithDraw parsePartialFrom(
+      public ThirdOrder parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
@@ -33252,17 +35178,17 @@ public final class WorkerOuterClass {
       }
     };
 
-    public static com.google.protobuf.Parser<WithDraw> parser() {
+    public static com.google.protobuf.Parser<ThirdOrder> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<WithDraw> getParserForType() {
+    public com.google.protobuf.Parser<ThirdOrder> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.teneasyChat.api.core.WorkerOuterClass.WithDraw getDefaultInstanceForType() {
+    public com.teneasyChat.api.core.WorkerOuterClass.ThirdOrder getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -33273,27 +35199,27 @@ public final class WorkerOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .api.core.WithDraw data = 1;</code>
+     * <code>repeated .api.core.ThirdOrder data = 1;</code>
      */
-    java.util.List<com.teneasyChat.api.core.WorkerOuterClass.WithDraw> 
+    java.util.List<com.teneasyChat.api.core.WorkerOuterClass.ThirdOrder> 
         getDataList();
     /**
-     * <code>repeated .api.core.WithDraw data = 1;</code>
+     * <code>repeated .api.core.ThirdOrder data = 1;</code>
      */
-    com.teneasyChat.api.core.WorkerOuterClass.WithDraw getData(int index);
+    com.teneasyChat.api.core.WorkerOuterClass.ThirdOrder getData(int index);
     /**
-     * <code>repeated .api.core.WithDraw data = 1;</code>
+     * <code>repeated .api.core.ThirdOrder data = 1;</code>
      */
     int getDataCount();
     /**
-     * <code>repeated .api.core.WithDraw data = 1;</code>
+     * <code>repeated .api.core.ThirdOrder data = 1;</code>
      */
-    java.util.List<? extends com.teneasyChat.api.core.WorkerOuterClass.WithDrawOrBuilder> 
+    java.util.List<? extends com.teneasyChat.api.core.WorkerOuterClass.ThirdOrderOrBuilder> 
         getDataOrBuilderList();
     /**
-     * <code>repeated .api.core.WithDraw data = 1;</code>
+     * <code>repeated .api.core.ThirdOrder data = 1;</code>
      */
-    com.teneasyChat.api.core.WorkerOuterClass.WithDrawOrBuilder getDataOrBuilder(
+    com.teneasyChat.api.core.WorkerOuterClass.ThirdOrderOrBuilder getDataOrBuilder(
         int index);
   }
   /**
@@ -33336,41 +35262,41 @@ public final class WorkerOuterClass {
 
     public static final int DATA_FIELD_NUMBER = 1;
     @SuppressWarnings("serial")
-    private java.util.List<com.teneasyChat.api.core.WorkerOuterClass.WithDraw> data_;
+    private java.util.List<com.teneasyChat.api.core.WorkerOuterClass.ThirdOrder> data_;
     /**
-     * <code>repeated .api.core.WithDraw data = 1;</code>
+     * <code>repeated .api.core.ThirdOrder data = 1;</code>
      */
     @java.lang.Override
-    public java.util.List<com.teneasyChat.api.core.WorkerOuterClass.WithDraw> getDataList() {
+    public java.util.List<com.teneasyChat.api.core.WorkerOuterClass.ThirdOrder> getDataList() {
       return data_;
     }
     /**
-     * <code>repeated .api.core.WithDraw data = 1;</code>
+     * <code>repeated .api.core.ThirdOrder data = 1;</code>
      */
     @java.lang.Override
-    public java.util.List<? extends com.teneasyChat.api.core.WorkerOuterClass.WithDrawOrBuilder> 
+    public java.util.List<? extends com.teneasyChat.api.core.WorkerOuterClass.ThirdOrderOrBuilder> 
         getDataOrBuilderList() {
       return data_;
     }
     /**
-     * <code>repeated .api.core.WithDraw data = 1;</code>
+     * <code>repeated .api.core.ThirdOrder data = 1;</code>
      */
     @java.lang.Override
     public int getDataCount() {
       return data_.size();
     }
     /**
-     * <code>repeated .api.core.WithDraw data = 1;</code>
+     * <code>repeated .api.core.ThirdOrder data = 1;</code>
      */
     @java.lang.Override
-    public com.teneasyChat.api.core.WorkerOuterClass.WithDraw getData(int index) {
+    public com.teneasyChat.api.core.WorkerOuterClass.ThirdOrder getData(int index) {
       return data_.get(index);
     }
     /**
-     * <code>repeated .api.core.WithDraw data = 1;</code>
+     * <code>repeated .api.core.ThirdOrder data = 1;</code>
      */
     @java.lang.Override
-    public com.teneasyChat.api.core.WorkerOuterClass.WithDrawOrBuilder getDataOrBuilder(
+    public com.teneasyChat.api.core.WorkerOuterClass.ThirdOrderOrBuilder getDataOrBuilder(
         int index) {
       return data_.get(index);
     }
@@ -33688,9 +35614,9 @@ public final class WorkerOuterClass {
                 done = true;
                 break;
               case 10: {
-                com.teneasyChat.api.core.WorkerOuterClass.WithDraw m =
+                com.teneasyChat.api.core.WorkerOuterClass.ThirdOrder m =
                     input.readMessage(
-                        com.teneasyChat.api.core.WorkerOuterClass.WithDraw.parser(),
+                        com.teneasyChat.api.core.WorkerOuterClass.ThirdOrder.parser(),
                         extensionRegistry);
                 if (dataBuilder_ == null) {
                   ensureDataIsMutable();
@@ -33717,22 +35643,22 @@ public final class WorkerOuterClass {
       }
       private int bitField0_;
 
-      private java.util.List<com.teneasyChat.api.core.WorkerOuterClass.WithDraw> data_ =
+      private java.util.List<com.teneasyChat.api.core.WorkerOuterClass.ThirdOrder> data_ =
         java.util.Collections.emptyList();
       private void ensureDataIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          data_ = new java.util.ArrayList<com.teneasyChat.api.core.WorkerOuterClass.WithDraw>(data_);
+          data_ = new java.util.ArrayList<com.teneasyChat.api.core.WorkerOuterClass.ThirdOrder>(data_);
           bitField0_ |= 0x00000001;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilder<
-          com.teneasyChat.api.core.WorkerOuterClass.WithDraw, com.teneasyChat.api.core.WorkerOuterClass.WithDraw.Builder, com.teneasyChat.api.core.WorkerOuterClass.WithDrawOrBuilder> dataBuilder_;
+          com.teneasyChat.api.core.WorkerOuterClass.ThirdOrder, com.teneasyChat.api.core.WorkerOuterClass.ThirdOrder.Builder, com.teneasyChat.api.core.WorkerOuterClass.ThirdOrderOrBuilder> dataBuilder_;
 
       /**
-       * <code>repeated .api.core.WithDraw data = 1;</code>
+       * <code>repeated .api.core.ThirdOrder data = 1;</code>
        */
-      public java.util.List<com.teneasyChat.api.core.WorkerOuterClass.WithDraw> getDataList() {
+      public java.util.List<com.teneasyChat.api.core.WorkerOuterClass.ThirdOrder> getDataList() {
         if (dataBuilder_ == null) {
           return java.util.Collections.unmodifiableList(data_);
         } else {
@@ -33740,7 +35666,7 @@ public final class WorkerOuterClass {
         }
       }
       /**
-       * <code>repeated .api.core.WithDraw data = 1;</code>
+       * <code>repeated .api.core.ThirdOrder data = 1;</code>
        */
       public int getDataCount() {
         if (dataBuilder_ == null) {
@@ -33750,9 +35676,9 @@ public final class WorkerOuterClass {
         }
       }
       /**
-       * <code>repeated .api.core.WithDraw data = 1;</code>
+       * <code>repeated .api.core.ThirdOrder data = 1;</code>
        */
-      public com.teneasyChat.api.core.WorkerOuterClass.WithDraw getData(int index) {
+      public com.teneasyChat.api.core.WorkerOuterClass.ThirdOrder getData(int index) {
         if (dataBuilder_ == null) {
           return data_.get(index);
         } else {
@@ -33760,10 +35686,10 @@ public final class WorkerOuterClass {
         }
       }
       /**
-       * <code>repeated .api.core.WithDraw data = 1;</code>
+       * <code>repeated .api.core.ThirdOrder data = 1;</code>
        */
       public Builder setData(
-          int index, com.teneasyChat.api.core.WorkerOuterClass.WithDraw value) {
+          int index, com.teneasyChat.api.core.WorkerOuterClass.ThirdOrder value) {
         if (dataBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -33777,10 +35703,10 @@ public final class WorkerOuterClass {
         return this;
       }
       /**
-       * <code>repeated .api.core.WithDraw data = 1;</code>
+       * <code>repeated .api.core.ThirdOrder data = 1;</code>
        */
       public Builder setData(
-          int index, com.teneasyChat.api.core.WorkerOuterClass.WithDraw.Builder builderForValue) {
+          int index, com.teneasyChat.api.core.WorkerOuterClass.ThirdOrder.Builder builderForValue) {
         if (dataBuilder_ == null) {
           ensureDataIsMutable();
           data_.set(index, builderForValue.build());
@@ -33791,9 +35717,9 @@ public final class WorkerOuterClass {
         return this;
       }
       /**
-       * <code>repeated .api.core.WithDraw data = 1;</code>
+       * <code>repeated .api.core.ThirdOrder data = 1;</code>
        */
-      public Builder addData(com.teneasyChat.api.core.WorkerOuterClass.WithDraw value) {
+      public Builder addData(com.teneasyChat.api.core.WorkerOuterClass.ThirdOrder value) {
         if (dataBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -33807,10 +35733,10 @@ public final class WorkerOuterClass {
         return this;
       }
       /**
-       * <code>repeated .api.core.WithDraw data = 1;</code>
+       * <code>repeated .api.core.ThirdOrder data = 1;</code>
        */
       public Builder addData(
-          int index, com.teneasyChat.api.core.WorkerOuterClass.WithDraw value) {
+          int index, com.teneasyChat.api.core.WorkerOuterClass.ThirdOrder value) {
         if (dataBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -33824,10 +35750,10 @@ public final class WorkerOuterClass {
         return this;
       }
       /**
-       * <code>repeated .api.core.WithDraw data = 1;</code>
+       * <code>repeated .api.core.ThirdOrder data = 1;</code>
        */
       public Builder addData(
-          com.teneasyChat.api.core.WorkerOuterClass.WithDraw.Builder builderForValue) {
+          com.teneasyChat.api.core.WorkerOuterClass.ThirdOrder.Builder builderForValue) {
         if (dataBuilder_ == null) {
           ensureDataIsMutable();
           data_.add(builderForValue.build());
@@ -33838,10 +35764,10 @@ public final class WorkerOuterClass {
         return this;
       }
       /**
-       * <code>repeated .api.core.WithDraw data = 1;</code>
+       * <code>repeated .api.core.ThirdOrder data = 1;</code>
        */
       public Builder addData(
-          int index, com.teneasyChat.api.core.WorkerOuterClass.WithDraw.Builder builderForValue) {
+          int index, com.teneasyChat.api.core.WorkerOuterClass.ThirdOrder.Builder builderForValue) {
         if (dataBuilder_ == null) {
           ensureDataIsMutable();
           data_.add(index, builderForValue.build());
@@ -33852,10 +35778,10 @@ public final class WorkerOuterClass {
         return this;
       }
       /**
-       * <code>repeated .api.core.WithDraw data = 1;</code>
+       * <code>repeated .api.core.ThirdOrder data = 1;</code>
        */
       public Builder addAllData(
-          java.lang.Iterable<? extends com.teneasyChat.api.core.WorkerOuterClass.WithDraw> values) {
+          java.lang.Iterable<? extends com.teneasyChat.api.core.WorkerOuterClass.ThirdOrder> values) {
         if (dataBuilder_ == null) {
           ensureDataIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -33867,7 +35793,7 @@ public final class WorkerOuterClass {
         return this;
       }
       /**
-       * <code>repeated .api.core.WithDraw data = 1;</code>
+       * <code>repeated .api.core.ThirdOrder data = 1;</code>
        */
       public Builder clearData() {
         if (dataBuilder_ == null) {
@@ -33880,7 +35806,7 @@ public final class WorkerOuterClass {
         return this;
       }
       /**
-       * <code>repeated .api.core.WithDraw data = 1;</code>
+       * <code>repeated .api.core.ThirdOrder data = 1;</code>
        */
       public Builder removeData(int index) {
         if (dataBuilder_ == null) {
@@ -33893,16 +35819,16 @@ public final class WorkerOuterClass {
         return this;
       }
       /**
-       * <code>repeated .api.core.WithDraw data = 1;</code>
+       * <code>repeated .api.core.ThirdOrder data = 1;</code>
        */
-      public com.teneasyChat.api.core.WorkerOuterClass.WithDraw.Builder getDataBuilder(
+      public com.teneasyChat.api.core.WorkerOuterClass.ThirdOrder.Builder getDataBuilder(
           int index) {
         return getDataFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .api.core.WithDraw data = 1;</code>
+       * <code>repeated .api.core.ThirdOrder data = 1;</code>
        */
-      public com.teneasyChat.api.core.WorkerOuterClass.WithDrawOrBuilder getDataOrBuilder(
+      public com.teneasyChat.api.core.WorkerOuterClass.ThirdOrderOrBuilder getDataOrBuilder(
           int index) {
         if (dataBuilder_ == null) {
           return data_.get(index);  } else {
@@ -33910,9 +35836,9 @@ public final class WorkerOuterClass {
         }
       }
       /**
-       * <code>repeated .api.core.WithDraw data = 1;</code>
+       * <code>repeated .api.core.ThirdOrder data = 1;</code>
        */
-      public java.util.List<? extends com.teneasyChat.api.core.WorkerOuterClass.WithDrawOrBuilder> 
+      public java.util.List<? extends com.teneasyChat.api.core.WorkerOuterClass.ThirdOrderOrBuilder> 
            getDataOrBuilderList() {
         if (dataBuilder_ != null) {
           return dataBuilder_.getMessageOrBuilderList();
@@ -33921,33 +35847,33 @@ public final class WorkerOuterClass {
         }
       }
       /**
-       * <code>repeated .api.core.WithDraw data = 1;</code>
+       * <code>repeated .api.core.ThirdOrder data = 1;</code>
        */
-      public com.teneasyChat.api.core.WorkerOuterClass.WithDraw.Builder addDataBuilder() {
+      public com.teneasyChat.api.core.WorkerOuterClass.ThirdOrder.Builder addDataBuilder() {
         return getDataFieldBuilder().addBuilder(
-            com.teneasyChat.api.core.WorkerOuterClass.WithDraw.getDefaultInstance());
+            com.teneasyChat.api.core.WorkerOuterClass.ThirdOrder.getDefaultInstance());
       }
       /**
-       * <code>repeated .api.core.WithDraw data = 1;</code>
+       * <code>repeated .api.core.ThirdOrder data = 1;</code>
        */
-      public com.teneasyChat.api.core.WorkerOuterClass.WithDraw.Builder addDataBuilder(
+      public com.teneasyChat.api.core.WorkerOuterClass.ThirdOrder.Builder addDataBuilder(
           int index) {
         return getDataFieldBuilder().addBuilder(
-            index, com.teneasyChat.api.core.WorkerOuterClass.WithDraw.getDefaultInstance());
+            index, com.teneasyChat.api.core.WorkerOuterClass.ThirdOrder.getDefaultInstance());
       }
       /**
-       * <code>repeated .api.core.WithDraw data = 1;</code>
+       * <code>repeated .api.core.ThirdOrder data = 1;</code>
        */
-      public java.util.List<com.teneasyChat.api.core.WorkerOuterClass.WithDraw.Builder> 
+      public java.util.List<com.teneasyChat.api.core.WorkerOuterClass.ThirdOrder.Builder> 
            getDataBuilderList() {
         return getDataFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilder<
-          com.teneasyChat.api.core.WorkerOuterClass.WithDraw, com.teneasyChat.api.core.WorkerOuterClass.WithDraw.Builder, com.teneasyChat.api.core.WorkerOuterClass.WithDrawOrBuilder> 
+          com.teneasyChat.api.core.WorkerOuterClass.ThirdOrder, com.teneasyChat.api.core.WorkerOuterClass.ThirdOrder.Builder, com.teneasyChat.api.core.WorkerOuterClass.ThirdOrderOrBuilder> 
           getDataFieldBuilder() {
         if (dataBuilder_ == null) {
           dataBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-              com.teneasyChat.api.core.WorkerOuterClass.WithDraw, com.teneasyChat.api.core.WorkerOuterClass.WithDraw.Builder, com.teneasyChat.api.core.WorkerOuterClass.WithDrawOrBuilder>(
+              com.teneasyChat.api.core.WorkerOuterClass.ThirdOrder, com.teneasyChat.api.core.WorkerOuterClass.ThirdOrder.Builder, com.teneasyChat.api.core.WorkerOuterClass.ThirdOrderOrBuilder>(
                   data_,
                   ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
@@ -34003,6 +35929,1181 @@ public final class WorkerOuterClass {
 
     @java.lang.Override
     public com.teneasyChat.api.core.WorkerOuterClass.TransferMessageRsp getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface HistoryRechargesRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:api.core.HistoryRechargesRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>int64 chat_id = 1;</code>
+     * @return The chatId.
+     */
+    long getChatId();
+  }
+  /**
+   * Protobuf type {@code api.core.HistoryRechargesRequest}
+   */
+  public static final class HistoryRechargesRequest extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:api.core.HistoryRechargesRequest)
+      HistoryRechargesRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 26,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        HistoryRechargesRequest.class.getName());
+    }
+    // Use HistoryRechargesRequest.newBuilder() to construct.
+    private HistoryRechargesRequest(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private HistoryRechargesRequest() {
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.teneasyChat.api.core.WorkerOuterClass.internal_static_api_core_HistoryRechargesRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.teneasyChat.api.core.WorkerOuterClass.internal_static_api_core_HistoryRechargesRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.teneasyChat.api.core.WorkerOuterClass.HistoryRechargesRequest.class, com.teneasyChat.api.core.WorkerOuterClass.HistoryRechargesRequest.Builder.class);
+    }
+
+    public static final int CHAT_ID_FIELD_NUMBER = 1;
+    private long chatId_ = 0L;
+    /**
+     * <code>int64 chat_id = 1;</code>
+     * @return The chatId.
+     */
+    @java.lang.Override
+    public long getChatId() {
+      return chatId_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (chatId_ != 0L) {
+        output.writeInt64(1, chatId_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (chatId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(1, chatId_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.teneasyChat.api.core.WorkerOuterClass.HistoryRechargesRequest)) {
+        return super.equals(obj);
+      }
+      com.teneasyChat.api.core.WorkerOuterClass.HistoryRechargesRequest other = (com.teneasyChat.api.core.WorkerOuterClass.HistoryRechargesRequest) obj;
+
+      if (getChatId()
+          != other.getChatId()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + CHAT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getChatId());
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.teneasyChat.api.core.WorkerOuterClass.HistoryRechargesRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.HistoryRechargesRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.HistoryRechargesRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.HistoryRechargesRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.HistoryRechargesRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.HistoryRechargesRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.HistoryRechargesRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.HistoryRechargesRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.teneasyChat.api.core.WorkerOuterClass.HistoryRechargesRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.teneasyChat.api.core.WorkerOuterClass.HistoryRechargesRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.HistoryRechargesRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.HistoryRechargesRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.teneasyChat.api.core.WorkerOuterClass.HistoryRechargesRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code api.core.HistoryRechargesRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:api.core.HistoryRechargesRequest)
+        com.teneasyChat.api.core.WorkerOuterClass.HistoryRechargesRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.teneasyChat.api.core.WorkerOuterClass.internal_static_api_core_HistoryRechargesRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.teneasyChat.api.core.WorkerOuterClass.internal_static_api_core_HistoryRechargesRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.teneasyChat.api.core.WorkerOuterClass.HistoryRechargesRequest.class, com.teneasyChat.api.core.WorkerOuterClass.HistoryRechargesRequest.Builder.class);
+      }
+
+      // Construct using com.teneasyChat.api.core.WorkerOuterClass.HistoryRechargesRequest.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        chatId_ = 0L;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.teneasyChat.api.core.WorkerOuterClass.internal_static_api_core_HistoryRechargesRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.core.WorkerOuterClass.HistoryRechargesRequest getDefaultInstanceForType() {
+        return com.teneasyChat.api.core.WorkerOuterClass.HistoryRechargesRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.core.WorkerOuterClass.HistoryRechargesRequest build() {
+        com.teneasyChat.api.core.WorkerOuterClass.HistoryRechargesRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.core.WorkerOuterClass.HistoryRechargesRequest buildPartial() {
+        com.teneasyChat.api.core.WorkerOuterClass.HistoryRechargesRequest result = new com.teneasyChat.api.core.WorkerOuterClass.HistoryRechargesRequest(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.teneasyChat.api.core.WorkerOuterClass.HistoryRechargesRequest result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.chatId_ = chatId_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.teneasyChat.api.core.WorkerOuterClass.HistoryRechargesRequest) {
+          return mergeFrom((com.teneasyChat.api.core.WorkerOuterClass.HistoryRechargesRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.teneasyChat.api.core.WorkerOuterClass.HistoryRechargesRequest other) {
+        if (other == com.teneasyChat.api.core.WorkerOuterClass.HistoryRechargesRequest.getDefaultInstance()) return this;
+        if (other.getChatId() != 0L) {
+          setChatId(other.getChatId());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                chatId_ = input.readInt64();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private long chatId_ ;
+      /**
+       * <code>int64 chat_id = 1;</code>
+       * @return The chatId.
+       */
+      @java.lang.Override
+      public long getChatId() {
+        return chatId_;
+      }
+      /**
+       * <code>int64 chat_id = 1;</code>
+       * @param value The chatId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setChatId(long value) {
+
+        chatId_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 chat_id = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearChatId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        chatId_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:api.core.HistoryRechargesRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:api.core.HistoryRechargesRequest)
+    private static final com.teneasyChat.api.core.WorkerOuterClass.HistoryRechargesRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.teneasyChat.api.core.WorkerOuterClass.HistoryRechargesRequest();
+    }
+
+    public static com.teneasyChat.api.core.WorkerOuterClass.HistoryRechargesRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<HistoryRechargesRequest>
+        PARSER = new com.google.protobuf.AbstractParser<HistoryRechargesRequest>() {
+      @java.lang.Override
+      public HistoryRechargesRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<HistoryRechargesRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<HistoryRechargesRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.teneasyChat.api.core.WorkerOuterClass.HistoryRechargesRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface HistoryRechargesResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:api.core.HistoryRechargesResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>repeated .api.core.ThirdOrder data = 1;</code>
+     */
+    java.util.List<com.teneasyChat.api.core.WorkerOuterClass.ThirdOrder> 
+        getDataList();
+    /**
+     * <code>repeated .api.core.ThirdOrder data = 1;</code>
+     */
+    com.teneasyChat.api.core.WorkerOuterClass.ThirdOrder getData(int index);
+    /**
+     * <code>repeated .api.core.ThirdOrder data = 1;</code>
+     */
+    int getDataCount();
+    /**
+     * <code>repeated .api.core.ThirdOrder data = 1;</code>
+     */
+    java.util.List<? extends com.teneasyChat.api.core.WorkerOuterClass.ThirdOrderOrBuilder> 
+        getDataOrBuilderList();
+    /**
+     * <code>repeated .api.core.ThirdOrder data = 1;</code>
+     */
+    com.teneasyChat.api.core.WorkerOuterClass.ThirdOrderOrBuilder getDataOrBuilder(
+        int index);
+  }
+  /**
+   * Protobuf type {@code api.core.HistoryRechargesResponse}
+   */
+  public static final class HistoryRechargesResponse extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:api.core.HistoryRechargesResponse)
+      HistoryRechargesResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 26,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        HistoryRechargesResponse.class.getName());
+    }
+    // Use HistoryRechargesResponse.newBuilder() to construct.
+    private HistoryRechargesResponse(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private HistoryRechargesResponse() {
+      data_ = java.util.Collections.emptyList();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.teneasyChat.api.core.WorkerOuterClass.internal_static_api_core_HistoryRechargesResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.teneasyChat.api.core.WorkerOuterClass.internal_static_api_core_HistoryRechargesResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.teneasyChat.api.core.WorkerOuterClass.HistoryRechargesResponse.class, com.teneasyChat.api.core.WorkerOuterClass.HistoryRechargesResponse.Builder.class);
+    }
+
+    public static final int DATA_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
+    private java.util.List<com.teneasyChat.api.core.WorkerOuterClass.ThirdOrder> data_;
+    /**
+     * <code>repeated .api.core.ThirdOrder data = 1;</code>
+     */
+    @java.lang.Override
+    public java.util.List<com.teneasyChat.api.core.WorkerOuterClass.ThirdOrder> getDataList() {
+      return data_;
+    }
+    /**
+     * <code>repeated .api.core.ThirdOrder data = 1;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends com.teneasyChat.api.core.WorkerOuterClass.ThirdOrderOrBuilder> 
+        getDataOrBuilderList() {
+      return data_;
+    }
+    /**
+     * <code>repeated .api.core.ThirdOrder data = 1;</code>
+     */
+    @java.lang.Override
+    public int getDataCount() {
+      return data_.size();
+    }
+    /**
+     * <code>repeated .api.core.ThirdOrder data = 1;</code>
+     */
+    @java.lang.Override
+    public com.teneasyChat.api.core.WorkerOuterClass.ThirdOrder getData(int index) {
+      return data_.get(index);
+    }
+    /**
+     * <code>repeated .api.core.ThirdOrder data = 1;</code>
+     */
+    @java.lang.Override
+    public com.teneasyChat.api.core.WorkerOuterClass.ThirdOrderOrBuilder getDataOrBuilder(
+        int index) {
+      return data_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < data_.size(); i++) {
+        output.writeMessage(1, data_.get(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < data_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, data_.get(i));
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.teneasyChat.api.core.WorkerOuterClass.HistoryRechargesResponse)) {
+        return super.equals(obj);
+      }
+      com.teneasyChat.api.core.WorkerOuterClass.HistoryRechargesResponse other = (com.teneasyChat.api.core.WorkerOuterClass.HistoryRechargesResponse) obj;
+
+      if (!getDataList()
+          .equals(other.getDataList())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getDataCount() > 0) {
+        hash = (37 * hash) + DATA_FIELD_NUMBER;
+        hash = (53 * hash) + getDataList().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.teneasyChat.api.core.WorkerOuterClass.HistoryRechargesResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.HistoryRechargesResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.HistoryRechargesResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.HistoryRechargesResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.HistoryRechargesResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.HistoryRechargesResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.HistoryRechargesResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.HistoryRechargesResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.teneasyChat.api.core.WorkerOuterClass.HistoryRechargesResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.teneasyChat.api.core.WorkerOuterClass.HistoryRechargesResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.HistoryRechargesResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.HistoryRechargesResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.teneasyChat.api.core.WorkerOuterClass.HistoryRechargesResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code api.core.HistoryRechargesResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:api.core.HistoryRechargesResponse)
+        com.teneasyChat.api.core.WorkerOuterClass.HistoryRechargesResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.teneasyChat.api.core.WorkerOuterClass.internal_static_api_core_HistoryRechargesResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.teneasyChat.api.core.WorkerOuterClass.internal_static_api_core_HistoryRechargesResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.teneasyChat.api.core.WorkerOuterClass.HistoryRechargesResponse.class, com.teneasyChat.api.core.WorkerOuterClass.HistoryRechargesResponse.Builder.class);
+      }
+
+      // Construct using com.teneasyChat.api.core.WorkerOuterClass.HistoryRechargesResponse.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        if (dataBuilder_ == null) {
+          data_ = java.util.Collections.emptyList();
+        } else {
+          data_ = null;
+          dataBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.teneasyChat.api.core.WorkerOuterClass.internal_static_api_core_HistoryRechargesResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.core.WorkerOuterClass.HistoryRechargesResponse getDefaultInstanceForType() {
+        return com.teneasyChat.api.core.WorkerOuterClass.HistoryRechargesResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.core.WorkerOuterClass.HistoryRechargesResponse build() {
+        com.teneasyChat.api.core.WorkerOuterClass.HistoryRechargesResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.core.WorkerOuterClass.HistoryRechargesResponse buildPartial() {
+        com.teneasyChat.api.core.WorkerOuterClass.HistoryRechargesResponse result = new com.teneasyChat.api.core.WorkerOuterClass.HistoryRechargesResponse(this);
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(com.teneasyChat.api.core.WorkerOuterClass.HistoryRechargesResponse result) {
+        if (dataBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            data_ = java.util.Collections.unmodifiableList(data_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.data_ = data_;
+        } else {
+          result.data_ = dataBuilder_.build();
+        }
+      }
+
+      private void buildPartial0(com.teneasyChat.api.core.WorkerOuterClass.HistoryRechargesResponse result) {
+        int from_bitField0_ = bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.teneasyChat.api.core.WorkerOuterClass.HistoryRechargesResponse) {
+          return mergeFrom((com.teneasyChat.api.core.WorkerOuterClass.HistoryRechargesResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.teneasyChat.api.core.WorkerOuterClass.HistoryRechargesResponse other) {
+        if (other == com.teneasyChat.api.core.WorkerOuterClass.HistoryRechargesResponse.getDefaultInstance()) return this;
+        if (dataBuilder_ == null) {
+          if (!other.data_.isEmpty()) {
+            if (data_.isEmpty()) {
+              data_ = other.data_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureDataIsMutable();
+              data_.addAll(other.data_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.data_.isEmpty()) {
+            if (dataBuilder_.isEmpty()) {
+              dataBuilder_.dispose();
+              dataBuilder_ = null;
+              data_ = other.data_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              dataBuilder_ = 
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
+                   getDataFieldBuilder() : null;
+            } else {
+              dataBuilder_.addAllMessages(other.data_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                com.teneasyChat.api.core.WorkerOuterClass.ThirdOrder m =
+                    input.readMessage(
+                        com.teneasyChat.api.core.WorkerOuterClass.ThirdOrder.parser(),
+                        extensionRegistry);
+                if (dataBuilder_ == null) {
+                  ensureDataIsMutable();
+                  data_.add(m);
+                } else {
+                  dataBuilder_.addMessage(m);
+                }
+                break;
+              } // case 10
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private java.util.List<com.teneasyChat.api.core.WorkerOuterClass.ThirdOrder> data_ =
+        java.util.Collections.emptyList();
+      private void ensureDataIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          data_ = new java.util.ArrayList<com.teneasyChat.api.core.WorkerOuterClass.ThirdOrder>(data_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilder<
+          com.teneasyChat.api.core.WorkerOuterClass.ThirdOrder, com.teneasyChat.api.core.WorkerOuterClass.ThirdOrder.Builder, com.teneasyChat.api.core.WorkerOuterClass.ThirdOrderOrBuilder> dataBuilder_;
+
+      /**
+       * <code>repeated .api.core.ThirdOrder data = 1;</code>
+       */
+      public java.util.List<com.teneasyChat.api.core.WorkerOuterClass.ThirdOrder> getDataList() {
+        if (dataBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(data_);
+        } else {
+          return dataBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .api.core.ThirdOrder data = 1;</code>
+       */
+      public int getDataCount() {
+        if (dataBuilder_ == null) {
+          return data_.size();
+        } else {
+          return dataBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .api.core.ThirdOrder data = 1;</code>
+       */
+      public com.teneasyChat.api.core.WorkerOuterClass.ThirdOrder getData(int index) {
+        if (dataBuilder_ == null) {
+          return data_.get(index);
+        } else {
+          return dataBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .api.core.ThirdOrder data = 1;</code>
+       */
+      public Builder setData(
+          int index, com.teneasyChat.api.core.WorkerOuterClass.ThirdOrder value) {
+        if (dataBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureDataIsMutable();
+          data_.set(index, value);
+          onChanged();
+        } else {
+          dataBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .api.core.ThirdOrder data = 1;</code>
+       */
+      public Builder setData(
+          int index, com.teneasyChat.api.core.WorkerOuterClass.ThirdOrder.Builder builderForValue) {
+        if (dataBuilder_ == null) {
+          ensureDataIsMutable();
+          data_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          dataBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .api.core.ThirdOrder data = 1;</code>
+       */
+      public Builder addData(com.teneasyChat.api.core.WorkerOuterClass.ThirdOrder value) {
+        if (dataBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureDataIsMutable();
+          data_.add(value);
+          onChanged();
+        } else {
+          dataBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .api.core.ThirdOrder data = 1;</code>
+       */
+      public Builder addData(
+          int index, com.teneasyChat.api.core.WorkerOuterClass.ThirdOrder value) {
+        if (dataBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureDataIsMutable();
+          data_.add(index, value);
+          onChanged();
+        } else {
+          dataBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .api.core.ThirdOrder data = 1;</code>
+       */
+      public Builder addData(
+          com.teneasyChat.api.core.WorkerOuterClass.ThirdOrder.Builder builderForValue) {
+        if (dataBuilder_ == null) {
+          ensureDataIsMutable();
+          data_.add(builderForValue.build());
+          onChanged();
+        } else {
+          dataBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .api.core.ThirdOrder data = 1;</code>
+       */
+      public Builder addData(
+          int index, com.teneasyChat.api.core.WorkerOuterClass.ThirdOrder.Builder builderForValue) {
+        if (dataBuilder_ == null) {
+          ensureDataIsMutable();
+          data_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          dataBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .api.core.ThirdOrder data = 1;</code>
+       */
+      public Builder addAllData(
+          java.lang.Iterable<? extends com.teneasyChat.api.core.WorkerOuterClass.ThirdOrder> values) {
+        if (dataBuilder_ == null) {
+          ensureDataIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, data_);
+          onChanged();
+        } else {
+          dataBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .api.core.ThirdOrder data = 1;</code>
+       */
+      public Builder clearData() {
+        if (dataBuilder_ == null) {
+          data_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          dataBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .api.core.ThirdOrder data = 1;</code>
+       */
+      public Builder removeData(int index) {
+        if (dataBuilder_ == null) {
+          ensureDataIsMutable();
+          data_.remove(index);
+          onChanged();
+        } else {
+          dataBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .api.core.ThirdOrder data = 1;</code>
+       */
+      public com.teneasyChat.api.core.WorkerOuterClass.ThirdOrder.Builder getDataBuilder(
+          int index) {
+        return getDataFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .api.core.ThirdOrder data = 1;</code>
+       */
+      public com.teneasyChat.api.core.WorkerOuterClass.ThirdOrderOrBuilder getDataOrBuilder(
+          int index) {
+        if (dataBuilder_ == null) {
+          return data_.get(index);  } else {
+          return dataBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .api.core.ThirdOrder data = 1;</code>
+       */
+      public java.util.List<? extends com.teneasyChat.api.core.WorkerOuterClass.ThirdOrderOrBuilder> 
+           getDataOrBuilderList() {
+        if (dataBuilder_ != null) {
+          return dataBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(data_);
+        }
+      }
+      /**
+       * <code>repeated .api.core.ThirdOrder data = 1;</code>
+       */
+      public com.teneasyChat.api.core.WorkerOuterClass.ThirdOrder.Builder addDataBuilder() {
+        return getDataFieldBuilder().addBuilder(
+            com.teneasyChat.api.core.WorkerOuterClass.ThirdOrder.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .api.core.ThirdOrder data = 1;</code>
+       */
+      public com.teneasyChat.api.core.WorkerOuterClass.ThirdOrder.Builder addDataBuilder(
+          int index) {
+        return getDataFieldBuilder().addBuilder(
+            index, com.teneasyChat.api.core.WorkerOuterClass.ThirdOrder.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .api.core.ThirdOrder data = 1;</code>
+       */
+      public java.util.List<com.teneasyChat.api.core.WorkerOuterClass.ThirdOrder.Builder> 
+           getDataBuilderList() {
+        return getDataFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilder<
+          com.teneasyChat.api.core.WorkerOuterClass.ThirdOrder, com.teneasyChat.api.core.WorkerOuterClass.ThirdOrder.Builder, com.teneasyChat.api.core.WorkerOuterClass.ThirdOrderOrBuilder> 
+          getDataFieldBuilder() {
+        if (dataBuilder_ == null) {
+          dataBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
+              com.teneasyChat.api.core.WorkerOuterClass.ThirdOrder, com.teneasyChat.api.core.WorkerOuterClass.ThirdOrder.Builder, com.teneasyChat.api.core.WorkerOuterClass.ThirdOrderOrBuilder>(
+                  data_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          data_ = null;
+        }
+        return dataBuilder_;
+      }
+
+      // @@protoc_insertion_point(builder_scope:api.core.HistoryRechargesResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:api.core.HistoryRechargesResponse)
+    private static final com.teneasyChat.api.core.WorkerOuterClass.HistoryRechargesResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.teneasyChat.api.core.WorkerOuterClass.HistoryRechargesResponse();
+    }
+
+    public static com.teneasyChat.api.core.WorkerOuterClass.HistoryRechargesResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<HistoryRechargesResponse>
+        PARSER = new com.google.protobuf.AbstractParser<HistoryRechargesResponse>() {
+      @java.lang.Override
+      public HistoryRechargesResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<HistoryRechargesResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<HistoryRechargesResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.teneasyChat.api.core.WorkerOuterClass.HistoryRechargesResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -36805,6 +39906,796 @@ public final class WorkerOuterClass {
 
   }
 
+  public interface GetApplyWorkerStateRespOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:api.core.GetApplyWorkerStateResp)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.api.common.OnlineState online_state_now = 1;</code>
+     * @return The enum numeric value on the wire for onlineStateNow.
+     */
+    int getOnlineStateNowValue();
+    /**
+     * <code>.api.common.OnlineState online_state_now = 1;</code>
+     * @return The onlineStateNow.
+     */
+    com.teneasyChat.api.common.CWorker.OnlineState getOnlineStateNow();
+
+    /**
+     * <code>.api.common.OnlineState online_state_apply = 2;</code>
+     * @return The enum numeric value on the wire for onlineStateApply.
+     */
+    int getOnlineStateApplyValue();
+    /**
+     * <code>.api.common.OnlineState online_state_apply = 2;</code>
+     * @return The onlineStateApply.
+     */
+    com.teneasyChat.api.common.CWorker.OnlineState getOnlineStateApply();
+
+    /**
+     * <code>int64 apply_time = 3;</code>
+     * @return The applyTime.
+     */
+    long getApplyTime();
+
+    /**
+     * <code>int32 apply_state = 4;</code>
+     * @return The applyState.
+     */
+    int getApplyState();
+
+    /**
+     * <code>int64 check_time = 5;</code>
+     * @return The checkTime.
+     */
+    long getCheckTime();
+  }
+  /**
+   * Protobuf type {@code api.core.GetApplyWorkerStateResp}
+   */
+  public static final class GetApplyWorkerStateResp extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:api.core.GetApplyWorkerStateResp)
+      GetApplyWorkerStateRespOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 26,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        GetApplyWorkerStateResp.class.getName());
+    }
+    // Use GetApplyWorkerStateResp.newBuilder() to construct.
+    private GetApplyWorkerStateResp(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private GetApplyWorkerStateResp() {
+      onlineStateNow_ = 0;
+      onlineStateApply_ = 0;
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.teneasyChat.api.core.WorkerOuterClass.internal_static_api_core_GetApplyWorkerStateResp_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.teneasyChat.api.core.WorkerOuterClass.internal_static_api_core_GetApplyWorkerStateResp_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateResp.class, com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateResp.Builder.class);
+    }
+
+    public static final int ONLINE_STATE_NOW_FIELD_NUMBER = 1;
+    private int onlineStateNow_ = 0;
+    /**
+     * <code>.api.common.OnlineState online_state_now = 1;</code>
+     * @return The enum numeric value on the wire for onlineStateNow.
+     */
+    @java.lang.Override public int getOnlineStateNowValue() {
+      return onlineStateNow_;
+    }
+    /**
+     * <code>.api.common.OnlineState online_state_now = 1;</code>
+     * @return The onlineStateNow.
+     */
+    @java.lang.Override public com.teneasyChat.api.common.CWorker.OnlineState getOnlineStateNow() {
+      com.teneasyChat.api.common.CWorker.OnlineState result = com.teneasyChat.api.common.CWorker.OnlineState.forNumber(onlineStateNow_);
+      return result == null ? com.teneasyChat.api.common.CWorker.OnlineState.UNRECOGNIZED : result;
+    }
+
+    public static final int ONLINE_STATE_APPLY_FIELD_NUMBER = 2;
+    private int onlineStateApply_ = 0;
+    /**
+     * <code>.api.common.OnlineState online_state_apply = 2;</code>
+     * @return The enum numeric value on the wire for onlineStateApply.
+     */
+    @java.lang.Override public int getOnlineStateApplyValue() {
+      return onlineStateApply_;
+    }
+    /**
+     * <code>.api.common.OnlineState online_state_apply = 2;</code>
+     * @return The onlineStateApply.
+     */
+    @java.lang.Override public com.teneasyChat.api.common.CWorker.OnlineState getOnlineStateApply() {
+      com.teneasyChat.api.common.CWorker.OnlineState result = com.teneasyChat.api.common.CWorker.OnlineState.forNumber(onlineStateApply_);
+      return result == null ? com.teneasyChat.api.common.CWorker.OnlineState.UNRECOGNIZED : result;
+    }
+
+    public static final int APPLY_TIME_FIELD_NUMBER = 3;
+    private long applyTime_ = 0L;
+    /**
+     * <code>int64 apply_time = 3;</code>
+     * @return The applyTime.
+     */
+    @java.lang.Override
+    public long getApplyTime() {
+      return applyTime_;
+    }
+
+    public static final int APPLY_STATE_FIELD_NUMBER = 4;
+    private int applyState_ = 0;
+    /**
+     * <code>int32 apply_state = 4;</code>
+     * @return The applyState.
+     */
+    @java.lang.Override
+    public int getApplyState() {
+      return applyState_;
+    }
+
+    public static final int CHECK_TIME_FIELD_NUMBER = 5;
+    private long checkTime_ = 0L;
+    /**
+     * <code>int64 check_time = 5;</code>
+     * @return The checkTime.
+     */
+    @java.lang.Override
+    public long getCheckTime() {
+      return checkTime_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (onlineStateNow_ != com.teneasyChat.api.common.CWorker.OnlineState.ONLINE_STATE_IDLE.getNumber()) {
+        output.writeEnum(1, onlineStateNow_);
+      }
+      if (onlineStateApply_ != com.teneasyChat.api.common.CWorker.OnlineState.ONLINE_STATE_IDLE.getNumber()) {
+        output.writeEnum(2, onlineStateApply_);
+      }
+      if (applyTime_ != 0L) {
+        output.writeInt64(3, applyTime_);
+      }
+      if (applyState_ != 0) {
+        output.writeInt32(4, applyState_);
+      }
+      if (checkTime_ != 0L) {
+        output.writeInt64(5, checkTime_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (onlineStateNow_ != com.teneasyChat.api.common.CWorker.OnlineState.ONLINE_STATE_IDLE.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(1, onlineStateNow_);
+      }
+      if (onlineStateApply_ != com.teneasyChat.api.common.CWorker.OnlineState.ONLINE_STATE_IDLE.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(2, onlineStateApply_);
+      }
+      if (applyTime_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(3, applyTime_);
+      }
+      if (applyState_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(4, applyState_);
+      }
+      if (checkTime_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(5, checkTime_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateResp)) {
+        return super.equals(obj);
+      }
+      com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateResp other = (com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateResp) obj;
+
+      if (onlineStateNow_ != other.onlineStateNow_) return false;
+      if (onlineStateApply_ != other.onlineStateApply_) return false;
+      if (getApplyTime()
+          != other.getApplyTime()) return false;
+      if (getApplyState()
+          != other.getApplyState()) return false;
+      if (getCheckTime()
+          != other.getCheckTime()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ONLINE_STATE_NOW_FIELD_NUMBER;
+      hash = (53 * hash) + onlineStateNow_;
+      hash = (37 * hash) + ONLINE_STATE_APPLY_FIELD_NUMBER;
+      hash = (53 * hash) + onlineStateApply_;
+      hash = (37 * hash) + APPLY_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getApplyTime());
+      hash = (37 * hash) + APPLY_STATE_FIELD_NUMBER;
+      hash = (53 * hash) + getApplyState();
+      hash = (37 * hash) + CHECK_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getCheckTime());
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateResp parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateResp parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateResp parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateResp parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateResp parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateResp parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateResp parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateResp parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateResp parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateResp parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateResp parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateResp parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateResp prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code api.core.GetApplyWorkerStateResp}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:api.core.GetApplyWorkerStateResp)
+        com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateRespOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.teneasyChat.api.core.WorkerOuterClass.internal_static_api_core_GetApplyWorkerStateResp_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.teneasyChat.api.core.WorkerOuterClass.internal_static_api_core_GetApplyWorkerStateResp_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateResp.class, com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateResp.Builder.class);
+      }
+
+      // Construct using com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateResp.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        onlineStateNow_ = 0;
+        onlineStateApply_ = 0;
+        applyTime_ = 0L;
+        applyState_ = 0;
+        checkTime_ = 0L;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.teneasyChat.api.core.WorkerOuterClass.internal_static_api_core_GetApplyWorkerStateResp_descriptor;
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateResp getDefaultInstanceForType() {
+        return com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateResp.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateResp build() {
+        com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateResp result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateResp buildPartial() {
+        com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateResp result = new com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateResp(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateResp result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.onlineStateNow_ = onlineStateNow_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.onlineStateApply_ = onlineStateApply_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.applyTime_ = applyTime_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.applyState_ = applyState_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.checkTime_ = checkTime_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateResp) {
+          return mergeFrom((com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateResp)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateResp other) {
+        if (other == com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateResp.getDefaultInstance()) return this;
+        if (other.onlineStateNow_ != 0) {
+          setOnlineStateNowValue(other.getOnlineStateNowValue());
+        }
+        if (other.onlineStateApply_ != 0) {
+          setOnlineStateApplyValue(other.getOnlineStateApplyValue());
+        }
+        if (other.getApplyTime() != 0L) {
+          setApplyTime(other.getApplyTime());
+        }
+        if (other.getApplyState() != 0) {
+          setApplyState(other.getApplyState());
+        }
+        if (other.getCheckTime() != 0L) {
+          setCheckTime(other.getCheckTime());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                onlineStateNow_ = input.readEnum();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 16: {
+                onlineStateApply_ = input.readEnum();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
+              case 24: {
+                applyTime_ = input.readInt64();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 24
+              case 32: {
+                applyState_ = input.readInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 32
+              case 40: {
+                checkTime_ = input.readInt64();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 40
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private int onlineStateNow_ = 0;
+      /**
+       * <code>.api.common.OnlineState online_state_now = 1;</code>
+       * @return The enum numeric value on the wire for onlineStateNow.
+       */
+      @java.lang.Override public int getOnlineStateNowValue() {
+        return onlineStateNow_;
+      }
+      /**
+       * <code>.api.common.OnlineState online_state_now = 1;</code>
+       * @param value The enum numeric value on the wire for onlineStateNow to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOnlineStateNowValue(int value) {
+        onlineStateNow_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.api.common.OnlineState online_state_now = 1;</code>
+       * @return The onlineStateNow.
+       */
+      @java.lang.Override
+      public com.teneasyChat.api.common.CWorker.OnlineState getOnlineStateNow() {
+        com.teneasyChat.api.common.CWorker.OnlineState result = com.teneasyChat.api.common.CWorker.OnlineState.forNumber(onlineStateNow_);
+        return result == null ? com.teneasyChat.api.common.CWorker.OnlineState.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.api.common.OnlineState online_state_now = 1;</code>
+       * @param value The onlineStateNow to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOnlineStateNow(com.teneasyChat.api.common.CWorker.OnlineState value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000001;
+        onlineStateNow_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.api.common.OnlineState online_state_now = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearOnlineStateNow() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onlineStateNow_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int onlineStateApply_ = 0;
+      /**
+       * <code>.api.common.OnlineState online_state_apply = 2;</code>
+       * @return The enum numeric value on the wire for onlineStateApply.
+       */
+      @java.lang.Override public int getOnlineStateApplyValue() {
+        return onlineStateApply_;
+      }
+      /**
+       * <code>.api.common.OnlineState online_state_apply = 2;</code>
+       * @param value The enum numeric value on the wire for onlineStateApply to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOnlineStateApplyValue(int value) {
+        onlineStateApply_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.api.common.OnlineState online_state_apply = 2;</code>
+       * @return The onlineStateApply.
+       */
+      @java.lang.Override
+      public com.teneasyChat.api.common.CWorker.OnlineState getOnlineStateApply() {
+        com.teneasyChat.api.common.CWorker.OnlineState result = com.teneasyChat.api.common.CWorker.OnlineState.forNumber(onlineStateApply_);
+        return result == null ? com.teneasyChat.api.common.CWorker.OnlineState.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.api.common.OnlineState online_state_apply = 2;</code>
+       * @param value The onlineStateApply to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOnlineStateApply(com.teneasyChat.api.common.CWorker.OnlineState value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000002;
+        onlineStateApply_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.api.common.OnlineState online_state_apply = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearOnlineStateApply() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onlineStateApply_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private long applyTime_ ;
+      /**
+       * <code>int64 apply_time = 3;</code>
+       * @return The applyTime.
+       */
+      @java.lang.Override
+      public long getApplyTime() {
+        return applyTime_;
+      }
+      /**
+       * <code>int64 apply_time = 3;</code>
+       * @param value The applyTime to set.
+       * @return This builder for chaining.
+       */
+      public Builder setApplyTime(long value) {
+
+        applyTime_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 apply_time = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearApplyTime() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        applyTime_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private int applyState_ ;
+      /**
+       * <code>int32 apply_state = 4;</code>
+       * @return The applyState.
+       */
+      @java.lang.Override
+      public int getApplyState() {
+        return applyState_;
+      }
+      /**
+       * <code>int32 apply_state = 4;</code>
+       * @param value The applyState to set.
+       * @return This builder for chaining.
+       */
+      public Builder setApplyState(int value) {
+
+        applyState_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 apply_state = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearApplyState() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        applyState_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private long checkTime_ ;
+      /**
+       * <code>int64 check_time = 5;</code>
+       * @return The checkTime.
+       */
+      @java.lang.Override
+      public long getCheckTime() {
+        return checkTime_;
+      }
+      /**
+       * <code>int64 check_time = 5;</code>
+       * @param value The checkTime to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCheckTime(long value) {
+
+        checkTime_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 check_time = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCheckTime() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        checkTime_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:api.core.GetApplyWorkerStateResp)
+    }
+
+    // @@protoc_insertion_point(class_scope:api.core.GetApplyWorkerStateResp)
+    private static final com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateResp DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateResp();
+    }
+
+    public static com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateResp getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<GetApplyWorkerStateResp>
+        PARSER = new com.google.protobuf.AbstractParser<GetApplyWorkerStateResp>() {
+      @java.lang.Override
+      public GetApplyWorkerStateResp parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<GetApplyWorkerStateResp> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<GetApplyWorkerStateResp> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.teneasyChat.api.core.WorkerOuterClass.GetApplyWorkerStateResp getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface SessionCustomerQueryRequestOrBuilder extends
       // @@protoc_insertion_point(interface_extends:api.core.SessionCustomerQueryRequest)
       com.google.protobuf.MessageOrBuilder {
@@ -37789,6 +41680,16 @@ public final class WorkerOuterClass {
      * <code>.google.protobuf.Timestamp create_at = 7;</code>
      */
     com.google.protobuf.TimestampOrBuilder getCreateAtOrBuilder();
+
+    /**
+     * <pre>
+     * 商户ID
+     * </pre>
+     *
+     * <code>int32 tenant_id = 8;</code>
+     * @return The tenantId.
+     */
+    int getTenantId();
   }
   /**
    * Protobuf type {@code api.core.SessionCustomer}
@@ -38088,6 +41989,21 @@ public final class WorkerOuterClass {
       return createAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createAt_;
     }
 
+    public static final int TENANT_ID_FIELD_NUMBER = 8;
+    private int tenantId_ = 0;
+    /**
+     * <pre>
+     * 商户ID
+     * </pre>
+     *
+     * <code>int32 tenant_id = 8;</code>
+     * @return The tenantId.
+     */
+    @java.lang.Override
+    public int getTenantId() {
+      return tenantId_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -38123,6 +42039,9 @@ public final class WorkerOuterClass {
       if (((bitField0_ & 0x00000001) != 0)) {
         output.writeMessage(7, getCreateAt());
       }
+      if (tenantId_ != 0) {
+        output.writeInt32(8, tenantId_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -38156,6 +42075,10 @@ public final class WorkerOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(7, getCreateAt());
       }
+      if (tenantId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(8, tenantId_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -38188,6 +42111,8 @@ public final class WorkerOuterClass {
         if (!getCreateAt()
             .equals(other.getCreateAt())) return false;
       }
+      if (getTenantId()
+          != other.getTenantId()) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -38216,6 +42141,8 @@ public final class WorkerOuterClass {
         hash = (37 * hash) + CREATE_AT_FIELD_NUMBER;
         hash = (53 * hash) + getCreateAt().hashCode();
       }
+      hash = (37 * hash) + TENANT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getTenantId();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -38364,6 +42291,7 @@ public final class WorkerOuterClass {
           createAtBuilder_.dispose();
           createAtBuilder_ = null;
         }
+        tenantId_ = 0;
         return this;
       }
 
@@ -38422,6 +42350,9 @@ public final class WorkerOuterClass {
               : createAtBuilder_.build();
           to_bitField0_ |= 0x00000001;
         }
+        if (((from_bitField0_ & 0x00000080) != 0)) {
+          result.tenantId_ = tenantId_;
+        }
         result.bitField0_ |= to_bitField0_;
       }
 
@@ -38465,6 +42396,9 @@ public final class WorkerOuterClass {
         }
         if (other.hasCreateAt()) {
           mergeCreateAt(other.getCreateAt());
+        }
+        if (other.getTenantId() != 0) {
+          setTenantId(other.getTenantId());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -38529,6 +42463,11 @@ public final class WorkerOuterClass {
                 bitField0_ |= 0x00000040;
                 break;
               } // case 58
+              case 64: {
+                tenantId_ = input.readInt32();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 64
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -39157,6 +43096,50 @@ public final class WorkerOuterClass {
           createAt_ = null;
         }
         return createAtBuilder_;
+      }
+
+      private int tenantId_ ;
+      /**
+       * <pre>
+       * 商户ID
+       * </pre>
+       *
+       * <code>int32 tenant_id = 8;</code>
+       * @return The tenantId.
+       */
+      @java.lang.Override
+      public int getTenantId() {
+        return tenantId_;
+      }
+      /**
+       * <pre>
+       * 商户ID
+       * </pre>
+       *
+       * <code>int32 tenant_id = 8;</code>
+       * @param value The tenantId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTenantId(int value) {
+
+        tenantId_ = value;
+        bitField0_ |= 0x00000080;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 商户ID
+       * </pre>
+       *
+       * <code>int32 tenant_id = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTenantId() {
+        bitField0_ = (bitField0_ & ~0x00000080);
+        tenantId_ = 0;
+        onChanged();
+        return this;
       }
 
       // @@protoc_insertion_point(builder_scope:api.core.SessionCustomer)
@@ -40739,6 +44722,2774 @@ public final class WorkerOuterClass {
 
   }
 
+  public interface GetQlUrlRespOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:api.core.GetQlUrlResp)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string base64_url = 1;</code>
+     * @return The base64Url.
+     */
+    java.lang.String getBase64Url();
+    /**
+     * <code>string base64_url = 1;</code>
+     * @return The bytes for base64Url.
+     */
+    com.google.protobuf.ByteString
+        getBase64UrlBytes();
+
+    /**
+     * <code>string google_key = 2;</code>
+     * @return The googleKey.
+     */
+    java.lang.String getGoogleKey();
+    /**
+     * <code>string google_key = 2;</code>
+     * @return The bytes for googleKey.
+     */
+    com.google.protobuf.ByteString
+        getGoogleKeyBytes();
+  }
+  /**
+   * Protobuf type {@code api.core.GetQlUrlResp}
+   */
+  public static final class GetQlUrlResp extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:api.core.GetQlUrlResp)
+      GetQlUrlRespOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 26,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        GetQlUrlResp.class.getName());
+    }
+    // Use GetQlUrlResp.newBuilder() to construct.
+    private GetQlUrlResp(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private GetQlUrlResp() {
+      base64Url_ = "";
+      googleKey_ = "";
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.teneasyChat.api.core.WorkerOuterClass.internal_static_api_core_GetQlUrlResp_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.teneasyChat.api.core.WorkerOuterClass.internal_static_api_core_GetQlUrlResp_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.teneasyChat.api.core.WorkerOuterClass.GetQlUrlResp.class, com.teneasyChat.api.core.WorkerOuterClass.GetQlUrlResp.Builder.class);
+    }
+
+    public static final int BASE64_URL_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object base64Url_ = "";
+    /**
+     * <code>string base64_url = 1;</code>
+     * @return The base64Url.
+     */
+    @java.lang.Override
+    public java.lang.String getBase64Url() {
+      java.lang.Object ref = base64Url_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        base64Url_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string base64_url = 1;</code>
+     * @return The bytes for base64Url.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getBase64UrlBytes() {
+      java.lang.Object ref = base64Url_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        base64Url_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int GOOGLE_KEY_FIELD_NUMBER = 2;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object googleKey_ = "";
+    /**
+     * <code>string google_key = 2;</code>
+     * @return The googleKey.
+     */
+    @java.lang.Override
+    public java.lang.String getGoogleKey() {
+      java.lang.Object ref = googleKey_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        googleKey_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string google_key = 2;</code>
+     * @return The bytes for googleKey.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getGoogleKeyBytes() {
+      java.lang.Object ref = googleKey_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        googleKey_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(base64Url_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 1, base64Url_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(googleKey_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 2, googleKey_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(base64Url_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(1, base64Url_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(googleKey_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(2, googleKey_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.teneasyChat.api.core.WorkerOuterClass.GetQlUrlResp)) {
+        return super.equals(obj);
+      }
+      com.teneasyChat.api.core.WorkerOuterClass.GetQlUrlResp other = (com.teneasyChat.api.core.WorkerOuterClass.GetQlUrlResp) obj;
+
+      if (!getBase64Url()
+          .equals(other.getBase64Url())) return false;
+      if (!getGoogleKey()
+          .equals(other.getGoogleKey())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + BASE64_URL_FIELD_NUMBER;
+      hash = (53 * hash) + getBase64Url().hashCode();
+      hash = (37 * hash) + GOOGLE_KEY_FIELD_NUMBER;
+      hash = (53 * hash) + getGoogleKey().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.teneasyChat.api.core.WorkerOuterClass.GetQlUrlResp parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.GetQlUrlResp parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.GetQlUrlResp parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.GetQlUrlResp parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.GetQlUrlResp parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.GetQlUrlResp parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.GetQlUrlResp parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.GetQlUrlResp parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.teneasyChat.api.core.WorkerOuterClass.GetQlUrlResp parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.teneasyChat.api.core.WorkerOuterClass.GetQlUrlResp parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.GetQlUrlResp parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.GetQlUrlResp parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.teneasyChat.api.core.WorkerOuterClass.GetQlUrlResp prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code api.core.GetQlUrlResp}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:api.core.GetQlUrlResp)
+        com.teneasyChat.api.core.WorkerOuterClass.GetQlUrlRespOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.teneasyChat.api.core.WorkerOuterClass.internal_static_api_core_GetQlUrlResp_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.teneasyChat.api.core.WorkerOuterClass.internal_static_api_core_GetQlUrlResp_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.teneasyChat.api.core.WorkerOuterClass.GetQlUrlResp.class, com.teneasyChat.api.core.WorkerOuterClass.GetQlUrlResp.Builder.class);
+      }
+
+      // Construct using com.teneasyChat.api.core.WorkerOuterClass.GetQlUrlResp.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        base64Url_ = "";
+        googleKey_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.teneasyChat.api.core.WorkerOuterClass.internal_static_api_core_GetQlUrlResp_descriptor;
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.core.WorkerOuterClass.GetQlUrlResp getDefaultInstanceForType() {
+        return com.teneasyChat.api.core.WorkerOuterClass.GetQlUrlResp.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.core.WorkerOuterClass.GetQlUrlResp build() {
+        com.teneasyChat.api.core.WorkerOuterClass.GetQlUrlResp result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.core.WorkerOuterClass.GetQlUrlResp buildPartial() {
+        com.teneasyChat.api.core.WorkerOuterClass.GetQlUrlResp result = new com.teneasyChat.api.core.WorkerOuterClass.GetQlUrlResp(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.teneasyChat.api.core.WorkerOuterClass.GetQlUrlResp result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.base64Url_ = base64Url_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.googleKey_ = googleKey_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.teneasyChat.api.core.WorkerOuterClass.GetQlUrlResp) {
+          return mergeFrom((com.teneasyChat.api.core.WorkerOuterClass.GetQlUrlResp)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.teneasyChat.api.core.WorkerOuterClass.GetQlUrlResp other) {
+        if (other == com.teneasyChat.api.core.WorkerOuterClass.GetQlUrlResp.getDefaultInstance()) return this;
+        if (!other.getBase64Url().isEmpty()) {
+          base64Url_ = other.base64Url_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (!other.getGoogleKey().isEmpty()) {
+          googleKey_ = other.googleKey_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                base64Url_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              case 18: {
+                googleKey_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object base64Url_ = "";
+      /**
+       * <code>string base64_url = 1;</code>
+       * @return The base64Url.
+       */
+      public java.lang.String getBase64Url() {
+        java.lang.Object ref = base64Url_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          base64Url_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string base64_url = 1;</code>
+       * @return The bytes for base64Url.
+       */
+      public com.google.protobuf.ByteString
+          getBase64UrlBytes() {
+        java.lang.Object ref = base64Url_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          base64Url_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string base64_url = 1;</code>
+       * @param value The base64Url to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBase64Url(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        base64Url_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string base64_url = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearBase64Url() {
+        base64Url_ = getDefaultInstance().getBase64Url();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string base64_url = 1;</code>
+       * @param value The bytes for base64Url to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBase64UrlBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        base64Url_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object googleKey_ = "";
+      /**
+       * <code>string google_key = 2;</code>
+       * @return The googleKey.
+       */
+      public java.lang.String getGoogleKey() {
+        java.lang.Object ref = googleKey_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          googleKey_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string google_key = 2;</code>
+       * @return The bytes for googleKey.
+       */
+      public com.google.protobuf.ByteString
+          getGoogleKeyBytes() {
+        java.lang.Object ref = googleKey_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          googleKey_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string google_key = 2;</code>
+       * @param value The googleKey to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGoogleKey(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        googleKey_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string google_key = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearGoogleKey() {
+        googleKey_ = getDefaultInstance().getGoogleKey();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string google_key = 2;</code>
+       * @param value The bytes for googleKey to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGoogleKeyBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        googleKey_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:api.core.GetQlUrlResp)
+    }
+
+    // @@protoc_insertion_point(class_scope:api.core.GetQlUrlResp)
+    private static final com.teneasyChat.api.core.WorkerOuterClass.GetQlUrlResp DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.teneasyChat.api.core.WorkerOuterClass.GetQlUrlResp();
+    }
+
+    public static com.teneasyChat.api.core.WorkerOuterClass.GetQlUrlResp getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<GetQlUrlResp>
+        PARSER = new com.google.protobuf.AbstractParser<GetQlUrlResp>() {
+      @java.lang.Override
+      public GetQlUrlResp parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<GetQlUrlResp> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<GetQlUrlResp> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.teneasyChat.api.core.WorkerOuterClass.GetQlUrlResp getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface GlReqOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:api.core.GlReq)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string code = 1;</code>
+     * @return The code.
+     */
+    java.lang.String getCode();
+    /**
+     * <code>string code = 1;</code>
+     * @return The bytes for code.
+     */
+    com.google.protobuf.ByteString
+        getCodeBytes();
+  }
+  /**
+   * Protobuf type {@code api.core.GlReq}
+   */
+  public static final class GlReq extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:api.core.GlReq)
+      GlReqOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 26,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        GlReq.class.getName());
+    }
+    // Use GlReq.newBuilder() to construct.
+    private GlReq(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private GlReq() {
+      code_ = "";
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.teneasyChat.api.core.WorkerOuterClass.internal_static_api_core_GlReq_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.teneasyChat.api.core.WorkerOuterClass.internal_static_api_core_GlReq_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.teneasyChat.api.core.WorkerOuterClass.GlReq.class, com.teneasyChat.api.core.WorkerOuterClass.GlReq.Builder.class);
+    }
+
+    public static final int CODE_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object code_ = "";
+    /**
+     * <code>string code = 1;</code>
+     * @return The code.
+     */
+    @java.lang.Override
+    public java.lang.String getCode() {
+      java.lang.Object ref = code_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        code_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string code = 1;</code>
+     * @return The bytes for code.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getCodeBytes() {
+      java.lang.Object ref = code_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        code_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(code_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 1, code_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(code_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(1, code_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.teneasyChat.api.core.WorkerOuterClass.GlReq)) {
+        return super.equals(obj);
+      }
+      com.teneasyChat.api.core.WorkerOuterClass.GlReq other = (com.teneasyChat.api.core.WorkerOuterClass.GlReq) obj;
+
+      if (!getCode()
+          .equals(other.getCode())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + CODE_FIELD_NUMBER;
+      hash = (53 * hash) + getCode().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.teneasyChat.api.core.WorkerOuterClass.GlReq parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.GlReq parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.GlReq parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.GlReq parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.GlReq parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.GlReq parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.GlReq parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.GlReq parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.teneasyChat.api.core.WorkerOuterClass.GlReq parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.teneasyChat.api.core.WorkerOuterClass.GlReq parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.GlReq parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.GlReq parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.teneasyChat.api.core.WorkerOuterClass.GlReq prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code api.core.GlReq}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:api.core.GlReq)
+        com.teneasyChat.api.core.WorkerOuterClass.GlReqOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.teneasyChat.api.core.WorkerOuterClass.internal_static_api_core_GlReq_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.teneasyChat.api.core.WorkerOuterClass.internal_static_api_core_GlReq_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.teneasyChat.api.core.WorkerOuterClass.GlReq.class, com.teneasyChat.api.core.WorkerOuterClass.GlReq.Builder.class);
+      }
+
+      // Construct using com.teneasyChat.api.core.WorkerOuterClass.GlReq.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        code_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.teneasyChat.api.core.WorkerOuterClass.internal_static_api_core_GlReq_descriptor;
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.core.WorkerOuterClass.GlReq getDefaultInstanceForType() {
+        return com.teneasyChat.api.core.WorkerOuterClass.GlReq.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.core.WorkerOuterClass.GlReq build() {
+        com.teneasyChat.api.core.WorkerOuterClass.GlReq result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.core.WorkerOuterClass.GlReq buildPartial() {
+        com.teneasyChat.api.core.WorkerOuterClass.GlReq result = new com.teneasyChat.api.core.WorkerOuterClass.GlReq(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.teneasyChat.api.core.WorkerOuterClass.GlReq result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.code_ = code_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.teneasyChat.api.core.WorkerOuterClass.GlReq) {
+          return mergeFrom((com.teneasyChat.api.core.WorkerOuterClass.GlReq)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.teneasyChat.api.core.WorkerOuterClass.GlReq other) {
+        if (other == com.teneasyChat.api.core.WorkerOuterClass.GlReq.getDefaultInstance()) return this;
+        if (!other.getCode().isEmpty()) {
+          code_ = other.code_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                code_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object code_ = "";
+      /**
+       * <code>string code = 1;</code>
+       * @return The code.
+       */
+      public java.lang.String getCode() {
+        java.lang.Object ref = code_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          code_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string code = 1;</code>
+       * @return The bytes for code.
+       */
+      public com.google.protobuf.ByteString
+          getCodeBytes() {
+        java.lang.Object ref = code_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          code_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string code = 1;</code>
+       * @param value The code to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCode(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        code_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string code = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCode() {
+        code_ = getDefaultInstance().getCode();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string code = 1;</code>
+       * @param value The bytes for code to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCodeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        code_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:api.core.GlReq)
+    }
+
+    // @@protoc_insertion_point(class_scope:api.core.GlReq)
+    private static final com.teneasyChat.api.core.WorkerOuterClass.GlReq DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.teneasyChat.api.core.WorkerOuterClass.GlReq();
+    }
+
+    public static com.teneasyChat.api.core.WorkerOuterClass.GlReq getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<GlReq>
+        PARSER = new com.google.protobuf.AbstractParser<GlReq>() {
+      @java.lang.Override
+      public GlReq parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<GlReq> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<GlReq> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.teneasyChat.api.core.WorkerOuterClass.GlReq getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface GlRespOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:api.core.GlResp)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>bool ok = 1;</code>
+     * @return The ok.
+     */
+    boolean getOk();
+
+    /**
+     * <code>string err_msg = 2;</code>
+     * @return The errMsg.
+     */
+    java.lang.String getErrMsg();
+    /**
+     * <code>string err_msg = 2;</code>
+     * @return The bytes for errMsg.
+     */
+    com.google.protobuf.ByteString
+        getErrMsgBytes();
+  }
+  /**
+   * Protobuf type {@code api.core.GlResp}
+   */
+  public static final class GlResp extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:api.core.GlResp)
+      GlRespOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 26,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        GlResp.class.getName());
+    }
+    // Use GlResp.newBuilder() to construct.
+    private GlResp(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private GlResp() {
+      errMsg_ = "";
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.teneasyChat.api.core.WorkerOuterClass.internal_static_api_core_GlResp_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.teneasyChat.api.core.WorkerOuterClass.internal_static_api_core_GlResp_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.teneasyChat.api.core.WorkerOuterClass.GlResp.class, com.teneasyChat.api.core.WorkerOuterClass.GlResp.Builder.class);
+    }
+
+    public static final int OK_FIELD_NUMBER = 1;
+    private boolean ok_ = false;
+    /**
+     * <code>bool ok = 1;</code>
+     * @return The ok.
+     */
+    @java.lang.Override
+    public boolean getOk() {
+      return ok_;
+    }
+
+    public static final int ERR_MSG_FIELD_NUMBER = 2;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object errMsg_ = "";
+    /**
+     * <code>string err_msg = 2;</code>
+     * @return The errMsg.
+     */
+    @java.lang.Override
+    public java.lang.String getErrMsg() {
+      java.lang.Object ref = errMsg_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        errMsg_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string err_msg = 2;</code>
+     * @return The bytes for errMsg.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getErrMsgBytes() {
+      java.lang.Object ref = errMsg_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        errMsg_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (ok_ != false) {
+        output.writeBool(1, ok_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(errMsg_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 2, errMsg_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (ok_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(1, ok_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(errMsg_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(2, errMsg_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.teneasyChat.api.core.WorkerOuterClass.GlResp)) {
+        return super.equals(obj);
+      }
+      com.teneasyChat.api.core.WorkerOuterClass.GlResp other = (com.teneasyChat.api.core.WorkerOuterClass.GlResp) obj;
+
+      if (getOk()
+          != other.getOk()) return false;
+      if (!getErrMsg()
+          .equals(other.getErrMsg())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + OK_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getOk());
+      hash = (37 * hash) + ERR_MSG_FIELD_NUMBER;
+      hash = (53 * hash) + getErrMsg().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.teneasyChat.api.core.WorkerOuterClass.GlResp parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.GlResp parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.GlResp parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.GlResp parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.GlResp parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.GlResp parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.GlResp parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.GlResp parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.teneasyChat.api.core.WorkerOuterClass.GlResp parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.teneasyChat.api.core.WorkerOuterClass.GlResp parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.GlResp parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.GlResp parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.teneasyChat.api.core.WorkerOuterClass.GlResp prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code api.core.GlResp}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:api.core.GlResp)
+        com.teneasyChat.api.core.WorkerOuterClass.GlRespOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.teneasyChat.api.core.WorkerOuterClass.internal_static_api_core_GlResp_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.teneasyChat.api.core.WorkerOuterClass.internal_static_api_core_GlResp_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.teneasyChat.api.core.WorkerOuterClass.GlResp.class, com.teneasyChat.api.core.WorkerOuterClass.GlResp.Builder.class);
+      }
+
+      // Construct using com.teneasyChat.api.core.WorkerOuterClass.GlResp.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        ok_ = false;
+        errMsg_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.teneasyChat.api.core.WorkerOuterClass.internal_static_api_core_GlResp_descriptor;
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.core.WorkerOuterClass.GlResp getDefaultInstanceForType() {
+        return com.teneasyChat.api.core.WorkerOuterClass.GlResp.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.core.WorkerOuterClass.GlResp build() {
+        com.teneasyChat.api.core.WorkerOuterClass.GlResp result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.core.WorkerOuterClass.GlResp buildPartial() {
+        com.teneasyChat.api.core.WorkerOuterClass.GlResp result = new com.teneasyChat.api.core.WorkerOuterClass.GlResp(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.teneasyChat.api.core.WorkerOuterClass.GlResp result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.ok_ = ok_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.errMsg_ = errMsg_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.teneasyChat.api.core.WorkerOuterClass.GlResp) {
+          return mergeFrom((com.teneasyChat.api.core.WorkerOuterClass.GlResp)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.teneasyChat.api.core.WorkerOuterClass.GlResp other) {
+        if (other == com.teneasyChat.api.core.WorkerOuterClass.GlResp.getDefaultInstance()) return this;
+        if (other.getOk() != false) {
+          setOk(other.getOk());
+        }
+        if (!other.getErrMsg().isEmpty()) {
+          errMsg_ = other.errMsg_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                ok_ = input.readBool();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 18: {
+                errMsg_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private boolean ok_ ;
+      /**
+       * <code>bool ok = 1;</code>
+       * @return The ok.
+       */
+      @java.lang.Override
+      public boolean getOk() {
+        return ok_;
+      }
+      /**
+       * <code>bool ok = 1;</code>
+       * @param value The ok to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOk(boolean value) {
+
+        ok_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool ok = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearOk() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        ok_ = false;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object errMsg_ = "";
+      /**
+       * <code>string err_msg = 2;</code>
+       * @return The errMsg.
+       */
+      public java.lang.String getErrMsg() {
+        java.lang.Object ref = errMsg_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          errMsg_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string err_msg = 2;</code>
+       * @return The bytes for errMsg.
+       */
+      public com.google.protobuf.ByteString
+          getErrMsgBytes() {
+        java.lang.Object ref = errMsg_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          errMsg_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string err_msg = 2;</code>
+       * @param value The errMsg to set.
+       * @return This builder for chaining.
+       */
+      public Builder setErrMsg(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        errMsg_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string err_msg = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearErrMsg() {
+        errMsg_ = getDefaultInstance().getErrMsg();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string err_msg = 2;</code>
+       * @param value The bytes for errMsg to set.
+       * @return This builder for chaining.
+       */
+      public Builder setErrMsgBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        errMsg_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:api.core.GlResp)
+    }
+
+    // @@protoc_insertion_point(class_scope:api.core.GlResp)
+    private static final com.teneasyChat.api.core.WorkerOuterClass.GlResp DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.teneasyChat.api.core.WorkerOuterClass.GlResp();
+    }
+
+    public static com.teneasyChat.api.core.WorkerOuterClass.GlResp getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<GlResp>
+        PARSER = new com.google.protobuf.AbstractParser<GlResp>() {
+      @java.lang.Override
+      public GlResp parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<GlResp> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<GlResp> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.teneasyChat.api.core.WorkerOuterClass.GlResp getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface WorkerTransferAllReqOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:api.core.WorkerTransferAllReq)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>uint32 consult_id = 1;</code>
+     * @return The consultId.
+     */
+    int getConsultId();
+  }
+  /**
+   * Protobuf type {@code api.core.WorkerTransferAllReq}
+   */
+  public static final class WorkerTransferAllReq extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:api.core.WorkerTransferAllReq)
+      WorkerTransferAllReqOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 26,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        WorkerTransferAllReq.class.getName());
+    }
+    // Use WorkerTransferAllReq.newBuilder() to construct.
+    private WorkerTransferAllReq(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private WorkerTransferAllReq() {
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.teneasyChat.api.core.WorkerOuterClass.internal_static_api_core_WorkerTransferAllReq_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.teneasyChat.api.core.WorkerOuterClass.internal_static_api_core_WorkerTransferAllReq_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.teneasyChat.api.core.WorkerOuterClass.WorkerTransferAllReq.class, com.teneasyChat.api.core.WorkerOuterClass.WorkerTransferAllReq.Builder.class);
+    }
+
+    public static final int CONSULT_ID_FIELD_NUMBER = 1;
+    private int consultId_ = 0;
+    /**
+     * <code>uint32 consult_id = 1;</code>
+     * @return The consultId.
+     */
+    @java.lang.Override
+    public int getConsultId() {
+      return consultId_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (consultId_ != 0) {
+        output.writeUInt32(1, consultId_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (consultId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(1, consultId_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.teneasyChat.api.core.WorkerOuterClass.WorkerTransferAllReq)) {
+        return super.equals(obj);
+      }
+      com.teneasyChat.api.core.WorkerOuterClass.WorkerTransferAllReq other = (com.teneasyChat.api.core.WorkerOuterClass.WorkerTransferAllReq) obj;
+
+      if (getConsultId()
+          != other.getConsultId()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + CONSULT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getConsultId();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.teneasyChat.api.core.WorkerOuterClass.WorkerTransferAllReq parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.WorkerTransferAllReq parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.WorkerTransferAllReq parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.WorkerTransferAllReq parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.WorkerTransferAllReq parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.WorkerTransferAllReq parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.WorkerTransferAllReq parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.WorkerTransferAllReq parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.teneasyChat.api.core.WorkerOuterClass.WorkerTransferAllReq parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.teneasyChat.api.core.WorkerOuterClass.WorkerTransferAllReq parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.WorkerTransferAllReq parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.WorkerTransferAllReq parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.teneasyChat.api.core.WorkerOuterClass.WorkerTransferAllReq prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code api.core.WorkerTransferAllReq}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:api.core.WorkerTransferAllReq)
+        com.teneasyChat.api.core.WorkerOuterClass.WorkerTransferAllReqOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.teneasyChat.api.core.WorkerOuterClass.internal_static_api_core_WorkerTransferAllReq_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.teneasyChat.api.core.WorkerOuterClass.internal_static_api_core_WorkerTransferAllReq_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.teneasyChat.api.core.WorkerOuterClass.WorkerTransferAllReq.class, com.teneasyChat.api.core.WorkerOuterClass.WorkerTransferAllReq.Builder.class);
+      }
+
+      // Construct using com.teneasyChat.api.core.WorkerOuterClass.WorkerTransferAllReq.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        consultId_ = 0;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.teneasyChat.api.core.WorkerOuterClass.internal_static_api_core_WorkerTransferAllReq_descriptor;
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.core.WorkerOuterClass.WorkerTransferAllReq getDefaultInstanceForType() {
+        return com.teneasyChat.api.core.WorkerOuterClass.WorkerTransferAllReq.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.core.WorkerOuterClass.WorkerTransferAllReq build() {
+        com.teneasyChat.api.core.WorkerOuterClass.WorkerTransferAllReq result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.core.WorkerOuterClass.WorkerTransferAllReq buildPartial() {
+        com.teneasyChat.api.core.WorkerOuterClass.WorkerTransferAllReq result = new com.teneasyChat.api.core.WorkerOuterClass.WorkerTransferAllReq(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.teneasyChat.api.core.WorkerOuterClass.WorkerTransferAllReq result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.consultId_ = consultId_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.teneasyChat.api.core.WorkerOuterClass.WorkerTransferAllReq) {
+          return mergeFrom((com.teneasyChat.api.core.WorkerOuterClass.WorkerTransferAllReq)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.teneasyChat.api.core.WorkerOuterClass.WorkerTransferAllReq other) {
+        if (other == com.teneasyChat.api.core.WorkerOuterClass.WorkerTransferAllReq.getDefaultInstance()) return this;
+        if (other.getConsultId() != 0) {
+          setConsultId(other.getConsultId());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                consultId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private int consultId_ ;
+      /**
+       * <code>uint32 consult_id = 1;</code>
+       * @return The consultId.
+       */
+      @java.lang.Override
+      public int getConsultId() {
+        return consultId_;
+      }
+      /**
+       * <code>uint32 consult_id = 1;</code>
+       * @param value The consultId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setConsultId(int value) {
+
+        consultId_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 consult_id = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearConsultId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        consultId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:api.core.WorkerTransferAllReq)
+    }
+
+    // @@protoc_insertion_point(class_scope:api.core.WorkerTransferAllReq)
+    private static final com.teneasyChat.api.core.WorkerOuterClass.WorkerTransferAllReq DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.teneasyChat.api.core.WorkerOuterClass.WorkerTransferAllReq();
+    }
+
+    public static com.teneasyChat.api.core.WorkerOuterClass.WorkerTransferAllReq getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<WorkerTransferAllReq>
+        PARSER = new com.google.protobuf.AbstractParser<WorkerTransferAllReq>() {
+      @java.lang.Override
+      public WorkerTransferAllReq parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<WorkerTransferAllReq> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<WorkerTransferAllReq> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.teneasyChat.api.core.WorkerOuterClass.WorkerTransferAllReq getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface WorkerTransferAllRespOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:api.core.WorkerTransferAllResp)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>bool ok = 1;</code>
+     * @return The ok.
+     */
+    boolean getOk();
+
+    /**
+     * <code>string msg = 2;</code>
+     * @return The msg.
+     */
+    java.lang.String getMsg();
+    /**
+     * <code>string msg = 2;</code>
+     * @return The bytes for msg.
+     */
+    com.google.protobuf.ByteString
+        getMsgBytes();
+  }
+  /**
+   * Protobuf type {@code api.core.WorkerTransferAllResp}
+   */
+  public static final class WorkerTransferAllResp extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:api.core.WorkerTransferAllResp)
+      WorkerTransferAllRespOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 26,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        WorkerTransferAllResp.class.getName());
+    }
+    // Use WorkerTransferAllResp.newBuilder() to construct.
+    private WorkerTransferAllResp(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private WorkerTransferAllResp() {
+      msg_ = "";
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.teneasyChat.api.core.WorkerOuterClass.internal_static_api_core_WorkerTransferAllResp_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.teneasyChat.api.core.WorkerOuterClass.internal_static_api_core_WorkerTransferAllResp_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.teneasyChat.api.core.WorkerOuterClass.WorkerTransferAllResp.class, com.teneasyChat.api.core.WorkerOuterClass.WorkerTransferAllResp.Builder.class);
+    }
+
+    public static final int OK_FIELD_NUMBER = 1;
+    private boolean ok_ = false;
+    /**
+     * <code>bool ok = 1;</code>
+     * @return The ok.
+     */
+    @java.lang.Override
+    public boolean getOk() {
+      return ok_;
+    }
+
+    public static final int MSG_FIELD_NUMBER = 2;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object msg_ = "";
+    /**
+     * <code>string msg = 2;</code>
+     * @return The msg.
+     */
+    @java.lang.Override
+    public java.lang.String getMsg() {
+      java.lang.Object ref = msg_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        msg_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string msg = 2;</code>
+     * @return The bytes for msg.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getMsgBytes() {
+      java.lang.Object ref = msg_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        msg_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (ok_ != false) {
+        output.writeBool(1, ok_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(msg_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 2, msg_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (ok_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(1, ok_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(msg_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(2, msg_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.teneasyChat.api.core.WorkerOuterClass.WorkerTransferAllResp)) {
+        return super.equals(obj);
+      }
+      com.teneasyChat.api.core.WorkerOuterClass.WorkerTransferAllResp other = (com.teneasyChat.api.core.WorkerOuterClass.WorkerTransferAllResp) obj;
+
+      if (getOk()
+          != other.getOk()) return false;
+      if (!getMsg()
+          .equals(other.getMsg())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + OK_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getOk());
+      hash = (37 * hash) + MSG_FIELD_NUMBER;
+      hash = (53 * hash) + getMsg().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.teneasyChat.api.core.WorkerOuterClass.WorkerTransferAllResp parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.WorkerTransferAllResp parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.WorkerTransferAllResp parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.WorkerTransferAllResp parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.WorkerTransferAllResp parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.WorkerTransferAllResp parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.WorkerTransferAllResp parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.WorkerTransferAllResp parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.teneasyChat.api.core.WorkerOuterClass.WorkerTransferAllResp parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.teneasyChat.api.core.WorkerOuterClass.WorkerTransferAllResp parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.WorkerTransferAllResp parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.teneasyChat.api.core.WorkerOuterClass.WorkerTransferAllResp parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.teneasyChat.api.core.WorkerOuterClass.WorkerTransferAllResp prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code api.core.WorkerTransferAllResp}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:api.core.WorkerTransferAllResp)
+        com.teneasyChat.api.core.WorkerOuterClass.WorkerTransferAllRespOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.teneasyChat.api.core.WorkerOuterClass.internal_static_api_core_WorkerTransferAllResp_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.teneasyChat.api.core.WorkerOuterClass.internal_static_api_core_WorkerTransferAllResp_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.teneasyChat.api.core.WorkerOuterClass.WorkerTransferAllResp.class, com.teneasyChat.api.core.WorkerOuterClass.WorkerTransferAllResp.Builder.class);
+      }
+
+      // Construct using com.teneasyChat.api.core.WorkerOuterClass.WorkerTransferAllResp.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        ok_ = false;
+        msg_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.teneasyChat.api.core.WorkerOuterClass.internal_static_api_core_WorkerTransferAllResp_descriptor;
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.core.WorkerOuterClass.WorkerTransferAllResp getDefaultInstanceForType() {
+        return com.teneasyChat.api.core.WorkerOuterClass.WorkerTransferAllResp.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.core.WorkerOuterClass.WorkerTransferAllResp build() {
+        com.teneasyChat.api.core.WorkerOuterClass.WorkerTransferAllResp result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.core.WorkerOuterClass.WorkerTransferAllResp buildPartial() {
+        com.teneasyChat.api.core.WorkerOuterClass.WorkerTransferAllResp result = new com.teneasyChat.api.core.WorkerOuterClass.WorkerTransferAllResp(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.teneasyChat.api.core.WorkerOuterClass.WorkerTransferAllResp result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.ok_ = ok_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.msg_ = msg_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.teneasyChat.api.core.WorkerOuterClass.WorkerTransferAllResp) {
+          return mergeFrom((com.teneasyChat.api.core.WorkerOuterClass.WorkerTransferAllResp)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.teneasyChat.api.core.WorkerOuterClass.WorkerTransferAllResp other) {
+        if (other == com.teneasyChat.api.core.WorkerOuterClass.WorkerTransferAllResp.getDefaultInstance()) return this;
+        if (other.getOk() != false) {
+          setOk(other.getOk());
+        }
+        if (!other.getMsg().isEmpty()) {
+          msg_ = other.msg_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                ok_ = input.readBool();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 18: {
+                msg_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private boolean ok_ ;
+      /**
+       * <code>bool ok = 1;</code>
+       * @return The ok.
+       */
+      @java.lang.Override
+      public boolean getOk() {
+        return ok_;
+      }
+      /**
+       * <code>bool ok = 1;</code>
+       * @param value The ok to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOk(boolean value) {
+
+        ok_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool ok = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearOk() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        ok_ = false;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object msg_ = "";
+      /**
+       * <code>string msg = 2;</code>
+       * @return The msg.
+       */
+      public java.lang.String getMsg() {
+        java.lang.Object ref = msg_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          msg_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string msg = 2;</code>
+       * @return The bytes for msg.
+       */
+      public com.google.protobuf.ByteString
+          getMsgBytes() {
+        java.lang.Object ref = msg_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          msg_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string msg = 2;</code>
+       * @param value The msg to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMsg(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        msg_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string msg = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMsg() {
+        msg_ = getDefaultInstance().getMsg();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string msg = 2;</code>
+       * @param value The bytes for msg to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMsgBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        msg_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:api.core.WorkerTransferAllResp)
+    }
+
+    // @@protoc_insertion_point(class_scope:api.core.WorkerTransferAllResp)
+    private static final com.teneasyChat.api.core.WorkerOuterClass.WorkerTransferAllResp DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.teneasyChat.api.core.WorkerOuterClass.WorkerTransferAllResp();
+    }
+
+    public static com.teneasyChat.api.core.WorkerOuterClass.WorkerTransferAllResp getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<WorkerTransferAllResp>
+        PARSER = new com.google.protobuf.AbstractParser<WorkerTransferAllResp>() {
+      @java.lang.Override
+      public WorkerTransferAllResp parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<WorkerTransferAllResp> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<WorkerTransferAllResp> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.teneasyChat.api.core.WorkerOuterClass.WorkerTransferAllResp getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_api_core_WorkerQueryRequest_descriptor;
   private static final 
@@ -40940,15 +47691,25 @@ public final class WorkerOuterClass {
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_api_core_TransferMessageReq_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_api_core_WithDraw_descriptor;
+    internal_static_api_core_ThirdOrder_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_api_core_WithDraw_fieldAccessorTable;
+      internal_static_api_core_ThirdOrder_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_api_core_TransferMessageRsp_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_api_core_TransferMessageRsp_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_api_core_HistoryRechargesRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_api_core_HistoryRechargesRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_api_core_HistoryRechargesResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_api_core_HistoryRechargesResponse_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_api_core_QueryChildByGroupRequest_descriptor;
   private static final 
@@ -40970,6 +47731,11 @@ public final class WorkerOuterClass {
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_api_core_GetApplyWorkerStateListResp_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_api_core_GetApplyWorkerStateResp_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_api_core_GetApplyWorkerStateResp_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_api_core_SessionCustomerQueryRequest_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -40989,6 +47755,31 @@ public final class WorkerOuterClass {
   private static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_api_core_CheckWorkerStateReq_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_api_core_GetQlUrlResp_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_api_core_GetQlUrlResp_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_api_core_GlReq_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_api_core_GlReq_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_api_core_GlResp_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_api_core_GlResp_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_api_core_WorkerTransferAllReq_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_api_core_WorkerTransferAllReq_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_api_core_WorkerTransferAllResp_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_api_core_WorkerTransferAllResp_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -41119,53 +47910,80 @@ public final class WorkerOuterClass {
       "ponse\022\"\n\004chat\030\001 \001(\0132\024.api.common.ChatIte" +
       "m\"F\n\024NotifyMessageRequest\022\021\n\tconsultid\030\003" +
       " \001(\005\022\016\n\006userid\030\004 \001(\005\022\013\n\003msg\030\005 \001(\t\"$\n\022Tra" +
-      "nsferMessageReq\022\016\n\006chatId\030\001 \001(\003\"i\n\010WithD" +
-      "raw\022\n\n\002id\030\001 \001(\003\022\017\n\007orderNo\030\002 \001(\t\022\016\n\006user" +
-      "id\030\003 \001(\003\022\r\n\005money\030\004 \001(\t\022\016\n\006status\030\005 \001(\003\022" +
-      "\021\n\tapplyTime\030\006 \001(\003\"6\n\022TransferMessageRsp" +
-      "\022 \n\004data\030\001 \003(\0132\022.api.core.WithDraw\",\n\030Qu" +
-      "eryChildByGroupRequest\022\020\n\010group_id\030\001 \001(\003" +
-      "\"C\n\031QueryChildByGroupResponse\022&\n\005group\030\001" +
-      " \003(\0132\027.api.common.WorkerGroup\"k\n\032GetAppl" +
-      "yWorkerStateListReq\022*\n\005batch\030\001 \001(\0132\021.api" +
-      ".common.BatchB\010\372B\005\212\001\002\020\001\022\014\n\004name\030\002 \001(\t\022\023\n" +
-      "\013apply_state\030\003 \001(\005\"Z\n\033GetApplyWorkerStat" +
-      "eListResp\022,\n\006applys\030\001 \003(\0132\034.api.common.A" +
-      "pplyWorkerState\022\r\n\005total\030\002 \001(\005\"w\n\033Sessio" +
-      "nCustomerQueryRequest\022*\n\005batch\030\001 \001(\0132\021.a" +
-      "pi.common.BatchB\010\372B\005\212\001\002\020\001\022\030\n\007keyword\030\002 \001" +
-      "(\tB\007\372B\004r\002\020\001\022\022\n\nconsult_id\030\003 \001(\r\"\226\001\n\017Sess" +
-      "ionCustomer\022\013\n\003uid\030\001 \001(\005\022\014\n\004name\030\002 \001(\t\022\016" +
-      "\n\006avatar\030\003 \001(\t\022\014\n\004nick\030\004 \001(\t\022\017\n\007chat_id\030" +
-      "\005 \001(\003\022\n\n\002ip\030\006 \001(\t\022-\n\tcreate_at\030\007 \001(\0132\032.g" +
-      "oogle.protobuf.Timestamp\"y\n\034SessionCusto" +
-      "merQueryResponse\022(\n\005items\030\001 \003(\0132\031.api.co" +
-      "re.SessionCustomer\022 \n\005batch\030\002 \001(\0132\021.api." +
-      "common.Batch\022\r\n\005total\030\003 \001(\005\"1\n\023CheckWork" +
-      "erStateReq\022\n\n\002id\030\001 \001(\003\022\016\n\006access\030\002 \001(\0102\240" +
-      "\034\n\006Worker\022i\n\tDataQuery\022\032.api.core.DataQu" +
-      "eryRequest\032\033.api.core.DataQueryResponse\"" +
-      "#\272\276\031\037\010\377\003\030\001\262\006\n2022-12-10\322\014\ndata-query\022u\n\014" +
-      "QueryFronter\022\035.api.core.QueryFronterRequ" +
-      "est\032\036.api.core.QueryFronterResponse\"&\272\276\031" +
-      "\"\010\364\003\030\001\262\006\n2022-12-10\322\014\rquery-fronted\022d\n\005Q" +
-      "uery\022\034.api.core.WorkerQueryRequest\032\035.api" +
-      ".core.WorkerQueryResponse\"\036\272\276\031\032\010\364\003\030\001\262\006\n2" +
-      "022-12-10\322\014\005query\022`\n\006Create\022\035.api.core.W" +
-      "orkerCreateRequest\032\026.google.protobuf.Emp" +
-      "ty\"\037\272\276\031\033\010\365\003\030\001\262\006\n2022-12-10\322\014\006create\022`\n\006U" +
-      "pdate\022\035.api.core.WorkerUpdateRequest\032\026.g" +
-      "oogle.protobuf.Empty\"\037\272\276\031\033\010\366\003\030\001\262\006\n2022-1" +
-      "2-10\322\014\006update\022`\n\006Delete\022\035.api.core.Worke" +
-      "rDeleteRequest\032\026.google.protobuf.Empty\"\037" +
-      "\272\276\031\033\010\367\003\030\001\262\006\n2022-12-10\322\014\006delete\022k\n\010Trans" +
-      "fer\022\037.api.core.WorkerTransferRequest\032\026.g" +
-      "oogle.protobuf.Empty\"&\272\276\031\"\010\370\003\030\001\262\006\n2022-1" +
-      "2-30\312\014\002\020\004\322\014\010transfer\022\226\001\n\020TransferConsult" +
-      "s\022\'.api.core.WorkerTransferConsultsReque" +
-      "st\032(.api.core.WorkerTransferConsultsResp" +
-      "onse\"/\272\276\031+\010\370\003\030\001\262\006\n2022-12-30\312\014\002\020\004\322\014\021tran" +
-      "sfer-Consults\022\207\001\n\017GetWorkerStatus\022 .api." +
+      "nsferMessageReq\022\016\n\006chatId\030\001 \001(\003\"\226\003\n\nThir" +
+      "dOrder\022\n\n\002id\030\001 \001(\003\022\020\n\010order_no\030\002 \001(\t\022\016\n\006" +
+      "userid\030\003 \001(\003\022\032\n\022is_online_pay_desc\030\004 \001(\t" +
+      "\022\034\n\024is_matching_pay_desc\030\005 \001(\t\022\021\n\ttype_d" +
+      "esc\030\006 \001(\t\022\023\n\013status_desc\030\007 \001(\t\022\024\n\014confir" +
+      "m_desc\030\010 \001(\t\022\023\n\013create_time\030\t \001(\t\022\030\n\020pus" +
+      "h_status_desc\030\n \001(\t\022\030\n\020finish_time_desc\030" +
+      "\013 \001(\t\022\021\n\tcard_type\030\014 \001(\t\022\031\n\021match_status" +
+      "_desc\030\r \001(\t\022\027\n\017img_upload_time\030\016 \001(\t\022\025\n\r" +
+      "receipt_email\030\017 \001(\t\022\016\n\006amount\030\020 \001(\t\022\025\n\rr" +
+      "echarge_name\030\021 \001(\t\022\024\n\014account_name\030\022 \001(\t" +
+      "\"8\n\022TransferMessageRsp\022\"\n\004data\030\001 \003(\0132\024.a" +
+      "pi.core.ThirdOrder\"*\n\027HistoryRechargesRe" +
+      "quest\022\017\n\007chat_id\030\001 \001(\003\">\n\030HistoryRecharg" +
+      "esResponse\022\"\n\004data\030\001 \003(\0132\024.api.core.Thir" +
+      "dOrder\",\n\030QueryChildByGroupRequest\022\020\n\010gr" +
+      "oup_id\030\001 \001(\003\"C\n\031QueryChildByGroupRespons" +
+      "e\022&\n\005group\030\001 \003(\0132\027.api.common.WorkerGrou" +
+      "p\"k\n\032GetApplyWorkerStateListReq\022*\n\005batch" +
+      "\030\001 \001(\0132\021.api.common.BatchB\010\372B\005\212\001\002\020\001\022\014\n\004n" +
+      "ame\030\002 \001(\t\022\023\n\013apply_state\030\003 \001(\005\"Z\n\033GetApp" +
+      "lyWorkerStateListResp\022,\n\006applys\030\001 \003(\0132\034." +
+      "api.common.ApplyWorkerState\022\r\n\005total\030\002 \001" +
+      "(\005\"\276\001\n\027GetApplyWorkerStateResp\0221\n\020online" +
+      "_state_now\030\001 \001(\0162\027.api.common.OnlineStat" +
+      "e\0223\n\022online_state_apply\030\002 \001(\0162\027.api.comm" +
+      "on.OnlineState\022\022\n\napply_time\030\003 \001(\003\022\023\n\013ap" +
+      "ply_state\030\004 \001(\005\022\022\n\ncheck_time\030\005 \001(\003\"w\n\033S" +
+      "essionCustomerQueryRequest\022*\n\005batch\030\001 \001(" +
+      "\0132\021.api.common.BatchB\010\372B\005\212\001\002\020\001\022\030\n\007keywor" +
+      "d\030\002 \001(\tB\007\372B\004r\002\020\001\022\022\n\nconsult_id\030\003 \001(\r\"\251\001\n" +
+      "\017SessionCustomer\022\013\n\003uid\030\001 \001(\005\022\014\n\004name\030\002 " +
+      "\001(\t\022\016\n\006avatar\030\003 \001(\t\022\014\n\004nick\030\004 \001(\t\022\017\n\007cha" +
+      "t_id\030\005 \001(\003\022\n\n\002ip\030\006 \001(\t\022-\n\tcreate_at\030\007 \001(" +
+      "\0132\032.google.protobuf.Timestamp\022\021\n\ttenant_" +
+      "id\030\010 \001(\005\"y\n\034SessionCustomerQueryResponse" +
+      "\022(\n\005items\030\001 \003(\0132\031.api.core.SessionCustom" +
+      "er\022 \n\005batch\030\002 \001(\0132\021.api.common.Batch\022\r\n\005" +
+      "total\030\003 \001(\005\"1\n\023CheckWorkerStateReq\022\n\n\002id" +
+      "\030\001 \001(\003\022\016\n\006access\030\002 \001(\010\"6\n\014GetQlUrlResp\022\022" +
+      "\n\nbase64_url\030\001 \001(\t\022\022\n\ngoogle_key\030\002 \001(\t\"\025" +
+      "\n\005GlReq\022\014\n\004code\030\001 \001(\t\"%\n\006GlResp\022\n\n\002ok\030\001 " +
+      "\001(\010\022\017\n\007err_msg\030\002 \001(\t\"*\n\024WorkerTransferAl" +
+      "lReq\022\022\n\nconsult_id\030\001 \001(\r\"0\n\025WorkerTransf" +
+      "erAllResp\022\n\n\002ok\030\001 \001(\010\022\013\n\003msg\030\002 \001(\t2\320\"\n\006W" +
+      "orker\022i\n\tDataQuery\022\032.api.core.DataQueryR" +
+      "equest\032\033.api.core.DataQueryResponse\"#\272\276\031" +
+      "\037\010\377\003\030\001\262\006\n2022-12-10\322\014\ndata-query\022u\n\014Quer" +
+      "yFronter\022\035.api.core.QueryFronterRequest\032" +
+      "\036.api.core.QueryFronterResponse\"&\272\276\031\"\010\364\003" +
+      "\030\001\262\006\n2022-12-10\322\014\rquery-fronted\022d\n\005Query" +
+      "\022\034.api.core.WorkerQueryRequest\032\035.api.cor" +
+      "e.WorkerQueryResponse\"\036\272\276\031\032\010\364\003\030\001\262\006\n2022-" +
+      "12-10\322\014\005query\022`\n\006Create\022\035.api.core.Worke" +
+      "rCreateRequest\032\026.google.protobuf.Empty\"\037" +
+      "\272\276\031\033\010\365\003\030\001\262\006\n2022-12-10\322\014\006create\022`\n\006Updat" +
+      "e\022\035.api.core.WorkerUpdateRequest\032\026.googl" +
+      "e.protobuf.Empty\"\037\272\276\031\033\010\366\003\030\001\262\006\n2022-12-10" +
+      "\322\014\006update\022`\n\006Delete\022\035.api.core.WorkerDel" +
+      "eteRequest\032\026.google.protobuf.Empty\"\037\272\276\031\033" +
+      "\010\367\003\030\001\262\006\n2022-12-10\322\014\006delete\022k\n\010Transfer\022" +
+      "\037.api.core.WorkerTransferRequest\032\026.googl" +
+      "e.protobuf.Empty\"&\272\276\031\"\010\370\003\030\001\262\006\n2022-12-30" +
+      "\312\014\002\020\004\322\014\010transfer\022\226\001\n\020TransferConsults\022\'." +
+      "api.core.WorkerTransferConsultsRequest\032(" +
+      ".api.core.WorkerTransferConsultsResponse" +
+      "\"/\272\276\031+\010\370\003\030\001\262\006\n2022-12-30\312\014\002\020\004\322\014\021transfer" +
+      "-Consults\022z\n\013TransferAll\022\036.api.core.Work" +
+      "erTransferAllReq\032\037.api.core.WorkerTransf" +
+      "erAllResp\"*\272\276\031&\010\370\003\030\001\262\006\n2022-12-30\312\014\002\020\004\322\014" +
+      "\014transfer-all\022v\n\tUnbindAll\022\036.api.core.Wo" +
+      "rkerTransferAllReq\032\037.api.core.WorkerTran" +
+      "sferAllResp\"(\272\276\031$\010\370\003\030\001\262\006\n2022-12-30\312\014\002\020\004" +
+      "\322\014\nunbind-all\022\207\001\n\017GetWorkerStatus\022 .api." +
       "core.GetWorkerStatusRequest\032!.api.core.G" +
       "etWorkerStatusResponse\"/\272\276\031+\010\371\003\030\001\262\006\n2022" +
       "-12-30\312\014\002\020\004\322\014\021get-worker-status\022|\n\017SetWo" +
@@ -41232,10 +48050,24 @@ public final class WorkerOuterClass {
       "\002\020\004\322\014\027apply-worker-state-list\022n\n\020CheckWo" +
       "rkerState\022\035.api.core.CheckWorkerStateReq" +
       "\032\026.google.protobuf.Empty\"#\272\276\031\037\010\205\004\030\001\312\014\002\020\004" +
-      "\322\014\022check-worker-state\032\"\272\276\031\036\272\006\006worker\312\014\001\020" +
-      "\322\014\016/tenant/workerBE\n\030com.teneasyChat.api" +
-      ".coreZ\021wcs/api/core;core\272\276\031\024\242\006\004jeff\262\006\n20" +
-      "22-12-06b\006proto3"
+      "\322\014\022check-worker-state\022y\n\023GetApplyWorkerS" +
+      "tate\022\026.google.protobuf.Empty\032!.api.core." +
+      "GetApplyWorkerStateResp\"\'\272\276\031#\010\206\004\030\001\312\014\002\020\004\322" +
+      "\014\026get-apply-worker-state\022\212\001\n\020HistoryRech" +
+      "arges\022!.api.core.HistoryRechargesRequest" +
+      "\032\".api.core.HistoryRechargesResponse\"/\272\276" +
+      "\031+\010\207\004\030\001\262\006\n2024-06-17\312\014\002\002\004\322\014\021history-rech" +
+      "arges\022W\n\010GetGlUrl\022\026.google.protobuf.Empt" +
+      "y\032\026.api.core.GetQlUrlResp\"\033\272\276\031\027\010\210\004\030\001\312\014\002\020" +
+      "\004\322\014\nget-Gl-url\022E\n\006BindGl\022\017.api.core.GlRe" +
+      "q\032\020.api.core.GlResp\"\030\272\276\031\024\010\211\004\030\001\312\014\002\020\004\322\014\007bi" +
+      "nd-Gl\022I\n\010VerifyGl\022\017.api.core.GlReq\032\020.api" +
+      ".core.GlResp\"\032\272\276\031\026\010\212\004\030\001\312\014\002\020\004\322\014\tverify-Gl" +
+      "\022G\n\007ResetGl\022\017.api.core.GlReq\032\020.api.core." +
+      "GlResp\"\031\272\276\031\025\010\213\004\030\001\312\014\002\020\004\322\014\010reset-Gl\032\"\272\276\031\036\272" +
+      "\006\006worker\312\014\001\020\322\014\016/tenant/workerBE\n\030com.ten" +
+      "easyChat.api.coreZ\021wcs/api/core;core\272\276\031\024" +
+      "\242\006\004jeff\262\006\n2022-12-06b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -41489,66 +48321,114 @@ public final class WorkerOuterClass {
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_core_TransferMessageReq_descriptor,
         new java.lang.String[] { "ChatId", });
-    internal_static_api_core_WithDraw_descriptor =
+    internal_static_api_core_ThirdOrder_descriptor =
       getDescriptor().getMessageTypes().get(40);
-    internal_static_api_core_WithDraw_fieldAccessorTable = new
+    internal_static_api_core_ThirdOrder_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_api_core_WithDraw_descriptor,
-        new java.lang.String[] { "Id", "OrderNo", "Userid", "Money", "Status", "ApplyTime", });
+        internal_static_api_core_ThirdOrder_descriptor,
+        new java.lang.String[] { "Id", "OrderNo", "Userid", "IsOnlinePayDesc", "IsMatchingPayDesc", "TypeDesc", "StatusDesc", "ConfirmDesc", "CreateTime", "PushStatusDesc", "FinishTimeDesc", "CardType", "MatchStatusDesc", "ImgUploadTime", "ReceiptEmail", "Amount", "RechargeName", "AccountName", });
     internal_static_api_core_TransferMessageRsp_descriptor =
       getDescriptor().getMessageTypes().get(41);
     internal_static_api_core_TransferMessageRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_core_TransferMessageRsp_descriptor,
         new java.lang.String[] { "Data", });
-    internal_static_api_core_QueryChildByGroupRequest_descriptor =
+    internal_static_api_core_HistoryRechargesRequest_descriptor =
       getDescriptor().getMessageTypes().get(42);
+    internal_static_api_core_HistoryRechargesRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_api_core_HistoryRechargesRequest_descriptor,
+        new java.lang.String[] { "ChatId", });
+    internal_static_api_core_HistoryRechargesResponse_descriptor =
+      getDescriptor().getMessageTypes().get(43);
+    internal_static_api_core_HistoryRechargesResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_api_core_HistoryRechargesResponse_descriptor,
+        new java.lang.String[] { "Data", });
+    internal_static_api_core_QueryChildByGroupRequest_descriptor =
+      getDescriptor().getMessageTypes().get(44);
     internal_static_api_core_QueryChildByGroupRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_core_QueryChildByGroupRequest_descriptor,
         new java.lang.String[] { "GroupId", });
     internal_static_api_core_QueryChildByGroupResponse_descriptor =
-      getDescriptor().getMessageTypes().get(43);
+      getDescriptor().getMessageTypes().get(45);
     internal_static_api_core_QueryChildByGroupResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_core_QueryChildByGroupResponse_descriptor,
         new java.lang.String[] { "Group", });
     internal_static_api_core_GetApplyWorkerStateListReq_descriptor =
-      getDescriptor().getMessageTypes().get(44);
+      getDescriptor().getMessageTypes().get(46);
     internal_static_api_core_GetApplyWorkerStateListReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_core_GetApplyWorkerStateListReq_descriptor,
         new java.lang.String[] { "Batch", "Name", "ApplyState", });
     internal_static_api_core_GetApplyWorkerStateListResp_descriptor =
-      getDescriptor().getMessageTypes().get(45);
+      getDescriptor().getMessageTypes().get(47);
     internal_static_api_core_GetApplyWorkerStateListResp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_core_GetApplyWorkerStateListResp_descriptor,
         new java.lang.String[] { "Applys", "Total", });
+    internal_static_api_core_GetApplyWorkerStateResp_descriptor =
+      getDescriptor().getMessageTypes().get(48);
+    internal_static_api_core_GetApplyWorkerStateResp_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_api_core_GetApplyWorkerStateResp_descriptor,
+        new java.lang.String[] { "OnlineStateNow", "OnlineStateApply", "ApplyTime", "ApplyState", "CheckTime", });
     internal_static_api_core_SessionCustomerQueryRequest_descriptor =
-      getDescriptor().getMessageTypes().get(46);
+      getDescriptor().getMessageTypes().get(49);
     internal_static_api_core_SessionCustomerQueryRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_core_SessionCustomerQueryRequest_descriptor,
         new java.lang.String[] { "Batch", "Keyword", "ConsultId", });
     internal_static_api_core_SessionCustomer_descriptor =
-      getDescriptor().getMessageTypes().get(47);
+      getDescriptor().getMessageTypes().get(50);
     internal_static_api_core_SessionCustomer_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_core_SessionCustomer_descriptor,
-        new java.lang.String[] { "Uid", "Name", "Avatar", "Nick", "ChatId", "Ip", "CreateAt", });
+        new java.lang.String[] { "Uid", "Name", "Avatar", "Nick", "ChatId", "Ip", "CreateAt", "TenantId", });
     internal_static_api_core_SessionCustomerQueryResponse_descriptor =
-      getDescriptor().getMessageTypes().get(48);
+      getDescriptor().getMessageTypes().get(51);
     internal_static_api_core_SessionCustomerQueryResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_core_SessionCustomerQueryResponse_descriptor,
         new java.lang.String[] { "Items", "Batch", "Total", });
     internal_static_api_core_CheckWorkerStateReq_descriptor =
-      getDescriptor().getMessageTypes().get(49);
+      getDescriptor().getMessageTypes().get(52);
     internal_static_api_core_CheckWorkerStateReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_core_CheckWorkerStateReq_descriptor,
         new java.lang.String[] { "Id", "Access", });
+    internal_static_api_core_GetQlUrlResp_descriptor =
+      getDescriptor().getMessageTypes().get(53);
+    internal_static_api_core_GetQlUrlResp_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_api_core_GetQlUrlResp_descriptor,
+        new java.lang.String[] { "Base64Url", "GoogleKey", });
+    internal_static_api_core_GlReq_descriptor =
+      getDescriptor().getMessageTypes().get(54);
+    internal_static_api_core_GlReq_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_api_core_GlReq_descriptor,
+        new java.lang.String[] { "Code", });
+    internal_static_api_core_GlResp_descriptor =
+      getDescriptor().getMessageTypes().get(55);
+    internal_static_api_core_GlResp_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_api_core_GlResp_descriptor,
+        new java.lang.String[] { "Ok", "ErrMsg", });
+    internal_static_api_core_WorkerTransferAllReq_descriptor =
+      getDescriptor().getMessageTypes().get(56);
+    internal_static_api_core_WorkerTransferAllReq_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_api_core_WorkerTransferAllReq_descriptor,
+        new java.lang.String[] { "ConsultId", });
+    internal_static_api_core_WorkerTransferAllResp_descriptor =
+      getDescriptor().getMessageTypes().get(57);
+    internal_static_api_core_WorkerTransferAllResp_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_api_core_WorkerTransferAllResp_descriptor,
+        new java.lang.String[] { "Ok", "Msg", });
     descriptor.resolveAllFeaturesImmutable();
     com.google.protobuf.EmptyProto.getDescriptor();
     io.envoyproxy.pgv.validate.Validate.getDescriptor();

@@ -1117,6 +1117,16 @@ public final class FrontOuterClass {
      */
     com.google.protobuf.ByteString
         getTipsBytes();
+
+    /**
+     * <pre>
+     * 聊天id
+     * </pre>
+     *
+     * <code>int64 chat_id = 6;</code>
+     * @return The chatId.
+     */
+    long getChatId();
   }
   /**
    * Protobuf type {@code api.core.AssignWorkerResponse}
@@ -1362,6 +1372,21 @@ public final class FrontOuterClass {
       }
     }
 
+    public static final int CHAT_ID_FIELD_NUMBER = 6;
+    private long chatId_ = 0L;
+    /**
+     * <pre>
+     * 聊天id
+     * </pre>
+     *
+     * <code>int64 chat_id = 6;</code>
+     * @return The chatId.
+     */
+    @java.lang.Override
+    public long getChatId() {
+      return chatId_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -1391,6 +1416,9 @@ public final class FrontOuterClass {
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(tips_)) {
         com.google.protobuf.GeneratedMessage.writeString(output, 5, tips_);
       }
+      if (chatId_ != 0L) {
+        output.writeInt64(6, chatId_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -1415,6 +1443,10 @@ public final class FrontOuterClass {
       }
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(tips_)) {
         size += com.google.protobuf.GeneratedMessage.computeStringSize(5, tips_);
+      }
+      if (chatId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(6, chatId_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -1441,6 +1473,8 @@ public final class FrontOuterClass {
           .equals(other.getNimid())) return false;
       if (!getTips()
           .equals(other.getTips())) return false;
+      if (getChatId()
+          != other.getChatId()) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -1462,6 +1496,9 @@ public final class FrontOuterClass {
       hash = (53 * hash) + getNimid().hashCode();
       hash = (37 * hash) + TIPS_FIELD_NUMBER;
       hash = (53 * hash) + getTips().hashCode();
+      hash = (37 * hash) + CHAT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getChatId());
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1598,6 +1635,7 @@ public final class FrontOuterClass {
         workerId_ = 0;
         nimid_ = "";
         tips_ = "";
+        chatId_ = 0L;
         return this;
       }
 
@@ -1646,6 +1684,9 @@ public final class FrontOuterClass {
         if (((from_bitField0_ & 0x00000010) != 0)) {
           result.tips_ = tips_;
         }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.chatId_ = chatId_;
+        }
       }
 
       @java.lang.Override
@@ -1682,6 +1723,9 @@ public final class FrontOuterClass {
           tips_ = other.tips_;
           bitField0_ |= 0x00000010;
           onChanged();
+        }
+        if (other.getChatId() != 0L) {
+          setChatId(other.getChatId());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -1734,6 +1778,11 @@ public final class FrontOuterClass {
                 bitField0_ |= 0x00000010;
                 break;
               } // case 42
+              case 48: {
+                chatId_ = input.readInt64();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 48
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -2159,6 +2208,50 @@ public final class FrontOuterClass {
         checkByteStringIsUtf8(value);
         tips_ = value;
         bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+
+      private long chatId_ ;
+      /**
+       * <pre>
+       * 聊天id
+       * </pre>
+       *
+       * <code>int64 chat_id = 6;</code>
+       * @return The chatId.
+       */
+      @java.lang.Override
+      public long getChatId() {
+        return chatId_;
+      }
+      /**
+       * <pre>
+       * 聊天id
+       * </pre>
+       *
+       * <code>int64 chat_id = 6;</code>
+       * @param value The chatId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setChatId(long value) {
+
+        chatId_ = value;
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 聊天id
+       * </pre>
+       *
+       * <code>int64 chat_id = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearChatId() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        chatId_ = 0L;
         onChanged();
         return this;
       }
@@ -14255,6 +14348,18 @@ public final class FrontOuterClass {
      */
     com.google.protobuf.ByteString
         getWorkerAvatarBytes();
+
+    /**
+     * <code>string tips = 4;</code>
+     * @return The tips.
+     */
+    java.lang.String getTips();
+    /**
+     * <code>string tips = 4;</code>
+     * @return The bytes for tips.
+     */
+    com.google.protobuf.ByteString
+        getTipsBytes();
   }
   /**
    * Protobuf type {@code api.core.QueryWorkerResponse}
@@ -14280,6 +14385,7 @@ public final class FrontOuterClass {
     private QueryWorkerResponse() {
       workerName_ = "";
       workerAvatar_ = "";
+      tips_ = "";
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
@@ -14384,6 +14490,45 @@ public final class FrontOuterClass {
       }
     }
 
+    public static final int TIPS_FIELD_NUMBER = 4;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object tips_ = "";
+    /**
+     * <code>string tips = 4;</code>
+     * @return The tips.
+     */
+    @java.lang.Override
+    public java.lang.String getTips() {
+      java.lang.Object ref = tips_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        tips_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string tips = 4;</code>
+     * @return The bytes for tips.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getTipsBytes() {
+      java.lang.Object ref = tips_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        tips_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -14407,6 +14552,9 @@ public final class FrontOuterClass {
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(workerAvatar_)) {
         com.google.protobuf.GeneratedMessage.writeString(output, 3, workerAvatar_);
       }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(tips_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 4, tips_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -14425,6 +14573,9 @@ public final class FrontOuterClass {
       }
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(workerAvatar_)) {
         size += com.google.protobuf.GeneratedMessage.computeStringSize(3, workerAvatar_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(tips_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(4, tips_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -14447,6 +14598,8 @@ public final class FrontOuterClass {
           .equals(other.getWorkerName())) return false;
       if (!getWorkerAvatar()
           .equals(other.getWorkerAvatar())) return false;
+      if (!getTips()
+          .equals(other.getTips())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -14464,6 +14617,8 @@ public final class FrontOuterClass {
       hash = (53 * hash) + getWorkerName().hashCode();
       hash = (37 * hash) + WORKER_AVATAR_FIELD_NUMBER;
       hash = (53 * hash) + getWorkerAvatar().hashCode();
+      hash = (37 * hash) + TIPS_FIELD_NUMBER;
+      hash = (53 * hash) + getTips().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -14598,6 +14753,7 @@ public final class FrontOuterClass {
         workerId_ = 0;
         workerName_ = "";
         workerAvatar_ = "";
+        tips_ = "";
         return this;
       }
 
@@ -14640,6 +14796,9 @@ public final class FrontOuterClass {
         if (((from_bitField0_ & 0x00000004) != 0)) {
           result.workerAvatar_ = workerAvatar_;
         }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.tips_ = tips_;
+        }
       }
 
       @java.lang.Override
@@ -14665,6 +14824,11 @@ public final class FrontOuterClass {
         if (!other.getWorkerAvatar().isEmpty()) {
           workerAvatar_ = other.workerAvatar_;
           bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        if (!other.getTips().isEmpty()) {
+          tips_ = other.tips_;
+          bitField0_ |= 0x00000008;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -14708,6 +14872,11 @@ public final class FrontOuterClass {
                 bitField0_ |= 0x00000004;
                 break;
               } // case 26
+              case 34: {
+                tips_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 34
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -14897,6 +15066,78 @@ public final class FrontOuterClass {
         checkByteStringIsUtf8(value);
         workerAvatar_ = value;
         bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object tips_ = "";
+      /**
+       * <code>string tips = 4;</code>
+       * @return The tips.
+       */
+      public java.lang.String getTips() {
+        java.lang.Object ref = tips_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          tips_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string tips = 4;</code>
+       * @return The bytes for tips.
+       */
+      public com.google.protobuf.ByteString
+          getTipsBytes() {
+        java.lang.Object ref = tips_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          tips_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string tips = 4;</code>
+       * @param value The tips to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTips(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        tips_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string tips = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTips() {
+        tips_ = getDefaultInstance().getTips();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string tips = 4;</code>
+       * @param value The bytes for tips to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTipsBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        tips_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -20149,12 +20390,13 @@ public final class FrontOuterClass {
       "f/timestamp.proto\032\033api/common/c_entrance" +
       ".proto\032\030api/common/c_reply.proto\032\027api/co" +
       "mmon/c_chat.proto\032\031api/common/c_worker.p" +
-      "roto\"B\n\020AutoReplyRequest\022\033\n\nconsult_id\030\001" +
-      " \001(\rB\007\372B\004*\002 \000\022\021\n\tworker_id\030\002 \001(\r\"2\n\023Assi" +
-      "gnWorkerRequest\022\033\n\nconsult_id\030\001 \001(\rB\007\372B\004" +
-      "*\002 \000\"d\n\024AssignWorkerResponse\022\014\n\004nick\030\001 \001" +
-      "(\t\022\016\n\006avatar\030\002 \001(\t\022\021\n\tworker_id\030\003 \001(\005\022\r\n" +
-      "\005nimid\030\004 \001(\t\022\014\n\004tips\030\005 \001(\t\"\263\001\n\020AssignWor" +
+      "roto\032\025api/core/worker.proto\"B\n\020AutoReply" +
+      "Request\022\033\n\nconsult_id\030\001 \001(\rB\007\372B\004*\002 \000\022\021\n\t" +
+      "worker_id\030\002 \001(\r\"2\n\023AssignWorkerRequest\022\033" +
+      "\n\nconsult_id\030\001 \001(\rB\007\372B\004*\002 \000\"u\n\024AssignWor" +
+      "kerResponse\022\014\n\004nick\030\001 \001(\t\022\016\n\006avatar\030\002 \001(" +
+      "\t\022\021\n\tworker_id\030\003 \001(\005\022\r\n\005nimid\030\004 \001(\t\022\014\n\004t" +
+      "ips\030\005 \001(\t\022\017\n\007chat_id\030\006 \001(\003\"\263\001\n\020AssignWor" +
       "kerItem\022\014\n\004nick\030\001 \001(\t\022\016\n\006avatar\030\002 \001(\t\022\021\n" +
       "\tworker_id\030\003 \001(\005\022\016\n\006nim_id\030\004 \001(\t\022/\n\rconn" +
       "ect_state\030\005 \001(\0162\030.api.common.ConnectStat" +
@@ -20188,63 +20430,66 @@ public final class FrontOuterClass {
       "oogle.protobuf.Timestamp\022\021\n\tuser_name\030\006 " +
       "\001(\t\022\023\n\013user_appeal\030\007 \001(\t\"Z\n\022QueryWorkerR" +
       "equest\022\026\n\tworker_id\030\001 \001(\005H\000\210\001\001\022\023\n\006nim_id" +
-      "\030\002 \001(\tH\001\210\001\001B\014\n\n_worker_idB\t\n\007_nim_id\"T\n\023" +
+      "\030\002 \001(\tH\001\210\001\001B\014\n\n_worker_idB\t\n\007_nim_id\"b\n\023" +
       "QueryWorkerResponse\022\021\n\tworker_id\030\001 \001(\005\022\023" +
       "\n\013worker_name\030\002 \001(\t\022\025\n\rworker_avatar\030\003 \001" +
-      "(\t\"7\n\020QueryChatRequest\022\017\n\007chat_id\030\001 \003(\003\022" +
-      "\022\n\nconsult_id\030\002 \001(\r\"8\n\021QueryChatResponse" +
-      "\022#\n\005chats\030\001 \003(\0132\024.api.common.ChatItem\"R\n" +
-      "\027UpdateUserAppealRequest\022\017\n\007chat_id\030\001 \001(" +
-      "\003\022\021\n\tuser_name\030\002 \001(\t\022\023\n\013user_appeal\030\003 \001(" +
-      "\t\" \n\017PingPongRequest\022\r\n\005local\030\001 \001(\003\"!\n\020P" +
-      "ingPongResponse\022\r\n\005local\030\001 \001(\003\"\'\n\014ReplyR" +
-      "equest\022\027\n\006msg_id\030\001 \001(\003B\007\372B\004\"\002 \000\";\n\rVerif" +
-      "yRequest\022\016\n\006gns_id\030\001 \001(\t\022\032\n\ttenant_id\030\002 " +
-      "\001(\005B\007\372B\004\032\002 \000\"3\n\016VerifyResponse\022\016\n\006gns_id" +
-      "\030\001 \001(\t\022\021\n\ttenant_id\030\002 \001(\005\"4\n\025ClientMarkR" +
-      "eadRequest\022\033\n\nconsult_id\030\001 \001(\003B\007\372B\004\"\002 \0002" +
-      "\267\014\n\005Front\022h\n\014CustomerInfo\022\035.api.core.Cus" +
-      "tomerDataRequest\032\036.api.core.CustomerData" +
-      "Response\"\031\272\276\031\025\010\211\007\030\001\322\014\rcustomer-info\022h\n\014A" +
-      "ssignWorker\022\035.api.core.AssignWorkerReque" +
-      "st\032\036.api.core.AssignWorkerResponse\"\031\272\276\031\025" +
-      "\010\205\007\030\001\322\014\rassign-worker\022i\n\rQueryEntrance\022\026" +
-      ".google.protobuf.Empty\032\037.api.core.QueryE" +
-      "ntranceResponse\"\037\272\276\031\033\010\206\007\030\001\312\014\002\002\004\322\014\016query-" +
-      "entrance\022p\n\016QueryAutoReply\022\032.api.core.Au" +
-      "toReplyRequest\032 .api.core.QueryAutoReply" +
-      "Response\" \272\276\031\034\010\207\007\030\001\312\014\001\002\322\014\020query-auto-rep" +
-      "ly\022\202\001\n\016CreateAnonUser\022\037.api.core.CreateA" +
-      "nonUserRequest\032 .api.core.CreateAnonUser" +
-      "Response\"-\272\276\031)\010\211\007\030\001\262\006\n2022-12-31\312\014\001\004\322\014\020c" +
-      "reate-anon-user\022u\n\013QueryWorker\022\034.api.cor" +
-      "e.QueryWorkerRequest\032\035.api.core.QueryWor" +
-      "kerResponse\")\272\276\031%\010\212\007\030\001\262\006\n2023-01-05\312\014\001\004\322" +
-      "\014\014query-worker\022n\n\tQueryChat\022\032.api.core.Q" +
-      "ueryChatRequest\032\033.api.core.QueryChatResp" +
-      "onse\"(\272\276\031$\010\213\007\030\001\262\006\n2023-01-05\312\014\002\004\020\322\014\nquer" +
-      "y-chat\022\177\n\020UpdateUserAppeal\022!.api.core.Up" +
-      "dateUserAppealRequest\032\026.google.protobuf." +
-      "Empty\"0\272\276\031,\010\213\007\030\001\262\006\n2023-01-05\312\014\002\004\020\322\014\022upd" +
-      "ate-user-appeal\022Z\n\004Ping\022\026.google.protobu" +
-      "f.Empty\032\026.google.protobuf.Empty\"\"\272\276\031\036\010\214\007" +
-      "\030\001\262\006\n2023-02-08\312\014\002\020\004\322\014\004ping\022i\n\010PingPong\022" +
-      "\031.api.core.PingPongRequest\032\032.api.core.Pi" +
-      "ngPongResponse\"&\272\276\031\"\010\214\007\030\001\262\006\n2023-02-08\312\014" +
-      "\001\002\322\014\tping-pong\022Z\n\010ReplyPls\022\026.api.core.Re" +
-      "plyRequest\032\026.google.protobuf.Empty\"\036\272\276\031\032" +
-      "\010\215\007\030\001\262\006\n2023-02-15\322\014\005reply\022\202\001\n\024QueryWork" +
-      "erAutoReply\022\037.api.core.QueryAutoReplyReq" +
-      "uest\032 .api.core.QueryAutoReplyResponse\"\'" +
-      "\272\276\031#\010\216\007\030\001\312\014\001\002\322\014\027query-worker-auto-reply\022" +
-      "a\n\006verify\022\027.api.core.VerifyRequest\032\030.api" +
-      ".core.VerifyResponse\"$\272\276\031 \010\214\007\030\001\262\006\n2024-0" +
-      "4-22\312\014\002\002\004\322\014\006verify\022l\n\010MarkRead\022\037.api.cor" +
-      "e.ClientMarkReadRequest\032\026.google.protobu" +
-      "f.Empty\"\'\272\276\031#\010\215\007\030\001\262\006\n2024-04-22\322\014\016chat/m" +
-      "ark-read\032\027\272\276\031\023\272\006\005front\312\014\002\001\004\322\014\003apiBF\n\030com" +
-      ".teneasyChat.api.coreZ\021wcs/api/core;core" +
-      "\272\276\031\025\242\006\005mango\262\006\n2022-12-12b\006proto3"
+      "(\t\022\014\n\004tips\030\004 \001(\t\"7\n\020QueryChatRequest\022\017\n\007" +
+      "chat_id\030\001 \003(\003\022\022\n\nconsult_id\030\002 \001(\r\"8\n\021Que" +
+      "ryChatResponse\022#\n\005chats\030\001 \003(\0132\024.api.comm" +
+      "on.ChatItem\"R\n\027UpdateUserAppealRequest\022\017" +
+      "\n\007chat_id\030\001 \001(\003\022\021\n\tuser_name\030\002 \001(\t\022\023\n\013us" +
+      "er_appeal\030\003 \001(\t\" \n\017PingPongRequest\022\r\n\005lo" +
+      "cal\030\001 \001(\003\"!\n\020PingPongResponse\022\r\n\005local\030\001" +
+      " \001(\003\"\'\n\014ReplyRequest\022\027\n\006msg_id\030\001 \001(\003B\007\372B" +
+      "\004\"\002 \000\";\n\rVerifyRequest\022\016\n\006gns_id\030\001 \001(\t\022\032" +
+      "\n\ttenant_id\030\002 \001(\005B\007\372B\004\032\002 \000\"3\n\016VerifyResp" +
+      "onse\022\016\n\006gns_id\030\001 \001(\t\022\021\n\ttenant_id\030\002 \001(\005\"" +
+      "4\n\025ClientMarkReadRequest\022\033\n\nconsult_id\030\001" +
+      " \001(\003B\007\372B\004\"\002 \0002\246\r\n\005Front\022h\n\014CustomerInfo\022" +
+      "\035.api.core.CustomerDataRequest\032\036.api.cor" +
+      "e.CustomerDataResponse\"\031\272\276\031\025\010\211\007\030\001\322\014\rcust" +
+      "omer-info\022h\n\014AssignWorker\022\035.api.core.Ass" +
+      "ignWorkerRequest\032\036.api.core.AssignWorker" +
+      "Response\"\031\272\276\031\025\010\205\007\030\001\322\014\rassign-worker\022i\n\rQ" +
+      "ueryEntrance\022\026.google.protobuf.Empty\032\037.a" +
+      "pi.core.QueryEntranceResponse\"\037\272\276\031\033\010\206\007\030\001" +
+      "\312\014\002\002\004\322\014\016query-entrance\022p\n\016QueryAutoReply" +
+      "\022\032.api.core.AutoReplyRequest\032 .api.core." +
+      "QueryAutoReplyResponse\" \272\276\031\034\010\207\007\030\001\312\014\001\002\322\014\020" +
+      "query-auto-reply\022\202\001\n\016CreateAnonUser\022\037.ap" +
+      "i.core.CreateAnonUserRequest\032 .api.core." +
+      "CreateAnonUserResponse\"-\272\276\031)\010\211\007\030\001\262\006\n2022" +
+      "-12-31\312\014\001\004\322\014\020create-anon-user\022u\n\013QueryWo" +
+      "rker\022\034.api.core.QueryWorkerRequest\032\035.api" +
+      ".core.QueryWorkerResponse\")\272\276\031%\010\212\007\030\001\262\006\n2" +
+      "023-01-05\312\014\001\004\322\014\014query-worker\022n\n\tQueryCha" +
+      "t\022\032.api.core.QueryChatRequest\032\033.api.core" +
+      ".QueryChatResponse\"(\272\276\031$\010\213\007\030\001\262\006\n2023-01-" +
+      "05\312\014\002\004\020\322\014\nquery-chat\022\177\n\020UpdateUserAppeal" +
+      "\022!.api.core.UpdateUserAppealRequest\032\026.go" +
+      "ogle.protobuf.Empty\"0\272\276\031,\010\213\007\030\001\262\006\n2023-01" +
+      "-05\312\014\002\004\020\322\014\022update-user-appeal\022Z\n\004Ping\022\026." +
+      "google.protobuf.Empty\032\026.google.protobuf." +
+      "Empty\"\"\272\276\031\036\010\214\007\030\001\262\006\n2023-02-08\312\014\002\020\004\322\014\004pin" +
+      "g\022i\n\010PingPong\022\031.api.core.PingPongRequest" +
+      "\032\032.api.core.PingPongResponse\"&\272\276\031\"\010\214\007\030\001\262" +
+      "\006\n2023-02-08\312\014\001\002\322\014\tping-pong\022Z\n\010ReplyPls" +
+      "\022\026.api.core.ReplyRequest\032\026.google.protob" +
+      "uf.Empty\"\036\272\276\031\032\010\215\007\030\001\262\006\n2023-02-15\322\014\005reply" +
+      "\022\202\001\n\024QueryWorkerAutoReply\022\037.api.core.Que" +
+      "ryAutoReplyRequest\032 .api.core.QueryAutoR" +
+      "eplyResponse\"\'\272\276\031#\010\216\007\030\001\312\014\001\002\322\014\027query-work" +
+      "er-auto-reply\022a\n\006verify\022\027.api.core.Verif" +
+      "yRequest\032\030.api.core.VerifyResponse\"$\272\276\031 " +
+      "\010\214\007\030\001\262\006\n2024-04-22\312\014\002\002\004\322\014\006verify\022l\n\010Mark" +
+      "Read\022\037.api.core.ClientMarkReadRequest\032\026." +
+      "google.protobuf.Empty\"\'\272\276\031#\010\215\007\030\001\262\006\n2024-" +
+      "04-22\322\014\016chat/mark-read\022m\n\tNotifyMsg\022\036.ap" +
+      "i.core.NotifyMessageRequest\032\026.google.pro" +
+      "tobuf.Empty\"(\272\276\031$\010\216\007\030\001\262\006\n2024-08-01\312\014\002\002\004" +
+      "\322\014\nnotify-msg\032\027\272\276\031\023\272\006\005front\312\014\002\001\004\322\014\003apiBF" +
+      "\n\030com.teneasyChat.api.coreZ\021wcs/api/core" +
+      ";core\272\276\031\025\242\006\005mango\262\006\n2022-12-12b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -20257,6 +20502,7 @@ public final class FrontOuterClass {
           com.teneasyChat.api.common.CReply.getDescriptor(),
           com.teneasyChat.api.common.CChat.getDescriptor(),
           com.teneasyChat.api.common.CWorker.getDescriptor(),
+          com.teneasyChat.api.core.WorkerOuterClass.getDescriptor(),
         });
     internal_static_api_core_AutoReplyRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -20275,7 +20521,7 @@ public final class FrontOuterClass {
     internal_static_api_core_AssignWorkerResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_core_AssignWorkerResponse_descriptor,
-        new java.lang.String[] { "Nick", "Avatar", "WorkerId", "Nimid", "Tips", });
+        new java.lang.String[] { "Nick", "Avatar", "WorkerId", "Nimid", "Tips", "ChatId", });
     internal_static_api_core_AssignWorkerItem_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_api_core_AssignWorkerItem_fieldAccessorTable = new
@@ -20353,7 +20599,7 @@ public final class FrontOuterClass {
     internal_static_api_core_QueryWorkerResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_core_QueryWorkerResponse_descriptor,
-        new java.lang.String[] { "WorkerId", "WorkerName", "WorkerAvatar", });
+        new java.lang.String[] { "WorkerId", "WorkerName", "WorkerAvatar", "Tips", });
     internal_static_api_core_QueryChatRequest_descriptor =
       getDescriptor().getMessageTypes().get(16);
     internal_static_api_core_QueryChatRequest_fieldAccessorTable = new
@@ -20417,6 +20663,7 @@ public final class FrontOuterClass {
     com.teneasyChat.api.common.CReply.getDescriptor();
     com.teneasyChat.api.common.CChat.getDescriptor();
     com.teneasyChat.api.common.CWorker.getDescriptor();
+    com.teneasyChat.api.core.WorkerOuterClass.getDescriptor();
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.teneasyChat.api.Option.info);

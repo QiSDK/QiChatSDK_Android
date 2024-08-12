@@ -2381,10 +2381,64 @@ public final class CWorker {
 
     /**
      * <pre>
+     * 创建时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_at = 18;</code>
+     * @return Whether the createAt field is set.
+     */
+    boolean hasCreateAt();
+    /**
+     * <pre>
+     * 创建时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_at = 18;</code>
+     * @return The createAt.
+     */
+    com.google.protobuf.Timestamp getCreateAt();
+    /**
+     * <pre>
+     * 创建时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_at = 18;</code>
+     */
+    com.google.protobuf.TimestampOrBuilder getCreateAtOrBuilder();
+
+    /**
+     * <pre>
+     * 更新时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_at = 19;</code>
+     * @return Whether the updateAt field is set.
+     */
+    boolean hasUpdateAt();
+    /**
+     * <pre>
+     * 更新时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_at = 19;</code>
+     * @return The updateAt.
+     */
+    com.google.protobuf.Timestamp getUpdateAt();
+    /**
+     * <pre>
+     * 更新时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_at = 19;</code>
+     */
+    com.google.protobuf.TimestampOrBuilder getUpdateAtOrBuilder();
+
+    /**
+     * <pre>
      * 删除状态
      * </pre>
      *
-     * <code>.api.common.DisableStatus disable_status = 18;</code>
+     * <code>.api.common.DisableStatus disable_status = 20;</code>
      * @return The enum numeric value on the wire for disableStatus.
      */
     int getDisableStatusValue();
@@ -2393,7 +2447,7 @@ public final class CWorker {
      * 删除状态
      * </pre>
      *
-     * <code>.api.common.DisableStatus disable_status = 18;</code>
+     * <code>.api.common.DisableStatus disable_status = 20;</code>
      * @return The disableStatus.
      */
     com.teneasyChat.api.common.CBase.DisableStatus getDisableStatus();
@@ -3072,14 +3126,90 @@ public final class CWorker {
       return deleteAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : deleteAt_;
     }
 
-    public static final int DISABLE_STATUS_FIELD_NUMBER = 18;
+    public static final int CREATE_AT_FIELD_NUMBER = 18;
+    private com.google.protobuf.Timestamp createAt_;
+    /**
+     * <pre>
+     * 创建时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_at = 18;</code>
+     * @return Whether the createAt field is set.
+     */
+    @java.lang.Override
+    public boolean hasCreateAt() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     * <pre>
+     * 创建时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_at = 18;</code>
+     * @return The createAt.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Timestamp getCreateAt() {
+      return createAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createAt_;
+    }
+    /**
+     * <pre>
+     * 创建时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_at = 18;</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.TimestampOrBuilder getCreateAtOrBuilder() {
+      return createAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createAt_;
+    }
+
+    public static final int UPDATE_AT_FIELD_NUMBER = 19;
+    private com.google.protobuf.Timestamp updateAt_;
+    /**
+     * <pre>
+     * 更新时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_at = 19;</code>
+     * @return Whether the updateAt field is set.
+     */
+    @java.lang.Override
+    public boolean hasUpdateAt() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     * <pre>
+     * 更新时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_at = 19;</code>
+     * @return The updateAt.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Timestamp getUpdateAt() {
+      return updateAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateAt_;
+    }
+    /**
+     * <pre>
+     * 更新时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_at = 19;</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.TimestampOrBuilder getUpdateAtOrBuilder() {
+      return updateAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateAt_;
+    }
+
+    public static final int DISABLE_STATUS_FIELD_NUMBER = 20;
     private int disableStatus_ = 0;
     /**
      * <pre>
      * 删除状态
      * </pre>
      *
-     * <code>.api.common.DisableStatus disable_status = 18;</code>
+     * <code>.api.common.DisableStatus disable_status = 20;</code>
      * @return The enum numeric value on the wire for disableStatus.
      */
     @java.lang.Override public int getDisableStatusValue() {
@@ -3090,7 +3220,7 @@ public final class CWorker {
      * 删除状态
      * </pre>
      *
-     * <code>.api.common.DisableStatus disable_status = 18;</code>
+     * <code>.api.common.DisableStatus disable_status = 20;</code>
      * @return The disableStatus.
      */
     @java.lang.Override public com.teneasyChat.api.common.CBase.DisableStatus getDisableStatus() {
@@ -3168,8 +3298,14 @@ public final class CWorker {
       if (((bitField0_ & 0x00000001) != 0)) {
         output.writeMessage(17, getDeleteAt());
       }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        output.writeMessage(18, getCreateAt());
+      }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        output.writeMessage(19, getUpdateAt());
+      }
       if (disableStatus_ != com.teneasyChat.api.common.CBase.DisableStatus.DEFAULT.getNumber()) {
-        output.writeEnum(18, disableStatus_);
+        output.writeEnum(20, disableStatus_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -3251,9 +3387,17 @@ public final class CWorker {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(17, getDeleteAt());
       }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(18, getCreateAt());
+      }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(19, getUpdateAt());
+      }
       if (disableStatus_ != com.teneasyChat.api.common.CBase.DisableStatus.DEFAULT.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(18, disableStatus_);
+          .computeEnumSize(20, disableStatus_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -3304,6 +3448,16 @@ public final class CWorker {
       if (hasDeleteAt()) {
         if (!getDeleteAt()
             .equals(other.getDeleteAt())) return false;
+      }
+      if (hasCreateAt() != other.hasCreateAt()) return false;
+      if (hasCreateAt()) {
+        if (!getCreateAt()
+            .equals(other.getCreateAt())) return false;
+      }
+      if (hasUpdateAt() != other.hasUpdateAt()) return false;
+      if (hasUpdateAt()) {
+        if (!getUpdateAt()
+            .equals(other.getUpdateAt())) return false;
       }
       if (disableStatus_ != other.disableStatus_) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
@@ -3359,6 +3513,14 @@ public final class CWorker {
       if (hasDeleteAt()) {
         hash = (37 * hash) + DELETE_AT_FIELD_NUMBER;
         hash = (53 * hash) + getDeleteAt().hashCode();
+      }
+      if (hasCreateAt()) {
+        hash = (37 * hash) + CREATE_AT_FIELD_NUMBER;
+        hash = (53 * hash) + getCreateAt().hashCode();
+      }
+      if (hasUpdateAt()) {
+        hash = (37 * hash) + UPDATE_AT_FIELD_NUMBER;
+        hash = (53 * hash) + getUpdateAt().hashCode();
       }
       hash = (37 * hash) + DISABLE_STATUS_FIELD_NUMBER;
       hash = (53 * hash) + disableStatus_;
@@ -3495,6 +3657,8 @@ public final class CWorker {
           getGroupFieldBuilder();
           getGroupChildFieldBuilder();
           getDeleteAtFieldBuilder();
+          getCreateAtFieldBuilder();
+          getUpdateAtFieldBuilder();
         }
       }
       @java.lang.Override
@@ -3533,6 +3697,16 @@ public final class CWorker {
         if (deleteAtBuilder_ != null) {
           deleteAtBuilder_.dispose();
           deleteAtBuilder_ = null;
+        }
+        createAt_ = null;
+        if (createAtBuilder_ != null) {
+          createAtBuilder_.dispose();
+          createAtBuilder_ = null;
+        }
+        updateAt_ = null;
+        if (updateAtBuilder_ != null) {
+          updateAtBuilder_.dispose();
+          updateAtBuilder_ = null;
         }
         disableStatus_ = 0;
         return this;
@@ -3641,6 +3815,18 @@ public final class CWorker {
           to_bitField0_ |= 0x00000001;
         }
         if (((from_bitField0_ & 0x00020000) != 0)) {
+          result.createAt_ = createAtBuilder_ == null
+              ? createAt_
+              : createAtBuilder_.build();
+          to_bitField0_ |= 0x00000002;
+        }
+        if (((from_bitField0_ & 0x00040000) != 0)) {
+          result.updateAt_ = updateAtBuilder_ == null
+              ? updateAt_
+              : updateAtBuilder_.build();
+          to_bitField0_ |= 0x00000004;
+        }
+        if (((from_bitField0_ & 0x00080000) != 0)) {
           result.disableStatus_ = disableStatus_;
         }
         result.bitField0_ |= to_bitField0_;
@@ -3776,6 +3962,12 @@ public final class CWorker {
         }
         if (other.hasDeleteAt()) {
           mergeDeleteAt(other.getDeleteAt());
+        }
+        if (other.hasCreateAt()) {
+          mergeCreateAt(other.getCreateAt());
+        }
+        if (other.hasUpdateAt()) {
+          mergeUpdateAt(other.getUpdateAt());
         }
         if (other.disableStatus_ != 0) {
           setDisableStatusValue(other.getDisableStatusValue());
@@ -3920,11 +4112,25 @@ public final class CWorker {
                 bitField0_ |= 0x00010000;
                 break;
               } // case 138
-              case 144: {
-                disableStatus_ = input.readEnum();
+              case 146: {
+                input.readMessage(
+                    getCreateAtFieldBuilder().getBuilder(),
+                    extensionRegistry);
                 bitField0_ |= 0x00020000;
                 break;
-              } // case 144
+              } // case 146
+              case 154: {
+                input.readMessage(
+                    getUpdateAtFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00040000;
+                break;
+              } // case 154
+              case 160: {
+                disableStatus_ = input.readEnum();
+                bitField0_ |= 0x00080000;
+                break;
+              } // case 160
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -5749,13 +5955,327 @@ public final class CWorker {
         return deleteAtBuilder_;
       }
 
+      private com.google.protobuf.Timestamp createAt_;
+      private com.google.protobuf.SingleFieldBuilder<
+          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> createAtBuilder_;
+      /**
+       * <pre>
+       * 创建时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp create_at = 18;</code>
+       * @return Whether the createAt field is set.
+       */
+      public boolean hasCreateAt() {
+        return ((bitField0_ & 0x00020000) != 0);
+      }
+      /**
+       * <pre>
+       * 创建时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp create_at = 18;</code>
+       * @return The createAt.
+       */
+      public com.google.protobuf.Timestamp getCreateAt() {
+        if (createAtBuilder_ == null) {
+          return createAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createAt_;
+        } else {
+          return createAtBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * 创建时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp create_at = 18;</code>
+       */
+      public Builder setCreateAt(com.google.protobuf.Timestamp value) {
+        if (createAtBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          createAt_ = value;
+        } else {
+          createAtBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00020000;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 创建时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp create_at = 18;</code>
+       */
+      public Builder setCreateAt(
+          com.google.protobuf.Timestamp.Builder builderForValue) {
+        if (createAtBuilder_ == null) {
+          createAt_ = builderForValue.build();
+        } else {
+          createAtBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00020000;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 创建时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp create_at = 18;</code>
+       */
+      public Builder mergeCreateAt(com.google.protobuf.Timestamp value) {
+        if (createAtBuilder_ == null) {
+          if (((bitField0_ & 0x00020000) != 0) &&
+            createAt_ != null &&
+            createAt_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getCreateAtBuilder().mergeFrom(value);
+          } else {
+            createAt_ = value;
+          }
+        } else {
+          createAtBuilder_.mergeFrom(value);
+        }
+        if (createAt_ != null) {
+          bitField0_ |= 0x00020000;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 创建时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp create_at = 18;</code>
+       */
+      public Builder clearCreateAt() {
+        bitField0_ = (bitField0_ & ~0x00020000);
+        createAt_ = null;
+        if (createAtBuilder_ != null) {
+          createAtBuilder_.dispose();
+          createAtBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 创建时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp create_at = 18;</code>
+       */
+      public com.google.protobuf.Timestamp.Builder getCreateAtBuilder() {
+        bitField0_ |= 0x00020000;
+        onChanged();
+        return getCreateAtFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * 创建时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp create_at = 18;</code>
+       */
+      public com.google.protobuf.TimestampOrBuilder getCreateAtOrBuilder() {
+        if (createAtBuilder_ != null) {
+          return createAtBuilder_.getMessageOrBuilder();
+        } else {
+          return createAt_ == null ?
+              com.google.protobuf.Timestamp.getDefaultInstance() : createAt_;
+        }
+      }
+      /**
+       * <pre>
+       * 创建时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp create_at = 18;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+          getCreateAtFieldBuilder() {
+        if (createAtBuilder_ == null) {
+          createAtBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                  getCreateAt(),
+                  getParentForChildren(),
+                  isClean());
+          createAt_ = null;
+        }
+        return createAtBuilder_;
+      }
+
+      private com.google.protobuf.Timestamp updateAt_;
+      private com.google.protobuf.SingleFieldBuilder<
+          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> updateAtBuilder_;
+      /**
+       * <pre>
+       * 更新时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp update_at = 19;</code>
+       * @return Whether the updateAt field is set.
+       */
+      public boolean hasUpdateAt() {
+        return ((bitField0_ & 0x00040000) != 0);
+      }
+      /**
+       * <pre>
+       * 更新时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp update_at = 19;</code>
+       * @return The updateAt.
+       */
+      public com.google.protobuf.Timestamp getUpdateAt() {
+        if (updateAtBuilder_ == null) {
+          return updateAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateAt_;
+        } else {
+          return updateAtBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * 更新时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp update_at = 19;</code>
+       */
+      public Builder setUpdateAt(com.google.protobuf.Timestamp value) {
+        if (updateAtBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          updateAt_ = value;
+        } else {
+          updateAtBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00040000;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 更新时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp update_at = 19;</code>
+       */
+      public Builder setUpdateAt(
+          com.google.protobuf.Timestamp.Builder builderForValue) {
+        if (updateAtBuilder_ == null) {
+          updateAt_ = builderForValue.build();
+        } else {
+          updateAtBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00040000;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 更新时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp update_at = 19;</code>
+       */
+      public Builder mergeUpdateAt(com.google.protobuf.Timestamp value) {
+        if (updateAtBuilder_ == null) {
+          if (((bitField0_ & 0x00040000) != 0) &&
+            updateAt_ != null &&
+            updateAt_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getUpdateAtBuilder().mergeFrom(value);
+          } else {
+            updateAt_ = value;
+          }
+        } else {
+          updateAtBuilder_.mergeFrom(value);
+        }
+        if (updateAt_ != null) {
+          bitField0_ |= 0x00040000;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 更新时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp update_at = 19;</code>
+       */
+      public Builder clearUpdateAt() {
+        bitField0_ = (bitField0_ & ~0x00040000);
+        updateAt_ = null;
+        if (updateAtBuilder_ != null) {
+          updateAtBuilder_.dispose();
+          updateAtBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 更新时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp update_at = 19;</code>
+       */
+      public com.google.protobuf.Timestamp.Builder getUpdateAtBuilder() {
+        bitField0_ |= 0x00040000;
+        onChanged();
+        return getUpdateAtFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * 更新时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp update_at = 19;</code>
+       */
+      public com.google.protobuf.TimestampOrBuilder getUpdateAtOrBuilder() {
+        if (updateAtBuilder_ != null) {
+          return updateAtBuilder_.getMessageOrBuilder();
+        } else {
+          return updateAt_ == null ?
+              com.google.protobuf.Timestamp.getDefaultInstance() : updateAt_;
+        }
+      }
+      /**
+       * <pre>
+       * 更新时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp update_at = 19;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+          getUpdateAtFieldBuilder() {
+        if (updateAtBuilder_ == null) {
+          updateAtBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                  getUpdateAt(),
+                  getParentForChildren(),
+                  isClean());
+          updateAt_ = null;
+        }
+        return updateAtBuilder_;
+      }
+
       private int disableStatus_ = 0;
       /**
        * <pre>
        * 删除状态
        * </pre>
        *
-       * <code>.api.common.DisableStatus disable_status = 18;</code>
+       * <code>.api.common.DisableStatus disable_status = 20;</code>
        * @return The enum numeric value on the wire for disableStatus.
        */
       @java.lang.Override public int getDisableStatusValue() {
@@ -5766,13 +6286,13 @@ public final class CWorker {
        * 删除状态
        * </pre>
        *
-       * <code>.api.common.DisableStatus disable_status = 18;</code>
+       * <code>.api.common.DisableStatus disable_status = 20;</code>
        * @param value The enum numeric value on the wire for disableStatus to set.
        * @return This builder for chaining.
        */
       public Builder setDisableStatusValue(int value) {
         disableStatus_ = value;
-        bitField0_ |= 0x00020000;
+        bitField0_ |= 0x00080000;
         onChanged();
         return this;
       }
@@ -5781,7 +6301,7 @@ public final class CWorker {
        * 删除状态
        * </pre>
        *
-       * <code>.api.common.DisableStatus disable_status = 18;</code>
+       * <code>.api.common.DisableStatus disable_status = 20;</code>
        * @return The disableStatus.
        */
       @java.lang.Override
@@ -5794,7 +6314,7 @@ public final class CWorker {
        * 删除状态
        * </pre>
        *
-       * <code>.api.common.DisableStatus disable_status = 18;</code>
+       * <code>.api.common.DisableStatus disable_status = 20;</code>
        * @param value The disableStatus to set.
        * @return This builder for chaining.
        */
@@ -5802,7 +6322,7 @@ public final class CWorker {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00020000;
+        bitField0_ |= 0x00080000;
         disableStatus_ = value.getNumber();
         onChanged();
         return this;
@@ -5812,11 +6332,11 @@ public final class CWorker {
        * 删除状态
        * </pre>
        *
-       * <code>.api.common.DisableStatus disable_status = 18;</code>
+       * <code>.api.common.DisableStatus disable_status = 20;</code>
        * @return This builder for chaining.
        */
       public Builder clearDisableStatus() {
-        bitField0_ = (bitField0_ & ~0x00020000);
+        bitField0_ = (bitField0_ & ~0x00080000);
         disableStatus_ = 0;
         onChanged();
         return this;
@@ -10179,7 +10699,7 @@ public final class CWorker {
       "\tworker_id\030\002 \001(\005\022\021\n\tsocket_id\030\003 \001(\004\022\022\n\ng" +
       "ateway_id\030\006 \001(\005\022/\n\nevent_type\030\004 \001(\0162\033.ap" +
       "i.common.WorkerEventType\022\022\n\nevent_code\030\005" +
-      " \001(\005\"\200\004\n\006Worker\022\021\n\tworker_id\030\001 \001(\005\022\017\n\007ac" +
+      " \001(\005\"\336\004\n\006Worker\022\021\n\tworker_id\030\001 \001(\005\022\017\n\007ac" +
       "count\030\002 \001(\t\022&\n\005group\030\003 \003(\0132\027.api.common." +
       "WorkerGroup\022\021\n\tperm_mask\030\004 \001(\005\022\014\n\004name\030\005" +
       " \001(\t\022\016\n\006avatar\030\006 \001(\t\022-\n\014online_state\030\007 \001" +
@@ -10190,46 +10710,48 @@ public final class CWorker {
       "(\t\022\020\n\010bneednim\030\r \001(\010\022,\n\013group_child\030\016 \003(" +
       "\0132\027.api.common.WorkerGroup\022\014\n\004tips\030\017 \001(\t" +
       "\022\023\n\013consult_ids\030\020 \003(\r\022-\n\tdelete_at\030\021 \001(\013" +
-      "2\032.google.protobuf.Timestamp\0221\n\016disable_" +
-      "status\030\022 \001(\0162\031.api.common.DisableStatus\"" +
-      "\352\001\n\013WorkerGroup\022\n\n\002id\030\001 \001(\003\022\014\n\004name\030\002 \001(" +
-      "\t\022\020\n\010priority\030\003 \001(\005\022\r\n\005count\030\004 \001(\005\022\020\n\010pa" +
-      "rentId\030\005 \001(\003\022\030\n\005ratio\030\006 \001(\005B\t\372B\006\032\004\030d(\000\022\022" +
-      "\n\nconsult_id\030\007 \001(\r\022-\n\tdelete_at\030\010 \001(\0132\032." +
-      "google.protobuf.Timestamp\0221\n\016disable_sta" +
-      "tus\030\t \001(\0162\031.api.common.DisableStatus\":\n\014" +
-      "Distribution\022\n\n\002id\030\001 \001(\003\022\014\n\004name\030\002 \001(\t\022\020" +
-      "\n\010priority\030\003 \001(\005\":\n\014TenantClique\022\n\n\002id\030\001" +
-      " \001(\005\022\014\n\004name\030\002 \001(\t\022\020\n\010priority\030\003 \001(\005\"\314\002\n" +
-      "\020ApplyWorkerState\022\n\n\002id\030\001 \001(\005\022\021\n\ttenant_" +
-      "id\030\002 \001(\005\022\021\n\tworker_id\030\003 \001(\005\022\014\n\004name\030\004 \001(" +
-      "\t\022\031\n\021worker_group_name\030\005 \001(\t\022\037\n\027worker_g" +
-      "roup_child_name\030\006 \001(\t\0221\n\020online_state_no" +
-      "w\030\007 \001(\0162\027.api.common.OnlineState\0223\n\022onli" +
-      "ne_state_apply\030\010 \001(\0162\027.api.common.Online" +
-      "State\022\023\n\013apply_state\030\t \001(\005\022\022\n\napply_time" +
-      "\030\n \001(\003\022\022\n\ncheck_time\030\013 \001(\003\022\027\n\017update_use" +
-      "rname\030\014 \001(\t*y\n\020DistributionType\022\030\n\024DISTR" +
-      "IBUTION_LEISURE\020\000\022\025\n\021DISTRIBUTION_BUSY\020\001" +
-      "\022\030\n\024DISTRIBUTION_OFFLINE\020\002\022\032\n\026DISTRIBUTI" +
-      "ON_NOT_LOGIN\020\003*\322\001\n\020WorkerPermission\022\024\n\020W" +
-      "ORKER_PERM_NONE\020\000\022\023\n\017WORKER_PERM_TOP\020\001\022\025" +
-      "\n\021WORKER_PERM_ADMIN\020\002\022\026\n\022WORKER_PERM_LEA" +
-      "DER\020\004\022\027\n\023WORKER_PERM_FRONTER\020\010\022\030\n\024WORKER" +
-      "_PERM_TRANSFER\020\020\022\030\n\024WORKER_PERM_SEARCHER" +
-      "\020 \022\027\n\023WORKER_PERM_BLACKER\020@*C\n\014ConnectSt" +
-      "ate\022\031\n\025CONNECT_STATE_OFFLINE\020\000\022\030\n\024CONNEC" +
-      "T_STATE_ONLINE\020\001*Q\n\013OnlineState\022\025\n\021ONLIN" +
-      "E_STATE_IDLE\020\000\022\025\n\021ONLINE_STATE_BUSY\020\001\022\024\n" +
-      "\020ONLINE_STATE_AFK\020\002*U\n\013WorkerState\022\022\n\016WO" +
-      "RKER_OFFLINE\020\000\022\020\n\014WORKER_READY\020\001\022\017\n\013WORK" +
-      "ER_BUSY\020\002\022\017\n\013WORKER_LOST\020\003*\240\001\n\017WorkerEve" +
-      "ntType\022\027\n\023WORKER_EVENT_ONLINE\020\000\022\025\n\021WORKE" +
-      "R_EVENT_PING\020\001\022\026\n\022WORKER_EVENT_ERROR\020\002\022\025" +
-      "\n\021WORKER_EVENT_AWAY\020\003\022\025\n\021WORKER_EVENT_BU" +
-      "SY\020\004\022\027\n\023WORKER_EVENT_LOGOUT\020\005B3\n\032com.ten" +
-      "easyChat.api.commonZ\025wcs/api/common;comm" +
-      "onb\006proto3"
+      "2\032.google.protobuf.Timestamp\022-\n\tcreate_a" +
+      "t\030\022 \001(\0132\032.google.protobuf.Timestamp\022-\n\tu" +
+      "pdate_at\030\023 \001(\0132\032.google.protobuf.Timesta" +
+      "mp\0221\n\016disable_status\030\024 \001(\0162\031.api.common." +
+      "DisableStatus\"\352\001\n\013WorkerGroup\022\n\n\002id\030\001 \001(" +
+      "\003\022\014\n\004name\030\002 \001(\t\022\020\n\010priority\030\003 \001(\005\022\r\n\005cou" +
+      "nt\030\004 \001(\005\022\020\n\010parentId\030\005 \001(\003\022\030\n\005ratio\030\006 \001(" +
+      "\005B\t\372B\006\032\004\030d(\000\022\022\n\nconsult_id\030\007 \001(\r\022-\n\tdele" +
+      "te_at\030\010 \001(\0132\032.google.protobuf.Timestamp\022" +
+      "1\n\016disable_status\030\t \001(\0162\031.api.common.Dis" +
+      "ableStatus\":\n\014Distribution\022\n\n\002id\030\001 \001(\003\022\014" +
+      "\n\004name\030\002 \001(\t\022\020\n\010priority\030\003 \001(\005\":\n\014Tenant" +
+      "Clique\022\n\n\002id\030\001 \001(\005\022\014\n\004name\030\002 \001(\t\022\020\n\010prio" +
+      "rity\030\003 \001(\005\"\314\002\n\020ApplyWorkerState\022\n\n\002id\030\001 " +
+      "\001(\005\022\021\n\ttenant_id\030\002 \001(\005\022\021\n\tworker_id\030\003 \001(" +
+      "\005\022\014\n\004name\030\004 \001(\t\022\031\n\021worker_group_name\030\005 \001" +
+      "(\t\022\037\n\027worker_group_child_name\030\006 \001(\t\0221\n\020o" +
+      "nline_state_now\030\007 \001(\0162\027.api.common.Onlin" +
+      "eState\0223\n\022online_state_apply\030\010 \001(\0162\027.api" +
+      ".common.OnlineState\022\023\n\013apply_state\030\t \001(\005" +
+      "\022\022\n\napply_time\030\n \001(\003\022\022\n\ncheck_time\030\013 \001(\003" +
+      "\022\027\n\017update_username\030\014 \001(\t*y\n\020Distributio" +
+      "nType\022\030\n\024DISTRIBUTION_LEISURE\020\000\022\025\n\021DISTR" +
+      "IBUTION_BUSY\020\001\022\030\n\024DISTRIBUTION_OFFLINE\020\002" +
+      "\022\032\n\026DISTRIBUTION_NOT_LOGIN\020\003*\322\001\n\020WorkerP" +
+      "ermission\022\024\n\020WORKER_PERM_NONE\020\000\022\023\n\017WORKE" +
+      "R_PERM_TOP\020\001\022\025\n\021WORKER_PERM_ADMIN\020\002\022\026\n\022W" +
+      "ORKER_PERM_LEADER\020\004\022\027\n\023WORKER_PERM_FRONT" +
+      "ER\020\010\022\030\n\024WORKER_PERM_TRANSFER\020\020\022\030\n\024WORKER" +
+      "_PERM_SEARCHER\020 \022\027\n\023WORKER_PERM_BLACKER\020" +
+      "@*C\n\014ConnectState\022\031\n\025CONNECT_STATE_OFFLI" +
+      "NE\020\000\022\030\n\024CONNECT_STATE_ONLINE\020\001*Q\n\013Online" +
+      "State\022\025\n\021ONLINE_STATE_IDLE\020\000\022\025\n\021ONLINE_S" +
+      "TATE_BUSY\020\001\022\024\n\020ONLINE_STATE_AFK\020\002*U\n\013Wor" +
+      "kerState\022\022\n\016WORKER_OFFLINE\020\000\022\020\n\014WORKER_R" +
+      "EADY\020\001\022\017\n\013WORKER_BUSY\020\002\022\017\n\013WORKER_LOST\020\003" +
+      "*\240\001\n\017WorkerEventType\022\027\n\023WORKER_EVENT_ONL" +
+      "INE\020\000\022\025\n\021WORKER_EVENT_PING\020\001\022\026\n\022WORKER_E" +
+      "VENT_ERROR\020\002\022\025\n\021WORKER_EVENT_AWAY\020\003\022\025\n\021W" +
+      "ORKER_EVENT_BUSY\020\004\022\027\n\023WORKER_EVENT_LOGOU" +
+      "T\020\005B3\n\032com.teneasyChat.api.commonZ\025wcs/a" +
+      "pi/common;commonb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -10249,7 +10771,7 @@ public final class CWorker {
     internal_static_api_common_Worker_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_common_Worker_descriptor,
-        new java.lang.String[] { "WorkerId", "Account", "Group", "PermMask", "Name", "Avatar", "OnlineState", "Password", "ConnectState", "TenantId", "WorkerNimid", "WorkerNimsession", "Bneednim", "GroupChild", "Tips", "ConsultIds", "DeleteAt", "DisableStatus", });
+        new java.lang.String[] { "WorkerId", "Account", "Group", "PermMask", "Name", "Avatar", "OnlineState", "Password", "ConnectState", "TenantId", "WorkerNimid", "WorkerNimsession", "Bneednim", "GroupChild", "Tips", "ConsultIds", "DeleteAt", "CreateAt", "UpdateAt", "DisableStatus", });
     internal_static_api_common_WorkerGroup_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_api_common_WorkerGroup_fieldAccessorTable = new

@@ -3418,6 +3418,16 @@ public final class CChat {
      * @return The visible.
      */
     boolean getVisible();
+
+    /**
+     * <pre>
+     * 已接待中会话中最后一条信息客服是否回复
+     * </pre>
+     *
+     * <code>bool is_worker_reply = 11;</code>
+     * @return The isWorkerReply.
+     */
+    boolean getIsWorkerReply();
   }
   /**
    * Protobuf type {@code api.common.ChatItem}
@@ -3729,6 +3739,21 @@ public final class CChat {
       return visible_;
     }
 
+    public static final int IS_WORKER_REPLY_FIELD_NUMBER = 11;
+    private boolean isWorkerReply_ = false;
+    /**
+     * <pre>
+     * 已接待中会话中最后一条信息客服是否回复
+     * </pre>
+     *
+     * <code>bool is_worker_reply = 11;</code>
+     * @return The isWorkerReply.
+     */
+    @java.lang.Override
+    public boolean getIsWorkerReply() {
+      return isWorkerReply_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -3772,6 +3797,9 @@ public final class CChat {
       }
       if (((bitField0_ & 0x00000008) != 0)) {
         output.writeMessage(10, getBeginAt());
+      }
+      if (isWorkerReply_ != false) {
+        output.writeBool(11, isWorkerReply_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -3821,6 +3849,10 @@ public final class CChat {
       if (((bitField0_ & 0x00000008) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(10, getBeginAt());
+      }
+      if (isWorkerReply_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(11, isWorkerReply_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -3874,6 +3906,8 @@ public final class CChat {
       }
       if (getVisible()
           != other.getVisible()) return false;
+      if (getIsWorkerReply()
+          != other.getIsWorkerReply()) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -3919,6 +3953,9 @@ public final class CChat {
       hash = (37 * hash) + VISIBLE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getVisible());
+      hash = (37 * hash) + IS_WORKER_REPLY_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsWorkerReply());
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -4095,6 +4132,7 @@ public final class CChat {
           resetAtBuilder_ = null;
         }
         visible_ = false;
+        isWorkerReply_ = false;
         return this;
       }
 
@@ -4177,6 +4215,9 @@ public final class CChat {
         if (((from_bitField0_ & 0x00000200) != 0)) {
           result.visible_ = visible_;
         }
+        if (((from_bitField0_ & 0x00000400) != 0)) {
+          result.isWorkerReply_ = isWorkerReply_;
+        }
         result.bitField0_ |= to_bitField0_;
       }
 
@@ -4221,6 +4262,9 @@ public final class CChat {
         }
         if (other.getVisible() != false) {
           setVisible(other.getVisible());
+        }
+        if (other.getIsWorkerReply() != false) {
+          setIsWorkerReply(other.getIsWorkerReply());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -4310,6 +4354,11 @@ public final class CChat {
                 bitField0_ |= 0x00000040;
                 break;
               } // case 82
+              case 88: {
+                isWorkerReply_ = input.readBool();
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 88
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -5394,6 +5443,50 @@ public final class CChat {
         return this;
       }
 
+      private boolean isWorkerReply_ ;
+      /**
+       * <pre>
+       * 已接待中会话中最后一条信息客服是否回复
+       * </pre>
+       *
+       * <code>bool is_worker_reply = 11;</code>
+       * @return The isWorkerReply.
+       */
+      @java.lang.Override
+      public boolean getIsWorkerReply() {
+        return isWorkerReply_;
+      }
+      /**
+       * <pre>
+       * 已接待中会话中最后一条信息客服是否回复
+       * </pre>
+       *
+       * <code>bool is_worker_reply = 11;</code>
+       * @param value The isWorkerReply to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsWorkerReply(boolean value) {
+
+        isWorkerReply_ = value;
+        bitField0_ |= 0x00000400;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 已接待中会话中最后一条信息客服是否回复
+       * </pre>
+       *
+       * <code>bool is_worker_reply = 11;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIsWorkerReply() {
+        bitField0_ = (bitField0_ & ~0x00000400);
+        isWorkerReply_ = false;
+        onChanged();
+        return this;
+      }
+
       // @@protoc_insertion_point(builder_scope:api.common.ChatItem)
     }
 
@@ -5478,7 +5571,7 @@ public final class CChat {
       "otobuf.Timestamp\022+\n\nowner_role\030\r \001(\0162\027.a" +
       "pi.common.MessageRole\022\024\n\007nimName\030\016 \001(\tH\000" +
       "\210\001\001\022\016\n\006userid\030\017 \001(\005\022$\n\005state\030\020 \001(\0162\025.api" +
-      ".common.ChatStateB\n\n\010_nimName\"\356\002\n\010ChatIt" +
+      ".common.ChatStateB\n\n\010_nimName\"\207\003\n\010ChatIt" +
       "em\022\017\n\007chat_id\030\001 \001(\003\022$\n\005state\030\002 \001(\0162\025.api" +
       ".common.ChatState\022\016\n\006unread\030\003 \001(\005\022\'\n\nlat" +
       "est_msg\030\004 \001(\0132\023.api.common.Message\022-\n\tcr" +
@@ -5487,9 +5580,10 @@ public final class CChat {
       "Timestamp\022,\n\010begin_at\030\n \001(\0132\032.google.pro" +
       "tobuf.Timestamp\022&\n\006detail\030\007 \001(\0132\026.api.co" +
       "mmon.ChatDetail\022,\n\010reset_at\030\010 \001(\0132\032.goog" +
-      "le.protobuf.Timestamp\022\017\n\007visible\030\t \001(\010B<" +
-      "\n\032com.teneasyChat.api.commonZ\025wcs/api/co" +
-      "mmon;common\272\002\006Commonb\006proto3"
+      "le.protobuf.Timestamp\022\017\n\007visible\030\t \001(\010\022\027" +
+      "\n\017is_worker_reply\030\013 \001(\010B<\n\032com.teneasyCh" +
+      "at.api.commonZ\025wcs/api/common;common\272\002\006C" +
+      "ommonb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -5510,7 +5604,7 @@ public final class CChat {
     internal_static_api_common_ChatItem_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_common_ChatItem_descriptor,
-        new java.lang.String[] { "ChatId", "State", "Unread", "LatestMsg", "CreateAt", "ServiceAt", "BeginAt", "Detail", "ResetAt", "Visible", });
+        new java.lang.String[] { "ChatId", "State", "Unread", "LatestMsg", "CreateAt", "ServiceAt", "BeginAt", "Detail", "ResetAt", "Visible", "IsWorkerReply", });
     descriptor.resolveAllFeaturesImmutable();
     io.envoyproxy.pgv.validate.Validate.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
