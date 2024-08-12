@@ -113,7 +113,7 @@ class MainActivity : AppCompatActivity(), TeneasySDKDelegate {
         }
 //httos://csh5.hfxg.xyz,https://csapi.dev.stream
         //httpo://csh5.hfxg.xyz,http://csh5.hfxg.xyz,https://csapi.xdev.stream,https://xx.xdev.stream
-        val lineLib = LineDetectLib("https://csapi.xdev.stream,https://wcsapi.qixin14.xyz,https://wcsapi.qixin14.xyz",  object : LineDetectDelegate {
+        val lineLib = LineDetectLib("https://wcsapi.qixin14.xyz,https://csapi.hfxg.xyz",  object : LineDetectDelegate {
             override fun useTheLine(line: String) {
                 Log.i("LineLib", "使用线路："+ line)
                 appendText("Wss: " + line + "\n")
@@ -140,7 +140,7 @@ class MainActivity : AppCompatActivity(), TeneasySDKDelegate {
         var wssUrl = "wss://" + baseUrl + "/v1/gateway/h5?"
         //token: COYBEAIYzNdEIPIBKJDZrOP3MQ.maPNGL2-vih71Eg4ghU4aTMSY6Sl0Zt8GTH6colScbTZQiTM5hak9do9qyxvhxSes-HuKbsNMLlBE72Z3J-4Bg
         //666668，364154
-        chatLib = ChatLib("COYBEAUYASDyASiG2piD9zE.te46qua5ha2r-Caz03Vx2JXH5OLSRRV2GqdYcn9UslwibsxBSP98GhUKSGEI0Z84FRMkp16ZK8eS-y72QVE2AQ", "", wssUrl, 666668, "9zgd9YUc")
+        chatLib = ChatLib("COYBEAUYASDyASiG2piD9zE.te46qua5ha2r-Caz03Vx2JXH5OLSRRV2GqdYcn9UslwibsxBSP98GhUKSGEI0Z84FRMkp16ZK8eS-y72QVE2AQ", "", wssUrl, 666665, "9zgd9YUc")
         chatLib.listener = this
         chatLib.makeConnect()
 
@@ -234,7 +234,7 @@ class MainActivity : AppCompatActivity(), TeneasySDKDelegate {
         //Log.i(Tag, "workerId:" + workerId)
         Log.i(Tag, "token:" + c.token)
         isConnected = true
-        appendText("成功连接 workerId:" + workerId)
+        appendText("成功连接")
     }
 
     override fun workChanged(msg: GGateway.SCWorkerChanged) {
