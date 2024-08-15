@@ -6,6 +6,7 @@ import com.teneasyChat.api.common.CEntrance.ClientType
 import com.teneasyChat.api.common.CMessage
 import com.teneasyChat.api.common.CMessage.Message
 import com.teneasyChat.api.common.CMessage.MessageFormat
+import com.teneasyChat.api.common.CMessage.WithAutoReply
 import com.teneasyChat.gateway.GAction
 import com.teneasyChat.gateway.GGateway
 import com.teneasyChat.gateway.GPayload
@@ -94,6 +95,7 @@ class ChatLib constructor(cert: String, token:String, baseUrl:String = "", userI
     private var sessionTime: Int = 0
     private var beatTimes = 0
     private var maxSessionMinutes = 9000000//相当于不设置会话实际限制 //测试放1分钟，上线放120或90
+    private var withAutoReply: WithAutoReply? = null
 
     init {
         this.chatId = chatID
@@ -159,9 +161,10 @@ class ChatLib constructor(cert: String, token:String, baseUrl:String = "", userI
      * 发送文本类型的消息
      * @param msg   消息内容或图片url,音频url,视频url...
      */
-     fun sendMessage(msg: String, type: MessageFormat, consultId: Long, replyMsgId: Long = 0) {
+     fun sendMessage(msg: String, type: MessageFormat, consultId: Long, replyMsgId: Long = 0, withAutoReply: WithAutoReply? = null) {
         this.replyMsgId = replyMsgId;
          this.consultId = consultId;
+        this.withAutoReply = withAutoReply
       if (type == MessageFormat.MSG_TEXT){
           sendTextMessage(msg)
       }else if (type == MessageFormat.MSG_IMG){
@@ -214,6 +217,10 @@ class ChatLib constructor(cert: String, token:String, baseUrl:String = "", userI
         msg.chatId = chatId
         msg.worker = 0
         msg.msgTime = TimeUtil.msgTime()
+
+        if (withAutoReply != null) {
+            msg.setWithAutoReplies(0, withAutoReply)
+        }
 
         sendingMessage = msg.build()
     }
