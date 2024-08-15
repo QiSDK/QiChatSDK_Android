@@ -218,7 +218,7 @@ class ChatLib constructor(cert: String, token:String, baseUrl:String = "", userI
         msg.worker = 0
         msg.msgTime = TimeUtil.msgTime()
 
-        if (withAutoReply != null) {
+        if (withAutoReply != null && msgList.size == 0) {
             msg.setWithAutoReplies(0, withAutoReply)
         }
 
