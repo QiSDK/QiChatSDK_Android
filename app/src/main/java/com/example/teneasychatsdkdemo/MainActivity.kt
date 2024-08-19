@@ -173,6 +173,12 @@ class MainActivity : AppCompatActivity(), TeneasySDKDelegate {
         withAutoReplyBuilder.id = 1
         //withAutoReplyBuilder.createdTime = Utils().getNowTimeStamp()
 
+        val uAnswer = CMessage.MessageUnion.newBuilder()
+        val uQC = CMessage.MessageContent.newBuilder()
+        uQC.data = "txtAnswer"
+        uAnswer.content = uQC.build()
+        withAutoReplyBuilder.addAnswers(uAnswer)
+
         chatLib.sendMessage(sayHello, CMessage.MessageFormat.MSG_TEXT, 1, 0, withAutoReplyBuilder.build())
         val payloadId = chatLib.payloadId
         val sendingMsg = chatLib.sendingMessage
