@@ -569,6 +569,7 @@ EntranceNotExistsFlag = 0x4
      */
     fun disConnect(){
         stopTimer()
+        msgList.clear()
         if (socket != null) {
             socket?.close()
             socket = null
