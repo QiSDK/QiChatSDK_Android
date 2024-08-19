@@ -20,6 +20,7 @@ import java.net.URI
 import java.nio.ByteBuffer
 import java.nio.charset.StandardCharsets
 import java.util.*
+import kotlin.collections.ArrayList
 
 
 interface TeneasySDKDelegate {
@@ -218,8 +219,10 @@ class ChatLib constructor(cert: String, token:String, baseUrl:String = "", userI
         msg.worker = 0
         msg.msgTime = TimeUtil.msgTime()
 
-        if (withAutoReply != null && msgList.size == 0) {
-            msg.setWithAutoReplies(0, withAutoReply)
+        if (withAutoReply != null && msgList.size == 0 && (withAutoReply?.id ?: 0) > 0) {
+            var aList = ArrayList<WithAutoReply>()
+            aList.add(withAutoReply!!)
+            msg.addAllWithAutoReplies(aList)
         }
 
         sendingMessage = msg.build()

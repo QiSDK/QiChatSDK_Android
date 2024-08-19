@@ -166,7 +166,14 @@ class MainActivity : AppCompatActivity(), TeneasySDKDelegate {
         val sayHello = "你好！今天去哪玩？"
         //val msgItem = chatLib.composeALocalMessage(sayHello)
         //addMsgItem(msgItem)
-        chatLib.sendMessage(sayHello, CMessage.MessageFormat.MSG_TEXT, 1, 0)
+
+        var withAutoReplyBuilder = CMessage.WithAutoReply.newBuilder()
+
+        withAutoReplyBuilder.title = "自动回复的标题"
+        withAutoReplyBuilder.id = 1
+        //withAutoReplyBuilder.createdTime = Utils().getNowTimeStamp()
+
+        chatLib.sendMessage(sayHello, CMessage.MessageFormat.MSG_TEXT, 1, 0, withAutoReplyBuilder.build())
         val payloadId = chatLib.payloadId
         val sendingMsg = chatLib.sendingMessage
 
