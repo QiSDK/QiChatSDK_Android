@@ -219,7 +219,7 @@ class ChatLib constructor(cert: String, token:String, baseUrl:String = "", userI
         msg.worker = 0
         msg.msgTime = TimeUtil.msgTime()
 
-        if (withAutoReply != null && msgList.size == 0 && (withAutoReply?.id ?: 0) > 0) {
+        if (withAutoReply != null && (withAutoReply?.id ?: 0) > 0) {
             var aList = ArrayList<WithAutoReply>()
             aList.add(withAutoReply!!)
             msg.addAllWithAutoReplies(aList)
@@ -569,7 +569,6 @@ EntranceNotExistsFlag = 0x4
      */
     fun disConnect(){
         stopTimer()
-        msgList.clear()
         if (socket != null) {
             socket?.close()
             socket = null
