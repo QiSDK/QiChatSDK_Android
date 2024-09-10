@@ -2128,6 +2128,16 @@ public final class NoteOuterClass {
      * <code>.api.common.Batch batch = 2 [(.validate.rules) = { ... }</code>
      */
     com.teneasyChat.api.common.CBase.BatchOrBuilder getBatchOrBuilder();
+
+    /**
+     * <pre>
+     * 咨询id
+     * </pre>
+     *
+     * <code>uint32 consult_id = 3;</code>
+     * @return The consultId.
+     */
+    int getConsultId();
   }
   /**
    * Protobuf type {@code api.core.QueryNoteRequest}
@@ -2204,6 +2214,21 @@ public final class NoteOuterClass {
       return batch_ == null ? com.teneasyChat.api.common.CBase.Batch.getDefaultInstance() : batch_;
     }
 
+    public static final int CONSULT_ID_FIELD_NUMBER = 3;
+    private int consultId_ = 0;
+    /**
+     * <pre>
+     * 咨询id
+     * </pre>
+     *
+     * <code>uint32 consult_id = 3;</code>
+     * @return The consultId.
+     */
+    @java.lang.Override
+    public int getConsultId() {
+      return consultId_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -2224,6 +2249,9 @@ public final class NoteOuterClass {
       if (((bitField0_ & 0x00000001) != 0)) {
         output.writeMessage(2, getBatch());
       }
+      if (consultId_ != 0) {
+        output.writeUInt32(3, consultId_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -2240,6 +2268,10 @@ public final class NoteOuterClass {
       if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, getBatch());
+      }
+      if (consultId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(3, consultId_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -2263,6 +2295,8 @@ public final class NoteOuterClass {
         if (!getBatch()
             .equals(other.getBatch())) return false;
       }
+      if (getConsultId()
+          != other.getConsultId()) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -2281,6 +2315,8 @@ public final class NoteOuterClass {
         hash = (37 * hash) + BATCH_FIELD_NUMBER;
         hash = (53 * hash) + getBatch().hashCode();
       }
+      hash = (37 * hash) + CONSULT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getConsultId();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -2424,6 +2460,7 @@ public final class NoteOuterClass {
           batchBuilder_.dispose();
           batchBuilder_ = null;
         }
+        consultId_ = 0;
         return this;
       }
 
@@ -2467,6 +2504,9 @@ public final class NoteOuterClass {
               : batchBuilder_.build();
           to_bitField0_ |= 0x00000001;
         }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.consultId_ = consultId_;
+        }
         result.bitField0_ |= to_bitField0_;
       }
 
@@ -2487,6 +2527,9 @@ public final class NoteOuterClass {
         }
         if (other.hasBatch()) {
           mergeBatch(other.getBatch());
+        }
+        if (other.getConsultId() != 0) {
+          setConsultId(other.getConsultId());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -2526,6 +2569,11 @@ public final class NoteOuterClass {
                 bitField0_ |= 0x00000002;
                 break;
               } // case 18
+              case 24: {
+                consultId_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 24
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -2694,6 +2742,50 @@ public final class NoteOuterClass {
           batch_ = null;
         }
         return batchBuilder_;
+      }
+
+      private int consultId_ ;
+      /**
+       * <pre>
+       * 咨询id
+       * </pre>
+       *
+       * <code>uint32 consult_id = 3;</code>
+       * @return The consultId.
+       */
+      @java.lang.Override
+      public int getConsultId() {
+        return consultId_;
+      }
+      /**
+       * <pre>
+       * 咨询id
+       * </pre>
+       *
+       * <code>uint32 consult_id = 3;</code>
+       * @param value The consultId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setConsultId(int value) {
+
+        consultId_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 咨询id
+       * </pre>
+       *
+       * <code>uint32 consult_id = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearConsultId() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        consultId_ = 0;
+        onChanged();
+        return this;
       }
 
       // @@protoc_insertion_point(builder_scope:api.core.QueryNoteRequest)
@@ -7641,39 +7733,39 @@ public final class NoteOuterClass {
       "Timestamp\022%\n\010note_msg\030\004 \001(\0132\023.api.common" +
       ".Message\"e\n\004Note\022\030\n\020chat_note_msg_id\030\001 \001" +
       "(\003\022 \n\003src\030\002 \001(\0132\023.api.common.Message\022!\n\005" +
-      "notes\030\003 \003(\0132\022.api.core.NoteItem\"X\n\020Query" +
+      "notes\030\003 \003(\0132\022.api.core.NoteItem\"l\n\020Query" +
       "NoteRequest\022\030\n\007chat_id\030\001 \001(\003B\007\372B\004\"\002 \000\022*\n" +
       "\005batch\030\002 \001(\0132\021.api.common.BatchB\010\372B\005\212\001\002\020" +
-      "\001\"t\n\021QueryNoteResponse\022\017\n\007chat_id\030\001 \001(\003\022" +
-      "\r\n\005total\030\002 \001(\003\022 \n\005batch\030\003 \001(\0132\021.api.comm" +
-      "on.Batch\022\035\n\005notes\030\004 \003(\0132\016.api.core.Note\"" +
-      "\212\001\n\021CreateNoteRequest\022\030\n\007chat_id\030\001 \001(\003B\007" +
-      "\372B\004\"\002 \000\022*\n\003src\030\002 \001(\0132\023.api.common.Messag" +
-      "eB\010\372B\005\212\001\002\020\001\022/\n\010note_msg\030\003 \001(\0132\023.api.comm" +
-      "on.MessageB\010\372B\005\212\001\002\020\001\"2\n\022CreateNoteRespon" +
-      "se\022\034\n\004note\030\001 \001(\0132\016.api.core.Note\"\272\001\n\021Upd" +
-      "ateNoteRequest\022\030\n\007chat_id\030\001 \001(\003B\007\372B\004\"\002 \000" +
-      "\022!\n\020chat_note_msg_id\030\002 \001(\003B\007\372B\004\"\002 \000\0227\n\tc" +
-      "reate_at\030\003 \001(\0132\032.google.protobuf.Timesta" +
-      "mpB\010\372B\005\262\001\002\010\001\022/\n\010note_msg\030\004 \001(\0132\023.api.com" +
-      "mon.MessageB\010\372B\005\212\001\002\020\001\"2\n\022UpdateNoteRespo" +
-      "nse\022\034\n\004note\030\001 \001(\0132\016.api.core.Note\"\211\001\n\021De" +
-      "leteNoteRequest\022\030\n\007chat_id\030\001 \001(\003B\007\372B\004\"\002 " +
-      "\000\022!\n\020chat_note_msg_id\030\002 \001(\003B\007\372B\004\"\002 \000\0227\n\t" +
-      "create_at\030\003 \001(\0132\032.google.protobuf.Timest" +
-      "ampB\010\372B\005\262\001\002\010\0012\223\003\n\007NoteSrv\022W\n\tQueryNote\022\032" +
-      ".api.core.QueryNoteRequest\032\033.api.core.Qu" +
-      "eryNoteResponse\"\021\272\276\031\r\010\274\005\030\001\322\014\005query\022[\n\nCr" +
-      "eateNote\022\033.api.core.CreateNoteRequest\032\034." +
-      "api.core.CreateNoteResponse\"\022\272\276\031\016\010\275\005\030\001\322\014" +
-      "\006create\022[\n\nUpdateNote\022\033.api.core.UpdateN" +
-      "oteRequest\032\034.api.core.UpdateNoteResponse" +
-      "\"\022\272\276\031\016\010\276\005\030\001\322\014\006update\022U\n\nDeleteNote\022\033.api" +
-      ".core.DeleteNoteRequest\032\026.google.protobu" +
-      "f.Empty\"\022\272\276\031\016\010\277\005\030\001\322\014\006delete\032\036\272\276\031\032\272\006\004note" +
-      "\312\014\002\020\004\322\014\013tenant/noteBE\n\030com.teneasyChat.a" +
-      "pi.coreZ\021wcs/api/core;core\272\276\031\024\242\006\004jeff\262\006\n" +
-      "2023-02-07b\006proto3"
+      "\001\022\022\n\nconsult_id\030\003 \001(\r\"t\n\021QueryNoteRespon" +
+      "se\022\017\n\007chat_id\030\001 \001(\003\022\r\n\005total\030\002 \001(\003\022 \n\005ba" +
+      "tch\030\003 \001(\0132\021.api.common.Batch\022\035\n\005notes\030\004 " +
+      "\003(\0132\016.api.core.Note\"\212\001\n\021CreateNoteReques" +
+      "t\022\030\n\007chat_id\030\001 \001(\003B\007\372B\004\"\002 \000\022*\n\003src\030\002 \001(\013" +
+      "2\023.api.common.MessageB\010\372B\005\212\001\002\020\001\022/\n\010note_" +
+      "msg\030\003 \001(\0132\023.api.common.MessageB\010\372B\005\212\001\002\020\001" +
+      "\"2\n\022CreateNoteResponse\022\034\n\004note\030\001 \001(\0132\016.a" +
+      "pi.core.Note\"\272\001\n\021UpdateNoteRequest\022\030\n\007ch" +
+      "at_id\030\001 \001(\003B\007\372B\004\"\002 \000\022!\n\020chat_note_msg_id" +
+      "\030\002 \001(\003B\007\372B\004\"\002 \000\0227\n\tcreate_at\030\003 \001(\0132\032.goo" +
+      "gle.protobuf.TimestampB\010\372B\005\262\001\002\010\001\022/\n\010note" +
+      "_msg\030\004 \001(\0132\023.api.common.MessageB\010\372B\005\212\001\002\020" +
+      "\001\"2\n\022UpdateNoteResponse\022\034\n\004note\030\001 \001(\0132\016." +
+      "api.core.Note\"\211\001\n\021DeleteNoteRequest\022\030\n\007c" +
+      "hat_id\030\001 \001(\003B\007\372B\004\"\002 \000\022!\n\020chat_note_msg_i" +
+      "d\030\002 \001(\003B\007\372B\004\"\002 \000\0227\n\tcreate_at\030\003 \001(\0132\032.go" +
+      "ogle.protobuf.TimestampB\010\372B\005\262\001\002\010\0012\223\003\n\007No" +
+      "teSrv\022W\n\tQueryNote\022\032.api.core.QueryNoteR" +
+      "equest\032\033.api.core.QueryNoteResponse\"\021\272\276\031" +
+      "\r\010\274\005\030\001\322\014\005query\022[\n\nCreateNote\022\033.api.core." +
+      "CreateNoteRequest\032\034.api.core.CreateNoteR" +
+      "esponse\"\022\272\276\031\016\010\275\005\030\001\322\014\006create\022[\n\nUpdateNot" +
+      "e\022\033.api.core.UpdateNoteRequest\032\034.api.cor" +
+      "e.UpdateNoteResponse\"\022\272\276\031\016\010\276\005\030\001\322\014\006update" +
+      "\022U\n\nDeleteNote\022\033.api.core.DeleteNoteRequ" +
+      "est\032\026.google.protobuf.Empty\"\022\272\276\031\016\010\277\005\030\001\322\014" +
+      "\006delete\032\036\272\276\031\032\272\006\004note\312\014\002\020\004\322\014\013tenant/noteB" +
+      "E\n\030com.teneasyChat.api.coreZ\021wcs/api/cor" +
+      "e;core\272\276\031\024\242\006\004jeff\262\006\n2023-02-07b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -7702,7 +7794,7 @@ public final class NoteOuterClass {
     internal_static_api_core_QueryNoteRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_core_QueryNoteRequest_descriptor,
-        new java.lang.String[] { "ChatId", "Batch", });
+        new java.lang.String[] { "ChatId", "Batch", "ConsultId", });
     internal_static_api_core_QueryNoteResponse_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_api_core_QueryNoteResponse_fieldAccessorTable = new

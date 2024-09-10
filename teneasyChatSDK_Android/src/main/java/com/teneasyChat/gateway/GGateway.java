@@ -10688,6 +10688,16 @@ public final class GGateway {
      * @return The reason.
      */
     com.teneasyChat.gateway.GGateway.KickReason getReason();
+
+    /**
+     * <pre>
+     * 链接ID, 如果等于0忽略此参数只根据target踢人，如果不等于0只踢掉此socket链接
+     * </pre>
+     *
+     * <code>uint64 socket_id = 3;</code>
+     * @return The socketId.
+     */
+    long getSocketId();
   }
   /**
    * <pre>
@@ -10760,6 +10770,21 @@ public final class GGateway {
       return result == null ? com.teneasyChat.gateway.GGateway.KickReason.UNRECOGNIZED : result;
     }
 
+    public static final int SOCKET_ID_FIELD_NUMBER = 3;
+    private long socketId_ = 0L;
+    /**
+     * <pre>
+     * 链接ID, 如果等于0忽略此参数只根据target踢人，如果不等于0只踢掉此socket链接
+     * </pre>
+     *
+     * <code>uint64 socket_id = 3;</code>
+     * @return The socketId.
+     */
+    @java.lang.Override
+    public long getSocketId() {
+      return socketId_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -10780,6 +10805,9 @@ public final class GGateway {
       if (reason_ != com.teneasyChat.gateway.GGateway.KickReason.KickReasonCommon.getNumber()) {
         output.writeEnum(2, reason_);
       }
+      if (socketId_ != 0L) {
+        output.writeUInt64(3, socketId_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -10796,6 +10824,10 @@ public final class GGateway {
       if (reason_ != com.teneasyChat.gateway.GGateway.KickReason.KickReasonCommon.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(2, reason_);
+      }
+      if (socketId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(3, socketId_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -10815,6 +10847,8 @@ public final class GGateway {
       if (getTarget()
           != other.getTarget()) return false;
       if (reason_ != other.reason_) return false;
+      if (getSocketId()
+          != other.getSocketId()) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -10831,6 +10865,9 @@ public final class GGateway {
           getTarget());
       hash = (37 * hash) + REASON_FIELD_NUMBER;
       hash = (53 * hash) + reason_;
+      hash = (37 * hash) + SOCKET_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getSocketId());
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -10968,6 +11005,7 @@ public final class GGateway {
         bitField0_ = 0;
         target_ = 0L;
         reason_ = 0;
+        socketId_ = 0L;
         return this;
       }
 
@@ -11007,6 +11045,9 @@ public final class GGateway {
         if (((from_bitField0_ & 0x00000002) != 0)) {
           result.reason_ = reason_;
         }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.socketId_ = socketId_;
+        }
       }
 
       @java.lang.Override
@@ -11026,6 +11067,9 @@ public final class GGateway {
         }
         if (other.reason_ != 0) {
           setReasonValue(other.getReasonValue());
+        }
+        if (other.getSocketId() != 0L) {
+          setSocketId(other.getSocketId());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -11063,6 +11107,11 @@ public final class GGateway {
                 bitField0_ |= 0x00000002;
                 break;
               } // case 16
+              case 24: {
+                socketId_ = input.readUInt64();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 24
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -11161,6 +11210,50 @@ public final class GGateway {
       public Builder clearReason() {
         bitField0_ = (bitField0_ & ~0x00000002);
         reason_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private long socketId_ ;
+      /**
+       * <pre>
+       * 链接ID, 如果等于0忽略此参数只根据target踢人，如果不等于0只踢掉此socket链接
+       * </pre>
+       *
+       * <code>uint64 socket_id = 3;</code>
+       * @return The socketId.
+       */
+      @java.lang.Override
+      public long getSocketId() {
+        return socketId_;
+      }
+      /**
+       * <pre>
+       * 链接ID, 如果等于0忽略此参数只根据target踢人，如果不等于0只踢掉此socket链接
+       * </pre>
+       *
+       * <code>uint64 socket_id = 3;</code>
+       * @param value The socketId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSocketId(long value) {
+
+        socketId_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 链接ID, 如果等于0忽略此参数只根据target踢人，如果不等于0只踢掉此socket链接
+       * </pre>
+       *
+       * <code>uint64 socket_id = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSocketId() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        socketId_ = 0L;
         onChanged();
         return this;
       }
@@ -12965,6 +13058,1386 @@ public final class GGateway {
 
   }
 
+  public interface SystemMessageOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:gateway.SystemMessage)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>int64 target = 1;</code>
+     * @return The target.
+     */
+    long getTarget();
+
+    /**
+     * <code>.gateway.WorkerStateChange StateChange = 2;</code>
+     * @return Whether the stateChange field is set.
+     */
+    boolean hasStateChange();
+    /**
+     * <code>.gateway.WorkerStateChange StateChange = 2;</code>
+     * @return The stateChange.
+     */
+    com.teneasyChat.gateway.GGateway.WorkerStateChange getStateChange();
+    /**
+     * <code>.gateway.WorkerStateChange StateChange = 2;</code>
+     */
+    com.teneasyChat.gateway.GGateway.WorkerStateChangeOrBuilder getStateChangeOrBuilder();
+
+    com.teneasyChat.gateway.GGateway.SystemMessage.ContentCase getContentCase();
+  }
+  /**
+   * Protobuf type {@code gateway.SystemMessage}
+   */
+  public static final class SystemMessage extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:gateway.SystemMessage)
+      SystemMessageOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 26,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        SystemMessage.class.getName());
+    }
+    // Use SystemMessage.newBuilder() to construct.
+    private SystemMessage(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private SystemMessage() {
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.teneasyChat.gateway.GGateway.internal_static_gateway_SystemMessage_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.teneasyChat.gateway.GGateway.internal_static_gateway_SystemMessage_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.teneasyChat.gateway.GGateway.SystemMessage.class, com.teneasyChat.gateway.GGateway.SystemMessage.Builder.class);
+    }
+
+    private int contentCase_ = 0;
+    @SuppressWarnings("serial")
+    private java.lang.Object content_;
+    public enum ContentCase
+        implements com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+      STATECHANGE(2),
+      CONTENT_NOT_SET(0);
+      private final int value;
+      private ContentCase(int value) {
+        this.value = value;
+      }
+      /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static ContentCase valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static ContentCase forNumber(int value) {
+        switch (value) {
+          case 2: return STATECHANGE;
+          case 0: return CONTENT_NOT_SET;
+          default: return null;
+        }
+      }
+      public int getNumber() {
+        return this.value;
+      }
+    };
+
+    public ContentCase
+    getContentCase() {
+      return ContentCase.forNumber(
+          contentCase_);
+    }
+
+    public static final int TARGET_FIELD_NUMBER = 1;
+    private long target_ = 0L;
+    /**
+     * <code>int64 target = 1;</code>
+     * @return The target.
+     */
+    @java.lang.Override
+    public long getTarget() {
+      return target_;
+    }
+
+    public static final int STATECHANGE_FIELD_NUMBER = 2;
+    /**
+     * <code>.gateway.WorkerStateChange StateChange = 2;</code>
+     * @return Whether the stateChange field is set.
+     */
+    @java.lang.Override
+    public boolean hasStateChange() {
+      return contentCase_ == 2;
+    }
+    /**
+     * <code>.gateway.WorkerStateChange StateChange = 2;</code>
+     * @return The stateChange.
+     */
+    @java.lang.Override
+    public com.teneasyChat.gateway.GGateway.WorkerStateChange getStateChange() {
+      if (contentCase_ == 2) {
+         return (com.teneasyChat.gateway.GGateway.WorkerStateChange) content_;
+      }
+      return com.teneasyChat.gateway.GGateway.WorkerStateChange.getDefaultInstance();
+    }
+    /**
+     * <code>.gateway.WorkerStateChange StateChange = 2;</code>
+     */
+    @java.lang.Override
+    public com.teneasyChat.gateway.GGateway.WorkerStateChangeOrBuilder getStateChangeOrBuilder() {
+      if (contentCase_ == 2) {
+         return (com.teneasyChat.gateway.GGateway.WorkerStateChange) content_;
+      }
+      return com.teneasyChat.gateway.GGateway.WorkerStateChange.getDefaultInstance();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (target_ != 0L) {
+        output.writeInt64(1, target_);
+      }
+      if (contentCase_ == 2) {
+        output.writeMessage(2, (com.teneasyChat.gateway.GGateway.WorkerStateChange) content_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (target_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(1, target_);
+      }
+      if (contentCase_ == 2) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, (com.teneasyChat.gateway.GGateway.WorkerStateChange) content_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.teneasyChat.gateway.GGateway.SystemMessage)) {
+        return super.equals(obj);
+      }
+      com.teneasyChat.gateway.GGateway.SystemMessage other = (com.teneasyChat.gateway.GGateway.SystemMessage) obj;
+
+      if (getTarget()
+          != other.getTarget()) return false;
+      if (!getContentCase().equals(other.getContentCase())) return false;
+      switch (contentCase_) {
+        case 2:
+          if (!getStateChange()
+              .equals(other.getStateChange())) return false;
+          break;
+        case 0:
+        default:
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + TARGET_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getTarget());
+      switch (contentCase_) {
+        case 2:
+          hash = (37 * hash) + STATECHANGE_FIELD_NUMBER;
+          hash = (53 * hash) + getStateChange().hashCode();
+          break;
+        case 0:
+        default:
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.teneasyChat.gateway.GGateway.SystemMessage parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.gateway.GGateway.SystemMessage parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.gateway.GGateway.SystemMessage parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.gateway.GGateway.SystemMessage parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.gateway.GGateway.SystemMessage parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.gateway.GGateway.SystemMessage parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.gateway.GGateway.SystemMessage parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.teneasyChat.gateway.GGateway.SystemMessage parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.teneasyChat.gateway.GGateway.SystemMessage parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.teneasyChat.gateway.GGateway.SystemMessage parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.teneasyChat.gateway.GGateway.SystemMessage parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.teneasyChat.gateway.GGateway.SystemMessage parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.teneasyChat.gateway.GGateway.SystemMessage prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code gateway.SystemMessage}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:gateway.SystemMessage)
+        com.teneasyChat.gateway.GGateway.SystemMessageOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.teneasyChat.gateway.GGateway.internal_static_gateway_SystemMessage_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.teneasyChat.gateway.GGateway.internal_static_gateway_SystemMessage_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.teneasyChat.gateway.GGateway.SystemMessage.class, com.teneasyChat.gateway.GGateway.SystemMessage.Builder.class);
+      }
+
+      // Construct using com.teneasyChat.gateway.GGateway.SystemMessage.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        target_ = 0L;
+        if (stateChangeBuilder_ != null) {
+          stateChangeBuilder_.clear();
+        }
+        contentCase_ = 0;
+        content_ = null;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.teneasyChat.gateway.GGateway.internal_static_gateway_SystemMessage_descriptor;
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.gateway.GGateway.SystemMessage getDefaultInstanceForType() {
+        return com.teneasyChat.gateway.GGateway.SystemMessage.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.gateway.GGateway.SystemMessage build() {
+        com.teneasyChat.gateway.GGateway.SystemMessage result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.gateway.GGateway.SystemMessage buildPartial() {
+        com.teneasyChat.gateway.GGateway.SystemMessage result = new com.teneasyChat.gateway.GGateway.SystemMessage(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        buildPartialOneofs(result);
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.teneasyChat.gateway.GGateway.SystemMessage result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.target_ = target_;
+        }
+      }
+
+      private void buildPartialOneofs(com.teneasyChat.gateway.GGateway.SystemMessage result) {
+        result.contentCase_ = contentCase_;
+        result.content_ = this.content_;
+        if (contentCase_ == 2 &&
+            stateChangeBuilder_ != null) {
+          result.content_ = stateChangeBuilder_.build();
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.teneasyChat.gateway.GGateway.SystemMessage) {
+          return mergeFrom((com.teneasyChat.gateway.GGateway.SystemMessage)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.teneasyChat.gateway.GGateway.SystemMessage other) {
+        if (other == com.teneasyChat.gateway.GGateway.SystemMessage.getDefaultInstance()) return this;
+        if (other.getTarget() != 0L) {
+          setTarget(other.getTarget());
+        }
+        switch (other.getContentCase()) {
+          case STATECHANGE: {
+            mergeStateChange(other.getStateChange());
+            break;
+          }
+          case CONTENT_NOT_SET: {
+            break;
+          }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                target_ = input.readInt64();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 18: {
+                input.readMessage(
+                    getStateChangeFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                contentCase_ = 2;
+                break;
+              } // case 18
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int contentCase_ = 0;
+      private java.lang.Object content_;
+      public ContentCase
+          getContentCase() {
+        return ContentCase.forNumber(
+            contentCase_);
+      }
+
+      public Builder clearContent() {
+        contentCase_ = 0;
+        content_ = null;
+        onChanged();
+        return this;
+      }
+
+      private int bitField0_;
+
+      private long target_ ;
+      /**
+       * <code>int64 target = 1;</code>
+       * @return The target.
+       */
+      @java.lang.Override
+      public long getTarget() {
+        return target_;
+      }
+      /**
+       * <code>int64 target = 1;</code>
+       * @param value The target to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTarget(long value) {
+
+        target_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 target = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTarget() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        target_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.SingleFieldBuilder<
+          com.teneasyChat.gateway.GGateway.WorkerStateChange, com.teneasyChat.gateway.GGateway.WorkerStateChange.Builder, com.teneasyChat.gateway.GGateway.WorkerStateChangeOrBuilder> stateChangeBuilder_;
+      /**
+       * <code>.gateway.WorkerStateChange StateChange = 2;</code>
+       * @return Whether the stateChange field is set.
+       */
+      @java.lang.Override
+      public boolean hasStateChange() {
+        return contentCase_ == 2;
+      }
+      /**
+       * <code>.gateway.WorkerStateChange StateChange = 2;</code>
+       * @return The stateChange.
+       */
+      @java.lang.Override
+      public com.teneasyChat.gateway.GGateway.WorkerStateChange getStateChange() {
+        if (stateChangeBuilder_ == null) {
+          if (contentCase_ == 2) {
+            return (com.teneasyChat.gateway.GGateway.WorkerStateChange) content_;
+          }
+          return com.teneasyChat.gateway.GGateway.WorkerStateChange.getDefaultInstance();
+        } else {
+          if (contentCase_ == 2) {
+            return stateChangeBuilder_.getMessage();
+          }
+          return com.teneasyChat.gateway.GGateway.WorkerStateChange.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.gateway.WorkerStateChange StateChange = 2;</code>
+       */
+      public Builder setStateChange(com.teneasyChat.gateway.GGateway.WorkerStateChange value) {
+        if (stateChangeBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          content_ = value;
+          onChanged();
+        } else {
+          stateChangeBuilder_.setMessage(value);
+        }
+        contentCase_ = 2;
+        return this;
+      }
+      /**
+       * <code>.gateway.WorkerStateChange StateChange = 2;</code>
+       */
+      public Builder setStateChange(
+          com.teneasyChat.gateway.GGateway.WorkerStateChange.Builder builderForValue) {
+        if (stateChangeBuilder_ == null) {
+          content_ = builderForValue.build();
+          onChanged();
+        } else {
+          stateChangeBuilder_.setMessage(builderForValue.build());
+        }
+        contentCase_ = 2;
+        return this;
+      }
+      /**
+       * <code>.gateway.WorkerStateChange StateChange = 2;</code>
+       */
+      public Builder mergeStateChange(com.teneasyChat.gateway.GGateway.WorkerStateChange value) {
+        if (stateChangeBuilder_ == null) {
+          if (contentCase_ == 2 &&
+              content_ != com.teneasyChat.gateway.GGateway.WorkerStateChange.getDefaultInstance()) {
+            content_ = com.teneasyChat.gateway.GGateway.WorkerStateChange.newBuilder((com.teneasyChat.gateway.GGateway.WorkerStateChange) content_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            content_ = value;
+          }
+          onChanged();
+        } else {
+          if (contentCase_ == 2) {
+            stateChangeBuilder_.mergeFrom(value);
+          } else {
+            stateChangeBuilder_.setMessage(value);
+          }
+        }
+        contentCase_ = 2;
+        return this;
+      }
+      /**
+       * <code>.gateway.WorkerStateChange StateChange = 2;</code>
+       */
+      public Builder clearStateChange() {
+        if (stateChangeBuilder_ == null) {
+          if (contentCase_ == 2) {
+            contentCase_ = 0;
+            content_ = null;
+            onChanged();
+          }
+        } else {
+          if (contentCase_ == 2) {
+            contentCase_ = 0;
+            content_ = null;
+          }
+          stateChangeBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.gateway.WorkerStateChange StateChange = 2;</code>
+       */
+      public com.teneasyChat.gateway.GGateway.WorkerStateChange.Builder getStateChangeBuilder() {
+        return getStateChangeFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.gateway.WorkerStateChange StateChange = 2;</code>
+       */
+      @java.lang.Override
+      public com.teneasyChat.gateway.GGateway.WorkerStateChangeOrBuilder getStateChangeOrBuilder() {
+        if ((contentCase_ == 2) && (stateChangeBuilder_ != null)) {
+          return stateChangeBuilder_.getMessageOrBuilder();
+        } else {
+          if (contentCase_ == 2) {
+            return (com.teneasyChat.gateway.GGateway.WorkerStateChange) content_;
+          }
+          return com.teneasyChat.gateway.GGateway.WorkerStateChange.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.gateway.WorkerStateChange StateChange = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          com.teneasyChat.gateway.GGateway.WorkerStateChange, com.teneasyChat.gateway.GGateway.WorkerStateChange.Builder, com.teneasyChat.gateway.GGateway.WorkerStateChangeOrBuilder> 
+          getStateChangeFieldBuilder() {
+        if (stateChangeBuilder_ == null) {
+          if (!(contentCase_ == 2)) {
+            content_ = com.teneasyChat.gateway.GGateway.WorkerStateChange.getDefaultInstance();
+          }
+          stateChangeBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              com.teneasyChat.gateway.GGateway.WorkerStateChange, com.teneasyChat.gateway.GGateway.WorkerStateChange.Builder, com.teneasyChat.gateway.GGateway.WorkerStateChangeOrBuilder>(
+                  (com.teneasyChat.gateway.GGateway.WorkerStateChange) content_,
+                  getParentForChildren(),
+                  isClean());
+          content_ = null;
+        }
+        contentCase_ = 2;
+        onChanged();
+        return stateChangeBuilder_;
+      }
+
+      // @@protoc_insertion_point(builder_scope:gateway.SystemMessage)
+    }
+
+    // @@protoc_insertion_point(class_scope:gateway.SystemMessage)
+    private static final com.teneasyChat.gateway.GGateway.SystemMessage DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.teneasyChat.gateway.GGateway.SystemMessage();
+    }
+
+    public static com.teneasyChat.gateway.GGateway.SystemMessage getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<SystemMessage>
+        PARSER = new com.google.protobuf.AbstractParser<SystemMessage>() {
+      @java.lang.Override
+      public SystemMessage parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<SystemMessage> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<SystemMessage> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.teneasyChat.gateway.GGateway.SystemMessage getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface WorkerStateChangeOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:gateway.WorkerStateChange)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.api.common.OnlineState from = 1;</code>
+     * @return The enum numeric value on the wire for from.
+     */
+    int getFromValue();
+    /**
+     * <code>.api.common.OnlineState from = 1;</code>
+     * @return The from.
+     */
+    com.teneasyChat.api.common.CWorker.OnlineState getFrom();
+
+    /**
+     * <code>.api.common.OnlineState to = 2;</code>
+     * @return The enum numeric value on the wire for to.
+     */
+    int getToValue();
+    /**
+     * <code>.api.common.OnlineState to = 2;</code>
+     * @return The to.
+     */
+    com.teneasyChat.api.common.CWorker.OnlineState getTo();
+
+    /**
+     * <code>bool access = 3;</code>
+     * @return The access.
+     */
+    boolean getAccess();
+  }
+  /**
+   * Protobuf type {@code gateway.WorkerStateChange}
+   */
+  public static final class WorkerStateChange extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:gateway.WorkerStateChange)
+      WorkerStateChangeOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 26,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        WorkerStateChange.class.getName());
+    }
+    // Use WorkerStateChange.newBuilder() to construct.
+    private WorkerStateChange(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private WorkerStateChange() {
+      from_ = 0;
+      to_ = 0;
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.teneasyChat.gateway.GGateway.internal_static_gateway_WorkerStateChange_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.teneasyChat.gateway.GGateway.internal_static_gateway_WorkerStateChange_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.teneasyChat.gateway.GGateway.WorkerStateChange.class, com.teneasyChat.gateway.GGateway.WorkerStateChange.Builder.class);
+    }
+
+    public static final int FROM_FIELD_NUMBER = 1;
+    private int from_ = 0;
+    /**
+     * <code>.api.common.OnlineState from = 1;</code>
+     * @return The enum numeric value on the wire for from.
+     */
+    @java.lang.Override public int getFromValue() {
+      return from_;
+    }
+    /**
+     * <code>.api.common.OnlineState from = 1;</code>
+     * @return The from.
+     */
+    @java.lang.Override public com.teneasyChat.api.common.CWorker.OnlineState getFrom() {
+      com.teneasyChat.api.common.CWorker.OnlineState result = com.teneasyChat.api.common.CWorker.OnlineState.forNumber(from_);
+      return result == null ? com.teneasyChat.api.common.CWorker.OnlineState.UNRECOGNIZED : result;
+    }
+
+    public static final int TO_FIELD_NUMBER = 2;
+    private int to_ = 0;
+    /**
+     * <code>.api.common.OnlineState to = 2;</code>
+     * @return The enum numeric value on the wire for to.
+     */
+    @java.lang.Override public int getToValue() {
+      return to_;
+    }
+    /**
+     * <code>.api.common.OnlineState to = 2;</code>
+     * @return The to.
+     */
+    @java.lang.Override public com.teneasyChat.api.common.CWorker.OnlineState getTo() {
+      com.teneasyChat.api.common.CWorker.OnlineState result = com.teneasyChat.api.common.CWorker.OnlineState.forNumber(to_);
+      return result == null ? com.teneasyChat.api.common.CWorker.OnlineState.UNRECOGNIZED : result;
+    }
+
+    public static final int ACCESS_FIELD_NUMBER = 3;
+    private boolean access_ = false;
+    /**
+     * <code>bool access = 3;</code>
+     * @return The access.
+     */
+    @java.lang.Override
+    public boolean getAccess() {
+      return access_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (from_ != com.teneasyChat.api.common.CWorker.OnlineState.ONLINE_STATE_IDLE.getNumber()) {
+        output.writeEnum(1, from_);
+      }
+      if (to_ != com.teneasyChat.api.common.CWorker.OnlineState.ONLINE_STATE_IDLE.getNumber()) {
+        output.writeEnum(2, to_);
+      }
+      if (access_ != false) {
+        output.writeBool(3, access_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (from_ != com.teneasyChat.api.common.CWorker.OnlineState.ONLINE_STATE_IDLE.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(1, from_);
+      }
+      if (to_ != com.teneasyChat.api.common.CWorker.OnlineState.ONLINE_STATE_IDLE.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(2, to_);
+      }
+      if (access_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(3, access_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.teneasyChat.gateway.GGateway.WorkerStateChange)) {
+        return super.equals(obj);
+      }
+      com.teneasyChat.gateway.GGateway.WorkerStateChange other = (com.teneasyChat.gateway.GGateway.WorkerStateChange) obj;
+
+      if (from_ != other.from_) return false;
+      if (to_ != other.to_) return false;
+      if (getAccess()
+          != other.getAccess()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + FROM_FIELD_NUMBER;
+      hash = (53 * hash) + from_;
+      hash = (37 * hash) + TO_FIELD_NUMBER;
+      hash = (53 * hash) + to_;
+      hash = (37 * hash) + ACCESS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getAccess());
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.teneasyChat.gateway.GGateway.WorkerStateChange parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.gateway.GGateway.WorkerStateChange parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.gateway.GGateway.WorkerStateChange parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.gateway.GGateway.WorkerStateChange parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.gateway.GGateway.WorkerStateChange parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.gateway.GGateway.WorkerStateChange parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.gateway.GGateway.WorkerStateChange parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.teneasyChat.gateway.GGateway.WorkerStateChange parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.teneasyChat.gateway.GGateway.WorkerStateChange parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.teneasyChat.gateway.GGateway.WorkerStateChange parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.teneasyChat.gateway.GGateway.WorkerStateChange parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.teneasyChat.gateway.GGateway.WorkerStateChange parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.teneasyChat.gateway.GGateway.WorkerStateChange prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code gateway.WorkerStateChange}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:gateway.WorkerStateChange)
+        com.teneasyChat.gateway.GGateway.WorkerStateChangeOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.teneasyChat.gateway.GGateway.internal_static_gateway_WorkerStateChange_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.teneasyChat.gateway.GGateway.internal_static_gateway_WorkerStateChange_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.teneasyChat.gateway.GGateway.WorkerStateChange.class, com.teneasyChat.gateway.GGateway.WorkerStateChange.Builder.class);
+      }
+
+      // Construct using com.teneasyChat.gateway.GGateway.WorkerStateChange.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        from_ = 0;
+        to_ = 0;
+        access_ = false;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.teneasyChat.gateway.GGateway.internal_static_gateway_WorkerStateChange_descriptor;
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.gateway.GGateway.WorkerStateChange getDefaultInstanceForType() {
+        return com.teneasyChat.gateway.GGateway.WorkerStateChange.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.gateway.GGateway.WorkerStateChange build() {
+        com.teneasyChat.gateway.GGateway.WorkerStateChange result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.gateway.GGateway.WorkerStateChange buildPartial() {
+        com.teneasyChat.gateway.GGateway.WorkerStateChange result = new com.teneasyChat.gateway.GGateway.WorkerStateChange(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.teneasyChat.gateway.GGateway.WorkerStateChange result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.from_ = from_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.to_ = to_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.access_ = access_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.teneasyChat.gateway.GGateway.WorkerStateChange) {
+          return mergeFrom((com.teneasyChat.gateway.GGateway.WorkerStateChange)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.teneasyChat.gateway.GGateway.WorkerStateChange other) {
+        if (other == com.teneasyChat.gateway.GGateway.WorkerStateChange.getDefaultInstance()) return this;
+        if (other.from_ != 0) {
+          setFromValue(other.getFromValue());
+        }
+        if (other.to_ != 0) {
+          setToValue(other.getToValue());
+        }
+        if (other.getAccess() != false) {
+          setAccess(other.getAccess());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                from_ = input.readEnum();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 16: {
+                to_ = input.readEnum();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
+              case 24: {
+                access_ = input.readBool();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 24
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private int from_ = 0;
+      /**
+       * <code>.api.common.OnlineState from = 1;</code>
+       * @return The enum numeric value on the wire for from.
+       */
+      @java.lang.Override public int getFromValue() {
+        return from_;
+      }
+      /**
+       * <code>.api.common.OnlineState from = 1;</code>
+       * @param value The enum numeric value on the wire for from to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFromValue(int value) {
+        from_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.api.common.OnlineState from = 1;</code>
+       * @return The from.
+       */
+      @java.lang.Override
+      public com.teneasyChat.api.common.CWorker.OnlineState getFrom() {
+        com.teneasyChat.api.common.CWorker.OnlineState result = com.teneasyChat.api.common.CWorker.OnlineState.forNumber(from_);
+        return result == null ? com.teneasyChat.api.common.CWorker.OnlineState.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.api.common.OnlineState from = 1;</code>
+       * @param value The from to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFrom(com.teneasyChat.api.common.CWorker.OnlineState value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000001;
+        from_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.api.common.OnlineState from = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearFrom() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        from_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int to_ = 0;
+      /**
+       * <code>.api.common.OnlineState to = 2;</code>
+       * @return The enum numeric value on the wire for to.
+       */
+      @java.lang.Override public int getToValue() {
+        return to_;
+      }
+      /**
+       * <code>.api.common.OnlineState to = 2;</code>
+       * @param value The enum numeric value on the wire for to to set.
+       * @return This builder for chaining.
+       */
+      public Builder setToValue(int value) {
+        to_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.api.common.OnlineState to = 2;</code>
+       * @return The to.
+       */
+      @java.lang.Override
+      public com.teneasyChat.api.common.CWorker.OnlineState getTo() {
+        com.teneasyChat.api.common.CWorker.OnlineState result = com.teneasyChat.api.common.CWorker.OnlineState.forNumber(to_);
+        return result == null ? com.teneasyChat.api.common.CWorker.OnlineState.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.api.common.OnlineState to = 2;</code>
+       * @param value The to to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTo(com.teneasyChat.api.common.CWorker.OnlineState value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000002;
+        to_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.api.common.OnlineState to = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTo() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        to_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private boolean access_ ;
+      /**
+       * <code>bool access = 3;</code>
+       * @return The access.
+       */
+      @java.lang.Override
+      public boolean getAccess() {
+        return access_;
+      }
+      /**
+       * <code>bool access = 3;</code>
+       * @param value The access to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAccess(boolean value) {
+
+        access_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool access = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAccess() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        access_ = false;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:gateway.WorkerStateChange)
+    }
+
+    // @@protoc_insertion_point(class_scope:gateway.WorkerStateChange)
+    private static final com.teneasyChat.gateway.GGateway.WorkerStateChange DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.teneasyChat.gateway.GGateway.WorkerStateChange();
+    }
+
+    public static com.teneasyChat.gateway.GGateway.WorkerStateChange getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<WorkerStateChange>
+        PARSER = new com.google.protobuf.AbstractParser<WorkerStateChange>() {
+      @java.lang.Override
+      public WorkerStateChange parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<WorkerStateChange> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<WorkerStateChange> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.teneasyChat.gateway.GGateway.WorkerStateChange getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_gateway_SCHi_descriptor;
   private static final 
@@ -13055,6 +14528,16 @@ public final class GGateway {
   private static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_gateway_SCSimSendMessageToWorker_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_gateway_SystemMessage_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_gateway_SystemMessage_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_gateway_WorkerStateChange_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_gateway_WorkerStateChange_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -13097,20 +14580,26 @@ public final class GGateway {
       "d\030\001 \001(\005\022\023\n\013worker_name\030\002 \001(\t\022\025\n\rworker_a" +
       "vatar\030\003 \001(\t\022\016\n\006target\030\004 \001(\003\022,\n\006reason\030\005 " +
       "\001(\0162\034.gateway.WorkerChangedReason\022\022\n\ncon" +
-      "sult_id\030\006 \001(\003\"=\n\006SCKick\022\016\n\006target\030\001 \001(\003\022" +
-      "#\n\006reason\030\002 \001(\0162\023.gateway.KickReason\"U\n\020" +
-      "SCSimSendMessage\022!\n\004msgs\030\001 \003(\0132\023.api.com" +
-      "mon.Message\022\016\n\006worker\030\002 \001(\003\022\016\n\006target\030\003 " +
-      "\001(\003\"M\n\030SCSimSendMessageToWorker\022!\n\004msgs\030" +
-      "\001 \003(\0132\023.api.common.Message\022\016\n\006target\030\002 \001" +
-      "(\003*\255\001\n\023WorkerChangedReason\022\036\n\032WorkerChan" +
-      "gedReasonUnknown\020\000\022)\n%WorkerChangedReaso" +
-      "nMissAssignedWorker\020\001\022%\n!WorkerChangedRe" +
-      "asonTransferWorker\020\002\022$\n WorkerChangedRea" +
-      "sonWorkerDeleted\020\003*=\n\nKickReason\022\024\n\020Kick" +
-      "ReasonCommon\020\000\022\031\n\025KickReasonPermChanged\020" +
-      "\001B@\n\027com.teneasyChat.gatewayZ%wcs/servic" +
-      "e/gateway/protocol;protocolb\006proto3"
+      "sult_id\030\006 \001(\003\"P\n\006SCKick\022\016\n\006target\030\001 \001(\003\022" +
+      "#\n\006reason\030\002 \001(\0162\023.gateway.KickReason\022\021\n\t" +
+      "socket_id\030\003 \001(\004\"U\n\020SCSimSendMessage\022!\n\004m" +
+      "sgs\030\001 \003(\0132\023.api.common.Message\022\016\n\006worker" +
+      "\030\002 \001(\003\022\016\n\006target\030\003 \001(\003\"M\n\030SCSimSendMessa" +
+      "geToWorker\022!\n\004msgs\030\001 \003(\0132\023.api.common.Me" +
+      "ssage\022\016\n\006target\030\002 \001(\003\"]\n\rSystemMessage\022\016" +
+      "\n\006target\030\001 \001(\003\0221\n\013StateChange\030\002 \001(\0132\032.ga" +
+      "teway.WorkerStateChangeH\000B\t\n\007content\"o\n\021" +
+      "WorkerStateChange\022%\n\004from\030\001 \001(\0162\027.api.co" +
+      "mmon.OnlineState\022#\n\002to\030\002 \001(\0162\027.api.commo" +
+      "n.OnlineState\022\016\n\006access\030\003 \001(\010*\255\001\n\023Worker" +
+      "ChangedReason\022\036\n\032WorkerChangedReasonUnkn" +
+      "own\020\000\022)\n%WorkerChangedReasonMissAssigned" +
+      "Worker\020\001\022%\n!WorkerChangedReasonTransferW" +
+      "orker\020\002\022$\n WorkerChangedReasonWorkerDele" +
+      "ted\020\003*=\n\nKickReason\022\024\n\020KickReasonCommon\020" +
+      "\000\022\031\n\025KickReasonPermChanged\020\001B@\n\027com.tene" +
+      "asyChat.gatewayZ%wcs/service/gateway/pro" +
+      "tocol;protocolb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -13215,7 +14704,7 @@ public final class GGateway {
     internal_static_gateway_SCKick_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_gateway_SCKick_descriptor,
-        new java.lang.String[] { "Target", "Reason", });
+        new java.lang.String[] { "Target", "Reason", "SocketId", });
     internal_static_gateway_SCSimSendMessage_descriptor =
       getDescriptor().getMessageTypes().get(16);
     internal_static_gateway_SCSimSendMessage_fieldAccessorTable = new
@@ -13228,6 +14717,18 @@ public final class GGateway {
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_gateway_SCSimSendMessageToWorker_descriptor,
         new java.lang.String[] { "Msgs", "Target", });
+    internal_static_gateway_SystemMessage_descriptor =
+      getDescriptor().getMessageTypes().get(18);
+    internal_static_gateway_SystemMessage_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_gateway_SystemMessage_descriptor,
+        new java.lang.String[] { "Target", "StateChange", "Content", });
+    internal_static_gateway_WorkerStateChange_descriptor =
+      getDescriptor().getMessageTypes().get(19);
+    internal_static_gateway_WorkerStateChange_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_gateway_WorkerStateChange_descriptor,
+        new java.lang.String[] { "From", "To", "Access", });
     descriptor.resolveAllFeaturesImmutable();
     com.google.protobuf.TimestampProto.getDescriptor();
     com.teneasyChat.api.common.CMessage.getDescriptor();

@@ -6,6 +6,7 @@ import com.teneasyChat.api.common.CEntrance.ClientType
 import com.teneasyChat.api.common.CMessage
 import com.teneasyChat.api.common.CMessage.Message
 import com.teneasyChat.api.common.CMessage.MessageFormat
+import com.teneasyChat.api.common.CMessage.WithAutoReply
 import com.teneasyChat.gateway.GAction
 import com.teneasyChat.gateway.GGateway
 import com.teneasyChat.gateway.GPayload
@@ -19,6 +20,7 @@ import java.net.URI
 import java.nio.ByteBuffer
 import java.nio.charset.StandardCharsets
 import java.util.*
+import kotlin.collections.ArrayList
 
 
 interface TeneasySDKDelegate {
@@ -31,7 +33,7 @@ interface TeneasySDKDelegate {
     @payloadId
     @msgId, 如果是0，表示服务器没有生成消息id, 发送失败
     */
-    fun msgReceipt(msg: CMessage.Message, payloadId: Long, msgId: Long, errMsg: String = "") // 使用Long代替UInt64
+    fun msgReceipt(msg: CMessage.Message?, payloadId: Long, msgId: Long, errMsg: String = "") // 使用Long代替UInt64
 
     /**
     消息删除回执
@@ -39,7 +41,7 @@ interface TeneasySDKDelegate {
     @payloadId
     @msgId
      */
-    fun msgDeleted(msg: CMessage.Message, payloadId: Long, msgId: Long, errMsg: String = "") // 使用Long代替UInt64
+    fun msgDeleted(msg: CMessage.Message?, payloadId: Long, msgId: Long, errMsg: String = "") // 使用Long代替UInt64
 
     /**
      * 系统消息，用于显示Tip
@@ -94,6 +96,7 @@ class ChatLib constructor(cert: String, token:String, baseUrl:String = "", userI
     private var sessionTime: Int = 0
     private var beatTimes = 0
     private var maxSessionMinutes = 9000000//相当于不设置会话实际限制 //测试放1分钟，上线放120或90
+    private var withAutoReply: WithAutoReply? = null
 
     init {
         this.chatId = chatID
@@ -159,9 +162,10 @@ class ChatLib constructor(cert: String, token:String, baseUrl:String = "", userI
      * 发送文本类型的消息
      * @param msg   消息内容或图片url,音频url,视频url...
      */
-     fun sendMessage(msg: String, type: MessageFormat, consultId: Long, replyMsgId: Long = 0) {
+     fun sendMessage(msg: String, type: MessageFormat, consultId: Long, replyMsgId: Long = 0, withAutoReply: WithAutoReply? = null) {
         this.replyMsgId = replyMsgId;
          this.consultId = consultId;
+        this.withAutoReply = withAutoReply
       if (type == MessageFormat.MSG_TEXT){
           sendTextMessage(msg)
       }else if (type == MessageFormat.MSG_IMG){
@@ -214,6 +218,12 @@ class ChatLib constructor(cert: String, token:String, baseUrl:String = "", userI
         msg.chatId = chatId
         msg.worker = 0
         msg.msgTime = TimeUtil.msgTime()
+
+        if (withAutoReply != null && (withAutoReply?.id ?: 0) > 0) {
+            var aList = ArrayList<WithAutoReply>()
+            aList.add(withAutoReply!!)
+            msg.addAllWithAutoReplies(aList)
+        }
 
         sendingMessage = msg.build()
     }
@@ -323,7 +333,7 @@ class ChatLib constructor(cert: String, token:String, baseUrl:String = "", userI
         //payload_id != 0的时候，可能是重发，重发不需要+1
         if (sendingMessage?.msgOp == CMessage.MessageOperate.MSG_OP_POST && payload_Id == 0L) {
             payloadId += 1
-            print("payloadId + 1" + payloadId)
+            Log.i(TAG, "payloadId + 1: ${payloadId}")
             msgList[payloadId] = cMsg
         }
         if(!isConnected && payload_Id == 0L) {
@@ -346,7 +356,7 @@ class ChatLib constructor(cert: String, token:String, baseUrl:String = "", userI
         }else {
             payload.id = payloadId
         }
-        Log.i(TAG, "sending payloadId: ${payloadId}")
+        Log.i(TAG, "sending payloadId: ${payload.id}")
         socket?.send(payload.build().toByteArray())
     }
 
@@ -415,77 +425,74 @@ EntranceNotExistsFlag = 0x4
             }
         }
         else {
-            val payLoad = GPayload.Payload.parseFrom(data)
-            val msgData = payLoad.data
+            val recvPayLoad = GPayload.Payload.parseFrom(data)
+            val msgData = recvPayLoad.data
             //收到消息
-            if(payLoad.act == GAction.Action.ActionSCRecvMsg) {
+            if(recvPayLoad.act == GAction.Action.ActionSCRecvMsg) {
                 val recvMsg = GGateway.SCRecvMessage.parseFrom(msgData)
                 //收到对方撤回消息
                 if (recvMsg.msg.msgOp == CMessage.MessageOperate.MSG_OP_DELETE){
-                    listener?.msgDeleted(recvMsg.msg, payLoad.id, -1)
+                    listener?.msgDeleted(recvMsg.msg, recvPayLoad.id, -1)
                 }else{
                     recvMsg.msg.let {
                         listener?.receivedMsg(it)
                     }
                 }
-            } else if(payLoad.act == GAction.Action.ActionSCHi) {
+            } else if(recvPayLoad.act == GAction.Action.ActionSCHi) {
                 val msg = GGateway.SCHi.parseFrom(msgData)
                 token = msg.token
-                sendingMessage?.let {
-                    resendMSg(it, this.payloadId)
-                    Log.i(TAG, "自动重发未发出的最后一个消息$payloadId")
-                }
-                //如果有未发消息，继续使用这消息的payload作为最后一个消息的payload，不然使用系统产生的id
-                if (sendingMessage == null) {
-                    payloadId = payLoad.id
-                }
+//                sendingMessage?.let {
+//                    resendMSg(it, this.payloadId)
+//                    Log.i(TAG, "自动重发未发出的最后一个消息$payloadId")
+//                }
+//                //如果有未发消息，继续使用这消息的payload作为最后一个消息的payload，不然使用系统产生的id
+//                if (sendingMessage == null) {
+                    payloadId = recvPayLoad.id
+                //}
                 //payloadId = payLoad.id
                 print("初始payloadId:" + payloadId + "\n")
                 listener?.connected(msg)
                 isConnected = true
                 startTimer()
-            } else if(payLoad.act == GAction.Action.ActionForward) {
+            } else if(recvPayLoad.act == GAction.Action.ActionForward) {
                 val msg = GGateway.CSForward.parseFrom(msgData)
                 Log.i(TAG, "forward: ${msg.data}")
-            }  else if(payLoad.act == GAction.Action.ActionSCDeleteMsgACK) {
-                //这部分实际没有用上
+            }  else if(recvPayLoad.act == GAction.Action.ActionSCDeleteMsgACK) {
+                //手机端撤回消息，并收到成功回执
                 val scMsg = GGateway.SCSendMessage.parseFrom(msgData)
-                val msg = CMessage.Message.newBuilder()
+                val msg = Message.newBuilder()
                 msg.msgId = scMsg.msgId;
                 msg.msgOp = CMessage.MessageOperate.MSG_OP_DELETE;
                 Log.i(TAG, "删除回执收到A：消息ID: ${msg.msgId}")
-                var cMsg = msgList[payLoad.id]
-                if (cMsg != null) {
+                //var cMsg = msgList[payLoad.id]
+                //if (cMsg != null) {
                     Log.i(TAG, "删除成功")
-                    listener?.msgDeleted(msg.build(), payLoad.id, -1)
-                }
-            }  else if(payLoad.act == GAction.Action.ActionSCDeleteMsg) {
+                    listener?.msgDeleted(msg.build(), recvPayLoad.id, -1)
+                //}
+            }  else if(recvPayLoad.act == GAction.Action.ActionSCDeleteMsg) {
                 val scMsg = GGateway.SCRecvMessage.parseFrom(msgData)
                 val msg = CMessage.Message.newBuilder()
                 msg.msgId = scMsg.msg.msgId;
-                msg.msgOp == CMessage.MessageOperate.MSG_OP_DELETE
-                listener?.msgDeleted(msg.build(), payLoad.id, -1)
-                Log.i(TAG, "对方删除了消息： payload ID${payLoad.id}")
-            } else if(payLoad.act == GAction.Action.ActionSCSendMsgACK) {//消息回执
+                msg.msgOp = CMessage.MessageOperate.MSG_OP_DELETE
+                listener?.msgDeleted(msg.build(), recvPayLoad.id, -1)
+                Log.i(TAG, "对方删除了消息： payload ID${recvPayLoad.id}")
+            } else if(recvPayLoad.act == GAction.Action.ActionSCSendMsgACK) {//消息回执
                 val scMsg = GGateway.SCSendMessage.parseFrom(msgData)
                 chatId = scMsg.chatId
                 Log.i(TAG, "收到消息回执 ActionSCSendMsgACK")
 
-                var cMsg = msgList[payLoad.id]
-                if (cMsg != null){
-                    Log.i(TAG, "收到消息回执: ${scMsg.msgId} : ${payLoad.id}")
-                    if (scMsg.errMsg != null && !scMsg.errMsg.isNullOrEmpty()){
-                        listener?.msgReceipt(cMsg, payLoad.id, -2, scMsg.errMsg)
-                    }
-                    else if (sendingMessage?.msgOp == CMessage.MessageOperate.MSG_OP_DELETE){
-                        listener?.msgDeleted(cMsg, payLoad.id, -1)
-                        Log.i(TAG, "删除成功")
-                    }else{
-                        listener?.msgReceipt(cMsg, payLoad.id, scMsg.msgId)
-                    }
+                val cMsg: Message? = msgList[recvPayLoad.id]
+                //if (cMsg != null){
+                Log.i(TAG, "收到消息回执: ${scMsg.msgId} : ${recvPayLoad.id}")
+                if (sendingMessage?.msgOp == CMessage.MessageOperate.MSG_OP_DELETE){
+                    listener?.msgDeleted(cMsg, recvPayLoad.id, -1)
+                    Log.i(TAG, "删除成功")
+                }else{
+                    listener?.msgReceipt(cMsg, recvPayLoad.id, scMsg.msgId, scMsg.errMsg)
                 }
+                //}
                 Log.i(TAG, "消息ID: ${scMsg.msgId}")
-            } else if(payLoad.act == GAction.Action.ActionSCWorkerChanged){
+            } else if(recvPayLoad.act == GAction.Action.ActionSCWorkerChanged){
                 val scMsg = GGateway.SCWorkerChanged.parseFrom(msgData)
                 consultId = scMsg.consultId
                 scMsg.apply {

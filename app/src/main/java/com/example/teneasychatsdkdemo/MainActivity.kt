@@ -112,10 +112,8 @@ class MainActivity : AppCompatActivity(), TeneasySDKDelegate {
             return
         }
 //httos://csh5.hfxg.xyz,https://csapi.dev.stream
-        //https://csapi.xdev.stream,https://wcsapi.qixin14.xyz,https://wcsapi.qixin14.xyz
         //httpo://csh5.hfxg.xyz,http://csh5.hfxg.xyz,https://csapi.xdev.stream,https://xx.xdev.stream
-        //android:usesCleartextTraffic="true"
-        val lineLib = LineDetectLib("https://61.184.8.23:7040",  object : LineDetectDelegate {
+        val lineLib = LineDetectLib("https://wcsapi.qixin14.xyz,https://csapi.hfxg.xyz",  object : LineDetectDelegate {
             override fun useTheLine(line: String) {
                 Log.i("LineLib", "使用线路："+ line)
                 appendText("Wss: " + line + "\n")
@@ -142,7 +140,7 @@ class MainActivity : AppCompatActivity(), TeneasySDKDelegate {
         var wssUrl = "wss://" + baseUrl + "/v1/gateway/h5?"
         //token: COYBEAIYzNdEIPIBKJDZrOP3MQ.maPNGL2-vih71Eg4ghU4aTMSY6Sl0Zt8GTH6colScbTZQiTM5hak9do9qyxvhxSes-HuKbsNMLlBE72Z3J-4Bg
         //666668，364154
-        chatLib = ChatLib("COYBEAUYASDyASiG2piD9zE.te46qua5ha2r-Caz03Vx2JXH5OLSRRV2GqdYcn9UslwibsxBSP98GhUKSGEI0Z84FRMkp16ZK8eS-y72QVE2AQ", "", wssUrl, 666668, "9zgd9YUc")
+        chatLib = ChatLib("COYBEAUYASDyASiG2piD9zE.te46qua5ha2r-Caz03Vx2JXH5OLSRRV2GqdYcn9UslwibsxBSP98GhUKSGEI0Z84FRMkp16ZK8eS-y72QVE2AQ", "", wssUrl, 666665, "9zgd9YUc")
         chatLib.listener = this
         chatLib.makeConnect()
 
@@ -168,7 +166,20 @@ class MainActivity : AppCompatActivity(), TeneasySDKDelegate {
         val sayHello = "你好！今天去哪玩？"
         //val msgItem = chatLib.composeALocalMessage(sayHello)
         //addMsgItem(msgItem)
-        chatLib.sendMessage(sayHello, CMessage.MessageFormat.MSG_TEXT, 1, 0)
+
+        var withAutoReplyBuilder = CMessage.WithAutoReply.newBuilder()
+
+        withAutoReplyBuilder.title = "自动回复的标题"
+        withAutoReplyBuilder.id = 1
+        //withAutoReplyBuilder.createdTime = Utils().getNowTimeStamp()
+
+        val uAnswer = CMessage.MessageUnion.newBuilder()
+        val uQC = CMessage.MessageContent.newBuilder()
+        uQC.data = "txtAnswer"
+        uAnswer.content = uQC.build()
+        withAutoReplyBuilder.addAnswers(uAnswer)
+
+        chatLib.sendMessage(sayHello, CMessage.MessageFormat.MSG_TEXT, 1, 0, withAutoReplyBuilder.build())
         val payloadId = chatLib.payloadId
         val sendingMsg = chatLib.sendingMessage
 
@@ -192,18 +203,18 @@ class MainActivity : AppCompatActivity(), TeneasySDKDelegate {
         println(msg)
     }
 
-    override fun msgReceipt(msg: CMessage.Message, payloadId: Long, msgId: Long, errMsg: String) {
+    override fun msgReceipt(msg: CMessage.Message?, payloadId: Long, msgId: Long, errMsg: String) {
         //println(msg)
         val suc = if (msgId == 0L) "发送失败" else "发送成功"
         println("payloadId："  + payloadId.toString()   +suc)
         runOnUiThread({
-            if (msg.content.toString() != "") {
-                appendText(msg.content.toString() + "\n")
-            }else if (msg.video.toString() != ""){
-                appendText(msg.video.toString() + "\n")
-            }else if (msg.audio.toString() != ""){
-                appendText(msg.audio.toString() + "\n")
-            }
+//            if (msg?.content.toString() != "") {
+//                appendText(msg.content.toString() + "\n")
+//            }else if (msg.video.toString() != ""){
+//                appendText(msg.video.toString() + "\n")
+//            }else if (msg.audio.toString() != ""){
+//                appendText(msg.audio.toString() + "\n")
+//            }
 
             if (msgId > 0){
                 lastMsgId = msgId
@@ -212,9 +223,9 @@ class MainActivity : AppCompatActivity(), TeneasySDKDelegate {
         })
     }
 
-    override fun msgDeleted(msg: CMessage.Message, payloadId: Long, msgId: Long, errMsg: String) {
+    override fun msgDeleted(msg: CMessage.Message?, payloadId: Long, msgId: Long, errMsg: String) {
         runOnUiThread({
-            appendText("删除成功")
+            appendText("删除成功 ${msg?.msgId}")
         })
     }
 
@@ -232,11 +243,11 @@ class MainActivity : AppCompatActivity(), TeneasySDKDelegate {
     override fun connected(c: GGateway.SCHi) {
         val workerId = c.workerId
         //Log.i("MainAct connected", "成功连接")
-        //chatLib.sendMessage("1.mp4", CMessage.MessageFormat.MSG_VIDEO)
+        //chatLib.sendMessage("hello", CMessage.MessageFormat.MSG_TEXT, 1, 0)
         //Log.i(Tag, "workerId:" + workerId)
         Log.i(Tag, "token:" + c.token)
         isConnected = true
-        appendText("成功连接 workerId:" + workerId)
+        appendText("成功连接")
     }
 
     override fun workChanged(msg: GGateway.SCWorkerChanged) {
