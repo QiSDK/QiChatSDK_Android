@@ -80,14 +80,18 @@ class LineDetectLib constructor(lines: String, linstener: LineDetectDelegate, te
                            found = true
                            f = true
                            //listener?.useTheLine(call.request().url.host)
-                           listener?.useTheLine(call.request().url().host())
+                           var port = call.request().url().port()
+                           var base = call.request().url().host()
+                           if (port != 443 && port != 80){
+                               base = base + ":" + port
+                           }
+                           listener?.useTheLine(base)
                            Log.i(TAG, "使用线路："+ call.request().url().host())
-                           Log.i(TAG, "使用线路wss："+ line)
                        }else{
                            Log.i(TAG, "线路已使用")
                        }
                     }else{
-                        Log.i(TAG, "线路失败：没有包含tenantid")
+                        Log.i(TAG, line +" 线路失败：没有正确的数据返回")
                     }
                     step2Index += 1
                     if (!f && step2Index == lineList.size){
