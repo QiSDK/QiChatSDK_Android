@@ -112,8 +112,10 @@ class MainActivity : AppCompatActivity(), TeneasySDKDelegate {
             return
         }
 //httos://csh5.hfxg.xyz,https://csapi.dev.stream
+        //https://csapi.xdev.stream,https://wcsapi.qixin14.xyz,https://wcsapi.qixin14.xyz
         //httpo://csh5.hfxg.xyz,http://csh5.hfxg.xyz,https://csapi.xdev.stream,https://xx.xdev.stream
-        val lineLib = LineDetectLib("https://csapi.xdev.stream,https://wcsapi.qixin14.xyz,https://wcsapi.qixin14.xyz",  object : LineDetectDelegate {
+        //android:usesCleartextTraffic="true"
+        val lineLib = LineDetectLib("https://61.184.8.23:7040",  object : LineDetectDelegate {
             override fun useTheLine(line: String) {
                 Log.i("LineLib", "使用线路："+ line)
                 appendText("Wss: " + line + "\n")
