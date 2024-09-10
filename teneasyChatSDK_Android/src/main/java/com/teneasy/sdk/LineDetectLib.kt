@@ -53,7 +53,7 @@ class LineDetectLib constructor(lines: String, linstener: LineDetectDelegate, te
                 continue
             }
             val url = line.trim() + "/v1/api/verify?r=$r"
-            val client: OkHttpClient = OkHttpClient.Builder().connectTimeout(2, TimeUnit.SECONDS).build()
+            val client: OkHttpClient = OkHttpClient.Builder().connectTimeout(60, TimeUnit.SECONDS).build()
             val requestBody: RequestBody = RequestBody.create(MediaType.parse("application/json"), bodyStr)
             //val requestBody = bodyStr.toRequestBody("application/json".toMediaTypeOrNull())
             val request: Request = Request.Builder()
@@ -67,7 +67,7 @@ class LineDetectLib constructor(lines: String, linstener: LineDetectDelegate, te
                     if (step2Index == lineList.size){
                         failedAndRetry()
                     }
-                    Log.i(TAG, "检测线路失败："+ url)
+                    Log.i(TAG, "检测线路失败："+ url + " " + e.message)
                 }
                 override fun onResponse(call: Call, response: Response) {
                     var f = false
@@ -86,6 +86,8 @@ class LineDetectLib constructor(lines: String, linstener: LineDetectDelegate, te
                        }else{
                            Log.i(TAG, "线路已使用")
                        }
+                    }else{
+                        Log.i(TAG, "线路失败：没有包含tenantid")
                     }
                     step2Index += 1
                     if (!f && step2Index == lineList.size){
