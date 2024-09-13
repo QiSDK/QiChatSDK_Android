@@ -62,7 +62,7 @@ interface TeneasySDKDelegate {
 /**
  * 通讯核心类，提供了发送消息、解析消息等功能
  */
-class ChatLib constructor(cert: String, token:String, baseUrl:String = "", userId: Int, sign:String,  chatID: Long = 0, userName: String = ""){
+class ChatLib constructor(cert: String, token:String, baseUrl:String = "", userId: Int, sign:String,  chatID: Long = 0, custom: String = ""){
     private val TAG = "ChatLib"
     // 通讯地址
    private var baseUrl = ""
@@ -97,7 +97,7 @@ class ChatLib constructor(cert: String, token:String, baseUrl:String = "", userI
     private var beatTimes = 0
     private var maxSessionMinutes = 9000000//相当于不设置会话实际限制 //测试放1分钟，上线放120或90
     private var withAutoReply: WithAutoReply? = null
-    private var userName: String? = userName
+    private var custom: String? = custom
 
     init {
         this.chatId = chatID
@@ -124,7 +124,7 @@ class ChatLib constructor(cert: String, token:String, baseUrl:String = "", userI
     fun makeConnect(){
         var rd = Random().nextInt(1000000) + 1000000
         var dt = Date().time
-        val url = baseUrl + "cert=" + this.cert + "&token=" + token + "&userid=" + this.userId + "&ty=" + ClientType.CLIENT_TYPE_USER_APP.number + "&dt=" + dt + "&sign=" + mySign + "&rd=" + rd+ "&userName=" + userName
+        val url = baseUrl + "cert=" + this.cert + "&token=" + token + "&userid=" + this.userId + "&ty=" + ClientType.CLIENT_TYPE_USER_APP.number + "&dt=" + dt + "&sign=" + mySign + "&rd=" + rd+ "&custom=" + custom
         Log.i(TAG, "连接WSS")
         socket =
             object : WebSocketClient(URI(url), Draft_6455()) {

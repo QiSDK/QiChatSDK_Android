@@ -12,7 +12,13 @@ import okhttp3.Request
 import okhttp3.RequestBody
 import okhttp3.Response
 import java.io.IOException
+import java.security.SecureRandom
+import java.security.cert.CertificateException
+import java.security.cert.X509Certificate
 import java.util.concurrent.TimeUnit
+import javax.net.ssl.SSLContext
+import javax.net.ssl.SSLSocketFactory
+import javax.net.ssl.X509TrustManager
 import kotlin.random.Random
 
 interface LineDetectDelegate {
@@ -53,7 +59,36 @@ class LineDetectLib constructor(lines: String, linstener: LineDetectDelegate, te
                 continue
             }
             val url = line.trim() + "/v1/api/verify?r=$r"
-            val client: OkHttpClient = OkHttpClient.Builder().connectTimeout(60, TimeUnit.SECONDS).build()
+
+            // 创建一个信任所有证书的 TrustManager
+            /*val trustAllCerts = arrayOf<javax.net.ssl.TrustManager>(object : X509TrustManager {
+                @Throws(CertificateException::class)
+                override fun checkClientTrusted(chain: Array<java.security.cert.X509Certificate>, authType: String) {
+                }
+
+                @Throws(CertificateException::class)
+                override fun checkServerTrusted(chain: Array<X509Certificate>, authType: String) {
+                }
+
+                override fun getAcceptedIssuers(): Array<X509Certificate> {
+                    return arrayOf()
+                }
+            }
+            )
+
+            // 创建 SSLContext 并初始化
+            val sslContext = SSLContext.getInstance("SSL")
+            sslContext.init(null, trustAllCerts, SecureRandom())
+
+
+            // 创建 SSLSocketFactory
+            val sslSocketFactory: SSLSocketFactory = sslContext.socketFactory
+             */
+            val client: OkHttpClient = OkHttpClient.Builder().connectTimeout(60, TimeUnit.SECONDS)
+               // .sslSocketFactory(sslSocketFactory, trustAllCerts[0] as X509TrustManager)
+               // .hostnameVerifier { s, sslSession -> true }
+                .build()
+
             val requestBody: RequestBody = RequestBody.create(MediaType.parse("application/json"), bodyStr)
             //val requestBody = bodyStr.toRequestBody("application/json".toMediaTypeOrNull())
             val request: Request = Request.Builder()
