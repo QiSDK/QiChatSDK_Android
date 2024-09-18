@@ -15,6 +15,7 @@ import java.io.IOException
 import java.security.SecureRandom
 import java.security.cert.CertificateException
 import java.security.cert.X509Certificate
+import java.util.UUID
 import java.util.concurrent.TimeUnit
 import javax.net.ssl.SSLContext
 import javax.net.ssl.SSLSocketFactory
@@ -92,8 +93,10 @@ class LineDetectLib constructor(lines: String, linstener: LineDetectDelegate, te
             val requestBody: RequestBody = RequestBody.create(MediaType.parse("application/json"), bodyStr)
             //val requestBody = bodyStr.toRequestBody("application/json".toMediaTypeOrNull())
             val request: Request = Request.Builder()
+                .addHeader("x-trace-id", UUID.randomUUID().toString())
                 .post(requestBody)
                 .url(url).build()
+
             val call: Call = client.newCall(request)
             call.enqueue(object : Callback {
                 override fun onFailure(call: Call, e: IOException) {
