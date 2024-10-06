@@ -62,7 +62,7 @@ interface TeneasySDKDelegate {
 /**
  * 通讯核心类，提供了发送消息、解析消息等功能
  */
-class ChatLib constructor(cert: String, token:String, baseUrl:String = "", userId: Int, sign:String,  chatID: Long = 0, custom: String = ""){
+class ChatLib constructor(cert: String, token:String, baseUrl:String = "", userId: Int, sign:String,  chatID: Long = 0, custom: String = "", maxSessionMinutes: Int = 9000000){
     private val TAG = "ChatLib"
     // 通讯地址
    private var baseUrl = ""
@@ -116,6 +116,7 @@ class ChatLib constructor(cert: String, token:String, baseUrl:String = "", userI
         }
         sessionTime = 0
         beatTimes = 0
+        this.maxSessionMinutes = maxSessionMinutes
     }
 
     /**
@@ -371,11 +372,10 @@ class ChatLib constructor(cert: String, token:String, baseUrl:String = "", userI
         }
 
         if (sessionTime > maxSessionMinutes * 60) { // Stop sending heartbeats after the maximum session time
-           disConnect()
+           disConnected(1005, "会话超时")
+            disConnect()//停止计时器等
         }
     }
-
-
 
     /**
      *  心跳，一般建议每隔60秒调用
@@ -540,6 +540,7 @@ EntranceNotExistsFlag = 0x4
         disConnect()
         sendingMessage = null
         isConnected = false
+        print("ChatLib disConnected code:" + code + "msg:" + msg);
     }
 
     // 启动计时器，持续调用心跳方法
