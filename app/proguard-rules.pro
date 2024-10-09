@@ -20,3 +20,10 @@
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
 -keep class androidx.appcompat.widget.** { *; }
+
+-keep class com.teneasy.** { *; }
+-keep class com.teneasyChat.** { *; }
+-keep class com.google.protobuf.** { *; }
+#
+#-keep class kotlin.** { *; }
+#-keep class kotlinx.** { *; }

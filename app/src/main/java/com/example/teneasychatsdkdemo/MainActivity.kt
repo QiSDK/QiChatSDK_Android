@@ -89,10 +89,6 @@ class MainActivity : AppCompatActivity(), TeneasySDKDelegate {
                 imm.hideSoftInputFromWindow(binding.etInput.windowToken, 0)
                 false
         })
-
-        if (!BuildConfig.DEBUG) {
-           binding.btnSend.visibility = View.GONE
-        }
     }
 
     private fun appendText(msg: String){
@@ -118,9 +114,7 @@ class MainActivity : AppCompatActivity(), TeneasySDKDelegate {
                 Log.i("LineLib", "使用线路："+ line)
                 appendText("Wss: " + line + "\n")
                 domain = line
-                if (BuildConfig.DEBUG) {
                     initChatSDK(line)
-                }
             }
             override fun lineError(error: Result) {
                 if (error.code == 1008){
