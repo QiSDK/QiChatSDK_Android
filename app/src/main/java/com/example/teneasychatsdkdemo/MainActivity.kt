@@ -89,10 +89,6 @@ class MainActivity : AppCompatActivity(), TeneasySDKDelegate {
                 imm.hideSoftInputFromWindow(binding.etInput.windowToken, 0)
                 false
         })
-
-        if (!BuildConfig.DEBUG) {
-           binding.btnSend.visibility = View.GONE
-        }
     }
 
     private fun appendText(msg: String){
@@ -113,14 +109,12 @@ class MainActivity : AppCompatActivity(), TeneasySDKDelegate {
         }
 //httos://csh5.hfxg.xyz,https://csapi.dev.stream
         //httpo://csh5.hfxg.xyz,http://csh5.hfxg.xyz,https://csapi.xdev.stream,https://xx.xdev.stream
-        val lineLib = LineDetectLib("https://wcsapi.qixin14.xyz,https://csapi.hfxg.xyz",  object : LineDetectDelegate {
+        val lineLib = LineDetectLib(lineStr,  object : LineDetectDelegate {
             override fun useTheLine(line: String) {
                 Log.i("LineLib", "使用线路："+ line)
                 appendText("Wss: " + line + "\n")
                 domain = line
-                if (BuildConfig.DEBUG) {
-                    initChatSDK(line)
-                }
+                initChatSDK(line)
             }
             override fun lineError(error: Result) {
                 if (error.code == 1008){
@@ -140,7 +134,7 @@ class MainActivity : AppCompatActivity(), TeneasySDKDelegate {
         var wssUrl = "wss://" + baseUrl + "/v1/gateway/h5?"
         //token: COYBEAIYzNdEIPIBKJDZrOP3MQ.maPNGL2-vih71Eg4ghU4aTMSY6Sl0Zt8GTH6colScbTZQiTM5hak9do9qyxvhxSes-HuKbsNMLlBE72Z3J-4Bg
         //666668，364154
-        chatLib = ChatLib("COYBEAUYASDyASiG2piD9zE.te46qua5ha2r-Caz03Vx2JXH5OLSRRV2GqdYcn9UslwibsxBSP98GhUKSGEI0Z84FRMkp16ZK8eS-y72QVE2AQ", "", wssUrl, 666665, "9zgd9YUc")
+        chatLib = ChatLib("COYBEAUYASDyASiG2piD9zE.te46qua5ha2r-Caz03Vx2JXH5OLSRRV2GqdYcn9UslwibsxBSP98GhUKSGEI0Z84FRMkp16ZK8eS-y72QVE2AQ", "", wssUrl, 666665, "9zgd9YUc", 0, "", 5)
         chatLib.listener = this
         chatLib.makeConnect()
 
