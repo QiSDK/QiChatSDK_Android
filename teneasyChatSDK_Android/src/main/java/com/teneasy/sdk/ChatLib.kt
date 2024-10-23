@@ -249,6 +249,12 @@ class ChatLib constructor(cert: String, token:String, baseUrl:String = "", userI
         msg.worker = 0
         msg.msgTime = TimeUtil.msgTime()
 
+        if (withAutoReply != null && (withAutoReply?.id ?: 0) > 0) {
+            var aList = ArrayList<WithAutoReply>()
+            aList.add(withAutoReply!!)
+            msg.addAllWithAutoReplies(aList)
+        }
+
         sendingMessage = msg.build()
     }
 
@@ -271,6 +277,11 @@ class ChatLib constructor(cert: String, token:String, baseUrl:String = "", userI
         msg.worker = 0
         msg.msgTime = TimeUtil.msgTime()
 
+        if (withAutoReply != null && (withAutoReply?.id ?: 0) > 0) {
+            var aList = ArrayList<WithAutoReply>()
+            aList.add(withAutoReply!!)
+            msg.addAllWithAutoReplies(aList)
+        }
         sendingMessage = msg.build()
     }
 
@@ -381,6 +392,7 @@ class ChatLib constructor(cert: String, token:String, baseUrl:String = "", userI
      *  心跳，一般建议每隔60秒调用
      */
    private fun sendHeartBeat(){
+       if (!isConnected) return
         val buffer = ByteArray(1)
         buffer[0] = 0
         socket?.send(buffer)
