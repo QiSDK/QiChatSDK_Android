@@ -262,11 +262,11 @@ class ChatLib constructor(cert: String, token:String, baseUrl:String = "", userI
      * 发送视频类型的消息
      * @param url   视频地址
      */
-    private fun sendVideoMessage(url: String, thumbnail: String? = null, hls: String? = null) {
+    private fun sendVideoMessage(url: String, thumbnail: String = "", hlsUri: String = "") {
         //第一层
         val content = CMessage.MessageVideo.newBuilder()
         content.thumbnailUri = thumbnail
-        content.hlsUri = hls
+        content.hlsUri = hlsUri
         content.uri = url
 
         //第二层
