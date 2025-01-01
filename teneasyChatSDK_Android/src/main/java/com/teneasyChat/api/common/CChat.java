@@ -343,6 +343,65 @@ public final class CChat {
      * @return The state.
      */
     com.teneasyChat.api.common.CMessage.ChatState getState();
+
+    /**
+     * <pre>
+     * 复制类型 1-uid 2-用户账号
+     * </pre>
+     *
+     * <code>.api.common.TenantCopyType copy_type = 17;</code>
+     * @return The enum numeric value on the wire for copyType.
+     */
+    int getCopyTypeValue();
+    /**
+     * <pre>
+     * 复制类型 1-uid 2-用户账号
+     * </pre>
+     *
+     * <code>.api.common.TenantCopyType copy_type = 17;</code>
+     * @return The copyType.
+     */
+    com.teneasyChat.api.common.CTenant.TenantCopyType getCopyType();
+
+    /**
+     * <pre>
+     * 注册用户账号
+     * </pre>
+     *
+     * <code>string account = 18;</code>
+     * @return The account.
+     */
+    java.lang.String getAccount();
+    /**
+     * <pre>
+     * 注册用户账号
+     * </pre>
+     *
+     * <code>string account = 18;</code>
+     * @return The bytes for account.
+     */
+    com.google.protobuf.ByteString
+        getAccountBytes();
+
+    /**
+     * <pre>
+     * FAQ
+     * </pre>
+     *
+     * <code>string chat_remark = 19;</code>
+     * @return The chatRemark.
+     */
+    java.lang.String getChatRemark();
+    /**
+     * <pre>
+     * FAQ
+     * </pre>
+     *
+     * <code>string chat_remark = 19;</code>
+     * @return The bytes for chatRemark.
+     */
+    com.google.protobuf.ByteString
+        getChatRemarkBytes();
   }
   /**
    * Protobuf type {@code api.common.ChatDetail}
@@ -376,6 +435,9 @@ public final class CChat {
       ownerRole_ = 0;
       nimName_ = "";
       state_ = 0;
+      copyType_ = 0;
+      account_ = "";
+      chatRemark_ = "";
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
@@ -989,6 +1051,126 @@ public final class CChat {
       return result == null ? com.teneasyChat.api.common.CMessage.ChatState.UNRECOGNIZED : result;
     }
 
+    public static final int COPY_TYPE_FIELD_NUMBER = 17;
+    private int copyType_ = 0;
+    /**
+     * <pre>
+     * 复制类型 1-uid 2-用户账号
+     * </pre>
+     *
+     * <code>.api.common.TenantCopyType copy_type = 17;</code>
+     * @return The enum numeric value on the wire for copyType.
+     */
+    @java.lang.Override public int getCopyTypeValue() {
+      return copyType_;
+    }
+    /**
+     * <pre>
+     * 复制类型 1-uid 2-用户账号
+     * </pre>
+     *
+     * <code>.api.common.TenantCopyType copy_type = 17;</code>
+     * @return The copyType.
+     */
+    @java.lang.Override public com.teneasyChat.api.common.CTenant.TenantCopyType getCopyType() {
+      com.teneasyChat.api.common.CTenant.TenantCopyType result = com.teneasyChat.api.common.CTenant.TenantCopyType.forNumber(copyType_);
+      return result == null ? com.teneasyChat.api.common.CTenant.TenantCopyType.UNRECOGNIZED : result;
+    }
+
+    public static final int ACCOUNT_FIELD_NUMBER = 18;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object account_ = "";
+    /**
+     * <pre>
+     * 注册用户账号
+     * </pre>
+     *
+     * <code>string account = 18;</code>
+     * @return The account.
+     */
+    @java.lang.Override
+    public java.lang.String getAccount() {
+      java.lang.Object ref = account_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        account_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * 注册用户账号
+     * </pre>
+     *
+     * <code>string account = 18;</code>
+     * @return The bytes for account.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getAccountBytes() {
+      java.lang.Object ref = account_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        account_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CHAT_REMARK_FIELD_NUMBER = 19;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object chatRemark_ = "";
+    /**
+     * <pre>
+     * FAQ
+     * </pre>
+     *
+     * <code>string chat_remark = 19;</code>
+     * @return The chatRemark.
+     */
+    @java.lang.Override
+    public java.lang.String getChatRemark() {
+      java.lang.Object ref = chatRemark_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        chatRemark_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * FAQ
+     * </pre>
+     *
+     * <code>string chat_remark = 19;</code>
+     * @return The bytes for chatRemark.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getChatRemarkBytes() {
+      java.lang.Object ref = chatRemark_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        chatRemark_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -1050,6 +1232,15 @@ public final class CChat {
       }
       if (state_ != com.teneasyChat.api.common.CMessage.ChatState.CHAT_STATE_COMMON.getNumber()) {
         output.writeEnum(16, state_);
+      }
+      if (copyType_ != com.teneasyChat.api.common.CTenant.TenantCopyType.TCT_UNKNOWN.getNumber()) {
+        output.writeEnum(17, copyType_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(account_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 18, account_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(chatRemark_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 19, chatRemark_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -1116,6 +1307,16 @@ public final class CChat {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(16, state_);
       }
+      if (copyType_ != com.teneasyChat.api.common.CTenant.TenantCopyType.TCT_UNKNOWN.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(17, copyType_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(account_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(18, account_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(chatRemark_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(19, chatRemark_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -1173,6 +1374,11 @@ public final class CChat {
       if (getUserid()
           != other.getUserid()) return false;
       if (state_ != other.state_) return false;
+      if (copyType_ != other.copyType_) return false;
+      if (!getAccount()
+          .equals(other.getAccount())) return false;
+      if (!getChatRemark()
+          .equals(other.getChatRemark())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -1225,6 +1431,12 @@ public final class CChat {
       hash = (53 * hash) + getUserid();
       hash = (37 * hash) + STATE_FIELD_NUMBER;
       hash = (53 * hash) + state_;
+      hash = (37 * hash) + COPY_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + copyType_;
+      hash = (37 * hash) + ACCOUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getAccount().hashCode();
+      hash = (37 * hash) + CHAT_REMARK_FIELD_NUMBER;
+      hash = (53 * hash) + getChatRemark().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1392,6 +1604,9 @@ public final class CChat {
         nimName_ = "";
         userid_ = 0;
         state_ = 0;
+        copyType_ = 0;
+        account_ = "";
+        chatRemark_ = "";
         return this;
       }
 
@@ -1484,6 +1699,15 @@ public final class CChat {
         if (((from_bitField0_ & 0x00008000) != 0)) {
           result.state_ = state_;
         }
+        if (((from_bitField0_ & 0x00010000) != 0)) {
+          result.copyType_ = copyType_;
+        }
+        if (((from_bitField0_ & 0x00020000) != 0)) {
+          result.account_ = account_;
+        }
+        if (((from_bitField0_ & 0x00040000) != 0)) {
+          result.chatRemark_ = chatRemark_;
+        }
         result.bitField0_ |= to_bitField0_;
       }
 
@@ -1562,6 +1786,19 @@ public final class CChat {
         }
         if (other.state_ != 0) {
           setStateValue(other.getStateValue());
+        }
+        if (other.copyType_ != 0) {
+          setCopyTypeValue(other.getCopyTypeValue());
+        }
+        if (!other.getAccount().isEmpty()) {
+          account_ = other.account_;
+          bitField0_ |= 0x00020000;
+          onChanged();
+        }
+        if (!other.getChatRemark().isEmpty()) {
+          chatRemark_ = other.chatRemark_;
+          bitField0_ |= 0x00040000;
+          onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -1675,6 +1912,21 @@ public final class CChat {
                 bitField0_ |= 0x00008000;
                 break;
               } // case 128
+              case 136: {
+                copyType_ = input.readEnum();
+                bitField0_ |= 0x00010000;
+                break;
+              } // case 136
+              case 146: {
+                account_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00020000;
+                break;
+              } // case 146
+              case 154: {
+                chatRemark_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00040000;
+                break;
+              } // case 154
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -3177,6 +3429,263 @@ public final class CChat {
       public Builder clearState() {
         bitField0_ = (bitField0_ & ~0x00008000);
         state_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int copyType_ = 0;
+      /**
+       * <pre>
+       * 复制类型 1-uid 2-用户账号
+       * </pre>
+       *
+       * <code>.api.common.TenantCopyType copy_type = 17;</code>
+       * @return The enum numeric value on the wire for copyType.
+       */
+      @java.lang.Override public int getCopyTypeValue() {
+        return copyType_;
+      }
+      /**
+       * <pre>
+       * 复制类型 1-uid 2-用户账号
+       * </pre>
+       *
+       * <code>.api.common.TenantCopyType copy_type = 17;</code>
+       * @param value The enum numeric value on the wire for copyType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCopyTypeValue(int value) {
+        copyType_ = value;
+        bitField0_ |= 0x00010000;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 复制类型 1-uid 2-用户账号
+       * </pre>
+       *
+       * <code>.api.common.TenantCopyType copy_type = 17;</code>
+       * @return The copyType.
+       */
+      @java.lang.Override
+      public com.teneasyChat.api.common.CTenant.TenantCopyType getCopyType() {
+        com.teneasyChat.api.common.CTenant.TenantCopyType result = com.teneasyChat.api.common.CTenant.TenantCopyType.forNumber(copyType_);
+        return result == null ? com.teneasyChat.api.common.CTenant.TenantCopyType.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * 复制类型 1-uid 2-用户账号
+       * </pre>
+       *
+       * <code>.api.common.TenantCopyType copy_type = 17;</code>
+       * @param value The copyType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCopyType(com.teneasyChat.api.common.CTenant.TenantCopyType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00010000;
+        copyType_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 复制类型 1-uid 2-用户账号
+       * </pre>
+       *
+       * <code>.api.common.TenantCopyType copy_type = 17;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCopyType() {
+        bitField0_ = (bitField0_ & ~0x00010000);
+        copyType_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object account_ = "";
+      /**
+       * <pre>
+       * 注册用户账号
+       * </pre>
+       *
+       * <code>string account = 18;</code>
+       * @return The account.
+       */
+      public java.lang.String getAccount() {
+        java.lang.Object ref = account_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          account_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * 注册用户账号
+       * </pre>
+       *
+       * <code>string account = 18;</code>
+       * @return The bytes for account.
+       */
+      public com.google.protobuf.ByteString
+          getAccountBytes() {
+        java.lang.Object ref = account_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          account_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * 注册用户账号
+       * </pre>
+       *
+       * <code>string account = 18;</code>
+       * @param value The account to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAccount(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        account_ = value;
+        bitField0_ |= 0x00020000;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 注册用户账号
+       * </pre>
+       *
+       * <code>string account = 18;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAccount() {
+        account_ = getDefaultInstance().getAccount();
+        bitField0_ = (bitField0_ & ~0x00020000);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 注册用户账号
+       * </pre>
+       *
+       * <code>string account = 18;</code>
+       * @param value The bytes for account to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAccountBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        account_ = value;
+        bitField0_ |= 0x00020000;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object chatRemark_ = "";
+      /**
+       * <pre>
+       * FAQ
+       * </pre>
+       *
+       * <code>string chat_remark = 19;</code>
+       * @return The chatRemark.
+       */
+      public java.lang.String getChatRemark() {
+        java.lang.Object ref = chatRemark_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          chatRemark_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * FAQ
+       * </pre>
+       *
+       * <code>string chat_remark = 19;</code>
+       * @return The bytes for chatRemark.
+       */
+      public com.google.protobuf.ByteString
+          getChatRemarkBytes() {
+        java.lang.Object ref = chatRemark_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          chatRemark_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * FAQ
+       * </pre>
+       *
+       * <code>string chat_remark = 19;</code>
+       * @param value The chatRemark to set.
+       * @return This builder for chaining.
+       */
+      public Builder setChatRemark(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        chatRemark_ = value;
+        bitField0_ |= 0x00040000;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * FAQ
+       * </pre>
+       *
+       * <code>string chat_remark = 19;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearChatRemark() {
+        chatRemark_ = getDefaultInstance().getChatRemark();
+        bitField0_ = (bitField0_ & ~0x00040000);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * FAQ
+       * </pre>
+       *
+       * <code>string chat_remark = 19;</code>
+       * @param value The bytes for chatRemark to set.
+       * @return This builder for chaining.
+       */
+      public Builder setChatRemarkBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        chatRemark_ = value;
+        bitField0_ |= 0x00040000;
         onChanged();
         return this;
       }
@@ -5560,30 +6069,33 @@ public final class CChat {
       "\n\027api/common/c_chat.proto\022\napi.common\032\027v" +
       "alidate/validate.proto\032\037google/protobuf/" +
       "timestamp.proto\032\031api/common/c_worker.pro" +
-      "to\032\032api/common/c_message.proto\"\264\003\n\nChatD" +
-      "etail\022\017\n\007chat_id\030\001 \001(\003\022\023\n\013entrance_id\030\002 " +
-      "\001(\r\022\025\n\rentrance_name\030\003 \001(\t\022\020\n\010platform\030\004" +
-      " \001(\t\022\n\n\002ip\030\005 \001(\t\022-\n\tcreate_at\030\006 \001(\0132\032.go" +
-      "ogle.protobuf.Timestamp\022-\n\tupdate_at\030\007 \001" +
-      "(\0132\032.google.protobuf.Timestamp\022\014\n\004name\030\010" +
-      " \001(\t\022\016\n\006avatar\030\t \001(\t\022\014\n\004nick\030\n \001(\t\022\016\n\006ap" +
-      "peal\030\013 \001(\t\022,\n\010reset_at\030\014 \001(\0132\032.google.pr" +
-      "otobuf.Timestamp\022+\n\nowner_role\030\r \001(\0162\027.a" +
-      "pi.common.MessageRole\022\024\n\007nimName\030\016 \001(\tH\000" +
-      "\210\001\001\022\016\n\006userid\030\017 \001(\005\022$\n\005state\030\020 \001(\0162\025.api" +
-      ".common.ChatStateB\n\n\010_nimName\"\207\003\n\010ChatIt" +
-      "em\022\017\n\007chat_id\030\001 \001(\003\022$\n\005state\030\002 \001(\0162\025.api" +
-      ".common.ChatState\022\016\n\006unread\030\003 \001(\005\022\'\n\nlat" +
-      "est_msg\030\004 \001(\0132\023.api.common.Message\022-\n\tcr" +
-      "eate_at\030\005 \001(\0132\032.google.protobuf.Timestam" +
-      "p\022.\n\nservice_at\030\006 \001(\0132\032.google.protobuf." +
-      "Timestamp\022,\n\010begin_at\030\n \001(\0132\032.google.pro" +
-      "tobuf.Timestamp\022&\n\006detail\030\007 \001(\0132\026.api.co" +
-      "mmon.ChatDetail\022,\n\010reset_at\030\010 \001(\0132\032.goog" +
-      "le.protobuf.Timestamp\022\017\n\007visible\030\t \001(\010\022\027" +
-      "\n\017is_worker_reply\030\013 \001(\010B<\n\032com.teneasyCh" +
-      "at.api.commonZ\025wcs/api/common;common\272\002\006C" +
-      "ommonb\006proto3"
+      "to\032\032api/common/c_message.proto\032\031api/comm" +
+      "on/c_tenant.proto\"\211\004\n\nChatDetail\022\017\n\007chat" +
+      "_id\030\001 \001(\003\022\023\n\013entrance_id\030\002 \001(\r\022\025\n\rentran" +
+      "ce_name\030\003 \001(\t\022\020\n\010platform\030\004 \001(\t\022\n\n\002ip\030\005 " +
+      "\001(\t\022-\n\tcreate_at\030\006 \001(\0132\032.google.protobuf" +
+      ".Timestamp\022-\n\tupdate_at\030\007 \001(\0132\032.google.p" +
+      "rotobuf.Timestamp\022\014\n\004name\030\010 \001(\t\022\016\n\006avata" +
+      "r\030\t \001(\t\022\014\n\004nick\030\n \001(\t\022\016\n\006appeal\030\013 \001(\t\022,\n" +
+      "\010reset_at\030\014 \001(\0132\032.google.protobuf.Timest" +
+      "amp\022+\n\nowner_role\030\r \001(\0162\027.api.common.Mes" +
+      "sageRole\022\024\n\007nimName\030\016 \001(\tH\000\210\001\001\022\016\n\006userid" +
+      "\030\017 \001(\005\022$\n\005state\030\020 \001(\0162\025.api.common.ChatS" +
+      "tate\022-\n\tcopy_type\030\021 \001(\0162\032.api.common.Ten" +
+      "antCopyType\022\017\n\007account\030\022 \001(\t\022\023\n\013chat_rem" +
+      "ark\030\023 \001(\tB\n\n\010_nimName\"\207\003\n\010ChatItem\022\017\n\007ch" +
+      "at_id\030\001 \001(\003\022$\n\005state\030\002 \001(\0162\025.api.common." +
+      "ChatState\022\016\n\006unread\030\003 \001(\005\022\'\n\nlatest_msg\030" +
+      "\004 \001(\0132\023.api.common.Message\022-\n\tcreate_at\030" +
+      "\005 \001(\0132\032.google.protobuf.Timestamp\022.\n\nser" +
+      "vice_at\030\006 \001(\0132\032.google.protobuf.Timestam" +
+      "p\022,\n\010begin_at\030\n \001(\0132\032.google.protobuf.Ti" +
+      "mestamp\022&\n\006detail\030\007 \001(\0132\026.api.common.Cha" +
+      "tDetail\022,\n\010reset_at\030\010 \001(\0132\032.google.proto" +
+      "buf.Timestamp\022\017\n\007visible\030\t \001(\010\022\027\n\017is_wor" +
+      "ker_reply\030\013 \001(\010B<\n\032com.teneasyChat.api.c" +
+      "ommonZ\025wcs/api/common;common\272\002\006Commonb\006p" +
+      "roto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -5592,13 +6104,14 @@ public final class CChat {
           com.google.protobuf.TimestampProto.getDescriptor(),
           com.teneasyChat.api.common.CWorker.getDescriptor(),
           com.teneasyChat.api.common.CMessage.getDescriptor(),
+          com.teneasyChat.api.common.CTenant.getDescriptor(),
         });
     internal_static_api_common_ChatDetail_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_api_common_ChatDetail_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_common_ChatDetail_descriptor,
-        new java.lang.String[] { "ChatId", "EntranceId", "EntranceName", "Platform", "Ip", "CreateAt", "UpdateAt", "Name", "Avatar", "Nick", "Appeal", "ResetAt", "OwnerRole", "NimName", "Userid", "State", });
+        new java.lang.String[] { "ChatId", "EntranceId", "EntranceName", "Platform", "Ip", "CreateAt", "UpdateAt", "Name", "Avatar", "Nick", "Appeal", "ResetAt", "OwnerRole", "NimName", "Userid", "State", "CopyType", "Account", "ChatRemark", });
     internal_static_api_common_ChatItem_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_api_common_ChatItem_fieldAccessorTable = new
@@ -5610,6 +6123,7 @@ public final class CChat {
     com.google.protobuf.TimestampProto.getDescriptor();
     com.teneasyChat.api.common.CWorker.getDescriptor();
     com.teneasyChat.api.common.CMessage.getDescriptor();
+    com.teneasyChat.api.common.CTenant.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

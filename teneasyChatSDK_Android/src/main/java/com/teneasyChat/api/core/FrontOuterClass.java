@@ -8547,6 +8547,16 @@ public final class FrontOuterClass {
      * @return The priority.
      */
     int getPriority();
+
+    /**
+     * <pre>
+     * 绑定关系客服id
+     * </pre>
+     *
+     * <code>int32 binding_worker_id = 7;</code>
+     * @return The bindingWorkerId.
+     */
+    int getBindingWorkerId();
   }
   /**
    * Protobuf type {@code api.core.ConsultItem}
@@ -8788,6 +8798,21 @@ public final class FrontOuterClass {
       return priority_;
     }
 
+    public static final int BINDING_WORKER_ID_FIELD_NUMBER = 7;
+    private int bindingWorkerId_ = 0;
+    /**
+     * <pre>
+     * 绑定关系客服id
+     * </pre>
+     *
+     * <code>int32 binding_worker_id = 7;</code>
+     * @return The bindingWorkerId.
+     */
+    @java.lang.Override
+    public int getBindingWorkerId() {
+      return bindingWorkerId_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -8820,6 +8845,9 @@ public final class FrontOuterClass {
       if (priority_ != 0) {
         output.writeInt32(6, priority_);
       }
+      if (bindingWorkerId_ != 0) {
+        output.writeInt32(7, bindingWorkerId_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -8851,6 +8879,10 @@ public final class FrontOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(6, priority_);
       }
+      if (bindingWorkerId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(7, bindingWorkerId_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -8878,6 +8910,8 @@ public final class FrontOuterClass {
           != other.getUnread()) return false;
       if (getPriority()
           != other.getPriority()) return false;
+      if (getBindingWorkerId()
+          != other.getBindingWorkerId()) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -8903,6 +8937,8 @@ public final class FrontOuterClass {
       hash = (53 * hash) + getUnread();
       hash = (37 * hash) + PRIORITY_FIELD_NUMBER;
       hash = (53 * hash) + getPriority();
+      hash = (37 * hash) + BINDING_WORKER_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getBindingWorkerId();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -9046,6 +9082,7 @@ public final class FrontOuterClass {
         bitField0_ = (bitField0_ & ~0x00000008);
         unread_ = 0;
         priority_ = 0;
+        bindingWorkerId_ = 0;
         return this;
       }
 
@@ -9107,6 +9144,9 @@ public final class FrontOuterClass {
         if (((from_bitField0_ & 0x00000020) != 0)) {
           result.priority_ = priority_;
         }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.bindingWorkerId_ = bindingWorkerId_;
+        }
       }
 
       @java.lang.Override
@@ -9165,6 +9205,9 @@ public final class FrontOuterClass {
         }
         if (other.getPriority() != 0) {
           setPriority(other.getPriority());
+        }
+        if (other.getBindingWorkerId() != 0) {
+          setBindingWorkerId(other.getBindingWorkerId());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -9230,6 +9273,11 @@ public final class FrontOuterClass {
                 bitField0_ |= 0x00000020;
                 break;
               } // case 48
+              case 56: {
+                bindingWorkerId_ = input.readInt32();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 56
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -9871,6 +9919,50 @@ public final class FrontOuterClass {
       public Builder clearPriority() {
         bitField0_ = (bitField0_ & ~0x00000020);
         priority_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int bindingWorkerId_ ;
+      /**
+       * <pre>
+       * 绑定关系客服id
+       * </pre>
+       *
+       * <code>int32 binding_worker_id = 7;</code>
+       * @return The bindingWorkerId.
+       */
+      @java.lang.Override
+      public int getBindingWorkerId() {
+        return bindingWorkerId_;
+      }
+      /**
+       * <pre>
+       * 绑定关系客服id
+       * </pre>
+       *
+       * <code>int32 binding_worker_id = 7;</code>
+       * @param value The bindingWorkerId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBindingWorkerId(int value) {
+
+        bindingWorkerId_ = value;
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 绑定关系客服id
+       * </pre>
+       *
+       * <code>int32 binding_worker_id = 7;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearBindingWorkerId() {
+        bitField0_ = (bitField0_ & ~0x00000040);
+        bindingWorkerId_ = 0;
         onChanged();
         return this;
       }
@@ -20414,82 +20506,83 @@ public final class FrontOuterClass {
       "\004sign\030\006 \001(\tH\002\210\001\001B\t\n\007_useridB\014\n\n_timestam" +
       "pB\007\n\005_sign\"[\n\022BindWorkerResponse\022\014\n\004nick" +
       "\030\001 \001(\t\022\016\n\006avatar\030\002 \001(\t\022\021\n\tworker_id\030\003 \001(" +
-      "\005\022\024\n\014worker_token\030\004 \001(\t\"\213\001\n\013ConsultItem\022" +
+      "\005\022\024\n\014worker_token\030\004 \001(\t\"\246\001\n\013ConsultItem\022" +
       "\022\n\nconsult_id\030\001 \001(\r\022\014\n\004name\030\002 \001(\t\022\r\n\005gui" +
       "de\030\003 \001(\t\022)\n\005Works\030\004 \003(\0132\032.api.core.Assig" +
       "nWorkerItem\022\016\n\006unread\030\005 \001(\005\022\020\n\010priority\030" +
-      "\006 \001(\005\"K\n\025CreateAnonUserRequest\022\021\n\ttenant" +
-      "_id\030\001 \001(\005\022\023\n\013entrance_id\030\002 \001(\005\022\n\n\002ip\030\003 \001" +
-      "(\t\"E\n\026CreateAnonUserResponse\022\r\n\005token\030\001 " +
-      "\001(\t\022\014\n\004name\030\002 \001(\t\022\016\n\006avatar\030\003 \001(\t\"&\n\023Cus" +
-      "tomerDataRequest\022\017\n\007chat_id\030\001 \001(\003\"\344\001\n\024Cu" +
-      "stomerDataResponse\022\014\n\004name\030\001 \001(\t\022\023\n\013user" +
-      "_source\030\002 \001(\t\022\022\n\nip_address\030\003 \001(\t\0226\n\022fir" +
-      "st_contact_time\030\004 \001(\0132\032.google.protobuf." +
-      "Timestamp\0225\n\021last_contact_time\030\005 \001(\0132\032.g" +
-      "oogle.protobuf.Timestamp\022\021\n\tuser_name\030\006 " +
-      "\001(\t\022\023\n\013user_appeal\030\007 \001(\t\"Z\n\022QueryWorkerR" +
-      "equest\022\026\n\tworker_id\030\001 \001(\005H\000\210\001\001\022\023\n\006nim_id" +
-      "\030\002 \001(\tH\001\210\001\001B\014\n\n_worker_idB\t\n\007_nim_id\"b\n\023" +
-      "QueryWorkerResponse\022\021\n\tworker_id\030\001 \001(\005\022\023" +
-      "\n\013worker_name\030\002 \001(\t\022\025\n\rworker_avatar\030\003 \001" +
-      "(\t\022\014\n\004tips\030\004 \001(\t\"7\n\020QueryChatRequest\022\017\n\007" +
-      "chat_id\030\001 \003(\003\022\022\n\nconsult_id\030\002 \001(\r\"8\n\021Que" +
-      "ryChatResponse\022#\n\005chats\030\001 \003(\0132\024.api.comm" +
-      "on.ChatItem\"R\n\027UpdateUserAppealRequest\022\017" +
-      "\n\007chat_id\030\001 \001(\003\022\021\n\tuser_name\030\002 \001(\t\022\023\n\013us" +
-      "er_appeal\030\003 \001(\t\" \n\017PingPongRequest\022\r\n\005lo" +
-      "cal\030\001 \001(\003\"!\n\020PingPongResponse\022\r\n\005local\030\001" +
-      " \001(\003\"\'\n\014ReplyRequest\022\027\n\006msg_id\030\001 \001(\003B\007\372B" +
-      "\004\"\002 \000\";\n\rVerifyRequest\022\016\n\006gns_id\030\001 \001(\t\022\032" +
-      "\n\ttenant_id\030\002 \001(\005B\007\372B\004\032\002 \000\"3\n\016VerifyResp" +
-      "onse\022\016\n\006gns_id\030\001 \001(\t\022\021\n\ttenant_id\030\002 \001(\005\"" +
-      "4\n\025ClientMarkReadRequest\022\033\n\nconsult_id\030\001" +
-      " \001(\003B\007\372B\004\"\002 \0002\246\r\n\005Front\022h\n\014CustomerInfo\022" +
-      "\035.api.core.CustomerDataRequest\032\036.api.cor" +
-      "e.CustomerDataResponse\"\031\272\276\031\025\010\211\007\030\001\322\014\rcust" +
-      "omer-info\022h\n\014AssignWorker\022\035.api.core.Ass" +
-      "ignWorkerRequest\032\036.api.core.AssignWorker" +
-      "Response\"\031\272\276\031\025\010\205\007\030\001\322\014\rassign-worker\022i\n\rQ" +
-      "ueryEntrance\022\026.google.protobuf.Empty\032\037.a" +
-      "pi.core.QueryEntranceResponse\"\037\272\276\031\033\010\206\007\030\001" +
-      "\312\014\002\002\004\322\014\016query-entrance\022p\n\016QueryAutoReply" +
-      "\022\032.api.core.AutoReplyRequest\032 .api.core." +
-      "QueryAutoReplyResponse\" \272\276\031\034\010\207\007\030\001\312\014\001\002\322\014\020" +
-      "query-auto-reply\022\202\001\n\016CreateAnonUser\022\037.ap" +
-      "i.core.CreateAnonUserRequest\032 .api.core." +
-      "CreateAnonUserResponse\"-\272\276\031)\010\211\007\030\001\262\006\n2022" +
-      "-12-31\312\014\001\004\322\014\020create-anon-user\022u\n\013QueryWo" +
-      "rker\022\034.api.core.QueryWorkerRequest\032\035.api" +
-      ".core.QueryWorkerResponse\")\272\276\031%\010\212\007\030\001\262\006\n2" +
-      "023-01-05\312\014\001\004\322\014\014query-worker\022n\n\tQueryCha" +
-      "t\022\032.api.core.QueryChatRequest\032\033.api.core" +
-      ".QueryChatResponse\"(\272\276\031$\010\213\007\030\001\262\006\n2023-01-" +
-      "05\312\014\002\004\020\322\014\nquery-chat\022\177\n\020UpdateUserAppeal" +
-      "\022!.api.core.UpdateUserAppealRequest\032\026.go" +
-      "ogle.protobuf.Empty\"0\272\276\031,\010\213\007\030\001\262\006\n2023-01" +
-      "-05\312\014\002\004\020\322\014\022update-user-appeal\022Z\n\004Ping\022\026." +
-      "google.protobuf.Empty\032\026.google.protobuf." +
-      "Empty\"\"\272\276\031\036\010\214\007\030\001\262\006\n2023-02-08\312\014\002\020\004\322\014\004pin" +
-      "g\022i\n\010PingPong\022\031.api.core.PingPongRequest" +
-      "\032\032.api.core.PingPongResponse\"&\272\276\031\"\010\214\007\030\001\262" +
-      "\006\n2023-02-08\312\014\001\002\322\014\tping-pong\022Z\n\010ReplyPls" +
-      "\022\026.api.core.ReplyRequest\032\026.google.protob" +
-      "uf.Empty\"\036\272\276\031\032\010\215\007\030\001\262\006\n2023-02-15\322\014\005reply" +
-      "\022\202\001\n\024QueryWorkerAutoReply\022\037.api.core.Que" +
-      "ryAutoReplyRequest\032 .api.core.QueryAutoR" +
-      "eplyResponse\"\'\272\276\031#\010\216\007\030\001\312\014\001\002\322\014\027query-work" +
-      "er-auto-reply\022a\n\006verify\022\027.api.core.Verif" +
-      "yRequest\032\030.api.core.VerifyResponse\"$\272\276\031 " +
-      "\010\214\007\030\001\262\006\n2024-04-22\312\014\002\002\004\322\014\006verify\022l\n\010Mark" +
-      "Read\022\037.api.core.ClientMarkReadRequest\032\026." +
-      "google.protobuf.Empty\"\'\272\276\031#\010\215\007\030\001\262\006\n2024-" +
-      "04-22\322\014\016chat/mark-read\022m\n\tNotifyMsg\022\036.ap" +
-      "i.core.NotifyMessageRequest\032\026.google.pro" +
-      "tobuf.Empty\"(\272\276\031$\010\216\007\030\001\262\006\n2024-08-01\312\014\002\002\004" +
-      "\322\014\nnotify-msg\032\027\272\276\031\023\272\006\005front\312\014\002\001\004\322\014\003apiBF" +
-      "\n\030com.teneasyChat.api.coreZ\021wcs/api/core" +
-      ";core\272\276\031\025\242\006\005mango\262\006\n2022-12-12b\006proto3"
+      "\006 \001(\005\022\031\n\021binding_worker_id\030\007 \001(\005\"K\n\025Crea" +
+      "teAnonUserRequest\022\021\n\ttenant_id\030\001 \001(\005\022\023\n\013" +
+      "entrance_id\030\002 \001(\005\022\n\n\002ip\030\003 \001(\t\"E\n\026CreateA" +
+      "nonUserResponse\022\r\n\005token\030\001 \001(\t\022\014\n\004name\030\002" +
+      " \001(\t\022\016\n\006avatar\030\003 \001(\t\"&\n\023CustomerDataRequ" +
+      "est\022\017\n\007chat_id\030\001 \001(\003\"\344\001\n\024CustomerDataRes" +
+      "ponse\022\014\n\004name\030\001 \001(\t\022\023\n\013user_source\030\002 \001(\t" +
+      "\022\022\n\nip_address\030\003 \001(\t\0226\n\022first_contact_ti" +
+      "me\030\004 \001(\0132\032.google.protobuf.Timestamp\0225\n\021" +
+      "last_contact_time\030\005 \001(\0132\032.google.protobu" +
+      "f.Timestamp\022\021\n\tuser_name\030\006 \001(\t\022\023\n\013user_a" +
+      "ppeal\030\007 \001(\t\"Z\n\022QueryWorkerRequest\022\026\n\twor" +
+      "ker_id\030\001 \001(\005H\000\210\001\001\022\023\n\006nim_id\030\002 \001(\tH\001\210\001\001B\014" +
+      "\n\n_worker_idB\t\n\007_nim_id\"b\n\023QueryWorkerRe" +
+      "sponse\022\021\n\tworker_id\030\001 \001(\005\022\023\n\013worker_name" +
+      "\030\002 \001(\t\022\025\n\rworker_avatar\030\003 \001(\t\022\014\n\004tips\030\004 " +
+      "\001(\t\"7\n\020QueryChatRequest\022\017\n\007chat_id\030\001 \003(\003" +
+      "\022\022\n\nconsult_id\030\002 \001(\r\"8\n\021QueryChatRespons" +
+      "e\022#\n\005chats\030\001 \003(\0132\024.api.common.ChatItem\"R" +
+      "\n\027UpdateUserAppealRequest\022\017\n\007chat_id\030\001 \001" +
+      "(\003\022\021\n\tuser_name\030\002 \001(\t\022\023\n\013user_appeal\030\003 \001" +
+      "(\t\" \n\017PingPongRequest\022\r\n\005local\030\001 \001(\003\"!\n\020" +
+      "PingPongResponse\022\r\n\005local\030\001 \001(\003\"\'\n\014Reply" +
+      "Request\022\027\n\006msg_id\030\001 \001(\003B\007\372B\004\"\002 \000\";\n\rVeri" +
+      "fyRequest\022\016\n\006gns_id\030\001 \001(\t\022\032\n\ttenant_id\030\002" +
+      " \001(\005B\007\372B\004\032\002 \000\"3\n\016VerifyResponse\022\016\n\006gns_i" +
+      "d\030\001 \001(\t\022\021\n\ttenant_id\030\002 \001(\005\"4\n\025ClientMark" +
+      "ReadRequest\022\033\n\nconsult_id\030\001 \001(\003B\007\372B\004\"\002 \000" +
+      "2\246\r\n\005Front\022h\n\014CustomerInfo\022\035.api.core.Cu" +
+      "stomerDataRequest\032\036.api.core.CustomerDat" +
+      "aResponse\"\031\272\276\031\025\010\211\007\030\001\322\014\rcustomer-info\022h\n\014" +
+      "AssignWorker\022\035.api.core.AssignWorkerRequ" +
+      "est\032\036.api.core.AssignWorkerResponse\"\031\272\276\031" +
+      "\025\010\205\007\030\001\322\014\rassign-worker\022i\n\rQueryEntrance\022" +
+      "\026.google.protobuf.Empty\032\037.api.core.Query" +
+      "EntranceResponse\"\037\272\276\031\033\010\206\007\030\001\312\014\002\002\004\322\014\016query" +
+      "-entrance\022p\n\016QueryAutoReply\022\032.api.core.A" +
+      "utoReplyRequest\032 .api.core.QueryAutoRepl" +
+      "yResponse\" \272\276\031\034\010\207\007\030\001\312\014\001\002\322\014\020query-auto-re" +
+      "ply\022\202\001\n\016CreateAnonUser\022\037.api.core.Create" +
+      "AnonUserRequest\032 .api.core.CreateAnonUse" +
+      "rResponse\"-\272\276\031)\010\211\007\030\001\262\006\n2022-12-31\312\014\001\004\322\014\020" +
+      "create-anon-user\022u\n\013QueryWorker\022\034.api.co" +
+      "re.QueryWorkerRequest\032\035.api.core.QueryWo" +
+      "rkerResponse\")\272\276\031%\010\212\007\030\001\262\006\n2023-01-05\312\014\001\004" +
+      "\322\014\014query-worker\022n\n\tQueryChat\022\032.api.core." +
+      "QueryChatRequest\032\033.api.core.QueryChatRes" +
+      "ponse\"(\272\276\031$\010\213\007\030\001\262\006\n2023-01-05\312\014\002\004\020\322\014\nque" +
+      "ry-chat\022\177\n\020UpdateUserAppeal\022!.api.core.U" +
+      "pdateUserAppealRequest\032\026.google.protobuf" +
+      ".Empty\"0\272\276\031,\010\213\007\030\001\262\006\n2023-01-05\312\014\002\004\020\322\014\022up" +
+      "date-user-appeal\022Z\n\004Ping\022\026.google.protob" +
+      "uf.Empty\032\026.google.protobuf.Empty\"\"\272\276\031\036\010\214" +
+      "\007\030\001\262\006\n2023-02-08\312\014\002\020\004\322\014\004ping\022i\n\010PingPong" +
+      "\022\031.api.core.PingPongRequest\032\032.api.core.P" +
+      "ingPongResponse\"&\272\276\031\"\010\214\007\030\001\262\006\n2023-02-08\312" +
+      "\014\001\002\322\014\tping-pong\022Z\n\010ReplyPls\022\026.api.core.R" +
+      "eplyRequest\032\026.google.protobuf.Empty\"\036\272\276\031" +
+      "\032\010\215\007\030\001\262\006\n2023-02-15\322\014\005reply\022\202\001\n\024QueryWor" +
+      "kerAutoReply\022\037.api.core.QueryAutoReplyRe" +
+      "quest\032 .api.core.QueryAutoReplyResponse\"" +
+      "\'\272\276\031#\010\216\007\030\001\312\014\001\002\322\014\027query-worker-auto-reply" +
+      "\022a\n\006verify\022\027.api.core.VerifyRequest\032\030.ap" +
+      "i.core.VerifyResponse\"$\272\276\031 \010\214\007\030\001\262\006\n2024-" +
+      "04-22\312\014\002\002\004\322\014\006verify\022l\n\010MarkRead\022\037.api.co" +
+      "re.ClientMarkReadRequest\032\026.google.protob" +
+      "uf.Empty\"\'\272\276\031#\010\215\007\030\001\262\006\n2024-04-22\322\014\016chat/" +
+      "mark-read\022m\n\tNotifyMsg\022\036.api.core.Notify" +
+      "MessageRequest\032\026.google.protobuf.Empty\"(" +
+      "\272\276\031$\010\216\007\030\001\262\006\n2024-08-01\312\014\002\002\004\322\014\nnotify-msg" +
+      "\032\027\272\276\031\023\272\006\005front\312\014\002\001\004\322\014\003apiBF\n\030com.teneasy" +
+      "Chat.api.coreZ\021wcs/api/core;core\272\276\031\025\242\006\005m" +
+      "ango\262\006\n2022-12-12b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -20563,7 +20656,7 @@ public final class FrontOuterClass {
     internal_static_api_core_ConsultItem_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_core_ConsultItem_descriptor,
-        new java.lang.String[] { "ConsultId", "Name", "Guide", "Works", "Unread", "Priority", });
+        new java.lang.String[] { "ConsultId", "Name", "Guide", "Works", "Unread", "Priority", "BindingWorkerId", });
     internal_static_api_core_CreateAnonUserRequest_descriptor =
       getDescriptor().getMessageTypes().get(10);
     internal_static_api_core_CreateAnonUserRequest_fieldAccessorTable = new

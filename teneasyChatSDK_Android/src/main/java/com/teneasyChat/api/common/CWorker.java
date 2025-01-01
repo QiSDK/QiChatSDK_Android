@@ -26,6 +26,536 @@ public final class CWorker {
   }
   /**
    * <pre>
+   * 消息服务时长类型
+   * </pre>
+   *
+   * Protobuf enum {@code api.common.ResponseDurationType}
+   */
+  public enum ResponseDurationType
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <pre>
+     * 未知
+     * </pre>
+     *
+     * <code>RDT_UNKNOWN = 0;</code>
+     */
+    RDT_UNKNOWN(0),
+    /**
+     * <pre>
+     * 5分钟内回复
+     * </pre>
+     *
+     * <code>RDT_QUICK_RESPONSE = 1;</code>
+     */
+    RDT_QUICK_RESPONSE(1),
+    /**
+     * <pre>
+     * 15分钟内回复
+     * </pre>
+     *
+     * <code>RDT_SHORT_RESPONSE = 2;</code>
+     */
+    RDT_SHORT_RESPONSE(2),
+    /**
+     * <pre>
+     * 30分钟内回复
+     * </pre>
+     *
+     * <code>RDT_MEDIUM_RESPONSE = 3;</code>
+     */
+    RDT_MEDIUM_RESPONSE(3),
+    /**
+     * <pre>
+     * 60分钟内回复
+     * </pre>
+     *
+     * <code>RDT_LONG_RESPONSE = 4;</code>
+     */
+    RDT_LONG_RESPONSE(4),
+    /**
+     * <pre>
+     * 60分钟以上回复
+     * </pre>
+     *
+     * <code>RDT_DELAYED_RESPONSE = 5;</code>
+     */
+    RDT_DELAYED_RESPONSE(5),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 26,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        ResponseDurationType.class.getName());
+    }
+    /**
+     * <pre>
+     * 未知
+     * </pre>
+     *
+     * <code>RDT_UNKNOWN = 0;</code>
+     */
+    public static final int RDT_UNKNOWN_VALUE = 0;
+    /**
+     * <pre>
+     * 5分钟内回复
+     * </pre>
+     *
+     * <code>RDT_QUICK_RESPONSE = 1;</code>
+     */
+    public static final int RDT_QUICK_RESPONSE_VALUE = 1;
+    /**
+     * <pre>
+     * 15分钟内回复
+     * </pre>
+     *
+     * <code>RDT_SHORT_RESPONSE = 2;</code>
+     */
+    public static final int RDT_SHORT_RESPONSE_VALUE = 2;
+    /**
+     * <pre>
+     * 30分钟内回复
+     * </pre>
+     *
+     * <code>RDT_MEDIUM_RESPONSE = 3;</code>
+     */
+    public static final int RDT_MEDIUM_RESPONSE_VALUE = 3;
+    /**
+     * <pre>
+     * 60分钟内回复
+     * </pre>
+     *
+     * <code>RDT_LONG_RESPONSE = 4;</code>
+     */
+    public static final int RDT_LONG_RESPONSE_VALUE = 4;
+    /**
+     * <pre>
+     * 60分钟以上回复
+     * </pre>
+     *
+     * <code>RDT_DELAYED_RESPONSE = 5;</code>
+     */
+    public static final int RDT_DELAYED_RESPONSE_VALUE = 5;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static ResponseDurationType valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static ResponseDurationType forNumber(int value) {
+      switch (value) {
+        case 0: return RDT_UNKNOWN;
+        case 1: return RDT_QUICK_RESPONSE;
+        case 2: return RDT_SHORT_RESPONSE;
+        case 3: return RDT_MEDIUM_RESPONSE;
+        case 4: return RDT_LONG_RESPONSE;
+        case 5: return RDT_DELAYED_RESPONSE;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<ResponseDurationType>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        ResponseDurationType> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<ResponseDurationType>() {
+            public ResponseDurationType findValueByNumber(int number) {
+              return ResponseDurationType.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return com.teneasyChat.api.common.CWorker.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final ResponseDurationType[] VALUES = values();
+
+    public static ResponseDurationType valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private ResponseDurationType(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:api.common.ResponseDurationType)
+  }
+
+  /**
+   * <pre>
+   * 首次消息服务时长类型
+   * </pre>
+   *
+   * Protobuf enum {@code api.common.FirstResponseDurationType}
+   */
+  public enum FirstResponseDurationType
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <pre>
+     * 未知
+     * </pre>
+     *
+     * <code>RRT_UNKNOWN = 0;</code>
+     */
+    RRT_UNKNOWN(0),
+    /**
+     * <pre>
+     * 3分钟内响应
+     * </pre>
+     *
+     * <code>RRT_QUICK_RESPONSE = 1;</code>
+     */
+    RRT_QUICK_RESPONSE(1),
+    /**
+     * <pre>
+     * 10分钟内响应
+     * </pre>
+     *
+     * <code>RRT_SHORT_RESPONSE = 2;</code>
+     */
+    RRT_SHORT_RESPONSE(2),
+    /**
+     * <pre>
+     * 15分钟以上响应
+     * </pre>
+     *
+     * <code>RRT_MEDIUM_RESPONSE = 3;</code>
+     */
+    RRT_MEDIUM_RESPONSE(3),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 26,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        FirstResponseDurationType.class.getName());
+    }
+    /**
+     * <pre>
+     * 未知
+     * </pre>
+     *
+     * <code>RRT_UNKNOWN = 0;</code>
+     */
+    public static final int RRT_UNKNOWN_VALUE = 0;
+    /**
+     * <pre>
+     * 3分钟内响应
+     * </pre>
+     *
+     * <code>RRT_QUICK_RESPONSE = 1;</code>
+     */
+    public static final int RRT_QUICK_RESPONSE_VALUE = 1;
+    /**
+     * <pre>
+     * 10分钟内响应
+     * </pre>
+     *
+     * <code>RRT_SHORT_RESPONSE = 2;</code>
+     */
+    public static final int RRT_SHORT_RESPONSE_VALUE = 2;
+    /**
+     * <pre>
+     * 15分钟以上响应
+     * </pre>
+     *
+     * <code>RRT_MEDIUM_RESPONSE = 3;</code>
+     */
+    public static final int RRT_MEDIUM_RESPONSE_VALUE = 3;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static FirstResponseDurationType valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static FirstResponseDurationType forNumber(int value) {
+      switch (value) {
+        case 0: return RRT_UNKNOWN;
+        case 1: return RRT_QUICK_RESPONSE;
+        case 2: return RRT_SHORT_RESPONSE;
+        case 3: return RRT_MEDIUM_RESPONSE;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<FirstResponseDurationType>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        FirstResponseDurationType> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<FirstResponseDurationType>() {
+            public FirstResponseDurationType findValueByNumber(int number) {
+              return FirstResponseDurationType.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return com.teneasyChat.api.common.CWorker.getDescriptor().getEnumTypes().get(1);
+    }
+
+    private static final FirstResponseDurationType[] VALUES = values();
+
+    public static FirstResponseDurationType valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private FirstResponseDurationType(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:api.common.FirstResponseDurationType)
+  }
+
+  /**
+   * <pre>
+   * 转接类型
+   * </pre>
+   *
+   * Protobuf enum {@code api.common.TransferType}
+   */
+  public enum TransferType
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <pre>
+     * 未知
+     * </pre>
+     *
+     * <code>TT_UNKNOWN = 0;</code>
+     */
+    TT_UNKNOWN(0),
+    /**
+     * <pre>
+     * 转入
+     * </pre>
+     *
+     * <code>TT_TRANSFER_IN = 1;</code>
+     */
+    TT_TRANSFER_IN(1),
+    /**
+     * <pre>
+     * 转出
+     * </pre>
+     *
+     * <code>TT_TRANSFER_OUT = 2;</code>
+     */
+    TT_TRANSFER_OUT(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 26,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        TransferType.class.getName());
+    }
+    /**
+     * <pre>
+     * 未知
+     * </pre>
+     *
+     * <code>TT_UNKNOWN = 0;</code>
+     */
+    public static final int TT_UNKNOWN_VALUE = 0;
+    /**
+     * <pre>
+     * 转入
+     * </pre>
+     *
+     * <code>TT_TRANSFER_IN = 1;</code>
+     */
+    public static final int TT_TRANSFER_IN_VALUE = 1;
+    /**
+     * <pre>
+     * 转出
+     * </pre>
+     *
+     * <code>TT_TRANSFER_OUT = 2;</code>
+     */
+    public static final int TT_TRANSFER_OUT_VALUE = 2;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static TransferType valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static TransferType forNumber(int value) {
+      switch (value) {
+        case 0: return TT_UNKNOWN;
+        case 1: return TT_TRANSFER_IN;
+        case 2: return TT_TRANSFER_OUT;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<TransferType>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        TransferType> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<TransferType>() {
+            public TransferType findValueByNumber(int number) {
+              return TransferType.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return com.teneasyChat.api.common.CWorker.getDescriptor().getEnumTypes().get(2);
+    }
+
+    private static final TransferType[] VALUES = values();
+
+    public static TransferType valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private TransferType(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:api.common.TransferType)
+  }
+
+  /**
+   * <pre>
    * 老用户分配机制
    * </pre>
    *
@@ -169,7 +699,7 @@ public final class CWorker {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return com.teneasyChat.api.common.CWorker.getDescriptor().getEnumTypes().get(0);
+      return com.teneasyChat.api.common.CWorker.getDescriptor().getEnumTypes().get(3);
     }
 
     private static final DistributionType[] VALUES = values();
@@ -258,12 +788,44 @@ public final class CWorker {
     WORKER_PERM_SEARCHER(32),
     /**
      * <pre>
-     * 可拉黑名单
+     * 对话质检
      * </pre>
      *
-     * <code>WORKER_PERM_BLACKER = 64;</code>
+     * <code>WORKER_PERM_Quality = 64;</code>
      */
-    WORKER_PERM_BLACKER(64),
+    WORKER_PERM_Quality(64),
+    /**
+     * <pre>
+     * 质检结果
+     * </pre>
+     *
+     * <code>WORKER_PERM_Quality_Result = 128;</code>
+     */
+    WORKER_PERM_Quality_Result(128),
+    /**
+     * <pre>
+     * 质检报表
+     * </pre>
+     *
+     * <code>WORKER_PERM_Quality_Report = 256;</code>
+     */
+    WORKER_PERM_Quality_Report(256),
+    /**
+     * <pre>
+     * 质检客服结果
+     * </pre>
+     *
+     * <code>WORKER_PERM_Quality_Worker_Result = 512;</code>
+     */
+    WORKER_PERM_Quality_Worker_Result(512),
+    /**
+     * <pre>
+     * 质检设置
+     * </pre>
+     *
+     * <code>WORKER_PERM_Quality_Setting = 1024;</code>
+     */
+    WORKER_PERM_Quality_Setting(1024),
     UNRECOGNIZED(-1),
     ;
 
@@ -330,12 +892,44 @@ public final class CWorker {
     public static final int WORKER_PERM_SEARCHER_VALUE = 32;
     /**
      * <pre>
-     * 可拉黑名单
+     * 对话质检
      * </pre>
      *
-     * <code>WORKER_PERM_BLACKER = 64;</code>
+     * <code>WORKER_PERM_Quality = 64;</code>
      */
-    public static final int WORKER_PERM_BLACKER_VALUE = 64;
+    public static final int WORKER_PERM_Quality_VALUE = 64;
+    /**
+     * <pre>
+     * 质检结果
+     * </pre>
+     *
+     * <code>WORKER_PERM_Quality_Result = 128;</code>
+     */
+    public static final int WORKER_PERM_Quality_Result_VALUE = 128;
+    /**
+     * <pre>
+     * 质检报表
+     * </pre>
+     *
+     * <code>WORKER_PERM_Quality_Report = 256;</code>
+     */
+    public static final int WORKER_PERM_Quality_Report_VALUE = 256;
+    /**
+     * <pre>
+     * 质检客服结果
+     * </pre>
+     *
+     * <code>WORKER_PERM_Quality_Worker_Result = 512;</code>
+     */
+    public static final int WORKER_PERM_Quality_Worker_Result_VALUE = 512;
+    /**
+     * <pre>
+     * 质检设置
+     * </pre>
+     *
+     * <code>WORKER_PERM_Quality_Setting = 1024;</code>
+     */
+    public static final int WORKER_PERM_Quality_Setting_VALUE = 1024;
 
 
     public final int getNumber() {
@@ -369,7 +963,11 @@ public final class CWorker {
         case 8: return WORKER_PERM_FRONTER;
         case 16: return WORKER_PERM_TRANSFER;
         case 32: return WORKER_PERM_SEARCHER;
-        case 64: return WORKER_PERM_BLACKER;
+        case 64: return WORKER_PERM_Quality;
+        case 128: return WORKER_PERM_Quality_Result;
+        case 256: return WORKER_PERM_Quality_Report;
+        case 512: return WORKER_PERM_Quality_Worker_Result;
+        case 1024: return WORKER_PERM_Quality_Setting;
         default: return null;
       }
     }
@@ -400,7 +998,7 @@ public final class CWorker {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return com.teneasyChat.api.common.CWorker.getDescriptor().getEnumTypes().get(1);
+      return com.teneasyChat.api.common.CWorker.getDescriptor().getEnumTypes().get(4);
     }
 
     private static final WorkerPermission[] VALUES = values();
@@ -517,7 +1115,7 @@ public final class CWorker {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return com.teneasyChat.api.common.CWorker.getDescriptor().getEnumTypes().get(2);
+      return com.teneasyChat.api.common.CWorker.getDescriptor().getEnumTypes().get(5);
     }
 
     private static final ConnectState[] VALUES = values();
@@ -667,7 +1265,7 @@ public final class CWorker {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return com.teneasyChat.api.common.CWorker.getDescriptor().getEnumTypes().get(3);
+      return com.teneasyChat.api.common.CWorker.getDescriptor().getEnumTypes().get(6);
     }
 
     private static final OnlineState[] VALUES = values();
@@ -834,7 +1432,7 @@ public final class CWorker {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return com.teneasyChat.api.common.CWorker.getDescriptor().getEnumTypes().get(4);
+      return com.teneasyChat.api.common.CWorker.getDescriptor().getEnumTypes().get(7);
     }
 
     private static final WorkerState[] VALUES = values();
@@ -1035,7 +1633,7 @@ public final class CWorker {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return com.teneasyChat.api.common.CWorker.getDescriptor().getEnumTypes().get(5);
+      return com.teneasyChat.api.common.CWorker.getDescriptor().getEnumTypes().get(8);
     }
 
     private static final WorkerEventType[] VALUES = values();
@@ -1059,6 +1657,1637 @@ public final class CWorker {
     }
 
     // @@protoc_insertion_point(enum_scope:api.common.WorkerEventType)
+  }
+
+  /**
+   * <pre>
+   * SessionSourceType 会话记录来源类型
+   * </pre>
+   *
+   * Protobuf enum {@code api.common.SessionSourceType}
+   */
+  public enum SessionSourceType
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <pre>
+     * 未知
+     * </pre>
+     *
+     * <code>SST_UNKNOWN = 0;</code>
+     */
+    SST_UNKNOWN(0),
+    /**
+     * <pre>
+     * 分流
+     * </pre>
+     *
+     * <code>SST_ASSIGN = 1;</code>
+     */
+    SST_ASSIGN(1),
+    /**
+     * <pre>
+     * 转接
+     * </pre>
+     *
+     * <code>SST_TRANSFER = 2;</code>
+     */
+    SST_TRANSFER(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 26,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        SessionSourceType.class.getName());
+    }
+    /**
+     * <pre>
+     * 未知
+     * </pre>
+     *
+     * <code>SST_UNKNOWN = 0;</code>
+     */
+    public static final int SST_UNKNOWN_VALUE = 0;
+    /**
+     * <pre>
+     * 分流
+     * </pre>
+     *
+     * <code>SST_ASSIGN = 1;</code>
+     */
+    public static final int SST_ASSIGN_VALUE = 1;
+    /**
+     * <pre>
+     * 转接
+     * </pre>
+     *
+     * <code>SST_TRANSFER = 2;</code>
+     */
+    public static final int SST_TRANSFER_VALUE = 2;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static SessionSourceType valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static SessionSourceType forNumber(int value) {
+      switch (value) {
+        case 0: return SST_UNKNOWN;
+        case 1: return SST_ASSIGN;
+        case 2: return SST_TRANSFER;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<SessionSourceType>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        SessionSourceType> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<SessionSourceType>() {
+            public SessionSourceType findValueByNumber(int number) {
+              return SessionSourceType.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return com.teneasyChat.api.common.CWorker.getDescriptor().getEnumTypes().get(9);
+    }
+
+    private static final SessionSourceType[] VALUES = values();
+
+    public static SessionSourceType valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private SessionSourceType(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:api.common.SessionSourceType)
+  }
+
+  /**
+   * <pre>
+   * WorkerCheckType 质检类型
+   * </pre>
+   *
+   * Protobuf enum {@code api.common.WorkerCheckType}
+   */
+  public enum WorkerCheckType
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <pre>
+     * 普通
+     * </pre>
+     *
+     * <code>WQT_COMMON = 0;</code>
+     */
+    WQT_COMMON(0),
+    /**
+     * <pre>
+     * 必检
+     * </pre>
+     *
+     * <code>WQT_MUST = 1;</code>
+     */
+    WQT_MUST(1),
+    /**
+     * <pre>
+     * 联检
+     * </pre>
+     *
+     * <code>WQT_COMBINED = 2;</code>
+     */
+    WQT_COMBINED(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 26,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        WorkerCheckType.class.getName());
+    }
+    /**
+     * <pre>
+     * 普通
+     * </pre>
+     *
+     * <code>WQT_COMMON = 0;</code>
+     */
+    public static final int WQT_COMMON_VALUE = 0;
+    /**
+     * <pre>
+     * 必检
+     * </pre>
+     *
+     * <code>WQT_MUST = 1;</code>
+     */
+    public static final int WQT_MUST_VALUE = 1;
+    /**
+     * <pre>
+     * 联检
+     * </pre>
+     *
+     * <code>WQT_COMBINED = 2;</code>
+     */
+    public static final int WQT_COMBINED_VALUE = 2;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static WorkerCheckType valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static WorkerCheckType forNumber(int value) {
+      switch (value) {
+        case 0: return WQT_COMMON;
+        case 1: return WQT_MUST;
+        case 2: return WQT_COMBINED;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<WorkerCheckType>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        WorkerCheckType> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<WorkerCheckType>() {
+            public WorkerCheckType findValueByNumber(int number) {
+              return WorkerCheckType.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return com.teneasyChat.api.common.CWorker.getDescriptor().getEnumTypes().get(10);
+    }
+
+    private static final WorkerCheckType[] VALUES = values();
+
+    public static WorkerCheckType valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private WorkerCheckType(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:api.common.WorkerCheckType)
+  }
+
+  /**
+   * <pre>
+   * 质检评级类型
+   * </pre>
+   *
+   * Protobuf enum {@code api.common.WorkerScoreType}
+   */
+  public enum WorkerScoreType
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <pre>
+     * 普通
+     * </pre>
+     *
+     * <code>WST_UNKNOWN = 0;</code>
+     */
+    WST_UNKNOWN(0),
+    /**
+     * <pre>
+     * 优异
+     * </pre>
+     *
+     * <code>PWST_ERFECT = 1;</code>
+     */
+    PWST_ERFECT(1),
+    /**
+     * <pre>
+     * 正常
+     * </pre>
+     *
+     * <code>WST_NORMAL = 2;</code>
+     */
+    WST_NORMAL(2),
+    /**
+     * <pre>
+     * 较差
+     * </pre>
+     *
+     * <code>WST_POOR = 3;</code>
+     */
+    WST_POOR(3),
+    /**
+     * <pre>
+     * 极差
+     * </pre>
+     *
+     * <code>WST_VERY_POOR = 4;</code>
+     */
+    WST_VERY_POOR(4),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 26,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        WorkerScoreType.class.getName());
+    }
+    /**
+     * <pre>
+     * 普通
+     * </pre>
+     *
+     * <code>WST_UNKNOWN = 0;</code>
+     */
+    public static final int WST_UNKNOWN_VALUE = 0;
+    /**
+     * <pre>
+     * 优异
+     * </pre>
+     *
+     * <code>PWST_ERFECT = 1;</code>
+     */
+    public static final int PWST_ERFECT_VALUE = 1;
+    /**
+     * <pre>
+     * 正常
+     * </pre>
+     *
+     * <code>WST_NORMAL = 2;</code>
+     */
+    public static final int WST_NORMAL_VALUE = 2;
+    /**
+     * <pre>
+     * 较差
+     * </pre>
+     *
+     * <code>WST_POOR = 3;</code>
+     */
+    public static final int WST_POOR_VALUE = 3;
+    /**
+     * <pre>
+     * 极差
+     * </pre>
+     *
+     * <code>WST_VERY_POOR = 4;</code>
+     */
+    public static final int WST_VERY_POOR_VALUE = 4;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static WorkerScoreType valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static WorkerScoreType forNumber(int value) {
+      switch (value) {
+        case 0: return WST_UNKNOWN;
+        case 1: return PWST_ERFECT;
+        case 2: return WST_NORMAL;
+        case 3: return WST_POOR;
+        case 4: return WST_VERY_POOR;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<WorkerScoreType>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        WorkerScoreType> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<WorkerScoreType>() {
+            public WorkerScoreType findValueByNumber(int number) {
+              return WorkerScoreType.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return com.teneasyChat.api.common.CWorker.getDescriptor().getEnumTypes().get(11);
+    }
+
+    private static final WorkerScoreType[] VALUES = values();
+
+    public static WorkerScoreType valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private WorkerScoreType(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:api.common.WorkerScoreType)
+  }
+
+  /**
+   * Protobuf enum {@code api.common.CheckViewSource}
+   */
+  public enum CheckViewSource
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <pre>
+     * 客服质检报表来源的访问
+     * </pre>
+     *
+     * <code>WORKER_QUALITY_SOURCE = 0;</code>
+     */
+    WORKER_QUALITY_SOURCE(0),
+    /**
+     * <pre>
+     * 质检客服报表来源
+     * </pre>
+     *
+     * <code>QUALITY_WORKER_SESSION_SOURCE = 1;</code>
+     */
+    QUALITY_WORKER_SESSION_SOURCE(1),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 26,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        CheckViewSource.class.getName());
+    }
+    /**
+     * <pre>
+     * 客服质检报表来源的访问
+     * </pre>
+     *
+     * <code>WORKER_QUALITY_SOURCE = 0;</code>
+     */
+    public static final int WORKER_QUALITY_SOURCE_VALUE = 0;
+    /**
+     * <pre>
+     * 质检客服报表来源
+     * </pre>
+     *
+     * <code>QUALITY_WORKER_SESSION_SOURCE = 1;</code>
+     */
+    public static final int QUALITY_WORKER_SESSION_SOURCE_VALUE = 1;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static CheckViewSource valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static CheckViewSource forNumber(int value) {
+      switch (value) {
+        case 0: return WORKER_QUALITY_SOURCE;
+        case 1: return QUALITY_WORKER_SESSION_SOURCE;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<CheckViewSource>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        CheckViewSource> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<CheckViewSource>() {
+            public CheckViewSource findValueByNumber(int number) {
+              return CheckViewSource.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return com.teneasyChat.api.common.CWorker.getDescriptor().getEnumTypes().get(12);
+    }
+
+    private static final CheckViewSource[] VALUES = values();
+
+    public static CheckViewSource valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private CheckViewSource(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:api.common.CheckViewSource)
+  }
+
+  /**
+   * <pre>
+   * 会话质检状态
+   * </pre>
+   *
+   * Protobuf enum {@code api.common.SessionScoreStatus}
+   */
+  public enum SessionScoreStatus
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <pre>
+     * 未知
+     * </pre>
+     *
+     * <code>SSS_UNKNOWN = 0;</code>
+     */
+    SSS_UNKNOWN(0),
+    /**
+     * <pre>
+     * 未质检
+     * </pre>
+     *
+     * <code>SSS_NOT_SCORE = 1;</code>
+     */
+    SSS_NOT_SCORE(1),
+    /**
+     * <pre>
+     * 已质检
+     * </pre>
+     *
+     * <code>SSS_FINISH_SCORE = 2;</code>
+     */
+    SSS_FINISH_SCORE(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 26,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        SessionScoreStatus.class.getName());
+    }
+    /**
+     * <pre>
+     * 未知
+     * </pre>
+     *
+     * <code>SSS_UNKNOWN = 0;</code>
+     */
+    public static final int SSS_UNKNOWN_VALUE = 0;
+    /**
+     * <pre>
+     * 未质检
+     * </pre>
+     *
+     * <code>SSS_NOT_SCORE = 1;</code>
+     */
+    public static final int SSS_NOT_SCORE_VALUE = 1;
+    /**
+     * <pre>
+     * 已质检
+     * </pre>
+     *
+     * <code>SSS_FINISH_SCORE = 2;</code>
+     */
+    public static final int SSS_FINISH_SCORE_VALUE = 2;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static SessionScoreStatus valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static SessionScoreStatus forNumber(int value) {
+      switch (value) {
+        case 0: return SSS_UNKNOWN;
+        case 1: return SSS_NOT_SCORE;
+        case 2: return SSS_FINISH_SCORE;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<SessionScoreStatus>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        SessionScoreStatus> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<SessionScoreStatus>() {
+            public SessionScoreStatus findValueByNumber(int number) {
+              return SessionScoreStatus.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return com.teneasyChat.api.common.CWorker.getDescriptor().getEnumTypes().get(13);
+    }
+
+    private static final SessionScoreStatus[] VALUES = values();
+
+    public static SessionScoreStatus valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private SessionScoreStatus(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:api.common.SessionScoreStatus)
+  }
+
+  /**
+   * <pre>
+   * ThresholdType 必检/联检触发条件
+   * </pre>
+   *
+   * Protobuf enum {@code api.common.ThresholdType}
+   */
+  public enum ThresholdType
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <pre>
+     * 服务时长
+     * </pre>
+     *
+     * <code>serve_time_threshold = 0;</code>
+     */
+    serve_time_threshold(0),
+    /**
+     * <pre>
+     * 用户消息量
+     * </pre>
+     *
+     * <code>customer_messages_threshold = 1;</code>
+     */
+    customer_messages_threshold(1),
+    /**
+     * <pre>
+     * 客服消息量
+     * </pre>
+     *
+     * <code>worker_messages_threshold = 2;</code>
+     */
+    worker_messages_threshold(2),
+    /**
+     * <pre>
+     * 总消息量
+     * </pre>
+     *
+     * <code>total_messages_threshold = 3;</code>
+     */
+    total_messages_threshold(3),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 26,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        ThresholdType.class.getName());
+    }
+    /**
+     * <pre>
+     * 服务时长
+     * </pre>
+     *
+     * <code>serve_time_threshold = 0;</code>
+     */
+    public static final int serve_time_threshold_VALUE = 0;
+    /**
+     * <pre>
+     * 用户消息量
+     * </pre>
+     *
+     * <code>customer_messages_threshold = 1;</code>
+     */
+    public static final int customer_messages_threshold_VALUE = 1;
+    /**
+     * <pre>
+     * 客服消息量
+     * </pre>
+     *
+     * <code>worker_messages_threshold = 2;</code>
+     */
+    public static final int worker_messages_threshold_VALUE = 2;
+    /**
+     * <pre>
+     * 总消息量
+     * </pre>
+     *
+     * <code>total_messages_threshold = 3;</code>
+     */
+    public static final int total_messages_threshold_VALUE = 3;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static ThresholdType valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static ThresholdType forNumber(int value) {
+      switch (value) {
+        case 0: return serve_time_threshold;
+        case 1: return customer_messages_threshold;
+        case 2: return worker_messages_threshold;
+        case 3: return total_messages_threshold;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<ThresholdType>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        ThresholdType> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<ThresholdType>() {
+            public ThresholdType findValueByNumber(int number) {
+              return ThresholdType.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return com.teneasyChat.api.common.CWorker.getDescriptor().getEnumTypes().get(14);
+    }
+
+    private static final ThresholdType[] VALUES = values();
+
+    public static ThresholdType valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private ThresholdType(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:api.common.ThresholdType)
+  }
+
+  /**
+   * <pre>
+   * ChatQACheckSettingType 质检设置类型
+   * </pre>
+   *
+   * Protobuf enum {@code api.common.ChatQACheckSettingType}
+   */
+  public enum ChatQACheckSettingType
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <pre>
+     * 普通
+     * </pre>
+     *
+     * <code>NormalCheck = 0;</code>
+     */
+    NormalCheck(0),
+    /**
+     * <pre>
+     * 必检
+     * </pre>
+     *
+     * <code>MustCheck = 1;</code>
+     */
+    MustCheck(1),
+    /**
+     * <pre>
+     * 联检
+     * </pre>
+     *
+     * <code>CollabCheck = 2;</code>
+     */
+    CollabCheck(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 26,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        ChatQACheckSettingType.class.getName());
+    }
+    /**
+     * <pre>
+     * 普通
+     * </pre>
+     *
+     * <code>NormalCheck = 0;</code>
+     */
+    public static final int NormalCheck_VALUE = 0;
+    /**
+     * <pre>
+     * 必检
+     * </pre>
+     *
+     * <code>MustCheck = 1;</code>
+     */
+    public static final int MustCheck_VALUE = 1;
+    /**
+     * <pre>
+     * 联检
+     * </pre>
+     *
+     * <code>CollabCheck = 2;</code>
+     */
+    public static final int CollabCheck_VALUE = 2;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static ChatQACheckSettingType valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static ChatQACheckSettingType forNumber(int value) {
+      switch (value) {
+        case 0: return NormalCheck;
+        case 1: return MustCheck;
+        case 2: return CollabCheck;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<ChatQACheckSettingType>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        ChatQACheckSettingType> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<ChatQACheckSettingType>() {
+            public ChatQACheckSettingType findValueByNumber(int number) {
+              return ChatQACheckSettingType.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return com.teneasyChat.api.common.CWorker.getDescriptor().getEnumTypes().get(15);
+    }
+
+    private static final ChatQACheckSettingType[] VALUES = values();
+
+    public static ChatQACheckSettingType valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private ChatQACheckSettingType(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:api.common.ChatQACheckSettingType)
+  }
+
+  /**
+   * <pre>
+   * WorkerQualitySession 排序字段 1-对话时间排序 2-用户消息量排序 3-客服消息量排序 4-质检时长排序 5-评分排序 6-质检时间排序 7-推送时间排序
+   * </pre>
+   *
+   * Protobuf enum {@code api.common.WorkerQualitySessionSortField}
+   */
+  public enum WorkerQualitySessionSortField
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>QualitySessionDefault = 0;</code>
+     */
+    QualitySessionDefault(0),
+    /**
+     * <pre>
+     * 对话时间排序
+     * </pre>
+     *
+     * <code>SortByChatTime = 1;</code>
+     */
+    SortByChatTime(1),
+    /**
+     * <pre>
+     * 用户消息量排序
+     * </pre>
+     *
+     * <code>SortByUserMsgCount = 2;</code>
+     */
+    SortByUserMsgCount(2),
+    /**
+     * <pre>
+     * 客服消息量排序
+     * </pre>
+     *
+     * <code>SortByWorkerMsgCount = 3;</code>
+     */
+    SortByWorkerMsgCount(3),
+    /**
+     * <pre>
+     * 质检时长排序
+     * </pre>
+     *
+     * <code>SortByQualityDuration = 4;</code>
+     */
+    SortByQualityDuration(4),
+    /**
+     * <pre>
+     * 评分排序
+     * </pre>
+     *
+     * <code>SortByScore = 5;</code>
+     */
+    SortByScore(5),
+    /**
+     * <pre>
+     * 质检时间排序
+     * </pre>
+     *
+     * <code>SortByQualityTime = 6;</code>
+     */
+    SortByQualityTime(6),
+    /**
+     * <pre>
+     * 推送时间排序
+     * </pre>
+     *
+     * <code>SortByPushTime = 7;</code>
+     */
+    SortByPushTime(7),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 26,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        WorkerQualitySessionSortField.class.getName());
+    }
+    /**
+     * <code>QualitySessionDefault = 0;</code>
+     */
+    public static final int QualitySessionDefault_VALUE = 0;
+    /**
+     * <pre>
+     * 对话时间排序
+     * </pre>
+     *
+     * <code>SortByChatTime = 1;</code>
+     */
+    public static final int SortByChatTime_VALUE = 1;
+    /**
+     * <pre>
+     * 用户消息量排序
+     * </pre>
+     *
+     * <code>SortByUserMsgCount = 2;</code>
+     */
+    public static final int SortByUserMsgCount_VALUE = 2;
+    /**
+     * <pre>
+     * 客服消息量排序
+     * </pre>
+     *
+     * <code>SortByWorkerMsgCount = 3;</code>
+     */
+    public static final int SortByWorkerMsgCount_VALUE = 3;
+    /**
+     * <pre>
+     * 质检时长排序
+     * </pre>
+     *
+     * <code>SortByQualityDuration = 4;</code>
+     */
+    public static final int SortByQualityDuration_VALUE = 4;
+    /**
+     * <pre>
+     * 评分排序
+     * </pre>
+     *
+     * <code>SortByScore = 5;</code>
+     */
+    public static final int SortByScore_VALUE = 5;
+    /**
+     * <pre>
+     * 质检时间排序
+     * </pre>
+     *
+     * <code>SortByQualityTime = 6;</code>
+     */
+    public static final int SortByQualityTime_VALUE = 6;
+    /**
+     * <pre>
+     * 推送时间排序
+     * </pre>
+     *
+     * <code>SortByPushTime = 7;</code>
+     */
+    public static final int SortByPushTime_VALUE = 7;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static WorkerQualitySessionSortField valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static WorkerQualitySessionSortField forNumber(int value) {
+      switch (value) {
+        case 0: return QualitySessionDefault;
+        case 1: return SortByChatTime;
+        case 2: return SortByUserMsgCount;
+        case 3: return SortByWorkerMsgCount;
+        case 4: return SortByQualityDuration;
+        case 5: return SortByScore;
+        case 6: return SortByQualityTime;
+        case 7: return SortByPushTime;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<WorkerQualitySessionSortField>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        WorkerQualitySessionSortField> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<WorkerQualitySessionSortField>() {
+            public WorkerQualitySessionSortField findValueByNumber(int number) {
+              return WorkerQualitySessionSortField.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return com.teneasyChat.api.common.CWorker.getDescriptor().getEnumTypes().get(16);
+    }
+
+    private static final WorkerQualitySessionSortField[] VALUES = values();
+
+    public static WorkerQualitySessionSortField valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private WorkerQualitySessionSortField(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:api.common.WorkerQualitySessionSortField)
+  }
+
+  /**
+   * <pre>
+   * Worker role_type 角色权限 1:管理端 2:一线客服
+   * </pre>
+   *
+   * Protobuf enum {@code api.common.WorkerRoleType}
+   */
+  public enum WorkerRoleType
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>WRT_DEFAULT = 0;</code>
+     */
+    WRT_DEFAULT(0),
+    /**
+     * <pre>
+     * 管理端
+     * </pre>
+     *
+     * <code>WRT_ADMIN = 1;</code>
+     */
+    WRT_ADMIN(1),
+    /**
+     * <pre>
+     * 一线客服
+     * </pre>
+     *
+     * <code>WRT_FRONTER = 2;</code>
+     */
+    WRT_FRONTER(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 26,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        WorkerRoleType.class.getName());
+    }
+    /**
+     * <code>WRT_DEFAULT = 0;</code>
+     */
+    public static final int WRT_DEFAULT_VALUE = 0;
+    /**
+     * <pre>
+     * 管理端
+     * </pre>
+     *
+     * <code>WRT_ADMIN = 1;</code>
+     */
+    public static final int WRT_ADMIN_VALUE = 1;
+    /**
+     * <pre>
+     * 一线客服
+     * </pre>
+     *
+     * <code>WRT_FRONTER = 2;</code>
+     */
+    public static final int WRT_FRONTER_VALUE = 2;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static WorkerRoleType valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static WorkerRoleType forNumber(int value) {
+      switch (value) {
+        case 0: return WRT_DEFAULT;
+        case 1: return WRT_ADMIN;
+        case 2: return WRT_FRONTER;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<WorkerRoleType>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        WorkerRoleType> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<WorkerRoleType>() {
+            public WorkerRoleType findValueByNumber(int number) {
+              return WorkerRoleType.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return com.teneasyChat.api.common.CWorker.getDescriptor().getEnumTypes().get(17);
+    }
+
+    private static final WorkerRoleType[] VALUES = values();
+
+    public static WorkerRoleType valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private WorkerRoleType(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:api.common.WorkerRoleType)
+  }
+
+  /**
+   * <pre>
+   * WorkerRouteSelectStatus 路由勾选状态 0:未选择 1:非全选 2:全选
+   * </pre>
+   *
+   * Protobuf enum {@code api.common.WorkerRouteSelectStatus}
+   */
+  public enum WorkerRouteSelectStatus
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>SELECT_DEFAULT = 0;</code>
+     */
+    SELECT_DEFAULT(0),
+    /**
+     * <pre>
+     * 非全选
+     * </pre>
+     *
+     * <code>SELECT_PART = 1;</code>
+     */
+    SELECT_PART(1),
+    /**
+     * <pre>
+     * 全选
+     * </pre>
+     *
+     * <code>SELECT_ALL = 2;</code>
+     */
+    SELECT_ALL(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 26,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        WorkerRouteSelectStatus.class.getName());
+    }
+    /**
+     * <code>SELECT_DEFAULT = 0;</code>
+     */
+    public static final int SELECT_DEFAULT_VALUE = 0;
+    /**
+     * <pre>
+     * 非全选
+     * </pre>
+     *
+     * <code>SELECT_PART = 1;</code>
+     */
+    public static final int SELECT_PART_VALUE = 1;
+    /**
+     * <pre>
+     * 全选
+     * </pre>
+     *
+     * <code>SELECT_ALL = 2;</code>
+     */
+    public static final int SELECT_ALL_VALUE = 2;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static WorkerRouteSelectStatus valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static WorkerRouteSelectStatus forNumber(int value) {
+      switch (value) {
+        case 0: return SELECT_DEFAULT;
+        case 1: return SELECT_PART;
+        case 2: return SELECT_ALL;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<WorkerRouteSelectStatus>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        WorkerRouteSelectStatus> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<WorkerRouteSelectStatus>() {
+            public WorkerRouteSelectStatus findValueByNumber(int number) {
+              return WorkerRouteSelectStatus.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return com.teneasyChat.api.common.CWorker.getDescriptor().getEnumTypes().get(18);
+    }
+
+    private static final WorkerRouteSelectStatus[] VALUES = values();
+
+    public static WorkerRouteSelectStatus valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private WorkerRouteSelectStatus(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:api.common.WorkerRouteSelectStatus)
   }
 
   public interface WorkerEventOrBuilder extends
@@ -2451,6 +4680,118 @@ public final class CWorker {
      * @return The disableStatus.
      */
     com.teneasyChat.api.common.CBase.DisableStatus getDisableStatus();
+
+    /**
+     * <pre>
+     * 角色id
+     * </pre>
+     *
+     * <code>int32 role_id = 21;</code>
+     * @return The roleId.
+     */
+    int getRoleId();
+
+    /**
+     * <pre>
+     * 角色name
+     * </pre>
+     *
+     * <code>string role_name = 22;</code>
+     * @return The roleName.
+     */
+    java.lang.String getRoleName();
+    /**
+     * <pre>
+     * 角色name
+     * </pre>
+     *
+     * <code>string role_name = 22;</code>
+     * @return The bytes for roleName.
+     */
+    com.google.protobuf.ByteString
+        getRoleNameBytes();
+
+    /**
+     * <pre>
+     * 绑定角色拥有的权限列表
+     * </pre>
+     *
+     * <code>repeated string routesItems = 23;</code>
+     * @return A list containing the routesItems.
+     */
+    java.util.List<java.lang.String>
+        getRoutesItemsList();
+    /**
+     * <pre>
+     * 绑定角色拥有的权限列表
+     * </pre>
+     *
+     * <code>repeated string routesItems = 23;</code>
+     * @return The count of routesItems.
+     */
+    int getRoutesItemsCount();
+    /**
+     * <pre>
+     * 绑定角色拥有的权限列表
+     * </pre>
+     *
+     * <code>repeated string routesItems = 23;</code>
+     * @param index The index of the element to return.
+     * @return The routesItems at the given index.
+     */
+    java.lang.String getRoutesItems(int index);
+    /**
+     * <pre>
+     * 绑定角色拥有的权限列表
+     * </pre>
+     *
+     * <code>repeated string routesItems = 23;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the routesItems at the given index.
+     */
+    com.google.protobuf.ByteString
+        getRoutesItemsBytes(int index);
+
+    /**
+     * <pre>
+     * 绑定角色拥有权限对应的一级菜单
+     * </pre>
+     *
+     * <code>repeated string menuItems = 24;</code>
+     * @return A list containing the menuItems.
+     */
+    java.util.List<java.lang.String>
+        getMenuItemsList();
+    /**
+     * <pre>
+     * 绑定角色拥有权限对应的一级菜单
+     * </pre>
+     *
+     * <code>repeated string menuItems = 24;</code>
+     * @return The count of menuItems.
+     */
+    int getMenuItemsCount();
+    /**
+     * <pre>
+     * 绑定角色拥有权限对应的一级菜单
+     * </pre>
+     *
+     * <code>repeated string menuItems = 24;</code>
+     * @param index The index of the element to return.
+     * @return The menuItems at the given index.
+     */
+    java.lang.String getMenuItems(int index);
+    /**
+     * <pre>
+     * 绑定角色拥有权限对应的一级菜单
+     * </pre>
+     *
+     * <code>repeated string menuItems = 24;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the menuItems at the given index.
+     */
+    com.google.protobuf.ByteString
+        getMenuItemsBytes(int index);
   }
   /**
    * Protobuf type {@code api.common.Worker}
@@ -2487,6 +4828,11 @@ public final class CWorker {
       tips_ = "";
       consultIds_ = emptyIntList();
       disableStatus_ = 0;
+      roleName_ = "";
+      routesItems_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+      menuItems_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
@@ -3228,6 +5574,174 @@ public final class CWorker {
       return result == null ? com.teneasyChat.api.common.CBase.DisableStatus.UNRECOGNIZED : result;
     }
 
+    public static final int ROLE_ID_FIELD_NUMBER = 21;
+    private int roleId_ = 0;
+    /**
+     * <pre>
+     * 角色id
+     * </pre>
+     *
+     * <code>int32 role_id = 21;</code>
+     * @return The roleId.
+     */
+    @java.lang.Override
+    public int getRoleId() {
+      return roleId_;
+    }
+
+    public static final int ROLE_NAME_FIELD_NUMBER = 22;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object roleName_ = "";
+    /**
+     * <pre>
+     * 角色name
+     * </pre>
+     *
+     * <code>string role_name = 22;</code>
+     * @return The roleName.
+     */
+    @java.lang.Override
+    public java.lang.String getRoleName() {
+      java.lang.Object ref = roleName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        roleName_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * 角色name
+     * </pre>
+     *
+     * <code>string role_name = 22;</code>
+     * @return The bytes for roleName.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getRoleNameBytes() {
+      java.lang.Object ref = roleName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        roleName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ROUTESITEMS_FIELD_NUMBER = 23;
+    @SuppressWarnings("serial")
+    private com.google.protobuf.LazyStringArrayList routesItems_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+    /**
+     * <pre>
+     * 绑定角色拥有的权限列表
+     * </pre>
+     *
+     * <code>repeated string routesItems = 23;</code>
+     * @return A list containing the routesItems.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getRoutesItemsList() {
+      return routesItems_;
+    }
+    /**
+     * <pre>
+     * 绑定角色拥有的权限列表
+     * </pre>
+     *
+     * <code>repeated string routesItems = 23;</code>
+     * @return The count of routesItems.
+     */
+    public int getRoutesItemsCount() {
+      return routesItems_.size();
+    }
+    /**
+     * <pre>
+     * 绑定角色拥有的权限列表
+     * </pre>
+     *
+     * <code>repeated string routesItems = 23;</code>
+     * @param index The index of the element to return.
+     * @return The routesItems at the given index.
+     */
+    public java.lang.String getRoutesItems(int index) {
+      return routesItems_.get(index);
+    }
+    /**
+     * <pre>
+     * 绑定角色拥有的权限列表
+     * </pre>
+     *
+     * <code>repeated string routesItems = 23;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the routesItems at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getRoutesItemsBytes(int index) {
+      return routesItems_.getByteString(index);
+    }
+
+    public static final int MENUITEMS_FIELD_NUMBER = 24;
+    @SuppressWarnings("serial")
+    private com.google.protobuf.LazyStringArrayList menuItems_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+    /**
+     * <pre>
+     * 绑定角色拥有权限对应的一级菜单
+     * </pre>
+     *
+     * <code>repeated string menuItems = 24;</code>
+     * @return A list containing the menuItems.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getMenuItemsList() {
+      return menuItems_;
+    }
+    /**
+     * <pre>
+     * 绑定角色拥有权限对应的一级菜单
+     * </pre>
+     *
+     * <code>repeated string menuItems = 24;</code>
+     * @return The count of menuItems.
+     */
+    public int getMenuItemsCount() {
+      return menuItems_.size();
+    }
+    /**
+     * <pre>
+     * 绑定角色拥有权限对应的一级菜单
+     * </pre>
+     *
+     * <code>repeated string menuItems = 24;</code>
+     * @param index The index of the element to return.
+     * @return The menuItems at the given index.
+     */
+    public java.lang.String getMenuItems(int index) {
+      return menuItems_.get(index);
+    }
+    /**
+     * <pre>
+     * 绑定角色拥有权限对应的一级菜单
+     * </pre>
+     *
+     * <code>repeated string menuItems = 24;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the menuItems at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getMenuItemsBytes(int index) {
+      return menuItems_.getByteString(index);
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -3306,6 +5820,18 @@ public final class CWorker {
       }
       if (disableStatus_ != com.teneasyChat.api.common.CBase.DisableStatus.DEFAULT.getNumber()) {
         output.writeEnum(20, disableStatus_);
+      }
+      if (roleId_ != 0) {
+        output.writeInt32(21, roleId_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(roleName_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 22, roleName_);
+      }
+      for (int i = 0; i < routesItems_.size(); i++) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 23, routesItems_.getRaw(i));
+      }
+      for (int i = 0; i < menuItems_.size(); i++) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 24, menuItems_.getRaw(i));
       }
       getUnknownFields().writeTo(output);
     }
@@ -3399,6 +5925,29 @@ public final class CWorker {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(20, disableStatus_);
       }
+      if (roleId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(21, roleId_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(roleName_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(22, roleName_);
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < routesItems_.size(); i++) {
+          dataSize += computeStringSizeNoTag(routesItems_.getRaw(i));
+        }
+        size += dataSize;
+        size += 2 * getRoutesItemsList().size();
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < menuItems_.size(); i++) {
+          dataSize += computeStringSizeNoTag(menuItems_.getRaw(i));
+        }
+        size += dataSize;
+        size += 2 * getMenuItemsList().size();
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -3460,6 +6009,14 @@ public final class CWorker {
             .equals(other.getUpdateAt())) return false;
       }
       if (disableStatus_ != other.disableStatus_) return false;
+      if (getRoleId()
+          != other.getRoleId()) return false;
+      if (!getRoleName()
+          .equals(other.getRoleName())) return false;
+      if (!getRoutesItemsList()
+          .equals(other.getRoutesItemsList())) return false;
+      if (!getMenuItemsList()
+          .equals(other.getMenuItemsList())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -3524,6 +6081,18 @@ public final class CWorker {
       }
       hash = (37 * hash) + DISABLE_STATUS_FIELD_NUMBER;
       hash = (53 * hash) + disableStatus_;
+      hash = (37 * hash) + ROLE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getRoleId();
+      hash = (37 * hash) + ROLE_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getRoleName().hashCode();
+      if (getRoutesItemsCount() > 0) {
+        hash = (37 * hash) + ROUTESITEMS_FIELD_NUMBER;
+        hash = (53 * hash) + getRoutesItemsList().hashCode();
+      }
+      if (getMenuItemsCount() > 0) {
+        hash = (37 * hash) + MENUITEMS_FIELD_NUMBER;
+        hash = (53 * hash) + getMenuItemsList().hashCode();
+      }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -3709,6 +6278,12 @@ public final class CWorker {
           updateAtBuilder_ = null;
         }
         disableStatus_ = 0;
+        roleId_ = 0;
+        roleName_ = "";
+        routesItems_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
+        menuItems_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
         return this;
       }
 
@@ -3828,6 +6403,20 @@ public final class CWorker {
         }
         if (((from_bitField0_ & 0x00080000) != 0)) {
           result.disableStatus_ = disableStatus_;
+        }
+        if (((from_bitField0_ & 0x00100000) != 0)) {
+          result.roleId_ = roleId_;
+        }
+        if (((from_bitField0_ & 0x00200000) != 0)) {
+          result.roleName_ = roleName_;
+        }
+        if (((from_bitField0_ & 0x00400000) != 0)) {
+          routesItems_.makeImmutable();
+          result.routesItems_ = routesItems_;
+        }
+        if (((from_bitField0_ & 0x00800000) != 0)) {
+          menuItems_.makeImmutable();
+          result.menuItems_ = menuItems_;
         }
         result.bitField0_ |= to_bitField0_;
       }
@@ -3971,6 +6560,34 @@ public final class CWorker {
         }
         if (other.disableStatus_ != 0) {
           setDisableStatusValue(other.getDisableStatusValue());
+        }
+        if (other.getRoleId() != 0) {
+          setRoleId(other.getRoleId());
+        }
+        if (!other.getRoleName().isEmpty()) {
+          roleName_ = other.roleName_;
+          bitField0_ |= 0x00200000;
+          onChanged();
+        }
+        if (!other.routesItems_.isEmpty()) {
+          if (routesItems_.isEmpty()) {
+            routesItems_ = other.routesItems_;
+            bitField0_ |= 0x00400000;
+          } else {
+            ensureRoutesItemsIsMutable();
+            routesItems_.addAll(other.routesItems_);
+          }
+          onChanged();
+        }
+        if (!other.menuItems_.isEmpty()) {
+          if (menuItems_.isEmpty()) {
+            menuItems_ = other.menuItems_;
+            bitField0_ |= 0x00800000;
+          } else {
+            ensureMenuItemsIsMutable();
+            menuItems_.addAll(other.menuItems_);
+          }
+          onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -4131,6 +6748,28 @@ public final class CWorker {
                 bitField0_ |= 0x00080000;
                 break;
               } // case 160
+              case 168: {
+                roleId_ = input.readInt32();
+                bitField0_ |= 0x00100000;
+                break;
+              } // case 168
+              case 178: {
+                roleName_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00200000;
+                break;
+              } // case 178
+              case 186: {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureRoutesItemsIsMutable();
+                routesItems_.add(s);
+                break;
+              } // case 186
+              case 194: {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureMenuItemsIsMutable();
+                menuItems_.add(s);
+                break;
+              } // case 194
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -6338,6 +8977,436 @@ public final class CWorker {
       public Builder clearDisableStatus() {
         bitField0_ = (bitField0_ & ~0x00080000);
         disableStatus_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int roleId_ ;
+      /**
+       * <pre>
+       * 角色id
+       * </pre>
+       *
+       * <code>int32 role_id = 21;</code>
+       * @return The roleId.
+       */
+      @java.lang.Override
+      public int getRoleId() {
+        return roleId_;
+      }
+      /**
+       * <pre>
+       * 角色id
+       * </pre>
+       *
+       * <code>int32 role_id = 21;</code>
+       * @param value The roleId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRoleId(int value) {
+
+        roleId_ = value;
+        bitField0_ |= 0x00100000;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 角色id
+       * </pre>
+       *
+       * <code>int32 role_id = 21;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRoleId() {
+        bitField0_ = (bitField0_ & ~0x00100000);
+        roleId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object roleName_ = "";
+      /**
+       * <pre>
+       * 角色name
+       * </pre>
+       *
+       * <code>string role_name = 22;</code>
+       * @return The roleName.
+       */
+      public java.lang.String getRoleName() {
+        java.lang.Object ref = roleName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          roleName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * 角色name
+       * </pre>
+       *
+       * <code>string role_name = 22;</code>
+       * @return The bytes for roleName.
+       */
+      public com.google.protobuf.ByteString
+          getRoleNameBytes() {
+        java.lang.Object ref = roleName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          roleName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * 角色name
+       * </pre>
+       *
+       * <code>string role_name = 22;</code>
+       * @param value The roleName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRoleName(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        roleName_ = value;
+        bitField0_ |= 0x00200000;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 角色name
+       * </pre>
+       *
+       * <code>string role_name = 22;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRoleName() {
+        roleName_ = getDefaultInstance().getRoleName();
+        bitField0_ = (bitField0_ & ~0x00200000);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 角色name
+       * </pre>
+       *
+       * <code>string role_name = 22;</code>
+       * @param value The bytes for roleName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRoleNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        roleName_ = value;
+        bitField0_ |= 0x00200000;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringArrayList routesItems_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+      private void ensureRoutesItemsIsMutable() {
+        if (!routesItems_.isModifiable()) {
+          routesItems_ = new com.google.protobuf.LazyStringArrayList(routesItems_);
+        }
+        bitField0_ |= 0x00400000;
+      }
+      /**
+       * <pre>
+       * 绑定角色拥有的权限列表
+       * </pre>
+       *
+       * <code>repeated string routesItems = 23;</code>
+       * @return A list containing the routesItems.
+       */
+      public com.google.protobuf.ProtocolStringList
+          getRoutesItemsList() {
+        routesItems_.makeImmutable();
+        return routesItems_;
+      }
+      /**
+       * <pre>
+       * 绑定角色拥有的权限列表
+       * </pre>
+       *
+       * <code>repeated string routesItems = 23;</code>
+       * @return The count of routesItems.
+       */
+      public int getRoutesItemsCount() {
+        return routesItems_.size();
+      }
+      /**
+       * <pre>
+       * 绑定角色拥有的权限列表
+       * </pre>
+       *
+       * <code>repeated string routesItems = 23;</code>
+       * @param index The index of the element to return.
+       * @return The routesItems at the given index.
+       */
+      public java.lang.String getRoutesItems(int index) {
+        return routesItems_.get(index);
+      }
+      /**
+       * <pre>
+       * 绑定角色拥有的权限列表
+       * </pre>
+       *
+       * <code>repeated string routesItems = 23;</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the routesItems at the given index.
+       */
+      public com.google.protobuf.ByteString
+          getRoutesItemsBytes(int index) {
+        return routesItems_.getByteString(index);
+      }
+      /**
+       * <pre>
+       * 绑定角色拥有的权限列表
+       * </pre>
+       *
+       * <code>repeated string routesItems = 23;</code>
+       * @param index The index to set the value at.
+       * @param value The routesItems to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRoutesItems(
+          int index, java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        ensureRoutesItemsIsMutable();
+        routesItems_.set(index, value);
+        bitField0_ |= 0x00400000;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 绑定角色拥有的权限列表
+       * </pre>
+       *
+       * <code>repeated string routesItems = 23;</code>
+       * @param value The routesItems to add.
+       * @return This builder for chaining.
+       */
+      public Builder addRoutesItems(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        ensureRoutesItemsIsMutable();
+        routesItems_.add(value);
+        bitField0_ |= 0x00400000;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 绑定角色拥有的权限列表
+       * </pre>
+       *
+       * <code>repeated string routesItems = 23;</code>
+       * @param values The routesItems to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllRoutesItems(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureRoutesItemsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, routesItems_);
+        bitField0_ |= 0x00400000;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 绑定角色拥有的权限列表
+       * </pre>
+       *
+       * <code>repeated string routesItems = 23;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRoutesItems() {
+        routesItems_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+        bitField0_ = (bitField0_ & ~0x00400000);;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 绑定角色拥有的权限列表
+       * </pre>
+       *
+       * <code>repeated string routesItems = 23;</code>
+       * @param value The bytes of the routesItems to add.
+       * @return This builder for chaining.
+       */
+      public Builder addRoutesItemsBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        ensureRoutesItemsIsMutable();
+        routesItems_.add(value);
+        bitField0_ |= 0x00400000;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringArrayList menuItems_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+      private void ensureMenuItemsIsMutable() {
+        if (!menuItems_.isModifiable()) {
+          menuItems_ = new com.google.protobuf.LazyStringArrayList(menuItems_);
+        }
+        bitField0_ |= 0x00800000;
+      }
+      /**
+       * <pre>
+       * 绑定角色拥有权限对应的一级菜单
+       * </pre>
+       *
+       * <code>repeated string menuItems = 24;</code>
+       * @return A list containing the menuItems.
+       */
+      public com.google.protobuf.ProtocolStringList
+          getMenuItemsList() {
+        menuItems_.makeImmutable();
+        return menuItems_;
+      }
+      /**
+       * <pre>
+       * 绑定角色拥有权限对应的一级菜单
+       * </pre>
+       *
+       * <code>repeated string menuItems = 24;</code>
+       * @return The count of menuItems.
+       */
+      public int getMenuItemsCount() {
+        return menuItems_.size();
+      }
+      /**
+       * <pre>
+       * 绑定角色拥有权限对应的一级菜单
+       * </pre>
+       *
+       * <code>repeated string menuItems = 24;</code>
+       * @param index The index of the element to return.
+       * @return The menuItems at the given index.
+       */
+      public java.lang.String getMenuItems(int index) {
+        return menuItems_.get(index);
+      }
+      /**
+       * <pre>
+       * 绑定角色拥有权限对应的一级菜单
+       * </pre>
+       *
+       * <code>repeated string menuItems = 24;</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the menuItems at the given index.
+       */
+      public com.google.protobuf.ByteString
+          getMenuItemsBytes(int index) {
+        return menuItems_.getByteString(index);
+      }
+      /**
+       * <pre>
+       * 绑定角色拥有权限对应的一级菜单
+       * </pre>
+       *
+       * <code>repeated string menuItems = 24;</code>
+       * @param index The index to set the value at.
+       * @param value The menuItems to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMenuItems(
+          int index, java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        ensureMenuItemsIsMutable();
+        menuItems_.set(index, value);
+        bitField0_ |= 0x00800000;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 绑定角色拥有权限对应的一级菜单
+       * </pre>
+       *
+       * <code>repeated string menuItems = 24;</code>
+       * @param value The menuItems to add.
+       * @return This builder for chaining.
+       */
+      public Builder addMenuItems(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        ensureMenuItemsIsMutable();
+        menuItems_.add(value);
+        bitField0_ |= 0x00800000;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 绑定角色拥有权限对应的一级菜单
+       * </pre>
+       *
+       * <code>repeated string menuItems = 24;</code>
+       * @param values The menuItems to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllMenuItems(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureMenuItemsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, menuItems_);
+        bitField0_ |= 0x00800000;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 绑定角色拥有权限对应的一级菜单
+       * </pre>
+       *
+       * <code>repeated string menuItems = 24;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMenuItems() {
+        menuItems_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+        bitField0_ = (bitField0_ & ~0x00800000);;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 绑定角色拥有权限对应的一级菜单
+       * </pre>
+       *
+       * <code>repeated string menuItems = 24;</code>
+       * @param value The bytes of the menuItems to add.
+       * @return This builder for chaining.
+       */
+      public Builder addMenuItemsBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        ensureMenuItemsIsMutable();
+        menuItems_.add(value);
+        bitField0_ |= 0x00800000;
         onChanged();
         return this;
       }
@@ -10653,6 +13722,11423 @@ public final class CWorker {
 
   }
 
+  public interface WorkerQualitySessionOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:api.common.WorkerQualitySession)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>int64 id = 1;</code>
+     * @return The id.
+     */
+    long getId();
+
+    /**
+     * <pre>
+     * 绑定会话记录id
+     * </pre>
+     *
+     * <code>int64 binding_session_id = 2;</code>
+     * @return The bindingSessionId.
+     */
+    long getBindingSessionId();
+
+    /**
+     * <pre>
+     * 商户id
+     * </pre>
+     *
+     * <code>int32 tenant_id = 3;</code>
+     * @return The tenantId.
+     */
+    int getTenantId();
+
+    /**
+     * <pre>
+     * 咨询id
+     * </pre>
+     *
+     * <code>uint32 consult_id = 4;</code>
+     * @return The consultId.
+     */
+    int getConsultId();
+
+    /**
+     * <pre>
+     * 接待客服id
+     * </pre>
+     *
+     * <code>int32 worker_id = 5;</code>
+     * @return The workerId.
+     */
+    int getWorkerId();
+
+    /**
+     * <pre>
+     * 用户id
+     * </pre>
+     *
+     * <code>int32 uid = 6;</code>
+     * @return The uid.
+     */
+    int getUid();
+
+    /**
+     * <pre>
+     * 用户角色
+     * </pre>
+     *
+     * <code>int32 user_role = 7;</code>
+     * @return The userRole.
+     */
+    int getUserRole();
+
+    /**
+     * <pre>
+     * 用户层级
+     * </pre>
+     *
+     * <code>int32 user_level = 8;</code>
+     * @return The userLevel.
+     */
+    int getUserLevel();
+
+    /**
+     * <pre>
+     * 质检类型 0-普通 1-必检 2-联检
+     * </pre>
+     *
+     * <code>.api.common.WorkerCheckType check_type = 9;</code>
+     * @return The enum numeric value on the wire for checkType.
+     */
+    int getCheckTypeValue();
+    /**
+     * <pre>
+     * 质检类型 0-普通 1-必检 2-联检
+     * </pre>
+     *
+     * <code>.api.common.WorkerCheckType check_type = 9;</code>
+     * @return The checkType.
+     */
+    com.teneasyChat.api.common.CWorker.WorkerCheckType getCheckType();
+
+    /**
+     * <pre>
+     * 首次发送消息时间
+     * </pre>
+     *
+     * <code>int32 first_send_time = 10;</code>
+     * @return The firstSendTime.
+     */
+    int getFirstSendTime();
+
+    /**
+     * <pre>
+     * 首次回复消息时间
+     * </pre>
+     *
+     * <code>int32 first_reply_time = 11;</code>
+     * @return The firstReplyTime.
+     */
+    int getFirstReplyTime();
+
+    /**
+     * <pre>
+     * 服务时长
+     * </pre>
+     *
+     * <code>int32 service_duration = 12;</code>
+     * @return The serviceDuration.
+     */
+    int getServiceDuration();
+
+    /**
+     * <pre>
+     * 客户发送消息计数
+     * </pre>
+     *
+     * <code>int32 client_send_message_count = 13;</code>
+     * @return The clientSendMessageCount.
+     */
+    int getClientSendMessageCount();
+
+    /**
+     * <pre>
+     * 客服发送消息计数
+     * </pre>
+     *
+     * <code>int32 worker_send_message_count = 14;</code>
+     * @return The workerSendMessageCount.
+     */
+    int getWorkerSendMessageCount();
+
+    /**
+     * <pre>
+     * 质检会话推送时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp created_at = 15;</code>
+     * @return Whether the createdAt field is set.
+     */
+    boolean hasCreatedAt();
+    /**
+     * <pre>
+     * 质检会话推送时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp created_at = 15;</code>
+     * @return The createdAt.
+     */
+    com.google.protobuf.Timestamp getCreatedAt();
+    /**
+     * <pre>
+     * 质检会话推送时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp created_at = 15;</code>
+     */
+    com.google.protobuf.TimestampOrBuilder getCreatedAtOrBuilder();
+
+    /**
+     * <pre>
+     * 评价客服id
+     * </pre>
+     *
+     * <code>int32 score_worker_id = 16;</code>
+     * @return The scoreWorkerId.
+     */
+    int getScoreWorkerId();
+
+    /**
+     * <pre>
+     * 评价类型 1/2/3/4 优异/正常/较差/极差
+     * </pre>
+     *
+     * <code>.api.common.WorkerScoreType score_type = 17;</code>
+     * @return The enum numeric value on the wire for scoreType.
+     */
+    int getScoreTypeValue();
+    /**
+     * <pre>
+     * 评价类型 1/2/3/4 优异/正常/较差/极差
+     * </pre>
+     *
+     * <code>.api.common.WorkerScoreType score_type = 17;</code>
+     * @return The scoreType.
+     */
+    com.teneasyChat.api.common.CWorker.WorkerScoreType getScoreType();
+
+    /**
+     * <pre>
+     * 评价时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp score_time = 18;</code>
+     * @return Whether the scoreTime field is set.
+     */
+    boolean hasScoreTime();
+    /**
+     * <pre>
+     * 评价时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp score_time = 18;</code>
+     * @return The scoreTime.
+     */
+    com.google.protobuf.Timestamp getScoreTime();
+    /**
+     * <pre>
+     * 评价时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp score_time = 18;</code>
+     */
+    com.google.protobuf.TimestampOrBuilder getScoreTimeOrBuilder();
+
+    /**
+     * <pre>
+     * 复审客服id
+     * </pre>
+     *
+     * <code>int32 review_worker_id = 19;</code>
+     * @return The reviewWorkerId.
+     */
+    int getReviewWorkerId();
+
+    /**
+     * <pre>
+     * 复审评价类型
+     * </pre>
+     *
+     * <code>.api.common.WorkerScoreType review_score_type = 20;</code>
+     * @return The enum numeric value on the wire for reviewScoreType.
+     */
+    int getReviewScoreTypeValue();
+    /**
+     * <pre>
+     * 复审评价类型
+     * </pre>
+     *
+     * <code>.api.common.WorkerScoreType review_score_type = 20;</code>
+     * @return The reviewScoreType.
+     */
+    com.teneasyChat.api.common.CWorker.WorkerScoreType getReviewScoreType();
+
+    /**
+     * <pre>
+     * 复审时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp review_time = 21;</code>
+     * @return Whether the reviewTime field is set.
+     */
+    boolean hasReviewTime();
+    /**
+     * <pre>
+     * 复审时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp review_time = 21;</code>
+     * @return The reviewTime.
+     */
+    com.google.protobuf.Timestamp getReviewTime();
+    /**
+     * <pre>
+     * 复审时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp review_time = 21;</code>
+     */
+    com.google.protobuf.TimestampOrBuilder getReviewTimeOrBuilder();
+  }
+  /**
+   * <pre>
+   * 质检会话
+   * </pre>
+   *
+   * Protobuf type {@code api.common.WorkerQualitySession}
+   */
+  public static final class WorkerQualitySession extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:api.common.WorkerQualitySession)
+      WorkerQualitySessionOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 26,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        WorkerQualitySession.class.getName());
+    }
+    // Use WorkerQualitySession.newBuilder() to construct.
+    private WorkerQualitySession(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private WorkerQualitySession() {
+      checkType_ = 0;
+      scoreType_ = 0;
+      reviewScoreType_ = 0;
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.teneasyChat.api.common.CWorker.internal_static_api_common_WorkerQualitySession_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.teneasyChat.api.common.CWorker.internal_static_api_common_WorkerQualitySession_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.teneasyChat.api.common.CWorker.WorkerQualitySession.class, com.teneasyChat.api.common.CWorker.WorkerQualitySession.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int ID_FIELD_NUMBER = 1;
+    private long id_ = 0L;
+    /**
+     * <code>int64 id = 1;</code>
+     * @return The id.
+     */
+    @java.lang.Override
+    public long getId() {
+      return id_;
+    }
+
+    public static final int BINDING_SESSION_ID_FIELD_NUMBER = 2;
+    private long bindingSessionId_ = 0L;
+    /**
+     * <pre>
+     * 绑定会话记录id
+     * </pre>
+     *
+     * <code>int64 binding_session_id = 2;</code>
+     * @return The bindingSessionId.
+     */
+    @java.lang.Override
+    public long getBindingSessionId() {
+      return bindingSessionId_;
+    }
+
+    public static final int TENANT_ID_FIELD_NUMBER = 3;
+    private int tenantId_ = 0;
+    /**
+     * <pre>
+     * 商户id
+     * </pre>
+     *
+     * <code>int32 tenant_id = 3;</code>
+     * @return The tenantId.
+     */
+    @java.lang.Override
+    public int getTenantId() {
+      return tenantId_;
+    }
+
+    public static final int CONSULT_ID_FIELD_NUMBER = 4;
+    private int consultId_ = 0;
+    /**
+     * <pre>
+     * 咨询id
+     * </pre>
+     *
+     * <code>uint32 consult_id = 4;</code>
+     * @return The consultId.
+     */
+    @java.lang.Override
+    public int getConsultId() {
+      return consultId_;
+    }
+
+    public static final int WORKER_ID_FIELD_NUMBER = 5;
+    private int workerId_ = 0;
+    /**
+     * <pre>
+     * 接待客服id
+     * </pre>
+     *
+     * <code>int32 worker_id = 5;</code>
+     * @return The workerId.
+     */
+    @java.lang.Override
+    public int getWorkerId() {
+      return workerId_;
+    }
+
+    public static final int UID_FIELD_NUMBER = 6;
+    private int uid_ = 0;
+    /**
+     * <pre>
+     * 用户id
+     * </pre>
+     *
+     * <code>int32 uid = 6;</code>
+     * @return The uid.
+     */
+    @java.lang.Override
+    public int getUid() {
+      return uid_;
+    }
+
+    public static final int USER_ROLE_FIELD_NUMBER = 7;
+    private int userRole_ = 0;
+    /**
+     * <pre>
+     * 用户角色
+     * </pre>
+     *
+     * <code>int32 user_role = 7;</code>
+     * @return The userRole.
+     */
+    @java.lang.Override
+    public int getUserRole() {
+      return userRole_;
+    }
+
+    public static final int USER_LEVEL_FIELD_NUMBER = 8;
+    private int userLevel_ = 0;
+    /**
+     * <pre>
+     * 用户层级
+     * </pre>
+     *
+     * <code>int32 user_level = 8;</code>
+     * @return The userLevel.
+     */
+    @java.lang.Override
+    public int getUserLevel() {
+      return userLevel_;
+    }
+
+    public static final int CHECK_TYPE_FIELD_NUMBER = 9;
+    private int checkType_ = 0;
+    /**
+     * <pre>
+     * 质检类型 0-普通 1-必检 2-联检
+     * </pre>
+     *
+     * <code>.api.common.WorkerCheckType check_type = 9;</code>
+     * @return The enum numeric value on the wire for checkType.
+     */
+    @java.lang.Override public int getCheckTypeValue() {
+      return checkType_;
+    }
+    /**
+     * <pre>
+     * 质检类型 0-普通 1-必检 2-联检
+     * </pre>
+     *
+     * <code>.api.common.WorkerCheckType check_type = 9;</code>
+     * @return The checkType.
+     */
+    @java.lang.Override public com.teneasyChat.api.common.CWorker.WorkerCheckType getCheckType() {
+      com.teneasyChat.api.common.CWorker.WorkerCheckType result = com.teneasyChat.api.common.CWorker.WorkerCheckType.forNumber(checkType_);
+      return result == null ? com.teneasyChat.api.common.CWorker.WorkerCheckType.UNRECOGNIZED : result;
+    }
+
+    public static final int FIRST_SEND_TIME_FIELD_NUMBER = 10;
+    private int firstSendTime_ = 0;
+    /**
+     * <pre>
+     * 首次发送消息时间
+     * </pre>
+     *
+     * <code>int32 first_send_time = 10;</code>
+     * @return The firstSendTime.
+     */
+    @java.lang.Override
+    public int getFirstSendTime() {
+      return firstSendTime_;
+    }
+
+    public static final int FIRST_REPLY_TIME_FIELD_NUMBER = 11;
+    private int firstReplyTime_ = 0;
+    /**
+     * <pre>
+     * 首次回复消息时间
+     * </pre>
+     *
+     * <code>int32 first_reply_time = 11;</code>
+     * @return The firstReplyTime.
+     */
+    @java.lang.Override
+    public int getFirstReplyTime() {
+      return firstReplyTime_;
+    }
+
+    public static final int SERVICE_DURATION_FIELD_NUMBER = 12;
+    private int serviceDuration_ = 0;
+    /**
+     * <pre>
+     * 服务时长
+     * </pre>
+     *
+     * <code>int32 service_duration = 12;</code>
+     * @return The serviceDuration.
+     */
+    @java.lang.Override
+    public int getServiceDuration() {
+      return serviceDuration_;
+    }
+
+    public static final int CLIENT_SEND_MESSAGE_COUNT_FIELD_NUMBER = 13;
+    private int clientSendMessageCount_ = 0;
+    /**
+     * <pre>
+     * 客户发送消息计数
+     * </pre>
+     *
+     * <code>int32 client_send_message_count = 13;</code>
+     * @return The clientSendMessageCount.
+     */
+    @java.lang.Override
+    public int getClientSendMessageCount() {
+      return clientSendMessageCount_;
+    }
+
+    public static final int WORKER_SEND_MESSAGE_COUNT_FIELD_NUMBER = 14;
+    private int workerSendMessageCount_ = 0;
+    /**
+     * <pre>
+     * 客服发送消息计数
+     * </pre>
+     *
+     * <code>int32 worker_send_message_count = 14;</code>
+     * @return The workerSendMessageCount.
+     */
+    @java.lang.Override
+    public int getWorkerSendMessageCount() {
+      return workerSendMessageCount_;
+    }
+
+    public static final int CREATED_AT_FIELD_NUMBER = 15;
+    private com.google.protobuf.Timestamp createdAt_;
+    /**
+     * <pre>
+     * 质检会话推送时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp created_at = 15;</code>
+     * @return Whether the createdAt field is set.
+     */
+    @java.lang.Override
+    public boolean hasCreatedAt() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     * <pre>
+     * 质检会话推送时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp created_at = 15;</code>
+     * @return The createdAt.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Timestamp getCreatedAt() {
+      return createdAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createdAt_;
+    }
+    /**
+     * <pre>
+     * 质检会话推送时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp created_at = 15;</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.TimestampOrBuilder getCreatedAtOrBuilder() {
+      return createdAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createdAt_;
+    }
+
+    public static final int SCORE_WORKER_ID_FIELD_NUMBER = 16;
+    private int scoreWorkerId_ = 0;
+    /**
+     * <pre>
+     * 评价客服id
+     * </pre>
+     *
+     * <code>int32 score_worker_id = 16;</code>
+     * @return The scoreWorkerId.
+     */
+    @java.lang.Override
+    public int getScoreWorkerId() {
+      return scoreWorkerId_;
+    }
+
+    public static final int SCORE_TYPE_FIELD_NUMBER = 17;
+    private int scoreType_ = 0;
+    /**
+     * <pre>
+     * 评价类型 1/2/3/4 优异/正常/较差/极差
+     * </pre>
+     *
+     * <code>.api.common.WorkerScoreType score_type = 17;</code>
+     * @return The enum numeric value on the wire for scoreType.
+     */
+    @java.lang.Override public int getScoreTypeValue() {
+      return scoreType_;
+    }
+    /**
+     * <pre>
+     * 评价类型 1/2/3/4 优异/正常/较差/极差
+     * </pre>
+     *
+     * <code>.api.common.WorkerScoreType score_type = 17;</code>
+     * @return The scoreType.
+     */
+    @java.lang.Override public com.teneasyChat.api.common.CWorker.WorkerScoreType getScoreType() {
+      com.teneasyChat.api.common.CWorker.WorkerScoreType result = com.teneasyChat.api.common.CWorker.WorkerScoreType.forNumber(scoreType_);
+      return result == null ? com.teneasyChat.api.common.CWorker.WorkerScoreType.UNRECOGNIZED : result;
+    }
+
+    public static final int SCORE_TIME_FIELD_NUMBER = 18;
+    private com.google.protobuf.Timestamp scoreTime_;
+    /**
+     * <pre>
+     * 评价时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp score_time = 18;</code>
+     * @return Whether the scoreTime field is set.
+     */
+    @java.lang.Override
+    public boolean hasScoreTime() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     * <pre>
+     * 评价时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp score_time = 18;</code>
+     * @return The scoreTime.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Timestamp getScoreTime() {
+      return scoreTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : scoreTime_;
+    }
+    /**
+     * <pre>
+     * 评价时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp score_time = 18;</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.TimestampOrBuilder getScoreTimeOrBuilder() {
+      return scoreTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : scoreTime_;
+    }
+
+    public static final int REVIEW_WORKER_ID_FIELD_NUMBER = 19;
+    private int reviewWorkerId_ = 0;
+    /**
+     * <pre>
+     * 复审客服id
+     * </pre>
+     *
+     * <code>int32 review_worker_id = 19;</code>
+     * @return The reviewWorkerId.
+     */
+    @java.lang.Override
+    public int getReviewWorkerId() {
+      return reviewWorkerId_;
+    }
+
+    public static final int REVIEW_SCORE_TYPE_FIELD_NUMBER = 20;
+    private int reviewScoreType_ = 0;
+    /**
+     * <pre>
+     * 复审评价类型
+     * </pre>
+     *
+     * <code>.api.common.WorkerScoreType review_score_type = 20;</code>
+     * @return The enum numeric value on the wire for reviewScoreType.
+     */
+    @java.lang.Override public int getReviewScoreTypeValue() {
+      return reviewScoreType_;
+    }
+    /**
+     * <pre>
+     * 复审评价类型
+     * </pre>
+     *
+     * <code>.api.common.WorkerScoreType review_score_type = 20;</code>
+     * @return The reviewScoreType.
+     */
+    @java.lang.Override public com.teneasyChat.api.common.CWorker.WorkerScoreType getReviewScoreType() {
+      com.teneasyChat.api.common.CWorker.WorkerScoreType result = com.teneasyChat.api.common.CWorker.WorkerScoreType.forNumber(reviewScoreType_);
+      return result == null ? com.teneasyChat.api.common.CWorker.WorkerScoreType.UNRECOGNIZED : result;
+    }
+
+    public static final int REVIEW_TIME_FIELD_NUMBER = 21;
+    private com.google.protobuf.Timestamp reviewTime_;
+    /**
+     * <pre>
+     * 复审时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp review_time = 21;</code>
+     * @return Whether the reviewTime field is set.
+     */
+    @java.lang.Override
+    public boolean hasReviewTime() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     * <pre>
+     * 复审时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp review_time = 21;</code>
+     * @return The reviewTime.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Timestamp getReviewTime() {
+      return reviewTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : reviewTime_;
+    }
+    /**
+     * <pre>
+     * 复审时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp review_time = 21;</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.TimestampOrBuilder getReviewTimeOrBuilder() {
+      return reviewTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : reviewTime_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (id_ != 0L) {
+        output.writeInt64(1, id_);
+      }
+      if (bindingSessionId_ != 0L) {
+        output.writeInt64(2, bindingSessionId_);
+      }
+      if (tenantId_ != 0) {
+        output.writeInt32(3, tenantId_);
+      }
+      if (consultId_ != 0) {
+        output.writeUInt32(4, consultId_);
+      }
+      if (workerId_ != 0) {
+        output.writeInt32(5, workerId_);
+      }
+      if (uid_ != 0) {
+        output.writeInt32(6, uid_);
+      }
+      if (userRole_ != 0) {
+        output.writeInt32(7, userRole_);
+      }
+      if (userLevel_ != 0) {
+        output.writeInt32(8, userLevel_);
+      }
+      if (checkType_ != com.teneasyChat.api.common.CWorker.WorkerCheckType.WQT_COMMON.getNumber()) {
+        output.writeEnum(9, checkType_);
+      }
+      if (firstSendTime_ != 0) {
+        output.writeInt32(10, firstSendTime_);
+      }
+      if (firstReplyTime_ != 0) {
+        output.writeInt32(11, firstReplyTime_);
+      }
+      if (serviceDuration_ != 0) {
+        output.writeInt32(12, serviceDuration_);
+      }
+      if (clientSendMessageCount_ != 0) {
+        output.writeInt32(13, clientSendMessageCount_);
+      }
+      if (workerSendMessageCount_ != 0) {
+        output.writeInt32(14, workerSendMessageCount_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(15, getCreatedAt());
+      }
+      if (scoreWorkerId_ != 0) {
+        output.writeInt32(16, scoreWorkerId_);
+      }
+      if (scoreType_ != com.teneasyChat.api.common.CWorker.WorkerScoreType.WST_UNKNOWN.getNumber()) {
+        output.writeEnum(17, scoreType_);
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        output.writeMessage(18, getScoreTime());
+      }
+      if (reviewWorkerId_ != 0) {
+        output.writeInt32(19, reviewWorkerId_);
+      }
+      if (reviewScoreType_ != com.teneasyChat.api.common.CWorker.WorkerScoreType.WST_UNKNOWN.getNumber()) {
+        output.writeEnum(20, reviewScoreType_);
+      }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        output.writeMessage(21, getReviewTime());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (id_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(1, id_);
+      }
+      if (bindingSessionId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(2, bindingSessionId_);
+      }
+      if (tenantId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(3, tenantId_);
+      }
+      if (consultId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(4, consultId_);
+      }
+      if (workerId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(5, workerId_);
+      }
+      if (uid_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(6, uid_);
+      }
+      if (userRole_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(7, userRole_);
+      }
+      if (userLevel_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(8, userLevel_);
+      }
+      if (checkType_ != com.teneasyChat.api.common.CWorker.WorkerCheckType.WQT_COMMON.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(9, checkType_);
+      }
+      if (firstSendTime_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(10, firstSendTime_);
+      }
+      if (firstReplyTime_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(11, firstReplyTime_);
+      }
+      if (serviceDuration_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(12, serviceDuration_);
+      }
+      if (clientSendMessageCount_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(13, clientSendMessageCount_);
+      }
+      if (workerSendMessageCount_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(14, workerSendMessageCount_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(15, getCreatedAt());
+      }
+      if (scoreWorkerId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(16, scoreWorkerId_);
+      }
+      if (scoreType_ != com.teneasyChat.api.common.CWorker.WorkerScoreType.WST_UNKNOWN.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(17, scoreType_);
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(18, getScoreTime());
+      }
+      if (reviewWorkerId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(19, reviewWorkerId_);
+      }
+      if (reviewScoreType_ != com.teneasyChat.api.common.CWorker.WorkerScoreType.WST_UNKNOWN.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(20, reviewScoreType_);
+      }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(21, getReviewTime());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.teneasyChat.api.common.CWorker.WorkerQualitySession)) {
+        return super.equals(obj);
+      }
+      com.teneasyChat.api.common.CWorker.WorkerQualitySession other = (com.teneasyChat.api.common.CWorker.WorkerQualitySession) obj;
+
+      if (getId()
+          != other.getId()) return false;
+      if (getBindingSessionId()
+          != other.getBindingSessionId()) return false;
+      if (getTenantId()
+          != other.getTenantId()) return false;
+      if (getConsultId()
+          != other.getConsultId()) return false;
+      if (getWorkerId()
+          != other.getWorkerId()) return false;
+      if (getUid()
+          != other.getUid()) return false;
+      if (getUserRole()
+          != other.getUserRole()) return false;
+      if (getUserLevel()
+          != other.getUserLevel()) return false;
+      if (checkType_ != other.checkType_) return false;
+      if (getFirstSendTime()
+          != other.getFirstSendTime()) return false;
+      if (getFirstReplyTime()
+          != other.getFirstReplyTime()) return false;
+      if (getServiceDuration()
+          != other.getServiceDuration()) return false;
+      if (getClientSendMessageCount()
+          != other.getClientSendMessageCount()) return false;
+      if (getWorkerSendMessageCount()
+          != other.getWorkerSendMessageCount()) return false;
+      if (hasCreatedAt() != other.hasCreatedAt()) return false;
+      if (hasCreatedAt()) {
+        if (!getCreatedAt()
+            .equals(other.getCreatedAt())) return false;
+      }
+      if (getScoreWorkerId()
+          != other.getScoreWorkerId()) return false;
+      if (scoreType_ != other.scoreType_) return false;
+      if (hasScoreTime() != other.hasScoreTime()) return false;
+      if (hasScoreTime()) {
+        if (!getScoreTime()
+            .equals(other.getScoreTime())) return false;
+      }
+      if (getReviewWorkerId()
+          != other.getReviewWorkerId()) return false;
+      if (reviewScoreType_ != other.reviewScoreType_) return false;
+      if (hasReviewTime() != other.hasReviewTime()) return false;
+      if (hasReviewTime()) {
+        if (!getReviewTime()
+            .equals(other.getReviewTime())) return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getId());
+      hash = (37 * hash) + BINDING_SESSION_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getBindingSessionId());
+      hash = (37 * hash) + TENANT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getTenantId();
+      hash = (37 * hash) + CONSULT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getConsultId();
+      hash = (37 * hash) + WORKER_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getWorkerId();
+      hash = (37 * hash) + UID_FIELD_NUMBER;
+      hash = (53 * hash) + getUid();
+      hash = (37 * hash) + USER_ROLE_FIELD_NUMBER;
+      hash = (53 * hash) + getUserRole();
+      hash = (37 * hash) + USER_LEVEL_FIELD_NUMBER;
+      hash = (53 * hash) + getUserLevel();
+      hash = (37 * hash) + CHECK_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + checkType_;
+      hash = (37 * hash) + FIRST_SEND_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getFirstSendTime();
+      hash = (37 * hash) + FIRST_REPLY_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getFirstReplyTime();
+      hash = (37 * hash) + SERVICE_DURATION_FIELD_NUMBER;
+      hash = (53 * hash) + getServiceDuration();
+      hash = (37 * hash) + CLIENT_SEND_MESSAGE_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getClientSendMessageCount();
+      hash = (37 * hash) + WORKER_SEND_MESSAGE_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getWorkerSendMessageCount();
+      if (hasCreatedAt()) {
+        hash = (37 * hash) + CREATED_AT_FIELD_NUMBER;
+        hash = (53 * hash) + getCreatedAt().hashCode();
+      }
+      hash = (37 * hash) + SCORE_WORKER_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getScoreWorkerId();
+      hash = (37 * hash) + SCORE_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + scoreType_;
+      if (hasScoreTime()) {
+        hash = (37 * hash) + SCORE_TIME_FIELD_NUMBER;
+        hash = (53 * hash) + getScoreTime().hashCode();
+      }
+      hash = (37 * hash) + REVIEW_WORKER_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getReviewWorkerId();
+      hash = (37 * hash) + REVIEW_SCORE_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + reviewScoreType_;
+      if (hasReviewTime()) {
+        hash = (37 * hash) + REVIEW_TIME_FIELD_NUMBER;
+        hash = (53 * hash) + getReviewTime().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.teneasyChat.api.common.CWorker.WorkerQualitySession parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.common.CWorker.WorkerQualitySession parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.common.CWorker.WorkerQualitySession parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.common.CWorker.WorkerQualitySession parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.common.CWorker.WorkerQualitySession parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.common.CWorker.WorkerQualitySession parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.common.CWorker.WorkerQualitySession parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.teneasyChat.api.common.CWorker.WorkerQualitySession parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.teneasyChat.api.common.CWorker.WorkerQualitySession parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.teneasyChat.api.common.CWorker.WorkerQualitySession parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.teneasyChat.api.common.CWorker.WorkerQualitySession parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.teneasyChat.api.common.CWorker.WorkerQualitySession parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.teneasyChat.api.common.CWorker.WorkerQualitySession prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * 质检会话
+     * </pre>
+     *
+     * Protobuf type {@code api.common.WorkerQualitySession}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:api.common.WorkerQualitySession)
+        com.teneasyChat.api.common.CWorker.WorkerQualitySessionOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.teneasyChat.api.common.CWorker.internal_static_api_common_WorkerQualitySession_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.teneasyChat.api.common.CWorker.internal_static_api_common_WorkerQualitySession_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.teneasyChat.api.common.CWorker.WorkerQualitySession.class, com.teneasyChat.api.common.CWorker.WorkerQualitySession.Builder.class);
+      }
+
+      // Construct using com.teneasyChat.api.common.CWorker.WorkerQualitySession.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage
+                .alwaysUseFieldBuilders) {
+          getCreatedAtFieldBuilder();
+          getScoreTimeFieldBuilder();
+          getReviewTimeFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        id_ = 0L;
+        bindingSessionId_ = 0L;
+        tenantId_ = 0;
+        consultId_ = 0;
+        workerId_ = 0;
+        uid_ = 0;
+        userRole_ = 0;
+        userLevel_ = 0;
+        checkType_ = 0;
+        firstSendTime_ = 0;
+        firstReplyTime_ = 0;
+        serviceDuration_ = 0;
+        clientSendMessageCount_ = 0;
+        workerSendMessageCount_ = 0;
+        createdAt_ = null;
+        if (createdAtBuilder_ != null) {
+          createdAtBuilder_.dispose();
+          createdAtBuilder_ = null;
+        }
+        scoreWorkerId_ = 0;
+        scoreType_ = 0;
+        scoreTime_ = null;
+        if (scoreTimeBuilder_ != null) {
+          scoreTimeBuilder_.dispose();
+          scoreTimeBuilder_ = null;
+        }
+        reviewWorkerId_ = 0;
+        reviewScoreType_ = 0;
+        reviewTime_ = null;
+        if (reviewTimeBuilder_ != null) {
+          reviewTimeBuilder_.dispose();
+          reviewTimeBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.teneasyChat.api.common.CWorker.internal_static_api_common_WorkerQualitySession_descriptor;
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.common.CWorker.WorkerQualitySession getDefaultInstanceForType() {
+        return com.teneasyChat.api.common.CWorker.WorkerQualitySession.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.common.CWorker.WorkerQualitySession build() {
+        com.teneasyChat.api.common.CWorker.WorkerQualitySession result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.common.CWorker.WorkerQualitySession buildPartial() {
+        com.teneasyChat.api.common.CWorker.WorkerQualitySession result = new com.teneasyChat.api.common.CWorker.WorkerQualitySession(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.teneasyChat.api.common.CWorker.WorkerQualitySession result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.id_ = id_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.bindingSessionId_ = bindingSessionId_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.tenantId_ = tenantId_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.consultId_ = consultId_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.workerId_ = workerId_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.uid_ = uid_;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.userRole_ = userRole_;
+        }
+        if (((from_bitField0_ & 0x00000080) != 0)) {
+          result.userLevel_ = userLevel_;
+        }
+        if (((from_bitField0_ & 0x00000100) != 0)) {
+          result.checkType_ = checkType_;
+        }
+        if (((from_bitField0_ & 0x00000200) != 0)) {
+          result.firstSendTime_ = firstSendTime_;
+        }
+        if (((from_bitField0_ & 0x00000400) != 0)) {
+          result.firstReplyTime_ = firstReplyTime_;
+        }
+        if (((from_bitField0_ & 0x00000800) != 0)) {
+          result.serviceDuration_ = serviceDuration_;
+        }
+        if (((from_bitField0_ & 0x00001000) != 0)) {
+          result.clientSendMessageCount_ = clientSendMessageCount_;
+        }
+        if (((from_bitField0_ & 0x00002000) != 0)) {
+          result.workerSendMessageCount_ = workerSendMessageCount_;
+        }
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00004000) != 0)) {
+          result.createdAt_ = createdAtBuilder_ == null
+              ? createdAt_
+              : createdAtBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00008000) != 0)) {
+          result.scoreWorkerId_ = scoreWorkerId_;
+        }
+        if (((from_bitField0_ & 0x00010000) != 0)) {
+          result.scoreType_ = scoreType_;
+        }
+        if (((from_bitField0_ & 0x00020000) != 0)) {
+          result.scoreTime_ = scoreTimeBuilder_ == null
+              ? scoreTime_
+              : scoreTimeBuilder_.build();
+          to_bitField0_ |= 0x00000002;
+        }
+        if (((from_bitField0_ & 0x00040000) != 0)) {
+          result.reviewWorkerId_ = reviewWorkerId_;
+        }
+        if (((from_bitField0_ & 0x00080000) != 0)) {
+          result.reviewScoreType_ = reviewScoreType_;
+        }
+        if (((from_bitField0_ & 0x00100000) != 0)) {
+          result.reviewTime_ = reviewTimeBuilder_ == null
+              ? reviewTime_
+              : reviewTimeBuilder_.build();
+          to_bitField0_ |= 0x00000004;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.teneasyChat.api.common.CWorker.WorkerQualitySession) {
+          return mergeFrom((com.teneasyChat.api.common.CWorker.WorkerQualitySession)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.teneasyChat.api.common.CWorker.WorkerQualitySession other) {
+        if (other == com.teneasyChat.api.common.CWorker.WorkerQualitySession.getDefaultInstance()) return this;
+        if (other.getId() != 0L) {
+          setId(other.getId());
+        }
+        if (other.getBindingSessionId() != 0L) {
+          setBindingSessionId(other.getBindingSessionId());
+        }
+        if (other.getTenantId() != 0) {
+          setTenantId(other.getTenantId());
+        }
+        if (other.getConsultId() != 0) {
+          setConsultId(other.getConsultId());
+        }
+        if (other.getWorkerId() != 0) {
+          setWorkerId(other.getWorkerId());
+        }
+        if (other.getUid() != 0) {
+          setUid(other.getUid());
+        }
+        if (other.getUserRole() != 0) {
+          setUserRole(other.getUserRole());
+        }
+        if (other.getUserLevel() != 0) {
+          setUserLevel(other.getUserLevel());
+        }
+        if (other.checkType_ != 0) {
+          setCheckTypeValue(other.getCheckTypeValue());
+        }
+        if (other.getFirstSendTime() != 0) {
+          setFirstSendTime(other.getFirstSendTime());
+        }
+        if (other.getFirstReplyTime() != 0) {
+          setFirstReplyTime(other.getFirstReplyTime());
+        }
+        if (other.getServiceDuration() != 0) {
+          setServiceDuration(other.getServiceDuration());
+        }
+        if (other.getClientSendMessageCount() != 0) {
+          setClientSendMessageCount(other.getClientSendMessageCount());
+        }
+        if (other.getWorkerSendMessageCount() != 0) {
+          setWorkerSendMessageCount(other.getWorkerSendMessageCount());
+        }
+        if (other.hasCreatedAt()) {
+          mergeCreatedAt(other.getCreatedAt());
+        }
+        if (other.getScoreWorkerId() != 0) {
+          setScoreWorkerId(other.getScoreWorkerId());
+        }
+        if (other.scoreType_ != 0) {
+          setScoreTypeValue(other.getScoreTypeValue());
+        }
+        if (other.hasScoreTime()) {
+          mergeScoreTime(other.getScoreTime());
+        }
+        if (other.getReviewWorkerId() != 0) {
+          setReviewWorkerId(other.getReviewWorkerId());
+        }
+        if (other.reviewScoreType_ != 0) {
+          setReviewScoreTypeValue(other.getReviewScoreTypeValue());
+        }
+        if (other.hasReviewTime()) {
+          mergeReviewTime(other.getReviewTime());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                id_ = input.readInt64();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 16: {
+                bindingSessionId_ = input.readInt64();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
+              case 24: {
+                tenantId_ = input.readInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 24
+              case 32: {
+                consultId_ = input.readUInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 32
+              case 40: {
+                workerId_ = input.readInt32();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 40
+              case 48: {
+                uid_ = input.readInt32();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 48
+              case 56: {
+                userRole_ = input.readInt32();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 56
+              case 64: {
+                userLevel_ = input.readInt32();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 64
+              case 72: {
+                checkType_ = input.readEnum();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 72
+              case 80: {
+                firstSendTime_ = input.readInt32();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 80
+              case 88: {
+                firstReplyTime_ = input.readInt32();
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 88
+              case 96: {
+                serviceDuration_ = input.readInt32();
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 96
+              case 104: {
+                clientSendMessageCount_ = input.readInt32();
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 104
+              case 112: {
+                workerSendMessageCount_ = input.readInt32();
+                bitField0_ |= 0x00002000;
+                break;
+              } // case 112
+              case 122: {
+                input.readMessage(
+                    getCreatedAtFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00004000;
+                break;
+              } // case 122
+              case 128: {
+                scoreWorkerId_ = input.readInt32();
+                bitField0_ |= 0x00008000;
+                break;
+              } // case 128
+              case 136: {
+                scoreType_ = input.readEnum();
+                bitField0_ |= 0x00010000;
+                break;
+              } // case 136
+              case 146: {
+                input.readMessage(
+                    getScoreTimeFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00020000;
+                break;
+              } // case 146
+              case 152: {
+                reviewWorkerId_ = input.readInt32();
+                bitField0_ |= 0x00040000;
+                break;
+              } // case 152
+              case 160: {
+                reviewScoreType_ = input.readEnum();
+                bitField0_ |= 0x00080000;
+                break;
+              } // case 160
+              case 170: {
+                input.readMessage(
+                    getReviewTimeFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00100000;
+                break;
+              } // case 170
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private long id_ ;
+      /**
+       * <code>int64 id = 1;</code>
+       * @return The id.
+       */
+      @java.lang.Override
+      public long getId() {
+        return id_;
+      }
+      /**
+       * <code>int64 id = 1;</code>
+       * @param value The id to set.
+       * @return This builder for chaining.
+       */
+      public Builder setId(long value) {
+
+        id_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 id = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        id_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long bindingSessionId_ ;
+      /**
+       * <pre>
+       * 绑定会话记录id
+       * </pre>
+       *
+       * <code>int64 binding_session_id = 2;</code>
+       * @return The bindingSessionId.
+       */
+      @java.lang.Override
+      public long getBindingSessionId() {
+        return bindingSessionId_;
+      }
+      /**
+       * <pre>
+       * 绑定会话记录id
+       * </pre>
+       *
+       * <code>int64 binding_session_id = 2;</code>
+       * @param value The bindingSessionId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBindingSessionId(long value) {
+
+        bindingSessionId_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 绑定会话记录id
+       * </pre>
+       *
+       * <code>int64 binding_session_id = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearBindingSessionId() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        bindingSessionId_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private int tenantId_ ;
+      /**
+       * <pre>
+       * 商户id
+       * </pre>
+       *
+       * <code>int32 tenant_id = 3;</code>
+       * @return The tenantId.
+       */
+      @java.lang.Override
+      public int getTenantId() {
+        return tenantId_;
+      }
+      /**
+       * <pre>
+       * 商户id
+       * </pre>
+       *
+       * <code>int32 tenant_id = 3;</code>
+       * @param value The tenantId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTenantId(int value) {
+
+        tenantId_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 商户id
+       * </pre>
+       *
+       * <code>int32 tenant_id = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTenantId() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        tenantId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int consultId_ ;
+      /**
+       * <pre>
+       * 咨询id
+       * </pre>
+       *
+       * <code>uint32 consult_id = 4;</code>
+       * @return The consultId.
+       */
+      @java.lang.Override
+      public int getConsultId() {
+        return consultId_;
+      }
+      /**
+       * <pre>
+       * 咨询id
+       * </pre>
+       *
+       * <code>uint32 consult_id = 4;</code>
+       * @param value The consultId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setConsultId(int value) {
+
+        consultId_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 咨询id
+       * </pre>
+       *
+       * <code>uint32 consult_id = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearConsultId() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        consultId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int workerId_ ;
+      /**
+       * <pre>
+       * 接待客服id
+       * </pre>
+       *
+       * <code>int32 worker_id = 5;</code>
+       * @return The workerId.
+       */
+      @java.lang.Override
+      public int getWorkerId() {
+        return workerId_;
+      }
+      /**
+       * <pre>
+       * 接待客服id
+       * </pre>
+       *
+       * <code>int32 worker_id = 5;</code>
+       * @param value The workerId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setWorkerId(int value) {
+
+        workerId_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 接待客服id
+       * </pre>
+       *
+       * <code>int32 worker_id = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearWorkerId() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        workerId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int uid_ ;
+      /**
+       * <pre>
+       * 用户id
+       * </pre>
+       *
+       * <code>int32 uid = 6;</code>
+       * @return The uid.
+       */
+      @java.lang.Override
+      public int getUid() {
+        return uid_;
+      }
+      /**
+       * <pre>
+       * 用户id
+       * </pre>
+       *
+       * <code>int32 uid = 6;</code>
+       * @param value The uid to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUid(int value) {
+
+        uid_ = value;
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 用户id
+       * </pre>
+       *
+       * <code>int32 uid = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUid() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        uid_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int userRole_ ;
+      /**
+       * <pre>
+       * 用户角色
+       * </pre>
+       *
+       * <code>int32 user_role = 7;</code>
+       * @return The userRole.
+       */
+      @java.lang.Override
+      public int getUserRole() {
+        return userRole_;
+      }
+      /**
+       * <pre>
+       * 用户角色
+       * </pre>
+       *
+       * <code>int32 user_role = 7;</code>
+       * @param value The userRole to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUserRole(int value) {
+
+        userRole_ = value;
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 用户角色
+       * </pre>
+       *
+       * <code>int32 user_role = 7;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUserRole() {
+        bitField0_ = (bitField0_ & ~0x00000040);
+        userRole_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int userLevel_ ;
+      /**
+       * <pre>
+       * 用户层级
+       * </pre>
+       *
+       * <code>int32 user_level = 8;</code>
+       * @return The userLevel.
+       */
+      @java.lang.Override
+      public int getUserLevel() {
+        return userLevel_;
+      }
+      /**
+       * <pre>
+       * 用户层级
+       * </pre>
+       *
+       * <code>int32 user_level = 8;</code>
+       * @param value The userLevel to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUserLevel(int value) {
+
+        userLevel_ = value;
+        bitField0_ |= 0x00000080;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 用户层级
+       * </pre>
+       *
+       * <code>int32 user_level = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUserLevel() {
+        bitField0_ = (bitField0_ & ~0x00000080);
+        userLevel_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int checkType_ = 0;
+      /**
+       * <pre>
+       * 质检类型 0-普通 1-必检 2-联检
+       * </pre>
+       *
+       * <code>.api.common.WorkerCheckType check_type = 9;</code>
+       * @return The enum numeric value on the wire for checkType.
+       */
+      @java.lang.Override public int getCheckTypeValue() {
+        return checkType_;
+      }
+      /**
+       * <pre>
+       * 质检类型 0-普通 1-必检 2-联检
+       * </pre>
+       *
+       * <code>.api.common.WorkerCheckType check_type = 9;</code>
+       * @param value The enum numeric value on the wire for checkType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCheckTypeValue(int value) {
+        checkType_ = value;
+        bitField0_ |= 0x00000100;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 质检类型 0-普通 1-必检 2-联检
+       * </pre>
+       *
+       * <code>.api.common.WorkerCheckType check_type = 9;</code>
+       * @return The checkType.
+       */
+      @java.lang.Override
+      public com.teneasyChat.api.common.CWorker.WorkerCheckType getCheckType() {
+        com.teneasyChat.api.common.CWorker.WorkerCheckType result = com.teneasyChat.api.common.CWorker.WorkerCheckType.forNumber(checkType_);
+        return result == null ? com.teneasyChat.api.common.CWorker.WorkerCheckType.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * 质检类型 0-普通 1-必检 2-联检
+       * </pre>
+       *
+       * <code>.api.common.WorkerCheckType check_type = 9;</code>
+       * @param value The checkType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCheckType(com.teneasyChat.api.common.CWorker.WorkerCheckType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000100;
+        checkType_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 质检类型 0-普通 1-必检 2-联检
+       * </pre>
+       *
+       * <code>.api.common.WorkerCheckType check_type = 9;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCheckType() {
+        bitField0_ = (bitField0_ & ~0x00000100);
+        checkType_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int firstSendTime_ ;
+      /**
+       * <pre>
+       * 首次发送消息时间
+       * </pre>
+       *
+       * <code>int32 first_send_time = 10;</code>
+       * @return The firstSendTime.
+       */
+      @java.lang.Override
+      public int getFirstSendTime() {
+        return firstSendTime_;
+      }
+      /**
+       * <pre>
+       * 首次发送消息时间
+       * </pre>
+       *
+       * <code>int32 first_send_time = 10;</code>
+       * @param value The firstSendTime to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFirstSendTime(int value) {
+
+        firstSendTime_ = value;
+        bitField0_ |= 0x00000200;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 首次发送消息时间
+       * </pre>
+       *
+       * <code>int32 first_send_time = 10;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearFirstSendTime() {
+        bitField0_ = (bitField0_ & ~0x00000200);
+        firstSendTime_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int firstReplyTime_ ;
+      /**
+       * <pre>
+       * 首次回复消息时间
+       * </pre>
+       *
+       * <code>int32 first_reply_time = 11;</code>
+       * @return The firstReplyTime.
+       */
+      @java.lang.Override
+      public int getFirstReplyTime() {
+        return firstReplyTime_;
+      }
+      /**
+       * <pre>
+       * 首次回复消息时间
+       * </pre>
+       *
+       * <code>int32 first_reply_time = 11;</code>
+       * @param value The firstReplyTime to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFirstReplyTime(int value) {
+
+        firstReplyTime_ = value;
+        bitField0_ |= 0x00000400;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 首次回复消息时间
+       * </pre>
+       *
+       * <code>int32 first_reply_time = 11;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearFirstReplyTime() {
+        bitField0_ = (bitField0_ & ~0x00000400);
+        firstReplyTime_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int serviceDuration_ ;
+      /**
+       * <pre>
+       * 服务时长
+       * </pre>
+       *
+       * <code>int32 service_duration = 12;</code>
+       * @return The serviceDuration.
+       */
+      @java.lang.Override
+      public int getServiceDuration() {
+        return serviceDuration_;
+      }
+      /**
+       * <pre>
+       * 服务时长
+       * </pre>
+       *
+       * <code>int32 service_duration = 12;</code>
+       * @param value The serviceDuration to set.
+       * @return This builder for chaining.
+       */
+      public Builder setServiceDuration(int value) {
+
+        serviceDuration_ = value;
+        bitField0_ |= 0x00000800;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 服务时长
+       * </pre>
+       *
+       * <code>int32 service_duration = 12;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearServiceDuration() {
+        bitField0_ = (bitField0_ & ~0x00000800);
+        serviceDuration_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int clientSendMessageCount_ ;
+      /**
+       * <pre>
+       * 客户发送消息计数
+       * </pre>
+       *
+       * <code>int32 client_send_message_count = 13;</code>
+       * @return The clientSendMessageCount.
+       */
+      @java.lang.Override
+      public int getClientSendMessageCount() {
+        return clientSendMessageCount_;
+      }
+      /**
+       * <pre>
+       * 客户发送消息计数
+       * </pre>
+       *
+       * <code>int32 client_send_message_count = 13;</code>
+       * @param value The clientSendMessageCount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setClientSendMessageCount(int value) {
+
+        clientSendMessageCount_ = value;
+        bitField0_ |= 0x00001000;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 客户发送消息计数
+       * </pre>
+       *
+       * <code>int32 client_send_message_count = 13;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearClientSendMessageCount() {
+        bitField0_ = (bitField0_ & ~0x00001000);
+        clientSendMessageCount_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int workerSendMessageCount_ ;
+      /**
+       * <pre>
+       * 客服发送消息计数
+       * </pre>
+       *
+       * <code>int32 worker_send_message_count = 14;</code>
+       * @return The workerSendMessageCount.
+       */
+      @java.lang.Override
+      public int getWorkerSendMessageCount() {
+        return workerSendMessageCount_;
+      }
+      /**
+       * <pre>
+       * 客服发送消息计数
+       * </pre>
+       *
+       * <code>int32 worker_send_message_count = 14;</code>
+       * @param value The workerSendMessageCount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setWorkerSendMessageCount(int value) {
+
+        workerSendMessageCount_ = value;
+        bitField0_ |= 0x00002000;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 客服发送消息计数
+       * </pre>
+       *
+       * <code>int32 worker_send_message_count = 14;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearWorkerSendMessageCount() {
+        bitField0_ = (bitField0_ & ~0x00002000);
+        workerSendMessageCount_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.Timestamp createdAt_;
+      private com.google.protobuf.SingleFieldBuilder<
+          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> createdAtBuilder_;
+      /**
+       * <pre>
+       * 质检会话推送时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp created_at = 15;</code>
+       * @return Whether the createdAt field is set.
+       */
+      public boolean hasCreatedAt() {
+        return ((bitField0_ & 0x00004000) != 0);
+      }
+      /**
+       * <pre>
+       * 质检会话推送时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp created_at = 15;</code>
+       * @return The createdAt.
+       */
+      public com.google.protobuf.Timestamp getCreatedAt() {
+        if (createdAtBuilder_ == null) {
+          return createdAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createdAt_;
+        } else {
+          return createdAtBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * 质检会话推送时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp created_at = 15;</code>
+       */
+      public Builder setCreatedAt(com.google.protobuf.Timestamp value) {
+        if (createdAtBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          createdAt_ = value;
+        } else {
+          createdAtBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00004000;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 质检会话推送时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp created_at = 15;</code>
+       */
+      public Builder setCreatedAt(
+          com.google.protobuf.Timestamp.Builder builderForValue) {
+        if (createdAtBuilder_ == null) {
+          createdAt_ = builderForValue.build();
+        } else {
+          createdAtBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00004000;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 质检会话推送时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp created_at = 15;</code>
+       */
+      public Builder mergeCreatedAt(com.google.protobuf.Timestamp value) {
+        if (createdAtBuilder_ == null) {
+          if (((bitField0_ & 0x00004000) != 0) &&
+            createdAt_ != null &&
+            createdAt_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getCreatedAtBuilder().mergeFrom(value);
+          } else {
+            createdAt_ = value;
+          }
+        } else {
+          createdAtBuilder_.mergeFrom(value);
+        }
+        if (createdAt_ != null) {
+          bitField0_ |= 0x00004000;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 质检会话推送时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp created_at = 15;</code>
+       */
+      public Builder clearCreatedAt() {
+        bitField0_ = (bitField0_ & ~0x00004000);
+        createdAt_ = null;
+        if (createdAtBuilder_ != null) {
+          createdAtBuilder_.dispose();
+          createdAtBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 质检会话推送时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp created_at = 15;</code>
+       */
+      public com.google.protobuf.Timestamp.Builder getCreatedAtBuilder() {
+        bitField0_ |= 0x00004000;
+        onChanged();
+        return getCreatedAtFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * 质检会话推送时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp created_at = 15;</code>
+       */
+      public com.google.protobuf.TimestampOrBuilder getCreatedAtOrBuilder() {
+        if (createdAtBuilder_ != null) {
+          return createdAtBuilder_.getMessageOrBuilder();
+        } else {
+          return createdAt_ == null ?
+              com.google.protobuf.Timestamp.getDefaultInstance() : createdAt_;
+        }
+      }
+      /**
+       * <pre>
+       * 质检会话推送时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp created_at = 15;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+          getCreatedAtFieldBuilder() {
+        if (createdAtBuilder_ == null) {
+          createdAtBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                  getCreatedAt(),
+                  getParentForChildren(),
+                  isClean());
+          createdAt_ = null;
+        }
+        return createdAtBuilder_;
+      }
+
+      private int scoreWorkerId_ ;
+      /**
+       * <pre>
+       * 评价客服id
+       * </pre>
+       *
+       * <code>int32 score_worker_id = 16;</code>
+       * @return The scoreWorkerId.
+       */
+      @java.lang.Override
+      public int getScoreWorkerId() {
+        return scoreWorkerId_;
+      }
+      /**
+       * <pre>
+       * 评价客服id
+       * </pre>
+       *
+       * <code>int32 score_worker_id = 16;</code>
+       * @param value The scoreWorkerId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setScoreWorkerId(int value) {
+
+        scoreWorkerId_ = value;
+        bitField0_ |= 0x00008000;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 评价客服id
+       * </pre>
+       *
+       * <code>int32 score_worker_id = 16;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearScoreWorkerId() {
+        bitField0_ = (bitField0_ & ~0x00008000);
+        scoreWorkerId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int scoreType_ = 0;
+      /**
+       * <pre>
+       * 评价类型 1/2/3/4 优异/正常/较差/极差
+       * </pre>
+       *
+       * <code>.api.common.WorkerScoreType score_type = 17;</code>
+       * @return The enum numeric value on the wire for scoreType.
+       */
+      @java.lang.Override public int getScoreTypeValue() {
+        return scoreType_;
+      }
+      /**
+       * <pre>
+       * 评价类型 1/2/3/4 优异/正常/较差/极差
+       * </pre>
+       *
+       * <code>.api.common.WorkerScoreType score_type = 17;</code>
+       * @param value The enum numeric value on the wire for scoreType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setScoreTypeValue(int value) {
+        scoreType_ = value;
+        bitField0_ |= 0x00010000;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 评价类型 1/2/3/4 优异/正常/较差/极差
+       * </pre>
+       *
+       * <code>.api.common.WorkerScoreType score_type = 17;</code>
+       * @return The scoreType.
+       */
+      @java.lang.Override
+      public com.teneasyChat.api.common.CWorker.WorkerScoreType getScoreType() {
+        com.teneasyChat.api.common.CWorker.WorkerScoreType result = com.teneasyChat.api.common.CWorker.WorkerScoreType.forNumber(scoreType_);
+        return result == null ? com.teneasyChat.api.common.CWorker.WorkerScoreType.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * 评价类型 1/2/3/4 优异/正常/较差/极差
+       * </pre>
+       *
+       * <code>.api.common.WorkerScoreType score_type = 17;</code>
+       * @param value The scoreType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setScoreType(com.teneasyChat.api.common.CWorker.WorkerScoreType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00010000;
+        scoreType_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 评价类型 1/2/3/4 优异/正常/较差/极差
+       * </pre>
+       *
+       * <code>.api.common.WorkerScoreType score_type = 17;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearScoreType() {
+        bitField0_ = (bitField0_ & ~0x00010000);
+        scoreType_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.Timestamp scoreTime_;
+      private com.google.protobuf.SingleFieldBuilder<
+          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> scoreTimeBuilder_;
+      /**
+       * <pre>
+       * 评价时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp score_time = 18;</code>
+       * @return Whether the scoreTime field is set.
+       */
+      public boolean hasScoreTime() {
+        return ((bitField0_ & 0x00020000) != 0);
+      }
+      /**
+       * <pre>
+       * 评价时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp score_time = 18;</code>
+       * @return The scoreTime.
+       */
+      public com.google.protobuf.Timestamp getScoreTime() {
+        if (scoreTimeBuilder_ == null) {
+          return scoreTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : scoreTime_;
+        } else {
+          return scoreTimeBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * 评价时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp score_time = 18;</code>
+       */
+      public Builder setScoreTime(com.google.protobuf.Timestamp value) {
+        if (scoreTimeBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          scoreTime_ = value;
+        } else {
+          scoreTimeBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00020000;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 评价时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp score_time = 18;</code>
+       */
+      public Builder setScoreTime(
+          com.google.protobuf.Timestamp.Builder builderForValue) {
+        if (scoreTimeBuilder_ == null) {
+          scoreTime_ = builderForValue.build();
+        } else {
+          scoreTimeBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00020000;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 评价时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp score_time = 18;</code>
+       */
+      public Builder mergeScoreTime(com.google.protobuf.Timestamp value) {
+        if (scoreTimeBuilder_ == null) {
+          if (((bitField0_ & 0x00020000) != 0) &&
+            scoreTime_ != null &&
+            scoreTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getScoreTimeBuilder().mergeFrom(value);
+          } else {
+            scoreTime_ = value;
+          }
+        } else {
+          scoreTimeBuilder_.mergeFrom(value);
+        }
+        if (scoreTime_ != null) {
+          bitField0_ |= 0x00020000;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 评价时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp score_time = 18;</code>
+       */
+      public Builder clearScoreTime() {
+        bitField0_ = (bitField0_ & ~0x00020000);
+        scoreTime_ = null;
+        if (scoreTimeBuilder_ != null) {
+          scoreTimeBuilder_.dispose();
+          scoreTimeBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 评价时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp score_time = 18;</code>
+       */
+      public com.google.protobuf.Timestamp.Builder getScoreTimeBuilder() {
+        bitField0_ |= 0x00020000;
+        onChanged();
+        return getScoreTimeFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * 评价时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp score_time = 18;</code>
+       */
+      public com.google.protobuf.TimestampOrBuilder getScoreTimeOrBuilder() {
+        if (scoreTimeBuilder_ != null) {
+          return scoreTimeBuilder_.getMessageOrBuilder();
+        } else {
+          return scoreTime_ == null ?
+              com.google.protobuf.Timestamp.getDefaultInstance() : scoreTime_;
+        }
+      }
+      /**
+       * <pre>
+       * 评价时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp score_time = 18;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+          getScoreTimeFieldBuilder() {
+        if (scoreTimeBuilder_ == null) {
+          scoreTimeBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                  getScoreTime(),
+                  getParentForChildren(),
+                  isClean());
+          scoreTime_ = null;
+        }
+        return scoreTimeBuilder_;
+      }
+
+      private int reviewWorkerId_ ;
+      /**
+       * <pre>
+       * 复审客服id
+       * </pre>
+       *
+       * <code>int32 review_worker_id = 19;</code>
+       * @return The reviewWorkerId.
+       */
+      @java.lang.Override
+      public int getReviewWorkerId() {
+        return reviewWorkerId_;
+      }
+      /**
+       * <pre>
+       * 复审客服id
+       * </pre>
+       *
+       * <code>int32 review_worker_id = 19;</code>
+       * @param value The reviewWorkerId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setReviewWorkerId(int value) {
+
+        reviewWorkerId_ = value;
+        bitField0_ |= 0x00040000;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 复审客服id
+       * </pre>
+       *
+       * <code>int32 review_worker_id = 19;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearReviewWorkerId() {
+        bitField0_ = (bitField0_ & ~0x00040000);
+        reviewWorkerId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int reviewScoreType_ = 0;
+      /**
+       * <pre>
+       * 复审评价类型
+       * </pre>
+       *
+       * <code>.api.common.WorkerScoreType review_score_type = 20;</code>
+       * @return The enum numeric value on the wire for reviewScoreType.
+       */
+      @java.lang.Override public int getReviewScoreTypeValue() {
+        return reviewScoreType_;
+      }
+      /**
+       * <pre>
+       * 复审评价类型
+       * </pre>
+       *
+       * <code>.api.common.WorkerScoreType review_score_type = 20;</code>
+       * @param value The enum numeric value on the wire for reviewScoreType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setReviewScoreTypeValue(int value) {
+        reviewScoreType_ = value;
+        bitField0_ |= 0x00080000;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 复审评价类型
+       * </pre>
+       *
+       * <code>.api.common.WorkerScoreType review_score_type = 20;</code>
+       * @return The reviewScoreType.
+       */
+      @java.lang.Override
+      public com.teneasyChat.api.common.CWorker.WorkerScoreType getReviewScoreType() {
+        com.teneasyChat.api.common.CWorker.WorkerScoreType result = com.teneasyChat.api.common.CWorker.WorkerScoreType.forNumber(reviewScoreType_);
+        return result == null ? com.teneasyChat.api.common.CWorker.WorkerScoreType.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * 复审评价类型
+       * </pre>
+       *
+       * <code>.api.common.WorkerScoreType review_score_type = 20;</code>
+       * @param value The reviewScoreType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setReviewScoreType(com.teneasyChat.api.common.CWorker.WorkerScoreType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00080000;
+        reviewScoreType_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 复审评价类型
+       * </pre>
+       *
+       * <code>.api.common.WorkerScoreType review_score_type = 20;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearReviewScoreType() {
+        bitField0_ = (bitField0_ & ~0x00080000);
+        reviewScoreType_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.Timestamp reviewTime_;
+      private com.google.protobuf.SingleFieldBuilder<
+          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> reviewTimeBuilder_;
+      /**
+       * <pre>
+       * 复审时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp review_time = 21;</code>
+       * @return Whether the reviewTime field is set.
+       */
+      public boolean hasReviewTime() {
+        return ((bitField0_ & 0x00100000) != 0);
+      }
+      /**
+       * <pre>
+       * 复审时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp review_time = 21;</code>
+       * @return The reviewTime.
+       */
+      public com.google.protobuf.Timestamp getReviewTime() {
+        if (reviewTimeBuilder_ == null) {
+          return reviewTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : reviewTime_;
+        } else {
+          return reviewTimeBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * 复审时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp review_time = 21;</code>
+       */
+      public Builder setReviewTime(com.google.protobuf.Timestamp value) {
+        if (reviewTimeBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          reviewTime_ = value;
+        } else {
+          reviewTimeBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00100000;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 复审时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp review_time = 21;</code>
+       */
+      public Builder setReviewTime(
+          com.google.protobuf.Timestamp.Builder builderForValue) {
+        if (reviewTimeBuilder_ == null) {
+          reviewTime_ = builderForValue.build();
+        } else {
+          reviewTimeBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00100000;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 复审时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp review_time = 21;</code>
+       */
+      public Builder mergeReviewTime(com.google.protobuf.Timestamp value) {
+        if (reviewTimeBuilder_ == null) {
+          if (((bitField0_ & 0x00100000) != 0) &&
+            reviewTime_ != null &&
+            reviewTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getReviewTimeBuilder().mergeFrom(value);
+          } else {
+            reviewTime_ = value;
+          }
+        } else {
+          reviewTimeBuilder_.mergeFrom(value);
+        }
+        if (reviewTime_ != null) {
+          bitField0_ |= 0x00100000;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 复审时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp review_time = 21;</code>
+       */
+      public Builder clearReviewTime() {
+        bitField0_ = (bitField0_ & ~0x00100000);
+        reviewTime_ = null;
+        if (reviewTimeBuilder_ != null) {
+          reviewTimeBuilder_.dispose();
+          reviewTimeBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 复审时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp review_time = 21;</code>
+       */
+      public com.google.protobuf.Timestamp.Builder getReviewTimeBuilder() {
+        bitField0_ |= 0x00100000;
+        onChanged();
+        return getReviewTimeFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * 复审时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp review_time = 21;</code>
+       */
+      public com.google.protobuf.TimestampOrBuilder getReviewTimeOrBuilder() {
+        if (reviewTimeBuilder_ != null) {
+          return reviewTimeBuilder_.getMessageOrBuilder();
+        } else {
+          return reviewTime_ == null ?
+              com.google.protobuf.Timestamp.getDefaultInstance() : reviewTime_;
+        }
+      }
+      /**
+       * <pre>
+       * 复审时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp review_time = 21;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+          getReviewTimeFieldBuilder() {
+        if (reviewTimeBuilder_ == null) {
+          reviewTimeBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                  getReviewTime(),
+                  getParentForChildren(),
+                  isClean());
+          reviewTime_ = null;
+        }
+        return reviewTimeBuilder_;
+      }
+
+      // @@protoc_insertion_point(builder_scope:api.common.WorkerQualitySession)
+    }
+
+    // @@protoc_insertion_point(class_scope:api.common.WorkerQualitySession)
+    private static final com.teneasyChat.api.common.CWorker.WorkerQualitySession DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.teneasyChat.api.common.CWorker.WorkerQualitySession();
+    }
+
+    public static com.teneasyChat.api.common.CWorker.WorkerQualitySession getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<WorkerQualitySession>
+        PARSER = new com.google.protobuf.AbstractParser<WorkerQualitySession>() {
+      @java.lang.Override
+      public WorkerQualitySession parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<WorkerQualitySession> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<WorkerQualitySession> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.teneasyChat.api.common.CWorker.WorkerQualitySession getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface WorkerRouteOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:api.common.WorkerRoute)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>int32 id = 1;</code>
+     * @return The id.
+     */
+    int getId();
+
+    /**
+     * <pre>
+     * 名称
+     * </pre>
+     *
+     * <code>string name = 2;</code>
+     * @return The name.
+     */
+    java.lang.String getName();
+    /**
+     * <pre>
+     * 名称
+     * </pre>
+     *
+     * <code>string name = 2;</code>
+     * @return The bytes for name.
+     */
+    com.google.protobuf.ByteString
+        getNameBytes();
+
+    /**
+     * <pre>
+     * url
+     * </pre>
+     *
+     * <code>string url = 3;</code>
+     * @return The url.
+     */
+    java.lang.String getUrl();
+    /**
+     * <pre>
+     * url
+     * </pre>
+     *
+     * <code>string url = 3;</code>
+     * @return The bytes for url.
+     */
+    com.google.protobuf.ByteString
+        getUrlBytes();
+
+    /**
+     * <pre>
+     * 父级id
+     * </pre>
+     *
+     * <code>int32 pid = 4;</code>
+     * @return The pid.
+     */
+    int getPid();
+
+    /**
+     * <pre>
+     * 排序
+     * </pre>
+     *
+     * <code>int32 sort = 5;</code>
+     * @return The sort.
+     */
+    int getSort();
+
+    /**
+     * <pre>
+     * 描述
+     * </pre>
+     *
+     * <code>string remark = 6;</code>
+     * @return The remark.
+     */
+    java.lang.String getRemark();
+    /**
+     * <pre>
+     * 描述
+     * </pre>
+     *
+     * <code>string remark = 6;</code>
+     * @return The bytes for remark.
+     */
+    com.google.protobuf.ByteString
+        getRemarkBytes();
+
+    /**
+     * <pre>
+     * 角色权限 1:管理端 2:一线客服
+     * </pre>
+     *
+     * <code>.api.common.WorkerRoleType role_type = 7;</code>
+     * @return The enum numeric value on the wire for roleType.
+     */
+    int getRoleTypeValue();
+    /**
+     * <pre>
+     * 角色权限 1:管理端 2:一线客服
+     * </pre>
+     *
+     * <code>.api.common.WorkerRoleType role_type = 7;</code>
+     * @return The roleType.
+     */
+    com.teneasyChat.api.common.CWorker.WorkerRoleType getRoleType();
+
+    /**
+     * <pre>
+     * 创建时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_at = 8;</code>
+     * @return Whether the createAt field is set.
+     */
+    boolean hasCreateAt();
+    /**
+     * <pre>
+     * 创建时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_at = 8;</code>
+     * @return The createAt.
+     */
+    com.google.protobuf.Timestamp getCreateAt();
+    /**
+     * <pre>
+     * 创建时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_at = 8;</code>
+     */
+    com.google.protobuf.TimestampOrBuilder getCreateAtOrBuilder();
+
+    /**
+     * <pre>
+     * 更新时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_at = 9;</code>
+     * @return Whether the updateAt field is set.
+     */
+    boolean hasUpdateAt();
+    /**
+     * <pre>
+     * 更新时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_at = 9;</code>
+     * @return The updateAt.
+     */
+    com.google.protobuf.Timestamp getUpdateAt();
+    /**
+     * <pre>
+     * 更新时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_at = 9;</code>
+     */
+    com.google.protobuf.TimestampOrBuilder getUpdateAtOrBuilder();
+
+    /**
+     * <pre>
+     * is_bind
+     * </pre>
+     *
+     * <code>.api.common.BindStatus bindingStatus = 10;</code>
+     * @return The enum numeric value on the wire for bindingStatus.
+     */
+    int getBindingStatusValue();
+    /**
+     * <pre>
+     * is_bind
+     * </pre>
+     *
+     * <code>.api.common.BindStatus bindingStatus = 10;</code>
+     * @return The bindingStatus.
+     */
+    com.teneasyChat.api.common.CBase.BindStatus getBindingStatus();
+
+    /**
+     * <pre>
+     * 是否显示
+     * </pre>
+     *
+     * <code>int32 show_type = 11;</code>
+     * @return The showType.
+     */
+    int getShowType();
+  }
+  /**
+   * <pre>
+   * 客服后台路由
+   * </pre>
+   *
+   * Protobuf type {@code api.common.WorkerRoute}
+   */
+  public static final class WorkerRoute extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:api.common.WorkerRoute)
+      WorkerRouteOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 26,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        WorkerRoute.class.getName());
+    }
+    // Use WorkerRoute.newBuilder() to construct.
+    private WorkerRoute(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private WorkerRoute() {
+      name_ = "";
+      url_ = "";
+      remark_ = "";
+      roleType_ = 0;
+      bindingStatus_ = 0;
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.teneasyChat.api.common.CWorker.internal_static_api_common_WorkerRoute_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.teneasyChat.api.common.CWorker.internal_static_api_common_WorkerRoute_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.teneasyChat.api.common.CWorker.WorkerRoute.class, com.teneasyChat.api.common.CWorker.WorkerRoute.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int ID_FIELD_NUMBER = 1;
+    private int id_ = 0;
+    /**
+     * <code>int32 id = 1;</code>
+     * @return The id.
+     */
+    @java.lang.Override
+    public int getId() {
+      return id_;
+    }
+
+    public static final int NAME_FIELD_NUMBER = 2;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object name_ = "";
+    /**
+     * <pre>
+     * 名称
+     * </pre>
+     *
+     * <code>string name = 2;</code>
+     * @return The name.
+     */
+    @java.lang.Override
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * 名称
+     * </pre>
+     *
+     * <code>string name = 2;</code>
+     * @return The bytes for name.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int URL_FIELD_NUMBER = 3;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object url_ = "";
+    /**
+     * <pre>
+     * url
+     * </pre>
+     *
+     * <code>string url = 3;</code>
+     * @return The url.
+     */
+    @java.lang.Override
+    public java.lang.String getUrl() {
+      java.lang.Object ref = url_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        url_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * url
+     * </pre>
+     *
+     * <code>string url = 3;</code>
+     * @return The bytes for url.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getUrlBytes() {
+      java.lang.Object ref = url_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        url_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PID_FIELD_NUMBER = 4;
+    private int pid_ = 0;
+    /**
+     * <pre>
+     * 父级id
+     * </pre>
+     *
+     * <code>int32 pid = 4;</code>
+     * @return The pid.
+     */
+    @java.lang.Override
+    public int getPid() {
+      return pid_;
+    }
+
+    public static final int SORT_FIELD_NUMBER = 5;
+    private int sort_ = 0;
+    /**
+     * <pre>
+     * 排序
+     * </pre>
+     *
+     * <code>int32 sort = 5;</code>
+     * @return The sort.
+     */
+    @java.lang.Override
+    public int getSort() {
+      return sort_;
+    }
+
+    public static final int REMARK_FIELD_NUMBER = 6;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object remark_ = "";
+    /**
+     * <pre>
+     * 描述
+     * </pre>
+     *
+     * <code>string remark = 6;</code>
+     * @return The remark.
+     */
+    @java.lang.Override
+    public java.lang.String getRemark() {
+      java.lang.Object ref = remark_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        remark_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * 描述
+     * </pre>
+     *
+     * <code>string remark = 6;</code>
+     * @return The bytes for remark.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getRemarkBytes() {
+      java.lang.Object ref = remark_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        remark_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ROLE_TYPE_FIELD_NUMBER = 7;
+    private int roleType_ = 0;
+    /**
+     * <pre>
+     * 角色权限 1:管理端 2:一线客服
+     * </pre>
+     *
+     * <code>.api.common.WorkerRoleType role_type = 7;</code>
+     * @return The enum numeric value on the wire for roleType.
+     */
+    @java.lang.Override public int getRoleTypeValue() {
+      return roleType_;
+    }
+    /**
+     * <pre>
+     * 角色权限 1:管理端 2:一线客服
+     * </pre>
+     *
+     * <code>.api.common.WorkerRoleType role_type = 7;</code>
+     * @return The roleType.
+     */
+    @java.lang.Override public com.teneasyChat.api.common.CWorker.WorkerRoleType getRoleType() {
+      com.teneasyChat.api.common.CWorker.WorkerRoleType result = com.teneasyChat.api.common.CWorker.WorkerRoleType.forNumber(roleType_);
+      return result == null ? com.teneasyChat.api.common.CWorker.WorkerRoleType.UNRECOGNIZED : result;
+    }
+
+    public static final int CREATE_AT_FIELD_NUMBER = 8;
+    private com.google.protobuf.Timestamp createAt_;
+    /**
+     * <pre>
+     * 创建时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_at = 8;</code>
+     * @return Whether the createAt field is set.
+     */
+    @java.lang.Override
+    public boolean hasCreateAt() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     * <pre>
+     * 创建时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_at = 8;</code>
+     * @return The createAt.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Timestamp getCreateAt() {
+      return createAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createAt_;
+    }
+    /**
+     * <pre>
+     * 创建时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_at = 8;</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.TimestampOrBuilder getCreateAtOrBuilder() {
+      return createAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createAt_;
+    }
+
+    public static final int UPDATE_AT_FIELD_NUMBER = 9;
+    private com.google.protobuf.Timestamp updateAt_;
+    /**
+     * <pre>
+     * 更新时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_at = 9;</code>
+     * @return Whether the updateAt field is set.
+     */
+    @java.lang.Override
+    public boolean hasUpdateAt() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     * <pre>
+     * 更新时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_at = 9;</code>
+     * @return The updateAt.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Timestamp getUpdateAt() {
+      return updateAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateAt_;
+    }
+    /**
+     * <pre>
+     * 更新时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_at = 9;</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.TimestampOrBuilder getUpdateAtOrBuilder() {
+      return updateAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateAt_;
+    }
+
+    public static final int BINDINGSTATUS_FIELD_NUMBER = 10;
+    private int bindingStatus_ = 0;
+    /**
+     * <pre>
+     * is_bind
+     * </pre>
+     *
+     * <code>.api.common.BindStatus bindingStatus = 10;</code>
+     * @return The enum numeric value on the wire for bindingStatus.
+     */
+    @java.lang.Override public int getBindingStatusValue() {
+      return bindingStatus_;
+    }
+    /**
+     * <pre>
+     * is_bind
+     * </pre>
+     *
+     * <code>.api.common.BindStatus bindingStatus = 10;</code>
+     * @return The bindingStatus.
+     */
+    @java.lang.Override public com.teneasyChat.api.common.CBase.BindStatus getBindingStatus() {
+      com.teneasyChat.api.common.CBase.BindStatus result = com.teneasyChat.api.common.CBase.BindStatus.forNumber(bindingStatus_);
+      return result == null ? com.teneasyChat.api.common.CBase.BindStatus.UNRECOGNIZED : result;
+    }
+
+    public static final int SHOW_TYPE_FIELD_NUMBER = 11;
+    private int showType_ = 0;
+    /**
+     * <pre>
+     * 是否显示
+     * </pre>
+     *
+     * <code>int32 show_type = 11;</code>
+     * @return The showType.
+     */
+    @java.lang.Override
+    public int getShowType() {
+      return showType_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (id_ != 0) {
+        output.writeInt32(1, id_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 2, name_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(url_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 3, url_);
+      }
+      if (pid_ != 0) {
+        output.writeInt32(4, pid_);
+      }
+      if (sort_ != 0) {
+        output.writeInt32(5, sort_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(remark_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 6, remark_);
+      }
+      if (roleType_ != com.teneasyChat.api.common.CWorker.WorkerRoleType.WRT_DEFAULT.getNumber()) {
+        output.writeEnum(7, roleType_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(8, getCreateAt());
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        output.writeMessage(9, getUpdateAt());
+      }
+      if (bindingStatus_ != com.teneasyChat.api.common.CBase.BindStatus.BIND_STATUS_DEFAULT.getNumber()) {
+        output.writeEnum(10, bindingStatus_);
+      }
+      if (showType_ != 0) {
+        output.writeInt32(11, showType_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (id_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, id_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(2, name_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(url_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(3, url_);
+      }
+      if (pid_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(4, pid_);
+      }
+      if (sort_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(5, sort_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(remark_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(6, remark_);
+      }
+      if (roleType_ != com.teneasyChat.api.common.CWorker.WorkerRoleType.WRT_DEFAULT.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(7, roleType_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(8, getCreateAt());
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(9, getUpdateAt());
+      }
+      if (bindingStatus_ != com.teneasyChat.api.common.CBase.BindStatus.BIND_STATUS_DEFAULT.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(10, bindingStatus_);
+      }
+      if (showType_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(11, showType_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.teneasyChat.api.common.CWorker.WorkerRoute)) {
+        return super.equals(obj);
+      }
+      com.teneasyChat.api.common.CWorker.WorkerRoute other = (com.teneasyChat.api.common.CWorker.WorkerRoute) obj;
+
+      if (getId()
+          != other.getId()) return false;
+      if (!getName()
+          .equals(other.getName())) return false;
+      if (!getUrl()
+          .equals(other.getUrl())) return false;
+      if (getPid()
+          != other.getPid()) return false;
+      if (getSort()
+          != other.getSort()) return false;
+      if (!getRemark()
+          .equals(other.getRemark())) return false;
+      if (roleType_ != other.roleType_) return false;
+      if (hasCreateAt() != other.hasCreateAt()) return false;
+      if (hasCreateAt()) {
+        if (!getCreateAt()
+            .equals(other.getCreateAt())) return false;
+      }
+      if (hasUpdateAt() != other.hasUpdateAt()) return false;
+      if (hasUpdateAt()) {
+        if (!getUpdateAt()
+            .equals(other.getUpdateAt())) return false;
+      }
+      if (bindingStatus_ != other.bindingStatus_) return false;
+      if (getShowType()
+          != other.getShowType()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId();
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+      hash = (37 * hash) + URL_FIELD_NUMBER;
+      hash = (53 * hash) + getUrl().hashCode();
+      hash = (37 * hash) + PID_FIELD_NUMBER;
+      hash = (53 * hash) + getPid();
+      hash = (37 * hash) + SORT_FIELD_NUMBER;
+      hash = (53 * hash) + getSort();
+      hash = (37 * hash) + REMARK_FIELD_NUMBER;
+      hash = (53 * hash) + getRemark().hashCode();
+      hash = (37 * hash) + ROLE_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + roleType_;
+      if (hasCreateAt()) {
+        hash = (37 * hash) + CREATE_AT_FIELD_NUMBER;
+        hash = (53 * hash) + getCreateAt().hashCode();
+      }
+      if (hasUpdateAt()) {
+        hash = (37 * hash) + UPDATE_AT_FIELD_NUMBER;
+        hash = (53 * hash) + getUpdateAt().hashCode();
+      }
+      hash = (37 * hash) + BINDINGSTATUS_FIELD_NUMBER;
+      hash = (53 * hash) + bindingStatus_;
+      hash = (37 * hash) + SHOW_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getShowType();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.teneasyChat.api.common.CWorker.WorkerRoute parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.common.CWorker.WorkerRoute parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.common.CWorker.WorkerRoute parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.common.CWorker.WorkerRoute parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.common.CWorker.WorkerRoute parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.common.CWorker.WorkerRoute parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.common.CWorker.WorkerRoute parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.teneasyChat.api.common.CWorker.WorkerRoute parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.teneasyChat.api.common.CWorker.WorkerRoute parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.teneasyChat.api.common.CWorker.WorkerRoute parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.teneasyChat.api.common.CWorker.WorkerRoute parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.teneasyChat.api.common.CWorker.WorkerRoute parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.teneasyChat.api.common.CWorker.WorkerRoute prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * 客服后台路由
+     * </pre>
+     *
+     * Protobuf type {@code api.common.WorkerRoute}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:api.common.WorkerRoute)
+        com.teneasyChat.api.common.CWorker.WorkerRouteOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.teneasyChat.api.common.CWorker.internal_static_api_common_WorkerRoute_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.teneasyChat.api.common.CWorker.internal_static_api_common_WorkerRoute_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.teneasyChat.api.common.CWorker.WorkerRoute.class, com.teneasyChat.api.common.CWorker.WorkerRoute.Builder.class);
+      }
+
+      // Construct using com.teneasyChat.api.common.CWorker.WorkerRoute.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage
+                .alwaysUseFieldBuilders) {
+          getCreateAtFieldBuilder();
+          getUpdateAtFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        id_ = 0;
+        name_ = "";
+        url_ = "";
+        pid_ = 0;
+        sort_ = 0;
+        remark_ = "";
+        roleType_ = 0;
+        createAt_ = null;
+        if (createAtBuilder_ != null) {
+          createAtBuilder_.dispose();
+          createAtBuilder_ = null;
+        }
+        updateAt_ = null;
+        if (updateAtBuilder_ != null) {
+          updateAtBuilder_.dispose();
+          updateAtBuilder_ = null;
+        }
+        bindingStatus_ = 0;
+        showType_ = 0;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.teneasyChat.api.common.CWorker.internal_static_api_common_WorkerRoute_descriptor;
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.common.CWorker.WorkerRoute getDefaultInstanceForType() {
+        return com.teneasyChat.api.common.CWorker.WorkerRoute.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.common.CWorker.WorkerRoute build() {
+        com.teneasyChat.api.common.CWorker.WorkerRoute result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.common.CWorker.WorkerRoute buildPartial() {
+        com.teneasyChat.api.common.CWorker.WorkerRoute result = new com.teneasyChat.api.common.CWorker.WorkerRoute(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.teneasyChat.api.common.CWorker.WorkerRoute result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.id_ = id_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.name_ = name_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.url_ = url_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.pid_ = pid_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.sort_ = sort_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.remark_ = remark_;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.roleType_ = roleType_;
+        }
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000080) != 0)) {
+          result.createAt_ = createAtBuilder_ == null
+              ? createAt_
+              : createAtBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000100) != 0)) {
+          result.updateAt_ = updateAtBuilder_ == null
+              ? updateAt_
+              : updateAtBuilder_.build();
+          to_bitField0_ |= 0x00000002;
+        }
+        if (((from_bitField0_ & 0x00000200) != 0)) {
+          result.bindingStatus_ = bindingStatus_;
+        }
+        if (((from_bitField0_ & 0x00000400) != 0)) {
+          result.showType_ = showType_;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.teneasyChat.api.common.CWorker.WorkerRoute) {
+          return mergeFrom((com.teneasyChat.api.common.CWorker.WorkerRoute)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.teneasyChat.api.common.CWorker.WorkerRoute other) {
+        if (other == com.teneasyChat.api.common.CWorker.WorkerRoute.getDefaultInstance()) return this;
+        if (other.getId() != 0) {
+          setId(other.getId());
+        }
+        if (!other.getName().isEmpty()) {
+          name_ = other.name_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        if (!other.getUrl().isEmpty()) {
+          url_ = other.url_;
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        if (other.getPid() != 0) {
+          setPid(other.getPid());
+        }
+        if (other.getSort() != 0) {
+          setSort(other.getSort());
+        }
+        if (!other.getRemark().isEmpty()) {
+          remark_ = other.remark_;
+          bitField0_ |= 0x00000020;
+          onChanged();
+        }
+        if (other.roleType_ != 0) {
+          setRoleTypeValue(other.getRoleTypeValue());
+        }
+        if (other.hasCreateAt()) {
+          mergeCreateAt(other.getCreateAt());
+        }
+        if (other.hasUpdateAt()) {
+          mergeUpdateAt(other.getUpdateAt());
+        }
+        if (other.bindingStatus_ != 0) {
+          setBindingStatusValue(other.getBindingStatusValue());
+        }
+        if (other.getShowType() != 0) {
+          setShowType(other.getShowType());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                id_ = input.readInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 18: {
+                name_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+              case 26: {
+                url_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
+              case 32: {
+                pid_ = input.readInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 32
+              case 40: {
+                sort_ = input.readInt32();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 40
+              case 50: {
+                remark_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 50
+              case 56: {
+                roleType_ = input.readEnum();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 56
+              case 66: {
+                input.readMessage(
+                    getCreateAtFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 66
+              case 74: {
+                input.readMessage(
+                    getUpdateAtFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 74
+              case 80: {
+                bindingStatus_ = input.readEnum();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 80
+              case 88: {
+                showType_ = input.readInt32();
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 88
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private int id_ ;
+      /**
+       * <code>int32 id = 1;</code>
+       * @return The id.
+       */
+      @java.lang.Override
+      public int getId() {
+        return id_;
+      }
+      /**
+       * <code>int32 id = 1;</code>
+       * @param value The id to set.
+       * @return This builder for chaining.
+       */
+      public Builder setId(int value) {
+
+        id_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 id = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        id_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object name_ = "";
+      /**
+       * <pre>
+       * 名称
+       * </pre>
+       *
+       * <code>string name = 2;</code>
+       * @return The name.
+       */
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          name_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * 名称
+       * </pre>
+       *
+       * <code>string name = 2;</code>
+       * @return The bytes for name.
+       */
+      public com.google.protobuf.ByteString
+          getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * 名称
+       * </pre>
+       *
+       * <code>string name = 2;</code>
+       * @param value The name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setName(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        name_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 名称
+       * </pre>
+       *
+       * <code>string name = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearName() {
+        name_ = getDefaultInstance().getName();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 名称
+       * </pre>
+       *
+       * <code>string name = 2;</code>
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        name_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object url_ = "";
+      /**
+       * <pre>
+       * url
+       * </pre>
+       *
+       * <code>string url = 3;</code>
+       * @return The url.
+       */
+      public java.lang.String getUrl() {
+        java.lang.Object ref = url_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          url_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * url
+       * </pre>
+       *
+       * <code>string url = 3;</code>
+       * @return The bytes for url.
+       */
+      public com.google.protobuf.ByteString
+          getUrlBytes() {
+        java.lang.Object ref = url_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          url_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * url
+       * </pre>
+       *
+       * <code>string url = 3;</code>
+       * @param value The url to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUrl(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        url_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * url
+       * </pre>
+       *
+       * <code>string url = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUrl() {
+        url_ = getDefaultInstance().getUrl();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * url
+       * </pre>
+       *
+       * <code>string url = 3;</code>
+       * @param value The bytes for url to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUrlBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        url_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      private int pid_ ;
+      /**
+       * <pre>
+       * 父级id
+       * </pre>
+       *
+       * <code>int32 pid = 4;</code>
+       * @return The pid.
+       */
+      @java.lang.Override
+      public int getPid() {
+        return pid_;
+      }
+      /**
+       * <pre>
+       * 父级id
+       * </pre>
+       *
+       * <code>int32 pid = 4;</code>
+       * @param value The pid to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPid(int value) {
+
+        pid_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 父级id
+       * </pre>
+       *
+       * <code>int32 pid = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPid() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        pid_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int sort_ ;
+      /**
+       * <pre>
+       * 排序
+       * </pre>
+       *
+       * <code>int32 sort = 5;</code>
+       * @return The sort.
+       */
+      @java.lang.Override
+      public int getSort() {
+        return sort_;
+      }
+      /**
+       * <pre>
+       * 排序
+       * </pre>
+       *
+       * <code>int32 sort = 5;</code>
+       * @param value The sort to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSort(int value) {
+
+        sort_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 排序
+       * </pre>
+       *
+       * <code>int32 sort = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSort() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        sort_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object remark_ = "";
+      /**
+       * <pre>
+       * 描述
+       * </pre>
+       *
+       * <code>string remark = 6;</code>
+       * @return The remark.
+       */
+      public java.lang.String getRemark() {
+        java.lang.Object ref = remark_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          remark_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * 描述
+       * </pre>
+       *
+       * <code>string remark = 6;</code>
+       * @return The bytes for remark.
+       */
+      public com.google.protobuf.ByteString
+          getRemarkBytes() {
+        java.lang.Object ref = remark_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          remark_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * 描述
+       * </pre>
+       *
+       * <code>string remark = 6;</code>
+       * @param value The remark to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRemark(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        remark_ = value;
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 描述
+       * </pre>
+       *
+       * <code>string remark = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRemark() {
+        remark_ = getDefaultInstance().getRemark();
+        bitField0_ = (bitField0_ & ~0x00000020);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 描述
+       * </pre>
+       *
+       * <code>string remark = 6;</code>
+       * @param value The bytes for remark to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRemarkBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        remark_ = value;
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+
+      private int roleType_ = 0;
+      /**
+       * <pre>
+       * 角色权限 1:管理端 2:一线客服
+       * </pre>
+       *
+       * <code>.api.common.WorkerRoleType role_type = 7;</code>
+       * @return The enum numeric value on the wire for roleType.
+       */
+      @java.lang.Override public int getRoleTypeValue() {
+        return roleType_;
+      }
+      /**
+       * <pre>
+       * 角色权限 1:管理端 2:一线客服
+       * </pre>
+       *
+       * <code>.api.common.WorkerRoleType role_type = 7;</code>
+       * @param value The enum numeric value on the wire for roleType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRoleTypeValue(int value) {
+        roleType_ = value;
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 角色权限 1:管理端 2:一线客服
+       * </pre>
+       *
+       * <code>.api.common.WorkerRoleType role_type = 7;</code>
+       * @return The roleType.
+       */
+      @java.lang.Override
+      public com.teneasyChat.api.common.CWorker.WorkerRoleType getRoleType() {
+        com.teneasyChat.api.common.CWorker.WorkerRoleType result = com.teneasyChat.api.common.CWorker.WorkerRoleType.forNumber(roleType_);
+        return result == null ? com.teneasyChat.api.common.CWorker.WorkerRoleType.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * 角色权限 1:管理端 2:一线客服
+       * </pre>
+       *
+       * <code>.api.common.WorkerRoleType role_type = 7;</code>
+       * @param value The roleType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRoleType(com.teneasyChat.api.common.CWorker.WorkerRoleType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000040;
+        roleType_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 角色权限 1:管理端 2:一线客服
+       * </pre>
+       *
+       * <code>.api.common.WorkerRoleType role_type = 7;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRoleType() {
+        bitField0_ = (bitField0_ & ~0x00000040);
+        roleType_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.Timestamp createAt_;
+      private com.google.protobuf.SingleFieldBuilder<
+          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> createAtBuilder_;
+      /**
+       * <pre>
+       * 创建时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp create_at = 8;</code>
+       * @return Whether the createAt field is set.
+       */
+      public boolean hasCreateAt() {
+        return ((bitField0_ & 0x00000080) != 0);
+      }
+      /**
+       * <pre>
+       * 创建时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp create_at = 8;</code>
+       * @return The createAt.
+       */
+      public com.google.protobuf.Timestamp getCreateAt() {
+        if (createAtBuilder_ == null) {
+          return createAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createAt_;
+        } else {
+          return createAtBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * 创建时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp create_at = 8;</code>
+       */
+      public Builder setCreateAt(com.google.protobuf.Timestamp value) {
+        if (createAtBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          createAt_ = value;
+        } else {
+          createAtBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000080;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 创建时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp create_at = 8;</code>
+       */
+      public Builder setCreateAt(
+          com.google.protobuf.Timestamp.Builder builderForValue) {
+        if (createAtBuilder_ == null) {
+          createAt_ = builderForValue.build();
+        } else {
+          createAtBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000080;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 创建时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp create_at = 8;</code>
+       */
+      public Builder mergeCreateAt(com.google.protobuf.Timestamp value) {
+        if (createAtBuilder_ == null) {
+          if (((bitField0_ & 0x00000080) != 0) &&
+            createAt_ != null &&
+            createAt_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getCreateAtBuilder().mergeFrom(value);
+          } else {
+            createAt_ = value;
+          }
+        } else {
+          createAtBuilder_.mergeFrom(value);
+        }
+        if (createAt_ != null) {
+          bitField0_ |= 0x00000080;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 创建时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp create_at = 8;</code>
+       */
+      public Builder clearCreateAt() {
+        bitField0_ = (bitField0_ & ~0x00000080);
+        createAt_ = null;
+        if (createAtBuilder_ != null) {
+          createAtBuilder_.dispose();
+          createAtBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 创建时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp create_at = 8;</code>
+       */
+      public com.google.protobuf.Timestamp.Builder getCreateAtBuilder() {
+        bitField0_ |= 0x00000080;
+        onChanged();
+        return getCreateAtFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * 创建时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp create_at = 8;</code>
+       */
+      public com.google.protobuf.TimestampOrBuilder getCreateAtOrBuilder() {
+        if (createAtBuilder_ != null) {
+          return createAtBuilder_.getMessageOrBuilder();
+        } else {
+          return createAt_ == null ?
+              com.google.protobuf.Timestamp.getDefaultInstance() : createAt_;
+        }
+      }
+      /**
+       * <pre>
+       * 创建时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp create_at = 8;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+          getCreateAtFieldBuilder() {
+        if (createAtBuilder_ == null) {
+          createAtBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                  getCreateAt(),
+                  getParentForChildren(),
+                  isClean());
+          createAt_ = null;
+        }
+        return createAtBuilder_;
+      }
+
+      private com.google.protobuf.Timestamp updateAt_;
+      private com.google.protobuf.SingleFieldBuilder<
+          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> updateAtBuilder_;
+      /**
+       * <pre>
+       * 更新时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp update_at = 9;</code>
+       * @return Whether the updateAt field is set.
+       */
+      public boolean hasUpdateAt() {
+        return ((bitField0_ & 0x00000100) != 0);
+      }
+      /**
+       * <pre>
+       * 更新时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp update_at = 9;</code>
+       * @return The updateAt.
+       */
+      public com.google.protobuf.Timestamp getUpdateAt() {
+        if (updateAtBuilder_ == null) {
+          return updateAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateAt_;
+        } else {
+          return updateAtBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * 更新时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp update_at = 9;</code>
+       */
+      public Builder setUpdateAt(com.google.protobuf.Timestamp value) {
+        if (updateAtBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          updateAt_ = value;
+        } else {
+          updateAtBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000100;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 更新时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp update_at = 9;</code>
+       */
+      public Builder setUpdateAt(
+          com.google.protobuf.Timestamp.Builder builderForValue) {
+        if (updateAtBuilder_ == null) {
+          updateAt_ = builderForValue.build();
+        } else {
+          updateAtBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000100;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 更新时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp update_at = 9;</code>
+       */
+      public Builder mergeUpdateAt(com.google.protobuf.Timestamp value) {
+        if (updateAtBuilder_ == null) {
+          if (((bitField0_ & 0x00000100) != 0) &&
+            updateAt_ != null &&
+            updateAt_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getUpdateAtBuilder().mergeFrom(value);
+          } else {
+            updateAt_ = value;
+          }
+        } else {
+          updateAtBuilder_.mergeFrom(value);
+        }
+        if (updateAt_ != null) {
+          bitField0_ |= 0x00000100;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 更新时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp update_at = 9;</code>
+       */
+      public Builder clearUpdateAt() {
+        bitField0_ = (bitField0_ & ~0x00000100);
+        updateAt_ = null;
+        if (updateAtBuilder_ != null) {
+          updateAtBuilder_.dispose();
+          updateAtBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 更新时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp update_at = 9;</code>
+       */
+      public com.google.protobuf.Timestamp.Builder getUpdateAtBuilder() {
+        bitField0_ |= 0x00000100;
+        onChanged();
+        return getUpdateAtFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * 更新时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp update_at = 9;</code>
+       */
+      public com.google.protobuf.TimestampOrBuilder getUpdateAtOrBuilder() {
+        if (updateAtBuilder_ != null) {
+          return updateAtBuilder_.getMessageOrBuilder();
+        } else {
+          return updateAt_ == null ?
+              com.google.protobuf.Timestamp.getDefaultInstance() : updateAt_;
+        }
+      }
+      /**
+       * <pre>
+       * 更新时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp update_at = 9;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+          getUpdateAtFieldBuilder() {
+        if (updateAtBuilder_ == null) {
+          updateAtBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                  getUpdateAt(),
+                  getParentForChildren(),
+                  isClean());
+          updateAt_ = null;
+        }
+        return updateAtBuilder_;
+      }
+
+      private int bindingStatus_ = 0;
+      /**
+       * <pre>
+       * is_bind
+       * </pre>
+       *
+       * <code>.api.common.BindStatus bindingStatus = 10;</code>
+       * @return The enum numeric value on the wire for bindingStatus.
+       */
+      @java.lang.Override public int getBindingStatusValue() {
+        return bindingStatus_;
+      }
+      /**
+       * <pre>
+       * is_bind
+       * </pre>
+       *
+       * <code>.api.common.BindStatus bindingStatus = 10;</code>
+       * @param value The enum numeric value on the wire for bindingStatus to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBindingStatusValue(int value) {
+        bindingStatus_ = value;
+        bitField0_ |= 0x00000200;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * is_bind
+       * </pre>
+       *
+       * <code>.api.common.BindStatus bindingStatus = 10;</code>
+       * @return The bindingStatus.
+       */
+      @java.lang.Override
+      public com.teneasyChat.api.common.CBase.BindStatus getBindingStatus() {
+        com.teneasyChat.api.common.CBase.BindStatus result = com.teneasyChat.api.common.CBase.BindStatus.forNumber(bindingStatus_);
+        return result == null ? com.teneasyChat.api.common.CBase.BindStatus.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * is_bind
+       * </pre>
+       *
+       * <code>.api.common.BindStatus bindingStatus = 10;</code>
+       * @param value The bindingStatus to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBindingStatus(com.teneasyChat.api.common.CBase.BindStatus value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000200;
+        bindingStatus_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * is_bind
+       * </pre>
+       *
+       * <code>.api.common.BindStatus bindingStatus = 10;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearBindingStatus() {
+        bitField0_ = (bitField0_ & ~0x00000200);
+        bindingStatus_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int showType_ ;
+      /**
+       * <pre>
+       * 是否显示
+       * </pre>
+       *
+       * <code>int32 show_type = 11;</code>
+       * @return The showType.
+       */
+      @java.lang.Override
+      public int getShowType() {
+        return showType_;
+      }
+      /**
+       * <pre>
+       * 是否显示
+       * </pre>
+       *
+       * <code>int32 show_type = 11;</code>
+       * @param value The showType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setShowType(int value) {
+
+        showType_ = value;
+        bitField0_ |= 0x00000400;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 是否显示
+       * </pre>
+       *
+       * <code>int32 show_type = 11;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearShowType() {
+        bitField0_ = (bitField0_ & ~0x00000400);
+        showType_ = 0;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:api.common.WorkerRoute)
+    }
+
+    // @@protoc_insertion_point(class_scope:api.common.WorkerRoute)
+    private static final com.teneasyChat.api.common.CWorker.WorkerRoute DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.teneasyChat.api.common.CWorker.WorkerRoute();
+    }
+
+    public static com.teneasyChat.api.common.CWorker.WorkerRoute getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<WorkerRoute>
+        PARSER = new com.google.protobuf.AbstractParser<WorkerRoute>() {
+      @java.lang.Override
+      public WorkerRoute parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<WorkerRoute> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<WorkerRoute> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.teneasyChat.api.common.CWorker.WorkerRoute getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface WorkerRoleOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:api.common.WorkerRole)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>int32 id = 1;</code>
+     * @return The id.
+     */
+    int getId();
+
+    /**
+     * <pre>
+     * 名称
+     * </pre>
+     *
+     * <code>string name = 2;</code>
+     * @return The name.
+     */
+    java.lang.String getName();
+    /**
+     * <pre>
+     * 名称
+     * </pre>
+     *
+     * <code>string name = 2;</code>
+     * @return The bytes for name.
+     */
+    com.google.protobuf.ByteString
+        getNameBytes();
+
+    /**
+     * <pre>
+     * 排序
+     * </pre>
+     *
+     * <code>int32 sort = 3;</code>
+     * @return The sort.
+     */
+    int getSort();
+
+    /**
+     * <pre>
+     * 描述
+     * </pre>
+     *
+     * <code>string remark = 4;</code>
+     * @return The remark.
+     */
+    java.lang.String getRemark();
+    /**
+     * <pre>
+     * 描述
+     * </pre>
+     *
+     * <code>string remark = 4;</code>
+     * @return The bytes for remark.
+     */
+    com.google.protobuf.ByteString
+        getRemarkBytes();
+
+    /**
+     * <pre>
+     * 创建时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_at = 5;</code>
+     * @return Whether the createAt field is set.
+     */
+    boolean hasCreateAt();
+    /**
+     * <pre>
+     * 创建时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_at = 5;</code>
+     * @return The createAt.
+     */
+    com.google.protobuf.Timestamp getCreateAt();
+    /**
+     * <pre>
+     * 创建时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_at = 5;</code>
+     */
+    com.google.protobuf.TimestampOrBuilder getCreateAtOrBuilder();
+
+    /**
+     * <pre>
+     * 更新时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_at = 6;</code>
+     * @return Whether the updateAt field is set.
+     */
+    boolean hasUpdateAt();
+    /**
+     * <pre>
+     * 更新时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_at = 6;</code>
+     * @return The updateAt.
+     */
+    com.google.protobuf.Timestamp getUpdateAt();
+    /**
+     * <pre>
+     * 更新时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_at = 6;</code>
+     */
+    com.google.protobuf.TimestampOrBuilder getUpdateAtOrBuilder();
+  }
+  /**
+   * <pre>
+   * 客服后台路由角色
+   * </pre>
+   *
+   * Protobuf type {@code api.common.WorkerRole}
+   */
+  public static final class WorkerRole extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:api.common.WorkerRole)
+      WorkerRoleOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 26,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        WorkerRole.class.getName());
+    }
+    // Use WorkerRole.newBuilder() to construct.
+    private WorkerRole(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private WorkerRole() {
+      name_ = "";
+      remark_ = "";
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.teneasyChat.api.common.CWorker.internal_static_api_common_WorkerRole_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.teneasyChat.api.common.CWorker.internal_static_api_common_WorkerRole_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.teneasyChat.api.common.CWorker.WorkerRole.class, com.teneasyChat.api.common.CWorker.WorkerRole.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int ID_FIELD_NUMBER = 1;
+    private int id_ = 0;
+    /**
+     * <code>int32 id = 1;</code>
+     * @return The id.
+     */
+    @java.lang.Override
+    public int getId() {
+      return id_;
+    }
+
+    public static final int NAME_FIELD_NUMBER = 2;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object name_ = "";
+    /**
+     * <pre>
+     * 名称
+     * </pre>
+     *
+     * <code>string name = 2;</code>
+     * @return The name.
+     */
+    @java.lang.Override
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * 名称
+     * </pre>
+     *
+     * <code>string name = 2;</code>
+     * @return The bytes for name.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SORT_FIELD_NUMBER = 3;
+    private int sort_ = 0;
+    /**
+     * <pre>
+     * 排序
+     * </pre>
+     *
+     * <code>int32 sort = 3;</code>
+     * @return The sort.
+     */
+    @java.lang.Override
+    public int getSort() {
+      return sort_;
+    }
+
+    public static final int REMARK_FIELD_NUMBER = 4;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object remark_ = "";
+    /**
+     * <pre>
+     * 描述
+     * </pre>
+     *
+     * <code>string remark = 4;</code>
+     * @return The remark.
+     */
+    @java.lang.Override
+    public java.lang.String getRemark() {
+      java.lang.Object ref = remark_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        remark_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * 描述
+     * </pre>
+     *
+     * <code>string remark = 4;</code>
+     * @return The bytes for remark.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getRemarkBytes() {
+      java.lang.Object ref = remark_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        remark_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CREATE_AT_FIELD_NUMBER = 5;
+    private com.google.protobuf.Timestamp createAt_;
+    /**
+     * <pre>
+     * 创建时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_at = 5;</code>
+     * @return Whether the createAt field is set.
+     */
+    @java.lang.Override
+    public boolean hasCreateAt() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     * <pre>
+     * 创建时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_at = 5;</code>
+     * @return The createAt.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Timestamp getCreateAt() {
+      return createAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createAt_;
+    }
+    /**
+     * <pre>
+     * 创建时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_at = 5;</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.TimestampOrBuilder getCreateAtOrBuilder() {
+      return createAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createAt_;
+    }
+
+    public static final int UPDATE_AT_FIELD_NUMBER = 6;
+    private com.google.protobuf.Timestamp updateAt_;
+    /**
+     * <pre>
+     * 更新时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_at = 6;</code>
+     * @return Whether the updateAt field is set.
+     */
+    @java.lang.Override
+    public boolean hasUpdateAt() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     * <pre>
+     * 更新时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_at = 6;</code>
+     * @return The updateAt.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Timestamp getUpdateAt() {
+      return updateAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateAt_;
+    }
+    /**
+     * <pre>
+     * 更新时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_at = 6;</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.TimestampOrBuilder getUpdateAtOrBuilder() {
+      return updateAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateAt_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (id_ != 0) {
+        output.writeInt32(1, id_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 2, name_);
+      }
+      if (sort_ != 0) {
+        output.writeInt32(3, sort_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(remark_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 4, remark_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(5, getCreateAt());
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        output.writeMessage(6, getUpdateAt());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (id_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, id_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(2, name_);
+      }
+      if (sort_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(3, sort_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(remark_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(4, remark_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(5, getCreateAt());
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(6, getUpdateAt());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.teneasyChat.api.common.CWorker.WorkerRole)) {
+        return super.equals(obj);
+      }
+      com.teneasyChat.api.common.CWorker.WorkerRole other = (com.teneasyChat.api.common.CWorker.WorkerRole) obj;
+
+      if (getId()
+          != other.getId()) return false;
+      if (!getName()
+          .equals(other.getName())) return false;
+      if (getSort()
+          != other.getSort()) return false;
+      if (!getRemark()
+          .equals(other.getRemark())) return false;
+      if (hasCreateAt() != other.hasCreateAt()) return false;
+      if (hasCreateAt()) {
+        if (!getCreateAt()
+            .equals(other.getCreateAt())) return false;
+      }
+      if (hasUpdateAt() != other.hasUpdateAt()) return false;
+      if (hasUpdateAt()) {
+        if (!getUpdateAt()
+            .equals(other.getUpdateAt())) return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId();
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+      hash = (37 * hash) + SORT_FIELD_NUMBER;
+      hash = (53 * hash) + getSort();
+      hash = (37 * hash) + REMARK_FIELD_NUMBER;
+      hash = (53 * hash) + getRemark().hashCode();
+      if (hasCreateAt()) {
+        hash = (37 * hash) + CREATE_AT_FIELD_NUMBER;
+        hash = (53 * hash) + getCreateAt().hashCode();
+      }
+      if (hasUpdateAt()) {
+        hash = (37 * hash) + UPDATE_AT_FIELD_NUMBER;
+        hash = (53 * hash) + getUpdateAt().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.teneasyChat.api.common.CWorker.WorkerRole parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.common.CWorker.WorkerRole parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.common.CWorker.WorkerRole parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.common.CWorker.WorkerRole parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.common.CWorker.WorkerRole parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.common.CWorker.WorkerRole parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.common.CWorker.WorkerRole parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.teneasyChat.api.common.CWorker.WorkerRole parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.teneasyChat.api.common.CWorker.WorkerRole parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.teneasyChat.api.common.CWorker.WorkerRole parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.teneasyChat.api.common.CWorker.WorkerRole parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.teneasyChat.api.common.CWorker.WorkerRole parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.teneasyChat.api.common.CWorker.WorkerRole prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * 客服后台路由角色
+     * </pre>
+     *
+     * Protobuf type {@code api.common.WorkerRole}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:api.common.WorkerRole)
+        com.teneasyChat.api.common.CWorker.WorkerRoleOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.teneasyChat.api.common.CWorker.internal_static_api_common_WorkerRole_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.teneasyChat.api.common.CWorker.internal_static_api_common_WorkerRole_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.teneasyChat.api.common.CWorker.WorkerRole.class, com.teneasyChat.api.common.CWorker.WorkerRole.Builder.class);
+      }
+
+      // Construct using com.teneasyChat.api.common.CWorker.WorkerRole.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage
+                .alwaysUseFieldBuilders) {
+          getCreateAtFieldBuilder();
+          getUpdateAtFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        id_ = 0;
+        name_ = "";
+        sort_ = 0;
+        remark_ = "";
+        createAt_ = null;
+        if (createAtBuilder_ != null) {
+          createAtBuilder_.dispose();
+          createAtBuilder_ = null;
+        }
+        updateAt_ = null;
+        if (updateAtBuilder_ != null) {
+          updateAtBuilder_.dispose();
+          updateAtBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.teneasyChat.api.common.CWorker.internal_static_api_common_WorkerRole_descriptor;
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.common.CWorker.WorkerRole getDefaultInstanceForType() {
+        return com.teneasyChat.api.common.CWorker.WorkerRole.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.common.CWorker.WorkerRole build() {
+        com.teneasyChat.api.common.CWorker.WorkerRole result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.common.CWorker.WorkerRole buildPartial() {
+        com.teneasyChat.api.common.CWorker.WorkerRole result = new com.teneasyChat.api.common.CWorker.WorkerRole(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.teneasyChat.api.common.CWorker.WorkerRole result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.id_ = id_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.name_ = name_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.sort_ = sort_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.remark_ = remark_;
+        }
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.createAt_ = createAtBuilder_ == null
+              ? createAt_
+              : createAtBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.updateAt_ = updateAtBuilder_ == null
+              ? updateAt_
+              : updateAtBuilder_.build();
+          to_bitField0_ |= 0x00000002;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.teneasyChat.api.common.CWorker.WorkerRole) {
+          return mergeFrom((com.teneasyChat.api.common.CWorker.WorkerRole)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.teneasyChat.api.common.CWorker.WorkerRole other) {
+        if (other == com.teneasyChat.api.common.CWorker.WorkerRole.getDefaultInstance()) return this;
+        if (other.getId() != 0) {
+          setId(other.getId());
+        }
+        if (!other.getName().isEmpty()) {
+          name_ = other.name_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        if (other.getSort() != 0) {
+          setSort(other.getSort());
+        }
+        if (!other.getRemark().isEmpty()) {
+          remark_ = other.remark_;
+          bitField0_ |= 0x00000008;
+          onChanged();
+        }
+        if (other.hasCreateAt()) {
+          mergeCreateAt(other.getCreateAt());
+        }
+        if (other.hasUpdateAt()) {
+          mergeUpdateAt(other.getUpdateAt());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                id_ = input.readInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 18: {
+                name_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+              case 24: {
+                sort_ = input.readInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 24
+              case 34: {
+                remark_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 34
+              case 42: {
+                input.readMessage(
+                    getCreateAtFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 42
+              case 50: {
+                input.readMessage(
+                    getUpdateAtFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 50
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private int id_ ;
+      /**
+       * <code>int32 id = 1;</code>
+       * @return The id.
+       */
+      @java.lang.Override
+      public int getId() {
+        return id_;
+      }
+      /**
+       * <code>int32 id = 1;</code>
+       * @param value The id to set.
+       * @return This builder for chaining.
+       */
+      public Builder setId(int value) {
+
+        id_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 id = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        id_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object name_ = "";
+      /**
+       * <pre>
+       * 名称
+       * </pre>
+       *
+       * <code>string name = 2;</code>
+       * @return The name.
+       */
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          name_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * 名称
+       * </pre>
+       *
+       * <code>string name = 2;</code>
+       * @return The bytes for name.
+       */
+      public com.google.protobuf.ByteString
+          getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * 名称
+       * </pre>
+       *
+       * <code>string name = 2;</code>
+       * @param value The name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setName(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        name_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 名称
+       * </pre>
+       *
+       * <code>string name = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearName() {
+        name_ = getDefaultInstance().getName();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 名称
+       * </pre>
+       *
+       * <code>string name = 2;</code>
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        name_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      private int sort_ ;
+      /**
+       * <pre>
+       * 排序
+       * </pre>
+       *
+       * <code>int32 sort = 3;</code>
+       * @return The sort.
+       */
+      @java.lang.Override
+      public int getSort() {
+        return sort_;
+      }
+      /**
+       * <pre>
+       * 排序
+       * </pre>
+       *
+       * <code>int32 sort = 3;</code>
+       * @param value The sort to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSort(int value) {
+
+        sort_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 排序
+       * </pre>
+       *
+       * <code>int32 sort = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSort() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        sort_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object remark_ = "";
+      /**
+       * <pre>
+       * 描述
+       * </pre>
+       *
+       * <code>string remark = 4;</code>
+       * @return The remark.
+       */
+      public java.lang.String getRemark() {
+        java.lang.Object ref = remark_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          remark_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * 描述
+       * </pre>
+       *
+       * <code>string remark = 4;</code>
+       * @return The bytes for remark.
+       */
+      public com.google.protobuf.ByteString
+          getRemarkBytes() {
+        java.lang.Object ref = remark_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          remark_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * 描述
+       * </pre>
+       *
+       * <code>string remark = 4;</code>
+       * @param value The remark to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRemark(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        remark_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 描述
+       * </pre>
+       *
+       * <code>string remark = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRemark() {
+        remark_ = getDefaultInstance().getRemark();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 描述
+       * </pre>
+       *
+       * <code>string remark = 4;</code>
+       * @param value The bytes for remark to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRemarkBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        remark_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.Timestamp createAt_;
+      private com.google.protobuf.SingleFieldBuilder<
+          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> createAtBuilder_;
+      /**
+       * <pre>
+       * 创建时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp create_at = 5;</code>
+       * @return Whether the createAt field is set.
+       */
+      public boolean hasCreateAt() {
+        return ((bitField0_ & 0x00000010) != 0);
+      }
+      /**
+       * <pre>
+       * 创建时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp create_at = 5;</code>
+       * @return The createAt.
+       */
+      public com.google.protobuf.Timestamp getCreateAt() {
+        if (createAtBuilder_ == null) {
+          return createAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createAt_;
+        } else {
+          return createAtBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * 创建时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp create_at = 5;</code>
+       */
+      public Builder setCreateAt(com.google.protobuf.Timestamp value) {
+        if (createAtBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          createAt_ = value;
+        } else {
+          createAtBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 创建时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp create_at = 5;</code>
+       */
+      public Builder setCreateAt(
+          com.google.protobuf.Timestamp.Builder builderForValue) {
+        if (createAtBuilder_ == null) {
+          createAt_ = builderForValue.build();
+        } else {
+          createAtBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 创建时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp create_at = 5;</code>
+       */
+      public Builder mergeCreateAt(com.google.protobuf.Timestamp value) {
+        if (createAtBuilder_ == null) {
+          if (((bitField0_ & 0x00000010) != 0) &&
+            createAt_ != null &&
+            createAt_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getCreateAtBuilder().mergeFrom(value);
+          } else {
+            createAt_ = value;
+          }
+        } else {
+          createAtBuilder_.mergeFrom(value);
+        }
+        if (createAt_ != null) {
+          bitField0_ |= 0x00000010;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 创建时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp create_at = 5;</code>
+       */
+      public Builder clearCreateAt() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        createAt_ = null;
+        if (createAtBuilder_ != null) {
+          createAtBuilder_.dispose();
+          createAtBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 创建时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp create_at = 5;</code>
+       */
+      public com.google.protobuf.Timestamp.Builder getCreateAtBuilder() {
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return getCreateAtFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * 创建时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp create_at = 5;</code>
+       */
+      public com.google.protobuf.TimestampOrBuilder getCreateAtOrBuilder() {
+        if (createAtBuilder_ != null) {
+          return createAtBuilder_.getMessageOrBuilder();
+        } else {
+          return createAt_ == null ?
+              com.google.protobuf.Timestamp.getDefaultInstance() : createAt_;
+        }
+      }
+      /**
+       * <pre>
+       * 创建时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp create_at = 5;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+          getCreateAtFieldBuilder() {
+        if (createAtBuilder_ == null) {
+          createAtBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                  getCreateAt(),
+                  getParentForChildren(),
+                  isClean());
+          createAt_ = null;
+        }
+        return createAtBuilder_;
+      }
+
+      private com.google.protobuf.Timestamp updateAt_;
+      private com.google.protobuf.SingleFieldBuilder<
+          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> updateAtBuilder_;
+      /**
+       * <pre>
+       * 更新时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp update_at = 6;</code>
+       * @return Whether the updateAt field is set.
+       */
+      public boolean hasUpdateAt() {
+        return ((bitField0_ & 0x00000020) != 0);
+      }
+      /**
+       * <pre>
+       * 更新时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp update_at = 6;</code>
+       * @return The updateAt.
+       */
+      public com.google.protobuf.Timestamp getUpdateAt() {
+        if (updateAtBuilder_ == null) {
+          return updateAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateAt_;
+        } else {
+          return updateAtBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * 更新时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp update_at = 6;</code>
+       */
+      public Builder setUpdateAt(com.google.protobuf.Timestamp value) {
+        if (updateAtBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          updateAt_ = value;
+        } else {
+          updateAtBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 更新时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp update_at = 6;</code>
+       */
+      public Builder setUpdateAt(
+          com.google.protobuf.Timestamp.Builder builderForValue) {
+        if (updateAtBuilder_ == null) {
+          updateAt_ = builderForValue.build();
+        } else {
+          updateAtBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 更新时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp update_at = 6;</code>
+       */
+      public Builder mergeUpdateAt(com.google.protobuf.Timestamp value) {
+        if (updateAtBuilder_ == null) {
+          if (((bitField0_ & 0x00000020) != 0) &&
+            updateAt_ != null &&
+            updateAt_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getUpdateAtBuilder().mergeFrom(value);
+          } else {
+            updateAt_ = value;
+          }
+        } else {
+          updateAtBuilder_.mergeFrom(value);
+        }
+        if (updateAt_ != null) {
+          bitField0_ |= 0x00000020;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 更新时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp update_at = 6;</code>
+       */
+      public Builder clearUpdateAt() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        updateAt_ = null;
+        if (updateAtBuilder_ != null) {
+          updateAtBuilder_.dispose();
+          updateAtBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 更新时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp update_at = 6;</code>
+       */
+      public com.google.protobuf.Timestamp.Builder getUpdateAtBuilder() {
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return getUpdateAtFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * 更新时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp update_at = 6;</code>
+       */
+      public com.google.protobuf.TimestampOrBuilder getUpdateAtOrBuilder() {
+        if (updateAtBuilder_ != null) {
+          return updateAtBuilder_.getMessageOrBuilder();
+        } else {
+          return updateAt_ == null ?
+              com.google.protobuf.Timestamp.getDefaultInstance() : updateAt_;
+        }
+      }
+      /**
+       * <pre>
+       * 更新时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp update_at = 6;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+          getUpdateAtFieldBuilder() {
+        if (updateAtBuilder_ == null) {
+          updateAtBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                  getUpdateAt(),
+                  getParentForChildren(),
+                  isClean());
+          updateAt_ = null;
+        }
+        return updateAtBuilder_;
+      }
+
+      // @@protoc_insertion_point(builder_scope:api.common.WorkerRole)
+    }
+
+    // @@protoc_insertion_point(class_scope:api.common.WorkerRole)
+    private static final com.teneasyChat.api.common.CWorker.WorkerRole DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.teneasyChat.api.common.CWorker.WorkerRole();
+    }
+
+    public static com.teneasyChat.api.common.CWorker.WorkerRole getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<WorkerRole>
+        PARSER = new com.google.protobuf.AbstractParser<WorkerRole>() {
+      @java.lang.Override
+      public WorkerRole parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<WorkerRole> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<WorkerRole> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.teneasyChat.api.common.CWorker.WorkerRole getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface WorkerRoleRouteOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:api.common.WorkerRoleRoute)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * 角色id
+     * </pre>
+     *
+     * <code>int32 role_id = 1;</code>
+     * @return The roleId.
+     */
+    int getRoleId();
+
+    /**
+     * <pre>
+     * 路由id
+     * </pre>
+     *
+     * <code>int32 route_id = 2;</code>
+     * @return The routeId.
+     */
+    int getRouteId();
+  }
+  /**
+   * <pre>
+   * 客服后台路由角色关联
+   * </pre>
+   *
+   * Protobuf type {@code api.common.WorkerRoleRoute}
+   */
+  public static final class WorkerRoleRoute extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:api.common.WorkerRoleRoute)
+      WorkerRoleRouteOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 26,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        WorkerRoleRoute.class.getName());
+    }
+    // Use WorkerRoleRoute.newBuilder() to construct.
+    private WorkerRoleRoute(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private WorkerRoleRoute() {
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.teneasyChat.api.common.CWorker.internal_static_api_common_WorkerRoleRoute_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.teneasyChat.api.common.CWorker.internal_static_api_common_WorkerRoleRoute_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.teneasyChat.api.common.CWorker.WorkerRoleRoute.class, com.teneasyChat.api.common.CWorker.WorkerRoleRoute.Builder.class);
+    }
+
+    public static final int ROLE_ID_FIELD_NUMBER = 1;
+    private int roleId_ = 0;
+    /**
+     * <pre>
+     * 角色id
+     * </pre>
+     *
+     * <code>int32 role_id = 1;</code>
+     * @return The roleId.
+     */
+    @java.lang.Override
+    public int getRoleId() {
+      return roleId_;
+    }
+
+    public static final int ROUTE_ID_FIELD_NUMBER = 2;
+    private int routeId_ = 0;
+    /**
+     * <pre>
+     * 路由id
+     * </pre>
+     *
+     * <code>int32 route_id = 2;</code>
+     * @return The routeId.
+     */
+    @java.lang.Override
+    public int getRouteId() {
+      return routeId_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (roleId_ != 0) {
+        output.writeInt32(1, roleId_);
+      }
+      if (routeId_ != 0) {
+        output.writeInt32(2, routeId_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (roleId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, roleId_);
+      }
+      if (routeId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, routeId_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.teneasyChat.api.common.CWorker.WorkerRoleRoute)) {
+        return super.equals(obj);
+      }
+      com.teneasyChat.api.common.CWorker.WorkerRoleRoute other = (com.teneasyChat.api.common.CWorker.WorkerRoleRoute) obj;
+
+      if (getRoleId()
+          != other.getRoleId()) return false;
+      if (getRouteId()
+          != other.getRouteId()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ROLE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getRoleId();
+      hash = (37 * hash) + ROUTE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getRouteId();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.teneasyChat.api.common.CWorker.WorkerRoleRoute parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.common.CWorker.WorkerRoleRoute parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.common.CWorker.WorkerRoleRoute parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.common.CWorker.WorkerRoleRoute parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.common.CWorker.WorkerRoleRoute parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.common.CWorker.WorkerRoleRoute parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.common.CWorker.WorkerRoleRoute parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.teneasyChat.api.common.CWorker.WorkerRoleRoute parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.teneasyChat.api.common.CWorker.WorkerRoleRoute parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.teneasyChat.api.common.CWorker.WorkerRoleRoute parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.teneasyChat.api.common.CWorker.WorkerRoleRoute parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.teneasyChat.api.common.CWorker.WorkerRoleRoute parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.teneasyChat.api.common.CWorker.WorkerRoleRoute prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * 客服后台路由角色关联
+     * </pre>
+     *
+     * Protobuf type {@code api.common.WorkerRoleRoute}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:api.common.WorkerRoleRoute)
+        com.teneasyChat.api.common.CWorker.WorkerRoleRouteOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.teneasyChat.api.common.CWorker.internal_static_api_common_WorkerRoleRoute_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.teneasyChat.api.common.CWorker.internal_static_api_common_WorkerRoleRoute_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.teneasyChat.api.common.CWorker.WorkerRoleRoute.class, com.teneasyChat.api.common.CWorker.WorkerRoleRoute.Builder.class);
+      }
+
+      // Construct using com.teneasyChat.api.common.CWorker.WorkerRoleRoute.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        roleId_ = 0;
+        routeId_ = 0;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.teneasyChat.api.common.CWorker.internal_static_api_common_WorkerRoleRoute_descriptor;
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.common.CWorker.WorkerRoleRoute getDefaultInstanceForType() {
+        return com.teneasyChat.api.common.CWorker.WorkerRoleRoute.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.common.CWorker.WorkerRoleRoute build() {
+        com.teneasyChat.api.common.CWorker.WorkerRoleRoute result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.common.CWorker.WorkerRoleRoute buildPartial() {
+        com.teneasyChat.api.common.CWorker.WorkerRoleRoute result = new com.teneasyChat.api.common.CWorker.WorkerRoleRoute(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.teneasyChat.api.common.CWorker.WorkerRoleRoute result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.roleId_ = roleId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.routeId_ = routeId_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.teneasyChat.api.common.CWorker.WorkerRoleRoute) {
+          return mergeFrom((com.teneasyChat.api.common.CWorker.WorkerRoleRoute)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.teneasyChat.api.common.CWorker.WorkerRoleRoute other) {
+        if (other == com.teneasyChat.api.common.CWorker.WorkerRoleRoute.getDefaultInstance()) return this;
+        if (other.getRoleId() != 0) {
+          setRoleId(other.getRoleId());
+        }
+        if (other.getRouteId() != 0) {
+          setRouteId(other.getRouteId());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                roleId_ = input.readInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 16: {
+                routeId_ = input.readInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private int roleId_ ;
+      /**
+       * <pre>
+       * 角色id
+       * </pre>
+       *
+       * <code>int32 role_id = 1;</code>
+       * @return The roleId.
+       */
+      @java.lang.Override
+      public int getRoleId() {
+        return roleId_;
+      }
+      /**
+       * <pre>
+       * 角色id
+       * </pre>
+       *
+       * <code>int32 role_id = 1;</code>
+       * @param value The roleId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRoleId(int value) {
+
+        roleId_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 角色id
+       * </pre>
+       *
+       * <code>int32 role_id = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRoleId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        roleId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int routeId_ ;
+      /**
+       * <pre>
+       * 路由id
+       * </pre>
+       *
+       * <code>int32 route_id = 2;</code>
+       * @return The routeId.
+       */
+      @java.lang.Override
+      public int getRouteId() {
+        return routeId_;
+      }
+      /**
+       * <pre>
+       * 路由id
+       * </pre>
+       *
+       * <code>int32 route_id = 2;</code>
+       * @param value The routeId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRouteId(int value) {
+
+        routeId_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 路由id
+       * </pre>
+       *
+       * <code>int32 route_id = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRouteId() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        routeId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:api.common.WorkerRoleRoute)
+    }
+
+    // @@protoc_insertion_point(class_scope:api.common.WorkerRoleRoute)
+    private static final com.teneasyChat.api.common.CWorker.WorkerRoleRoute DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.teneasyChat.api.common.CWorker.WorkerRoleRoute();
+    }
+
+    public static com.teneasyChat.api.common.CWorker.WorkerRoleRoute getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<WorkerRoleRoute>
+        PARSER = new com.google.protobuf.AbstractParser<WorkerRoleRoute>() {
+      @java.lang.Override
+      public WorkerRoleRoute parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<WorkerRoleRoute> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<WorkerRoleRoute> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.teneasyChat.api.common.CWorker.WorkerRoleRoute getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface WorkerRouteTypeRoutesOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:api.common.WorkerRouteTypeRoutes)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * 角色权限 role_type 1:管理端 2:一线客服
+     * </pre>
+     *
+     * <code>.api.common.WorkerRoleType role_type = 1;</code>
+     * @return The enum numeric value on the wire for roleType.
+     */
+    int getRoleTypeValue();
+    /**
+     * <pre>
+     * 角色权限 role_type 1:管理端 2:一线客服
+     * </pre>
+     *
+     * <code>.api.common.WorkerRoleType role_type = 1;</code>
+     * @return The roleType.
+     */
+    com.teneasyChat.api.common.CWorker.WorkerRoleType getRoleType();
+
+    /**
+     * <pre>
+     * role_type name
+     * </pre>
+     *
+     * <code>string role_type_name = 2;</code>
+     * @return The roleTypeName.
+     */
+    java.lang.String getRoleTypeName();
+    /**
+     * <pre>
+     * role_type name
+     * </pre>
+     *
+     * <code>string role_type_name = 2;</code>
+     * @return The bytes for roleTypeName.
+     */
+    com.google.protobuf.ByteString
+        getRoleTypeNameBytes();
+
+    /**
+     * <pre>
+     * 路由勾选状态
+     * WorkerRouteSelectStatus select_status = 8;
+     * is_bind
+     * </pre>
+     *
+     * <code>.api.common.BindStatus bindingStatus = 3;</code>
+     * @return The enum numeric value on the wire for bindingStatus.
+     */
+    int getBindingStatusValue();
+    /**
+     * <pre>
+     * 路由勾选状态
+     * WorkerRouteSelectStatus select_status = 8;
+     * is_bind
+     * </pre>
+     *
+     * <code>.api.common.BindStatus bindingStatus = 3;</code>
+     * @return The bindingStatus.
+     */
+    com.teneasyChat.api.common.CBase.BindStatus getBindingStatus();
+
+    /**
+     * <pre>
+     * 角色权限 1:管理端 2:一线客服
+     * </pre>
+     *
+     * <code>repeated .api.common.WorkerRouteWithItems route_with_items = 4;</code>
+     */
+    java.util.List<com.teneasyChat.api.common.CWorker.WorkerRouteWithItems> 
+        getRouteWithItemsList();
+    /**
+     * <pre>
+     * 角色权限 1:管理端 2:一线客服
+     * </pre>
+     *
+     * <code>repeated .api.common.WorkerRouteWithItems route_with_items = 4;</code>
+     */
+    com.teneasyChat.api.common.CWorker.WorkerRouteWithItems getRouteWithItems(int index);
+    /**
+     * <pre>
+     * 角色权限 1:管理端 2:一线客服
+     * </pre>
+     *
+     * <code>repeated .api.common.WorkerRouteWithItems route_with_items = 4;</code>
+     */
+    int getRouteWithItemsCount();
+    /**
+     * <pre>
+     * 角色权限 1:管理端 2:一线客服
+     * </pre>
+     *
+     * <code>repeated .api.common.WorkerRouteWithItems route_with_items = 4;</code>
+     */
+    java.util.List<? extends com.teneasyChat.api.common.CWorker.WorkerRouteWithItemsOrBuilder> 
+        getRouteWithItemsOrBuilderList();
+    /**
+     * <pre>
+     * 角色权限 1:管理端 2:一线客服
+     * </pre>
+     *
+     * <code>repeated .api.common.WorkerRouteWithItems route_with_items = 4;</code>
+     */
+    com.teneasyChat.api.common.CWorker.WorkerRouteWithItemsOrBuilder getRouteWithItemsOrBuilder(
+        int index);
+  }
+  /**
+   * <pre>
+   * 客服后台路由role_type关联
+   * </pre>
+   *
+   * Protobuf type {@code api.common.WorkerRouteTypeRoutes}
+   */
+  public static final class WorkerRouteTypeRoutes extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:api.common.WorkerRouteTypeRoutes)
+      WorkerRouteTypeRoutesOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 26,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        WorkerRouteTypeRoutes.class.getName());
+    }
+    // Use WorkerRouteTypeRoutes.newBuilder() to construct.
+    private WorkerRouteTypeRoutes(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private WorkerRouteTypeRoutes() {
+      roleType_ = 0;
+      roleTypeName_ = "";
+      bindingStatus_ = 0;
+      routeWithItems_ = java.util.Collections.emptyList();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.teneasyChat.api.common.CWorker.internal_static_api_common_WorkerRouteTypeRoutes_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.teneasyChat.api.common.CWorker.internal_static_api_common_WorkerRouteTypeRoutes_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.teneasyChat.api.common.CWorker.WorkerRouteTypeRoutes.class, com.teneasyChat.api.common.CWorker.WorkerRouteTypeRoutes.Builder.class);
+    }
+
+    public static final int ROLE_TYPE_FIELD_NUMBER = 1;
+    private int roleType_ = 0;
+    /**
+     * <pre>
+     * 角色权限 role_type 1:管理端 2:一线客服
+     * </pre>
+     *
+     * <code>.api.common.WorkerRoleType role_type = 1;</code>
+     * @return The enum numeric value on the wire for roleType.
+     */
+    @java.lang.Override public int getRoleTypeValue() {
+      return roleType_;
+    }
+    /**
+     * <pre>
+     * 角色权限 role_type 1:管理端 2:一线客服
+     * </pre>
+     *
+     * <code>.api.common.WorkerRoleType role_type = 1;</code>
+     * @return The roleType.
+     */
+    @java.lang.Override public com.teneasyChat.api.common.CWorker.WorkerRoleType getRoleType() {
+      com.teneasyChat.api.common.CWorker.WorkerRoleType result = com.teneasyChat.api.common.CWorker.WorkerRoleType.forNumber(roleType_);
+      return result == null ? com.teneasyChat.api.common.CWorker.WorkerRoleType.UNRECOGNIZED : result;
+    }
+
+    public static final int ROLE_TYPE_NAME_FIELD_NUMBER = 2;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object roleTypeName_ = "";
+    /**
+     * <pre>
+     * role_type name
+     * </pre>
+     *
+     * <code>string role_type_name = 2;</code>
+     * @return The roleTypeName.
+     */
+    @java.lang.Override
+    public java.lang.String getRoleTypeName() {
+      java.lang.Object ref = roleTypeName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        roleTypeName_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * role_type name
+     * </pre>
+     *
+     * <code>string role_type_name = 2;</code>
+     * @return The bytes for roleTypeName.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getRoleTypeNameBytes() {
+      java.lang.Object ref = roleTypeName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        roleTypeName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int BINDINGSTATUS_FIELD_NUMBER = 3;
+    private int bindingStatus_ = 0;
+    /**
+     * <pre>
+     * 路由勾选状态
+     * WorkerRouteSelectStatus select_status = 8;
+     * is_bind
+     * </pre>
+     *
+     * <code>.api.common.BindStatus bindingStatus = 3;</code>
+     * @return The enum numeric value on the wire for bindingStatus.
+     */
+    @java.lang.Override public int getBindingStatusValue() {
+      return bindingStatus_;
+    }
+    /**
+     * <pre>
+     * 路由勾选状态
+     * WorkerRouteSelectStatus select_status = 8;
+     * is_bind
+     * </pre>
+     *
+     * <code>.api.common.BindStatus bindingStatus = 3;</code>
+     * @return The bindingStatus.
+     */
+    @java.lang.Override public com.teneasyChat.api.common.CBase.BindStatus getBindingStatus() {
+      com.teneasyChat.api.common.CBase.BindStatus result = com.teneasyChat.api.common.CBase.BindStatus.forNumber(bindingStatus_);
+      return result == null ? com.teneasyChat.api.common.CBase.BindStatus.UNRECOGNIZED : result;
+    }
+
+    public static final int ROUTE_WITH_ITEMS_FIELD_NUMBER = 4;
+    @SuppressWarnings("serial")
+    private java.util.List<com.teneasyChat.api.common.CWorker.WorkerRouteWithItems> routeWithItems_;
+    /**
+     * <pre>
+     * 角色权限 1:管理端 2:一线客服
+     * </pre>
+     *
+     * <code>repeated .api.common.WorkerRouteWithItems route_with_items = 4;</code>
+     */
+    @java.lang.Override
+    public java.util.List<com.teneasyChat.api.common.CWorker.WorkerRouteWithItems> getRouteWithItemsList() {
+      return routeWithItems_;
+    }
+    /**
+     * <pre>
+     * 角色权限 1:管理端 2:一线客服
+     * </pre>
+     *
+     * <code>repeated .api.common.WorkerRouteWithItems route_with_items = 4;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends com.teneasyChat.api.common.CWorker.WorkerRouteWithItemsOrBuilder> 
+        getRouteWithItemsOrBuilderList() {
+      return routeWithItems_;
+    }
+    /**
+     * <pre>
+     * 角色权限 1:管理端 2:一线客服
+     * </pre>
+     *
+     * <code>repeated .api.common.WorkerRouteWithItems route_with_items = 4;</code>
+     */
+    @java.lang.Override
+    public int getRouteWithItemsCount() {
+      return routeWithItems_.size();
+    }
+    /**
+     * <pre>
+     * 角色权限 1:管理端 2:一线客服
+     * </pre>
+     *
+     * <code>repeated .api.common.WorkerRouteWithItems route_with_items = 4;</code>
+     */
+    @java.lang.Override
+    public com.teneasyChat.api.common.CWorker.WorkerRouteWithItems getRouteWithItems(int index) {
+      return routeWithItems_.get(index);
+    }
+    /**
+     * <pre>
+     * 角色权限 1:管理端 2:一线客服
+     * </pre>
+     *
+     * <code>repeated .api.common.WorkerRouteWithItems route_with_items = 4;</code>
+     */
+    @java.lang.Override
+    public com.teneasyChat.api.common.CWorker.WorkerRouteWithItemsOrBuilder getRouteWithItemsOrBuilder(
+        int index) {
+      return routeWithItems_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (roleType_ != com.teneasyChat.api.common.CWorker.WorkerRoleType.WRT_DEFAULT.getNumber()) {
+        output.writeEnum(1, roleType_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(roleTypeName_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 2, roleTypeName_);
+      }
+      if (bindingStatus_ != com.teneasyChat.api.common.CBase.BindStatus.BIND_STATUS_DEFAULT.getNumber()) {
+        output.writeEnum(3, bindingStatus_);
+      }
+      for (int i = 0; i < routeWithItems_.size(); i++) {
+        output.writeMessage(4, routeWithItems_.get(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (roleType_ != com.teneasyChat.api.common.CWorker.WorkerRoleType.WRT_DEFAULT.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(1, roleType_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(roleTypeName_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(2, roleTypeName_);
+      }
+      if (bindingStatus_ != com.teneasyChat.api.common.CBase.BindStatus.BIND_STATUS_DEFAULT.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(3, bindingStatus_);
+      }
+      for (int i = 0; i < routeWithItems_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, routeWithItems_.get(i));
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.teneasyChat.api.common.CWorker.WorkerRouteTypeRoutes)) {
+        return super.equals(obj);
+      }
+      com.teneasyChat.api.common.CWorker.WorkerRouteTypeRoutes other = (com.teneasyChat.api.common.CWorker.WorkerRouteTypeRoutes) obj;
+
+      if (roleType_ != other.roleType_) return false;
+      if (!getRoleTypeName()
+          .equals(other.getRoleTypeName())) return false;
+      if (bindingStatus_ != other.bindingStatus_) return false;
+      if (!getRouteWithItemsList()
+          .equals(other.getRouteWithItemsList())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ROLE_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + roleType_;
+      hash = (37 * hash) + ROLE_TYPE_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getRoleTypeName().hashCode();
+      hash = (37 * hash) + BINDINGSTATUS_FIELD_NUMBER;
+      hash = (53 * hash) + bindingStatus_;
+      if (getRouteWithItemsCount() > 0) {
+        hash = (37 * hash) + ROUTE_WITH_ITEMS_FIELD_NUMBER;
+        hash = (53 * hash) + getRouteWithItemsList().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.teneasyChat.api.common.CWorker.WorkerRouteTypeRoutes parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.common.CWorker.WorkerRouteTypeRoutes parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.common.CWorker.WorkerRouteTypeRoutes parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.common.CWorker.WorkerRouteTypeRoutes parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.common.CWorker.WorkerRouteTypeRoutes parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.common.CWorker.WorkerRouteTypeRoutes parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.common.CWorker.WorkerRouteTypeRoutes parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.teneasyChat.api.common.CWorker.WorkerRouteTypeRoutes parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.teneasyChat.api.common.CWorker.WorkerRouteTypeRoutes parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.teneasyChat.api.common.CWorker.WorkerRouteTypeRoutes parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.teneasyChat.api.common.CWorker.WorkerRouteTypeRoutes parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.teneasyChat.api.common.CWorker.WorkerRouteTypeRoutes parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.teneasyChat.api.common.CWorker.WorkerRouteTypeRoutes prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * 客服后台路由role_type关联
+     * </pre>
+     *
+     * Protobuf type {@code api.common.WorkerRouteTypeRoutes}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:api.common.WorkerRouteTypeRoutes)
+        com.teneasyChat.api.common.CWorker.WorkerRouteTypeRoutesOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.teneasyChat.api.common.CWorker.internal_static_api_common_WorkerRouteTypeRoutes_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.teneasyChat.api.common.CWorker.internal_static_api_common_WorkerRouteTypeRoutes_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.teneasyChat.api.common.CWorker.WorkerRouteTypeRoutes.class, com.teneasyChat.api.common.CWorker.WorkerRouteTypeRoutes.Builder.class);
+      }
+
+      // Construct using com.teneasyChat.api.common.CWorker.WorkerRouteTypeRoutes.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        roleType_ = 0;
+        roleTypeName_ = "";
+        bindingStatus_ = 0;
+        if (routeWithItemsBuilder_ == null) {
+          routeWithItems_ = java.util.Collections.emptyList();
+        } else {
+          routeWithItems_ = null;
+          routeWithItemsBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000008);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.teneasyChat.api.common.CWorker.internal_static_api_common_WorkerRouteTypeRoutes_descriptor;
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.common.CWorker.WorkerRouteTypeRoutes getDefaultInstanceForType() {
+        return com.teneasyChat.api.common.CWorker.WorkerRouteTypeRoutes.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.common.CWorker.WorkerRouteTypeRoutes build() {
+        com.teneasyChat.api.common.CWorker.WorkerRouteTypeRoutes result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.common.CWorker.WorkerRouteTypeRoutes buildPartial() {
+        com.teneasyChat.api.common.CWorker.WorkerRouteTypeRoutes result = new com.teneasyChat.api.common.CWorker.WorkerRouteTypeRoutes(this);
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(com.teneasyChat.api.common.CWorker.WorkerRouteTypeRoutes result) {
+        if (routeWithItemsBuilder_ == null) {
+          if (((bitField0_ & 0x00000008) != 0)) {
+            routeWithItems_ = java.util.Collections.unmodifiableList(routeWithItems_);
+            bitField0_ = (bitField0_ & ~0x00000008);
+          }
+          result.routeWithItems_ = routeWithItems_;
+        } else {
+          result.routeWithItems_ = routeWithItemsBuilder_.build();
+        }
+      }
+
+      private void buildPartial0(com.teneasyChat.api.common.CWorker.WorkerRouteTypeRoutes result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.roleType_ = roleType_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.roleTypeName_ = roleTypeName_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.bindingStatus_ = bindingStatus_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.teneasyChat.api.common.CWorker.WorkerRouteTypeRoutes) {
+          return mergeFrom((com.teneasyChat.api.common.CWorker.WorkerRouteTypeRoutes)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.teneasyChat.api.common.CWorker.WorkerRouteTypeRoutes other) {
+        if (other == com.teneasyChat.api.common.CWorker.WorkerRouteTypeRoutes.getDefaultInstance()) return this;
+        if (other.roleType_ != 0) {
+          setRoleTypeValue(other.getRoleTypeValue());
+        }
+        if (!other.getRoleTypeName().isEmpty()) {
+          roleTypeName_ = other.roleTypeName_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        if (other.bindingStatus_ != 0) {
+          setBindingStatusValue(other.getBindingStatusValue());
+        }
+        if (routeWithItemsBuilder_ == null) {
+          if (!other.routeWithItems_.isEmpty()) {
+            if (routeWithItems_.isEmpty()) {
+              routeWithItems_ = other.routeWithItems_;
+              bitField0_ = (bitField0_ & ~0x00000008);
+            } else {
+              ensureRouteWithItemsIsMutable();
+              routeWithItems_.addAll(other.routeWithItems_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.routeWithItems_.isEmpty()) {
+            if (routeWithItemsBuilder_.isEmpty()) {
+              routeWithItemsBuilder_.dispose();
+              routeWithItemsBuilder_ = null;
+              routeWithItems_ = other.routeWithItems_;
+              bitField0_ = (bitField0_ & ~0x00000008);
+              routeWithItemsBuilder_ = 
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
+                   getRouteWithItemsFieldBuilder() : null;
+            } else {
+              routeWithItemsBuilder_.addAllMessages(other.routeWithItems_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                roleType_ = input.readEnum();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 18: {
+                roleTypeName_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+              case 24: {
+                bindingStatus_ = input.readEnum();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 24
+              case 34: {
+                com.teneasyChat.api.common.CWorker.WorkerRouteWithItems m =
+                    input.readMessage(
+                        com.teneasyChat.api.common.CWorker.WorkerRouteWithItems.parser(),
+                        extensionRegistry);
+                if (routeWithItemsBuilder_ == null) {
+                  ensureRouteWithItemsIsMutable();
+                  routeWithItems_.add(m);
+                } else {
+                  routeWithItemsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 34
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private int roleType_ = 0;
+      /**
+       * <pre>
+       * 角色权限 role_type 1:管理端 2:一线客服
+       * </pre>
+       *
+       * <code>.api.common.WorkerRoleType role_type = 1;</code>
+       * @return The enum numeric value on the wire for roleType.
+       */
+      @java.lang.Override public int getRoleTypeValue() {
+        return roleType_;
+      }
+      /**
+       * <pre>
+       * 角色权限 role_type 1:管理端 2:一线客服
+       * </pre>
+       *
+       * <code>.api.common.WorkerRoleType role_type = 1;</code>
+       * @param value The enum numeric value on the wire for roleType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRoleTypeValue(int value) {
+        roleType_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 角色权限 role_type 1:管理端 2:一线客服
+       * </pre>
+       *
+       * <code>.api.common.WorkerRoleType role_type = 1;</code>
+       * @return The roleType.
+       */
+      @java.lang.Override
+      public com.teneasyChat.api.common.CWorker.WorkerRoleType getRoleType() {
+        com.teneasyChat.api.common.CWorker.WorkerRoleType result = com.teneasyChat.api.common.CWorker.WorkerRoleType.forNumber(roleType_);
+        return result == null ? com.teneasyChat.api.common.CWorker.WorkerRoleType.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * 角色权限 role_type 1:管理端 2:一线客服
+       * </pre>
+       *
+       * <code>.api.common.WorkerRoleType role_type = 1;</code>
+       * @param value The roleType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRoleType(com.teneasyChat.api.common.CWorker.WorkerRoleType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000001;
+        roleType_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 角色权限 role_type 1:管理端 2:一线客服
+       * </pre>
+       *
+       * <code>.api.common.WorkerRoleType role_type = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRoleType() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        roleType_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object roleTypeName_ = "";
+      /**
+       * <pre>
+       * role_type name
+       * </pre>
+       *
+       * <code>string role_type_name = 2;</code>
+       * @return The roleTypeName.
+       */
+      public java.lang.String getRoleTypeName() {
+        java.lang.Object ref = roleTypeName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          roleTypeName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * role_type name
+       * </pre>
+       *
+       * <code>string role_type_name = 2;</code>
+       * @return The bytes for roleTypeName.
+       */
+      public com.google.protobuf.ByteString
+          getRoleTypeNameBytes() {
+        java.lang.Object ref = roleTypeName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          roleTypeName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * role_type name
+       * </pre>
+       *
+       * <code>string role_type_name = 2;</code>
+       * @param value The roleTypeName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRoleTypeName(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        roleTypeName_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * role_type name
+       * </pre>
+       *
+       * <code>string role_type_name = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRoleTypeName() {
+        roleTypeName_ = getDefaultInstance().getRoleTypeName();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * role_type name
+       * </pre>
+       *
+       * <code>string role_type_name = 2;</code>
+       * @param value The bytes for roleTypeName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRoleTypeNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        roleTypeName_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      private int bindingStatus_ = 0;
+      /**
+       * <pre>
+       * 路由勾选状态
+       * WorkerRouteSelectStatus select_status = 8;
+       * is_bind
+       * </pre>
+       *
+       * <code>.api.common.BindStatus bindingStatus = 3;</code>
+       * @return The enum numeric value on the wire for bindingStatus.
+       */
+      @java.lang.Override public int getBindingStatusValue() {
+        return bindingStatus_;
+      }
+      /**
+       * <pre>
+       * 路由勾选状态
+       * WorkerRouteSelectStatus select_status = 8;
+       * is_bind
+       * </pre>
+       *
+       * <code>.api.common.BindStatus bindingStatus = 3;</code>
+       * @param value The enum numeric value on the wire for bindingStatus to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBindingStatusValue(int value) {
+        bindingStatus_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 路由勾选状态
+       * WorkerRouteSelectStatus select_status = 8;
+       * is_bind
+       * </pre>
+       *
+       * <code>.api.common.BindStatus bindingStatus = 3;</code>
+       * @return The bindingStatus.
+       */
+      @java.lang.Override
+      public com.teneasyChat.api.common.CBase.BindStatus getBindingStatus() {
+        com.teneasyChat.api.common.CBase.BindStatus result = com.teneasyChat.api.common.CBase.BindStatus.forNumber(bindingStatus_);
+        return result == null ? com.teneasyChat.api.common.CBase.BindStatus.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * 路由勾选状态
+       * WorkerRouteSelectStatus select_status = 8;
+       * is_bind
+       * </pre>
+       *
+       * <code>.api.common.BindStatus bindingStatus = 3;</code>
+       * @param value The bindingStatus to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBindingStatus(com.teneasyChat.api.common.CBase.BindStatus value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000004;
+        bindingStatus_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 路由勾选状态
+       * WorkerRouteSelectStatus select_status = 8;
+       * is_bind
+       * </pre>
+       *
+       * <code>.api.common.BindStatus bindingStatus = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearBindingStatus() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        bindingStatus_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<com.teneasyChat.api.common.CWorker.WorkerRouteWithItems> routeWithItems_ =
+        java.util.Collections.emptyList();
+      private void ensureRouteWithItemsIsMutable() {
+        if (!((bitField0_ & 0x00000008) != 0)) {
+          routeWithItems_ = new java.util.ArrayList<com.teneasyChat.api.common.CWorker.WorkerRouteWithItems>(routeWithItems_);
+          bitField0_ |= 0x00000008;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilder<
+          com.teneasyChat.api.common.CWorker.WorkerRouteWithItems, com.teneasyChat.api.common.CWorker.WorkerRouteWithItems.Builder, com.teneasyChat.api.common.CWorker.WorkerRouteWithItemsOrBuilder> routeWithItemsBuilder_;
+
+      /**
+       * <pre>
+       * 角色权限 1:管理端 2:一线客服
+       * </pre>
+       *
+       * <code>repeated .api.common.WorkerRouteWithItems route_with_items = 4;</code>
+       */
+      public java.util.List<com.teneasyChat.api.common.CWorker.WorkerRouteWithItems> getRouteWithItemsList() {
+        if (routeWithItemsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(routeWithItems_);
+        } else {
+          return routeWithItemsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <pre>
+       * 角色权限 1:管理端 2:一线客服
+       * </pre>
+       *
+       * <code>repeated .api.common.WorkerRouteWithItems route_with_items = 4;</code>
+       */
+      public int getRouteWithItemsCount() {
+        if (routeWithItemsBuilder_ == null) {
+          return routeWithItems_.size();
+        } else {
+          return routeWithItemsBuilder_.getCount();
+        }
+      }
+      /**
+       * <pre>
+       * 角色权限 1:管理端 2:一线客服
+       * </pre>
+       *
+       * <code>repeated .api.common.WorkerRouteWithItems route_with_items = 4;</code>
+       */
+      public com.teneasyChat.api.common.CWorker.WorkerRouteWithItems getRouteWithItems(int index) {
+        if (routeWithItemsBuilder_ == null) {
+          return routeWithItems_.get(index);
+        } else {
+          return routeWithItemsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       * 角色权限 1:管理端 2:一线客服
+       * </pre>
+       *
+       * <code>repeated .api.common.WorkerRouteWithItems route_with_items = 4;</code>
+       */
+      public Builder setRouteWithItems(
+          int index, com.teneasyChat.api.common.CWorker.WorkerRouteWithItems value) {
+        if (routeWithItemsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureRouteWithItemsIsMutable();
+          routeWithItems_.set(index, value);
+          onChanged();
+        } else {
+          routeWithItemsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 角色权限 1:管理端 2:一线客服
+       * </pre>
+       *
+       * <code>repeated .api.common.WorkerRouteWithItems route_with_items = 4;</code>
+       */
+      public Builder setRouteWithItems(
+          int index, com.teneasyChat.api.common.CWorker.WorkerRouteWithItems.Builder builderForValue) {
+        if (routeWithItemsBuilder_ == null) {
+          ensureRouteWithItemsIsMutable();
+          routeWithItems_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          routeWithItemsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 角色权限 1:管理端 2:一线客服
+       * </pre>
+       *
+       * <code>repeated .api.common.WorkerRouteWithItems route_with_items = 4;</code>
+       */
+      public Builder addRouteWithItems(com.teneasyChat.api.common.CWorker.WorkerRouteWithItems value) {
+        if (routeWithItemsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureRouteWithItemsIsMutable();
+          routeWithItems_.add(value);
+          onChanged();
+        } else {
+          routeWithItemsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 角色权限 1:管理端 2:一线客服
+       * </pre>
+       *
+       * <code>repeated .api.common.WorkerRouteWithItems route_with_items = 4;</code>
+       */
+      public Builder addRouteWithItems(
+          int index, com.teneasyChat.api.common.CWorker.WorkerRouteWithItems value) {
+        if (routeWithItemsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureRouteWithItemsIsMutable();
+          routeWithItems_.add(index, value);
+          onChanged();
+        } else {
+          routeWithItemsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 角色权限 1:管理端 2:一线客服
+       * </pre>
+       *
+       * <code>repeated .api.common.WorkerRouteWithItems route_with_items = 4;</code>
+       */
+      public Builder addRouteWithItems(
+          com.teneasyChat.api.common.CWorker.WorkerRouteWithItems.Builder builderForValue) {
+        if (routeWithItemsBuilder_ == null) {
+          ensureRouteWithItemsIsMutable();
+          routeWithItems_.add(builderForValue.build());
+          onChanged();
+        } else {
+          routeWithItemsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 角色权限 1:管理端 2:一线客服
+       * </pre>
+       *
+       * <code>repeated .api.common.WorkerRouteWithItems route_with_items = 4;</code>
+       */
+      public Builder addRouteWithItems(
+          int index, com.teneasyChat.api.common.CWorker.WorkerRouteWithItems.Builder builderForValue) {
+        if (routeWithItemsBuilder_ == null) {
+          ensureRouteWithItemsIsMutable();
+          routeWithItems_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          routeWithItemsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 角色权限 1:管理端 2:一线客服
+       * </pre>
+       *
+       * <code>repeated .api.common.WorkerRouteWithItems route_with_items = 4;</code>
+       */
+      public Builder addAllRouteWithItems(
+          java.lang.Iterable<? extends com.teneasyChat.api.common.CWorker.WorkerRouteWithItems> values) {
+        if (routeWithItemsBuilder_ == null) {
+          ensureRouteWithItemsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, routeWithItems_);
+          onChanged();
+        } else {
+          routeWithItemsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 角色权限 1:管理端 2:一线客服
+       * </pre>
+       *
+       * <code>repeated .api.common.WorkerRouteWithItems route_with_items = 4;</code>
+       */
+      public Builder clearRouteWithItems() {
+        if (routeWithItemsBuilder_ == null) {
+          routeWithItems_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000008);
+          onChanged();
+        } else {
+          routeWithItemsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 角色权限 1:管理端 2:一线客服
+       * </pre>
+       *
+       * <code>repeated .api.common.WorkerRouteWithItems route_with_items = 4;</code>
+       */
+      public Builder removeRouteWithItems(int index) {
+        if (routeWithItemsBuilder_ == null) {
+          ensureRouteWithItemsIsMutable();
+          routeWithItems_.remove(index);
+          onChanged();
+        } else {
+          routeWithItemsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 角色权限 1:管理端 2:一线客服
+       * </pre>
+       *
+       * <code>repeated .api.common.WorkerRouteWithItems route_with_items = 4;</code>
+       */
+      public com.teneasyChat.api.common.CWorker.WorkerRouteWithItems.Builder getRouteWithItemsBuilder(
+          int index) {
+        return getRouteWithItemsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * 角色权限 1:管理端 2:一线客服
+       * </pre>
+       *
+       * <code>repeated .api.common.WorkerRouteWithItems route_with_items = 4;</code>
+       */
+      public com.teneasyChat.api.common.CWorker.WorkerRouteWithItemsOrBuilder getRouteWithItemsOrBuilder(
+          int index) {
+        if (routeWithItemsBuilder_ == null) {
+          return routeWithItems_.get(index);  } else {
+          return routeWithItemsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * 角色权限 1:管理端 2:一线客服
+       * </pre>
+       *
+       * <code>repeated .api.common.WorkerRouteWithItems route_with_items = 4;</code>
+       */
+      public java.util.List<? extends com.teneasyChat.api.common.CWorker.WorkerRouteWithItemsOrBuilder> 
+           getRouteWithItemsOrBuilderList() {
+        if (routeWithItemsBuilder_ != null) {
+          return routeWithItemsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(routeWithItems_);
+        }
+      }
+      /**
+       * <pre>
+       * 角色权限 1:管理端 2:一线客服
+       * </pre>
+       *
+       * <code>repeated .api.common.WorkerRouteWithItems route_with_items = 4;</code>
+       */
+      public com.teneasyChat.api.common.CWorker.WorkerRouteWithItems.Builder addRouteWithItemsBuilder() {
+        return getRouteWithItemsFieldBuilder().addBuilder(
+            com.teneasyChat.api.common.CWorker.WorkerRouteWithItems.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * 角色权限 1:管理端 2:一线客服
+       * </pre>
+       *
+       * <code>repeated .api.common.WorkerRouteWithItems route_with_items = 4;</code>
+       */
+      public com.teneasyChat.api.common.CWorker.WorkerRouteWithItems.Builder addRouteWithItemsBuilder(
+          int index) {
+        return getRouteWithItemsFieldBuilder().addBuilder(
+            index, com.teneasyChat.api.common.CWorker.WorkerRouteWithItems.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * 角色权限 1:管理端 2:一线客服
+       * </pre>
+       *
+       * <code>repeated .api.common.WorkerRouteWithItems route_with_items = 4;</code>
+       */
+      public java.util.List<com.teneasyChat.api.common.CWorker.WorkerRouteWithItems.Builder> 
+           getRouteWithItemsBuilderList() {
+        return getRouteWithItemsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilder<
+          com.teneasyChat.api.common.CWorker.WorkerRouteWithItems, com.teneasyChat.api.common.CWorker.WorkerRouteWithItems.Builder, com.teneasyChat.api.common.CWorker.WorkerRouteWithItemsOrBuilder> 
+          getRouteWithItemsFieldBuilder() {
+        if (routeWithItemsBuilder_ == null) {
+          routeWithItemsBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
+              com.teneasyChat.api.common.CWorker.WorkerRouteWithItems, com.teneasyChat.api.common.CWorker.WorkerRouteWithItems.Builder, com.teneasyChat.api.common.CWorker.WorkerRouteWithItemsOrBuilder>(
+                  routeWithItems_,
+                  ((bitField0_ & 0x00000008) != 0),
+                  getParentForChildren(),
+                  isClean());
+          routeWithItems_ = null;
+        }
+        return routeWithItemsBuilder_;
+      }
+
+      // @@protoc_insertion_point(builder_scope:api.common.WorkerRouteTypeRoutes)
+    }
+
+    // @@protoc_insertion_point(class_scope:api.common.WorkerRouteTypeRoutes)
+    private static final com.teneasyChat.api.common.CWorker.WorkerRouteTypeRoutes DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.teneasyChat.api.common.CWorker.WorkerRouteTypeRoutes();
+    }
+
+    public static com.teneasyChat.api.common.CWorker.WorkerRouteTypeRoutes getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<WorkerRouteTypeRoutes>
+        PARSER = new com.google.protobuf.AbstractParser<WorkerRouteTypeRoutes>() {
+      @java.lang.Override
+      public WorkerRouteTypeRoutes parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<WorkerRouteTypeRoutes> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<WorkerRouteTypeRoutes> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.teneasyChat.api.common.CWorker.WorkerRouteTypeRoutes getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface WorkerRouteWithItemsOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:api.common.WorkerRouteWithItems)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>int32 id = 1;</code>
+     * @return The id.
+     */
+    int getId();
+
+    /**
+     * <pre>
+     * 名称
+     * </pre>
+     *
+     * <code>string name = 2;</code>
+     * @return The name.
+     */
+    java.lang.String getName();
+    /**
+     * <pre>
+     * 名称
+     * </pre>
+     *
+     * <code>string name = 2;</code>
+     * @return The bytes for name.
+     */
+    com.google.protobuf.ByteString
+        getNameBytes();
+
+    /**
+     * <pre>
+     * url
+     * </pre>
+     *
+     * <code>string url = 3;</code>
+     * @return The url.
+     */
+    java.lang.String getUrl();
+    /**
+     * <pre>
+     * url
+     * </pre>
+     *
+     * <code>string url = 3;</code>
+     * @return The bytes for url.
+     */
+    com.google.protobuf.ByteString
+        getUrlBytes();
+
+    /**
+     * <pre>
+     * 父级id
+     * </pre>
+     *
+     * <code>int32 pid = 4;</code>
+     * @return The pid.
+     */
+    int getPid();
+
+    /**
+     * <pre>
+     * 排序
+     * </pre>
+     *
+     * <code>int32 sort = 5;</code>
+     * @return The sort.
+     */
+    int getSort();
+
+    /**
+     * <pre>
+     * 描述
+     * </pre>
+     *
+     * <code>string remark = 6;</code>
+     * @return The remark.
+     */
+    java.lang.String getRemark();
+    /**
+     * <pre>
+     * 描述
+     * </pre>
+     *
+     * <code>string remark = 6;</code>
+     * @return The bytes for remark.
+     */
+    com.google.protobuf.ByteString
+        getRemarkBytes();
+
+    /**
+     * <pre>
+     * 角色权限 1:管理端 2:一线客服
+     * </pre>
+     *
+     * <code>.api.common.WorkerRoleType role_type = 7;</code>
+     * @return The enum numeric value on the wire for roleType.
+     */
+    int getRoleTypeValue();
+    /**
+     * <pre>
+     * 角色权限 1:管理端 2:一线客服
+     * </pre>
+     *
+     * <code>.api.common.WorkerRoleType role_type = 7;</code>
+     * @return The roleType.
+     */
+    com.teneasyChat.api.common.CWorker.WorkerRoleType getRoleType();
+
+    /**
+     * <pre>
+     * 路由勾选状态
+     * WorkerRouteSelectStatus select_status = 8;
+     * is_bind
+     * </pre>
+     *
+     * <code>.api.common.BindStatus bindingStatus = 8;</code>
+     * @return The enum numeric value on the wire for bindingStatus.
+     */
+    int getBindingStatusValue();
+    /**
+     * <pre>
+     * 路由勾选状态
+     * WorkerRouteSelectStatus select_status = 8;
+     * is_bind
+     * </pre>
+     *
+     * <code>.api.common.BindStatus bindingStatus = 8;</code>
+     * @return The bindingStatus.
+     */
+    com.teneasyChat.api.common.CBase.BindStatus getBindingStatus();
+
+    /**
+     * <pre>
+     * 子路由列表
+     * </pre>
+     *
+     * <code>repeated .api.common.WorkerRoute items = 9;</code>
+     */
+    java.util.List<com.teneasyChat.api.common.CWorker.WorkerRoute> 
+        getItemsList();
+    /**
+     * <pre>
+     * 子路由列表
+     * </pre>
+     *
+     * <code>repeated .api.common.WorkerRoute items = 9;</code>
+     */
+    com.teneasyChat.api.common.CWorker.WorkerRoute getItems(int index);
+    /**
+     * <pre>
+     * 子路由列表
+     * </pre>
+     *
+     * <code>repeated .api.common.WorkerRoute items = 9;</code>
+     */
+    int getItemsCount();
+    /**
+     * <pre>
+     * 子路由列表
+     * </pre>
+     *
+     * <code>repeated .api.common.WorkerRoute items = 9;</code>
+     */
+    java.util.List<? extends com.teneasyChat.api.common.CWorker.WorkerRouteOrBuilder> 
+        getItemsOrBuilderList();
+    /**
+     * <pre>
+     * 子路由列表
+     * </pre>
+     *
+     * <code>repeated .api.common.WorkerRoute items = 9;</code>
+     */
+    com.teneasyChat.api.common.CWorker.WorkerRouteOrBuilder getItemsOrBuilder(
+        int index);
+  }
+  /**
+   * <pre>
+   * 客服后台父子路由列表
+   * </pre>
+   *
+   * Protobuf type {@code api.common.WorkerRouteWithItems}
+   */
+  public static final class WorkerRouteWithItems extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:api.common.WorkerRouteWithItems)
+      WorkerRouteWithItemsOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 26,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        WorkerRouteWithItems.class.getName());
+    }
+    // Use WorkerRouteWithItems.newBuilder() to construct.
+    private WorkerRouteWithItems(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private WorkerRouteWithItems() {
+      name_ = "";
+      url_ = "";
+      remark_ = "";
+      roleType_ = 0;
+      bindingStatus_ = 0;
+      items_ = java.util.Collections.emptyList();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.teneasyChat.api.common.CWorker.internal_static_api_common_WorkerRouteWithItems_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.teneasyChat.api.common.CWorker.internal_static_api_common_WorkerRouteWithItems_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.teneasyChat.api.common.CWorker.WorkerRouteWithItems.class, com.teneasyChat.api.common.CWorker.WorkerRouteWithItems.Builder.class);
+    }
+
+    public static final int ID_FIELD_NUMBER = 1;
+    private int id_ = 0;
+    /**
+     * <code>int32 id = 1;</code>
+     * @return The id.
+     */
+    @java.lang.Override
+    public int getId() {
+      return id_;
+    }
+
+    public static final int NAME_FIELD_NUMBER = 2;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object name_ = "";
+    /**
+     * <pre>
+     * 名称
+     * </pre>
+     *
+     * <code>string name = 2;</code>
+     * @return The name.
+     */
+    @java.lang.Override
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * 名称
+     * </pre>
+     *
+     * <code>string name = 2;</code>
+     * @return The bytes for name.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int URL_FIELD_NUMBER = 3;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object url_ = "";
+    /**
+     * <pre>
+     * url
+     * </pre>
+     *
+     * <code>string url = 3;</code>
+     * @return The url.
+     */
+    @java.lang.Override
+    public java.lang.String getUrl() {
+      java.lang.Object ref = url_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        url_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * url
+     * </pre>
+     *
+     * <code>string url = 3;</code>
+     * @return The bytes for url.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getUrlBytes() {
+      java.lang.Object ref = url_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        url_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PID_FIELD_NUMBER = 4;
+    private int pid_ = 0;
+    /**
+     * <pre>
+     * 父级id
+     * </pre>
+     *
+     * <code>int32 pid = 4;</code>
+     * @return The pid.
+     */
+    @java.lang.Override
+    public int getPid() {
+      return pid_;
+    }
+
+    public static final int SORT_FIELD_NUMBER = 5;
+    private int sort_ = 0;
+    /**
+     * <pre>
+     * 排序
+     * </pre>
+     *
+     * <code>int32 sort = 5;</code>
+     * @return The sort.
+     */
+    @java.lang.Override
+    public int getSort() {
+      return sort_;
+    }
+
+    public static final int REMARK_FIELD_NUMBER = 6;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object remark_ = "";
+    /**
+     * <pre>
+     * 描述
+     * </pre>
+     *
+     * <code>string remark = 6;</code>
+     * @return The remark.
+     */
+    @java.lang.Override
+    public java.lang.String getRemark() {
+      java.lang.Object ref = remark_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        remark_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * 描述
+     * </pre>
+     *
+     * <code>string remark = 6;</code>
+     * @return The bytes for remark.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getRemarkBytes() {
+      java.lang.Object ref = remark_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        remark_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ROLE_TYPE_FIELD_NUMBER = 7;
+    private int roleType_ = 0;
+    /**
+     * <pre>
+     * 角色权限 1:管理端 2:一线客服
+     * </pre>
+     *
+     * <code>.api.common.WorkerRoleType role_type = 7;</code>
+     * @return The enum numeric value on the wire for roleType.
+     */
+    @java.lang.Override public int getRoleTypeValue() {
+      return roleType_;
+    }
+    /**
+     * <pre>
+     * 角色权限 1:管理端 2:一线客服
+     * </pre>
+     *
+     * <code>.api.common.WorkerRoleType role_type = 7;</code>
+     * @return The roleType.
+     */
+    @java.lang.Override public com.teneasyChat.api.common.CWorker.WorkerRoleType getRoleType() {
+      com.teneasyChat.api.common.CWorker.WorkerRoleType result = com.teneasyChat.api.common.CWorker.WorkerRoleType.forNumber(roleType_);
+      return result == null ? com.teneasyChat.api.common.CWorker.WorkerRoleType.UNRECOGNIZED : result;
+    }
+
+    public static final int BINDINGSTATUS_FIELD_NUMBER = 8;
+    private int bindingStatus_ = 0;
+    /**
+     * <pre>
+     * 路由勾选状态
+     * WorkerRouteSelectStatus select_status = 8;
+     * is_bind
+     * </pre>
+     *
+     * <code>.api.common.BindStatus bindingStatus = 8;</code>
+     * @return The enum numeric value on the wire for bindingStatus.
+     */
+    @java.lang.Override public int getBindingStatusValue() {
+      return bindingStatus_;
+    }
+    /**
+     * <pre>
+     * 路由勾选状态
+     * WorkerRouteSelectStatus select_status = 8;
+     * is_bind
+     * </pre>
+     *
+     * <code>.api.common.BindStatus bindingStatus = 8;</code>
+     * @return The bindingStatus.
+     */
+    @java.lang.Override public com.teneasyChat.api.common.CBase.BindStatus getBindingStatus() {
+      com.teneasyChat.api.common.CBase.BindStatus result = com.teneasyChat.api.common.CBase.BindStatus.forNumber(bindingStatus_);
+      return result == null ? com.teneasyChat.api.common.CBase.BindStatus.UNRECOGNIZED : result;
+    }
+
+    public static final int ITEMS_FIELD_NUMBER = 9;
+    @SuppressWarnings("serial")
+    private java.util.List<com.teneasyChat.api.common.CWorker.WorkerRoute> items_;
+    /**
+     * <pre>
+     * 子路由列表
+     * </pre>
+     *
+     * <code>repeated .api.common.WorkerRoute items = 9;</code>
+     */
+    @java.lang.Override
+    public java.util.List<com.teneasyChat.api.common.CWorker.WorkerRoute> getItemsList() {
+      return items_;
+    }
+    /**
+     * <pre>
+     * 子路由列表
+     * </pre>
+     *
+     * <code>repeated .api.common.WorkerRoute items = 9;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends com.teneasyChat.api.common.CWorker.WorkerRouteOrBuilder> 
+        getItemsOrBuilderList() {
+      return items_;
+    }
+    /**
+     * <pre>
+     * 子路由列表
+     * </pre>
+     *
+     * <code>repeated .api.common.WorkerRoute items = 9;</code>
+     */
+    @java.lang.Override
+    public int getItemsCount() {
+      return items_.size();
+    }
+    /**
+     * <pre>
+     * 子路由列表
+     * </pre>
+     *
+     * <code>repeated .api.common.WorkerRoute items = 9;</code>
+     */
+    @java.lang.Override
+    public com.teneasyChat.api.common.CWorker.WorkerRoute getItems(int index) {
+      return items_.get(index);
+    }
+    /**
+     * <pre>
+     * 子路由列表
+     * </pre>
+     *
+     * <code>repeated .api.common.WorkerRoute items = 9;</code>
+     */
+    @java.lang.Override
+    public com.teneasyChat.api.common.CWorker.WorkerRouteOrBuilder getItemsOrBuilder(
+        int index) {
+      return items_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (id_ != 0) {
+        output.writeInt32(1, id_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 2, name_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(url_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 3, url_);
+      }
+      if (pid_ != 0) {
+        output.writeInt32(4, pid_);
+      }
+      if (sort_ != 0) {
+        output.writeInt32(5, sort_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(remark_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 6, remark_);
+      }
+      if (roleType_ != com.teneasyChat.api.common.CWorker.WorkerRoleType.WRT_DEFAULT.getNumber()) {
+        output.writeEnum(7, roleType_);
+      }
+      if (bindingStatus_ != com.teneasyChat.api.common.CBase.BindStatus.BIND_STATUS_DEFAULT.getNumber()) {
+        output.writeEnum(8, bindingStatus_);
+      }
+      for (int i = 0; i < items_.size(); i++) {
+        output.writeMessage(9, items_.get(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (id_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, id_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(2, name_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(url_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(3, url_);
+      }
+      if (pid_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(4, pid_);
+      }
+      if (sort_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(5, sort_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(remark_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(6, remark_);
+      }
+      if (roleType_ != com.teneasyChat.api.common.CWorker.WorkerRoleType.WRT_DEFAULT.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(7, roleType_);
+      }
+      if (bindingStatus_ != com.teneasyChat.api.common.CBase.BindStatus.BIND_STATUS_DEFAULT.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(8, bindingStatus_);
+      }
+      for (int i = 0; i < items_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(9, items_.get(i));
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.teneasyChat.api.common.CWorker.WorkerRouteWithItems)) {
+        return super.equals(obj);
+      }
+      com.teneasyChat.api.common.CWorker.WorkerRouteWithItems other = (com.teneasyChat.api.common.CWorker.WorkerRouteWithItems) obj;
+
+      if (getId()
+          != other.getId()) return false;
+      if (!getName()
+          .equals(other.getName())) return false;
+      if (!getUrl()
+          .equals(other.getUrl())) return false;
+      if (getPid()
+          != other.getPid()) return false;
+      if (getSort()
+          != other.getSort()) return false;
+      if (!getRemark()
+          .equals(other.getRemark())) return false;
+      if (roleType_ != other.roleType_) return false;
+      if (bindingStatus_ != other.bindingStatus_) return false;
+      if (!getItemsList()
+          .equals(other.getItemsList())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId();
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+      hash = (37 * hash) + URL_FIELD_NUMBER;
+      hash = (53 * hash) + getUrl().hashCode();
+      hash = (37 * hash) + PID_FIELD_NUMBER;
+      hash = (53 * hash) + getPid();
+      hash = (37 * hash) + SORT_FIELD_NUMBER;
+      hash = (53 * hash) + getSort();
+      hash = (37 * hash) + REMARK_FIELD_NUMBER;
+      hash = (53 * hash) + getRemark().hashCode();
+      hash = (37 * hash) + ROLE_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + roleType_;
+      hash = (37 * hash) + BINDINGSTATUS_FIELD_NUMBER;
+      hash = (53 * hash) + bindingStatus_;
+      if (getItemsCount() > 0) {
+        hash = (37 * hash) + ITEMS_FIELD_NUMBER;
+        hash = (53 * hash) + getItemsList().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.teneasyChat.api.common.CWorker.WorkerRouteWithItems parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.common.CWorker.WorkerRouteWithItems parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.common.CWorker.WorkerRouteWithItems parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.common.CWorker.WorkerRouteWithItems parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.common.CWorker.WorkerRouteWithItems parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.common.CWorker.WorkerRouteWithItems parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.common.CWorker.WorkerRouteWithItems parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.teneasyChat.api.common.CWorker.WorkerRouteWithItems parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.teneasyChat.api.common.CWorker.WorkerRouteWithItems parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.teneasyChat.api.common.CWorker.WorkerRouteWithItems parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.teneasyChat.api.common.CWorker.WorkerRouteWithItems parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.teneasyChat.api.common.CWorker.WorkerRouteWithItems parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.teneasyChat.api.common.CWorker.WorkerRouteWithItems prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * 客服后台父子路由列表
+     * </pre>
+     *
+     * Protobuf type {@code api.common.WorkerRouteWithItems}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:api.common.WorkerRouteWithItems)
+        com.teneasyChat.api.common.CWorker.WorkerRouteWithItemsOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.teneasyChat.api.common.CWorker.internal_static_api_common_WorkerRouteWithItems_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.teneasyChat.api.common.CWorker.internal_static_api_common_WorkerRouteWithItems_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.teneasyChat.api.common.CWorker.WorkerRouteWithItems.class, com.teneasyChat.api.common.CWorker.WorkerRouteWithItems.Builder.class);
+      }
+
+      // Construct using com.teneasyChat.api.common.CWorker.WorkerRouteWithItems.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        id_ = 0;
+        name_ = "";
+        url_ = "";
+        pid_ = 0;
+        sort_ = 0;
+        remark_ = "";
+        roleType_ = 0;
+        bindingStatus_ = 0;
+        if (itemsBuilder_ == null) {
+          items_ = java.util.Collections.emptyList();
+        } else {
+          items_ = null;
+          itemsBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000100);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.teneasyChat.api.common.CWorker.internal_static_api_common_WorkerRouteWithItems_descriptor;
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.common.CWorker.WorkerRouteWithItems getDefaultInstanceForType() {
+        return com.teneasyChat.api.common.CWorker.WorkerRouteWithItems.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.common.CWorker.WorkerRouteWithItems build() {
+        com.teneasyChat.api.common.CWorker.WorkerRouteWithItems result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.common.CWorker.WorkerRouteWithItems buildPartial() {
+        com.teneasyChat.api.common.CWorker.WorkerRouteWithItems result = new com.teneasyChat.api.common.CWorker.WorkerRouteWithItems(this);
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(com.teneasyChat.api.common.CWorker.WorkerRouteWithItems result) {
+        if (itemsBuilder_ == null) {
+          if (((bitField0_ & 0x00000100) != 0)) {
+            items_ = java.util.Collections.unmodifiableList(items_);
+            bitField0_ = (bitField0_ & ~0x00000100);
+          }
+          result.items_ = items_;
+        } else {
+          result.items_ = itemsBuilder_.build();
+        }
+      }
+
+      private void buildPartial0(com.teneasyChat.api.common.CWorker.WorkerRouteWithItems result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.id_ = id_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.name_ = name_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.url_ = url_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.pid_ = pid_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.sort_ = sort_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.remark_ = remark_;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.roleType_ = roleType_;
+        }
+        if (((from_bitField0_ & 0x00000080) != 0)) {
+          result.bindingStatus_ = bindingStatus_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.teneasyChat.api.common.CWorker.WorkerRouteWithItems) {
+          return mergeFrom((com.teneasyChat.api.common.CWorker.WorkerRouteWithItems)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.teneasyChat.api.common.CWorker.WorkerRouteWithItems other) {
+        if (other == com.teneasyChat.api.common.CWorker.WorkerRouteWithItems.getDefaultInstance()) return this;
+        if (other.getId() != 0) {
+          setId(other.getId());
+        }
+        if (!other.getName().isEmpty()) {
+          name_ = other.name_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        if (!other.getUrl().isEmpty()) {
+          url_ = other.url_;
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        if (other.getPid() != 0) {
+          setPid(other.getPid());
+        }
+        if (other.getSort() != 0) {
+          setSort(other.getSort());
+        }
+        if (!other.getRemark().isEmpty()) {
+          remark_ = other.remark_;
+          bitField0_ |= 0x00000020;
+          onChanged();
+        }
+        if (other.roleType_ != 0) {
+          setRoleTypeValue(other.getRoleTypeValue());
+        }
+        if (other.bindingStatus_ != 0) {
+          setBindingStatusValue(other.getBindingStatusValue());
+        }
+        if (itemsBuilder_ == null) {
+          if (!other.items_.isEmpty()) {
+            if (items_.isEmpty()) {
+              items_ = other.items_;
+              bitField0_ = (bitField0_ & ~0x00000100);
+            } else {
+              ensureItemsIsMutable();
+              items_.addAll(other.items_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.items_.isEmpty()) {
+            if (itemsBuilder_.isEmpty()) {
+              itemsBuilder_.dispose();
+              itemsBuilder_ = null;
+              items_ = other.items_;
+              bitField0_ = (bitField0_ & ~0x00000100);
+              itemsBuilder_ = 
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
+                   getItemsFieldBuilder() : null;
+            } else {
+              itemsBuilder_.addAllMessages(other.items_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                id_ = input.readInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 18: {
+                name_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+              case 26: {
+                url_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
+              case 32: {
+                pid_ = input.readInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 32
+              case 40: {
+                sort_ = input.readInt32();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 40
+              case 50: {
+                remark_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 50
+              case 56: {
+                roleType_ = input.readEnum();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 56
+              case 64: {
+                bindingStatus_ = input.readEnum();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 64
+              case 74: {
+                com.teneasyChat.api.common.CWorker.WorkerRoute m =
+                    input.readMessage(
+                        com.teneasyChat.api.common.CWorker.WorkerRoute.parser(),
+                        extensionRegistry);
+                if (itemsBuilder_ == null) {
+                  ensureItemsIsMutable();
+                  items_.add(m);
+                } else {
+                  itemsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 74
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private int id_ ;
+      /**
+       * <code>int32 id = 1;</code>
+       * @return The id.
+       */
+      @java.lang.Override
+      public int getId() {
+        return id_;
+      }
+      /**
+       * <code>int32 id = 1;</code>
+       * @param value The id to set.
+       * @return This builder for chaining.
+       */
+      public Builder setId(int value) {
+
+        id_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 id = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        id_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object name_ = "";
+      /**
+       * <pre>
+       * 名称
+       * </pre>
+       *
+       * <code>string name = 2;</code>
+       * @return The name.
+       */
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          name_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * 名称
+       * </pre>
+       *
+       * <code>string name = 2;</code>
+       * @return The bytes for name.
+       */
+      public com.google.protobuf.ByteString
+          getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * 名称
+       * </pre>
+       *
+       * <code>string name = 2;</code>
+       * @param value The name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setName(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        name_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 名称
+       * </pre>
+       *
+       * <code>string name = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearName() {
+        name_ = getDefaultInstance().getName();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 名称
+       * </pre>
+       *
+       * <code>string name = 2;</code>
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        name_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object url_ = "";
+      /**
+       * <pre>
+       * url
+       * </pre>
+       *
+       * <code>string url = 3;</code>
+       * @return The url.
+       */
+      public java.lang.String getUrl() {
+        java.lang.Object ref = url_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          url_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * url
+       * </pre>
+       *
+       * <code>string url = 3;</code>
+       * @return The bytes for url.
+       */
+      public com.google.protobuf.ByteString
+          getUrlBytes() {
+        java.lang.Object ref = url_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          url_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * url
+       * </pre>
+       *
+       * <code>string url = 3;</code>
+       * @param value The url to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUrl(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        url_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * url
+       * </pre>
+       *
+       * <code>string url = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUrl() {
+        url_ = getDefaultInstance().getUrl();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * url
+       * </pre>
+       *
+       * <code>string url = 3;</code>
+       * @param value The bytes for url to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUrlBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        url_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      private int pid_ ;
+      /**
+       * <pre>
+       * 父级id
+       * </pre>
+       *
+       * <code>int32 pid = 4;</code>
+       * @return The pid.
+       */
+      @java.lang.Override
+      public int getPid() {
+        return pid_;
+      }
+      /**
+       * <pre>
+       * 父级id
+       * </pre>
+       *
+       * <code>int32 pid = 4;</code>
+       * @param value The pid to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPid(int value) {
+
+        pid_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 父级id
+       * </pre>
+       *
+       * <code>int32 pid = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPid() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        pid_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int sort_ ;
+      /**
+       * <pre>
+       * 排序
+       * </pre>
+       *
+       * <code>int32 sort = 5;</code>
+       * @return The sort.
+       */
+      @java.lang.Override
+      public int getSort() {
+        return sort_;
+      }
+      /**
+       * <pre>
+       * 排序
+       * </pre>
+       *
+       * <code>int32 sort = 5;</code>
+       * @param value The sort to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSort(int value) {
+
+        sort_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 排序
+       * </pre>
+       *
+       * <code>int32 sort = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSort() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        sort_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object remark_ = "";
+      /**
+       * <pre>
+       * 描述
+       * </pre>
+       *
+       * <code>string remark = 6;</code>
+       * @return The remark.
+       */
+      public java.lang.String getRemark() {
+        java.lang.Object ref = remark_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          remark_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * 描述
+       * </pre>
+       *
+       * <code>string remark = 6;</code>
+       * @return The bytes for remark.
+       */
+      public com.google.protobuf.ByteString
+          getRemarkBytes() {
+        java.lang.Object ref = remark_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          remark_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * 描述
+       * </pre>
+       *
+       * <code>string remark = 6;</code>
+       * @param value The remark to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRemark(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        remark_ = value;
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 描述
+       * </pre>
+       *
+       * <code>string remark = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRemark() {
+        remark_ = getDefaultInstance().getRemark();
+        bitField0_ = (bitField0_ & ~0x00000020);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 描述
+       * </pre>
+       *
+       * <code>string remark = 6;</code>
+       * @param value The bytes for remark to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRemarkBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        remark_ = value;
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+
+      private int roleType_ = 0;
+      /**
+       * <pre>
+       * 角色权限 1:管理端 2:一线客服
+       * </pre>
+       *
+       * <code>.api.common.WorkerRoleType role_type = 7;</code>
+       * @return The enum numeric value on the wire for roleType.
+       */
+      @java.lang.Override public int getRoleTypeValue() {
+        return roleType_;
+      }
+      /**
+       * <pre>
+       * 角色权限 1:管理端 2:一线客服
+       * </pre>
+       *
+       * <code>.api.common.WorkerRoleType role_type = 7;</code>
+       * @param value The enum numeric value on the wire for roleType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRoleTypeValue(int value) {
+        roleType_ = value;
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 角色权限 1:管理端 2:一线客服
+       * </pre>
+       *
+       * <code>.api.common.WorkerRoleType role_type = 7;</code>
+       * @return The roleType.
+       */
+      @java.lang.Override
+      public com.teneasyChat.api.common.CWorker.WorkerRoleType getRoleType() {
+        com.teneasyChat.api.common.CWorker.WorkerRoleType result = com.teneasyChat.api.common.CWorker.WorkerRoleType.forNumber(roleType_);
+        return result == null ? com.teneasyChat.api.common.CWorker.WorkerRoleType.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * 角色权限 1:管理端 2:一线客服
+       * </pre>
+       *
+       * <code>.api.common.WorkerRoleType role_type = 7;</code>
+       * @param value The roleType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRoleType(com.teneasyChat.api.common.CWorker.WorkerRoleType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000040;
+        roleType_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 角色权限 1:管理端 2:一线客服
+       * </pre>
+       *
+       * <code>.api.common.WorkerRoleType role_type = 7;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRoleType() {
+        bitField0_ = (bitField0_ & ~0x00000040);
+        roleType_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int bindingStatus_ = 0;
+      /**
+       * <pre>
+       * 路由勾选状态
+       * WorkerRouteSelectStatus select_status = 8;
+       * is_bind
+       * </pre>
+       *
+       * <code>.api.common.BindStatus bindingStatus = 8;</code>
+       * @return The enum numeric value on the wire for bindingStatus.
+       */
+      @java.lang.Override public int getBindingStatusValue() {
+        return bindingStatus_;
+      }
+      /**
+       * <pre>
+       * 路由勾选状态
+       * WorkerRouteSelectStatus select_status = 8;
+       * is_bind
+       * </pre>
+       *
+       * <code>.api.common.BindStatus bindingStatus = 8;</code>
+       * @param value The enum numeric value on the wire for bindingStatus to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBindingStatusValue(int value) {
+        bindingStatus_ = value;
+        bitField0_ |= 0x00000080;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 路由勾选状态
+       * WorkerRouteSelectStatus select_status = 8;
+       * is_bind
+       * </pre>
+       *
+       * <code>.api.common.BindStatus bindingStatus = 8;</code>
+       * @return The bindingStatus.
+       */
+      @java.lang.Override
+      public com.teneasyChat.api.common.CBase.BindStatus getBindingStatus() {
+        com.teneasyChat.api.common.CBase.BindStatus result = com.teneasyChat.api.common.CBase.BindStatus.forNumber(bindingStatus_);
+        return result == null ? com.teneasyChat.api.common.CBase.BindStatus.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * 路由勾选状态
+       * WorkerRouteSelectStatus select_status = 8;
+       * is_bind
+       * </pre>
+       *
+       * <code>.api.common.BindStatus bindingStatus = 8;</code>
+       * @param value The bindingStatus to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBindingStatus(com.teneasyChat.api.common.CBase.BindStatus value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000080;
+        bindingStatus_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 路由勾选状态
+       * WorkerRouteSelectStatus select_status = 8;
+       * is_bind
+       * </pre>
+       *
+       * <code>.api.common.BindStatus bindingStatus = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearBindingStatus() {
+        bitField0_ = (bitField0_ & ~0x00000080);
+        bindingStatus_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<com.teneasyChat.api.common.CWorker.WorkerRoute> items_ =
+        java.util.Collections.emptyList();
+      private void ensureItemsIsMutable() {
+        if (!((bitField0_ & 0x00000100) != 0)) {
+          items_ = new java.util.ArrayList<com.teneasyChat.api.common.CWorker.WorkerRoute>(items_);
+          bitField0_ |= 0x00000100;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilder<
+          com.teneasyChat.api.common.CWorker.WorkerRoute, com.teneasyChat.api.common.CWorker.WorkerRoute.Builder, com.teneasyChat.api.common.CWorker.WorkerRouteOrBuilder> itemsBuilder_;
+
+      /**
+       * <pre>
+       * 子路由列表
+       * </pre>
+       *
+       * <code>repeated .api.common.WorkerRoute items = 9;</code>
+       */
+      public java.util.List<com.teneasyChat.api.common.CWorker.WorkerRoute> getItemsList() {
+        if (itemsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(items_);
+        } else {
+          return itemsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <pre>
+       * 子路由列表
+       * </pre>
+       *
+       * <code>repeated .api.common.WorkerRoute items = 9;</code>
+       */
+      public int getItemsCount() {
+        if (itemsBuilder_ == null) {
+          return items_.size();
+        } else {
+          return itemsBuilder_.getCount();
+        }
+      }
+      /**
+       * <pre>
+       * 子路由列表
+       * </pre>
+       *
+       * <code>repeated .api.common.WorkerRoute items = 9;</code>
+       */
+      public com.teneasyChat.api.common.CWorker.WorkerRoute getItems(int index) {
+        if (itemsBuilder_ == null) {
+          return items_.get(index);
+        } else {
+          return itemsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       * 子路由列表
+       * </pre>
+       *
+       * <code>repeated .api.common.WorkerRoute items = 9;</code>
+       */
+      public Builder setItems(
+          int index, com.teneasyChat.api.common.CWorker.WorkerRoute value) {
+        if (itemsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureItemsIsMutable();
+          items_.set(index, value);
+          onChanged();
+        } else {
+          itemsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 子路由列表
+       * </pre>
+       *
+       * <code>repeated .api.common.WorkerRoute items = 9;</code>
+       */
+      public Builder setItems(
+          int index, com.teneasyChat.api.common.CWorker.WorkerRoute.Builder builderForValue) {
+        if (itemsBuilder_ == null) {
+          ensureItemsIsMutable();
+          items_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          itemsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 子路由列表
+       * </pre>
+       *
+       * <code>repeated .api.common.WorkerRoute items = 9;</code>
+       */
+      public Builder addItems(com.teneasyChat.api.common.CWorker.WorkerRoute value) {
+        if (itemsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureItemsIsMutable();
+          items_.add(value);
+          onChanged();
+        } else {
+          itemsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 子路由列表
+       * </pre>
+       *
+       * <code>repeated .api.common.WorkerRoute items = 9;</code>
+       */
+      public Builder addItems(
+          int index, com.teneasyChat.api.common.CWorker.WorkerRoute value) {
+        if (itemsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureItemsIsMutable();
+          items_.add(index, value);
+          onChanged();
+        } else {
+          itemsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 子路由列表
+       * </pre>
+       *
+       * <code>repeated .api.common.WorkerRoute items = 9;</code>
+       */
+      public Builder addItems(
+          com.teneasyChat.api.common.CWorker.WorkerRoute.Builder builderForValue) {
+        if (itemsBuilder_ == null) {
+          ensureItemsIsMutable();
+          items_.add(builderForValue.build());
+          onChanged();
+        } else {
+          itemsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 子路由列表
+       * </pre>
+       *
+       * <code>repeated .api.common.WorkerRoute items = 9;</code>
+       */
+      public Builder addItems(
+          int index, com.teneasyChat.api.common.CWorker.WorkerRoute.Builder builderForValue) {
+        if (itemsBuilder_ == null) {
+          ensureItemsIsMutable();
+          items_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          itemsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 子路由列表
+       * </pre>
+       *
+       * <code>repeated .api.common.WorkerRoute items = 9;</code>
+       */
+      public Builder addAllItems(
+          java.lang.Iterable<? extends com.teneasyChat.api.common.CWorker.WorkerRoute> values) {
+        if (itemsBuilder_ == null) {
+          ensureItemsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, items_);
+          onChanged();
+        } else {
+          itemsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 子路由列表
+       * </pre>
+       *
+       * <code>repeated .api.common.WorkerRoute items = 9;</code>
+       */
+      public Builder clearItems() {
+        if (itemsBuilder_ == null) {
+          items_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000100);
+          onChanged();
+        } else {
+          itemsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 子路由列表
+       * </pre>
+       *
+       * <code>repeated .api.common.WorkerRoute items = 9;</code>
+       */
+      public Builder removeItems(int index) {
+        if (itemsBuilder_ == null) {
+          ensureItemsIsMutable();
+          items_.remove(index);
+          onChanged();
+        } else {
+          itemsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 子路由列表
+       * </pre>
+       *
+       * <code>repeated .api.common.WorkerRoute items = 9;</code>
+       */
+      public com.teneasyChat.api.common.CWorker.WorkerRoute.Builder getItemsBuilder(
+          int index) {
+        return getItemsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * 子路由列表
+       * </pre>
+       *
+       * <code>repeated .api.common.WorkerRoute items = 9;</code>
+       */
+      public com.teneasyChat.api.common.CWorker.WorkerRouteOrBuilder getItemsOrBuilder(
+          int index) {
+        if (itemsBuilder_ == null) {
+          return items_.get(index);  } else {
+          return itemsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * 子路由列表
+       * </pre>
+       *
+       * <code>repeated .api.common.WorkerRoute items = 9;</code>
+       */
+      public java.util.List<? extends com.teneasyChat.api.common.CWorker.WorkerRouteOrBuilder> 
+           getItemsOrBuilderList() {
+        if (itemsBuilder_ != null) {
+          return itemsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(items_);
+        }
+      }
+      /**
+       * <pre>
+       * 子路由列表
+       * </pre>
+       *
+       * <code>repeated .api.common.WorkerRoute items = 9;</code>
+       */
+      public com.teneasyChat.api.common.CWorker.WorkerRoute.Builder addItemsBuilder() {
+        return getItemsFieldBuilder().addBuilder(
+            com.teneasyChat.api.common.CWorker.WorkerRoute.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * 子路由列表
+       * </pre>
+       *
+       * <code>repeated .api.common.WorkerRoute items = 9;</code>
+       */
+      public com.teneasyChat.api.common.CWorker.WorkerRoute.Builder addItemsBuilder(
+          int index) {
+        return getItemsFieldBuilder().addBuilder(
+            index, com.teneasyChat.api.common.CWorker.WorkerRoute.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * 子路由列表
+       * </pre>
+       *
+       * <code>repeated .api.common.WorkerRoute items = 9;</code>
+       */
+      public java.util.List<com.teneasyChat.api.common.CWorker.WorkerRoute.Builder> 
+           getItemsBuilderList() {
+        return getItemsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilder<
+          com.teneasyChat.api.common.CWorker.WorkerRoute, com.teneasyChat.api.common.CWorker.WorkerRoute.Builder, com.teneasyChat.api.common.CWorker.WorkerRouteOrBuilder> 
+          getItemsFieldBuilder() {
+        if (itemsBuilder_ == null) {
+          itemsBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
+              com.teneasyChat.api.common.CWorker.WorkerRoute, com.teneasyChat.api.common.CWorker.WorkerRoute.Builder, com.teneasyChat.api.common.CWorker.WorkerRouteOrBuilder>(
+                  items_,
+                  ((bitField0_ & 0x00000100) != 0),
+                  getParentForChildren(),
+                  isClean());
+          items_ = null;
+        }
+        return itemsBuilder_;
+      }
+
+      // @@protoc_insertion_point(builder_scope:api.common.WorkerRouteWithItems)
+    }
+
+    // @@protoc_insertion_point(class_scope:api.common.WorkerRouteWithItems)
+    private static final com.teneasyChat.api.common.CWorker.WorkerRouteWithItems DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.teneasyChat.api.common.CWorker.WorkerRouteWithItems();
+    }
+
+    public static com.teneasyChat.api.common.CWorker.WorkerRouteWithItems getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<WorkerRouteWithItems>
+        PARSER = new com.google.protobuf.AbstractParser<WorkerRouteWithItems>() {
+      @java.lang.Override
+      public WorkerRouteWithItems parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<WorkerRouteWithItems> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<WorkerRouteWithItems> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.teneasyChat.api.common.CWorker.WorkerRouteWithItems getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface DeviceInfoOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:api.common.DeviceInfo)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string os_type = 1;</code>
+     * @return The osType.
+     */
+    java.lang.String getOsType();
+    /**
+     * <code>string os_type = 1;</code>
+     * @return The bytes for osType.
+     */
+    com.google.protobuf.ByteString
+        getOsTypeBytes();
+
+    /**
+     * <code>string os_version = 2;</code>
+     * @return The osVersion.
+     */
+    java.lang.String getOsVersion();
+    /**
+     * <code>string os_version = 2;</code>
+     * @return The bytes for osVersion.
+     */
+    com.google.protobuf.ByteString
+        getOsVersionBytes();
+
+    /**
+     * <code>string arch = 3;</code>
+     * @return The arch.
+     */
+    java.lang.String getArch();
+    /**
+     * <code>string arch = 3;</code>
+     * @return The bytes for arch.
+     */
+    com.google.protobuf.ByteString
+        getArchBytes();
+
+    /**
+     * <code>string kernel_version = 4;</code>
+     * @return The kernelVersion.
+     */
+    java.lang.String getKernelVersion();
+    /**
+     * <code>string kernel_version = 4;</code>
+     * @return The bytes for kernelVersion.
+     */
+    com.google.protobuf.ByteString
+        getKernelVersionBytes();
+
+    /**
+     * <code>int32 cpu_cores = 5;</code>
+     * @return The cpuCores.
+     */
+    int getCpuCores();
+
+    /**
+     * <code>int32 total_memory = 6;</code>
+     * @return The totalMemory.
+     */
+    int getTotalMemory();
+  }
+  /**
+   * Protobuf type {@code api.common.DeviceInfo}
+   */
+  public static final class DeviceInfo extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:api.common.DeviceInfo)
+      DeviceInfoOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 26,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        DeviceInfo.class.getName());
+    }
+    // Use DeviceInfo.newBuilder() to construct.
+    private DeviceInfo(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private DeviceInfo() {
+      osType_ = "";
+      osVersion_ = "";
+      arch_ = "";
+      kernelVersion_ = "";
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.teneasyChat.api.common.CWorker.internal_static_api_common_DeviceInfo_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.teneasyChat.api.common.CWorker.internal_static_api_common_DeviceInfo_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.teneasyChat.api.common.CWorker.DeviceInfo.class, com.teneasyChat.api.common.CWorker.DeviceInfo.Builder.class);
+    }
+
+    public static final int OS_TYPE_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object osType_ = "";
+    /**
+     * <code>string os_type = 1;</code>
+     * @return The osType.
+     */
+    @java.lang.Override
+    public java.lang.String getOsType() {
+      java.lang.Object ref = osType_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        osType_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string os_type = 1;</code>
+     * @return The bytes for osType.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getOsTypeBytes() {
+      java.lang.Object ref = osType_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        osType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int OS_VERSION_FIELD_NUMBER = 2;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object osVersion_ = "";
+    /**
+     * <code>string os_version = 2;</code>
+     * @return The osVersion.
+     */
+    @java.lang.Override
+    public java.lang.String getOsVersion() {
+      java.lang.Object ref = osVersion_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        osVersion_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string os_version = 2;</code>
+     * @return The bytes for osVersion.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getOsVersionBytes() {
+      java.lang.Object ref = osVersion_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        osVersion_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ARCH_FIELD_NUMBER = 3;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object arch_ = "";
+    /**
+     * <code>string arch = 3;</code>
+     * @return The arch.
+     */
+    @java.lang.Override
+    public java.lang.String getArch() {
+      java.lang.Object ref = arch_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        arch_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string arch = 3;</code>
+     * @return The bytes for arch.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getArchBytes() {
+      java.lang.Object ref = arch_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        arch_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int KERNEL_VERSION_FIELD_NUMBER = 4;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object kernelVersion_ = "";
+    /**
+     * <code>string kernel_version = 4;</code>
+     * @return The kernelVersion.
+     */
+    @java.lang.Override
+    public java.lang.String getKernelVersion() {
+      java.lang.Object ref = kernelVersion_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        kernelVersion_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string kernel_version = 4;</code>
+     * @return The bytes for kernelVersion.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getKernelVersionBytes() {
+      java.lang.Object ref = kernelVersion_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        kernelVersion_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CPU_CORES_FIELD_NUMBER = 5;
+    private int cpuCores_ = 0;
+    /**
+     * <code>int32 cpu_cores = 5;</code>
+     * @return The cpuCores.
+     */
+    @java.lang.Override
+    public int getCpuCores() {
+      return cpuCores_;
+    }
+
+    public static final int TOTAL_MEMORY_FIELD_NUMBER = 6;
+    private int totalMemory_ = 0;
+    /**
+     * <code>int32 total_memory = 6;</code>
+     * @return The totalMemory.
+     */
+    @java.lang.Override
+    public int getTotalMemory() {
+      return totalMemory_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(osType_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 1, osType_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(osVersion_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 2, osVersion_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(arch_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 3, arch_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(kernelVersion_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 4, kernelVersion_);
+      }
+      if (cpuCores_ != 0) {
+        output.writeInt32(5, cpuCores_);
+      }
+      if (totalMemory_ != 0) {
+        output.writeInt32(6, totalMemory_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(osType_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(1, osType_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(osVersion_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(2, osVersion_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(arch_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(3, arch_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(kernelVersion_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(4, kernelVersion_);
+      }
+      if (cpuCores_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(5, cpuCores_);
+      }
+      if (totalMemory_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(6, totalMemory_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.teneasyChat.api.common.CWorker.DeviceInfo)) {
+        return super.equals(obj);
+      }
+      com.teneasyChat.api.common.CWorker.DeviceInfo other = (com.teneasyChat.api.common.CWorker.DeviceInfo) obj;
+
+      if (!getOsType()
+          .equals(other.getOsType())) return false;
+      if (!getOsVersion()
+          .equals(other.getOsVersion())) return false;
+      if (!getArch()
+          .equals(other.getArch())) return false;
+      if (!getKernelVersion()
+          .equals(other.getKernelVersion())) return false;
+      if (getCpuCores()
+          != other.getCpuCores()) return false;
+      if (getTotalMemory()
+          != other.getTotalMemory()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + OS_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getOsType().hashCode();
+      hash = (37 * hash) + OS_VERSION_FIELD_NUMBER;
+      hash = (53 * hash) + getOsVersion().hashCode();
+      hash = (37 * hash) + ARCH_FIELD_NUMBER;
+      hash = (53 * hash) + getArch().hashCode();
+      hash = (37 * hash) + KERNEL_VERSION_FIELD_NUMBER;
+      hash = (53 * hash) + getKernelVersion().hashCode();
+      hash = (37 * hash) + CPU_CORES_FIELD_NUMBER;
+      hash = (53 * hash) + getCpuCores();
+      hash = (37 * hash) + TOTAL_MEMORY_FIELD_NUMBER;
+      hash = (53 * hash) + getTotalMemory();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.teneasyChat.api.common.CWorker.DeviceInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.common.CWorker.DeviceInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.common.CWorker.DeviceInfo parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.common.CWorker.DeviceInfo parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.common.CWorker.DeviceInfo parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.common.CWorker.DeviceInfo parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.common.CWorker.DeviceInfo parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.teneasyChat.api.common.CWorker.DeviceInfo parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.teneasyChat.api.common.CWorker.DeviceInfo parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.teneasyChat.api.common.CWorker.DeviceInfo parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.teneasyChat.api.common.CWorker.DeviceInfo parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.teneasyChat.api.common.CWorker.DeviceInfo parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.teneasyChat.api.common.CWorker.DeviceInfo prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code api.common.DeviceInfo}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:api.common.DeviceInfo)
+        com.teneasyChat.api.common.CWorker.DeviceInfoOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.teneasyChat.api.common.CWorker.internal_static_api_common_DeviceInfo_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.teneasyChat.api.common.CWorker.internal_static_api_common_DeviceInfo_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.teneasyChat.api.common.CWorker.DeviceInfo.class, com.teneasyChat.api.common.CWorker.DeviceInfo.Builder.class);
+      }
+
+      // Construct using com.teneasyChat.api.common.CWorker.DeviceInfo.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        osType_ = "";
+        osVersion_ = "";
+        arch_ = "";
+        kernelVersion_ = "";
+        cpuCores_ = 0;
+        totalMemory_ = 0;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.teneasyChat.api.common.CWorker.internal_static_api_common_DeviceInfo_descriptor;
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.common.CWorker.DeviceInfo getDefaultInstanceForType() {
+        return com.teneasyChat.api.common.CWorker.DeviceInfo.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.common.CWorker.DeviceInfo build() {
+        com.teneasyChat.api.common.CWorker.DeviceInfo result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.common.CWorker.DeviceInfo buildPartial() {
+        com.teneasyChat.api.common.CWorker.DeviceInfo result = new com.teneasyChat.api.common.CWorker.DeviceInfo(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.teneasyChat.api.common.CWorker.DeviceInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.osType_ = osType_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.osVersion_ = osVersion_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.arch_ = arch_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.kernelVersion_ = kernelVersion_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.cpuCores_ = cpuCores_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.totalMemory_ = totalMemory_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.teneasyChat.api.common.CWorker.DeviceInfo) {
+          return mergeFrom((com.teneasyChat.api.common.CWorker.DeviceInfo)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.teneasyChat.api.common.CWorker.DeviceInfo other) {
+        if (other == com.teneasyChat.api.common.CWorker.DeviceInfo.getDefaultInstance()) return this;
+        if (!other.getOsType().isEmpty()) {
+          osType_ = other.osType_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (!other.getOsVersion().isEmpty()) {
+          osVersion_ = other.osVersion_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        if (!other.getArch().isEmpty()) {
+          arch_ = other.arch_;
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        if (!other.getKernelVersion().isEmpty()) {
+          kernelVersion_ = other.kernelVersion_;
+          bitField0_ |= 0x00000008;
+          onChanged();
+        }
+        if (other.getCpuCores() != 0) {
+          setCpuCores(other.getCpuCores());
+        }
+        if (other.getTotalMemory() != 0) {
+          setTotalMemory(other.getTotalMemory());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                osType_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              case 18: {
+                osVersion_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+              case 26: {
+                arch_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
+              case 34: {
+                kernelVersion_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 34
+              case 40: {
+                cpuCores_ = input.readInt32();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 40
+              case 48: {
+                totalMemory_ = input.readInt32();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 48
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object osType_ = "";
+      /**
+       * <code>string os_type = 1;</code>
+       * @return The osType.
+       */
+      public java.lang.String getOsType() {
+        java.lang.Object ref = osType_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          osType_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string os_type = 1;</code>
+       * @return The bytes for osType.
+       */
+      public com.google.protobuf.ByteString
+          getOsTypeBytes() {
+        java.lang.Object ref = osType_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          osType_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string os_type = 1;</code>
+       * @param value The osType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOsType(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        osType_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string os_type = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearOsType() {
+        osType_ = getDefaultInstance().getOsType();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string os_type = 1;</code>
+       * @param value The bytes for osType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOsTypeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        osType_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object osVersion_ = "";
+      /**
+       * <code>string os_version = 2;</code>
+       * @return The osVersion.
+       */
+      public java.lang.String getOsVersion() {
+        java.lang.Object ref = osVersion_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          osVersion_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string os_version = 2;</code>
+       * @return The bytes for osVersion.
+       */
+      public com.google.protobuf.ByteString
+          getOsVersionBytes() {
+        java.lang.Object ref = osVersion_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          osVersion_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string os_version = 2;</code>
+       * @param value The osVersion to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOsVersion(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        osVersion_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string os_version = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearOsVersion() {
+        osVersion_ = getDefaultInstance().getOsVersion();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string os_version = 2;</code>
+       * @param value The bytes for osVersion to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOsVersionBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        osVersion_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object arch_ = "";
+      /**
+       * <code>string arch = 3;</code>
+       * @return The arch.
+       */
+      public java.lang.String getArch() {
+        java.lang.Object ref = arch_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          arch_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string arch = 3;</code>
+       * @return The bytes for arch.
+       */
+      public com.google.protobuf.ByteString
+          getArchBytes() {
+        java.lang.Object ref = arch_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          arch_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string arch = 3;</code>
+       * @param value The arch to set.
+       * @return This builder for chaining.
+       */
+      public Builder setArch(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        arch_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string arch = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearArch() {
+        arch_ = getDefaultInstance().getArch();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string arch = 3;</code>
+       * @param value The bytes for arch to set.
+       * @return This builder for chaining.
+       */
+      public Builder setArchBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        arch_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object kernelVersion_ = "";
+      /**
+       * <code>string kernel_version = 4;</code>
+       * @return The kernelVersion.
+       */
+      public java.lang.String getKernelVersion() {
+        java.lang.Object ref = kernelVersion_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          kernelVersion_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string kernel_version = 4;</code>
+       * @return The bytes for kernelVersion.
+       */
+      public com.google.protobuf.ByteString
+          getKernelVersionBytes() {
+        java.lang.Object ref = kernelVersion_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          kernelVersion_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string kernel_version = 4;</code>
+       * @param value The kernelVersion to set.
+       * @return This builder for chaining.
+       */
+      public Builder setKernelVersion(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        kernelVersion_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string kernel_version = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearKernelVersion() {
+        kernelVersion_ = getDefaultInstance().getKernelVersion();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string kernel_version = 4;</code>
+       * @param value The bytes for kernelVersion to set.
+       * @return This builder for chaining.
+       */
+      public Builder setKernelVersionBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        kernelVersion_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      private int cpuCores_ ;
+      /**
+       * <code>int32 cpu_cores = 5;</code>
+       * @return The cpuCores.
+       */
+      @java.lang.Override
+      public int getCpuCores() {
+        return cpuCores_;
+      }
+      /**
+       * <code>int32 cpu_cores = 5;</code>
+       * @param value The cpuCores to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCpuCores(int value) {
+
+        cpuCores_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 cpu_cores = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCpuCores() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        cpuCores_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int totalMemory_ ;
+      /**
+       * <code>int32 total_memory = 6;</code>
+       * @return The totalMemory.
+       */
+      @java.lang.Override
+      public int getTotalMemory() {
+        return totalMemory_;
+      }
+      /**
+       * <code>int32 total_memory = 6;</code>
+       * @param value The totalMemory to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTotalMemory(int value) {
+
+        totalMemory_ = value;
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 total_memory = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTotalMemory() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        totalMemory_ = 0;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:api.common.DeviceInfo)
+    }
+
+    // @@protoc_insertion_point(class_scope:api.common.DeviceInfo)
+    private static final com.teneasyChat.api.common.CWorker.DeviceInfo DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.teneasyChat.api.common.CWorker.DeviceInfo();
+    }
+
+    public static com.teneasyChat.api.common.CWorker.DeviceInfo getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<DeviceInfo>
+        PARSER = new com.google.protobuf.AbstractParser<DeviceInfo>() {
+      @java.lang.Override
+      public DeviceInfo parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<DeviceInfo> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<DeviceInfo> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.teneasyChat.api.common.CWorker.DeviceInfo getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_api_common_WorkerEvent_descriptor;
   private static final 
@@ -10683,6 +25169,41 @@ public final class CWorker {
   private static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_api_common_ApplyWorkerState_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_api_common_WorkerQualitySession_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_api_common_WorkerQualitySession_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_api_common_WorkerRoute_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_api_common_WorkerRoute_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_api_common_WorkerRole_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_api_common_WorkerRole_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_api_common_WorkerRoleRoute_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_api_common_WorkerRoleRoute_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_api_common_WorkerRouteTypeRoutes_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_api_common_WorkerRouteTypeRoutes_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_api_common_WorkerRouteWithItems_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_api_common_WorkerRouteWithItems_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_api_common_DeviceInfo_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_api_common_DeviceInfo_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -10699,7 +25220,7 @@ public final class CWorker {
       "\tworker_id\030\002 \001(\005\022\021\n\tsocket_id\030\003 \001(\004\022\022\n\ng" +
       "ateway_id\030\006 \001(\005\022/\n\nevent_type\030\004 \001(\0162\033.ap" +
       "i.common.WorkerEventType\022\022\n\nevent_code\030\005" +
-      " \001(\005\"\336\004\n\006Worker\022\021\n\tworker_id\030\001 \001(\005\022\017\n\007ac" +
+      " \001(\005\"\252\005\n\006Worker\022\021\n\tworker_id\030\001 \001(\005\022\017\n\007ac" +
       "count\030\002 \001(\t\022&\n\005group\030\003 \003(\0132\027.api.common." +
       "WorkerGroup\022\021\n\tperm_mask\030\004 \001(\005\022\014\n\004name\030\005" +
       " \001(\t\022\016\n\006avatar\030\006 \001(\t\022-\n\014online_state\030\007 \001" +
@@ -10714,44 +25235,127 @@ public final class CWorker {
       "t\030\022 \001(\0132\032.google.protobuf.Timestamp\022-\n\tu" +
       "pdate_at\030\023 \001(\0132\032.google.protobuf.Timesta" +
       "mp\0221\n\016disable_status\030\024 \001(\0162\031.api.common." +
-      "DisableStatus\"\352\001\n\013WorkerGroup\022\n\n\002id\030\001 \001(" +
-      "\003\022\014\n\004name\030\002 \001(\t\022\020\n\010priority\030\003 \001(\005\022\r\n\005cou" +
-      "nt\030\004 \001(\005\022\020\n\010parentId\030\005 \001(\003\022\030\n\005ratio\030\006 \001(" +
-      "\005B\t\372B\006\032\004\030d(\000\022\022\n\nconsult_id\030\007 \001(\r\022-\n\tdele" +
-      "te_at\030\010 \001(\0132\032.google.protobuf.Timestamp\022" +
-      "1\n\016disable_status\030\t \001(\0162\031.api.common.Dis" +
-      "ableStatus\":\n\014Distribution\022\n\n\002id\030\001 \001(\003\022\014" +
-      "\n\004name\030\002 \001(\t\022\020\n\010priority\030\003 \001(\005\":\n\014Tenant" +
-      "Clique\022\n\n\002id\030\001 \001(\005\022\014\n\004name\030\002 \001(\t\022\020\n\010prio" +
-      "rity\030\003 \001(\005\"\314\002\n\020ApplyWorkerState\022\n\n\002id\030\001 " +
-      "\001(\005\022\021\n\ttenant_id\030\002 \001(\005\022\021\n\tworker_id\030\003 \001(" +
-      "\005\022\014\n\004name\030\004 \001(\t\022\031\n\021worker_group_name\030\005 \001" +
-      "(\t\022\037\n\027worker_group_child_name\030\006 \001(\t\0221\n\020o" +
-      "nline_state_now\030\007 \001(\0162\027.api.common.Onlin" +
-      "eState\0223\n\022online_state_apply\030\010 \001(\0162\027.api" +
-      ".common.OnlineState\022\023\n\013apply_state\030\t \001(\005" +
-      "\022\022\n\napply_time\030\n \001(\003\022\022\n\ncheck_time\030\013 \001(\003" +
-      "\022\027\n\017update_username\030\014 \001(\t*y\n\020Distributio" +
-      "nType\022\030\n\024DISTRIBUTION_LEISURE\020\000\022\025\n\021DISTR" +
-      "IBUTION_BUSY\020\001\022\030\n\024DISTRIBUTION_OFFLINE\020\002" +
-      "\022\032\n\026DISTRIBUTION_NOT_LOGIN\020\003*\322\001\n\020WorkerP" +
-      "ermission\022\024\n\020WORKER_PERM_NONE\020\000\022\023\n\017WORKE" +
-      "R_PERM_TOP\020\001\022\025\n\021WORKER_PERM_ADMIN\020\002\022\026\n\022W" +
-      "ORKER_PERM_LEADER\020\004\022\027\n\023WORKER_PERM_FRONT" +
-      "ER\020\010\022\030\n\024WORKER_PERM_TRANSFER\020\020\022\030\n\024WORKER" +
-      "_PERM_SEARCHER\020 \022\027\n\023WORKER_PERM_BLACKER\020" +
-      "@*C\n\014ConnectState\022\031\n\025CONNECT_STATE_OFFLI" +
-      "NE\020\000\022\030\n\024CONNECT_STATE_ONLINE\020\001*Q\n\013Online" +
-      "State\022\025\n\021ONLINE_STATE_IDLE\020\000\022\025\n\021ONLINE_S" +
-      "TATE_BUSY\020\001\022\024\n\020ONLINE_STATE_AFK\020\002*U\n\013Wor" +
-      "kerState\022\022\n\016WORKER_OFFLINE\020\000\022\020\n\014WORKER_R" +
-      "EADY\020\001\022\017\n\013WORKER_BUSY\020\002\022\017\n\013WORKER_LOST\020\003" +
-      "*\240\001\n\017WorkerEventType\022\027\n\023WORKER_EVENT_ONL" +
-      "INE\020\000\022\025\n\021WORKER_EVENT_PING\020\001\022\026\n\022WORKER_E" +
-      "VENT_ERROR\020\002\022\025\n\021WORKER_EVENT_AWAY\020\003\022\025\n\021W" +
-      "ORKER_EVENT_BUSY\020\004\022\027\n\023WORKER_EVENT_LOGOU" +
-      "T\020\005B3\n\032com.teneasyChat.api.commonZ\025wcs/a" +
-      "pi/common;commonb\006proto3"
+      "DisableStatus\022\017\n\007role_id\030\025 \001(\005\022\021\n\trole_n" +
+      "ame\030\026 \001(\t\022\023\n\013routesItems\030\027 \003(\t\022\021\n\tmenuIt" +
+      "ems\030\030 \003(\t\"\352\001\n\013WorkerGroup\022\n\n\002id\030\001 \001(\003\022\014\n" +
+      "\004name\030\002 \001(\t\022\020\n\010priority\030\003 \001(\005\022\r\n\005count\030\004" +
+      " \001(\005\022\020\n\010parentId\030\005 \001(\003\022\030\n\005ratio\030\006 \001(\005B\t\372" +
+      "B\006\032\004\030d(\000\022\022\n\nconsult_id\030\007 \001(\r\022-\n\tdelete_a" +
+      "t\030\010 \001(\0132\032.google.protobuf.Timestamp\0221\n\016d" +
+      "isable_status\030\t \001(\0162\031.api.common.Disable" +
+      "Status\":\n\014Distribution\022\n\n\002id\030\001 \001(\003\022\014\n\004na" +
+      "me\030\002 \001(\t\022\020\n\010priority\030\003 \001(\005\":\n\014TenantCliq" +
+      "ue\022\n\n\002id\030\001 \001(\005\022\014\n\004name\030\002 \001(\t\022\020\n\010priority" +
+      "\030\003 \001(\005\"\314\002\n\020ApplyWorkerState\022\n\n\002id\030\001 \001(\005\022" +
+      "\021\n\ttenant_id\030\002 \001(\005\022\021\n\tworker_id\030\003 \001(\005\022\014\n" +
+      "\004name\030\004 \001(\t\022\031\n\021worker_group_name\030\005 \001(\t\022\037" +
+      "\n\027worker_group_child_name\030\006 \001(\t\0221\n\020onlin" +
+      "e_state_now\030\007 \001(\0162\027.api.common.OnlineSta" +
+      "te\0223\n\022online_state_apply\030\010 \001(\0162\027.api.com" +
+      "mon.OnlineState\022\023\n\013apply_state\030\t \001(\005\022\022\n\n" +
+      "apply_time\030\n \001(\003\022\022\n\ncheck_time\030\013 \001(\003\022\027\n\017" +
+      "update_username\030\014 \001(\t\"\235\005\n\024WorkerQualityS" +
+      "ession\022\n\n\002id\030\001 \001(\003\022\032\n\022binding_session_id" +
+      "\030\002 \001(\003\022\021\n\ttenant_id\030\003 \001(\005\022\022\n\nconsult_id\030" +
+      "\004 \001(\r\022\021\n\tworker_id\030\005 \001(\005\022\013\n\003uid\030\006 \001(\005\022\021\n" +
+      "\tuser_role\030\007 \001(\005\022\022\n\nuser_level\030\010 \001(\005\022/\n\n" +
+      "check_type\030\t \001(\0162\033.api.common.WorkerChec" +
+      "kType\022\027\n\017first_send_time\030\n \001(\005\022\030\n\020first_" +
+      "reply_time\030\013 \001(\005\022\030\n\020service_duration\030\014 \001" +
+      "(\005\022!\n\031client_send_message_count\030\r \001(\005\022!\n" +
+      "\031worker_send_message_count\030\016 \001(\005\022.\n\ncrea" +
+      "ted_at\030\017 \001(\0132\032.google.protobuf.Timestamp" +
+      "\022\027\n\017score_worker_id\030\020 \001(\005\022/\n\nscore_type\030" +
+      "\021 \001(\0162\033.api.common.WorkerScoreType\022.\n\nsc" +
+      "ore_time\030\022 \001(\0132\032.google.protobuf.Timesta" +
+      "mp\022\030\n\020review_worker_id\030\023 \001(\005\0226\n\021review_s" +
+      "core_type\030\024 \001(\0162\033.api.common.WorkerScore" +
+      "Type\022/\n\013review_time\030\025 \001(\0132\032.google.proto" +
+      "buf.Timestamp\"\256\002\n\013WorkerRoute\022\n\n\002id\030\001 \001(" +
+      "\005\022\014\n\004name\030\002 \001(\t\022\013\n\003url\030\003 \001(\t\022\013\n\003pid\030\004 \001(" +
+      "\005\022\014\n\004sort\030\005 \001(\005\022\016\n\006remark\030\006 \001(\t\022-\n\trole_" +
+      "type\030\007 \001(\0162\032.api.common.WorkerRoleType\022-" +
+      "\n\tcreate_at\030\010 \001(\0132\032.google.protobuf.Time" +
+      "stamp\022-\n\tupdate_at\030\t \001(\0132\032.google.protob" +
+      "uf.Timestamp\022-\n\rbindingStatus\030\n \001(\0162\026.ap" +
+      "i.common.BindStatus\022\021\n\tshow_type\030\013 \001(\005\"\242" +
+      "\001\n\nWorkerRole\022\n\n\002id\030\001 \001(\005\022\014\n\004name\030\002 \001(\t\022" +
+      "\014\n\004sort\030\003 \001(\005\022\016\n\006remark\030\004 \001(\t\022-\n\tcreate_" +
+      "at\030\005 \001(\0132\032.google.protobuf.Timestamp\022-\n\t" +
+      "update_at\030\006 \001(\0132\032.google.protobuf.Timest" +
+      "amp\"4\n\017WorkerRoleRoute\022\017\n\007role_id\030\001 \001(\005\022" +
+      "\020\n\010route_id\030\002 \001(\005\"\311\001\n\025WorkerRouteTypeRou" +
+      "tes\022-\n\trole_type\030\001 \001(\0162\032.api.common.Work" +
+      "erRoleType\022\026\n\016role_type_name\030\002 \001(\t\022-\n\rbi" +
+      "ndingStatus\030\003 \001(\0162\026.api.common.BindStatu" +
+      "s\022:\n\020route_with_items\030\004 \003(\0132 .api.common" +
+      ".WorkerRouteWithItems\"\356\001\n\024WorkerRouteWit" +
+      "hItems\022\n\n\002id\030\001 \001(\005\022\014\n\004name\030\002 \001(\t\022\013\n\003url\030" +
+      "\003 \001(\t\022\013\n\003pid\030\004 \001(\005\022\014\n\004sort\030\005 \001(\005\022\016\n\006rema" +
+      "rk\030\006 \001(\t\022-\n\trole_type\030\007 \001(\0162\032.api.common" +
+      ".WorkerRoleType\022-\n\rbindingStatus\030\010 \001(\0162\026" +
+      ".api.common.BindStatus\022&\n\005items\030\t \003(\0132\027." +
+      "api.common.WorkerRoute\"\200\001\n\nDeviceInfo\022\017\n" +
+      "\007os_type\030\001 \001(\t\022\022\n\nos_version\030\002 \001(\t\022\014\n\004ar" +
+      "ch\030\003 \001(\t\022\026\n\016kernel_version\030\004 \001(\t\022\021\n\tcpu_" +
+      "cores\030\005 \001(\005\022\024\n\014total_memory\030\006 \001(\005*\241\001\n\024Re" +
+      "sponseDurationType\022\017\n\013RDT_UNKNOWN\020\000\022\026\n\022R" +
+      "DT_QUICK_RESPONSE\020\001\022\026\n\022RDT_SHORT_RESPONS" +
+      "E\020\002\022\027\n\023RDT_MEDIUM_RESPONSE\020\003\022\025\n\021RDT_LONG" +
+      "_RESPONSE\020\004\022\030\n\024RDT_DELAYED_RESPONSE\020\005*u\n" +
+      "\031FirstResponseDurationType\022\017\n\013RRT_UNKNOW" +
+      "N\020\000\022\026\n\022RRT_QUICK_RESPONSE\020\001\022\026\n\022RRT_SHORT" +
+      "_RESPONSE\020\002\022\027\n\023RRT_MEDIUM_RESPONSE\020\003*G\n\014" +
+      "TransferType\022\016\n\nTT_UNKNOWN\020\000\022\022\n\016TT_TRANS" +
+      "FER_IN\020\001\022\023\n\017TT_TRANSFER_OUT\020\002*y\n\020Distrib" +
+      "utionType\022\030\n\024DISTRIBUTION_LEISURE\020\000\022\025\n\021D" +
+      "ISTRIBUTION_BUSY\020\001\022\030\n\024DISTRIBUTION_OFFLI" +
+      "NE\020\002\022\032\n\026DISTRIBUTION_NOT_LOGIN\020\003*\336\002\n\020Wor" +
+      "kerPermission\022\024\n\020WORKER_PERM_NONE\020\000\022\023\n\017W" +
+      "ORKER_PERM_TOP\020\001\022\025\n\021WORKER_PERM_ADMIN\020\002\022" +
+      "\026\n\022WORKER_PERM_LEADER\020\004\022\027\n\023WORKER_PERM_F" +
+      "RONTER\020\010\022\030\n\024WORKER_PERM_TRANSFER\020\020\022\030\n\024WO" +
+      "RKER_PERM_SEARCHER\020 \022\027\n\023WORKER_PERM_Qual" +
+      "ity\020@\022\037\n\032WORKER_PERM_Quality_Result\020\200\001\022\037" +
+      "\n\032WORKER_PERM_Quality_Report\020\200\002\022&\n!WORKE" +
+      "R_PERM_Quality_Worker_Result\020\200\004\022 \n\033WORKE" +
+      "R_PERM_Quality_Setting\020\200\010*C\n\014ConnectStat" +
+      "e\022\031\n\025CONNECT_STATE_OFFLINE\020\000\022\030\n\024CONNECT_" +
+      "STATE_ONLINE\020\001*Q\n\013OnlineState\022\025\n\021ONLINE_" +
+      "STATE_IDLE\020\000\022\025\n\021ONLINE_STATE_BUSY\020\001\022\024\n\020O" +
+      "NLINE_STATE_AFK\020\002*U\n\013WorkerState\022\022\n\016WORK" +
+      "ER_OFFLINE\020\000\022\020\n\014WORKER_READY\020\001\022\017\n\013WORKER" +
+      "_BUSY\020\002\022\017\n\013WORKER_LOST\020\003*\240\001\n\017WorkerEvent" +
+      "Type\022\027\n\023WORKER_EVENT_ONLINE\020\000\022\025\n\021WORKER_" +
+      "EVENT_PING\020\001\022\026\n\022WORKER_EVENT_ERROR\020\002\022\025\n\021" +
+      "WORKER_EVENT_AWAY\020\003\022\025\n\021WORKER_EVENT_BUSY" +
+      "\020\004\022\027\n\023WORKER_EVENT_LOGOUT\020\005*F\n\021SessionSo" +
+      "urceType\022\017\n\013SST_UNKNOWN\020\000\022\016\n\nSST_ASSIGN\020" +
+      "\001\022\020\n\014SST_TRANSFER\020\002*A\n\017WorkerCheckType\022\016" +
+      "\n\nWQT_COMMON\020\000\022\014\n\010WQT_MUST\020\001\022\020\n\014WQT_COMB" +
+      "INED\020\002*d\n\017WorkerScoreType\022\017\n\013WST_UNKNOWN" +
+      "\020\000\022\017\n\013PWST_ERFECT\020\001\022\016\n\nWST_NORMAL\020\002\022\014\n\010W" +
+      "ST_POOR\020\003\022\021\n\rWST_VERY_POOR\020\004*O\n\017CheckVie" +
+      "wSource\022\031\n\025WORKER_QUALITY_SOURCE\020\000\022!\n\035QU" +
+      "ALITY_WORKER_SESSION_SOURCE\020\001*N\n\022Session" +
+      "ScoreStatus\022\017\n\013SSS_UNKNOWN\020\000\022\021\n\rSSS_NOT_" +
+      "SCORE\020\001\022\024\n\020SSS_FINISH_SCORE\020\002*\207\001\n\rThresh" +
+      "oldType\022\030\n\024serve_time_threshold\020\000\022\037\n\033cus" +
+      "tomer_messages_threshold\020\001\022\035\n\031worker_mes" +
+      "sages_threshold\020\002\022\034\n\030total_messages_thre" +
+      "shold\020\003*I\n\026ChatQACheckSettingType\022\017\n\013Nor" +
+      "malCheck\020\000\022\r\n\tMustCheck\020\001\022\017\n\013CollabCheck" +
+      "\020\002*\327\001\n\035WorkerQualitySessionSortField\022\031\n\025" +
+      "QualitySessionDefault\020\000\022\022\n\016SortByChatTim" +
+      "e\020\001\022\026\n\022SortByUserMsgCount\020\002\022\030\n\024SortByWor" +
+      "kerMsgCount\020\003\022\031\n\025SortByQualityDuration\020\004" +
+      "\022\017\n\013SortByScore\020\005\022\025\n\021SortByQualityTime\020\006" +
+      "\022\022\n\016SortByPushTime\020\007*A\n\016WorkerRoleType\022\017" +
+      "\n\013WRT_DEFAULT\020\000\022\r\n\tWRT_ADMIN\020\001\022\017\n\013WRT_FR" +
+      "ONTER\020\002*N\n\027WorkerRouteSelectStatus\022\022\n\016SE" +
+      "LECT_DEFAULT\020\000\022\017\n\013SELECT_PART\020\001\022\016\n\nSELEC" +
+      "T_ALL\020\002B3\n\032com.teneasyChat.api.commonZ\025w" +
+      "cs/api/common;commonb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -10771,7 +25375,7 @@ public final class CWorker {
     internal_static_api_common_Worker_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_common_Worker_descriptor,
-        new java.lang.String[] { "WorkerId", "Account", "Group", "PermMask", "Name", "Avatar", "OnlineState", "Password", "ConnectState", "TenantId", "WorkerNimid", "WorkerNimsession", "Bneednim", "GroupChild", "Tips", "ConsultIds", "DeleteAt", "CreateAt", "UpdateAt", "DisableStatus", });
+        new java.lang.String[] { "WorkerId", "Account", "Group", "PermMask", "Name", "Avatar", "OnlineState", "Password", "ConnectState", "TenantId", "WorkerNimid", "WorkerNimsession", "Bneednim", "GroupChild", "Tips", "ConsultIds", "DeleteAt", "CreateAt", "UpdateAt", "DisableStatus", "RoleId", "RoleName", "RoutesItems", "MenuItems", });
     internal_static_api_common_WorkerGroup_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_api_common_WorkerGroup_fieldAccessorTable = new
@@ -10796,6 +25400,48 @@ public final class CWorker {
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_common_ApplyWorkerState_descriptor,
         new java.lang.String[] { "Id", "TenantId", "WorkerId", "Name", "WorkerGroupName", "WorkerGroupChildName", "OnlineStateNow", "OnlineStateApply", "ApplyState", "ApplyTime", "CheckTime", "UpdateUsername", });
+    internal_static_api_common_WorkerQualitySession_descriptor =
+      getDescriptor().getMessageTypes().get(6);
+    internal_static_api_common_WorkerQualitySession_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_api_common_WorkerQualitySession_descriptor,
+        new java.lang.String[] { "Id", "BindingSessionId", "TenantId", "ConsultId", "WorkerId", "Uid", "UserRole", "UserLevel", "CheckType", "FirstSendTime", "FirstReplyTime", "ServiceDuration", "ClientSendMessageCount", "WorkerSendMessageCount", "CreatedAt", "ScoreWorkerId", "ScoreType", "ScoreTime", "ReviewWorkerId", "ReviewScoreType", "ReviewTime", });
+    internal_static_api_common_WorkerRoute_descriptor =
+      getDescriptor().getMessageTypes().get(7);
+    internal_static_api_common_WorkerRoute_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_api_common_WorkerRoute_descriptor,
+        new java.lang.String[] { "Id", "Name", "Url", "Pid", "Sort", "Remark", "RoleType", "CreateAt", "UpdateAt", "BindingStatus", "ShowType", });
+    internal_static_api_common_WorkerRole_descriptor =
+      getDescriptor().getMessageTypes().get(8);
+    internal_static_api_common_WorkerRole_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_api_common_WorkerRole_descriptor,
+        new java.lang.String[] { "Id", "Name", "Sort", "Remark", "CreateAt", "UpdateAt", });
+    internal_static_api_common_WorkerRoleRoute_descriptor =
+      getDescriptor().getMessageTypes().get(9);
+    internal_static_api_common_WorkerRoleRoute_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_api_common_WorkerRoleRoute_descriptor,
+        new java.lang.String[] { "RoleId", "RouteId", });
+    internal_static_api_common_WorkerRouteTypeRoutes_descriptor =
+      getDescriptor().getMessageTypes().get(10);
+    internal_static_api_common_WorkerRouteTypeRoutes_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_api_common_WorkerRouteTypeRoutes_descriptor,
+        new java.lang.String[] { "RoleType", "RoleTypeName", "BindingStatus", "RouteWithItems", });
+    internal_static_api_common_WorkerRouteWithItems_descriptor =
+      getDescriptor().getMessageTypes().get(11);
+    internal_static_api_common_WorkerRouteWithItems_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_api_common_WorkerRouteWithItems_descriptor,
+        new java.lang.String[] { "Id", "Name", "Url", "Pid", "Sort", "Remark", "RoleType", "BindingStatus", "Items", });
+    internal_static_api_common_DeviceInfo_descriptor =
+      getDescriptor().getMessageTypes().get(12);
+    internal_static_api_common_DeviceInfo_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_api_common_DeviceInfo_descriptor,
+        new java.lang.String[] { "OsType", "OsVersion", "Arch", "KernelVersion", "CpuCores", "TotalMemory", });
     descriptor.resolveAllFeaturesImmutable();
     com.teneasyChat.api.common.CBase.getDescriptor();
     io.envoyproxy.pgv.validate.Validate.getDescriptor();
