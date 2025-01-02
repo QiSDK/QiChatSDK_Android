@@ -173,7 +173,15 @@ class MainActivity : AppCompatActivity(), TeneasySDKDelegate {
         uAnswer.content = uQC.build()
         withAutoReplyBuilder.addAnswers(uAnswer)
 
-        chatLib.sendMessage(sayHello, CMessage.MessageFormat.MSG_TEXT, 1, 0, withAutoReplyBuilder.build())
+        //chatLib.sendMessage(sayHello, CMessage.MessageFormat.MSG_TEXT, 1, 0, withAutoReplyBuilder.build())
+        /*
+                  "video": {
+                    "uri": "/session/tenant_230/20250102/Videos/3137333537393937343830373166696c65d41d8cd98f00b204e9800998ecf8427e/index.mp4",
+                    "hlsUri": "/session/tenant_230/20250102/Videos/3137333537393937343830373166696c65d41d8cd98f00b204e9800998ecf8427e/master.m3u8",
+                    "thumbnailUri": "/session/tenant_230/20250102/Videos/3137333537393937343830373166696c65d41d8cd98f00b204e9800998ecf8427e/thumb.jpg"
+                }
+         */
+        chatLib.sendVideoMessage("/session/tenant_230/20250102/Videos/3137333537393937343830373166696c65d41d8cd98f00b204e9800998ecf8427e/index.mp4","/session/tenant_230/20250102/Videos/3137333537393937343830373166696c65d41d8cd98f00b204e9800998ecf8427e/thumb.jpg", "/session/tenant_230/20250102/Videos/3137333537393937343830373166696c65d41d8cd98f00b204e9800998ecf8427e/master.m3u8", 1, 0, withAutoReplyBuilder.build())
         val payloadId = chatLib.payloadId
         val sendingMsg = chatLib.sendingMessage
 

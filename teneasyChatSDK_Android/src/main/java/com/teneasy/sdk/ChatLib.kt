@@ -161,8 +161,8 @@ class ChatLib constructor(cert: String, token:String, baseUrl:String = "", userI
     }
 
     /**
-     * 发送文本类型的消息
-     * @param msg   消息内容或图片url,音频url,视频url...
+     * 发送文本类型、图片类型的消息
+     * @param msg   消息内容或图片url,音频url...
      */
      fun sendMessage(msg: String, type: MessageFormat, consultId: Long, replyMsgId: Long = 0, withAutoReply: WithAutoReply? = null) {
         this.replyMsgId = replyMsgId;
@@ -172,8 +172,6 @@ class ChatLib constructor(cert: String, token:String, baseUrl:String = "", userI
           sendTextMessage(msg)
       }else if (type == MessageFormat.MSG_IMG){
           sendImageMessage(msg)
-      }else if (type == MessageFormat.MSG_VIDEO){
-          sendVideoMessage(msg)
       }else if (type == MessageFormat.MSG_VOICE){
           sendAudioMessage(msg)
       }else if (type == MessageFormat.MSG_FILE){
@@ -262,7 +260,10 @@ class ChatLib constructor(cert: String, token:String, baseUrl:String = "", userI
      * 发送视频类型的消息
      * @param url   视频地址
      */
-    private fun sendVideoMessage(url: String, thumbnail: String = "", hlsUri: String = "") {
+     fun sendVideoMessage(url: String, thumbnail: String = "", hlsUri: String = "", consultId: Long, replyMsgId: Long = 0, withAutoReply: WithAutoReply? = null) {
+        this.replyMsgId = replyMsgId;
+        this.consultId = consultId;
+        this.withAutoReply = withAutoReply
         //第一层
         val content = CMessage.MessageVideo.newBuilder()
         content.thumbnailUri = thumbnail
@@ -285,6 +286,9 @@ class ChatLib constructor(cert: String, token:String, baseUrl:String = "", userI
             msg.addAllWithAutoReplies(aList)
         }
         sendingMessage = msg.build()
+        sendingMessage?.let {
+            doSendMsg(it)
+        }
     }
 
     /**
