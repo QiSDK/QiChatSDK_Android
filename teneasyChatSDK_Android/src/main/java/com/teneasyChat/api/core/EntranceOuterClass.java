@@ -6556,6 +6556,1951 @@ public final class EntranceOuterClass {
 
   }
 
+  public interface GetUnreadWorkerMessageCountRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:api.core.GetUnreadWorkerMessageCountRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * 商户id
+     * </pre>
+     *
+     * <code>int64 tenant_id = 1;</code>
+     * @return The tenantId.
+     */
+    long getTenantId();
+
+    /**
+     * <pre>
+     * 用户id
+     * </pre>
+     *
+     * <code>int32 uid = 2;</code>
+     * @return The uid.
+     */
+    int getUid();
+  }
+  /**
+   * Protobuf type {@code api.core.GetUnreadWorkerMessageCountRequest}
+   */
+  public static final class GetUnreadWorkerMessageCountRequest extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:api.core.GetUnreadWorkerMessageCountRequest)
+      GetUnreadWorkerMessageCountRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 26,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        GetUnreadWorkerMessageCountRequest.class.getName());
+    }
+    // Use GetUnreadWorkerMessageCountRequest.newBuilder() to construct.
+    private GetUnreadWorkerMessageCountRequest(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private GetUnreadWorkerMessageCountRequest() {
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.teneasyChat.api.core.EntranceOuterClass.internal_static_api_core_GetUnreadWorkerMessageCountRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.teneasyChat.api.core.EntranceOuterClass.internal_static_api_core_GetUnreadWorkerMessageCountRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.teneasyChat.api.core.EntranceOuterClass.GetUnreadWorkerMessageCountRequest.class, com.teneasyChat.api.core.EntranceOuterClass.GetUnreadWorkerMessageCountRequest.Builder.class);
+    }
+
+    public static final int TENANT_ID_FIELD_NUMBER = 1;
+    private long tenantId_ = 0L;
+    /**
+     * <pre>
+     * 商户id
+     * </pre>
+     *
+     * <code>int64 tenant_id = 1;</code>
+     * @return The tenantId.
+     */
+    @java.lang.Override
+    public long getTenantId() {
+      return tenantId_;
+    }
+
+    public static final int UID_FIELD_NUMBER = 2;
+    private int uid_ = 0;
+    /**
+     * <pre>
+     * 用户id
+     * </pre>
+     *
+     * <code>int32 uid = 2;</code>
+     * @return The uid.
+     */
+    @java.lang.Override
+    public int getUid() {
+      return uid_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (tenantId_ != 0L) {
+        output.writeInt64(1, tenantId_);
+      }
+      if (uid_ != 0) {
+        output.writeInt32(2, uid_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (tenantId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(1, tenantId_);
+      }
+      if (uid_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, uid_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.teneasyChat.api.core.EntranceOuterClass.GetUnreadWorkerMessageCountRequest)) {
+        return super.equals(obj);
+      }
+      com.teneasyChat.api.core.EntranceOuterClass.GetUnreadWorkerMessageCountRequest other = (com.teneasyChat.api.core.EntranceOuterClass.GetUnreadWorkerMessageCountRequest) obj;
+
+      if (getTenantId()
+          != other.getTenantId()) return false;
+      if (getUid()
+          != other.getUid()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + TENANT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getTenantId());
+      hash = (37 * hash) + UID_FIELD_NUMBER;
+      hash = (53 * hash) + getUid();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.teneasyChat.api.core.EntranceOuterClass.GetUnreadWorkerMessageCountRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.core.EntranceOuterClass.GetUnreadWorkerMessageCountRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.EntranceOuterClass.GetUnreadWorkerMessageCountRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.core.EntranceOuterClass.GetUnreadWorkerMessageCountRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.EntranceOuterClass.GetUnreadWorkerMessageCountRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.core.EntranceOuterClass.GetUnreadWorkerMessageCountRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.EntranceOuterClass.GetUnreadWorkerMessageCountRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.teneasyChat.api.core.EntranceOuterClass.GetUnreadWorkerMessageCountRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.teneasyChat.api.core.EntranceOuterClass.GetUnreadWorkerMessageCountRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.teneasyChat.api.core.EntranceOuterClass.GetUnreadWorkerMessageCountRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.EntranceOuterClass.GetUnreadWorkerMessageCountRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.teneasyChat.api.core.EntranceOuterClass.GetUnreadWorkerMessageCountRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.teneasyChat.api.core.EntranceOuterClass.GetUnreadWorkerMessageCountRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code api.core.GetUnreadWorkerMessageCountRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:api.core.GetUnreadWorkerMessageCountRequest)
+        com.teneasyChat.api.core.EntranceOuterClass.GetUnreadWorkerMessageCountRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.teneasyChat.api.core.EntranceOuterClass.internal_static_api_core_GetUnreadWorkerMessageCountRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.teneasyChat.api.core.EntranceOuterClass.internal_static_api_core_GetUnreadWorkerMessageCountRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.teneasyChat.api.core.EntranceOuterClass.GetUnreadWorkerMessageCountRequest.class, com.teneasyChat.api.core.EntranceOuterClass.GetUnreadWorkerMessageCountRequest.Builder.class);
+      }
+
+      // Construct using com.teneasyChat.api.core.EntranceOuterClass.GetUnreadWorkerMessageCountRequest.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        tenantId_ = 0L;
+        uid_ = 0;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.teneasyChat.api.core.EntranceOuterClass.internal_static_api_core_GetUnreadWorkerMessageCountRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.core.EntranceOuterClass.GetUnreadWorkerMessageCountRequest getDefaultInstanceForType() {
+        return com.teneasyChat.api.core.EntranceOuterClass.GetUnreadWorkerMessageCountRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.core.EntranceOuterClass.GetUnreadWorkerMessageCountRequest build() {
+        com.teneasyChat.api.core.EntranceOuterClass.GetUnreadWorkerMessageCountRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.core.EntranceOuterClass.GetUnreadWorkerMessageCountRequest buildPartial() {
+        com.teneasyChat.api.core.EntranceOuterClass.GetUnreadWorkerMessageCountRequest result = new com.teneasyChat.api.core.EntranceOuterClass.GetUnreadWorkerMessageCountRequest(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.teneasyChat.api.core.EntranceOuterClass.GetUnreadWorkerMessageCountRequest result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.tenantId_ = tenantId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.uid_ = uid_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.teneasyChat.api.core.EntranceOuterClass.GetUnreadWorkerMessageCountRequest) {
+          return mergeFrom((com.teneasyChat.api.core.EntranceOuterClass.GetUnreadWorkerMessageCountRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.teneasyChat.api.core.EntranceOuterClass.GetUnreadWorkerMessageCountRequest other) {
+        if (other == com.teneasyChat.api.core.EntranceOuterClass.GetUnreadWorkerMessageCountRequest.getDefaultInstance()) return this;
+        if (other.getTenantId() != 0L) {
+          setTenantId(other.getTenantId());
+        }
+        if (other.getUid() != 0) {
+          setUid(other.getUid());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                tenantId_ = input.readInt64();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 16: {
+                uid_ = input.readInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private long tenantId_ ;
+      /**
+       * <pre>
+       * 商户id
+       * </pre>
+       *
+       * <code>int64 tenant_id = 1;</code>
+       * @return The tenantId.
+       */
+      @java.lang.Override
+      public long getTenantId() {
+        return tenantId_;
+      }
+      /**
+       * <pre>
+       * 商户id
+       * </pre>
+       *
+       * <code>int64 tenant_id = 1;</code>
+       * @param value The tenantId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTenantId(long value) {
+
+        tenantId_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 商户id
+       * </pre>
+       *
+       * <code>int64 tenant_id = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTenantId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        tenantId_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private int uid_ ;
+      /**
+       * <pre>
+       * 用户id
+       * </pre>
+       *
+       * <code>int32 uid = 2;</code>
+       * @return The uid.
+       */
+      @java.lang.Override
+      public int getUid() {
+        return uid_;
+      }
+      /**
+       * <pre>
+       * 用户id
+       * </pre>
+       *
+       * <code>int32 uid = 2;</code>
+       * @param value The uid to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUid(int value) {
+
+        uid_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 用户id
+       * </pre>
+       *
+       * <code>int32 uid = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUid() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        uid_ = 0;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:api.core.GetUnreadWorkerMessageCountRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:api.core.GetUnreadWorkerMessageCountRequest)
+    private static final com.teneasyChat.api.core.EntranceOuterClass.GetUnreadWorkerMessageCountRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.teneasyChat.api.core.EntranceOuterClass.GetUnreadWorkerMessageCountRequest();
+    }
+
+    public static com.teneasyChat.api.core.EntranceOuterClass.GetUnreadWorkerMessageCountRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<GetUnreadWorkerMessageCountRequest>
+        PARSER = new com.google.protobuf.AbstractParser<GetUnreadWorkerMessageCountRequest>() {
+      @java.lang.Override
+      public GetUnreadWorkerMessageCountRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<GetUnreadWorkerMessageCountRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<GetUnreadWorkerMessageCountRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.teneasyChat.api.core.EntranceOuterClass.GetUnreadWorkerMessageCountRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface GetUnreadWorkerMessageCountResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:api.core.GetUnreadWorkerMessageCountResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * 咨询组未读
+     * </pre>
+     *
+     * <code>repeated .api.core.ConsultUnread consult_unreads = 1;</code>
+     */
+    java.util.List<com.teneasyChat.api.core.EntranceOuterClass.ConsultUnread> 
+        getConsultUnreadsList();
+    /**
+     * <pre>
+     * 咨询组未读
+     * </pre>
+     *
+     * <code>repeated .api.core.ConsultUnread consult_unreads = 1;</code>
+     */
+    com.teneasyChat.api.core.EntranceOuterClass.ConsultUnread getConsultUnreads(int index);
+    /**
+     * <pre>
+     * 咨询组未读
+     * </pre>
+     *
+     * <code>repeated .api.core.ConsultUnread consult_unreads = 1;</code>
+     */
+    int getConsultUnreadsCount();
+    /**
+     * <pre>
+     * 咨询组未读
+     * </pre>
+     *
+     * <code>repeated .api.core.ConsultUnread consult_unreads = 1;</code>
+     */
+    java.util.List<? extends com.teneasyChat.api.core.EntranceOuterClass.ConsultUnreadOrBuilder> 
+        getConsultUnreadsOrBuilderList();
+    /**
+     * <pre>
+     * 咨询组未读
+     * </pre>
+     *
+     * <code>repeated .api.core.ConsultUnread consult_unreads = 1;</code>
+     */
+    com.teneasyChat.api.core.EntranceOuterClass.ConsultUnreadOrBuilder getConsultUnreadsOrBuilder(
+        int index);
+  }
+  /**
+   * Protobuf type {@code api.core.GetUnreadWorkerMessageCountResponse}
+   */
+  public static final class GetUnreadWorkerMessageCountResponse extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:api.core.GetUnreadWorkerMessageCountResponse)
+      GetUnreadWorkerMessageCountResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 26,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        GetUnreadWorkerMessageCountResponse.class.getName());
+    }
+    // Use GetUnreadWorkerMessageCountResponse.newBuilder() to construct.
+    private GetUnreadWorkerMessageCountResponse(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private GetUnreadWorkerMessageCountResponse() {
+      consultUnreads_ = java.util.Collections.emptyList();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.teneasyChat.api.core.EntranceOuterClass.internal_static_api_core_GetUnreadWorkerMessageCountResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.teneasyChat.api.core.EntranceOuterClass.internal_static_api_core_GetUnreadWorkerMessageCountResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.teneasyChat.api.core.EntranceOuterClass.GetUnreadWorkerMessageCountResponse.class, com.teneasyChat.api.core.EntranceOuterClass.GetUnreadWorkerMessageCountResponse.Builder.class);
+    }
+
+    public static final int CONSULT_UNREADS_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
+    private java.util.List<com.teneasyChat.api.core.EntranceOuterClass.ConsultUnread> consultUnreads_;
+    /**
+     * <pre>
+     * 咨询组未读
+     * </pre>
+     *
+     * <code>repeated .api.core.ConsultUnread consult_unreads = 1;</code>
+     */
+    @java.lang.Override
+    public java.util.List<com.teneasyChat.api.core.EntranceOuterClass.ConsultUnread> getConsultUnreadsList() {
+      return consultUnreads_;
+    }
+    /**
+     * <pre>
+     * 咨询组未读
+     * </pre>
+     *
+     * <code>repeated .api.core.ConsultUnread consult_unreads = 1;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends com.teneasyChat.api.core.EntranceOuterClass.ConsultUnreadOrBuilder> 
+        getConsultUnreadsOrBuilderList() {
+      return consultUnreads_;
+    }
+    /**
+     * <pre>
+     * 咨询组未读
+     * </pre>
+     *
+     * <code>repeated .api.core.ConsultUnread consult_unreads = 1;</code>
+     */
+    @java.lang.Override
+    public int getConsultUnreadsCount() {
+      return consultUnreads_.size();
+    }
+    /**
+     * <pre>
+     * 咨询组未读
+     * </pre>
+     *
+     * <code>repeated .api.core.ConsultUnread consult_unreads = 1;</code>
+     */
+    @java.lang.Override
+    public com.teneasyChat.api.core.EntranceOuterClass.ConsultUnread getConsultUnreads(int index) {
+      return consultUnreads_.get(index);
+    }
+    /**
+     * <pre>
+     * 咨询组未读
+     * </pre>
+     *
+     * <code>repeated .api.core.ConsultUnread consult_unreads = 1;</code>
+     */
+    @java.lang.Override
+    public com.teneasyChat.api.core.EntranceOuterClass.ConsultUnreadOrBuilder getConsultUnreadsOrBuilder(
+        int index) {
+      return consultUnreads_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < consultUnreads_.size(); i++) {
+        output.writeMessage(1, consultUnreads_.get(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < consultUnreads_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, consultUnreads_.get(i));
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.teneasyChat.api.core.EntranceOuterClass.GetUnreadWorkerMessageCountResponse)) {
+        return super.equals(obj);
+      }
+      com.teneasyChat.api.core.EntranceOuterClass.GetUnreadWorkerMessageCountResponse other = (com.teneasyChat.api.core.EntranceOuterClass.GetUnreadWorkerMessageCountResponse) obj;
+
+      if (!getConsultUnreadsList()
+          .equals(other.getConsultUnreadsList())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getConsultUnreadsCount() > 0) {
+        hash = (37 * hash) + CONSULT_UNREADS_FIELD_NUMBER;
+        hash = (53 * hash) + getConsultUnreadsList().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.teneasyChat.api.core.EntranceOuterClass.GetUnreadWorkerMessageCountResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.core.EntranceOuterClass.GetUnreadWorkerMessageCountResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.EntranceOuterClass.GetUnreadWorkerMessageCountResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.core.EntranceOuterClass.GetUnreadWorkerMessageCountResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.EntranceOuterClass.GetUnreadWorkerMessageCountResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.core.EntranceOuterClass.GetUnreadWorkerMessageCountResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.EntranceOuterClass.GetUnreadWorkerMessageCountResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.teneasyChat.api.core.EntranceOuterClass.GetUnreadWorkerMessageCountResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.teneasyChat.api.core.EntranceOuterClass.GetUnreadWorkerMessageCountResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.teneasyChat.api.core.EntranceOuterClass.GetUnreadWorkerMessageCountResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.EntranceOuterClass.GetUnreadWorkerMessageCountResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.teneasyChat.api.core.EntranceOuterClass.GetUnreadWorkerMessageCountResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.teneasyChat.api.core.EntranceOuterClass.GetUnreadWorkerMessageCountResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code api.core.GetUnreadWorkerMessageCountResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:api.core.GetUnreadWorkerMessageCountResponse)
+        com.teneasyChat.api.core.EntranceOuterClass.GetUnreadWorkerMessageCountResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.teneasyChat.api.core.EntranceOuterClass.internal_static_api_core_GetUnreadWorkerMessageCountResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.teneasyChat.api.core.EntranceOuterClass.internal_static_api_core_GetUnreadWorkerMessageCountResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.teneasyChat.api.core.EntranceOuterClass.GetUnreadWorkerMessageCountResponse.class, com.teneasyChat.api.core.EntranceOuterClass.GetUnreadWorkerMessageCountResponse.Builder.class);
+      }
+
+      // Construct using com.teneasyChat.api.core.EntranceOuterClass.GetUnreadWorkerMessageCountResponse.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        if (consultUnreadsBuilder_ == null) {
+          consultUnreads_ = java.util.Collections.emptyList();
+        } else {
+          consultUnreads_ = null;
+          consultUnreadsBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.teneasyChat.api.core.EntranceOuterClass.internal_static_api_core_GetUnreadWorkerMessageCountResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.core.EntranceOuterClass.GetUnreadWorkerMessageCountResponse getDefaultInstanceForType() {
+        return com.teneasyChat.api.core.EntranceOuterClass.GetUnreadWorkerMessageCountResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.core.EntranceOuterClass.GetUnreadWorkerMessageCountResponse build() {
+        com.teneasyChat.api.core.EntranceOuterClass.GetUnreadWorkerMessageCountResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.core.EntranceOuterClass.GetUnreadWorkerMessageCountResponse buildPartial() {
+        com.teneasyChat.api.core.EntranceOuterClass.GetUnreadWorkerMessageCountResponse result = new com.teneasyChat.api.core.EntranceOuterClass.GetUnreadWorkerMessageCountResponse(this);
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(com.teneasyChat.api.core.EntranceOuterClass.GetUnreadWorkerMessageCountResponse result) {
+        if (consultUnreadsBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            consultUnreads_ = java.util.Collections.unmodifiableList(consultUnreads_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.consultUnreads_ = consultUnreads_;
+        } else {
+          result.consultUnreads_ = consultUnreadsBuilder_.build();
+        }
+      }
+
+      private void buildPartial0(com.teneasyChat.api.core.EntranceOuterClass.GetUnreadWorkerMessageCountResponse result) {
+        int from_bitField0_ = bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.teneasyChat.api.core.EntranceOuterClass.GetUnreadWorkerMessageCountResponse) {
+          return mergeFrom((com.teneasyChat.api.core.EntranceOuterClass.GetUnreadWorkerMessageCountResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.teneasyChat.api.core.EntranceOuterClass.GetUnreadWorkerMessageCountResponse other) {
+        if (other == com.teneasyChat.api.core.EntranceOuterClass.GetUnreadWorkerMessageCountResponse.getDefaultInstance()) return this;
+        if (consultUnreadsBuilder_ == null) {
+          if (!other.consultUnreads_.isEmpty()) {
+            if (consultUnreads_.isEmpty()) {
+              consultUnreads_ = other.consultUnreads_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureConsultUnreadsIsMutable();
+              consultUnreads_.addAll(other.consultUnreads_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.consultUnreads_.isEmpty()) {
+            if (consultUnreadsBuilder_.isEmpty()) {
+              consultUnreadsBuilder_.dispose();
+              consultUnreadsBuilder_ = null;
+              consultUnreads_ = other.consultUnreads_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              consultUnreadsBuilder_ = 
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
+                   getConsultUnreadsFieldBuilder() : null;
+            } else {
+              consultUnreadsBuilder_.addAllMessages(other.consultUnreads_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                com.teneasyChat.api.core.EntranceOuterClass.ConsultUnread m =
+                    input.readMessage(
+                        com.teneasyChat.api.core.EntranceOuterClass.ConsultUnread.parser(),
+                        extensionRegistry);
+                if (consultUnreadsBuilder_ == null) {
+                  ensureConsultUnreadsIsMutable();
+                  consultUnreads_.add(m);
+                } else {
+                  consultUnreadsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 10
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private java.util.List<com.teneasyChat.api.core.EntranceOuterClass.ConsultUnread> consultUnreads_ =
+        java.util.Collections.emptyList();
+      private void ensureConsultUnreadsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          consultUnreads_ = new java.util.ArrayList<com.teneasyChat.api.core.EntranceOuterClass.ConsultUnread>(consultUnreads_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilder<
+          com.teneasyChat.api.core.EntranceOuterClass.ConsultUnread, com.teneasyChat.api.core.EntranceOuterClass.ConsultUnread.Builder, com.teneasyChat.api.core.EntranceOuterClass.ConsultUnreadOrBuilder> consultUnreadsBuilder_;
+
+      /**
+       * <pre>
+       * 咨询组未读
+       * </pre>
+       *
+       * <code>repeated .api.core.ConsultUnread consult_unreads = 1;</code>
+       */
+      public java.util.List<com.teneasyChat.api.core.EntranceOuterClass.ConsultUnread> getConsultUnreadsList() {
+        if (consultUnreadsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(consultUnreads_);
+        } else {
+          return consultUnreadsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <pre>
+       * 咨询组未读
+       * </pre>
+       *
+       * <code>repeated .api.core.ConsultUnread consult_unreads = 1;</code>
+       */
+      public int getConsultUnreadsCount() {
+        if (consultUnreadsBuilder_ == null) {
+          return consultUnreads_.size();
+        } else {
+          return consultUnreadsBuilder_.getCount();
+        }
+      }
+      /**
+       * <pre>
+       * 咨询组未读
+       * </pre>
+       *
+       * <code>repeated .api.core.ConsultUnread consult_unreads = 1;</code>
+       */
+      public com.teneasyChat.api.core.EntranceOuterClass.ConsultUnread getConsultUnreads(int index) {
+        if (consultUnreadsBuilder_ == null) {
+          return consultUnreads_.get(index);
+        } else {
+          return consultUnreadsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       * 咨询组未读
+       * </pre>
+       *
+       * <code>repeated .api.core.ConsultUnread consult_unreads = 1;</code>
+       */
+      public Builder setConsultUnreads(
+          int index, com.teneasyChat.api.core.EntranceOuterClass.ConsultUnread value) {
+        if (consultUnreadsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureConsultUnreadsIsMutable();
+          consultUnreads_.set(index, value);
+          onChanged();
+        } else {
+          consultUnreadsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 咨询组未读
+       * </pre>
+       *
+       * <code>repeated .api.core.ConsultUnread consult_unreads = 1;</code>
+       */
+      public Builder setConsultUnreads(
+          int index, com.teneasyChat.api.core.EntranceOuterClass.ConsultUnread.Builder builderForValue) {
+        if (consultUnreadsBuilder_ == null) {
+          ensureConsultUnreadsIsMutable();
+          consultUnreads_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          consultUnreadsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 咨询组未读
+       * </pre>
+       *
+       * <code>repeated .api.core.ConsultUnread consult_unreads = 1;</code>
+       */
+      public Builder addConsultUnreads(com.teneasyChat.api.core.EntranceOuterClass.ConsultUnread value) {
+        if (consultUnreadsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureConsultUnreadsIsMutable();
+          consultUnreads_.add(value);
+          onChanged();
+        } else {
+          consultUnreadsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 咨询组未读
+       * </pre>
+       *
+       * <code>repeated .api.core.ConsultUnread consult_unreads = 1;</code>
+       */
+      public Builder addConsultUnreads(
+          int index, com.teneasyChat.api.core.EntranceOuterClass.ConsultUnread value) {
+        if (consultUnreadsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureConsultUnreadsIsMutable();
+          consultUnreads_.add(index, value);
+          onChanged();
+        } else {
+          consultUnreadsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 咨询组未读
+       * </pre>
+       *
+       * <code>repeated .api.core.ConsultUnread consult_unreads = 1;</code>
+       */
+      public Builder addConsultUnreads(
+          com.teneasyChat.api.core.EntranceOuterClass.ConsultUnread.Builder builderForValue) {
+        if (consultUnreadsBuilder_ == null) {
+          ensureConsultUnreadsIsMutable();
+          consultUnreads_.add(builderForValue.build());
+          onChanged();
+        } else {
+          consultUnreadsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 咨询组未读
+       * </pre>
+       *
+       * <code>repeated .api.core.ConsultUnread consult_unreads = 1;</code>
+       */
+      public Builder addConsultUnreads(
+          int index, com.teneasyChat.api.core.EntranceOuterClass.ConsultUnread.Builder builderForValue) {
+        if (consultUnreadsBuilder_ == null) {
+          ensureConsultUnreadsIsMutable();
+          consultUnreads_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          consultUnreadsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 咨询组未读
+       * </pre>
+       *
+       * <code>repeated .api.core.ConsultUnread consult_unreads = 1;</code>
+       */
+      public Builder addAllConsultUnreads(
+          java.lang.Iterable<? extends com.teneasyChat.api.core.EntranceOuterClass.ConsultUnread> values) {
+        if (consultUnreadsBuilder_ == null) {
+          ensureConsultUnreadsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, consultUnreads_);
+          onChanged();
+        } else {
+          consultUnreadsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 咨询组未读
+       * </pre>
+       *
+       * <code>repeated .api.core.ConsultUnread consult_unreads = 1;</code>
+       */
+      public Builder clearConsultUnreads() {
+        if (consultUnreadsBuilder_ == null) {
+          consultUnreads_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          consultUnreadsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 咨询组未读
+       * </pre>
+       *
+       * <code>repeated .api.core.ConsultUnread consult_unreads = 1;</code>
+       */
+      public Builder removeConsultUnreads(int index) {
+        if (consultUnreadsBuilder_ == null) {
+          ensureConsultUnreadsIsMutable();
+          consultUnreads_.remove(index);
+          onChanged();
+        } else {
+          consultUnreadsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 咨询组未读
+       * </pre>
+       *
+       * <code>repeated .api.core.ConsultUnread consult_unreads = 1;</code>
+       */
+      public com.teneasyChat.api.core.EntranceOuterClass.ConsultUnread.Builder getConsultUnreadsBuilder(
+          int index) {
+        return getConsultUnreadsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * 咨询组未读
+       * </pre>
+       *
+       * <code>repeated .api.core.ConsultUnread consult_unreads = 1;</code>
+       */
+      public com.teneasyChat.api.core.EntranceOuterClass.ConsultUnreadOrBuilder getConsultUnreadsOrBuilder(
+          int index) {
+        if (consultUnreadsBuilder_ == null) {
+          return consultUnreads_.get(index);  } else {
+          return consultUnreadsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * 咨询组未读
+       * </pre>
+       *
+       * <code>repeated .api.core.ConsultUnread consult_unreads = 1;</code>
+       */
+      public java.util.List<? extends com.teneasyChat.api.core.EntranceOuterClass.ConsultUnreadOrBuilder> 
+           getConsultUnreadsOrBuilderList() {
+        if (consultUnreadsBuilder_ != null) {
+          return consultUnreadsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(consultUnreads_);
+        }
+      }
+      /**
+       * <pre>
+       * 咨询组未读
+       * </pre>
+       *
+       * <code>repeated .api.core.ConsultUnread consult_unreads = 1;</code>
+       */
+      public com.teneasyChat.api.core.EntranceOuterClass.ConsultUnread.Builder addConsultUnreadsBuilder() {
+        return getConsultUnreadsFieldBuilder().addBuilder(
+            com.teneasyChat.api.core.EntranceOuterClass.ConsultUnread.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * 咨询组未读
+       * </pre>
+       *
+       * <code>repeated .api.core.ConsultUnread consult_unreads = 1;</code>
+       */
+      public com.teneasyChat.api.core.EntranceOuterClass.ConsultUnread.Builder addConsultUnreadsBuilder(
+          int index) {
+        return getConsultUnreadsFieldBuilder().addBuilder(
+            index, com.teneasyChat.api.core.EntranceOuterClass.ConsultUnread.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * 咨询组未读
+       * </pre>
+       *
+       * <code>repeated .api.core.ConsultUnread consult_unreads = 1;</code>
+       */
+      public java.util.List<com.teneasyChat.api.core.EntranceOuterClass.ConsultUnread.Builder> 
+           getConsultUnreadsBuilderList() {
+        return getConsultUnreadsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilder<
+          com.teneasyChat.api.core.EntranceOuterClass.ConsultUnread, com.teneasyChat.api.core.EntranceOuterClass.ConsultUnread.Builder, com.teneasyChat.api.core.EntranceOuterClass.ConsultUnreadOrBuilder> 
+          getConsultUnreadsFieldBuilder() {
+        if (consultUnreadsBuilder_ == null) {
+          consultUnreadsBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
+              com.teneasyChat.api.core.EntranceOuterClass.ConsultUnread, com.teneasyChat.api.core.EntranceOuterClass.ConsultUnread.Builder, com.teneasyChat.api.core.EntranceOuterClass.ConsultUnreadOrBuilder>(
+                  consultUnreads_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          consultUnreads_ = null;
+        }
+        return consultUnreadsBuilder_;
+      }
+
+      // @@protoc_insertion_point(builder_scope:api.core.GetUnreadWorkerMessageCountResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:api.core.GetUnreadWorkerMessageCountResponse)
+    private static final com.teneasyChat.api.core.EntranceOuterClass.GetUnreadWorkerMessageCountResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.teneasyChat.api.core.EntranceOuterClass.GetUnreadWorkerMessageCountResponse();
+    }
+
+    public static com.teneasyChat.api.core.EntranceOuterClass.GetUnreadWorkerMessageCountResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<GetUnreadWorkerMessageCountResponse>
+        PARSER = new com.google.protobuf.AbstractParser<GetUnreadWorkerMessageCountResponse>() {
+      @java.lang.Override
+      public GetUnreadWorkerMessageCountResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<GetUnreadWorkerMessageCountResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<GetUnreadWorkerMessageCountResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.teneasyChat.api.core.EntranceOuterClass.GetUnreadWorkerMessageCountResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ConsultUnreadOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:api.core.ConsultUnread)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * 咨询id
+     * </pre>
+     *
+     * <code>uint32 consult_id = 1;</code>
+     * @return The consultId.
+     */
+    int getConsultId();
+
+    /**
+     * <pre>
+     * 未读统计
+     * </pre>
+     *
+     * <code>int32 unread_message_count = 2;</code>
+     * @return The unreadMessageCount.
+     */
+    int getUnreadMessageCount();
+  }
+  /**
+   * Protobuf type {@code api.core.ConsultUnread}
+   */
+  public static final class ConsultUnread extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:api.core.ConsultUnread)
+      ConsultUnreadOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 26,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        ConsultUnread.class.getName());
+    }
+    // Use ConsultUnread.newBuilder() to construct.
+    private ConsultUnread(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private ConsultUnread() {
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.teneasyChat.api.core.EntranceOuterClass.internal_static_api_core_ConsultUnread_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.teneasyChat.api.core.EntranceOuterClass.internal_static_api_core_ConsultUnread_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.teneasyChat.api.core.EntranceOuterClass.ConsultUnread.class, com.teneasyChat.api.core.EntranceOuterClass.ConsultUnread.Builder.class);
+    }
+
+    public static final int CONSULT_ID_FIELD_NUMBER = 1;
+    private int consultId_ = 0;
+    /**
+     * <pre>
+     * 咨询id
+     * </pre>
+     *
+     * <code>uint32 consult_id = 1;</code>
+     * @return The consultId.
+     */
+    @java.lang.Override
+    public int getConsultId() {
+      return consultId_;
+    }
+
+    public static final int UNREAD_MESSAGE_COUNT_FIELD_NUMBER = 2;
+    private int unreadMessageCount_ = 0;
+    /**
+     * <pre>
+     * 未读统计
+     * </pre>
+     *
+     * <code>int32 unread_message_count = 2;</code>
+     * @return The unreadMessageCount.
+     */
+    @java.lang.Override
+    public int getUnreadMessageCount() {
+      return unreadMessageCount_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (consultId_ != 0) {
+        output.writeUInt32(1, consultId_);
+      }
+      if (unreadMessageCount_ != 0) {
+        output.writeInt32(2, unreadMessageCount_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (consultId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(1, consultId_);
+      }
+      if (unreadMessageCount_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, unreadMessageCount_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.teneasyChat.api.core.EntranceOuterClass.ConsultUnread)) {
+        return super.equals(obj);
+      }
+      com.teneasyChat.api.core.EntranceOuterClass.ConsultUnread other = (com.teneasyChat.api.core.EntranceOuterClass.ConsultUnread) obj;
+
+      if (getConsultId()
+          != other.getConsultId()) return false;
+      if (getUnreadMessageCount()
+          != other.getUnreadMessageCount()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + CONSULT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getConsultId();
+      hash = (37 * hash) + UNREAD_MESSAGE_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getUnreadMessageCount();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.teneasyChat.api.core.EntranceOuterClass.ConsultUnread parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.core.EntranceOuterClass.ConsultUnread parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.EntranceOuterClass.ConsultUnread parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.core.EntranceOuterClass.ConsultUnread parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.EntranceOuterClass.ConsultUnread parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.core.EntranceOuterClass.ConsultUnread parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.EntranceOuterClass.ConsultUnread parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.teneasyChat.api.core.EntranceOuterClass.ConsultUnread parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.teneasyChat.api.core.EntranceOuterClass.ConsultUnread parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.teneasyChat.api.core.EntranceOuterClass.ConsultUnread parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.EntranceOuterClass.ConsultUnread parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.teneasyChat.api.core.EntranceOuterClass.ConsultUnread parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.teneasyChat.api.core.EntranceOuterClass.ConsultUnread prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code api.core.ConsultUnread}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:api.core.ConsultUnread)
+        com.teneasyChat.api.core.EntranceOuterClass.ConsultUnreadOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.teneasyChat.api.core.EntranceOuterClass.internal_static_api_core_ConsultUnread_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.teneasyChat.api.core.EntranceOuterClass.internal_static_api_core_ConsultUnread_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.teneasyChat.api.core.EntranceOuterClass.ConsultUnread.class, com.teneasyChat.api.core.EntranceOuterClass.ConsultUnread.Builder.class);
+      }
+
+      // Construct using com.teneasyChat.api.core.EntranceOuterClass.ConsultUnread.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        consultId_ = 0;
+        unreadMessageCount_ = 0;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.teneasyChat.api.core.EntranceOuterClass.internal_static_api_core_ConsultUnread_descriptor;
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.core.EntranceOuterClass.ConsultUnread getDefaultInstanceForType() {
+        return com.teneasyChat.api.core.EntranceOuterClass.ConsultUnread.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.core.EntranceOuterClass.ConsultUnread build() {
+        com.teneasyChat.api.core.EntranceOuterClass.ConsultUnread result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.core.EntranceOuterClass.ConsultUnread buildPartial() {
+        com.teneasyChat.api.core.EntranceOuterClass.ConsultUnread result = new com.teneasyChat.api.core.EntranceOuterClass.ConsultUnread(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.teneasyChat.api.core.EntranceOuterClass.ConsultUnread result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.consultId_ = consultId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.unreadMessageCount_ = unreadMessageCount_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.teneasyChat.api.core.EntranceOuterClass.ConsultUnread) {
+          return mergeFrom((com.teneasyChat.api.core.EntranceOuterClass.ConsultUnread)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.teneasyChat.api.core.EntranceOuterClass.ConsultUnread other) {
+        if (other == com.teneasyChat.api.core.EntranceOuterClass.ConsultUnread.getDefaultInstance()) return this;
+        if (other.getConsultId() != 0) {
+          setConsultId(other.getConsultId());
+        }
+        if (other.getUnreadMessageCount() != 0) {
+          setUnreadMessageCount(other.getUnreadMessageCount());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                consultId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 16: {
+                unreadMessageCount_ = input.readInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private int consultId_ ;
+      /**
+       * <pre>
+       * 咨询id
+       * </pre>
+       *
+       * <code>uint32 consult_id = 1;</code>
+       * @return The consultId.
+       */
+      @java.lang.Override
+      public int getConsultId() {
+        return consultId_;
+      }
+      /**
+       * <pre>
+       * 咨询id
+       * </pre>
+       *
+       * <code>uint32 consult_id = 1;</code>
+       * @param value The consultId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setConsultId(int value) {
+
+        consultId_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 咨询id
+       * </pre>
+       *
+       * <code>uint32 consult_id = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearConsultId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        consultId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int unreadMessageCount_ ;
+      /**
+       * <pre>
+       * 未读统计
+       * </pre>
+       *
+       * <code>int32 unread_message_count = 2;</code>
+       * @return The unreadMessageCount.
+       */
+      @java.lang.Override
+      public int getUnreadMessageCount() {
+        return unreadMessageCount_;
+      }
+      /**
+       * <pre>
+       * 未读统计
+       * </pre>
+       *
+       * <code>int32 unread_message_count = 2;</code>
+       * @param value The unreadMessageCount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUnreadMessageCount(int value) {
+
+        unreadMessageCount_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 未读统计
+       * </pre>
+       *
+       * <code>int32 unread_message_count = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUnreadMessageCount() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        unreadMessageCount_ = 0;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:api.core.ConsultUnread)
+    }
+
+    // @@protoc_insertion_point(class_scope:api.core.ConsultUnread)
+    private static final com.teneasyChat.api.core.EntranceOuterClass.ConsultUnread DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.teneasyChat.api.core.EntranceOuterClass.ConsultUnread();
+    }
+
+    public static com.teneasyChat.api.core.EntranceOuterClass.ConsultUnread getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ConsultUnread>
+        PARSER = new com.google.protobuf.AbstractParser<ConsultUnread>() {
+      @java.lang.Override
+      public ConsultUnread parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<ConsultUnread> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ConsultUnread> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.teneasyChat.api.core.EntranceOuterClass.ConsultUnread getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_api_core_EntranceQueryResponse_descriptor;
   private static final 
@@ -6611,6 +8556,21 @@ public final class EntranceOuterClass {
   private static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_api_core_EntranceExistsRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_api_core_GetUnreadWorkerMessageCountRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_api_core_GetUnreadWorkerMessageCountRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_api_core_GetUnreadWorkerMessageCountResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_api_core_GetUnreadWorkerMessageCountResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_api_core_ConsultUnread_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_api_core_ConsultUnread_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -6644,38 +8604,48 @@ public final class EntranceOuterClass {
       "t\0227\n\021distribution_type\030\003 \003(\0162\034.api.commo" +
       "n.DistributionType\"L\n\025EntranceExistsRequ" +
       "est\022\025\n\013entrance_id\030\001 \001(\005H\000\022\023\n\tclient_id\030" +
-      "\002 \001(\003H\000B\007\n\005based2\367\010\n\010Entrance\022}\n\030GetDist" +
-      "ributionMechanism\022\026.google.protobuf.Empt" +
-      "y\032!.api.core.GetDistributionResponse\"&\272\276" +
-      "\031\"\010\334\004\030\001\322\014\032get-distribution-mechanism\022\211\001\n" +
-      "\031SaveDistributionMechanism\022!.api.core.Sa" +
-      "veDistributionRequest\032 .api.core.Downloa" +
-      "dDomainResponse\"\'\272\276\031#\010\334\004\030\001\322\014\033save-distri" +
-      "bution-mechanism\022g\n\016DownloadDomain\022\026.goo" +
-      "gle.protobuf.Empty\032 .api.core.DownloadDo" +
-      "mainResponse\"\033\272\276\031\027\010\334\004\030\001\322\014\017download-domai" +
-      "n\022d\n\rQueryEntrance\022\026.google.protobuf.Emp" +
-      "ty\032\037.api.core.EntranceQueryResponse\"\032\272\276\031" +
-      "\026\010\330\004\030\001\322\014\016query-entrance\022b\n\017QueryEntrance" +
-      "V1\022\020.api.common.Page\032\037.api.core.Entrance" +
-      "QueryResponse\"\034\272\276\031\030\010\330\004\030\001\322\014\020query-entranc" +
-      "ev1\022p\n\016CreateEntrance\022\037.api.core.CreateE" +
-      "ntranceRequest\032 .api.core.CreateEntrance" +
-      "Response\"\033\272\276\031\027\010\331\004\030\001\322\014\017create-entrance\022f\n" +
-      "\016UpdateEntrance\022\037.api.core.UpdateEntranc" +
-      "eRequest\032\026.google.protobuf.Empty\"\033\272\276\031\027\010\332" +
-      "\004\030\001\322\014\017update-entrance\022f\n\016DeleteEntrance\022" +
-      "\037.api.core.DeleteEntranceRequest\032\026.googl" +
-      "e.protobuf.Empty\"\033\272\276\031\027\010\333\004\030\001\322\014\017delete-ent" +
-      "rance\022Y\n\006Exists\022\037.api.core.EntranceExist" +
-      "sRequest\032\026.google.protobuf.Empty\"\026\272\276\031\022\010\334" +
-      "\004\030\001\312\014\001\004\322\014\006exists\022i\n\017DisableEntrance\022 .ap" +
-      "i.core.DisableEntranceRequest\032\026.google.p" +
-      "rotobuf.Empty\"\034\272\276\031\030\010\335\004\030\001\322\014\020disable-entra" +
-      "nce\032%\272\276\031!\272\006\010entrance\312\014\001\020\322\014\017tenant/entran" +
-      "ceBL\n\030com.teneasyChat.api.coreZ\021wcs/api/" +
-      "core;core\272\276\031\033\242\006\013mango,bland\262\006\n2022-12-12" +
-      "b\006proto3"
+      "\002 \001(\003H\000B\007\n\005based\"D\n\"GetUnreadWorkerMessa" +
+      "geCountRequest\022\021\n\ttenant_id\030\001 \001(\003\022\013\n\003uid" +
+      "\030\002 \001(\005\"W\n#GetUnreadWorkerMessageCountRes" +
+      "ponse\0220\n\017consult_unreads\030\001 \003(\0132\027.api.cor" +
+      "e.ConsultUnread\"A\n\rConsultUnread\022\022\n\ncons" +
+      "ult_id\030\001 \001(\r\022\034\n\024unread_message_count\030\002 \001" +
+      "(\0052\262\n\n\010Entrance\022}\n\030GetDistributionMechan" +
+      "ism\022\026.google.protobuf.Empty\032!.api.core.G" +
+      "etDistributionResponse\"&\272\276\031\"\010\334\004\030\001\322\014\032get-" +
+      "distribution-mechanism\022\211\001\n\031SaveDistribut" +
+      "ionMechanism\022!.api.core.SaveDistribution" +
+      "Request\032 .api.core.DownloadDomainRespons" +
+      "e\"\'\272\276\031#\010\334\004\030\001\322\014\033save-distribution-mechani" +
+      "sm\022g\n\016DownloadDomain\022\026.google.protobuf.E" +
+      "mpty\032 .api.core.DownloadDomainResponse\"\033" +
+      "\272\276\031\027\010\334\004\030\001\322\014\017download-domain\022d\n\rQueryEntr" +
+      "ance\022\026.google.protobuf.Empty\032\037.api.core." +
+      "EntranceQueryResponse\"\032\272\276\031\026\010\330\004\030\001\322\014\016query" +
+      "-entrance\022b\n\017QueryEntranceV1\022\020.api.commo" +
+      "n.Page\032\037.api.core.EntranceQueryResponse\"" +
+      "\034\272\276\031\030\010\330\004\030\001\322\014\020query-entrancev1\022p\n\016CreateE" +
+      "ntrance\022\037.api.core.CreateEntranceRequest" +
+      "\032 .api.core.CreateEntranceResponse\"\033\272\276\031\027" +
+      "\010\331\004\030\001\322\014\017create-entrance\022f\n\016UpdateEntranc" +
+      "e\022\037.api.core.UpdateEntranceRequest\032\026.goo" +
+      "gle.protobuf.Empty\"\033\272\276\031\027\010\332\004\030\001\322\014\017update-e" +
+      "ntrance\022f\n\016DeleteEntrance\022\037.api.core.Del" +
+      "eteEntranceRequest\032\026.google.protobuf.Emp" +
+      "ty\"\033\272\276\031\027\010\333\004\030\001\322\014\017delete-entrance\022Y\n\006Exist" +
+      "s\022\037.api.core.EntranceExistsRequest\032\026.goo" +
+      "gle.protobuf.Empty\"\026\272\276\031\022\010\334\004\030\001\312\014\001\004\322\014\006exis" +
+      "ts\022i\n\017DisableEntrance\022 .api.core.Disable" +
+      "EntranceRequest\032\026.google.protobuf.Empty\"" +
+      "\034\272\276\031\030\010\335\004\030\001\322\014\020disable-entrance\022\270\001\n\033GetUnr" +
+      "eadWorkerMessageCount\022,.api.core.GetUnre" +
+      "adWorkerMessageCountRequest\032-.api.core.G" +
+      "etUnreadWorkerMessageCountResponse\"<\272\276\0318" +
+      "\010\222\004\030\001\262\006\n2024-11-01\312\014\001\002\322\014\037get-unread-work" +
+      "er-message-count\032%\272\276\031!\272\006\010entrance\312\014\001\020\322\014\017" +
+      "tenant/entranceBL\n\030com.teneasyChat.api.c" +
+      "oreZ\021wcs/api/core;core\272\276\031\033\242\006\013mango,bland" +
+      "\262\006\n2022-12-12b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -6754,6 +8724,24 @@ public final class EntranceOuterClass {
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_core_EntranceExistsRequest_descriptor,
         new java.lang.String[] { "EntranceId", "ClientId", "Based", });
+    internal_static_api_core_GetUnreadWorkerMessageCountRequest_descriptor =
+      getDescriptor().getMessageTypes().get(11);
+    internal_static_api_core_GetUnreadWorkerMessageCountRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_api_core_GetUnreadWorkerMessageCountRequest_descriptor,
+        new java.lang.String[] { "TenantId", "Uid", });
+    internal_static_api_core_GetUnreadWorkerMessageCountResponse_descriptor =
+      getDescriptor().getMessageTypes().get(12);
+    internal_static_api_core_GetUnreadWorkerMessageCountResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_api_core_GetUnreadWorkerMessageCountResponse_descriptor,
+        new java.lang.String[] { "ConsultUnreads", });
+    internal_static_api_core_ConsultUnread_descriptor =
+      getDescriptor().getMessageTypes().get(13);
+    internal_static_api_core_ConsultUnread_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_api_core_ConsultUnread_descriptor,
+        new java.lang.String[] { "ConsultId", "UnreadMessageCount", });
     descriptor.resolveAllFeaturesImmutable();
     com.teneasyChat.api.Option.getDescriptor();
     com.google.protobuf.EmptyProto.getDescriptor();

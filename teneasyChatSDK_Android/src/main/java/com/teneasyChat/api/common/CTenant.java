@@ -24,6 +24,1206 @@ public final class CTenant {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
+  /**
+   * <pre>
+   * 通用配置状态
+   * </pre>
+   *
+   * Protobuf enum {@code api.common.CommonConfigStatus}
+   */
+  public enum CommonConfigStatus
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <pre>
+     * &#64;String(未知)
+     * </pre>
+     *
+     * <code>VCS_UNKNOWN = 0;</code>
+     */
+    VCS_UNKNOWN(0),
+    /**
+     * <pre>
+     * &#64;String(启用)
+     * </pre>
+     *
+     * <code>VCS_ENABLE = 1;</code>
+     */
+    VCS_ENABLE(1),
+    /**
+     * <pre>
+     * &#64;String(禁用)
+     * </pre>
+     *
+     * <code>VCS_DISABLE = 2;</code>
+     */
+    VCS_DISABLE(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 26,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        CommonConfigStatus.class.getName());
+    }
+    /**
+     * <pre>
+     * &#64;String(未知)
+     * </pre>
+     *
+     * <code>VCS_UNKNOWN = 0;</code>
+     */
+    public static final int VCS_UNKNOWN_VALUE = 0;
+    /**
+     * <pre>
+     * &#64;String(启用)
+     * </pre>
+     *
+     * <code>VCS_ENABLE = 1;</code>
+     */
+    public static final int VCS_ENABLE_VALUE = 1;
+    /**
+     * <pre>
+     * &#64;String(禁用)
+     * </pre>
+     *
+     * <code>VCS_DISABLE = 2;</code>
+     */
+    public static final int VCS_DISABLE_VALUE = 2;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static CommonConfigStatus valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static CommonConfigStatus forNumber(int value) {
+      switch (value) {
+        case 0: return VCS_UNKNOWN;
+        case 1: return VCS_ENABLE;
+        case 2: return VCS_DISABLE;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<CommonConfigStatus>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        CommonConfigStatus> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<CommonConfigStatus>() {
+            public CommonConfigStatus findValueByNumber(int number) {
+              return CommonConfigStatus.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return com.teneasyChat.api.common.CTenant.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final CommonConfigStatus[] VALUES = values();
+
+    public static CommonConfigStatus valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private CommonConfigStatus(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:api.common.CommonConfigStatus)
+  }
+
+  /**
+   * <pre>
+   * 是否超管
+   * </pre>
+   *
+   * Protobuf enum {@code api.common.TenantIsSuper}
+   */
+  public enum TenantIsSuper
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <pre>
+     * 默认
+     * </pre>
+     *
+     * <code>IS_SUPER_DEFAULT = 0;</code>
+     */
+    IS_SUPER_DEFAULT(0),
+    /**
+     * <pre>
+     * 否
+     * </pre>
+     *
+     * <code>IS_SUPER_NO = 1;</code>
+     */
+    IS_SUPER_NO(1),
+    /**
+     * <pre>
+     * 是
+     * </pre>
+     *
+     * <code>IS_SUPER_YES = 2;</code>
+     */
+    IS_SUPER_YES(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 26,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        TenantIsSuper.class.getName());
+    }
+    /**
+     * <pre>
+     * 默认
+     * </pre>
+     *
+     * <code>IS_SUPER_DEFAULT = 0;</code>
+     */
+    public static final int IS_SUPER_DEFAULT_VALUE = 0;
+    /**
+     * <pre>
+     * 否
+     * </pre>
+     *
+     * <code>IS_SUPER_NO = 1;</code>
+     */
+    public static final int IS_SUPER_NO_VALUE = 1;
+    /**
+     * <pre>
+     * 是
+     * </pre>
+     *
+     * <code>IS_SUPER_YES = 2;</code>
+     */
+    public static final int IS_SUPER_YES_VALUE = 2;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static TenantIsSuper valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static TenantIsSuper forNumber(int value) {
+      switch (value) {
+        case 0: return IS_SUPER_DEFAULT;
+        case 1: return IS_SUPER_NO;
+        case 2: return IS_SUPER_YES;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<TenantIsSuper>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        TenantIsSuper> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<TenantIsSuper>() {
+            public TenantIsSuper findValueByNumber(int number) {
+              return TenantIsSuper.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return com.teneasyChat.api.common.CTenant.getDescriptor().getEnumTypes().get(1);
+    }
+
+    private static final TenantIsSuper[] VALUES = values();
+
+    public static TenantIsSuper valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private TenantIsSuper(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:api.common.TenantIsSuper)
+  }
+
+  /**
+   * <pre>
+   * 商户复制类型
+   * </pre>
+   *
+   * Protobuf enum {@code api.common.TenantCopyType}
+   */
+  public enum TenantCopyType
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <pre>
+     * 未知
+     * </pre>
+     *
+     * <code>TCT_UNKNOWN = 0;</code>
+     */
+    TCT_UNKNOWN(0),
+    /**
+     * <pre>
+     * uid
+     * </pre>
+     *
+     * <code>TCT_UID = 1;</code>
+     */
+    TCT_UID(1),
+    /**
+     * <pre>
+     * 用户账号
+     * </pre>
+     *
+     * <code>TCT_ACCOUNT = 2;</code>
+     */
+    TCT_ACCOUNT(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 26,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        TenantCopyType.class.getName());
+    }
+    /**
+     * <pre>
+     * 未知
+     * </pre>
+     *
+     * <code>TCT_UNKNOWN = 0;</code>
+     */
+    public static final int TCT_UNKNOWN_VALUE = 0;
+    /**
+     * <pre>
+     * uid
+     * </pre>
+     *
+     * <code>TCT_UID = 1;</code>
+     */
+    public static final int TCT_UID_VALUE = 1;
+    /**
+     * <pre>
+     * 用户账号
+     * </pre>
+     *
+     * <code>TCT_ACCOUNT = 2;</code>
+     */
+    public static final int TCT_ACCOUNT_VALUE = 2;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static TenantCopyType valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static TenantCopyType forNumber(int value) {
+      switch (value) {
+        case 0: return TCT_UNKNOWN;
+        case 1: return TCT_UID;
+        case 2: return TCT_ACCOUNT;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<TenantCopyType>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        TenantCopyType> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<TenantCopyType>() {
+            public TenantCopyType findValueByNumber(int number) {
+              return TenantCopyType.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return com.teneasyChat.api.common.CTenant.getDescriptor().getEnumTypes().get(2);
+    }
+
+    private static final TenantCopyType[] VALUES = values();
+
+    public static TenantCopyType valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private TenantCopyType(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:api.common.TenantCopyType)
+  }
+
+  public interface WSConnCustomOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:api.common.WSConnCustom)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * 用户账号
+     * </pre>
+     *
+     * <code>string username = 1;</code>
+     * @return The username.
+     */
+    java.lang.String getUsername();
+    /**
+     * <pre>
+     * 用户账号
+     * </pre>
+     *
+     * <code>string username = 1;</code>
+     * @return The bytes for username.
+     */
+    com.google.protobuf.ByteString
+        getUsernameBytes();
+
+    /**
+     * <pre>
+     * 用户平台 1-IOS 2-安卓端;
+     * </pre>
+     *
+     * <code>int32 platform = 2;</code>
+     * @return The platform.
+     */
+    int getPlatform();
+
+    /**
+     * <pre>
+     * 用户层级标识
+     * </pre>
+     *
+     * <code>uint32 userlevel = 3;</code>
+     * @return The userlevel.
+     */
+    int getUserlevel();
+  }
+  /**
+   * <pre>
+   * ws建立连接请求扩展字段
+   * </pre>
+   *
+   * Protobuf type {@code api.common.WSConnCustom}
+   */
+  public static final class WSConnCustom extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:api.common.WSConnCustom)
+      WSConnCustomOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 26,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        WSConnCustom.class.getName());
+    }
+    // Use WSConnCustom.newBuilder() to construct.
+    private WSConnCustom(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private WSConnCustom() {
+      username_ = "";
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.teneasyChat.api.common.CTenant.internal_static_api_common_WSConnCustom_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.teneasyChat.api.common.CTenant.internal_static_api_common_WSConnCustom_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.teneasyChat.api.common.CTenant.WSConnCustom.class, com.teneasyChat.api.common.CTenant.WSConnCustom.Builder.class);
+    }
+
+    public static final int USERNAME_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object username_ = "";
+    /**
+     * <pre>
+     * 用户账号
+     * </pre>
+     *
+     * <code>string username = 1;</code>
+     * @return The username.
+     */
+    @java.lang.Override
+    public java.lang.String getUsername() {
+      java.lang.Object ref = username_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        username_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * 用户账号
+     * </pre>
+     *
+     * <code>string username = 1;</code>
+     * @return The bytes for username.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getUsernameBytes() {
+      java.lang.Object ref = username_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        username_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PLATFORM_FIELD_NUMBER = 2;
+    private int platform_ = 0;
+    /**
+     * <pre>
+     * 用户平台 1-IOS 2-安卓端;
+     * </pre>
+     *
+     * <code>int32 platform = 2;</code>
+     * @return The platform.
+     */
+    @java.lang.Override
+    public int getPlatform() {
+      return platform_;
+    }
+
+    public static final int USERLEVEL_FIELD_NUMBER = 3;
+    private int userlevel_ = 0;
+    /**
+     * <pre>
+     * 用户层级标识
+     * </pre>
+     *
+     * <code>uint32 userlevel = 3;</code>
+     * @return The userlevel.
+     */
+    @java.lang.Override
+    public int getUserlevel() {
+      return userlevel_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(username_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 1, username_);
+      }
+      if (platform_ != 0) {
+        output.writeInt32(2, platform_);
+      }
+      if (userlevel_ != 0) {
+        output.writeUInt32(3, userlevel_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(username_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(1, username_);
+      }
+      if (platform_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, platform_);
+      }
+      if (userlevel_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(3, userlevel_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.teneasyChat.api.common.CTenant.WSConnCustom)) {
+        return super.equals(obj);
+      }
+      com.teneasyChat.api.common.CTenant.WSConnCustom other = (com.teneasyChat.api.common.CTenant.WSConnCustom) obj;
+
+      if (!getUsername()
+          .equals(other.getUsername())) return false;
+      if (getPlatform()
+          != other.getPlatform()) return false;
+      if (getUserlevel()
+          != other.getUserlevel()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + USERNAME_FIELD_NUMBER;
+      hash = (53 * hash) + getUsername().hashCode();
+      hash = (37 * hash) + PLATFORM_FIELD_NUMBER;
+      hash = (53 * hash) + getPlatform();
+      hash = (37 * hash) + USERLEVEL_FIELD_NUMBER;
+      hash = (53 * hash) + getUserlevel();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.teneasyChat.api.common.CTenant.WSConnCustom parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.common.CTenant.WSConnCustom parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.common.CTenant.WSConnCustom parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.common.CTenant.WSConnCustom parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.common.CTenant.WSConnCustom parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.common.CTenant.WSConnCustom parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.common.CTenant.WSConnCustom parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.teneasyChat.api.common.CTenant.WSConnCustom parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.teneasyChat.api.common.CTenant.WSConnCustom parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.teneasyChat.api.common.CTenant.WSConnCustom parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.teneasyChat.api.common.CTenant.WSConnCustom parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.teneasyChat.api.common.CTenant.WSConnCustom parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.teneasyChat.api.common.CTenant.WSConnCustom prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * ws建立连接请求扩展字段
+     * </pre>
+     *
+     * Protobuf type {@code api.common.WSConnCustom}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:api.common.WSConnCustom)
+        com.teneasyChat.api.common.CTenant.WSConnCustomOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.teneasyChat.api.common.CTenant.internal_static_api_common_WSConnCustom_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.teneasyChat.api.common.CTenant.internal_static_api_common_WSConnCustom_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.teneasyChat.api.common.CTenant.WSConnCustom.class, com.teneasyChat.api.common.CTenant.WSConnCustom.Builder.class);
+      }
+
+      // Construct using com.teneasyChat.api.common.CTenant.WSConnCustom.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        username_ = "";
+        platform_ = 0;
+        userlevel_ = 0;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.teneasyChat.api.common.CTenant.internal_static_api_common_WSConnCustom_descriptor;
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.common.CTenant.WSConnCustom getDefaultInstanceForType() {
+        return com.teneasyChat.api.common.CTenant.WSConnCustom.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.common.CTenant.WSConnCustom build() {
+        com.teneasyChat.api.common.CTenant.WSConnCustom result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.common.CTenant.WSConnCustom buildPartial() {
+        com.teneasyChat.api.common.CTenant.WSConnCustom result = new com.teneasyChat.api.common.CTenant.WSConnCustom(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.teneasyChat.api.common.CTenant.WSConnCustom result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.username_ = username_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.platform_ = platform_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.userlevel_ = userlevel_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.teneasyChat.api.common.CTenant.WSConnCustom) {
+          return mergeFrom((com.teneasyChat.api.common.CTenant.WSConnCustom)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.teneasyChat.api.common.CTenant.WSConnCustom other) {
+        if (other == com.teneasyChat.api.common.CTenant.WSConnCustom.getDefaultInstance()) return this;
+        if (!other.getUsername().isEmpty()) {
+          username_ = other.username_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (other.getPlatform() != 0) {
+          setPlatform(other.getPlatform());
+        }
+        if (other.getUserlevel() != 0) {
+          setUserlevel(other.getUserlevel());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                username_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              case 16: {
+                platform_ = input.readInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
+              case 24: {
+                userlevel_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 24
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object username_ = "";
+      /**
+       * <pre>
+       * 用户账号
+       * </pre>
+       *
+       * <code>string username = 1;</code>
+       * @return The username.
+       */
+      public java.lang.String getUsername() {
+        java.lang.Object ref = username_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          username_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * 用户账号
+       * </pre>
+       *
+       * <code>string username = 1;</code>
+       * @return The bytes for username.
+       */
+      public com.google.protobuf.ByteString
+          getUsernameBytes() {
+        java.lang.Object ref = username_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          username_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * 用户账号
+       * </pre>
+       *
+       * <code>string username = 1;</code>
+       * @param value The username to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUsername(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        username_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 用户账号
+       * </pre>
+       *
+       * <code>string username = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUsername() {
+        username_ = getDefaultInstance().getUsername();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 用户账号
+       * </pre>
+       *
+       * <code>string username = 1;</code>
+       * @param value The bytes for username to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUsernameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        username_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private int platform_ ;
+      /**
+       * <pre>
+       * 用户平台 1-IOS 2-安卓端;
+       * </pre>
+       *
+       * <code>int32 platform = 2;</code>
+       * @return The platform.
+       */
+      @java.lang.Override
+      public int getPlatform() {
+        return platform_;
+      }
+      /**
+       * <pre>
+       * 用户平台 1-IOS 2-安卓端;
+       * </pre>
+       *
+       * <code>int32 platform = 2;</code>
+       * @param value The platform to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPlatform(int value) {
+
+        platform_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 用户平台 1-IOS 2-安卓端;
+       * </pre>
+       *
+       * <code>int32 platform = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPlatform() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        platform_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int userlevel_ ;
+      /**
+       * <pre>
+       * 用户层级标识
+       * </pre>
+       *
+       * <code>uint32 userlevel = 3;</code>
+       * @return The userlevel.
+       */
+      @java.lang.Override
+      public int getUserlevel() {
+        return userlevel_;
+      }
+      /**
+       * <pre>
+       * 用户层级标识
+       * </pre>
+       *
+       * <code>uint32 userlevel = 3;</code>
+       * @param value The userlevel to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUserlevel(int value) {
+
+        userlevel_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 用户层级标识
+       * </pre>
+       *
+       * <code>uint32 userlevel = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUserlevel() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        userlevel_ = 0;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:api.common.WSConnCustom)
+    }
+
+    // @@protoc_insertion_point(class_scope:api.common.WSConnCustom)
+    private static final com.teneasyChat.api.common.CTenant.WSConnCustom DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.teneasyChat.api.common.CTenant.WSConnCustom();
+    }
+
+    public static com.teneasyChat.api.common.CTenant.WSConnCustom getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<WSConnCustom>
+        PARSER = new com.google.protobuf.AbstractParser<WSConnCustom>() {
+      @java.lang.Override
+      public WSConnCustom parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<WSConnCustom> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<WSConnCustom> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.teneasyChat.api.common.CTenant.WSConnCustom getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface TenantsLineGroupOrBuilder extends
       // @@protoc_insertion_point(interface_extends:api.common.TenantsLineGroup)
       com.google.protobuf.MessageOrBuilder {
@@ -2418,11 +3618,7321 @@ public final class CTenant {
 
   }
 
+  public interface TenantRouteOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:api.common.TenantRoute)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>int32 id = 1;</code>
+     * @return The id.
+     */
+    int getId();
+
+    /**
+     * <pre>
+     * name
+     * </pre>
+     *
+     * <code>string name = 2;</code>
+     * @return The name.
+     */
+    java.lang.String getName();
+    /**
+     * <pre>
+     * name
+     * </pre>
+     *
+     * <code>string name = 2;</code>
+     * @return The bytes for name.
+     */
+    com.google.protobuf.ByteString
+        getNameBytes();
+
+    /**
+     * <pre>
+     * url
+     * </pre>
+     *
+     * <code>string url = 3;</code>
+     * @return The url.
+     */
+    java.lang.String getUrl();
+    /**
+     * <pre>
+     * url
+     * </pre>
+     *
+     * <code>string url = 3;</code>
+     * @return The bytes for url.
+     */
+    com.google.protobuf.ByteString
+        getUrlBytes();
+
+    /**
+     * <pre>
+     * pid
+     * </pre>
+     *
+     * <code>int32 pid = 4;</code>
+     * @return The pid.
+     */
+    int getPid();
+
+    /**
+     * <pre>
+     * sort
+     * </pre>
+     *
+     * <code>int32 sort = 5;</code>
+     * @return The sort.
+     */
+    int getSort();
+
+    /**
+     * <pre>
+     * 创建时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_at = 6;</code>
+     * @return Whether the createAt field is set.
+     */
+    boolean hasCreateAt();
+    /**
+     * <pre>
+     * 创建时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_at = 6;</code>
+     * @return The createAt.
+     */
+    com.google.protobuf.Timestamp getCreateAt();
+    /**
+     * <pre>
+     * 创建时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_at = 6;</code>
+     */
+    com.google.protobuf.TimestampOrBuilder getCreateAtOrBuilder();
+
+    /**
+     * <pre>
+     * 更新时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_at = 7;</code>
+     * @return Whether the updateAt field is set.
+     */
+    boolean hasUpdateAt();
+    /**
+     * <pre>
+     * 更新时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_at = 7;</code>
+     * @return The updateAt.
+     */
+    com.google.protobuf.Timestamp getUpdateAt();
+    /**
+     * <pre>
+     * 更新时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_at = 7;</code>
+     */
+    com.google.protobuf.TimestampOrBuilder getUpdateAtOrBuilder();
+
+    /**
+     * <pre>
+     * is_bind
+     * </pre>
+     *
+     * <code>.api.common.BindStatus bindingStatus = 8;</code>
+     * @return The enum numeric value on the wire for bindingStatus.
+     */
+    int getBindingStatusValue();
+    /**
+     * <pre>
+     * is_bind
+     * </pre>
+     *
+     * <code>.api.common.BindStatus bindingStatus = 8;</code>
+     * @return The bindingStatus.
+     */
+    com.teneasyChat.api.common.CBase.BindStatus getBindingStatus();
+  }
+  /**
+   * <pre>
+   * 商户后台路由
+   * </pre>
+   *
+   * Protobuf type {@code api.common.TenantRoute}
+   */
+  public static final class TenantRoute extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:api.common.TenantRoute)
+      TenantRouteOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 26,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        TenantRoute.class.getName());
+    }
+    // Use TenantRoute.newBuilder() to construct.
+    private TenantRoute(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private TenantRoute() {
+      name_ = "";
+      url_ = "";
+      bindingStatus_ = 0;
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.teneasyChat.api.common.CTenant.internal_static_api_common_TenantRoute_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.teneasyChat.api.common.CTenant.internal_static_api_common_TenantRoute_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.teneasyChat.api.common.CTenant.TenantRoute.class, com.teneasyChat.api.common.CTenant.TenantRoute.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int ID_FIELD_NUMBER = 1;
+    private int id_ = 0;
+    /**
+     * <code>int32 id = 1;</code>
+     * @return The id.
+     */
+    @java.lang.Override
+    public int getId() {
+      return id_;
+    }
+
+    public static final int NAME_FIELD_NUMBER = 2;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object name_ = "";
+    /**
+     * <pre>
+     * name
+     * </pre>
+     *
+     * <code>string name = 2;</code>
+     * @return The name.
+     */
+    @java.lang.Override
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * name
+     * </pre>
+     *
+     * <code>string name = 2;</code>
+     * @return The bytes for name.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int URL_FIELD_NUMBER = 3;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object url_ = "";
+    /**
+     * <pre>
+     * url
+     * </pre>
+     *
+     * <code>string url = 3;</code>
+     * @return The url.
+     */
+    @java.lang.Override
+    public java.lang.String getUrl() {
+      java.lang.Object ref = url_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        url_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * url
+     * </pre>
+     *
+     * <code>string url = 3;</code>
+     * @return The bytes for url.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getUrlBytes() {
+      java.lang.Object ref = url_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        url_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PID_FIELD_NUMBER = 4;
+    private int pid_ = 0;
+    /**
+     * <pre>
+     * pid
+     * </pre>
+     *
+     * <code>int32 pid = 4;</code>
+     * @return The pid.
+     */
+    @java.lang.Override
+    public int getPid() {
+      return pid_;
+    }
+
+    public static final int SORT_FIELD_NUMBER = 5;
+    private int sort_ = 0;
+    /**
+     * <pre>
+     * sort
+     * </pre>
+     *
+     * <code>int32 sort = 5;</code>
+     * @return The sort.
+     */
+    @java.lang.Override
+    public int getSort() {
+      return sort_;
+    }
+
+    public static final int CREATE_AT_FIELD_NUMBER = 6;
+    private com.google.protobuf.Timestamp createAt_;
+    /**
+     * <pre>
+     * 创建时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_at = 6;</code>
+     * @return Whether the createAt field is set.
+     */
+    @java.lang.Override
+    public boolean hasCreateAt() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     * <pre>
+     * 创建时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_at = 6;</code>
+     * @return The createAt.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Timestamp getCreateAt() {
+      return createAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createAt_;
+    }
+    /**
+     * <pre>
+     * 创建时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_at = 6;</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.TimestampOrBuilder getCreateAtOrBuilder() {
+      return createAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createAt_;
+    }
+
+    public static final int UPDATE_AT_FIELD_NUMBER = 7;
+    private com.google.protobuf.Timestamp updateAt_;
+    /**
+     * <pre>
+     * 更新时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_at = 7;</code>
+     * @return Whether the updateAt field is set.
+     */
+    @java.lang.Override
+    public boolean hasUpdateAt() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     * <pre>
+     * 更新时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_at = 7;</code>
+     * @return The updateAt.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Timestamp getUpdateAt() {
+      return updateAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateAt_;
+    }
+    /**
+     * <pre>
+     * 更新时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_at = 7;</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.TimestampOrBuilder getUpdateAtOrBuilder() {
+      return updateAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateAt_;
+    }
+
+    public static final int BINDINGSTATUS_FIELD_NUMBER = 8;
+    private int bindingStatus_ = 0;
+    /**
+     * <pre>
+     * is_bind
+     * </pre>
+     *
+     * <code>.api.common.BindStatus bindingStatus = 8;</code>
+     * @return The enum numeric value on the wire for bindingStatus.
+     */
+    @java.lang.Override public int getBindingStatusValue() {
+      return bindingStatus_;
+    }
+    /**
+     * <pre>
+     * is_bind
+     * </pre>
+     *
+     * <code>.api.common.BindStatus bindingStatus = 8;</code>
+     * @return The bindingStatus.
+     */
+    @java.lang.Override public com.teneasyChat.api.common.CBase.BindStatus getBindingStatus() {
+      com.teneasyChat.api.common.CBase.BindStatus result = com.teneasyChat.api.common.CBase.BindStatus.forNumber(bindingStatus_);
+      return result == null ? com.teneasyChat.api.common.CBase.BindStatus.UNRECOGNIZED : result;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (id_ != 0) {
+        output.writeInt32(1, id_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 2, name_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(url_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 3, url_);
+      }
+      if (pid_ != 0) {
+        output.writeInt32(4, pid_);
+      }
+      if (sort_ != 0) {
+        output.writeInt32(5, sort_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(6, getCreateAt());
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        output.writeMessage(7, getUpdateAt());
+      }
+      if (bindingStatus_ != com.teneasyChat.api.common.CBase.BindStatus.BIND_STATUS_DEFAULT.getNumber()) {
+        output.writeEnum(8, bindingStatus_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (id_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, id_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(2, name_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(url_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(3, url_);
+      }
+      if (pid_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(4, pid_);
+      }
+      if (sort_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(5, sort_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(6, getCreateAt());
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(7, getUpdateAt());
+      }
+      if (bindingStatus_ != com.teneasyChat.api.common.CBase.BindStatus.BIND_STATUS_DEFAULT.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(8, bindingStatus_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.teneasyChat.api.common.CTenant.TenantRoute)) {
+        return super.equals(obj);
+      }
+      com.teneasyChat.api.common.CTenant.TenantRoute other = (com.teneasyChat.api.common.CTenant.TenantRoute) obj;
+
+      if (getId()
+          != other.getId()) return false;
+      if (!getName()
+          .equals(other.getName())) return false;
+      if (!getUrl()
+          .equals(other.getUrl())) return false;
+      if (getPid()
+          != other.getPid()) return false;
+      if (getSort()
+          != other.getSort()) return false;
+      if (hasCreateAt() != other.hasCreateAt()) return false;
+      if (hasCreateAt()) {
+        if (!getCreateAt()
+            .equals(other.getCreateAt())) return false;
+      }
+      if (hasUpdateAt() != other.hasUpdateAt()) return false;
+      if (hasUpdateAt()) {
+        if (!getUpdateAt()
+            .equals(other.getUpdateAt())) return false;
+      }
+      if (bindingStatus_ != other.bindingStatus_) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId();
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+      hash = (37 * hash) + URL_FIELD_NUMBER;
+      hash = (53 * hash) + getUrl().hashCode();
+      hash = (37 * hash) + PID_FIELD_NUMBER;
+      hash = (53 * hash) + getPid();
+      hash = (37 * hash) + SORT_FIELD_NUMBER;
+      hash = (53 * hash) + getSort();
+      if (hasCreateAt()) {
+        hash = (37 * hash) + CREATE_AT_FIELD_NUMBER;
+        hash = (53 * hash) + getCreateAt().hashCode();
+      }
+      if (hasUpdateAt()) {
+        hash = (37 * hash) + UPDATE_AT_FIELD_NUMBER;
+        hash = (53 * hash) + getUpdateAt().hashCode();
+      }
+      hash = (37 * hash) + BINDINGSTATUS_FIELD_NUMBER;
+      hash = (53 * hash) + bindingStatus_;
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.teneasyChat.api.common.CTenant.TenantRoute parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.common.CTenant.TenantRoute parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.common.CTenant.TenantRoute parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.common.CTenant.TenantRoute parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.common.CTenant.TenantRoute parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.common.CTenant.TenantRoute parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.common.CTenant.TenantRoute parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.teneasyChat.api.common.CTenant.TenantRoute parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.teneasyChat.api.common.CTenant.TenantRoute parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.teneasyChat.api.common.CTenant.TenantRoute parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.teneasyChat.api.common.CTenant.TenantRoute parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.teneasyChat.api.common.CTenant.TenantRoute parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.teneasyChat.api.common.CTenant.TenantRoute prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * 商户后台路由
+     * </pre>
+     *
+     * Protobuf type {@code api.common.TenantRoute}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:api.common.TenantRoute)
+        com.teneasyChat.api.common.CTenant.TenantRouteOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.teneasyChat.api.common.CTenant.internal_static_api_common_TenantRoute_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.teneasyChat.api.common.CTenant.internal_static_api_common_TenantRoute_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.teneasyChat.api.common.CTenant.TenantRoute.class, com.teneasyChat.api.common.CTenant.TenantRoute.Builder.class);
+      }
+
+      // Construct using com.teneasyChat.api.common.CTenant.TenantRoute.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage
+                .alwaysUseFieldBuilders) {
+          getCreateAtFieldBuilder();
+          getUpdateAtFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        id_ = 0;
+        name_ = "";
+        url_ = "";
+        pid_ = 0;
+        sort_ = 0;
+        createAt_ = null;
+        if (createAtBuilder_ != null) {
+          createAtBuilder_.dispose();
+          createAtBuilder_ = null;
+        }
+        updateAt_ = null;
+        if (updateAtBuilder_ != null) {
+          updateAtBuilder_.dispose();
+          updateAtBuilder_ = null;
+        }
+        bindingStatus_ = 0;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.teneasyChat.api.common.CTenant.internal_static_api_common_TenantRoute_descriptor;
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.common.CTenant.TenantRoute getDefaultInstanceForType() {
+        return com.teneasyChat.api.common.CTenant.TenantRoute.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.common.CTenant.TenantRoute build() {
+        com.teneasyChat.api.common.CTenant.TenantRoute result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.common.CTenant.TenantRoute buildPartial() {
+        com.teneasyChat.api.common.CTenant.TenantRoute result = new com.teneasyChat.api.common.CTenant.TenantRoute(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.teneasyChat.api.common.CTenant.TenantRoute result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.id_ = id_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.name_ = name_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.url_ = url_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.pid_ = pid_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.sort_ = sort_;
+        }
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.createAt_ = createAtBuilder_ == null
+              ? createAt_
+              : createAtBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.updateAt_ = updateAtBuilder_ == null
+              ? updateAt_
+              : updateAtBuilder_.build();
+          to_bitField0_ |= 0x00000002;
+        }
+        if (((from_bitField0_ & 0x00000080) != 0)) {
+          result.bindingStatus_ = bindingStatus_;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.teneasyChat.api.common.CTenant.TenantRoute) {
+          return mergeFrom((com.teneasyChat.api.common.CTenant.TenantRoute)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.teneasyChat.api.common.CTenant.TenantRoute other) {
+        if (other == com.teneasyChat.api.common.CTenant.TenantRoute.getDefaultInstance()) return this;
+        if (other.getId() != 0) {
+          setId(other.getId());
+        }
+        if (!other.getName().isEmpty()) {
+          name_ = other.name_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        if (!other.getUrl().isEmpty()) {
+          url_ = other.url_;
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        if (other.getPid() != 0) {
+          setPid(other.getPid());
+        }
+        if (other.getSort() != 0) {
+          setSort(other.getSort());
+        }
+        if (other.hasCreateAt()) {
+          mergeCreateAt(other.getCreateAt());
+        }
+        if (other.hasUpdateAt()) {
+          mergeUpdateAt(other.getUpdateAt());
+        }
+        if (other.bindingStatus_ != 0) {
+          setBindingStatusValue(other.getBindingStatusValue());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                id_ = input.readInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 18: {
+                name_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+              case 26: {
+                url_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
+              case 32: {
+                pid_ = input.readInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 32
+              case 40: {
+                sort_ = input.readInt32();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 40
+              case 50: {
+                input.readMessage(
+                    getCreateAtFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 50
+              case 58: {
+                input.readMessage(
+                    getUpdateAtFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 58
+              case 64: {
+                bindingStatus_ = input.readEnum();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 64
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private int id_ ;
+      /**
+       * <code>int32 id = 1;</code>
+       * @return The id.
+       */
+      @java.lang.Override
+      public int getId() {
+        return id_;
+      }
+      /**
+       * <code>int32 id = 1;</code>
+       * @param value The id to set.
+       * @return This builder for chaining.
+       */
+      public Builder setId(int value) {
+
+        id_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 id = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        id_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object name_ = "";
+      /**
+       * <pre>
+       * name
+       * </pre>
+       *
+       * <code>string name = 2;</code>
+       * @return The name.
+       */
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          name_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * name
+       * </pre>
+       *
+       * <code>string name = 2;</code>
+       * @return The bytes for name.
+       */
+      public com.google.protobuf.ByteString
+          getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * name
+       * </pre>
+       *
+       * <code>string name = 2;</code>
+       * @param value The name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setName(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        name_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * name
+       * </pre>
+       *
+       * <code>string name = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearName() {
+        name_ = getDefaultInstance().getName();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * name
+       * </pre>
+       *
+       * <code>string name = 2;</code>
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        name_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object url_ = "";
+      /**
+       * <pre>
+       * url
+       * </pre>
+       *
+       * <code>string url = 3;</code>
+       * @return The url.
+       */
+      public java.lang.String getUrl() {
+        java.lang.Object ref = url_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          url_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * url
+       * </pre>
+       *
+       * <code>string url = 3;</code>
+       * @return The bytes for url.
+       */
+      public com.google.protobuf.ByteString
+          getUrlBytes() {
+        java.lang.Object ref = url_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          url_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * url
+       * </pre>
+       *
+       * <code>string url = 3;</code>
+       * @param value The url to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUrl(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        url_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * url
+       * </pre>
+       *
+       * <code>string url = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUrl() {
+        url_ = getDefaultInstance().getUrl();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * url
+       * </pre>
+       *
+       * <code>string url = 3;</code>
+       * @param value The bytes for url to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUrlBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        url_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      private int pid_ ;
+      /**
+       * <pre>
+       * pid
+       * </pre>
+       *
+       * <code>int32 pid = 4;</code>
+       * @return The pid.
+       */
+      @java.lang.Override
+      public int getPid() {
+        return pid_;
+      }
+      /**
+       * <pre>
+       * pid
+       * </pre>
+       *
+       * <code>int32 pid = 4;</code>
+       * @param value The pid to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPid(int value) {
+
+        pid_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * pid
+       * </pre>
+       *
+       * <code>int32 pid = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPid() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        pid_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int sort_ ;
+      /**
+       * <pre>
+       * sort
+       * </pre>
+       *
+       * <code>int32 sort = 5;</code>
+       * @return The sort.
+       */
+      @java.lang.Override
+      public int getSort() {
+        return sort_;
+      }
+      /**
+       * <pre>
+       * sort
+       * </pre>
+       *
+       * <code>int32 sort = 5;</code>
+       * @param value The sort to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSort(int value) {
+
+        sort_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * sort
+       * </pre>
+       *
+       * <code>int32 sort = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSort() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        sort_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.Timestamp createAt_;
+      private com.google.protobuf.SingleFieldBuilder<
+          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> createAtBuilder_;
+      /**
+       * <pre>
+       * 创建时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp create_at = 6;</code>
+       * @return Whether the createAt field is set.
+       */
+      public boolean hasCreateAt() {
+        return ((bitField0_ & 0x00000020) != 0);
+      }
+      /**
+       * <pre>
+       * 创建时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp create_at = 6;</code>
+       * @return The createAt.
+       */
+      public com.google.protobuf.Timestamp getCreateAt() {
+        if (createAtBuilder_ == null) {
+          return createAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createAt_;
+        } else {
+          return createAtBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * 创建时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp create_at = 6;</code>
+       */
+      public Builder setCreateAt(com.google.protobuf.Timestamp value) {
+        if (createAtBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          createAt_ = value;
+        } else {
+          createAtBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 创建时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp create_at = 6;</code>
+       */
+      public Builder setCreateAt(
+          com.google.protobuf.Timestamp.Builder builderForValue) {
+        if (createAtBuilder_ == null) {
+          createAt_ = builderForValue.build();
+        } else {
+          createAtBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 创建时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp create_at = 6;</code>
+       */
+      public Builder mergeCreateAt(com.google.protobuf.Timestamp value) {
+        if (createAtBuilder_ == null) {
+          if (((bitField0_ & 0x00000020) != 0) &&
+            createAt_ != null &&
+            createAt_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getCreateAtBuilder().mergeFrom(value);
+          } else {
+            createAt_ = value;
+          }
+        } else {
+          createAtBuilder_.mergeFrom(value);
+        }
+        if (createAt_ != null) {
+          bitField0_ |= 0x00000020;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 创建时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp create_at = 6;</code>
+       */
+      public Builder clearCreateAt() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        createAt_ = null;
+        if (createAtBuilder_ != null) {
+          createAtBuilder_.dispose();
+          createAtBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 创建时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp create_at = 6;</code>
+       */
+      public com.google.protobuf.Timestamp.Builder getCreateAtBuilder() {
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return getCreateAtFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * 创建时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp create_at = 6;</code>
+       */
+      public com.google.protobuf.TimestampOrBuilder getCreateAtOrBuilder() {
+        if (createAtBuilder_ != null) {
+          return createAtBuilder_.getMessageOrBuilder();
+        } else {
+          return createAt_ == null ?
+              com.google.protobuf.Timestamp.getDefaultInstance() : createAt_;
+        }
+      }
+      /**
+       * <pre>
+       * 创建时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp create_at = 6;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+          getCreateAtFieldBuilder() {
+        if (createAtBuilder_ == null) {
+          createAtBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                  getCreateAt(),
+                  getParentForChildren(),
+                  isClean());
+          createAt_ = null;
+        }
+        return createAtBuilder_;
+      }
+
+      private com.google.protobuf.Timestamp updateAt_;
+      private com.google.protobuf.SingleFieldBuilder<
+          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> updateAtBuilder_;
+      /**
+       * <pre>
+       * 更新时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp update_at = 7;</code>
+       * @return Whether the updateAt field is set.
+       */
+      public boolean hasUpdateAt() {
+        return ((bitField0_ & 0x00000040) != 0);
+      }
+      /**
+       * <pre>
+       * 更新时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp update_at = 7;</code>
+       * @return The updateAt.
+       */
+      public com.google.protobuf.Timestamp getUpdateAt() {
+        if (updateAtBuilder_ == null) {
+          return updateAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateAt_;
+        } else {
+          return updateAtBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * 更新时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp update_at = 7;</code>
+       */
+      public Builder setUpdateAt(com.google.protobuf.Timestamp value) {
+        if (updateAtBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          updateAt_ = value;
+        } else {
+          updateAtBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 更新时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp update_at = 7;</code>
+       */
+      public Builder setUpdateAt(
+          com.google.protobuf.Timestamp.Builder builderForValue) {
+        if (updateAtBuilder_ == null) {
+          updateAt_ = builderForValue.build();
+        } else {
+          updateAtBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 更新时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp update_at = 7;</code>
+       */
+      public Builder mergeUpdateAt(com.google.protobuf.Timestamp value) {
+        if (updateAtBuilder_ == null) {
+          if (((bitField0_ & 0x00000040) != 0) &&
+            updateAt_ != null &&
+            updateAt_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getUpdateAtBuilder().mergeFrom(value);
+          } else {
+            updateAt_ = value;
+          }
+        } else {
+          updateAtBuilder_.mergeFrom(value);
+        }
+        if (updateAt_ != null) {
+          bitField0_ |= 0x00000040;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 更新时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp update_at = 7;</code>
+       */
+      public Builder clearUpdateAt() {
+        bitField0_ = (bitField0_ & ~0x00000040);
+        updateAt_ = null;
+        if (updateAtBuilder_ != null) {
+          updateAtBuilder_.dispose();
+          updateAtBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 更新时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp update_at = 7;</code>
+       */
+      public com.google.protobuf.Timestamp.Builder getUpdateAtBuilder() {
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return getUpdateAtFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * 更新时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp update_at = 7;</code>
+       */
+      public com.google.protobuf.TimestampOrBuilder getUpdateAtOrBuilder() {
+        if (updateAtBuilder_ != null) {
+          return updateAtBuilder_.getMessageOrBuilder();
+        } else {
+          return updateAt_ == null ?
+              com.google.protobuf.Timestamp.getDefaultInstance() : updateAt_;
+        }
+      }
+      /**
+       * <pre>
+       * 更新时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp update_at = 7;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+          getUpdateAtFieldBuilder() {
+        if (updateAtBuilder_ == null) {
+          updateAtBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                  getUpdateAt(),
+                  getParentForChildren(),
+                  isClean());
+          updateAt_ = null;
+        }
+        return updateAtBuilder_;
+      }
+
+      private int bindingStatus_ = 0;
+      /**
+       * <pre>
+       * is_bind
+       * </pre>
+       *
+       * <code>.api.common.BindStatus bindingStatus = 8;</code>
+       * @return The enum numeric value on the wire for bindingStatus.
+       */
+      @java.lang.Override public int getBindingStatusValue() {
+        return bindingStatus_;
+      }
+      /**
+       * <pre>
+       * is_bind
+       * </pre>
+       *
+       * <code>.api.common.BindStatus bindingStatus = 8;</code>
+       * @param value The enum numeric value on the wire for bindingStatus to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBindingStatusValue(int value) {
+        bindingStatus_ = value;
+        bitField0_ |= 0x00000080;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * is_bind
+       * </pre>
+       *
+       * <code>.api.common.BindStatus bindingStatus = 8;</code>
+       * @return The bindingStatus.
+       */
+      @java.lang.Override
+      public com.teneasyChat.api.common.CBase.BindStatus getBindingStatus() {
+        com.teneasyChat.api.common.CBase.BindStatus result = com.teneasyChat.api.common.CBase.BindStatus.forNumber(bindingStatus_);
+        return result == null ? com.teneasyChat.api.common.CBase.BindStatus.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * is_bind
+       * </pre>
+       *
+       * <code>.api.common.BindStatus bindingStatus = 8;</code>
+       * @param value The bindingStatus to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBindingStatus(com.teneasyChat.api.common.CBase.BindStatus value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000080;
+        bindingStatus_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * is_bind
+       * </pre>
+       *
+       * <code>.api.common.BindStatus bindingStatus = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearBindingStatus() {
+        bitField0_ = (bitField0_ & ~0x00000080);
+        bindingStatus_ = 0;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:api.common.TenantRoute)
+    }
+
+    // @@protoc_insertion_point(class_scope:api.common.TenantRoute)
+    private static final com.teneasyChat.api.common.CTenant.TenantRoute DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.teneasyChat.api.common.CTenant.TenantRoute();
+    }
+
+    public static com.teneasyChat.api.common.CTenant.TenantRoute getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<TenantRoute>
+        PARSER = new com.google.protobuf.AbstractParser<TenantRoute>() {
+      @java.lang.Override
+      public TenantRoute parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<TenantRoute> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<TenantRoute> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.teneasyChat.api.common.CTenant.TenantRoute getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface TenantRouteWithItemOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:api.common.TenantRouteWithItem)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>int32 id = 1;</code>
+     * @return The id.
+     */
+    int getId();
+
+    /**
+     * <pre>
+     * name
+     * </pre>
+     *
+     * <code>string name = 2;</code>
+     * @return The name.
+     */
+    java.lang.String getName();
+    /**
+     * <pre>
+     * name
+     * </pre>
+     *
+     * <code>string name = 2;</code>
+     * @return The bytes for name.
+     */
+    com.google.protobuf.ByteString
+        getNameBytes();
+
+    /**
+     * <pre>
+     * url
+     * </pre>
+     *
+     * <code>string url = 3;</code>
+     * @return The url.
+     */
+    java.lang.String getUrl();
+    /**
+     * <pre>
+     * url
+     * </pre>
+     *
+     * <code>string url = 3;</code>
+     * @return The bytes for url.
+     */
+    com.google.protobuf.ByteString
+        getUrlBytes();
+
+    /**
+     * <pre>
+     * pid
+     * </pre>
+     *
+     * <code>int32 pid = 4;</code>
+     * @return The pid.
+     */
+    int getPid();
+
+    /**
+     * <pre>
+     * sort
+     * </pre>
+     *
+     * <code>int32 sort = 5;</code>
+     * @return The sort.
+     */
+    int getSort();
+
+    /**
+     * <pre>
+     * 创建时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_at = 6;</code>
+     * @return Whether the createAt field is set.
+     */
+    boolean hasCreateAt();
+    /**
+     * <pre>
+     * 创建时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_at = 6;</code>
+     * @return The createAt.
+     */
+    com.google.protobuf.Timestamp getCreateAt();
+    /**
+     * <pre>
+     * 创建时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_at = 6;</code>
+     */
+    com.google.protobuf.TimestampOrBuilder getCreateAtOrBuilder();
+
+    /**
+     * <pre>
+     * 更新时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_at = 7;</code>
+     * @return Whether the updateAt field is set.
+     */
+    boolean hasUpdateAt();
+    /**
+     * <pre>
+     * 更新时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_at = 7;</code>
+     * @return The updateAt.
+     */
+    com.google.protobuf.Timestamp getUpdateAt();
+    /**
+     * <pre>
+     * 更新时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_at = 7;</code>
+     */
+    com.google.protobuf.TimestampOrBuilder getUpdateAtOrBuilder();
+
+    /**
+     * <pre>
+     * 子路由列表
+     * </pre>
+     *
+     * <code>repeated .api.common.TenantRoute items = 9;</code>
+     */
+    java.util.List<com.teneasyChat.api.common.CTenant.TenantRoute> 
+        getItemsList();
+    /**
+     * <pre>
+     * 子路由列表
+     * </pre>
+     *
+     * <code>repeated .api.common.TenantRoute items = 9;</code>
+     */
+    com.teneasyChat.api.common.CTenant.TenantRoute getItems(int index);
+    /**
+     * <pre>
+     * 子路由列表
+     * </pre>
+     *
+     * <code>repeated .api.common.TenantRoute items = 9;</code>
+     */
+    int getItemsCount();
+    /**
+     * <pre>
+     * 子路由列表
+     * </pre>
+     *
+     * <code>repeated .api.common.TenantRoute items = 9;</code>
+     */
+    java.util.List<? extends com.teneasyChat.api.common.CTenant.TenantRouteOrBuilder> 
+        getItemsOrBuilderList();
+    /**
+     * <pre>
+     * 子路由列表
+     * </pre>
+     *
+     * <code>repeated .api.common.TenantRoute items = 9;</code>
+     */
+    com.teneasyChat.api.common.CTenant.TenantRouteOrBuilder getItemsOrBuilder(
+        int index);
+  }
+  /**
+   * <pre>
+   * 商户后台路由
+   * </pre>
+   *
+   * Protobuf type {@code api.common.TenantRouteWithItem}
+   */
+  public static final class TenantRouteWithItem extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:api.common.TenantRouteWithItem)
+      TenantRouteWithItemOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 26,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        TenantRouteWithItem.class.getName());
+    }
+    // Use TenantRouteWithItem.newBuilder() to construct.
+    private TenantRouteWithItem(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private TenantRouteWithItem() {
+      name_ = "";
+      url_ = "";
+      items_ = java.util.Collections.emptyList();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.teneasyChat.api.common.CTenant.internal_static_api_common_TenantRouteWithItem_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.teneasyChat.api.common.CTenant.internal_static_api_common_TenantRouteWithItem_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.teneasyChat.api.common.CTenant.TenantRouteWithItem.class, com.teneasyChat.api.common.CTenant.TenantRouteWithItem.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int ID_FIELD_NUMBER = 1;
+    private int id_ = 0;
+    /**
+     * <code>int32 id = 1;</code>
+     * @return The id.
+     */
+    @java.lang.Override
+    public int getId() {
+      return id_;
+    }
+
+    public static final int NAME_FIELD_NUMBER = 2;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object name_ = "";
+    /**
+     * <pre>
+     * name
+     * </pre>
+     *
+     * <code>string name = 2;</code>
+     * @return The name.
+     */
+    @java.lang.Override
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * name
+     * </pre>
+     *
+     * <code>string name = 2;</code>
+     * @return The bytes for name.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int URL_FIELD_NUMBER = 3;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object url_ = "";
+    /**
+     * <pre>
+     * url
+     * </pre>
+     *
+     * <code>string url = 3;</code>
+     * @return The url.
+     */
+    @java.lang.Override
+    public java.lang.String getUrl() {
+      java.lang.Object ref = url_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        url_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * url
+     * </pre>
+     *
+     * <code>string url = 3;</code>
+     * @return The bytes for url.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getUrlBytes() {
+      java.lang.Object ref = url_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        url_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PID_FIELD_NUMBER = 4;
+    private int pid_ = 0;
+    /**
+     * <pre>
+     * pid
+     * </pre>
+     *
+     * <code>int32 pid = 4;</code>
+     * @return The pid.
+     */
+    @java.lang.Override
+    public int getPid() {
+      return pid_;
+    }
+
+    public static final int SORT_FIELD_NUMBER = 5;
+    private int sort_ = 0;
+    /**
+     * <pre>
+     * sort
+     * </pre>
+     *
+     * <code>int32 sort = 5;</code>
+     * @return The sort.
+     */
+    @java.lang.Override
+    public int getSort() {
+      return sort_;
+    }
+
+    public static final int CREATE_AT_FIELD_NUMBER = 6;
+    private com.google.protobuf.Timestamp createAt_;
+    /**
+     * <pre>
+     * 创建时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_at = 6;</code>
+     * @return Whether the createAt field is set.
+     */
+    @java.lang.Override
+    public boolean hasCreateAt() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     * <pre>
+     * 创建时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_at = 6;</code>
+     * @return The createAt.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Timestamp getCreateAt() {
+      return createAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createAt_;
+    }
+    /**
+     * <pre>
+     * 创建时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_at = 6;</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.TimestampOrBuilder getCreateAtOrBuilder() {
+      return createAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createAt_;
+    }
+
+    public static final int UPDATE_AT_FIELD_NUMBER = 7;
+    private com.google.protobuf.Timestamp updateAt_;
+    /**
+     * <pre>
+     * 更新时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_at = 7;</code>
+     * @return Whether the updateAt field is set.
+     */
+    @java.lang.Override
+    public boolean hasUpdateAt() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     * <pre>
+     * 更新时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_at = 7;</code>
+     * @return The updateAt.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Timestamp getUpdateAt() {
+      return updateAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateAt_;
+    }
+    /**
+     * <pre>
+     * 更新时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_at = 7;</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.TimestampOrBuilder getUpdateAtOrBuilder() {
+      return updateAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateAt_;
+    }
+
+    public static final int ITEMS_FIELD_NUMBER = 9;
+    @SuppressWarnings("serial")
+    private java.util.List<com.teneasyChat.api.common.CTenant.TenantRoute> items_;
+    /**
+     * <pre>
+     * 子路由列表
+     * </pre>
+     *
+     * <code>repeated .api.common.TenantRoute items = 9;</code>
+     */
+    @java.lang.Override
+    public java.util.List<com.teneasyChat.api.common.CTenant.TenantRoute> getItemsList() {
+      return items_;
+    }
+    /**
+     * <pre>
+     * 子路由列表
+     * </pre>
+     *
+     * <code>repeated .api.common.TenantRoute items = 9;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends com.teneasyChat.api.common.CTenant.TenantRouteOrBuilder> 
+        getItemsOrBuilderList() {
+      return items_;
+    }
+    /**
+     * <pre>
+     * 子路由列表
+     * </pre>
+     *
+     * <code>repeated .api.common.TenantRoute items = 9;</code>
+     */
+    @java.lang.Override
+    public int getItemsCount() {
+      return items_.size();
+    }
+    /**
+     * <pre>
+     * 子路由列表
+     * </pre>
+     *
+     * <code>repeated .api.common.TenantRoute items = 9;</code>
+     */
+    @java.lang.Override
+    public com.teneasyChat.api.common.CTenant.TenantRoute getItems(int index) {
+      return items_.get(index);
+    }
+    /**
+     * <pre>
+     * 子路由列表
+     * </pre>
+     *
+     * <code>repeated .api.common.TenantRoute items = 9;</code>
+     */
+    @java.lang.Override
+    public com.teneasyChat.api.common.CTenant.TenantRouteOrBuilder getItemsOrBuilder(
+        int index) {
+      return items_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (id_ != 0) {
+        output.writeInt32(1, id_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 2, name_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(url_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 3, url_);
+      }
+      if (pid_ != 0) {
+        output.writeInt32(4, pid_);
+      }
+      if (sort_ != 0) {
+        output.writeInt32(5, sort_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(6, getCreateAt());
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        output.writeMessage(7, getUpdateAt());
+      }
+      for (int i = 0; i < items_.size(); i++) {
+        output.writeMessage(9, items_.get(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (id_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, id_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(2, name_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(url_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(3, url_);
+      }
+      if (pid_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(4, pid_);
+      }
+      if (sort_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(5, sort_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(6, getCreateAt());
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(7, getUpdateAt());
+      }
+      for (int i = 0; i < items_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(9, items_.get(i));
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.teneasyChat.api.common.CTenant.TenantRouteWithItem)) {
+        return super.equals(obj);
+      }
+      com.teneasyChat.api.common.CTenant.TenantRouteWithItem other = (com.teneasyChat.api.common.CTenant.TenantRouteWithItem) obj;
+
+      if (getId()
+          != other.getId()) return false;
+      if (!getName()
+          .equals(other.getName())) return false;
+      if (!getUrl()
+          .equals(other.getUrl())) return false;
+      if (getPid()
+          != other.getPid()) return false;
+      if (getSort()
+          != other.getSort()) return false;
+      if (hasCreateAt() != other.hasCreateAt()) return false;
+      if (hasCreateAt()) {
+        if (!getCreateAt()
+            .equals(other.getCreateAt())) return false;
+      }
+      if (hasUpdateAt() != other.hasUpdateAt()) return false;
+      if (hasUpdateAt()) {
+        if (!getUpdateAt()
+            .equals(other.getUpdateAt())) return false;
+      }
+      if (!getItemsList()
+          .equals(other.getItemsList())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId();
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+      hash = (37 * hash) + URL_FIELD_NUMBER;
+      hash = (53 * hash) + getUrl().hashCode();
+      hash = (37 * hash) + PID_FIELD_NUMBER;
+      hash = (53 * hash) + getPid();
+      hash = (37 * hash) + SORT_FIELD_NUMBER;
+      hash = (53 * hash) + getSort();
+      if (hasCreateAt()) {
+        hash = (37 * hash) + CREATE_AT_FIELD_NUMBER;
+        hash = (53 * hash) + getCreateAt().hashCode();
+      }
+      if (hasUpdateAt()) {
+        hash = (37 * hash) + UPDATE_AT_FIELD_NUMBER;
+        hash = (53 * hash) + getUpdateAt().hashCode();
+      }
+      if (getItemsCount() > 0) {
+        hash = (37 * hash) + ITEMS_FIELD_NUMBER;
+        hash = (53 * hash) + getItemsList().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.teneasyChat.api.common.CTenant.TenantRouteWithItem parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.common.CTenant.TenantRouteWithItem parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.common.CTenant.TenantRouteWithItem parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.common.CTenant.TenantRouteWithItem parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.common.CTenant.TenantRouteWithItem parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.common.CTenant.TenantRouteWithItem parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.common.CTenant.TenantRouteWithItem parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.teneasyChat.api.common.CTenant.TenantRouteWithItem parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.teneasyChat.api.common.CTenant.TenantRouteWithItem parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.teneasyChat.api.common.CTenant.TenantRouteWithItem parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.teneasyChat.api.common.CTenant.TenantRouteWithItem parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.teneasyChat.api.common.CTenant.TenantRouteWithItem parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.teneasyChat.api.common.CTenant.TenantRouteWithItem prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * 商户后台路由
+     * </pre>
+     *
+     * Protobuf type {@code api.common.TenantRouteWithItem}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:api.common.TenantRouteWithItem)
+        com.teneasyChat.api.common.CTenant.TenantRouteWithItemOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.teneasyChat.api.common.CTenant.internal_static_api_common_TenantRouteWithItem_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.teneasyChat.api.common.CTenant.internal_static_api_common_TenantRouteWithItem_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.teneasyChat.api.common.CTenant.TenantRouteWithItem.class, com.teneasyChat.api.common.CTenant.TenantRouteWithItem.Builder.class);
+      }
+
+      // Construct using com.teneasyChat.api.common.CTenant.TenantRouteWithItem.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage
+                .alwaysUseFieldBuilders) {
+          getCreateAtFieldBuilder();
+          getUpdateAtFieldBuilder();
+          getItemsFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        id_ = 0;
+        name_ = "";
+        url_ = "";
+        pid_ = 0;
+        sort_ = 0;
+        createAt_ = null;
+        if (createAtBuilder_ != null) {
+          createAtBuilder_.dispose();
+          createAtBuilder_ = null;
+        }
+        updateAt_ = null;
+        if (updateAtBuilder_ != null) {
+          updateAtBuilder_.dispose();
+          updateAtBuilder_ = null;
+        }
+        if (itemsBuilder_ == null) {
+          items_ = java.util.Collections.emptyList();
+        } else {
+          items_ = null;
+          itemsBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000080);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.teneasyChat.api.common.CTenant.internal_static_api_common_TenantRouteWithItem_descriptor;
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.common.CTenant.TenantRouteWithItem getDefaultInstanceForType() {
+        return com.teneasyChat.api.common.CTenant.TenantRouteWithItem.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.common.CTenant.TenantRouteWithItem build() {
+        com.teneasyChat.api.common.CTenant.TenantRouteWithItem result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.common.CTenant.TenantRouteWithItem buildPartial() {
+        com.teneasyChat.api.common.CTenant.TenantRouteWithItem result = new com.teneasyChat.api.common.CTenant.TenantRouteWithItem(this);
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(com.teneasyChat.api.common.CTenant.TenantRouteWithItem result) {
+        if (itemsBuilder_ == null) {
+          if (((bitField0_ & 0x00000080) != 0)) {
+            items_ = java.util.Collections.unmodifiableList(items_);
+            bitField0_ = (bitField0_ & ~0x00000080);
+          }
+          result.items_ = items_;
+        } else {
+          result.items_ = itemsBuilder_.build();
+        }
+      }
+
+      private void buildPartial0(com.teneasyChat.api.common.CTenant.TenantRouteWithItem result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.id_ = id_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.name_ = name_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.url_ = url_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.pid_ = pid_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.sort_ = sort_;
+        }
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.createAt_ = createAtBuilder_ == null
+              ? createAt_
+              : createAtBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.updateAt_ = updateAtBuilder_ == null
+              ? updateAt_
+              : updateAtBuilder_.build();
+          to_bitField0_ |= 0x00000002;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.teneasyChat.api.common.CTenant.TenantRouteWithItem) {
+          return mergeFrom((com.teneasyChat.api.common.CTenant.TenantRouteWithItem)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.teneasyChat.api.common.CTenant.TenantRouteWithItem other) {
+        if (other == com.teneasyChat.api.common.CTenant.TenantRouteWithItem.getDefaultInstance()) return this;
+        if (other.getId() != 0) {
+          setId(other.getId());
+        }
+        if (!other.getName().isEmpty()) {
+          name_ = other.name_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        if (!other.getUrl().isEmpty()) {
+          url_ = other.url_;
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        if (other.getPid() != 0) {
+          setPid(other.getPid());
+        }
+        if (other.getSort() != 0) {
+          setSort(other.getSort());
+        }
+        if (other.hasCreateAt()) {
+          mergeCreateAt(other.getCreateAt());
+        }
+        if (other.hasUpdateAt()) {
+          mergeUpdateAt(other.getUpdateAt());
+        }
+        if (itemsBuilder_ == null) {
+          if (!other.items_.isEmpty()) {
+            if (items_.isEmpty()) {
+              items_ = other.items_;
+              bitField0_ = (bitField0_ & ~0x00000080);
+            } else {
+              ensureItemsIsMutable();
+              items_.addAll(other.items_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.items_.isEmpty()) {
+            if (itemsBuilder_.isEmpty()) {
+              itemsBuilder_.dispose();
+              itemsBuilder_ = null;
+              items_ = other.items_;
+              bitField0_ = (bitField0_ & ~0x00000080);
+              itemsBuilder_ = 
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
+                   getItemsFieldBuilder() : null;
+            } else {
+              itemsBuilder_.addAllMessages(other.items_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                id_ = input.readInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 18: {
+                name_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+              case 26: {
+                url_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
+              case 32: {
+                pid_ = input.readInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 32
+              case 40: {
+                sort_ = input.readInt32();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 40
+              case 50: {
+                input.readMessage(
+                    getCreateAtFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 50
+              case 58: {
+                input.readMessage(
+                    getUpdateAtFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 58
+              case 74: {
+                com.teneasyChat.api.common.CTenant.TenantRoute m =
+                    input.readMessage(
+                        com.teneasyChat.api.common.CTenant.TenantRoute.parser(),
+                        extensionRegistry);
+                if (itemsBuilder_ == null) {
+                  ensureItemsIsMutable();
+                  items_.add(m);
+                } else {
+                  itemsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 74
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private int id_ ;
+      /**
+       * <code>int32 id = 1;</code>
+       * @return The id.
+       */
+      @java.lang.Override
+      public int getId() {
+        return id_;
+      }
+      /**
+       * <code>int32 id = 1;</code>
+       * @param value The id to set.
+       * @return This builder for chaining.
+       */
+      public Builder setId(int value) {
+
+        id_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 id = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        id_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object name_ = "";
+      /**
+       * <pre>
+       * name
+       * </pre>
+       *
+       * <code>string name = 2;</code>
+       * @return The name.
+       */
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          name_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * name
+       * </pre>
+       *
+       * <code>string name = 2;</code>
+       * @return The bytes for name.
+       */
+      public com.google.protobuf.ByteString
+          getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * name
+       * </pre>
+       *
+       * <code>string name = 2;</code>
+       * @param value The name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setName(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        name_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * name
+       * </pre>
+       *
+       * <code>string name = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearName() {
+        name_ = getDefaultInstance().getName();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * name
+       * </pre>
+       *
+       * <code>string name = 2;</code>
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        name_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object url_ = "";
+      /**
+       * <pre>
+       * url
+       * </pre>
+       *
+       * <code>string url = 3;</code>
+       * @return The url.
+       */
+      public java.lang.String getUrl() {
+        java.lang.Object ref = url_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          url_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * url
+       * </pre>
+       *
+       * <code>string url = 3;</code>
+       * @return The bytes for url.
+       */
+      public com.google.protobuf.ByteString
+          getUrlBytes() {
+        java.lang.Object ref = url_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          url_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * url
+       * </pre>
+       *
+       * <code>string url = 3;</code>
+       * @param value The url to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUrl(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        url_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * url
+       * </pre>
+       *
+       * <code>string url = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUrl() {
+        url_ = getDefaultInstance().getUrl();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * url
+       * </pre>
+       *
+       * <code>string url = 3;</code>
+       * @param value The bytes for url to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUrlBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        url_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      private int pid_ ;
+      /**
+       * <pre>
+       * pid
+       * </pre>
+       *
+       * <code>int32 pid = 4;</code>
+       * @return The pid.
+       */
+      @java.lang.Override
+      public int getPid() {
+        return pid_;
+      }
+      /**
+       * <pre>
+       * pid
+       * </pre>
+       *
+       * <code>int32 pid = 4;</code>
+       * @param value The pid to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPid(int value) {
+
+        pid_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * pid
+       * </pre>
+       *
+       * <code>int32 pid = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPid() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        pid_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int sort_ ;
+      /**
+       * <pre>
+       * sort
+       * </pre>
+       *
+       * <code>int32 sort = 5;</code>
+       * @return The sort.
+       */
+      @java.lang.Override
+      public int getSort() {
+        return sort_;
+      }
+      /**
+       * <pre>
+       * sort
+       * </pre>
+       *
+       * <code>int32 sort = 5;</code>
+       * @param value The sort to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSort(int value) {
+
+        sort_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * sort
+       * </pre>
+       *
+       * <code>int32 sort = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSort() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        sort_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.Timestamp createAt_;
+      private com.google.protobuf.SingleFieldBuilder<
+          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> createAtBuilder_;
+      /**
+       * <pre>
+       * 创建时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp create_at = 6;</code>
+       * @return Whether the createAt field is set.
+       */
+      public boolean hasCreateAt() {
+        return ((bitField0_ & 0x00000020) != 0);
+      }
+      /**
+       * <pre>
+       * 创建时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp create_at = 6;</code>
+       * @return The createAt.
+       */
+      public com.google.protobuf.Timestamp getCreateAt() {
+        if (createAtBuilder_ == null) {
+          return createAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createAt_;
+        } else {
+          return createAtBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * 创建时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp create_at = 6;</code>
+       */
+      public Builder setCreateAt(com.google.protobuf.Timestamp value) {
+        if (createAtBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          createAt_ = value;
+        } else {
+          createAtBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 创建时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp create_at = 6;</code>
+       */
+      public Builder setCreateAt(
+          com.google.protobuf.Timestamp.Builder builderForValue) {
+        if (createAtBuilder_ == null) {
+          createAt_ = builderForValue.build();
+        } else {
+          createAtBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 创建时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp create_at = 6;</code>
+       */
+      public Builder mergeCreateAt(com.google.protobuf.Timestamp value) {
+        if (createAtBuilder_ == null) {
+          if (((bitField0_ & 0x00000020) != 0) &&
+            createAt_ != null &&
+            createAt_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getCreateAtBuilder().mergeFrom(value);
+          } else {
+            createAt_ = value;
+          }
+        } else {
+          createAtBuilder_.mergeFrom(value);
+        }
+        if (createAt_ != null) {
+          bitField0_ |= 0x00000020;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 创建时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp create_at = 6;</code>
+       */
+      public Builder clearCreateAt() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        createAt_ = null;
+        if (createAtBuilder_ != null) {
+          createAtBuilder_.dispose();
+          createAtBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 创建时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp create_at = 6;</code>
+       */
+      public com.google.protobuf.Timestamp.Builder getCreateAtBuilder() {
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return getCreateAtFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * 创建时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp create_at = 6;</code>
+       */
+      public com.google.protobuf.TimestampOrBuilder getCreateAtOrBuilder() {
+        if (createAtBuilder_ != null) {
+          return createAtBuilder_.getMessageOrBuilder();
+        } else {
+          return createAt_ == null ?
+              com.google.protobuf.Timestamp.getDefaultInstance() : createAt_;
+        }
+      }
+      /**
+       * <pre>
+       * 创建时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp create_at = 6;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+          getCreateAtFieldBuilder() {
+        if (createAtBuilder_ == null) {
+          createAtBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                  getCreateAt(),
+                  getParentForChildren(),
+                  isClean());
+          createAt_ = null;
+        }
+        return createAtBuilder_;
+      }
+
+      private com.google.protobuf.Timestamp updateAt_;
+      private com.google.protobuf.SingleFieldBuilder<
+          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> updateAtBuilder_;
+      /**
+       * <pre>
+       * 更新时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp update_at = 7;</code>
+       * @return Whether the updateAt field is set.
+       */
+      public boolean hasUpdateAt() {
+        return ((bitField0_ & 0x00000040) != 0);
+      }
+      /**
+       * <pre>
+       * 更新时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp update_at = 7;</code>
+       * @return The updateAt.
+       */
+      public com.google.protobuf.Timestamp getUpdateAt() {
+        if (updateAtBuilder_ == null) {
+          return updateAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateAt_;
+        } else {
+          return updateAtBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * 更新时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp update_at = 7;</code>
+       */
+      public Builder setUpdateAt(com.google.protobuf.Timestamp value) {
+        if (updateAtBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          updateAt_ = value;
+        } else {
+          updateAtBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 更新时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp update_at = 7;</code>
+       */
+      public Builder setUpdateAt(
+          com.google.protobuf.Timestamp.Builder builderForValue) {
+        if (updateAtBuilder_ == null) {
+          updateAt_ = builderForValue.build();
+        } else {
+          updateAtBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 更新时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp update_at = 7;</code>
+       */
+      public Builder mergeUpdateAt(com.google.protobuf.Timestamp value) {
+        if (updateAtBuilder_ == null) {
+          if (((bitField0_ & 0x00000040) != 0) &&
+            updateAt_ != null &&
+            updateAt_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getUpdateAtBuilder().mergeFrom(value);
+          } else {
+            updateAt_ = value;
+          }
+        } else {
+          updateAtBuilder_.mergeFrom(value);
+        }
+        if (updateAt_ != null) {
+          bitField0_ |= 0x00000040;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 更新时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp update_at = 7;</code>
+       */
+      public Builder clearUpdateAt() {
+        bitField0_ = (bitField0_ & ~0x00000040);
+        updateAt_ = null;
+        if (updateAtBuilder_ != null) {
+          updateAtBuilder_.dispose();
+          updateAtBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 更新时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp update_at = 7;</code>
+       */
+      public com.google.protobuf.Timestamp.Builder getUpdateAtBuilder() {
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return getUpdateAtFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * 更新时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp update_at = 7;</code>
+       */
+      public com.google.protobuf.TimestampOrBuilder getUpdateAtOrBuilder() {
+        if (updateAtBuilder_ != null) {
+          return updateAtBuilder_.getMessageOrBuilder();
+        } else {
+          return updateAt_ == null ?
+              com.google.protobuf.Timestamp.getDefaultInstance() : updateAt_;
+        }
+      }
+      /**
+       * <pre>
+       * 更新时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp update_at = 7;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+          getUpdateAtFieldBuilder() {
+        if (updateAtBuilder_ == null) {
+          updateAtBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                  getUpdateAt(),
+                  getParentForChildren(),
+                  isClean());
+          updateAt_ = null;
+        }
+        return updateAtBuilder_;
+      }
+
+      private java.util.List<com.teneasyChat.api.common.CTenant.TenantRoute> items_ =
+        java.util.Collections.emptyList();
+      private void ensureItemsIsMutable() {
+        if (!((bitField0_ & 0x00000080) != 0)) {
+          items_ = new java.util.ArrayList<com.teneasyChat.api.common.CTenant.TenantRoute>(items_);
+          bitField0_ |= 0x00000080;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilder<
+          com.teneasyChat.api.common.CTenant.TenantRoute, com.teneasyChat.api.common.CTenant.TenantRoute.Builder, com.teneasyChat.api.common.CTenant.TenantRouteOrBuilder> itemsBuilder_;
+
+      /**
+       * <pre>
+       * 子路由列表
+       * </pre>
+       *
+       * <code>repeated .api.common.TenantRoute items = 9;</code>
+       */
+      public java.util.List<com.teneasyChat.api.common.CTenant.TenantRoute> getItemsList() {
+        if (itemsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(items_);
+        } else {
+          return itemsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <pre>
+       * 子路由列表
+       * </pre>
+       *
+       * <code>repeated .api.common.TenantRoute items = 9;</code>
+       */
+      public int getItemsCount() {
+        if (itemsBuilder_ == null) {
+          return items_.size();
+        } else {
+          return itemsBuilder_.getCount();
+        }
+      }
+      /**
+       * <pre>
+       * 子路由列表
+       * </pre>
+       *
+       * <code>repeated .api.common.TenantRoute items = 9;</code>
+       */
+      public com.teneasyChat.api.common.CTenant.TenantRoute getItems(int index) {
+        if (itemsBuilder_ == null) {
+          return items_.get(index);
+        } else {
+          return itemsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       * 子路由列表
+       * </pre>
+       *
+       * <code>repeated .api.common.TenantRoute items = 9;</code>
+       */
+      public Builder setItems(
+          int index, com.teneasyChat.api.common.CTenant.TenantRoute value) {
+        if (itemsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureItemsIsMutable();
+          items_.set(index, value);
+          onChanged();
+        } else {
+          itemsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 子路由列表
+       * </pre>
+       *
+       * <code>repeated .api.common.TenantRoute items = 9;</code>
+       */
+      public Builder setItems(
+          int index, com.teneasyChat.api.common.CTenant.TenantRoute.Builder builderForValue) {
+        if (itemsBuilder_ == null) {
+          ensureItemsIsMutable();
+          items_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          itemsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 子路由列表
+       * </pre>
+       *
+       * <code>repeated .api.common.TenantRoute items = 9;</code>
+       */
+      public Builder addItems(com.teneasyChat.api.common.CTenant.TenantRoute value) {
+        if (itemsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureItemsIsMutable();
+          items_.add(value);
+          onChanged();
+        } else {
+          itemsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 子路由列表
+       * </pre>
+       *
+       * <code>repeated .api.common.TenantRoute items = 9;</code>
+       */
+      public Builder addItems(
+          int index, com.teneasyChat.api.common.CTenant.TenantRoute value) {
+        if (itemsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureItemsIsMutable();
+          items_.add(index, value);
+          onChanged();
+        } else {
+          itemsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 子路由列表
+       * </pre>
+       *
+       * <code>repeated .api.common.TenantRoute items = 9;</code>
+       */
+      public Builder addItems(
+          com.teneasyChat.api.common.CTenant.TenantRoute.Builder builderForValue) {
+        if (itemsBuilder_ == null) {
+          ensureItemsIsMutable();
+          items_.add(builderForValue.build());
+          onChanged();
+        } else {
+          itemsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 子路由列表
+       * </pre>
+       *
+       * <code>repeated .api.common.TenantRoute items = 9;</code>
+       */
+      public Builder addItems(
+          int index, com.teneasyChat.api.common.CTenant.TenantRoute.Builder builderForValue) {
+        if (itemsBuilder_ == null) {
+          ensureItemsIsMutable();
+          items_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          itemsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 子路由列表
+       * </pre>
+       *
+       * <code>repeated .api.common.TenantRoute items = 9;</code>
+       */
+      public Builder addAllItems(
+          java.lang.Iterable<? extends com.teneasyChat.api.common.CTenant.TenantRoute> values) {
+        if (itemsBuilder_ == null) {
+          ensureItemsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, items_);
+          onChanged();
+        } else {
+          itemsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 子路由列表
+       * </pre>
+       *
+       * <code>repeated .api.common.TenantRoute items = 9;</code>
+       */
+      public Builder clearItems() {
+        if (itemsBuilder_ == null) {
+          items_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000080);
+          onChanged();
+        } else {
+          itemsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 子路由列表
+       * </pre>
+       *
+       * <code>repeated .api.common.TenantRoute items = 9;</code>
+       */
+      public Builder removeItems(int index) {
+        if (itemsBuilder_ == null) {
+          ensureItemsIsMutable();
+          items_.remove(index);
+          onChanged();
+        } else {
+          itemsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 子路由列表
+       * </pre>
+       *
+       * <code>repeated .api.common.TenantRoute items = 9;</code>
+       */
+      public com.teneasyChat.api.common.CTenant.TenantRoute.Builder getItemsBuilder(
+          int index) {
+        return getItemsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * 子路由列表
+       * </pre>
+       *
+       * <code>repeated .api.common.TenantRoute items = 9;</code>
+       */
+      public com.teneasyChat.api.common.CTenant.TenantRouteOrBuilder getItemsOrBuilder(
+          int index) {
+        if (itemsBuilder_ == null) {
+          return items_.get(index);  } else {
+          return itemsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * 子路由列表
+       * </pre>
+       *
+       * <code>repeated .api.common.TenantRoute items = 9;</code>
+       */
+      public java.util.List<? extends com.teneasyChat.api.common.CTenant.TenantRouteOrBuilder> 
+           getItemsOrBuilderList() {
+        if (itemsBuilder_ != null) {
+          return itemsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(items_);
+        }
+      }
+      /**
+       * <pre>
+       * 子路由列表
+       * </pre>
+       *
+       * <code>repeated .api.common.TenantRoute items = 9;</code>
+       */
+      public com.teneasyChat.api.common.CTenant.TenantRoute.Builder addItemsBuilder() {
+        return getItemsFieldBuilder().addBuilder(
+            com.teneasyChat.api.common.CTenant.TenantRoute.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * 子路由列表
+       * </pre>
+       *
+       * <code>repeated .api.common.TenantRoute items = 9;</code>
+       */
+      public com.teneasyChat.api.common.CTenant.TenantRoute.Builder addItemsBuilder(
+          int index) {
+        return getItemsFieldBuilder().addBuilder(
+            index, com.teneasyChat.api.common.CTenant.TenantRoute.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * 子路由列表
+       * </pre>
+       *
+       * <code>repeated .api.common.TenantRoute items = 9;</code>
+       */
+      public java.util.List<com.teneasyChat.api.common.CTenant.TenantRoute.Builder> 
+           getItemsBuilderList() {
+        return getItemsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilder<
+          com.teneasyChat.api.common.CTenant.TenantRoute, com.teneasyChat.api.common.CTenant.TenantRoute.Builder, com.teneasyChat.api.common.CTenant.TenantRouteOrBuilder> 
+          getItemsFieldBuilder() {
+        if (itemsBuilder_ == null) {
+          itemsBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
+              com.teneasyChat.api.common.CTenant.TenantRoute, com.teneasyChat.api.common.CTenant.TenantRoute.Builder, com.teneasyChat.api.common.CTenant.TenantRouteOrBuilder>(
+                  items_,
+                  ((bitField0_ & 0x00000080) != 0),
+                  getParentForChildren(),
+                  isClean());
+          items_ = null;
+        }
+        return itemsBuilder_;
+      }
+
+      // @@protoc_insertion_point(builder_scope:api.common.TenantRouteWithItem)
+    }
+
+    // @@protoc_insertion_point(class_scope:api.common.TenantRouteWithItem)
+    private static final com.teneasyChat.api.common.CTenant.TenantRouteWithItem DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.teneasyChat.api.common.CTenant.TenantRouteWithItem();
+    }
+
+    public static com.teneasyChat.api.common.CTenant.TenantRouteWithItem getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<TenantRouteWithItem>
+        PARSER = new com.google.protobuf.AbstractParser<TenantRouteWithItem>() {
+      @java.lang.Override
+      public TenantRouteWithItem parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<TenantRouteWithItem> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<TenantRouteWithItem> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.teneasyChat.api.common.CTenant.TenantRouteWithItem getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface TenantRoleOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:api.common.TenantRole)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>int32 id = 1;</code>
+     * @return The id.
+     */
+    int getId();
+
+    /**
+     * <pre>
+     * name
+     * </pre>
+     *
+     * <code>string name = 2;</code>
+     * @return The name.
+     */
+    java.lang.String getName();
+    /**
+     * <pre>
+     * name
+     * </pre>
+     *
+     * <code>string name = 2;</code>
+     * @return The bytes for name.
+     */
+    com.google.protobuf.ByteString
+        getNameBytes();
+
+    /**
+     * <pre>
+     * is_super
+     * </pre>
+     *
+     * <code>.api.common.TenantIsSuper is_super = 3;</code>
+     * @return The enum numeric value on the wire for isSuper.
+     */
+    int getIsSuperValue();
+    /**
+     * <pre>
+     * is_super
+     * </pre>
+     *
+     * <code>.api.common.TenantIsSuper is_super = 3;</code>
+     * @return The isSuper.
+     */
+    com.teneasyChat.api.common.CTenant.TenantIsSuper getIsSuper();
+
+    /**
+     * <pre>
+     * 创建时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_at = 4;</code>
+     * @return Whether the createAt field is set.
+     */
+    boolean hasCreateAt();
+    /**
+     * <pre>
+     * 创建时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_at = 4;</code>
+     * @return The createAt.
+     */
+    com.google.protobuf.Timestamp getCreateAt();
+    /**
+     * <pre>
+     * 创建时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_at = 4;</code>
+     */
+    com.google.protobuf.TimestampOrBuilder getCreateAtOrBuilder();
+
+    /**
+     * <pre>
+     * 更新时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_at = 5;</code>
+     * @return Whether the updateAt field is set.
+     */
+    boolean hasUpdateAt();
+    /**
+     * <pre>
+     * 更新时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_at = 5;</code>
+     * @return The updateAt.
+     */
+    com.google.protobuf.Timestamp getUpdateAt();
+    /**
+     * <pre>
+     * 更新时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_at = 5;</code>
+     */
+    com.google.protobuf.TimestampOrBuilder getUpdateAtOrBuilder();
+  }
+  /**
+   * <pre>
+   * 商户后台角色表
+   * </pre>
+   *
+   * Protobuf type {@code api.common.TenantRole}
+   */
+  public static final class TenantRole extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:api.common.TenantRole)
+      TenantRoleOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 26,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        TenantRole.class.getName());
+    }
+    // Use TenantRole.newBuilder() to construct.
+    private TenantRole(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private TenantRole() {
+      name_ = "";
+      isSuper_ = 0;
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.teneasyChat.api.common.CTenant.internal_static_api_common_TenantRole_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.teneasyChat.api.common.CTenant.internal_static_api_common_TenantRole_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.teneasyChat.api.common.CTenant.TenantRole.class, com.teneasyChat.api.common.CTenant.TenantRole.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int ID_FIELD_NUMBER = 1;
+    private int id_ = 0;
+    /**
+     * <code>int32 id = 1;</code>
+     * @return The id.
+     */
+    @java.lang.Override
+    public int getId() {
+      return id_;
+    }
+
+    public static final int NAME_FIELD_NUMBER = 2;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object name_ = "";
+    /**
+     * <pre>
+     * name
+     * </pre>
+     *
+     * <code>string name = 2;</code>
+     * @return The name.
+     */
+    @java.lang.Override
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * name
+     * </pre>
+     *
+     * <code>string name = 2;</code>
+     * @return The bytes for name.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int IS_SUPER_FIELD_NUMBER = 3;
+    private int isSuper_ = 0;
+    /**
+     * <pre>
+     * is_super
+     * </pre>
+     *
+     * <code>.api.common.TenantIsSuper is_super = 3;</code>
+     * @return The enum numeric value on the wire for isSuper.
+     */
+    @java.lang.Override public int getIsSuperValue() {
+      return isSuper_;
+    }
+    /**
+     * <pre>
+     * is_super
+     * </pre>
+     *
+     * <code>.api.common.TenantIsSuper is_super = 3;</code>
+     * @return The isSuper.
+     */
+    @java.lang.Override public com.teneasyChat.api.common.CTenant.TenantIsSuper getIsSuper() {
+      com.teneasyChat.api.common.CTenant.TenantIsSuper result = com.teneasyChat.api.common.CTenant.TenantIsSuper.forNumber(isSuper_);
+      return result == null ? com.teneasyChat.api.common.CTenant.TenantIsSuper.UNRECOGNIZED : result;
+    }
+
+    public static final int CREATE_AT_FIELD_NUMBER = 4;
+    private com.google.protobuf.Timestamp createAt_;
+    /**
+     * <pre>
+     * 创建时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_at = 4;</code>
+     * @return Whether the createAt field is set.
+     */
+    @java.lang.Override
+    public boolean hasCreateAt() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     * <pre>
+     * 创建时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_at = 4;</code>
+     * @return The createAt.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Timestamp getCreateAt() {
+      return createAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createAt_;
+    }
+    /**
+     * <pre>
+     * 创建时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_at = 4;</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.TimestampOrBuilder getCreateAtOrBuilder() {
+      return createAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createAt_;
+    }
+
+    public static final int UPDATE_AT_FIELD_NUMBER = 5;
+    private com.google.protobuf.Timestamp updateAt_;
+    /**
+     * <pre>
+     * 更新时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_at = 5;</code>
+     * @return Whether the updateAt field is set.
+     */
+    @java.lang.Override
+    public boolean hasUpdateAt() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     * <pre>
+     * 更新时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_at = 5;</code>
+     * @return The updateAt.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Timestamp getUpdateAt() {
+      return updateAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateAt_;
+    }
+    /**
+     * <pre>
+     * 更新时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_at = 5;</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.TimestampOrBuilder getUpdateAtOrBuilder() {
+      return updateAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateAt_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (id_ != 0) {
+        output.writeInt32(1, id_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 2, name_);
+      }
+      if (isSuper_ != com.teneasyChat.api.common.CTenant.TenantIsSuper.IS_SUPER_DEFAULT.getNumber()) {
+        output.writeEnum(3, isSuper_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(4, getCreateAt());
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        output.writeMessage(5, getUpdateAt());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (id_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, id_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(2, name_);
+      }
+      if (isSuper_ != com.teneasyChat.api.common.CTenant.TenantIsSuper.IS_SUPER_DEFAULT.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(3, isSuper_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, getCreateAt());
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(5, getUpdateAt());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.teneasyChat.api.common.CTenant.TenantRole)) {
+        return super.equals(obj);
+      }
+      com.teneasyChat.api.common.CTenant.TenantRole other = (com.teneasyChat.api.common.CTenant.TenantRole) obj;
+
+      if (getId()
+          != other.getId()) return false;
+      if (!getName()
+          .equals(other.getName())) return false;
+      if (isSuper_ != other.isSuper_) return false;
+      if (hasCreateAt() != other.hasCreateAt()) return false;
+      if (hasCreateAt()) {
+        if (!getCreateAt()
+            .equals(other.getCreateAt())) return false;
+      }
+      if (hasUpdateAt() != other.hasUpdateAt()) return false;
+      if (hasUpdateAt()) {
+        if (!getUpdateAt()
+            .equals(other.getUpdateAt())) return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId();
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+      hash = (37 * hash) + IS_SUPER_FIELD_NUMBER;
+      hash = (53 * hash) + isSuper_;
+      if (hasCreateAt()) {
+        hash = (37 * hash) + CREATE_AT_FIELD_NUMBER;
+        hash = (53 * hash) + getCreateAt().hashCode();
+      }
+      if (hasUpdateAt()) {
+        hash = (37 * hash) + UPDATE_AT_FIELD_NUMBER;
+        hash = (53 * hash) + getUpdateAt().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.teneasyChat.api.common.CTenant.TenantRole parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.common.CTenant.TenantRole parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.common.CTenant.TenantRole parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.common.CTenant.TenantRole parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.common.CTenant.TenantRole parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.common.CTenant.TenantRole parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.common.CTenant.TenantRole parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.teneasyChat.api.common.CTenant.TenantRole parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.teneasyChat.api.common.CTenant.TenantRole parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.teneasyChat.api.common.CTenant.TenantRole parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.teneasyChat.api.common.CTenant.TenantRole parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.teneasyChat.api.common.CTenant.TenantRole parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.teneasyChat.api.common.CTenant.TenantRole prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * 商户后台角色表
+     * </pre>
+     *
+     * Protobuf type {@code api.common.TenantRole}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:api.common.TenantRole)
+        com.teneasyChat.api.common.CTenant.TenantRoleOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.teneasyChat.api.common.CTenant.internal_static_api_common_TenantRole_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.teneasyChat.api.common.CTenant.internal_static_api_common_TenantRole_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.teneasyChat.api.common.CTenant.TenantRole.class, com.teneasyChat.api.common.CTenant.TenantRole.Builder.class);
+      }
+
+      // Construct using com.teneasyChat.api.common.CTenant.TenantRole.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage
+                .alwaysUseFieldBuilders) {
+          getCreateAtFieldBuilder();
+          getUpdateAtFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        id_ = 0;
+        name_ = "";
+        isSuper_ = 0;
+        createAt_ = null;
+        if (createAtBuilder_ != null) {
+          createAtBuilder_.dispose();
+          createAtBuilder_ = null;
+        }
+        updateAt_ = null;
+        if (updateAtBuilder_ != null) {
+          updateAtBuilder_.dispose();
+          updateAtBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.teneasyChat.api.common.CTenant.internal_static_api_common_TenantRole_descriptor;
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.common.CTenant.TenantRole getDefaultInstanceForType() {
+        return com.teneasyChat.api.common.CTenant.TenantRole.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.common.CTenant.TenantRole build() {
+        com.teneasyChat.api.common.CTenant.TenantRole result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.common.CTenant.TenantRole buildPartial() {
+        com.teneasyChat.api.common.CTenant.TenantRole result = new com.teneasyChat.api.common.CTenant.TenantRole(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.teneasyChat.api.common.CTenant.TenantRole result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.id_ = id_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.name_ = name_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.isSuper_ = isSuper_;
+        }
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.createAt_ = createAtBuilder_ == null
+              ? createAt_
+              : createAtBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.updateAt_ = updateAtBuilder_ == null
+              ? updateAt_
+              : updateAtBuilder_.build();
+          to_bitField0_ |= 0x00000002;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.teneasyChat.api.common.CTenant.TenantRole) {
+          return mergeFrom((com.teneasyChat.api.common.CTenant.TenantRole)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.teneasyChat.api.common.CTenant.TenantRole other) {
+        if (other == com.teneasyChat.api.common.CTenant.TenantRole.getDefaultInstance()) return this;
+        if (other.getId() != 0) {
+          setId(other.getId());
+        }
+        if (!other.getName().isEmpty()) {
+          name_ = other.name_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        if (other.isSuper_ != 0) {
+          setIsSuperValue(other.getIsSuperValue());
+        }
+        if (other.hasCreateAt()) {
+          mergeCreateAt(other.getCreateAt());
+        }
+        if (other.hasUpdateAt()) {
+          mergeUpdateAt(other.getUpdateAt());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                id_ = input.readInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 18: {
+                name_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+              case 24: {
+                isSuper_ = input.readEnum();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 24
+              case 34: {
+                input.readMessage(
+                    getCreateAtFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 34
+              case 42: {
+                input.readMessage(
+                    getUpdateAtFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 42
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private int id_ ;
+      /**
+       * <code>int32 id = 1;</code>
+       * @return The id.
+       */
+      @java.lang.Override
+      public int getId() {
+        return id_;
+      }
+      /**
+       * <code>int32 id = 1;</code>
+       * @param value The id to set.
+       * @return This builder for chaining.
+       */
+      public Builder setId(int value) {
+
+        id_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 id = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        id_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object name_ = "";
+      /**
+       * <pre>
+       * name
+       * </pre>
+       *
+       * <code>string name = 2;</code>
+       * @return The name.
+       */
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          name_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * name
+       * </pre>
+       *
+       * <code>string name = 2;</code>
+       * @return The bytes for name.
+       */
+      public com.google.protobuf.ByteString
+          getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * name
+       * </pre>
+       *
+       * <code>string name = 2;</code>
+       * @param value The name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setName(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        name_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * name
+       * </pre>
+       *
+       * <code>string name = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearName() {
+        name_ = getDefaultInstance().getName();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * name
+       * </pre>
+       *
+       * <code>string name = 2;</code>
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        name_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      private int isSuper_ = 0;
+      /**
+       * <pre>
+       * is_super
+       * </pre>
+       *
+       * <code>.api.common.TenantIsSuper is_super = 3;</code>
+       * @return The enum numeric value on the wire for isSuper.
+       */
+      @java.lang.Override public int getIsSuperValue() {
+        return isSuper_;
+      }
+      /**
+       * <pre>
+       * is_super
+       * </pre>
+       *
+       * <code>.api.common.TenantIsSuper is_super = 3;</code>
+       * @param value The enum numeric value on the wire for isSuper to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsSuperValue(int value) {
+        isSuper_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * is_super
+       * </pre>
+       *
+       * <code>.api.common.TenantIsSuper is_super = 3;</code>
+       * @return The isSuper.
+       */
+      @java.lang.Override
+      public com.teneasyChat.api.common.CTenant.TenantIsSuper getIsSuper() {
+        com.teneasyChat.api.common.CTenant.TenantIsSuper result = com.teneasyChat.api.common.CTenant.TenantIsSuper.forNumber(isSuper_);
+        return result == null ? com.teneasyChat.api.common.CTenant.TenantIsSuper.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * is_super
+       * </pre>
+       *
+       * <code>.api.common.TenantIsSuper is_super = 3;</code>
+       * @param value The isSuper to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsSuper(com.teneasyChat.api.common.CTenant.TenantIsSuper value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000004;
+        isSuper_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * is_super
+       * </pre>
+       *
+       * <code>.api.common.TenantIsSuper is_super = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIsSuper() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        isSuper_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.Timestamp createAt_;
+      private com.google.protobuf.SingleFieldBuilder<
+          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> createAtBuilder_;
+      /**
+       * <pre>
+       * 创建时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp create_at = 4;</code>
+       * @return Whether the createAt field is set.
+       */
+      public boolean hasCreateAt() {
+        return ((bitField0_ & 0x00000008) != 0);
+      }
+      /**
+       * <pre>
+       * 创建时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp create_at = 4;</code>
+       * @return The createAt.
+       */
+      public com.google.protobuf.Timestamp getCreateAt() {
+        if (createAtBuilder_ == null) {
+          return createAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createAt_;
+        } else {
+          return createAtBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * 创建时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp create_at = 4;</code>
+       */
+      public Builder setCreateAt(com.google.protobuf.Timestamp value) {
+        if (createAtBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          createAt_ = value;
+        } else {
+          createAtBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 创建时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp create_at = 4;</code>
+       */
+      public Builder setCreateAt(
+          com.google.protobuf.Timestamp.Builder builderForValue) {
+        if (createAtBuilder_ == null) {
+          createAt_ = builderForValue.build();
+        } else {
+          createAtBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 创建时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp create_at = 4;</code>
+       */
+      public Builder mergeCreateAt(com.google.protobuf.Timestamp value) {
+        if (createAtBuilder_ == null) {
+          if (((bitField0_ & 0x00000008) != 0) &&
+            createAt_ != null &&
+            createAt_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getCreateAtBuilder().mergeFrom(value);
+          } else {
+            createAt_ = value;
+          }
+        } else {
+          createAtBuilder_.mergeFrom(value);
+        }
+        if (createAt_ != null) {
+          bitField0_ |= 0x00000008;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 创建时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp create_at = 4;</code>
+       */
+      public Builder clearCreateAt() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        createAt_ = null;
+        if (createAtBuilder_ != null) {
+          createAtBuilder_.dispose();
+          createAtBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 创建时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp create_at = 4;</code>
+       */
+      public com.google.protobuf.Timestamp.Builder getCreateAtBuilder() {
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return getCreateAtFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * 创建时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp create_at = 4;</code>
+       */
+      public com.google.protobuf.TimestampOrBuilder getCreateAtOrBuilder() {
+        if (createAtBuilder_ != null) {
+          return createAtBuilder_.getMessageOrBuilder();
+        } else {
+          return createAt_ == null ?
+              com.google.protobuf.Timestamp.getDefaultInstance() : createAt_;
+        }
+      }
+      /**
+       * <pre>
+       * 创建时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp create_at = 4;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+          getCreateAtFieldBuilder() {
+        if (createAtBuilder_ == null) {
+          createAtBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                  getCreateAt(),
+                  getParentForChildren(),
+                  isClean());
+          createAt_ = null;
+        }
+        return createAtBuilder_;
+      }
+
+      private com.google.protobuf.Timestamp updateAt_;
+      private com.google.protobuf.SingleFieldBuilder<
+          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> updateAtBuilder_;
+      /**
+       * <pre>
+       * 更新时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp update_at = 5;</code>
+       * @return Whether the updateAt field is set.
+       */
+      public boolean hasUpdateAt() {
+        return ((bitField0_ & 0x00000010) != 0);
+      }
+      /**
+       * <pre>
+       * 更新时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp update_at = 5;</code>
+       * @return The updateAt.
+       */
+      public com.google.protobuf.Timestamp getUpdateAt() {
+        if (updateAtBuilder_ == null) {
+          return updateAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateAt_;
+        } else {
+          return updateAtBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * 更新时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp update_at = 5;</code>
+       */
+      public Builder setUpdateAt(com.google.protobuf.Timestamp value) {
+        if (updateAtBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          updateAt_ = value;
+        } else {
+          updateAtBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 更新时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp update_at = 5;</code>
+       */
+      public Builder setUpdateAt(
+          com.google.protobuf.Timestamp.Builder builderForValue) {
+        if (updateAtBuilder_ == null) {
+          updateAt_ = builderForValue.build();
+        } else {
+          updateAtBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 更新时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp update_at = 5;</code>
+       */
+      public Builder mergeUpdateAt(com.google.protobuf.Timestamp value) {
+        if (updateAtBuilder_ == null) {
+          if (((bitField0_ & 0x00000010) != 0) &&
+            updateAt_ != null &&
+            updateAt_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getUpdateAtBuilder().mergeFrom(value);
+          } else {
+            updateAt_ = value;
+          }
+        } else {
+          updateAtBuilder_.mergeFrom(value);
+        }
+        if (updateAt_ != null) {
+          bitField0_ |= 0x00000010;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 更新时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp update_at = 5;</code>
+       */
+      public Builder clearUpdateAt() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        updateAt_ = null;
+        if (updateAtBuilder_ != null) {
+          updateAtBuilder_.dispose();
+          updateAtBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 更新时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp update_at = 5;</code>
+       */
+      public com.google.protobuf.Timestamp.Builder getUpdateAtBuilder() {
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return getUpdateAtFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * 更新时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp update_at = 5;</code>
+       */
+      public com.google.protobuf.TimestampOrBuilder getUpdateAtOrBuilder() {
+        if (updateAtBuilder_ != null) {
+          return updateAtBuilder_.getMessageOrBuilder();
+        } else {
+          return updateAt_ == null ?
+              com.google.protobuf.Timestamp.getDefaultInstance() : updateAt_;
+        }
+      }
+      /**
+       * <pre>
+       * 更新时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp update_at = 5;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+          getUpdateAtFieldBuilder() {
+        if (updateAtBuilder_ == null) {
+          updateAtBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                  getUpdateAt(),
+                  getParentForChildren(),
+                  isClean());
+          updateAt_ = null;
+        }
+        return updateAtBuilder_;
+      }
+
+      // @@protoc_insertion_point(builder_scope:api.common.TenantRole)
+    }
+
+    // @@protoc_insertion_point(class_scope:api.common.TenantRole)
+    private static final com.teneasyChat.api.common.CTenant.TenantRole DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.teneasyChat.api.common.CTenant.TenantRole();
+    }
+
+    public static com.teneasyChat.api.common.CTenant.TenantRole getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<TenantRole>
+        PARSER = new com.google.protobuf.AbstractParser<TenantRole>() {
+      @java.lang.Override
+      public TenantRole parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<TenantRole> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<TenantRole> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.teneasyChat.api.common.CTenant.TenantRole getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface TenantRoleRouteOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:api.common.TenantRoleRoute)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * role_id
+     * </pre>
+     *
+     * <code>int32 role_id = 1;</code>
+     * @return The roleId.
+     */
+    int getRoleId();
+
+    /**
+     * <pre>
+     * route_id
+     * </pre>
+     *
+     * <code>int32 route_id = 2;</code>
+     * @return The routeId.
+     */
+    int getRouteId();
+
+    /**
+     * <pre>
+     * route_url
+     * </pre>
+     *
+     * <code>string route_url = 3;</code>
+     * @return The routeUrl.
+     */
+    java.lang.String getRouteUrl();
+    /**
+     * <pre>
+     * route_url
+     * </pre>
+     *
+     * <code>string route_url = 3;</code>
+     * @return The bytes for routeUrl.
+     */
+    com.google.protobuf.ByteString
+        getRouteUrlBytes();
+  }
+  /**
+   * <pre>
+   * 商户后台角色路由绑定表
+   * </pre>
+   *
+   * Protobuf type {@code api.common.TenantRoleRoute}
+   */
+  public static final class TenantRoleRoute extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:api.common.TenantRoleRoute)
+      TenantRoleRouteOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 26,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        TenantRoleRoute.class.getName());
+    }
+    // Use TenantRoleRoute.newBuilder() to construct.
+    private TenantRoleRoute(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private TenantRoleRoute() {
+      routeUrl_ = "";
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.teneasyChat.api.common.CTenant.internal_static_api_common_TenantRoleRoute_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.teneasyChat.api.common.CTenant.internal_static_api_common_TenantRoleRoute_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.teneasyChat.api.common.CTenant.TenantRoleRoute.class, com.teneasyChat.api.common.CTenant.TenantRoleRoute.Builder.class);
+    }
+
+    public static final int ROLE_ID_FIELD_NUMBER = 1;
+    private int roleId_ = 0;
+    /**
+     * <pre>
+     * role_id
+     * </pre>
+     *
+     * <code>int32 role_id = 1;</code>
+     * @return The roleId.
+     */
+    @java.lang.Override
+    public int getRoleId() {
+      return roleId_;
+    }
+
+    public static final int ROUTE_ID_FIELD_NUMBER = 2;
+    private int routeId_ = 0;
+    /**
+     * <pre>
+     * route_id
+     * </pre>
+     *
+     * <code>int32 route_id = 2;</code>
+     * @return The routeId.
+     */
+    @java.lang.Override
+    public int getRouteId() {
+      return routeId_;
+    }
+
+    public static final int ROUTE_URL_FIELD_NUMBER = 3;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object routeUrl_ = "";
+    /**
+     * <pre>
+     * route_url
+     * </pre>
+     *
+     * <code>string route_url = 3;</code>
+     * @return The routeUrl.
+     */
+    @java.lang.Override
+    public java.lang.String getRouteUrl() {
+      java.lang.Object ref = routeUrl_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        routeUrl_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * route_url
+     * </pre>
+     *
+     * <code>string route_url = 3;</code>
+     * @return The bytes for routeUrl.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getRouteUrlBytes() {
+      java.lang.Object ref = routeUrl_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        routeUrl_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (roleId_ != 0) {
+        output.writeInt32(1, roleId_);
+      }
+      if (routeId_ != 0) {
+        output.writeInt32(2, routeId_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(routeUrl_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 3, routeUrl_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (roleId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, roleId_);
+      }
+      if (routeId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, routeId_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(routeUrl_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(3, routeUrl_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.teneasyChat.api.common.CTenant.TenantRoleRoute)) {
+        return super.equals(obj);
+      }
+      com.teneasyChat.api.common.CTenant.TenantRoleRoute other = (com.teneasyChat.api.common.CTenant.TenantRoleRoute) obj;
+
+      if (getRoleId()
+          != other.getRoleId()) return false;
+      if (getRouteId()
+          != other.getRouteId()) return false;
+      if (!getRouteUrl()
+          .equals(other.getRouteUrl())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ROLE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getRoleId();
+      hash = (37 * hash) + ROUTE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getRouteId();
+      hash = (37 * hash) + ROUTE_URL_FIELD_NUMBER;
+      hash = (53 * hash) + getRouteUrl().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.teneasyChat.api.common.CTenant.TenantRoleRoute parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.common.CTenant.TenantRoleRoute parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.common.CTenant.TenantRoleRoute parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.common.CTenant.TenantRoleRoute parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.common.CTenant.TenantRoleRoute parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.common.CTenant.TenantRoleRoute parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.common.CTenant.TenantRoleRoute parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.teneasyChat.api.common.CTenant.TenantRoleRoute parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.teneasyChat.api.common.CTenant.TenantRoleRoute parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.teneasyChat.api.common.CTenant.TenantRoleRoute parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.teneasyChat.api.common.CTenant.TenantRoleRoute parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.teneasyChat.api.common.CTenant.TenantRoleRoute parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.teneasyChat.api.common.CTenant.TenantRoleRoute prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * 商户后台角色路由绑定表
+     * </pre>
+     *
+     * Protobuf type {@code api.common.TenantRoleRoute}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:api.common.TenantRoleRoute)
+        com.teneasyChat.api.common.CTenant.TenantRoleRouteOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.teneasyChat.api.common.CTenant.internal_static_api_common_TenantRoleRoute_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.teneasyChat.api.common.CTenant.internal_static_api_common_TenantRoleRoute_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.teneasyChat.api.common.CTenant.TenantRoleRoute.class, com.teneasyChat.api.common.CTenant.TenantRoleRoute.Builder.class);
+      }
+
+      // Construct using com.teneasyChat.api.common.CTenant.TenantRoleRoute.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        roleId_ = 0;
+        routeId_ = 0;
+        routeUrl_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.teneasyChat.api.common.CTenant.internal_static_api_common_TenantRoleRoute_descriptor;
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.common.CTenant.TenantRoleRoute getDefaultInstanceForType() {
+        return com.teneasyChat.api.common.CTenant.TenantRoleRoute.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.common.CTenant.TenantRoleRoute build() {
+        com.teneasyChat.api.common.CTenant.TenantRoleRoute result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.common.CTenant.TenantRoleRoute buildPartial() {
+        com.teneasyChat.api.common.CTenant.TenantRoleRoute result = new com.teneasyChat.api.common.CTenant.TenantRoleRoute(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.teneasyChat.api.common.CTenant.TenantRoleRoute result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.roleId_ = roleId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.routeId_ = routeId_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.routeUrl_ = routeUrl_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.teneasyChat.api.common.CTenant.TenantRoleRoute) {
+          return mergeFrom((com.teneasyChat.api.common.CTenant.TenantRoleRoute)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.teneasyChat.api.common.CTenant.TenantRoleRoute other) {
+        if (other == com.teneasyChat.api.common.CTenant.TenantRoleRoute.getDefaultInstance()) return this;
+        if (other.getRoleId() != 0) {
+          setRoleId(other.getRoleId());
+        }
+        if (other.getRouteId() != 0) {
+          setRouteId(other.getRouteId());
+        }
+        if (!other.getRouteUrl().isEmpty()) {
+          routeUrl_ = other.routeUrl_;
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                roleId_ = input.readInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 16: {
+                routeId_ = input.readInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
+              case 26: {
+                routeUrl_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private int roleId_ ;
+      /**
+       * <pre>
+       * role_id
+       * </pre>
+       *
+       * <code>int32 role_id = 1;</code>
+       * @return The roleId.
+       */
+      @java.lang.Override
+      public int getRoleId() {
+        return roleId_;
+      }
+      /**
+       * <pre>
+       * role_id
+       * </pre>
+       *
+       * <code>int32 role_id = 1;</code>
+       * @param value The roleId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRoleId(int value) {
+
+        roleId_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * role_id
+       * </pre>
+       *
+       * <code>int32 role_id = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRoleId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        roleId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int routeId_ ;
+      /**
+       * <pre>
+       * route_id
+       * </pre>
+       *
+       * <code>int32 route_id = 2;</code>
+       * @return The routeId.
+       */
+      @java.lang.Override
+      public int getRouteId() {
+        return routeId_;
+      }
+      /**
+       * <pre>
+       * route_id
+       * </pre>
+       *
+       * <code>int32 route_id = 2;</code>
+       * @param value The routeId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRouteId(int value) {
+
+        routeId_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * route_id
+       * </pre>
+       *
+       * <code>int32 route_id = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRouteId() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        routeId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object routeUrl_ = "";
+      /**
+       * <pre>
+       * route_url
+       * </pre>
+       *
+       * <code>string route_url = 3;</code>
+       * @return The routeUrl.
+       */
+      public java.lang.String getRouteUrl() {
+        java.lang.Object ref = routeUrl_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          routeUrl_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * route_url
+       * </pre>
+       *
+       * <code>string route_url = 3;</code>
+       * @return The bytes for routeUrl.
+       */
+      public com.google.protobuf.ByteString
+          getRouteUrlBytes() {
+        java.lang.Object ref = routeUrl_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          routeUrl_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * route_url
+       * </pre>
+       *
+       * <code>string route_url = 3;</code>
+       * @param value The routeUrl to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRouteUrl(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        routeUrl_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * route_url
+       * </pre>
+       *
+       * <code>string route_url = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRouteUrl() {
+        routeUrl_ = getDefaultInstance().getRouteUrl();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * route_url
+       * </pre>
+       *
+       * <code>string route_url = 3;</code>
+       * @param value The bytes for routeUrl to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRouteUrlBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        routeUrl_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:api.common.TenantRoleRoute)
+    }
+
+    // @@protoc_insertion_point(class_scope:api.common.TenantRoleRoute)
+    private static final com.teneasyChat.api.common.CTenant.TenantRoleRoute DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.teneasyChat.api.common.CTenant.TenantRoleRoute();
+    }
+
+    public static com.teneasyChat.api.common.CTenant.TenantRoleRoute getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<TenantRoleRoute>
+        PARSER = new com.google.protobuf.AbstractParser<TenantRoleRoute>() {
+      @java.lang.Override
+      public TenantRoleRoute parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<TenantRoleRoute> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<TenantRoleRoute> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.teneasyChat.api.common.CTenant.TenantRoleRoute getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface TenantManagerOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:api.common.TenantManager)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>int32 id = 1;</code>
+     * @return The id.
+     */
+    int getId();
+
+    /**
+     * <pre>
+     * account
+     * </pre>
+     *
+     * <code>string account = 2;</code>
+     * @return The account.
+     */
+    java.lang.String getAccount();
+    /**
+     * <pre>
+     * account
+     * </pre>
+     *
+     * <code>string account = 2;</code>
+     * @return The bytes for account.
+     */
+    com.google.protobuf.ByteString
+        getAccountBytes();
+
+    /**
+     * <pre>
+     * password
+     * </pre>
+     *
+     * <code>string password = 3;</code>
+     * @return The password.
+     */
+    java.lang.String getPassword();
+    /**
+     * <pre>
+     * password
+     * </pre>
+     *
+     * <code>string password = 3;</code>
+     * @return The bytes for password.
+     */
+    com.google.protobuf.ByteString
+        getPasswordBytes();
+
+    /**
+     * <pre>
+     * role_id
+     * </pre>
+     *
+     * <code>int32 role_id = 4;</code>
+     * @return The roleId.
+     */
+    int getRoleId();
+
+    /**
+     * <pre>
+     * status
+     * </pre>
+     *
+     * <code>.api.common.DisableStatus status = 5;</code>
+     * @return The enum numeric value on the wire for status.
+     */
+    int getStatusValue();
+    /**
+     * <pre>
+     * status
+     * </pre>
+     *
+     * <code>.api.common.DisableStatus status = 5;</code>
+     * @return The status.
+     */
+    com.teneasyChat.api.common.CBase.DisableStatus getStatus();
+
+    /**
+     * <pre>
+     * 创建时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_at = 6;</code>
+     * @return Whether the createAt field is set.
+     */
+    boolean hasCreateAt();
+    /**
+     * <pre>
+     * 创建时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_at = 6;</code>
+     * @return The createAt.
+     */
+    com.google.protobuf.Timestamp getCreateAt();
+    /**
+     * <pre>
+     * 创建时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_at = 6;</code>
+     */
+    com.google.protobuf.TimestampOrBuilder getCreateAtOrBuilder();
+
+    /**
+     * <pre>
+     * 更新时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_at = 7;</code>
+     * @return Whether the updateAt field is set.
+     */
+    boolean hasUpdateAt();
+    /**
+     * <pre>
+     * 更新时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_at = 7;</code>
+     * @return The updateAt.
+     */
+    com.google.protobuf.Timestamp getUpdateAt();
+    /**
+     * <pre>
+     * 更新时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_at = 7;</code>
+     */
+    com.google.protobuf.TimestampOrBuilder getUpdateAtOrBuilder();
+  }
+  /**
+   * <pre>
+   * 商户后台管理员表
+   * </pre>
+   *
+   * Protobuf type {@code api.common.TenantManager}
+   */
+  public static final class TenantManager extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:api.common.TenantManager)
+      TenantManagerOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 26,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        TenantManager.class.getName());
+    }
+    // Use TenantManager.newBuilder() to construct.
+    private TenantManager(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private TenantManager() {
+      account_ = "";
+      password_ = "";
+      status_ = 0;
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.teneasyChat.api.common.CTenant.internal_static_api_common_TenantManager_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.teneasyChat.api.common.CTenant.internal_static_api_common_TenantManager_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.teneasyChat.api.common.CTenant.TenantManager.class, com.teneasyChat.api.common.CTenant.TenantManager.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int ID_FIELD_NUMBER = 1;
+    private int id_ = 0;
+    /**
+     * <code>int32 id = 1;</code>
+     * @return The id.
+     */
+    @java.lang.Override
+    public int getId() {
+      return id_;
+    }
+
+    public static final int ACCOUNT_FIELD_NUMBER = 2;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object account_ = "";
+    /**
+     * <pre>
+     * account
+     * </pre>
+     *
+     * <code>string account = 2;</code>
+     * @return The account.
+     */
+    @java.lang.Override
+    public java.lang.String getAccount() {
+      java.lang.Object ref = account_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        account_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * account
+     * </pre>
+     *
+     * <code>string account = 2;</code>
+     * @return The bytes for account.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getAccountBytes() {
+      java.lang.Object ref = account_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        account_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PASSWORD_FIELD_NUMBER = 3;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object password_ = "";
+    /**
+     * <pre>
+     * password
+     * </pre>
+     *
+     * <code>string password = 3;</code>
+     * @return The password.
+     */
+    @java.lang.Override
+    public java.lang.String getPassword() {
+      java.lang.Object ref = password_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        password_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * password
+     * </pre>
+     *
+     * <code>string password = 3;</code>
+     * @return The bytes for password.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getPasswordBytes() {
+      java.lang.Object ref = password_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        password_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ROLE_ID_FIELD_NUMBER = 4;
+    private int roleId_ = 0;
+    /**
+     * <pre>
+     * role_id
+     * </pre>
+     *
+     * <code>int32 role_id = 4;</code>
+     * @return The roleId.
+     */
+    @java.lang.Override
+    public int getRoleId() {
+      return roleId_;
+    }
+
+    public static final int STATUS_FIELD_NUMBER = 5;
+    private int status_ = 0;
+    /**
+     * <pre>
+     * status
+     * </pre>
+     *
+     * <code>.api.common.DisableStatus status = 5;</code>
+     * @return The enum numeric value on the wire for status.
+     */
+    @java.lang.Override public int getStatusValue() {
+      return status_;
+    }
+    /**
+     * <pre>
+     * status
+     * </pre>
+     *
+     * <code>.api.common.DisableStatus status = 5;</code>
+     * @return The status.
+     */
+    @java.lang.Override public com.teneasyChat.api.common.CBase.DisableStatus getStatus() {
+      com.teneasyChat.api.common.CBase.DisableStatus result = com.teneasyChat.api.common.CBase.DisableStatus.forNumber(status_);
+      return result == null ? com.teneasyChat.api.common.CBase.DisableStatus.UNRECOGNIZED : result;
+    }
+
+    public static final int CREATE_AT_FIELD_NUMBER = 6;
+    private com.google.protobuf.Timestamp createAt_;
+    /**
+     * <pre>
+     * 创建时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_at = 6;</code>
+     * @return Whether the createAt field is set.
+     */
+    @java.lang.Override
+    public boolean hasCreateAt() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     * <pre>
+     * 创建时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_at = 6;</code>
+     * @return The createAt.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Timestamp getCreateAt() {
+      return createAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createAt_;
+    }
+    /**
+     * <pre>
+     * 创建时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_at = 6;</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.TimestampOrBuilder getCreateAtOrBuilder() {
+      return createAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createAt_;
+    }
+
+    public static final int UPDATE_AT_FIELD_NUMBER = 7;
+    private com.google.protobuf.Timestamp updateAt_;
+    /**
+     * <pre>
+     * 更新时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_at = 7;</code>
+     * @return Whether the updateAt field is set.
+     */
+    @java.lang.Override
+    public boolean hasUpdateAt() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     * <pre>
+     * 更新时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_at = 7;</code>
+     * @return The updateAt.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Timestamp getUpdateAt() {
+      return updateAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateAt_;
+    }
+    /**
+     * <pre>
+     * 更新时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_at = 7;</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.TimestampOrBuilder getUpdateAtOrBuilder() {
+      return updateAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateAt_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (id_ != 0) {
+        output.writeInt32(1, id_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(account_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 2, account_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(password_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 3, password_);
+      }
+      if (roleId_ != 0) {
+        output.writeInt32(4, roleId_);
+      }
+      if (status_ != com.teneasyChat.api.common.CBase.DisableStatus.DEFAULT.getNumber()) {
+        output.writeEnum(5, status_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(6, getCreateAt());
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        output.writeMessage(7, getUpdateAt());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (id_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, id_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(account_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(2, account_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(password_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(3, password_);
+      }
+      if (roleId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(4, roleId_);
+      }
+      if (status_ != com.teneasyChat.api.common.CBase.DisableStatus.DEFAULT.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(5, status_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(6, getCreateAt());
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(7, getUpdateAt());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.teneasyChat.api.common.CTenant.TenantManager)) {
+        return super.equals(obj);
+      }
+      com.teneasyChat.api.common.CTenant.TenantManager other = (com.teneasyChat.api.common.CTenant.TenantManager) obj;
+
+      if (getId()
+          != other.getId()) return false;
+      if (!getAccount()
+          .equals(other.getAccount())) return false;
+      if (!getPassword()
+          .equals(other.getPassword())) return false;
+      if (getRoleId()
+          != other.getRoleId()) return false;
+      if (status_ != other.status_) return false;
+      if (hasCreateAt() != other.hasCreateAt()) return false;
+      if (hasCreateAt()) {
+        if (!getCreateAt()
+            .equals(other.getCreateAt())) return false;
+      }
+      if (hasUpdateAt() != other.hasUpdateAt()) return false;
+      if (hasUpdateAt()) {
+        if (!getUpdateAt()
+            .equals(other.getUpdateAt())) return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId();
+      hash = (37 * hash) + ACCOUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getAccount().hashCode();
+      hash = (37 * hash) + PASSWORD_FIELD_NUMBER;
+      hash = (53 * hash) + getPassword().hashCode();
+      hash = (37 * hash) + ROLE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getRoleId();
+      hash = (37 * hash) + STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + status_;
+      if (hasCreateAt()) {
+        hash = (37 * hash) + CREATE_AT_FIELD_NUMBER;
+        hash = (53 * hash) + getCreateAt().hashCode();
+      }
+      if (hasUpdateAt()) {
+        hash = (37 * hash) + UPDATE_AT_FIELD_NUMBER;
+        hash = (53 * hash) + getUpdateAt().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.teneasyChat.api.common.CTenant.TenantManager parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.common.CTenant.TenantManager parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.common.CTenant.TenantManager parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.common.CTenant.TenantManager parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.common.CTenant.TenantManager parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.common.CTenant.TenantManager parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.common.CTenant.TenantManager parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.teneasyChat.api.common.CTenant.TenantManager parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.teneasyChat.api.common.CTenant.TenantManager parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.teneasyChat.api.common.CTenant.TenantManager parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.teneasyChat.api.common.CTenant.TenantManager parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.teneasyChat.api.common.CTenant.TenantManager parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.teneasyChat.api.common.CTenant.TenantManager prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * 商户后台管理员表
+     * </pre>
+     *
+     * Protobuf type {@code api.common.TenantManager}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:api.common.TenantManager)
+        com.teneasyChat.api.common.CTenant.TenantManagerOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.teneasyChat.api.common.CTenant.internal_static_api_common_TenantManager_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.teneasyChat.api.common.CTenant.internal_static_api_common_TenantManager_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.teneasyChat.api.common.CTenant.TenantManager.class, com.teneasyChat.api.common.CTenant.TenantManager.Builder.class);
+      }
+
+      // Construct using com.teneasyChat.api.common.CTenant.TenantManager.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage
+                .alwaysUseFieldBuilders) {
+          getCreateAtFieldBuilder();
+          getUpdateAtFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        id_ = 0;
+        account_ = "";
+        password_ = "";
+        roleId_ = 0;
+        status_ = 0;
+        createAt_ = null;
+        if (createAtBuilder_ != null) {
+          createAtBuilder_.dispose();
+          createAtBuilder_ = null;
+        }
+        updateAt_ = null;
+        if (updateAtBuilder_ != null) {
+          updateAtBuilder_.dispose();
+          updateAtBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.teneasyChat.api.common.CTenant.internal_static_api_common_TenantManager_descriptor;
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.common.CTenant.TenantManager getDefaultInstanceForType() {
+        return com.teneasyChat.api.common.CTenant.TenantManager.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.common.CTenant.TenantManager build() {
+        com.teneasyChat.api.common.CTenant.TenantManager result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.common.CTenant.TenantManager buildPartial() {
+        com.teneasyChat.api.common.CTenant.TenantManager result = new com.teneasyChat.api.common.CTenant.TenantManager(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.teneasyChat.api.common.CTenant.TenantManager result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.id_ = id_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.account_ = account_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.password_ = password_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.roleId_ = roleId_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.status_ = status_;
+        }
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.createAt_ = createAtBuilder_ == null
+              ? createAt_
+              : createAtBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.updateAt_ = updateAtBuilder_ == null
+              ? updateAt_
+              : updateAtBuilder_.build();
+          to_bitField0_ |= 0x00000002;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.teneasyChat.api.common.CTenant.TenantManager) {
+          return mergeFrom((com.teneasyChat.api.common.CTenant.TenantManager)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.teneasyChat.api.common.CTenant.TenantManager other) {
+        if (other == com.teneasyChat.api.common.CTenant.TenantManager.getDefaultInstance()) return this;
+        if (other.getId() != 0) {
+          setId(other.getId());
+        }
+        if (!other.getAccount().isEmpty()) {
+          account_ = other.account_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        if (!other.getPassword().isEmpty()) {
+          password_ = other.password_;
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        if (other.getRoleId() != 0) {
+          setRoleId(other.getRoleId());
+        }
+        if (other.status_ != 0) {
+          setStatusValue(other.getStatusValue());
+        }
+        if (other.hasCreateAt()) {
+          mergeCreateAt(other.getCreateAt());
+        }
+        if (other.hasUpdateAt()) {
+          mergeUpdateAt(other.getUpdateAt());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                id_ = input.readInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 18: {
+                account_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+              case 26: {
+                password_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
+              case 32: {
+                roleId_ = input.readInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 32
+              case 40: {
+                status_ = input.readEnum();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 40
+              case 50: {
+                input.readMessage(
+                    getCreateAtFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 50
+              case 58: {
+                input.readMessage(
+                    getUpdateAtFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 58
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private int id_ ;
+      /**
+       * <code>int32 id = 1;</code>
+       * @return The id.
+       */
+      @java.lang.Override
+      public int getId() {
+        return id_;
+      }
+      /**
+       * <code>int32 id = 1;</code>
+       * @param value The id to set.
+       * @return This builder for chaining.
+       */
+      public Builder setId(int value) {
+
+        id_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 id = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        id_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object account_ = "";
+      /**
+       * <pre>
+       * account
+       * </pre>
+       *
+       * <code>string account = 2;</code>
+       * @return The account.
+       */
+      public java.lang.String getAccount() {
+        java.lang.Object ref = account_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          account_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * account
+       * </pre>
+       *
+       * <code>string account = 2;</code>
+       * @return The bytes for account.
+       */
+      public com.google.protobuf.ByteString
+          getAccountBytes() {
+        java.lang.Object ref = account_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          account_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * account
+       * </pre>
+       *
+       * <code>string account = 2;</code>
+       * @param value The account to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAccount(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        account_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * account
+       * </pre>
+       *
+       * <code>string account = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAccount() {
+        account_ = getDefaultInstance().getAccount();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * account
+       * </pre>
+       *
+       * <code>string account = 2;</code>
+       * @param value The bytes for account to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAccountBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        account_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object password_ = "";
+      /**
+       * <pre>
+       * password
+       * </pre>
+       *
+       * <code>string password = 3;</code>
+       * @return The password.
+       */
+      public java.lang.String getPassword() {
+        java.lang.Object ref = password_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          password_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * password
+       * </pre>
+       *
+       * <code>string password = 3;</code>
+       * @return The bytes for password.
+       */
+      public com.google.protobuf.ByteString
+          getPasswordBytes() {
+        java.lang.Object ref = password_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          password_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * password
+       * </pre>
+       *
+       * <code>string password = 3;</code>
+       * @param value The password to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPassword(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        password_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * password
+       * </pre>
+       *
+       * <code>string password = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPassword() {
+        password_ = getDefaultInstance().getPassword();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * password
+       * </pre>
+       *
+       * <code>string password = 3;</code>
+       * @param value The bytes for password to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPasswordBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        password_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      private int roleId_ ;
+      /**
+       * <pre>
+       * role_id
+       * </pre>
+       *
+       * <code>int32 role_id = 4;</code>
+       * @return The roleId.
+       */
+      @java.lang.Override
+      public int getRoleId() {
+        return roleId_;
+      }
+      /**
+       * <pre>
+       * role_id
+       * </pre>
+       *
+       * <code>int32 role_id = 4;</code>
+       * @param value The roleId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRoleId(int value) {
+
+        roleId_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * role_id
+       * </pre>
+       *
+       * <code>int32 role_id = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRoleId() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        roleId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int status_ = 0;
+      /**
+       * <pre>
+       * status
+       * </pre>
+       *
+       * <code>.api.common.DisableStatus status = 5;</code>
+       * @return The enum numeric value on the wire for status.
+       */
+      @java.lang.Override public int getStatusValue() {
+        return status_;
+      }
+      /**
+       * <pre>
+       * status
+       * </pre>
+       *
+       * <code>.api.common.DisableStatus status = 5;</code>
+       * @param value The enum numeric value on the wire for status to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStatusValue(int value) {
+        status_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * status
+       * </pre>
+       *
+       * <code>.api.common.DisableStatus status = 5;</code>
+       * @return The status.
+       */
+      @java.lang.Override
+      public com.teneasyChat.api.common.CBase.DisableStatus getStatus() {
+        com.teneasyChat.api.common.CBase.DisableStatus result = com.teneasyChat.api.common.CBase.DisableStatus.forNumber(status_);
+        return result == null ? com.teneasyChat.api.common.CBase.DisableStatus.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * status
+       * </pre>
+       *
+       * <code>.api.common.DisableStatus status = 5;</code>
+       * @param value The status to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStatus(com.teneasyChat.api.common.CBase.DisableStatus value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000010;
+        status_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * status
+       * </pre>
+       *
+       * <code>.api.common.DisableStatus status = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearStatus() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        status_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.Timestamp createAt_;
+      private com.google.protobuf.SingleFieldBuilder<
+          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> createAtBuilder_;
+      /**
+       * <pre>
+       * 创建时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp create_at = 6;</code>
+       * @return Whether the createAt field is set.
+       */
+      public boolean hasCreateAt() {
+        return ((bitField0_ & 0x00000020) != 0);
+      }
+      /**
+       * <pre>
+       * 创建时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp create_at = 6;</code>
+       * @return The createAt.
+       */
+      public com.google.protobuf.Timestamp getCreateAt() {
+        if (createAtBuilder_ == null) {
+          return createAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createAt_;
+        } else {
+          return createAtBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * 创建时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp create_at = 6;</code>
+       */
+      public Builder setCreateAt(com.google.protobuf.Timestamp value) {
+        if (createAtBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          createAt_ = value;
+        } else {
+          createAtBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 创建时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp create_at = 6;</code>
+       */
+      public Builder setCreateAt(
+          com.google.protobuf.Timestamp.Builder builderForValue) {
+        if (createAtBuilder_ == null) {
+          createAt_ = builderForValue.build();
+        } else {
+          createAtBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 创建时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp create_at = 6;</code>
+       */
+      public Builder mergeCreateAt(com.google.protobuf.Timestamp value) {
+        if (createAtBuilder_ == null) {
+          if (((bitField0_ & 0x00000020) != 0) &&
+            createAt_ != null &&
+            createAt_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getCreateAtBuilder().mergeFrom(value);
+          } else {
+            createAt_ = value;
+          }
+        } else {
+          createAtBuilder_.mergeFrom(value);
+        }
+        if (createAt_ != null) {
+          bitField0_ |= 0x00000020;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 创建时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp create_at = 6;</code>
+       */
+      public Builder clearCreateAt() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        createAt_ = null;
+        if (createAtBuilder_ != null) {
+          createAtBuilder_.dispose();
+          createAtBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 创建时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp create_at = 6;</code>
+       */
+      public com.google.protobuf.Timestamp.Builder getCreateAtBuilder() {
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return getCreateAtFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * 创建时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp create_at = 6;</code>
+       */
+      public com.google.protobuf.TimestampOrBuilder getCreateAtOrBuilder() {
+        if (createAtBuilder_ != null) {
+          return createAtBuilder_.getMessageOrBuilder();
+        } else {
+          return createAt_ == null ?
+              com.google.protobuf.Timestamp.getDefaultInstance() : createAt_;
+        }
+      }
+      /**
+       * <pre>
+       * 创建时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp create_at = 6;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+          getCreateAtFieldBuilder() {
+        if (createAtBuilder_ == null) {
+          createAtBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                  getCreateAt(),
+                  getParentForChildren(),
+                  isClean());
+          createAt_ = null;
+        }
+        return createAtBuilder_;
+      }
+
+      private com.google.protobuf.Timestamp updateAt_;
+      private com.google.protobuf.SingleFieldBuilder<
+          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> updateAtBuilder_;
+      /**
+       * <pre>
+       * 更新时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp update_at = 7;</code>
+       * @return Whether the updateAt field is set.
+       */
+      public boolean hasUpdateAt() {
+        return ((bitField0_ & 0x00000040) != 0);
+      }
+      /**
+       * <pre>
+       * 更新时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp update_at = 7;</code>
+       * @return The updateAt.
+       */
+      public com.google.protobuf.Timestamp getUpdateAt() {
+        if (updateAtBuilder_ == null) {
+          return updateAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateAt_;
+        } else {
+          return updateAtBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * 更新时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp update_at = 7;</code>
+       */
+      public Builder setUpdateAt(com.google.protobuf.Timestamp value) {
+        if (updateAtBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          updateAt_ = value;
+        } else {
+          updateAtBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 更新时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp update_at = 7;</code>
+       */
+      public Builder setUpdateAt(
+          com.google.protobuf.Timestamp.Builder builderForValue) {
+        if (updateAtBuilder_ == null) {
+          updateAt_ = builderForValue.build();
+        } else {
+          updateAtBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 更新时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp update_at = 7;</code>
+       */
+      public Builder mergeUpdateAt(com.google.protobuf.Timestamp value) {
+        if (updateAtBuilder_ == null) {
+          if (((bitField0_ & 0x00000040) != 0) &&
+            updateAt_ != null &&
+            updateAt_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getUpdateAtBuilder().mergeFrom(value);
+          } else {
+            updateAt_ = value;
+          }
+        } else {
+          updateAtBuilder_.mergeFrom(value);
+        }
+        if (updateAt_ != null) {
+          bitField0_ |= 0x00000040;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 更新时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp update_at = 7;</code>
+       */
+      public Builder clearUpdateAt() {
+        bitField0_ = (bitField0_ & ~0x00000040);
+        updateAt_ = null;
+        if (updateAtBuilder_ != null) {
+          updateAtBuilder_.dispose();
+          updateAtBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 更新时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp update_at = 7;</code>
+       */
+      public com.google.protobuf.Timestamp.Builder getUpdateAtBuilder() {
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return getUpdateAtFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * 更新时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp update_at = 7;</code>
+       */
+      public com.google.protobuf.TimestampOrBuilder getUpdateAtOrBuilder() {
+        if (updateAtBuilder_ != null) {
+          return updateAtBuilder_.getMessageOrBuilder();
+        } else {
+          return updateAt_ == null ?
+              com.google.protobuf.Timestamp.getDefaultInstance() : updateAt_;
+        }
+      }
+      /**
+       * <pre>
+       * 更新时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp update_at = 7;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+          getUpdateAtFieldBuilder() {
+        if (updateAtBuilder_ == null) {
+          updateAtBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                  getUpdateAt(),
+                  getParentForChildren(),
+                  isClean());
+          updateAt_ = null;
+        }
+        return updateAtBuilder_;
+      }
+
+      // @@protoc_insertion_point(builder_scope:api.common.TenantManager)
+    }
+
+    // @@protoc_insertion_point(class_scope:api.common.TenantManager)
+    private static final com.teneasyChat.api.common.CTenant.TenantManager DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.teneasyChat.api.common.CTenant.TenantManager();
+    }
+
+    public static com.teneasyChat.api.common.CTenant.TenantManager getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<TenantManager>
+        PARSER = new com.google.protobuf.AbstractParser<TenantManager>() {
+      @java.lang.Override
+      public TenantManager parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<TenantManager> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<TenantManager> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.teneasyChat.api.common.CTenant.TenantManager getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_api_common_WSConnCustom_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_api_common_WSConnCustom_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_api_common_TenantsLineGroup_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_api_common_TenantsLineGroup_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_api_common_TenantRoute_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_api_common_TenantRoute_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_api_common_TenantRouteWithItem_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_api_common_TenantRouteWithItem_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_api_common_TenantRole_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_api_common_TenantRole_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_api_common_TenantRoleRoute_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_api_common_TenantRoleRoute_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_api_common_TenantManager_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_api_common_TenantManager_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -2435,17 +10945,47 @@ public final class CTenant {
       "\n\031api/common/c_tenant.proto\022\napi.common\032" +
       "\027api/common/c_base.proto\032\027validate/valid" +
       "ate.proto\032\037google/protobuf/timestamp.pro" +
-      "to\"\325\002\n\020TenantsLineGroup\022\n\n\002id\030\001 \001(\005\022\014\n\004n" +
-      "ame\030\002 \001(\t\022(\n\010h5_lines\030\003 \001(\0132\026.api.common" +
-      ".ListString\0220\n\020background_lines\030\004 \001(\0132\026." +
-      "api.common.ListString\022\023\n\013operate_uid\030\005 \001" +
-      "(\005\022\023\n\013description\030\006 \001(\t\022-\n\tcreate_at\030\007 \001" +
-      "(\0132\032.google.protobuf.Timestamp\022-\n\tupdate" +
-      "_at\030\010 \001(\0132\032.google.protobuf.Timestamp\022-\n" +
-      "\tdelete_at\030\t \001(\0132\032.google.protobuf.Times" +
-      "tamp\022\024\n\014operate_name\030\n \001(\tB3\n\032com.teneas" +
-      "yChat.api.commonZ\025wcs/api/common;commonb" +
-      "\006proto3"
+      "to\"E\n\014WSConnCustom\022\020\n\010username\030\001 \001(\t\022\020\n\010" +
+      "platform\030\002 \001(\005\022\021\n\tuserlevel\030\003 \001(\r\"\325\002\n\020Te" +
+      "nantsLineGroup\022\n\n\002id\030\001 \001(\005\022\014\n\004name\030\002 \001(\t" +
+      "\022(\n\010h5_lines\030\003 \001(\0132\026.api.common.ListStri" +
+      "ng\0220\n\020background_lines\030\004 \001(\0132\026.api.commo" +
+      "n.ListString\022\023\n\013operate_uid\030\005 \001(\005\022\023\n\013des" +
+      "cription\030\006 \001(\t\022-\n\tcreate_at\030\007 \001(\0132\032.goog" +
+      "le.protobuf.Timestamp\022-\n\tupdate_at\030\010 \001(\013" +
+      "2\032.google.protobuf.Timestamp\022-\n\tdelete_a" +
+      "t\030\t \001(\0132\032.google.protobuf.Timestamp\022\024\n\014o" +
+      "perate_name\030\n \001(\t\"\334\001\n\013TenantRoute\022\n\n\002id\030" +
+      "\001 \001(\005\022\014\n\004name\030\002 \001(\t\022\013\n\003url\030\003 \001(\t\022\013\n\003pid\030" +
+      "\004 \001(\005\022\014\n\004sort\030\005 \001(\005\022-\n\tcreate_at\030\006 \001(\0132\032" +
+      ".google.protobuf.Timestamp\022-\n\tupdate_at\030" +
+      "\007 \001(\0132\032.google.protobuf.Timestamp\022-\n\rbin" +
+      "dingStatus\030\010 \001(\0162\026.api.common.BindStatus" +
+      "\"\335\001\n\023TenantRouteWithItem\022\n\n\002id\030\001 \001(\005\022\014\n\004" +
+      "name\030\002 \001(\t\022\013\n\003url\030\003 \001(\t\022\013\n\003pid\030\004 \001(\005\022\014\n\004" +
+      "sort\030\005 \001(\005\022-\n\tcreate_at\030\006 \001(\0132\032.google.p" +
+      "rotobuf.Timestamp\022-\n\tupdate_at\030\007 \001(\0132\032.g" +
+      "oogle.protobuf.Timestamp\022&\n\005items\030\t \003(\0132" +
+      "\027.api.common.TenantRoute\"\261\001\n\nTenantRole\022" +
+      "\n\n\002id\030\001 \001(\005\022\014\n\004name\030\002 \001(\t\022+\n\010is_super\030\003 " +
+      "\001(\0162\031.api.common.TenantIsSuper\022-\n\tcreate" +
+      "_at\030\004 \001(\0132\032.google.protobuf.Timestamp\022-\n" +
+      "\tupdate_at\030\005 \001(\0132\032.google.protobuf.Times" +
+      "tamp\"G\n\017TenantRoleRoute\022\017\n\007role_id\030\001 \001(\005" +
+      "\022\020\n\010route_id\030\002 \001(\005\022\021\n\troute_url\030\003 \001(\t\"\330\001" +
+      "\n\rTenantManager\022\n\n\002id\030\001 \001(\005\022\017\n\007account\030\002" +
+      " \001(\t\022\020\n\010password\030\003 \001(\t\022\017\n\007role_id\030\004 \001(\005\022" +
+      ")\n\006status\030\005 \001(\0162\031.api.common.DisableStat" +
+      "us\022-\n\tcreate_at\030\006 \001(\0132\032.google.protobuf." +
+      "Timestamp\022-\n\tupdate_at\030\007 \001(\0132\032.google.pr" +
+      "otobuf.Timestamp*F\n\022CommonConfigStatus\022\017" +
+      "\n\013VCS_UNKNOWN\020\000\022\016\n\nVCS_ENABLE\020\001\022\017\n\013VCS_D" +
+      "ISABLE\020\002*H\n\rTenantIsSuper\022\024\n\020IS_SUPER_DE" +
+      "FAULT\020\000\022\017\n\013IS_SUPER_NO\020\001\022\020\n\014IS_SUPER_YES" +
+      "\020\002*?\n\016TenantCopyType\022\017\n\013TCT_UNKNOWN\020\000\022\013\n" +
+      "\007TCT_UID\020\001\022\017\n\013TCT_ACCOUNT\020\002B3\n\032com.tenea" +
+      "syChat.api.commonZ\025wcs/api/common;common" +
+      "b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -2454,12 +10994,48 @@ public final class CTenant {
           io.envoyproxy.pgv.validate.Validate.getDescriptor(),
           com.google.protobuf.TimestampProto.getDescriptor(),
         });
-    internal_static_api_common_TenantsLineGroup_descriptor =
+    internal_static_api_common_WSConnCustom_descriptor =
       getDescriptor().getMessageTypes().get(0);
+    internal_static_api_common_WSConnCustom_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_api_common_WSConnCustom_descriptor,
+        new java.lang.String[] { "Username", "Platform", "Userlevel", });
+    internal_static_api_common_TenantsLineGroup_descriptor =
+      getDescriptor().getMessageTypes().get(1);
     internal_static_api_common_TenantsLineGroup_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_common_TenantsLineGroup_descriptor,
         new java.lang.String[] { "Id", "Name", "H5Lines", "BackgroundLines", "OperateUid", "Description", "CreateAt", "UpdateAt", "DeleteAt", "OperateName", });
+    internal_static_api_common_TenantRoute_descriptor =
+      getDescriptor().getMessageTypes().get(2);
+    internal_static_api_common_TenantRoute_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_api_common_TenantRoute_descriptor,
+        new java.lang.String[] { "Id", "Name", "Url", "Pid", "Sort", "CreateAt", "UpdateAt", "BindingStatus", });
+    internal_static_api_common_TenantRouteWithItem_descriptor =
+      getDescriptor().getMessageTypes().get(3);
+    internal_static_api_common_TenantRouteWithItem_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_api_common_TenantRouteWithItem_descriptor,
+        new java.lang.String[] { "Id", "Name", "Url", "Pid", "Sort", "CreateAt", "UpdateAt", "Items", });
+    internal_static_api_common_TenantRole_descriptor =
+      getDescriptor().getMessageTypes().get(4);
+    internal_static_api_common_TenantRole_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_api_common_TenantRole_descriptor,
+        new java.lang.String[] { "Id", "Name", "IsSuper", "CreateAt", "UpdateAt", });
+    internal_static_api_common_TenantRoleRoute_descriptor =
+      getDescriptor().getMessageTypes().get(5);
+    internal_static_api_common_TenantRoleRoute_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_api_common_TenantRoleRoute_descriptor,
+        new java.lang.String[] { "RoleId", "RouteId", "RouteUrl", });
+    internal_static_api_common_TenantManager_descriptor =
+      getDescriptor().getMessageTypes().get(6);
+    internal_static_api_common_TenantManager_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_api_common_TenantManager_descriptor,
+        new java.lang.String[] { "Id", "Account", "Password", "RoleId", "Status", "CreateAt", "UpdateAt", });
     descriptor.resolveAllFeaturesImmutable();
     com.teneasyChat.api.common.CBase.getDescriptor();
     io.envoyproxy.pgv.validate.Validate.getDescriptor();

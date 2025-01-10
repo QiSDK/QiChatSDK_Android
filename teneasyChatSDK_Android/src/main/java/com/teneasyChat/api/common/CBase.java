@@ -172,6 +172,152 @@ public final class CBase {
 
   /**
    * <pre>
+   * 是/否
+   * </pre>
+   *
+   * Protobuf enum {@code api.common.BoolStatus}
+   */
+  public enum BoolStatus
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>Bool_DEFAULT = 0;</code>
+     */
+    Bool_DEFAULT(0),
+    /**
+     * <pre>
+     * 是
+     * </pre>
+     *
+     * <code>Bool_ENABLE = 1;</code>
+     */
+    Bool_ENABLE(1),
+    /**
+     * <pre>
+     * 否
+     * </pre>
+     *
+     * <code>Bool_DISABLE = 2;</code>
+     */
+    Bool_DISABLE(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 26,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        BoolStatus.class.getName());
+    }
+    /**
+     * <code>Bool_DEFAULT = 0;</code>
+     */
+    public static final int Bool_DEFAULT_VALUE = 0;
+    /**
+     * <pre>
+     * 是
+     * </pre>
+     *
+     * <code>Bool_ENABLE = 1;</code>
+     */
+    public static final int Bool_ENABLE_VALUE = 1;
+    /**
+     * <pre>
+     * 否
+     * </pre>
+     *
+     * <code>Bool_DISABLE = 2;</code>
+     */
+    public static final int Bool_DISABLE_VALUE = 2;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static BoolStatus valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static BoolStatus forNumber(int value) {
+      switch (value) {
+        case 0: return Bool_DEFAULT;
+        case 1: return Bool_ENABLE;
+        case 2: return Bool_DISABLE;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<BoolStatus>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        BoolStatus> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<BoolStatus>() {
+            public BoolStatus findValueByNumber(int number) {
+              return BoolStatus.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return com.teneasyChat.api.common.CBase.getDescriptor().getEnumTypes().get(1);
+    }
+
+    private static final BoolStatus[] VALUES = values();
+
+    public static BoolStatus valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private BoolStatus(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:api.common.BoolStatus)
+  }
+
+  /**
+   * <pre>
    * 上一页/下一页
    * </pre>
    *
@@ -290,7 +436,7 @@ public final class CBase {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return com.teneasyChat.api.common.CBase.getDescriptor().getEnumTypes().get(1);
+      return com.teneasyChat.api.common.CBase.getDescriptor().getEnumTypes().get(2);
     }
 
     private static final PageUpDown[] VALUES = values();
@@ -314,6 +460,451 @@ public final class CBase {
     }
 
     // @@protoc_insertion_point(enum_scope:api.common.PageUpDown)
+  }
+
+  /**
+   * <pre>
+   * 绑定状态
+   * </pre>
+   *
+   * Protobuf enum {@code api.common.BindStatus}
+   */
+  public enum BindStatus
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <pre>
+     * 默认状态
+     * </pre>
+     *
+     * <code>BIND_STATUS_DEFAULT = 0;</code>
+     */
+    BIND_STATUS_DEFAULT(0),
+    /**
+     * <pre>
+     * 已绑定
+     * </pre>
+     *
+     * <code>BIND_STATUS_BOUND = 1;</code>
+     */
+    BIND_STATUS_BOUND(1),
+    /**
+     * <pre>
+     * 未绑定
+     * </pre>
+     *
+     * <code>BIND_STATUS_UNBOUND = 2;</code>
+     */
+    BIND_STATUS_UNBOUND(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 26,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        BindStatus.class.getName());
+    }
+    /**
+     * <pre>
+     * 默认状态
+     * </pre>
+     *
+     * <code>BIND_STATUS_DEFAULT = 0;</code>
+     */
+    public static final int BIND_STATUS_DEFAULT_VALUE = 0;
+    /**
+     * <pre>
+     * 已绑定
+     * </pre>
+     *
+     * <code>BIND_STATUS_BOUND = 1;</code>
+     */
+    public static final int BIND_STATUS_BOUND_VALUE = 1;
+    /**
+     * <pre>
+     * 未绑定
+     * </pre>
+     *
+     * <code>BIND_STATUS_UNBOUND = 2;</code>
+     */
+    public static final int BIND_STATUS_UNBOUND_VALUE = 2;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static BindStatus valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static BindStatus forNumber(int value) {
+      switch (value) {
+        case 0: return BIND_STATUS_DEFAULT;
+        case 1: return BIND_STATUS_BOUND;
+        case 2: return BIND_STATUS_UNBOUND;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<BindStatus>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        BindStatus> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<BindStatus>() {
+            public BindStatus findValueByNumber(int number) {
+              return BindStatus.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return com.teneasyChat.api.common.CBase.getDescriptor().getEnumTypes().get(3);
+    }
+
+    private static final BindStatus[] VALUES = values();
+
+    public static BindStatus valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private BindStatus(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:api.common.BindStatus)
+  }
+
+  /**
+   * <pre>
+   * 排序类型
+   * </pre>
+   *
+   * Protobuf enum {@code api.common.SortType}
+   */
+  public enum SortType
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <pre>
+     * 降序
+     * </pre>
+     *
+     * <code>DESCEND = 0;</code>
+     */
+    DESCEND(0),
+    /**
+     * <pre>
+     * 升序
+     * </pre>
+     *
+     * <code>ASCEND = 1;</code>
+     */
+    ASCEND(1),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 26,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        SortType.class.getName());
+    }
+    /**
+     * <pre>
+     * 降序
+     * </pre>
+     *
+     * <code>DESCEND = 0;</code>
+     */
+    public static final int DESCEND_VALUE = 0;
+    /**
+     * <pre>
+     * 升序
+     * </pre>
+     *
+     * <code>ASCEND = 1;</code>
+     */
+    public static final int ASCEND_VALUE = 1;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static SortType valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static SortType forNumber(int value) {
+      switch (value) {
+        case 0: return DESCEND;
+        case 1: return ASCEND;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<SortType>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        SortType> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<SortType>() {
+            public SortType findValueByNumber(int number) {
+              return SortType.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return com.teneasyChat.api.common.CBase.getDescriptor().getEnumTypes().get(4);
+    }
+
+    private static final SortType[] VALUES = values();
+
+    public static SortType valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private SortType(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:api.common.SortType)
+  }
+
+  /**
+   * <pre>
+   * 排序方式
+   * </pre>
+   *
+   * Protobuf enum {@code api.common.SortOrder}
+   */
+  public enum SortOrder
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <pre>
+     * 默认排序
+     * </pre>
+     *
+     * <code>SORT_ORDER_DEFAULT = 0;</code>
+     */
+    SORT_ORDER_DEFAULT(0),
+    /**
+     * <pre>
+     * 升序
+     * </pre>
+     *
+     * <code>SORT_ORDER_ASC = 1;</code>
+     */
+    SORT_ORDER_ASC(1),
+    /**
+     * <pre>
+     * 降序
+     * </pre>
+     *
+     * <code>SORT_ORDER_DESC = 2;</code>
+     */
+    SORT_ORDER_DESC(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 26,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        SortOrder.class.getName());
+    }
+    /**
+     * <pre>
+     * 默认排序
+     * </pre>
+     *
+     * <code>SORT_ORDER_DEFAULT = 0;</code>
+     */
+    public static final int SORT_ORDER_DEFAULT_VALUE = 0;
+    /**
+     * <pre>
+     * 升序
+     * </pre>
+     *
+     * <code>SORT_ORDER_ASC = 1;</code>
+     */
+    public static final int SORT_ORDER_ASC_VALUE = 1;
+    /**
+     * <pre>
+     * 降序
+     * </pre>
+     *
+     * <code>SORT_ORDER_DESC = 2;</code>
+     */
+    public static final int SORT_ORDER_DESC_VALUE = 2;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static SortOrder valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static SortOrder forNumber(int value) {
+      switch (value) {
+        case 0: return SORT_ORDER_DEFAULT;
+        case 1: return SORT_ORDER_ASC;
+        case 2: return SORT_ORDER_DESC;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<SortOrder>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        SortOrder> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<SortOrder>() {
+            public SortOrder findValueByNumber(int number) {
+              return SortOrder.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return com.teneasyChat.api.common.CBase.getDescriptor().getEnumTypes().get(5);
+    }
+
+    private static final SortOrder[] VALUES = values();
+
+    public static SortOrder valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private SortOrder(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:api.common.SortOrder)
   }
 
   public interface BaseResponseOrBuilder extends
@@ -6585,11 +7176,17 @@ public final class CBase {
       "\tSetString\022+\n\003str\030\001 \003(\0132\036.api.common.Set" +
       "String.StrEntry\032*\n\010StrEntry\022\013\n\003key\030\001 \001(\t" +
       "\022\r\n\005value\030\002 \001(\003:\0028\001*5\n\rDisableStatus\022\013\n\007" +
-      "DEFAULT\020\000\022\n\n\006ENABLE\020\001\022\013\n\007DISABLE\020\002*7\n\nPa" +
-      "geUpDown\022\017\n\013PUD_DEFAULT\020\000\022\n\n\006PUD_UP\020\001\022\014\n" +
-      "\010PUD_DOWN\020\002B<\n\032com.teneasyChat.api.commo" +
-      "nZ\025wcs/api/common;common\272\002\006Commonb\006proto" +
-      "3"
+      "DEFAULT\020\000\022\n\n\006ENABLE\020\001\022\013\n\007DISABLE\020\002*A\n\nBo" +
+      "olStatus\022\020\n\014Bool_DEFAULT\020\000\022\017\n\013Bool_ENABL" +
+      "E\020\001\022\020\n\014Bool_DISABLE\020\002*7\n\nPageUpDown\022\017\n\013P" +
+      "UD_DEFAULT\020\000\022\n\n\006PUD_UP\020\001\022\014\n\010PUD_DOWN\020\002*U" +
+      "\n\nBindStatus\022\027\n\023BIND_STATUS_DEFAULT\020\000\022\025\n" +
+      "\021BIND_STATUS_BOUND\020\001\022\027\n\023BIND_STATUS_UNBO" +
+      "UND\020\002*#\n\010SortType\022\013\n\007DESCEND\020\000\022\n\n\006ASCEND" +
+      "\020\001*L\n\tSortOrder\022\026\n\022SORT_ORDER_DEFAULT\020\000\022" +
+      "\022\n\016SORT_ORDER_ASC\020\001\022\023\n\017SORT_ORDER_DESC\020\002" +
+      "B<\n\032com.teneasyChat.api.commonZ\025wcs/api/" +
+      "common;common\272\002\006Commonb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
