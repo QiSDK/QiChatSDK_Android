@@ -398,7 +398,7 @@ class ChatLib constructor(cert: String, token:String, baseUrl:String = "", userI
      *  心跳，一般建议每隔60秒调用
      */
    private fun sendHeartBeat(){
-       if (!isConnected) return
+       if (!isConnected || socket == null || socket?.isClosed?:true || socket?.isClosing?:true) return
         val buffer = ByteArray(1)
         buffer[0] = 0
         socket?.send(buffer)
