@@ -238,7 +238,8 @@ class MainActivity : AppCompatActivity(), TeneasySDKDelegate {
             //失去链接，重试连接
             //startTimer()
         }
-        appendText(msg.msg + "\n")
+        print("${msg.code} ${msg.msg} ")
+        appendText("${msg.code} ${msg.msg} \n")
     }
 
     //成功连接，并返回相关信息，例如workerId

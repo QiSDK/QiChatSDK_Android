@@ -376,6 +376,7 @@ class ChatLib constructor(cert: String, token:String, baseUrl:String = "", userI
             payload.id = payloadId
         }
         Log.i(TAG, "sending payloadId: ${payload.id}")
+        if (!isConnected || socket == null || socket?.isOpen?:false == false || socket?.isClosed?:true || socket?.isClosing?:true) return
         socket?.send(payload.build().toByteArray())
     }
 
@@ -384,13 +385,13 @@ class ChatLib constructor(cert: String, token:String, baseUrl:String = "", userI
         if (sessionTime % 30 == 0) { // Send a heartbeat every 8 seconds
             beatTimes++
             // Log the sending of the heartbeat
-            Log.d(TAG, "Sending heartbeat $beatTimes")
+            Log.d(TAG, "Sending heartbeat $beatTimes ${Date()}")
             sendHeartBeat()
         }
 
         if (sessionTime > maxSessionMinutes * 60) { // Stop sending heartbeats after the maximum session time
            disConnected(1005, "会话超时")
-            disConnect()//停止计时器等
+           // disConnect()//停止计时器等
         }
     }
 
@@ -398,7 +399,7 @@ class ChatLib constructor(cert: String, token:String, baseUrl:String = "", userI
      *  心跳，一般建议每隔60秒调用
      */
    private fun sendHeartBeat(){
-       if (!isConnected || socket == null || socket?.isClosed?:true || socket?.isClosing?:true) return
+       if (!isConnected || socket == null || socket?.isOpen?:false == false || socket?.isClosed?:true || socket?.isClosing?:true) return
         val buffer = ByteArray(1)
         buffer[0] = 0
         socket?.send(buffer)
@@ -558,7 +559,7 @@ EntranceNotExistsFlag = 0x4
         disConnect()
         sendingMessage = null
         isConnected = false
-        print("ChatLib disConnected code:" + code + "msg:" + msg);
+        Log.i(TAG, "ChatLib disConnected code:" + code + "msg:" + msg);
     }
 
     // 启动计时器，持续调用心跳方法
