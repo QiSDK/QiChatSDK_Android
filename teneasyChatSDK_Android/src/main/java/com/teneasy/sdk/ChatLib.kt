@@ -376,8 +376,13 @@ class ChatLib constructor(cert: String, token:String, baseUrl:String = "", userI
             payload.id = payloadId
         }
         Log.i(TAG, "sending payloadId: ${payload.id}")
-        if (!isConnected || socket == null || socket?.isOpen?:false == false || socket?.isClosed?:true || socket?.isClosing?:true) return
-        socket?.send(payload.build().toByteArray())
+        if (!isConnected || socket == null || socket?.isOpen == true) return
+
+        try {
+            socket?.send(payload.build().toByteArray())
+        }catch (ex: Exception){
+
+        }
     }
 
   private fun updateSecond() {
@@ -399,10 +404,14 @@ class ChatLib constructor(cert: String, token:String, baseUrl:String = "", userI
      *  心跳，一般建议每隔60秒调用
      */
    private fun sendHeartBeat(){
-       if (!isConnected || socket == null || socket?.isOpen?:false == false || socket?.isClosed?:true || socket?.isClosing?:true) return
+       if (!isConnected || socket == null || socket?.isOpen == true) return
         val buffer = ByteArray(1)
         buffer[0] = 0
-        socket?.send(buffer)
+        try {
+            socket?.send(buffer)
+        }catch (ex: Exception){
+
+        }
     }
 
     /**
