@@ -381,7 +381,7 @@ class ChatLib constructor(cert: String, token:String, baseUrl:String = "", userI
         try {
             socket?.send(payload.build().toByteArray())
         }catch (ex: Exception){
-
+            Log.i(TAG, "尝试在断开状态发消息")
         }
     }
 
@@ -410,7 +410,7 @@ class ChatLib constructor(cert: String, token:String, baseUrl:String = "", userI
         try {
             socket?.send(buffer)
         }catch (ex: Exception){
-
+            Log.i(TAG, "尝试在断开状态发消息")
         }
     }
 
