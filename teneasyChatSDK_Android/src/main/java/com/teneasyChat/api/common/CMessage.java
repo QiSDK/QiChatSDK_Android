@@ -690,6 +690,14 @@ public final class CMessage {
      * <code>MST_SYSTEM_TRANSFER = 5;</code>
      */
     MST_SYSTEM_TRANSFER(5),
+    /**
+     * <pre>
+     * 自动定时回复消息
+     * </pre>
+     *
+     * <code>MST_SYSTEM_AUTO_TRANSFER = 6;</code>
+     */
+    MST_SYSTEM_AUTO_TRANSFER(6),
     UNRECOGNIZED(-1),
     ;
 
@@ -746,6 +754,14 @@ public final class CMessage {
      * <code>MST_SYSTEM_TRANSFER = 5;</code>
      */
     public static final int MST_SYSTEM_TRANSFER_VALUE = 5;
+    /**
+     * <pre>
+     * 自动定时回复消息
+     * </pre>
+     *
+     * <code>MST_SYSTEM_AUTO_TRANSFER = 6;</code>
+     */
+    public static final int MST_SYSTEM_AUTO_TRANSFER_VALUE = 6;
 
 
     public final int getNumber() {
@@ -778,6 +794,7 @@ public final class CMessage {
         case 3: return MST_SYSTEM_WORKER;
         case 4: return MST_SYSTEM_CUSTOMER;
         case 5: return MST_SYSTEM_TRANSFER;
+        case 6: return MST_SYSTEM_AUTO_TRANSFER;
         default: return null;
       }
     }
@@ -20137,14 +20154,15 @@ public final class CMessage {
       "CE\020\002\022\r\n\tMSG_VIDEO\020\003\022\013\n\007MSG_GEO\020\004\022\014\n\010MSG_" +
       "FILE\020\006*f\n\013MessageRole\022\023\n\017MSG_ROLE_SYSTEM" +
       "\020\000\022\023\n\017MSG_ROLE_WORKER\020\001\022\025\n\021MSG_ROLE_CUST" +
-      "OMER\020\002\022\026\n\022MSG_ROLE_ANONYMOUS\020\003*\213\001\n\rMsgSo" +
+      "OMER\020\002\022\026\n\022MSG_ROLE_ANONYMOUS\020\003*\251\001\n\rMsgSo" +
       "urceType\022\017\n\013MST_DEFAULT\020\000\022\016\n\nMST_WORKER\020" +
       "\001\022\020\n\014MST_CUSTOMER\020\002\022\025\n\021MST_SYSTEM_WORKER" +
       "\020\003\022\027\n\023MST_SYSTEM_CUSTOMER\020\004\022\027\n\023MST_SYSTE" +
-      "M_TRANSFER\020\005*E\n\016MessageOperate\022\017\n\013MSG_OP" +
-      "_POST\020\000\022\017\n\013MSG_OP_EDIT\020\001\022\021\n\rMSG_OP_DELET" +
-      "E\020\002B<\n\032com.teneasyChat.api.commonZ\025wcs/a" +
-      "pi/common;common\272\002\006Commonb\006proto3"
+      "M_TRANSFER\020\005\022\034\n\030MST_SYSTEM_AUTO_TRANSFER" +
+      "\020\006*E\n\016MessageOperate\022\017\n\013MSG_OP_POST\020\000\022\017\n" +
+      "\013MSG_OP_EDIT\020\001\022\021\n\rMSG_OP_DELETE\020\002B<\n\032com" +
+      ".teneasyChat.api.commonZ\025wcs/api/common;" +
+      "common\272\002\006Commonb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

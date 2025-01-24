@@ -169,6 +169,10 @@ public final class CEntrance {
   }
 
   /**
+   * <pre>
+   * 用户平台 1-IOS 2-Android 3-H5 4-WEB_IOS 5-WEB_WINDOWS 6-WINDOWS 7-MAC
+   * </pre>
+   *
    * Protobuf enum {@code api.common.ClientType}
    */
   public enum ClientType
@@ -202,13 +206,45 @@ public final class CEntrance {
      */
     CLIENT_TYPE_USER_H5(102),
     /**
+     * <pre>
+     * web端 兼容旧版
+     * </pre>
+     *
      * <code>CLIENT_TYPE_USER_WEB = 103;</code>
      */
     CLIENT_TYPE_USER_WEB(103),
     /**
+     * <pre>
+     * app端 兼容旧版
+     * </pre>
+     *
      * <code>CLIENT_TYPE_USER_APP = 104;</code>
      */
     CLIENT_TYPE_USER_APP(104),
+    /**
+     * <code>CLIENT_TYPE_USER_WEB_IOS = 105;</code>
+     */
+    CLIENT_TYPE_USER_WEB_IOS(105),
+    /**
+     * <code>CLIENT_TYPE_USER_WEB_WINDOWS = 106;</code>
+     */
+    CLIENT_TYPE_USER_WEB_WINDOWS(106),
+    /**
+     * <code>CLIENT_TYPE_USER_APP_IOS = 107;</code>
+     */
+    CLIENT_TYPE_USER_APP_IOS(107),
+    /**
+     * <code>CLIENT_TYPE_USER_APP_ANDROID = 108;</code>
+     */
+    CLIENT_TYPE_USER_APP_ANDROID(108),
+    /**
+     * <code>CLIENT_TYPE_USER_WINDOWS = 109;</code>
+     */
+    CLIENT_TYPE_USER_WINDOWS(109),
+    /**
+     * <code>CLIENT_TYPE_USER_MAC = 110;</code>
+     */
+    CLIENT_TYPE_USER_MAC(110),
     /**
      * <pre>
      * 用户端在此加入新类型
@@ -258,13 +294,45 @@ public final class CEntrance {
      */
     public static final int CLIENT_TYPE_USER_H5_VALUE = 102;
     /**
+     * <pre>
+     * web端 兼容旧版
+     * </pre>
+     *
      * <code>CLIENT_TYPE_USER_WEB = 103;</code>
      */
     public static final int CLIENT_TYPE_USER_WEB_VALUE = 103;
     /**
+     * <pre>
+     * app端 兼容旧版
+     * </pre>
+     *
      * <code>CLIENT_TYPE_USER_APP = 104;</code>
      */
     public static final int CLIENT_TYPE_USER_APP_VALUE = 104;
+    /**
+     * <code>CLIENT_TYPE_USER_WEB_IOS = 105;</code>
+     */
+    public static final int CLIENT_TYPE_USER_WEB_IOS_VALUE = 105;
+    /**
+     * <code>CLIENT_TYPE_USER_WEB_WINDOWS = 106;</code>
+     */
+    public static final int CLIENT_TYPE_USER_WEB_WINDOWS_VALUE = 106;
+    /**
+     * <code>CLIENT_TYPE_USER_APP_IOS = 107;</code>
+     */
+    public static final int CLIENT_TYPE_USER_APP_IOS_VALUE = 107;
+    /**
+     * <code>CLIENT_TYPE_USER_APP_ANDROID = 108;</code>
+     */
+    public static final int CLIENT_TYPE_USER_APP_ANDROID_VALUE = 108;
+    /**
+     * <code>CLIENT_TYPE_USER_WINDOWS = 109;</code>
+     */
+    public static final int CLIENT_TYPE_USER_WINDOWS_VALUE = 109;
+    /**
+     * <code>CLIENT_TYPE_USER_MAC = 110;</code>
+     */
+    public static final int CLIENT_TYPE_USER_MAC_VALUE = 110;
     /**
      * <pre>
      * 用户端在此加入新类型
@@ -307,6 +375,12 @@ public final class CEntrance {
         case 102: return CLIENT_TYPE_USER_H5;
         case 103: return CLIENT_TYPE_USER_WEB;
         case 104: return CLIENT_TYPE_USER_APP;
+        case 105: return CLIENT_TYPE_USER_WEB_IOS;
+        case 106: return CLIENT_TYPE_USER_WEB_WINDOWS;
+        case 107: return CLIENT_TYPE_USER_APP_IOS;
+        case 108: return CLIENT_TYPE_USER_APP_ANDROID;
+        case 109: return CLIENT_TYPE_USER_WINDOWS;
+        case 110: return CLIENT_TYPE_USER_MAC;
         case 200: return CLIENT_TYPE_USER_END;
         default: return null;
       }
@@ -6425,15 +6499,19 @@ public final class CEntrance {
       "PERATION_TYPE_UNKNOWN\020\000\022\032\n\026OPERATION_TYP" +
       "E_WINDOWS\020\n\022\034\n\030OPERATION_TYPE_MAC_INTEL\020" +
       "\024\022\030\n\024OPERATION_TYPE_MAC_M\020\025\022\027\n\022OPERATION" +
-      "_TYPE_END\020\310\001*\376\001\n\nClientType\022\027\n\023CLIENT_TY" +
+      "_TYPE_END\020\310\001*\266\003\n\nClientType\022\027\n\023CLIENT_TY" +
       "PE_UNKNOWN\020\000\022\034\n\030CLIENT_TYPE_WORKER_BEGIN" +
       "\020\001\022\031\n\025CLIENT_TYPE_WORKER_PC\020\002\022\032\n\026CLIENT_" +
       "TYPE_WORKER_END\020d\022\032\n\026CLIENT_TYPE_USER_BE" +
       "GIN\020e\022\027\n\023CLIENT_TYPE_USER_H5\020f\022\030\n\024CLIENT" +
       "_TYPE_USER_WEB\020g\022\030\n\024CLIENT_TYPE_USER_APP" +
-      "\020h\022\031\n\024CLIENT_TYPE_USER_END\020\310\001B3\n\032com.ten" +
-      "easyChat.api.commonZ\025wcs/api/common;comm" +
-      "onb\006proto3"
+      "\020h\022\034\n\030CLIENT_TYPE_USER_WEB_IOS\020i\022 \n\034CLIE" +
+      "NT_TYPE_USER_WEB_WINDOWS\020j\022\034\n\030CLIENT_TYP" +
+      "E_USER_APP_IOS\020k\022 \n\034CLIENT_TYPE_USER_APP" +
+      "_ANDROID\020l\022\034\n\030CLIENT_TYPE_USER_WINDOWS\020m" +
+      "\022\030\n\024CLIENT_TYPE_USER_MAC\020n\022\031\n\024CLIENT_TYP" +
+      "E_USER_END\020\310\001B3\n\032com.teneasyChat.api.com" +
+      "monZ\025wcs/api/common;commonb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

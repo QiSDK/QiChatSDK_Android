@@ -125,7 +125,7 @@ class ChatLib constructor(cert: String, token:String, baseUrl:String = "", userI
     fun makeConnect(){
         var rd = Random().nextInt(1000000) + 1000000
         var dt = Date().time
-        val url = baseUrl + "cert=" + this.cert + "&token=" + token + "&userid=" + this.userId + "&custom=" + custom + "&ty=" + ClientType.CLIENT_TYPE_USER_APP.number + "&dt=" + dt + "&sign=" + mySign + "&rd=" + rd
+        val url = baseUrl + "cert=" + this.cert + "&token=" + token + "&userid=" + this.userId + "&custom=" + custom + "&ty=" + ClientType.CLIENT_TYPE_USER_APP_ANDROID.number + "&dt=" + dt + "&sign=" + mySign + "&rd=" + rd
         Log.i(TAG, "连接WSS")
         socket =
             object : WebSocketClient(URI(url), Draft_6455()) {

@@ -30,40 +30,10 @@ public final class RegularReplyOuterClass {
 
     /**
      * <pre>
-     * 间隔定时回复时间，毫秒级
-     * </pre>
-     *
-     * <code>uint64 regular_time = 1 [(.validate.rules) = { ... }</code>
-     * @return The regularTime.
-     */
-    long getRegularTime();
-
-    /**
-     * <pre>
-     * 咨询组Id
-     * </pre>
-     *
-     * <code>int64 consult_id = 2;</code>
-     * @return The consultId.
-     */
-    long getConsultId();
-
-    /**
-     * <pre>
-     * 1-开启，2-关闭
-     * </pre>
-     *
-     * <code>int32 reply_type = 3 [(.validate.rules) = { ... }</code>
-     * @return The replyType.
-     */
-    int getReplyType();
-
-    /**
-     * <pre>
      * 回复名称
      * </pre>
      *
-     * <code>string name = 4 [(.validate.rules) = { ... }</code>
+     * <code>string name = 1 [(.validate.rules) = { ... }</code>
      * @return The name.
      */
     java.lang.String getName();
@@ -72,7 +42,7 @@ public final class RegularReplyOuterClass {
      * 回复名称
      * </pre>
      *
-     * <code>string name = 4 [(.validate.rules) = { ... }</code>
+     * <code>string name = 1 [(.validate.rules) = { ... }</code>
      * @return The bytes for name.
      */
     com.google.protobuf.ByteString
@@ -80,50 +50,83 @@ public final class RegularReplyOuterClass {
 
     /**
      * <pre>
-     * 回复内容
+     * 间隔定时回复时间1，毫秒级
      * </pre>
      *
-     * <code>string content = 5 [(.validate.rules) = { ... }</code>
-     * @return The content.
+     * <code>uint64 regular_time_frist = 2 [(.validate.rules) = { ... }</code>
+     * @return The regularTimeFrist.
      */
-    java.lang.String getContent();
-    /**
-     * <pre>
-     * 回复内容
-     * </pre>
-     *
-     * <code>string content = 5 [(.validate.rules) = { ... }</code>
-     * @return The bytes for content.
-     */
-    com.google.protobuf.ByteString
-        getContentBytes();
+    long getRegularTimeFrist();
 
     /**
      * <pre>
-     * 回复图片
+     * 回复内容1
      * </pre>
      *
-     * <code>.api.common.ListString image_urls = 6;</code>
-     * @return Whether the imageUrls field is set.
+     * <code>string content_frist = 3 [(.validate.rules) = { ... }</code>
+     * @return The contentFrist.
      */
-    boolean hasImageUrls();
+    java.lang.String getContentFrist();
     /**
      * <pre>
-     * 回复图片
+     * 回复内容1
      * </pre>
      *
-     * <code>.api.common.ListString image_urls = 6;</code>
-     * @return The imageUrls.
+     * <code>string content_frist = 3 [(.validate.rules) = { ... }</code>
+     * @return The bytes for contentFrist.
      */
-    com.teneasyChat.api.common.CBase.ListString getImageUrls();
+    com.google.protobuf.ByteString
+        getContentFristBytes();
+
     /**
      * <pre>
-     * 回复图片
+     * 间隔定时回复时间2，毫秒级
      * </pre>
      *
-     * <code>.api.common.ListString image_urls = 6;</code>
+     * <code>uint64 regular_time_second = 4 [(.validate.rules) = { ... }</code>
+     * @return The regularTimeSecond.
      */
-    com.teneasyChat.api.common.CBase.ListStringOrBuilder getImageUrlsOrBuilder();
+    long getRegularTimeSecond();
+
+    /**
+     * <pre>
+     * 回复内容2
+     * </pre>
+     *
+     * <code>string content_second = 5 [(.validate.rules) = { ... }</code>
+     * @return The contentSecond.
+     */
+    java.lang.String getContentSecond();
+    /**
+     * <pre>
+     * 回复内容2
+     * </pre>
+     *
+     * <code>string content_second = 5 [(.validate.rules) = { ... }</code>
+     * @return The bytes for contentSecond.
+     */
+    com.google.protobuf.ByteString
+        getContentSecondBytes();
+
+    /**
+     * <pre>
+     * 咨询组Id
+     * </pre>
+     *
+     * <code>int64 consult_id = 6;</code>
+     * @return The consultId.
+     */
+    long getConsultId();
+
+    /**
+     * <pre>
+     * 0-全部关闭,1-开启回复1，2-开启回复2
+     * </pre>
+     *
+     * <code>int32 reply_type = 7;</code>
+     * @return The replyType.
+     */
+    int getReplyType();
   }
   /**
    * <pre>
@@ -152,7 +155,8 @@ public final class RegularReplyOuterClass {
     }
     private RegularReplyCreateRequest() {
       name_ = "";
-      content_ = "";
+      contentFrist_ = "";
+      contentSecond_ = "";
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
@@ -168,53 +172,7 @@ public final class RegularReplyOuterClass {
               com.teneasyChat.api.core.RegularReplyOuterClass.RegularReplyCreateRequest.class, com.teneasyChat.api.core.RegularReplyOuterClass.RegularReplyCreateRequest.Builder.class);
     }
 
-    private int bitField0_;
-    public static final int REGULAR_TIME_FIELD_NUMBER = 1;
-    private long regularTime_ = 0L;
-    /**
-     * <pre>
-     * 间隔定时回复时间，毫秒级
-     * </pre>
-     *
-     * <code>uint64 regular_time = 1 [(.validate.rules) = { ... }</code>
-     * @return The regularTime.
-     */
-    @java.lang.Override
-    public long getRegularTime() {
-      return regularTime_;
-    }
-
-    public static final int CONSULT_ID_FIELD_NUMBER = 2;
-    private long consultId_ = 0L;
-    /**
-     * <pre>
-     * 咨询组Id
-     * </pre>
-     *
-     * <code>int64 consult_id = 2;</code>
-     * @return The consultId.
-     */
-    @java.lang.Override
-    public long getConsultId() {
-      return consultId_;
-    }
-
-    public static final int REPLY_TYPE_FIELD_NUMBER = 3;
-    private int replyType_ = 0;
-    /**
-     * <pre>
-     * 1-开启，2-关闭
-     * </pre>
-     *
-     * <code>int32 reply_type = 3 [(.validate.rules) = { ... }</code>
-     * @return The replyType.
-     */
-    @java.lang.Override
-    public int getReplyType() {
-      return replyType_;
-    }
-
-    public static final int NAME_FIELD_NUMBER = 4;
+    public static final int NAME_FIELD_NUMBER = 1;
     @SuppressWarnings("serial")
     private volatile java.lang.Object name_ = "";
     /**
@@ -222,7 +180,7 @@ public final class RegularReplyOuterClass {
      * 回复名称
      * </pre>
      *
-     * <code>string name = 4 [(.validate.rules) = { ... }</code>
+     * <code>string name = 1 [(.validate.rules) = { ... }</code>
      * @return The name.
      */
     @java.lang.Override
@@ -243,7 +201,7 @@ public final class RegularReplyOuterClass {
      * 回复名称
      * </pre>
      *
-     * <code>string name = 4 [(.validate.rules) = { ... }</code>
+     * <code>string name = 1 [(.validate.rules) = { ... }</code>
      * @return The bytes for name.
      */
     @java.lang.Override
@@ -261,89 +219,158 @@ public final class RegularReplyOuterClass {
       }
     }
 
-    public static final int CONTENT_FIELD_NUMBER = 5;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object content_ = "";
+    public static final int REGULAR_TIME_FRIST_FIELD_NUMBER = 2;
+    private long regularTimeFrist_ = 0L;
     /**
      * <pre>
-     * 回复内容
+     * 间隔定时回复时间1，毫秒级
      * </pre>
      *
-     * <code>string content = 5 [(.validate.rules) = { ... }</code>
-     * @return The content.
+     * <code>uint64 regular_time_frist = 2 [(.validate.rules) = { ... }</code>
+     * @return The regularTimeFrist.
      */
     @java.lang.Override
-    public java.lang.String getContent() {
-      java.lang.Object ref = content_;
+    public long getRegularTimeFrist() {
+      return regularTimeFrist_;
+    }
+
+    public static final int CONTENT_FRIST_FIELD_NUMBER = 3;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object contentFrist_ = "";
+    /**
+     * <pre>
+     * 回复内容1
+     * </pre>
+     *
+     * <code>string content_frist = 3 [(.validate.rules) = { ... }</code>
+     * @return The contentFrist.
+     */
+    @java.lang.Override
+    public java.lang.String getContentFrist() {
+      java.lang.Object ref = contentFrist_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        content_ = s;
+        contentFrist_ = s;
         return s;
       }
     }
     /**
      * <pre>
-     * 回复内容
+     * 回复内容1
      * </pre>
      *
-     * <code>string content = 5 [(.validate.rules) = { ... }</code>
-     * @return The bytes for content.
+     * <code>string content_frist = 3 [(.validate.rules) = { ... }</code>
+     * @return The bytes for contentFrist.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getContentBytes() {
-      java.lang.Object ref = content_;
+        getContentFristBytes() {
+      java.lang.Object ref = contentFrist_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        content_ = b;
+        contentFrist_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
 
-    public static final int IMAGE_URLS_FIELD_NUMBER = 6;
-    private com.teneasyChat.api.common.CBase.ListString imageUrls_;
+    public static final int REGULAR_TIME_SECOND_FIELD_NUMBER = 4;
+    private long regularTimeSecond_ = 0L;
     /**
      * <pre>
-     * 回复图片
+     * 间隔定时回复时间2，毫秒级
      * </pre>
      *
-     * <code>.api.common.ListString image_urls = 6;</code>
-     * @return Whether the imageUrls field is set.
+     * <code>uint64 regular_time_second = 4 [(.validate.rules) = { ... }</code>
+     * @return The regularTimeSecond.
      */
     @java.lang.Override
-    public boolean hasImageUrls() {
-      return ((bitField0_ & 0x00000001) != 0);
+    public long getRegularTimeSecond() {
+      return regularTimeSecond_;
+    }
+
+    public static final int CONTENT_SECOND_FIELD_NUMBER = 5;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object contentSecond_ = "";
+    /**
+     * <pre>
+     * 回复内容2
+     * </pre>
+     *
+     * <code>string content_second = 5 [(.validate.rules) = { ... }</code>
+     * @return The contentSecond.
+     */
+    @java.lang.Override
+    public java.lang.String getContentSecond() {
+      java.lang.Object ref = contentSecond_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        contentSecond_ = s;
+        return s;
+      }
     }
     /**
      * <pre>
-     * 回复图片
+     * 回复内容2
      * </pre>
      *
-     * <code>.api.common.ListString image_urls = 6;</code>
-     * @return The imageUrls.
+     * <code>string content_second = 5 [(.validate.rules) = { ... }</code>
+     * @return The bytes for contentSecond.
      */
     @java.lang.Override
-    public com.teneasyChat.api.common.CBase.ListString getImageUrls() {
-      return imageUrls_ == null ? com.teneasyChat.api.common.CBase.ListString.getDefaultInstance() : imageUrls_;
+    public com.google.protobuf.ByteString
+        getContentSecondBytes() {
+      java.lang.Object ref = contentSecond_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        contentSecond_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
+
+    public static final int CONSULT_ID_FIELD_NUMBER = 6;
+    private long consultId_ = 0L;
     /**
      * <pre>
-     * 回复图片
+     * 咨询组Id
      * </pre>
      *
-     * <code>.api.common.ListString image_urls = 6;</code>
+     * <code>int64 consult_id = 6;</code>
+     * @return The consultId.
      */
     @java.lang.Override
-    public com.teneasyChat.api.common.CBase.ListStringOrBuilder getImageUrlsOrBuilder() {
-      return imageUrls_ == null ? com.teneasyChat.api.common.CBase.ListString.getDefaultInstance() : imageUrls_;
+    public long getConsultId() {
+      return consultId_;
+    }
+
+    public static final int REPLY_TYPE_FIELD_NUMBER = 7;
+    private int replyType_ = 0;
+    /**
+     * <pre>
+     * 0-全部关闭,1-开启回复1，2-开启回复2
+     * </pre>
+     *
+     * <code>int32 reply_type = 7;</code>
+     * @return The replyType.
+     */
+    @java.lang.Override
+    public int getReplyType() {
+      return replyType_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -360,23 +387,26 @@ public final class RegularReplyOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (regularTime_ != 0L) {
-        output.writeUInt64(1, regularTime_);
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 1, name_);
+      }
+      if (regularTimeFrist_ != 0L) {
+        output.writeUInt64(2, regularTimeFrist_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(contentFrist_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 3, contentFrist_);
+      }
+      if (regularTimeSecond_ != 0L) {
+        output.writeUInt64(4, regularTimeSecond_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(contentSecond_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 5, contentSecond_);
       }
       if (consultId_ != 0L) {
-        output.writeInt64(2, consultId_);
+        output.writeInt64(6, consultId_);
       }
       if (replyType_ != 0) {
-        output.writeInt32(3, replyType_);
-      }
-      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 4, name_);
-      }
-      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(content_)) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 5, content_);
-      }
-      if (((bitField0_ & 0x00000001) != 0)) {
-        output.writeMessage(6, getImageUrls());
+        output.writeInt32(7, replyType_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -387,27 +417,30 @@ public final class RegularReplyOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (regularTime_ != 0L) {
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(1, name_);
+      }
+      if (regularTimeFrist_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(1, regularTime_);
+          .computeUInt64Size(2, regularTimeFrist_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(contentFrist_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(3, contentFrist_);
+      }
+      if (regularTimeSecond_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(4, regularTimeSecond_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(contentSecond_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(5, contentSecond_);
       }
       if (consultId_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(2, consultId_);
+          .computeInt64Size(6, consultId_);
       }
       if (replyType_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(3, replyType_);
-      }
-      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(4, name_);
-      }
-      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(content_)) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(5, content_);
-      }
-      if (((bitField0_ & 0x00000001) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(6, getImageUrls());
+          .computeInt32Size(7, replyType_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -424,21 +457,20 @@ public final class RegularReplyOuterClass {
       }
       com.teneasyChat.api.core.RegularReplyOuterClass.RegularReplyCreateRequest other = (com.teneasyChat.api.core.RegularReplyOuterClass.RegularReplyCreateRequest) obj;
 
-      if (getRegularTime()
-          != other.getRegularTime()) return false;
+      if (!getName()
+          .equals(other.getName())) return false;
+      if (getRegularTimeFrist()
+          != other.getRegularTimeFrist()) return false;
+      if (!getContentFrist()
+          .equals(other.getContentFrist())) return false;
+      if (getRegularTimeSecond()
+          != other.getRegularTimeSecond()) return false;
+      if (!getContentSecond()
+          .equals(other.getContentSecond())) return false;
       if (getConsultId()
           != other.getConsultId()) return false;
       if (getReplyType()
           != other.getReplyType()) return false;
-      if (!getName()
-          .equals(other.getName())) return false;
-      if (!getContent()
-          .equals(other.getContent())) return false;
-      if (hasImageUrls() != other.hasImageUrls()) return false;
-      if (hasImageUrls()) {
-        if (!getImageUrls()
-            .equals(other.getImageUrls())) return false;
-      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -450,22 +482,23 @@ public final class RegularReplyOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + REGULAR_TIME_FIELD_NUMBER;
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+      hash = (37 * hash) + REGULAR_TIME_FRIST_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getRegularTime());
+          getRegularTimeFrist());
+      hash = (37 * hash) + CONTENT_FRIST_FIELD_NUMBER;
+      hash = (53 * hash) + getContentFrist().hashCode();
+      hash = (37 * hash) + REGULAR_TIME_SECOND_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getRegularTimeSecond());
+      hash = (37 * hash) + CONTENT_SECOND_FIELD_NUMBER;
+      hash = (53 * hash) + getContentSecond().hashCode();
       hash = (37 * hash) + CONSULT_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getConsultId());
       hash = (37 * hash) + REPLY_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + getReplyType();
-      hash = (37 * hash) + NAME_FIELD_NUMBER;
-      hash = (53 * hash) + getName().hashCode();
-      hash = (37 * hash) + CONTENT_FIELD_NUMBER;
-      hash = (53 * hash) + getContent().hashCode();
-      if (hasImageUrls()) {
-        hash = (37 * hash) + IMAGE_URLS_FIELD_NUMBER;
-        hash = (53 * hash) + getImageUrls().hashCode();
-      }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -589,34 +622,25 @@ public final class RegularReplyOuterClass {
 
       // Construct using com.teneasyChat.api.core.RegularReplyOuterClass.RegularReplyCreateRequest.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessage.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessage
-                .alwaysUseFieldBuilders) {
-          getImageUrlsFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
-        regularTime_ = 0L;
+        name_ = "";
+        regularTimeFrist_ = 0L;
+        contentFrist_ = "";
+        regularTimeSecond_ = 0L;
+        contentSecond_ = "";
         consultId_ = 0L;
         replyType_ = 0;
-        name_ = "";
-        content_ = "";
-        imageUrls_ = null;
-        if (imageUrlsBuilder_ != null) {
-          imageUrlsBuilder_.dispose();
-          imageUrlsBuilder_ = null;
-        }
         return this;
       }
 
@@ -651,28 +675,26 @@ public final class RegularReplyOuterClass {
       private void buildPartial0(com.teneasyChat.api.core.RegularReplyOuterClass.RegularReplyCreateRequest result) {
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.regularTime_ = regularTime_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.consultId_ = consultId_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.replyType_ = replyType_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
           result.name_ = name_;
         }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.regularTimeFrist_ = regularTimeFrist_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.contentFrist_ = contentFrist_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.regularTimeSecond_ = regularTimeSecond_;
+        }
         if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.content_ = content_;
+          result.contentSecond_ = contentSecond_;
         }
-        int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.imageUrls_ = imageUrlsBuilder_ == null
-              ? imageUrls_
-              : imageUrlsBuilder_.build();
-          to_bitField0_ |= 0x00000001;
+          result.consultId_ = consultId_;
         }
-        result.bitField0_ |= to_bitField0_;
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.replyType_ = replyType_;
+        }
       }
 
       @java.lang.Override
@@ -687,27 +709,32 @@ public final class RegularReplyOuterClass {
 
       public Builder mergeFrom(com.teneasyChat.api.core.RegularReplyOuterClass.RegularReplyCreateRequest other) {
         if (other == com.teneasyChat.api.core.RegularReplyOuterClass.RegularReplyCreateRequest.getDefaultInstance()) return this;
-        if (other.getRegularTime() != 0L) {
-          setRegularTime(other.getRegularTime());
+        if (!other.getName().isEmpty()) {
+          name_ = other.name_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (other.getRegularTimeFrist() != 0L) {
+          setRegularTimeFrist(other.getRegularTimeFrist());
+        }
+        if (!other.getContentFrist().isEmpty()) {
+          contentFrist_ = other.contentFrist_;
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        if (other.getRegularTimeSecond() != 0L) {
+          setRegularTimeSecond(other.getRegularTimeSecond());
+        }
+        if (!other.getContentSecond().isEmpty()) {
+          contentSecond_ = other.contentSecond_;
+          bitField0_ |= 0x00000010;
+          onChanged();
         }
         if (other.getConsultId() != 0L) {
           setConsultId(other.getConsultId());
         }
         if (other.getReplyType() != 0) {
           setReplyType(other.getReplyType());
-        }
-        if (!other.getName().isEmpty()) {
-          name_ = other.name_;
-          bitField0_ |= 0x00000008;
-          onChanged();
-        }
-        if (!other.getContent().isEmpty()) {
-          content_ = other.content_;
-          bitField0_ |= 0x00000010;
-          onChanged();
-        }
-        if (other.hasImageUrls()) {
-          mergeImageUrls(other.getImageUrls());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -735,38 +762,41 @@ public final class RegularReplyOuterClass {
               case 0:
                 done = true;
                 break;
-              case 8: {
-                regularTime_ = input.readUInt64();
+              case 10: {
+                name_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000001;
                 break;
-              } // case 8
+              } // case 10
               case 16: {
-                consultId_ = input.readInt64();
+                regularTimeFrist_ = input.readUInt64();
                 bitField0_ |= 0x00000002;
                 break;
               } // case 16
-              case 24: {
-                replyType_ = input.readInt32();
+              case 26: {
+                contentFrist_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000004;
                 break;
-              } // case 24
-              case 34: {
-                name_ = input.readStringRequireUtf8();
+              } // case 26
+              case 32: {
+                regularTimeSecond_ = input.readUInt64();
                 bitField0_ |= 0x00000008;
                 break;
-              } // case 34
+              } // case 32
               case 42: {
-                content_ = input.readStringRequireUtf8();
+                contentSecond_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000010;
                 break;
               } // case 42
-              case 50: {
-                input.readMessage(
-                    getImageUrlsFieldBuilder().getBuilder(),
-                    extensionRegistry);
+              case 48: {
+                consultId_ = input.readInt64();
                 bitField0_ |= 0x00000020;
                 break;
-              } // case 50
+              } // case 48
+              case 56: {
+                replyType_ = input.readInt32();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 56
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -784,145 +814,13 @@ public final class RegularReplyOuterClass {
       }
       private int bitField0_;
 
-      private long regularTime_ ;
-      /**
-       * <pre>
-       * 间隔定时回复时间，毫秒级
-       * </pre>
-       *
-       * <code>uint64 regular_time = 1 [(.validate.rules) = { ... }</code>
-       * @return The regularTime.
-       */
-      @java.lang.Override
-      public long getRegularTime() {
-        return regularTime_;
-      }
-      /**
-       * <pre>
-       * 间隔定时回复时间，毫秒级
-       * </pre>
-       *
-       * <code>uint64 regular_time = 1 [(.validate.rules) = { ... }</code>
-       * @param value The regularTime to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRegularTime(long value) {
-
-        regularTime_ = value;
-        bitField0_ |= 0x00000001;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * 间隔定时回复时间，毫秒级
-       * </pre>
-       *
-       * <code>uint64 regular_time = 1 [(.validate.rules) = { ... }</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearRegularTime() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        regularTime_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private long consultId_ ;
-      /**
-       * <pre>
-       * 咨询组Id
-       * </pre>
-       *
-       * <code>int64 consult_id = 2;</code>
-       * @return The consultId.
-       */
-      @java.lang.Override
-      public long getConsultId() {
-        return consultId_;
-      }
-      /**
-       * <pre>
-       * 咨询组Id
-       * </pre>
-       *
-       * <code>int64 consult_id = 2;</code>
-       * @param value The consultId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setConsultId(long value) {
-
-        consultId_ = value;
-        bitField0_ |= 0x00000002;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * 咨询组Id
-       * </pre>
-       *
-       * <code>int64 consult_id = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearConsultId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        consultId_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private int replyType_ ;
-      /**
-       * <pre>
-       * 1-开启，2-关闭
-       * </pre>
-       *
-       * <code>int32 reply_type = 3 [(.validate.rules) = { ... }</code>
-       * @return The replyType.
-       */
-      @java.lang.Override
-      public int getReplyType() {
-        return replyType_;
-      }
-      /**
-       * <pre>
-       * 1-开启，2-关闭
-       * </pre>
-       *
-       * <code>int32 reply_type = 3 [(.validate.rules) = { ... }</code>
-       * @param value The replyType to set.
-       * @return This builder for chaining.
-       */
-      public Builder setReplyType(int value) {
-
-        replyType_ = value;
-        bitField0_ |= 0x00000004;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * 1-开启，2-关闭
-       * </pre>
-       *
-       * <code>int32 reply_type = 3 [(.validate.rules) = { ... }</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearReplyType() {
-        bitField0_ = (bitField0_ & ~0x00000004);
-        replyType_ = 0;
-        onChanged();
-        return this;
-      }
-
       private java.lang.Object name_ = "";
       /**
        * <pre>
        * 回复名称
        * </pre>
        *
-       * <code>string name = 4 [(.validate.rules) = { ... }</code>
+       * <code>string name = 1 [(.validate.rules) = { ... }</code>
        * @return The name.
        */
       public java.lang.String getName() {
@@ -942,7 +840,7 @@ public final class RegularReplyOuterClass {
        * 回复名称
        * </pre>
        *
-       * <code>string name = 4 [(.validate.rules) = { ... }</code>
+       * <code>string name = 1 [(.validate.rules) = { ... }</code>
        * @return The bytes for name.
        */
       public com.google.protobuf.ByteString
@@ -963,7 +861,7 @@ public final class RegularReplyOuterClass {
        * 回复名称
        * </pre>
        *
-       * <code>string name = 4 [(.validate.rules) = { ... }</code>
+       * <code>string name = 1 [(.validate.rules) = { ... }</code>
        * @param value The name to set.
        * @return This builder for chaining.
        */
@@ -971,7 +869,7 @@ public final class RegularReplyOuterClass {
           java.lang.String value) {
         if (value == null) { throw new NullPointerException(); }
         name_ = value;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -980,12 +878,12 @@ public final class RegularReplyOuterClass {
        * 回复名称
        * </pre>
        *
-       * <code>string name = 4 [(.validate.rules) = { ... }</code>
+       * <code>string name = 1 [(.validate.rules) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearName() {
         name_ = getDefaultInstance().getName();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -994,7 +892,7 @@ public final class RegularReplyOuterClass {
        * 回复名称
        * </pre>
        *
-       * <code>string name = 4 [(.validate.rules) = { ... }</code>
+       * <code>string name = 1 [(.validate.rules) = { ... }</code>
        * @param value The bytes for name to set.
        * @return This builder for chaining.
        */
@@ -1003,27 +901,71 @@ public final class RegularReplyOuterClass {
         if (value == null) { throw new NullPointerException(); }
         checkByteStringIsUtf8(value);
         name_ = value;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
 
-      private java.lang.Object content_ = "";
+      private long regularTimeFrist_ ;
       /**
        * <pre>
-       * 回复内容
+       * 间隔定时回复时间1，毫秒级
        * </pre>
        *
-       * <code>string content = 5 [(.validate.rules) = { ... }</code>
-       * @return The content.
+       * <code>uint64 regular_time_frist = 2 [(.validate.rules) = { ... }</code>
+       * @return The regularTimeFrist.
        */
-      public java.lang.String getContent() {
-        java.lang.Object ref = content_;
+      @java.lang.Override
+      public long getRegularTimeFrist() {
+        return regularTimeFrist_;
+      }
+      /**
+       * <pre>
+       * 间隔定时回复时间1，毫秒级
+       * </pre>
+       *
+       * <code>uint64 regular_time_frist = 2 [(.validate.rules) = { ... }</code>
+       * @param value The regularTimeFrist to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRegularTimeFrist(long value) {
+
+        regularTimeFrist_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 间隔定时回复时间1，毫秒级
+       * </pre>
+       *
+       * <code>uint64 regular_time_frist = 2 [(.validate.rules) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRegularTimeFrist() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        regularTimeFrist_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object contentFrist_ = "";
+      /**
+       * <pre>
+       * 回复内容1
+       * </pre>
+       *
+       * <code>string content_frist = 3 [(.validate.rules) = { ... }</code>
+       * @return The contentFrist.
+       */
+      public java.lang.String getContentFrist() {
+        java.lang.Object ref = contentFrist_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          content_ = s;
+          contentFrist_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -1031,20 +973,20 @@ public final class RegularReplyOuterClass {
       }
       /**
        * <pre>
-       * 回复内容
+       * 回复内容1
        * </pre>
        *
-       * <code>string content = 5 [(.validate.rules) = { ... }</code>
-       * @return The bytes for content.
+       * <code>string content_frist = 3 [(.validate.rules) = { ... }</code>
+       * @return The bytes for contentFrist.
        */
       public com.google.protobuf.ByteString
-          getContentBytes() {
-        java.lang.Object ref = content_;
+          getContentFristBytes() {
+        java.lang.Object ref = contentFrist_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          content_ = b;
+          contentFrist_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -1052,209 +994,276 @@ public final class RegularReplyOuterClass {
       }
       /**
        * <pre>
-       * 回复内容
+       * 回复内容1
        * </pre>
        *
-       * <code>string content = 5 [(.validate.rules) = { ... }</code>
-       * @param value The content to set.
+       * <code>string content_frist = 3 [(.validate.rules) = { ... }</code>
+       * @param value The contentFrist to set.
        * @return This builder for chaining.
        */
-      public Builder setContent(
+      public Builder setContentFrist(
           java.lang.String value) {
         if (value == null) { throw new NullPointerException(); }
-        content_ = value;
+        contentFrist_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 回复内容1
+       * </pre>
+       *
+       * <code>string content_frist = 3 [(.validate.rules) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearContentFrist() {
+        contentFrist_ = getDefaultInstance().getContentFrist();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 回复内容1
+       * </pre>
+       *
+       * <code>string content_frist = 3 [(.validate.rules) = { ... }</code>
+       * @param value The bytes for contentFrist to set.
+       * @return This builder for chaining.
+       */
+      public Builder setContentFristBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        contentFrist_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      private long regularTimeSecond_ ;
+      /**
+       * <pre>
+       * 间隔定时回复时间2，毫秒级
+       * </pre>
+       *
+       * <code>uint64 regular_time_second = 4 [(.validate.rules) = { ... }</code>
+       * @return The regularTimeSecond.
+       */
+      @java.lang.Override
+      public long getRegularTimeSecond() {
+        return regularTimeSecond_;
+      }
+      /**
+       * <pre>
+       * 间隔定时回复时间2，毫秒级
+       * </pre>
+       *
+       * <code>uint64 regular_time_second = 4 [(.validate.rules) = { ... }</code>
+       * @param value The regularTimeSecond to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRegularTimeSecond(long value) {
+
+        regularTimeSecond_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 间隔定时回复时间2，毫秒级
+       * </pre>
+       *
+       * <code>uint64 regular_time_second = 4 [(.validate.rules) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRegularTimeSecond() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        regularTimeSecond_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object contentSecond_ = "";
+      /**
+       * <pre>
+       * 回复内容2
+       * </pre>
+       *
+       * <code>string content_second = 5 [(.validate.rules) = { ... }</code>
+       * @return The contentSecond.
+       */
+      public java.lang.String getContentSecond() {
+        java.lang.Object ref = contentSecond_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          contentSecond_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * 回复内容2
+       * </pre>
+       *
+       * <code>string content_second = 5 [(.validate.rules) = { ... }</code>
+       * @return The bytes for contentSecond.
+       */
+      public com.google.protobuf.ByteString
+          getContentSecondBytes() {
+        java.lang.Object ref = contentSecond_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          contentSecond_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * 回复内容2
+       * </pre>
+       *
+       * <code>string content_second = 5 [(.validate.rules) = { ... }</code>
+       * @param value The contentSecond to set.
+       * @return This builder for chaining.
+       */
+      public Builder setContentSecond(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        contentSecond_ = value;
         bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * 回复内容
+       * 回复内容2
        * </pre>
        *
-       * <code>string content = 5 [(.validate.rules) = { ... }</code>
+       * <code>string content_second = 5 [(.validate.rules) = { ... }</code>
        * @return This builder for chaining.
        */
-      public Builder clearContent() {
-        content_ = getDefaultInstance().getContent();
+      public Builder clearContentSecond() {
+        contentSecond_ = getDefaultInstance().getContentSecond();
         bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * 回复内容
+       * 回复内容2
        * </pre>
        *
-       * <code>string content = 5 [(.validate.rules) = { ... }</code>
-       * @param value The bytes for content to set.
+       * <code>string content_second = 5 [(.validate.rules) = { ... }</code>
+       * @param value The bytes for contentSecond to set.
        * @return This builder for chaining.
        */
-      public Builder setContentBytes(
+      public Builder setContentSecondBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) { throw new NullPointerException(); }
         checkByteStringIsUtf8(value);
-        content_ = value;
+        contentSecond_ = value;
         bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
 
-      private com.teneasyChat.api.common.CBase.ListString imageUrls_;
-      private com.google.protobuf.SingleFieldBuilder<
-          com.teneasyChat.api.common.CBase.ListString, com.teneasyChat.api.common.CBase.ListString.Builder, com.teneasyChat.api.common.CBase.ListStringOrBuilder> imageUrlsBuilder_;
+      private long consultId_ ;
       /**
        * <pre>
-       * 回复图片
+       * 咨询组Id
        * </pre>
        *
-       * <code>.api.common.ListString image_urls = 6;</code>
-       * @return Whether the imageUrls field is set.
+       * <code>int64 consult_id = 6;</code>
+       * @return The consultId.
        */
-      public boolean hasImageUrls() {
-        return ((bitField0_ & 0x00000020) != 0);
+      @java.lang.Override
+      public long getConsultId() {
+        return consultId_;
       }
       /**
        * <pre>
-       * 回复图片
+       * 咨询组Id
        * </pre>
        *
-       * <code>.api.common.ListString image_urls = 6;</code>
-       * @return The imageUrls.
+       * <code>int64 consult_id = 6;</code>
+       * @param value The consultId to set.
+       * @return This builder for chaining.
        */
-      public com.teneasyChat.api.common.CBase.ListString getImageUrls() {
-        if (imageUrlsBuilder_ == null) {
-          return imageUrls_ == null ? com.teneasyChat.api.common.CBase.ListString.getDefaultInstance() : imageUrls_;
-        } else {
-          return imageUrlsBuilder_.getMessage();
-        }
-      }
-      /**
-       * <pre>
-       * 回复图片
-       * </pre>
-       *
-       * <code>.api.common.ListString image_urls = 6;</code>
-       */
-      public Builder setImageUrls(com.teneasyChat.api.common.CBase.ListString value) {
-        if (imageUrlsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          imageUrls_ = value;
-        } else {
-          imageUrlsBuilder_.setMessage(value);
-        }
+      public Builder setConsultId(long value) {
+
+        consultId_ = value;
         bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * 回复图片
+       * 咨询组Id
        * </pre>
        *
-       * <code>.api.common.ListString image_urls = 6;</code>
+       * <code>int64 consult_id = 6;</code>
+       * @return This builder for chaining.
        */
-      public Builder setImageUrls(
-          com.teneasyChat.api.common.CBase.ListString.Builder builderForValue) {
-        if (imageUrlsBuilder_ == null) {
-          imageUrls_ = builderForValue.build();
-        } else {
-          imageUrlsBuilder_.setMessage(builderForValue.build());
-        }
-        bitField0_ |= 0x00000020;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * 回复图片
-       * </pre>
-       *
-       * <code>.api.common.ListString image_urls = 6;</code>
-       */
-      public Builder mergeImageUrls(com.teneasyChat.api.common.CBase.ListString value) {
-        if (imageUrlsBuilder_ == null) {
-          if (((bitField0_ & 0x00000020) != 0) &&
-            imageUrls_ != null &&
-            imageUrls_ != com.teneasyChat.api.common.CBase.ListString.getDefaultInstance()) {
-            getImageUrlsBuilder().mergeFrom(value);
-          } else {
-            imageUrls_ = value;
-          }
-        } else {
-          imageUrlsBuilder_.mergeFrom(value);
-        }
-        if (imageUrls_ != null) {
-          bitField0_ |= 0x00000020;
-          onChanged();
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * 回复图片
-       * </pre>
-       *
-       * <code>.api.common.ListString image_urls = 6;</code>
-       */
-      public Builder clearImageUrls() {
+      public Builder clearConsultId() {
         bitField0_ = (bitField0_ & ~0x00000020);
-        imageUrls_ = null;
-        if (imageUrlsBuilder_ != null) {
-          imageUrlsBuilder_.dispose();
-          imageUrlsBuilder_ = null;
-        }
+        consultId_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private int replyType_ ;
+      /**
+       * <pre>
+       * 0-全部关闭,1-开启回复1，2-开启回复2
+       * </pre>
+       *
+       * <code>int32 reply_type = 7;</code>
+       * @return The replyType.
+       */
+      @java.lang.Override
+      public int getReplyType() {
+        return replyType_;
+      }
+      /**
+       * <pre>
+       * 0-全部关闭,1-开启回复1，2-开启回复2
+       * </pre>
+       *
+       * <code>int32 reply_type = 7;</code>
+       * @param value The replyType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setReplyType(int value) {
+
+        replyType_ = value;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * 回复图片
+       * 0-全部关闭,1-开启回复1，2-开启回复2
        * </pre>
        *
-       * <code>.api.common.ListString image_urls = 6;</code>
+       * <code>int32 reply_type = 7;</code>
+       * @return This builder for chaining.
        */
-      public com.teneasyChat.api.common.CBase.ListString.Builder getImageUrlsBuilder() {
-        bitField0_ |= 0x00000020;
+      public Builder clearReplyType() {
+        bitField0_ = (bitField0_ & ~0x00000040);
+        replyType_ = 0;
         onChanged();
-        return getImageUrlsFieldBuilder().getBuilder();
-      }
-      /**
-       * <pre>
-       * 回复图片
-       * </pre>
-       *
-       * <code>.api.common.ListString image_urls = 6;</code>
-       */
-      public com.teneasyChat.api.common.CBase.ListStringOrBuilder getImageUrlsOrBuilder() {
-        if (imageUrlsBuilder_ != null) {
-          return imageUrlsBuilder_.getMessageOrBuilder();
-        } else {
-          return imageUrls_ == null ?
-              com.teneasyChat.api.common.CBase.ListString.getDefaultInstance() : imageUrls_;
-        }
-      }
-      /**
-       * <pre>
-       * 回复图片
-       * </pre>
-       *
-       * <code>.api.common.ListString image_urls = 6;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilder<
-          com.teneasyChat.api.common.CBase.ListString, com.teneasyChat.api.common.CBase.ListString.Builder, com.teneasyChat.api.common.CBase.ListStringOrBuilder> 
-          getImageUrlsFieldBuilder() {
-        if (imageUrlsBuilder_ == null) {
-          imageUrlsBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-              com.teneasyChat.api.common.CBase.ListString, com.teneasyChat.api.common.CBase.ListString.Builder, com.teneasyChat.api.common.CBase.ListStringOrBuilder>(
-                  getImageUrls(),
-                  getParentForChildren(),
-                  isClean());
-          imageUrls_ = null;
-        }
-        return imageUrlsBuilder_;
+        return this;
       }
 
       // @@protoc_insertion_point(builder_scope:api.core.RegularReplyCreateRequest)
@@ -1752,7 +1761,7 @@ public final class RegularReplyOuterClass {
      * 主键id
      * </pre>
      *
-     * <code>int64 id = 1 [(.validate.rules) = { ... }</code>
+     * <code>int64 id = 1;</code>
      * @return The id.
      */
     long getId();
@@ -1805,7 +1814,7 @@ public final class RegularReplyOuterClass {
      * 主键id
      * </pre>
      *
-     * <code>int64 id = 1 [(.validate.rules) = { ... }</code>
+     * <code>int64 id = 1;</code>
      * @return The id.
      */
     @java.lang.Override
@@ -2117,7 +2126,7 @@ public final class RegularReplyOuterClass {
        * 主键id
        * </pre>
        *
-       * <code>int64 id = 1 [(.validate.rules) = { ... }</code>
+       * <code>int64 id = 1;</code>
        * @return The id.
        */
       @java.lang.Override
@@ -2129,7 +2138,7 @@ public final class RegularReplyOuterClass {
        * 主键id
        * </pre>
        *
-       * <code>int64 id = 1 [(.validate.rules) = { ... }</code>
+       * <code>int64 id = 1;</code>
        * @param value The id to set.
        * @return This builder for chaining.
        */
@@ -2145,7 +2154,7 @@ public final class RegularReplyOuterClass {
        * 主键id
        * </pre>
        *
-       * <code>int64 id = 1 [(.validate.rules) = { ... }</code>
+       * <code>int64 id = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearId() {
@@ -2215,47 +2224,17 @@ public final class RegularReplyOuterClass {
      * 主键id 
      * </pre>
      *
-     * <code>int64 id = 1 [(.validate.rules) = { ... }</code>
+     * <code>int64 id = 1;</code>
      * @return The id.
      */
     long getId();
 
     /**
      * <pre>
-     * 间隔定时回复时间，毫秒级
-     * </pre>
-     *
-     * <code>uint64 regular_time = 2 [(.validate.rules) = { ... }</code>
-     * @return The regularTime.
-     */
-    long getRegularTime();
-
-    /**
-     * <pre>
-     * 咨询组Id
-     * </pre>
-     *
-     * <code>int64 consult_id = 3;</code>
-     * @return The consultId.
-     */
-    long getConsultId();
-
-    /**
-     * <pre>
-     * 1-开启，2-关闭
-     * </pre>
-     *
-     * <code>int32 reply_type = 4 [(.validate.rules) = { ... }</code>
-     * @return The replyType.
-     */
-    int getReplyType();
-
-    /**
-     * <pre>
      * 回复名称
      * </pre>
      *
-     * <code>string name = 5 [(.validate.rules) = { ... }</code>
+     * <code>string name = 2 [(.validate.rules) = { ... }</code>
      * @return The name.
      */
     java.lang.String getName();
@@ -2264,7 +2243,7 @@ public final class RegularReplyOuterClass {
      * 回复名称
      * </pre>
      *
-     * <code>string name = 5 [(.validate.rules) = { ... }</code>
+     * <code>string name = 2 [(.validate.rules) = { ... }</code>
      * @return The bytes for name.
      */
     com.google.protobuf.ByteString
@@ -2272,50 +2251,83 @@ public final class RegularReplyOuterClass {
 
     /**
      * <pre>
-     * 回复内容
+     * 间隔定时回复时间1，毫秒级
      * </pre>
      *
-     * <code>string content = 6 [(.validate.rules) = { ... }</code>
-     * @return The content.
+     * <code>uint64 regular_time_frist = 3 [(.validate.rules) = { ... }</code>
+     * @return The regularTimeFrist.
      */
-    java.lang.String getContent();
-    /**
-     * <pre>
-     * 回复内容
-     * </pre>
-     *
-     * <code>string content = 6 [(.validate.rules) = { ... }</code>
-     * @return The bytes for content.
-     */
-    com.google.protobuf.ByteString
-        getContentBytes();
+    long getRegularTimeFrist();
 
     /**
      * <pre>
-     * 回复图片
+     * 回复内容1
      * </pre>
      *
-     * <code>.api.common.ListString image_urls = 7;</code>
-     * @return Whether the imageUrls field is set.
+     * <code>string content_frist = 4 [(.validate.rules) = { ... }</code>
+     * @return The contentFrist.
      */
-    boolean hasImageUrls();
+    java.lang.String getContentFrist();
     /**
      * <pre>
-     * 回复图片
+     * 回复内容1
      * </pre>
      *
-     * <code>.api.common.ListString image_urls = 7;</code>
-     * @return The imageUrls.
+     * <code>string content_frist = 4 [(.validate.rules) = { ... }</code>
+     * @return The bytes for contentFrist.
      */
-    com.teneasyChat.api.common.CBase.ListString getImageUrls();
+    com.google.protobuf.ByteString
+        getContentFristBytes();
+
     /**
      * <pre>
-     * 回复图片
+     * 间隔定时回复时间2，毫秒级
      * </pre>
      *
-     * <code>.api.common.ListString image_urls = 7;</code>
+     * <code>uint64 regular_time_second = 5 [(.validate.rules) = { ... }</code>
+     * @return The regularTimeSecond.
      */
-    com.teneasyChat.api.common.CBase.ListStringOrBuilder getImageUrlsOrBuilder();
+    long getRegularTimeSecond();
+
+    /**
+     * <pre>
+     * 回复内容2
+     * </pre>
+     *
+     * <code>string content_second = 6 [(.validate.rules) = { ... }</code>
+     * @return The contentSecond.
+     */
+    java.lang.String getContentSecond();
+    /**
+     * <pre>
+     * 回复内容2
+     * </pre>
+     *
+     * <code>string content_second = 6 [(.validate.rules) = { ... }</code>
+     * @return The bytes for contentSecond.
+     */
+    com.google.protobuf.ByteString
+        getContentSecondBytes();
+
+    /**
+     * <pre>
+     * 咨询组Id
+     * </pre>
+     *
+     * <code>int64 consult_id = 7;</code>
+     * @return The consultId.
+     */
+    long getConsultId();
+
+    /**
+     * <pre>
+     * 0-全部关闭,1-开启回复1，2-开启回复2
+     * </pre>
+     *
+     * <code>int32 reply_type = 8;</code>
+     * @return The replyType.
+     */
+    int getReplyType();
   }
   /**
    * <pre>
@@ -2344,7 +2356,8 @@ public final class RegularReplyOuterClass {
     }
     private RegularReplyUpdateRequest() {
       name_ = "";
-      content_ = "";
+      contentFrist_ = "";
+      contentSecond_ = "";
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
@@ -2360,7 +2373,6 @@ public final class RegularReplyOuterClass {
               com.teneasyChat.api.core.RegularReplyOuterClass.RegularReplyUpdateRequest.class, com.teneasyChat.api.core.RegularReplyOuterClass.RegularReplyUpdateRequest.Builder.class);
     }
 
-    private int bitField0_;
     public static final int ID_FIELD_NUMBER = 1;
     private long id_ = 0L;
     /**
@@ -2368,7 +2380,7 @@ public final class RegularReplyOuterClass {
      * 主键id 
      * </pre>
      *
-     * <code>int64 id = 1 [(.validate.rules) = { ... }</code>
+     * <code>int64 id = 1;</code>
      * @return The id.
      */
     @java.lang.Override
@@ -2376,52 +2388,7 @@ public final class RegularReplyOuterClass {
       return id_;
     }
 
-    public static final int REGULAR_TIME_FIELD_NUMBER = 2;
-    private long regularTime_ = 0L;
-    /**
-     * <pre>
-     * 间隔定时回复时间，毫秒级
-     * </pre>
-     *
-     * <code>uint64 regular_time = 2 [(.validate.rules) = { ... }</code>
-     * @return The regularTime.
-     */
-    @java.lang.Override
-    public long getRegularTime() {
-      return regularTime_;
-    }
-
-    public static final int CONSULT_ID_FIELD_NUMBER = 3;
-    private long consultId_ = 0L;
-    /**
-     * <pre>
-     * 咨询组Id
-     * </pre>
-     *
-     * <code>int64 consult_id = 3;</code>
-     * @return The consultId.
-     */
-    @java.lang.Override
-    public long getConsultId() {
-      return consultId_;
-    }
-
-    public static final int REPLY_TYPE_FIELD_NUMBER = 4;
-    private int replyType_ = 0;
-    /**
-     * <pre>
-     * 1-开启，2-关闭
-     * </pre>
-     *
-     * <code>int32 reply_type = 4 [(.validate.rules) = { ... }</code>
-     * @return The replyType.
-     */
-    @java.lang.Override
-    public int getReplyType() {
-      return replyType_;
-    }
-
-    public static final int NAME_FIELD_NUMBER = 5;
+    public static final int NAME_FIELD_NUMBER = 2;
     @SuppressWarnings("serial")
     private volatile java.lang.Object name_ = "";
     /**
@@ -2429,7 +2396,7 @@ public final class RegularReplyOuterClass {
      * 回复名称
      * </pre>
      *
-     * <code>string name = 5 [(.validate.rules) = { ... }</code>
+     * <code>string name = 2 [(.validate.rules) = { ... }</code>
      * @return The name.
      */
     @java.lang.Override
@@ -2450,7 +2417,7 @@ public final class RegularReplyOuterClass {
      * 回复名称
      * </pre>
      *
-     * <code>string name = 5 [(.validate.rules) = { ... }</code>
+     * <code>string name = 2 [(.validate.rules) = { ... }</code>
      * @return The bytes for name.
      */
     @java.lang.Override
@@ -2468,89 +2435,158 @@ public final class RegularReplyOuterClass {
       }
     }
 
-    public static final int CONTENT_FIELD_NUMBER = 6;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object content_ = "";
+    public static final int REGULAR_TIME_FRIST_FIELD_NUMBER = 3;
+    private long regularTimeFrist_ = 0L;
     /**
      * <pre>
-     * 回复内容
+     * 间隔定时回复时间1，毫秒级
      * </pre>
      *
-     * <code>string content = 6 [(.validate.rules) = { ... }</code>
-     * @return The content.
+     * <code>uint64 regular_time_frist = 3 [(.validate.rules) = { ... }</code>
+     * @return The regularTimeFrist.
      */
     @java.lang.Override
-    public java.lang.String getContent() {
-      java.lang.Object ref = content_;
+    public long getRegularTimeFrist() {
+      return regularTimeFrist_;
+    }
+
+    public static final int CONTENT_FRIST_FIELD_NUMBER = 4;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object contentFrist_ = "";
+    /**
+     * <pre>
+     * 回复内容1
+     * </pre>
+     *
+     * <code>string content_frist = 4 [(.validate.rules) = { ... }</code>
+     * @return The contentFrist.
+     */
+    @java.lang.Override
+    public java.lang.String getContentFrist() {
+      java.lang.Object ref = contentFrist_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        content_ = s;
+        contentFrist_ = s;
         return s;
       }
     }
     /**
      * <pre>
-     * 回复内容
+     * 回复内容1
      * </pre>
      *
-     * <code>string content = 6 [(.validate.rules) = { ... }</code>
-     * @return The bytes for content.
+     * <code>string content_frist = 4 [(.validate.rules) = { ... }</code>
+     * @return The bytes for contentFrist.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getContentBytes() {
-      java.lang.Object ref = content_;
+        getContentFristBytes() {
+      java.lang.Object ref = contentFrist_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        content_ = b;
+        contentFrist_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
 
-    public static final int IMAGE_URLS_FIELD_NUMBER = 7;
-    private com.teneasyChat.api.common.CBase.ListString imageUrls_;
+    public static final int REGULAR_TIME_SECOND_FIELD_NUMBER = 5;
+    private long regularTimeSecond_ = 0L;
     /**
      * <pre>
-     * 回复图片
+     * 间隔定时回复时间2，毫秒级
      * </pre>
      *
-     * <code>.api.common.ListString image_urls = 7;</code>
-     * @return Whether the imageUrls field is set.
+     * <code>uint64 regular_time_second = 5 [(.validate.rules) = { ... }</code>
+     * @return The regularTimeSecond.
      */
     @java.lang.Override
-    public boolean hasImageUrls() {
-      return ((bitField0_ & 0x00000001) != 0);
+    public long getRegularTimeSecond() {
+      return regularTimeSecond_;
+    }
+
+    public static final int CONTENT_SECOND_FIELD_NUMBER = 6;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object contentSecond_ = "";
+    /**
+     * <pre>
+     * 回复内容2
+     * </pre>
+     *
+     * <code>string content_second = 6 [(.validate.rules) = { ... }</code>
+     * @return The contentSecond.
+     */
+    @java.lang.Override
+    public java.lang.String getContentSecond() {
+      java.lang.Object ref = contentSecond_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        contentSecond_ = s;
+        return s;
+      }
     }
     /**
      * <pre>
-     * 回复图片
+     * 回复内容2
      * </pre>
      *
-     * <code>.api.common.ListString image_urls = 7;</code>
-     * @return The imageUrls.
+     * <code>string content_second = 6 [(.validate.rules) = { ... }</code>
+     * @return The bytes for contentSecond.
      */
     @java.lang.Override
-    public com.teneasyChat.api.common.CBase.ListString getImageUrls() {
-      return imageUrls_ == null ? com.teneasyChat.api.common.CBase.ListString.getDefaultInstance() : imageUrls_;
+    public com.google.protobuf.ByteString
+        getContentSecondBytes() {
+      java.lang.Object ref = contentSecond_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        contentSecond_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
+
+    public static final int CONSULT_ID_FIELD_NUMBER = 7;
+    private long consultId_ = 0L;
     /**
      * <pre>
-     * 回复图片
+     * 咨询组Id
      * </pre>
      *
-     * <code>.api.common.ListString image_urls = 7;</code>
+     * <code>int64 consult_id = 7;</code>
+     * @return The consultId.
      */
     @java.lang.Override
-    public com.teneasyChat.api.common.CBase.ListStringOrBuilder getImageUrlsOrBuilder() {
-      return imageUrls_ == null ? com.teneasyChat.api.common.CBase.ListString.getDefaultInstance() : imageUrls_;
+    public long getConsultId() {
+      return consultId_;
+    }
+
+    public static final int REPLY_TYPE_FIELD_NUMBER = 8;
+    private int replyType_ = 0;
+    /**
+     * <pre>
+     * 0-全部关闭,1-开启回复1，2-开启回复2
+     * </pre>
+     *
+     * <code>int32 reply_type = 8;</code>
+     * @return The replyType.
+     */
+    @java.lang.Override
+    public int getReplyType() {
+      return replyType_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -2570,23 +2606,26 @@ public final class RegularReplyOuterClass {
       if (id_ != 0L) {
         output.writeInt64(1, id_);
       }
-      if (regularTime_ != 0L) {
-        output.writeUInt64(2, regularTime_);
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 2, name_);
+      }
+      if (regularTimeFrist_ != 0L) {
+        output.writeUInt64(3, regularTimeFrist_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(contentFrist_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 4, contentFrist_);
+      }
+      if (regularTimeSecond_ != 0L) {
+        output.writeUInt64(5, regularTimeSecond_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(contentSecond_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 6, contentSecond_);
       }
       if (consultId_ != 0L) {
-        output.writeInt64(3, consultId_);
+        output.writeInt64(7, consultId_);
       }
       if (replyType_ != 0) {
-        output.writeInt32(4, replyType_);
-      }
-      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 5, name_);
-      }
-      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(content_)) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 6, content_);
-      }
-      if (((bitField0_ & 0x00000001) != 0)) {
-        output.writeMessage(7, getImageUrls());
+        output.writeInt32(8, replyType_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -2601,27 +2640,30 @@ public final class RegularReplyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(1, id_);
       }
-      if (regularTime_ != 0L) {
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(2, name_);
+      }
+      if (regularTimeFrist_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(2, regularTime_);
+          .computeUInt64Size(3, regularTimeFrist_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(contentFrist_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(4, contentFrist_);
+      }
+      if (regularTimeSecond_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(5, regularTimeSecond_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(contentSecond_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(6, contentSecond_);
       }
       if (consultId_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(3, consultId_);
+          .computeInt64Size(7, consultId_);
       }
       if (replyType_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(4, replyType_);
-      }
-      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(5, name_);
-      }
-      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(content_)) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(6, content_);
-      }
-      if (((bitField0_ & 0x00000001) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(7, getImageUrls());
+          .computeInt32Size(8, replyType_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -2640,21 +2682,20 @@ public final class RegularReplyOuterClass {
 
       if (getId()
           != other.getId()) return false;
-      if (getRegularTime()
-          != other.getRegularTime()) return false;
+      if (!getName()
+          .equals(other.getName())) return false;
+      if (getRegularTimeFrist()
+          != other.getRegularTimeFrist()) return false;
+      if (!getContentFrist()
+          .equals(other.getContentFrist())) return false;
+      if (getRegularTimeSecond()
+          != other.getRegularTimeSecond()) return false;
+      if (!getContentSecond()
+          .equals(other.getContentSecond())) return false;
       if (getConsultId()
           != other.getConsultId()) return false;
       if (getReplyType()
           != other.getReplyType()) return false;
-      if (!getName()
-          .equals(other.getName())) return false;
-      if (!getContent()
-          .equals(other.getContent())) return false;
-      if (hasImageUrls() != other.hasImageUrls()) return false;
-      if (hasImageUrls()) {
-        if (!getImageUrls()
-            .equals(other.getImageUrls())) return false;
-      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -2669,22 +2710,23 @@ public final class RegularReplyOuterClass {
       hash = (37 * hash) + ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getId());
-      hash = (37 * hash) + REGULAR_TIME_FIELD_NUMBER;
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+      hash = (37 * hash) + REGULAR_TIME_FRIST_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getRegularTime());
+          getRegularTimeFrist());
+      hash = (37 * hash) + CONTENT_FRIST_FIELD_NUMBER;
+      hash = (53 * hash) + getContentFrist().hashCode();
+      hash = (37 * hash) + REGULAR_TIME_SECOND_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getRegularTimeSecond());
+      hash = (37 * hash) + CONTENT_SECOND_FIELD_NUMBER;
+      hash = (53 * hash) + getContentSecond().hashCode();
       hash = (37 * hash) + CONSULT_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getConsultId());
       hash = (37 * hash) + REPLY_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + getReplyType();
-      hash = (37 * hash) + NAME_FIELD_NUMBER;
-      hash = (53 * hash) + getName().hashCode();
-      hash = (37 * hash) + CONTENT_FIELD_NUMBER;
-      hash = (53 * hash) + getContent().hashCode();
-      if (hasImageUrls()) {
-        hash = (37 * hash) + IMAGE_URLS_FIELD_NUMBER;
-        hash = (53 * hash) + getImageUrls().hashCode();
-      }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -2808,35 +2850,26 @@ public final class RegularReplyOuterClass {
 
       // Construct using com.teneasyChat.api.core.RegularReplyOuterClass.RegularReplyUpdateRequest.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessage.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessage
-                .alwaysUseFieldBuilders) {
-          getImageUrlsFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
         id_ = 0L;
-        regularTime_ = 0L;
+        name_ = "";
+        regularTimeFrist_ = 0L;
+        contentFrist_ = "";
+        regularTimeSecond_ = 0L;
+        contentSecond_ = "";
         consultId_ = 0L;
         replyType_ = 0;
-        name_ = "";
-        content_ = "";
-        imageUrls_ = null;
-        if (imageUrlsBuilder_ != null) {
-          imageUrlsBuilder_.dispose();
-          imageUrlsBuilder_ = null;
-        }
         return this;
       }
 
@@ -2874,28 +2907,26 @@ public final class RegularReplyOuterClass {
           result.id_ = id_;
         }
         if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.regularTime_ = regularTime_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.consultId_ = consultId_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.replyType_ = replyType_;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
           result.name_ = name_;
         }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.regularTimeFrist_ = regularTimeFrist_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.contentFrist_ = contentFrist_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.regularTimeSecond_ = regularTimeSecond_;
+        }
         if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.content_ = content_;
+          result.contentSecond_ = contentSecond_;
         }
-        int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000040) != 0)) {
-          result.imageUrls_ = imageUrlsBuilder_ == null
-              ? imageUrls_
-              : imageUrlsBuilder_.build();
-          to_bitField0_ |= 0x00000001;
+          result.consultId_ = consultId_;
         }
-        result.bitField0_ |= to_bitField0_;
+        if (((from_bitField0_ & 0x00000080) != 0)) {
+          result.replyType_ = replyType_;
+        }
       }
 
       @java.lang.Override
@@ -2913,27 +2944,32 @@ public final class RegularReplyOuterClass {
         if (other.getId() != 0L) {
           setId(other.getId());
         }
-        if (other.getRegularTime() != 0L) {
-          setRegularTime(other.getRegularTime());
+        if (!other.getName().isEmpty()) {
+          name_ = other.name_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        if (other.getRegularTimeFrist() != 0L) {
+          setRegularTimeFrist(other.getRegularTimeFrist());
+        }
+        if (!other.getContentFrist().isEmpty()) {
+          contentFrist_ = other.contentFrist_;
+          bitField0_ |= 0x00000008;
+          onChanged();
+        }
+        if (other.getRegularTimeSecond() != 0L) {
+          setRegularTimeSecond(other.getRegularTimeSecond());
+        }
+        if (!other.getContentSecond().isEmpty()) {
+          contentSecond_ = other.contentSecond_;
+          bitField0_ |= 0x00000020;
+          onChanged();
         }
         if (other.getConsultId() != 0L) {
           setConsultId(other.getConsultId());
         }
         if (other.getReplyType() != 0) {
           setReplyType(other.getReplyType());
-        }
-        if (!other.getName().isEmpty()) {
-          name_ = other.name_;
-          bitField0_ |= 0x00000010;
-          onChanged();
-        }
-        if (!other.getContent().isEmpty()) {
-          content_ = other.content_;
-          bitField0_ |= 0x00000020;
-          onChanged();
-        }
-        if (other.hasImageUrls()) {
-          mergeImageUrls(other.getImageUrls());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -2966,38 +3002,41 @@ public final class RegularReplyOuterClass {
                 bitField0_ |= 0x00000001;
                 break;
               } // case 8
-              case 16: {
-                regularTime_ = input.readUInt64();
+              case 18: {
+                name_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000002;
                 break;
-              } // case 16
+              } // case 18
               case 24: {
-                consultId_ = input.readInt64();
+                regularTimeFrist_ = input.readUInt64();
                 bitField0_ |= 0x00000004;
                 break;
               } // case 24
-              case 32: {
-                replyType_ = input.readInt32();
+              case 34: {
+                contentFrist_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000008;
                 break;
-              } // case 32
-              case 42: {
-                name_ = input.readStringRequireUtf8();
+              } // case 34
+              case 40: {
+                regularTimeSecond_ = input.readUInt64();
                 bitField0_ |= 0x00000010;
                 break;
-              } // case 42
+              } // case 40
               case 50: {
-                content_ = input.readStringRequireUtf8();
+                contentSecond_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000020;
                 break;
               } // case 50
-              case 58: {
-                input.readMessage(
-                    getImageUrlsFieldBuilder().getBuilder(),
-                    extensionRegistry);
+              case 56: {
+                consultId_ = input.readInt64();
                 bitField0_ |= 0x00000040;
                 break;
-              } // case 58
+              } // case 56
+              case 64: {
+                replyType_ = input.readInt32();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 64
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -3021,7 +3060,7 @@ public final class RegularReplyOuterClass {
        * 主键id 
        * </pre>
        *
-       * <code>int64 id = 1 [(.validate.rules) = { ... }</code>
+       * <code>int64 id = 1;</code>
        * @return The id.
        */
       @java.lang.Override
@@ -3033,7 +3072,7 @@ public final class RegularReplyOuterClass {
        * 主键id 
        * </pre>
        *
-       * <code>int64 id = 1 [(.validate.rules) = { ... }</code>
+       * <code>int64 id = 1;</code>
        * @param value The id to set.
        * @return This builder for chaining.
        */
@@ -3049,144 +3088,12 @@ public final class RegularReplyOuterClass {
        * 主键id 
        * </pre>
        *
-       * <code>int64 id = 1 [(.validate.rules) = { ... }</code>
+       * <code>int64 id = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearId() {
         bitField0_ = (bitField0_ & ~0x00000001);
         id_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private long regularTime_ ;
-      /**
-       * <pre>
-       * 间隔定时回复时间，毫秒级
-       * </pre>
-       *
-       * <code>uint64 regular_time = 2 [(.validate.rules) = { ... }</code>
-       * @return The regularTime.
-       */
-      @java.lang.Override
-      public long getRegularTime() {
-        return regularTime_;
-      }
-      /**
-       * <pre>
-       * 间隔定时回复时间，毫秒级
-       * </pre>
-       *
-       * <code>uint64 regular_time = 2 [(.validate.rules) = { ... }</code>
-       * @param value The regularTime to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRegularTime(long value) {
-
-        regularTime_ = value;
-        bitField0_ |= 0x00000002;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * 间隔定时回复时间，毫秒级
-       * </pre>
-       *
-       * <code>uint64 regular_time = 2 [(.validate.rules) = { ... }</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearRegularTime() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        regularTime_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private long consultId_ ;
-      /**
-       * <pre>
-       * 咨询组Id
-       * </pre>
-       *
-       * <code>int64 consult_id = 3;</code>
-       * @return The consultId.
-       */
-      @java.lang.Override
-      public long getConsultId() {
-        return consultId_;
-      }
-      /**
-       * <pre>
-       * 咨询组Id
-       * </pre>
-       *
-       * <code>int64 consult_id = 3;</code>
-       * @param value The consultId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setConsultId(long value) {
-
-        consultId_ = value;
-        bitField0_ |= 0x00000004;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * 咨询组Id
-       * </pre>
-       *
-       * <code>int64 consult_id = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearConsultId() {
-        bitField0_ = (bitField0_ & ~0x00000004);
-        consultId_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private int replyType_ ;
-      /**
-       * <pre>
-       * 1-开启，2-关闭
-       * </pre>
-       *
-       * <code>int32 reply_type = 4 [(.validate.rules) = { ... }</code>
-       * @return The replyType.
-       */
-      @java.lang.Override
-      public int getReplyType() {
-        return replyType_;
-      }
-      /**
-       * <pre>
-       * 1-开启，2-关闭
-       * </pre>
-       *
-       * <code>int32 reply_type = 4 [(.validate.rules) = { ... }</code>
-       * @param value The replyType to set.
-       * @return This builder for chaining.
-       */
-      public Builder setReplyType(int value) {
-
-        replyType_ = value;
-        bitField0_ |= 0x00000008;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * 1-开启，2-关闭
-       * </pre>
-       *
-       * <code>int32 reply_type = 4 [(.validate.rules) = { ... }</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearReplyType() {
-        bitField0_ = (bitField0_ & ~0x00000008);
-        replyType_ = 0;
         onChanged();
         return this;
       }
@@ -3197,7 +3104,7 @@ public final class RegularReplyOuterClass {
        * 回复名称
        * </pre>
        *
-       * <code>string name = 5 [(.validate.rules) = { ... }</code>
+       * <code>string name = 2 [(.validate.rules) = { ... }</code>
        * @return The name.
        */
       public java.lang.String getName() {
@@ -3217,7 +3124,7 @@ public final class RegularReplyOuterClass {
        * 回复名称
        * </pre>
        *
-       * <code>string name = 5 [(.validate.rules) = { ... }</code>
+       * <code>string name = 2 [(.validate.rules) = { ... }</code>
        * @return The bytes for name.
        */
       public com.google.protobuf.ByteString
@@ -3238,7 +3145,7 @@ public final class RegularReplyOuterClass {
        * 回复名称
        * </pre>
        *
-       * <code>string name = 5 [(.validate.rules) = { ... }</code>
+       * <code>string name = 2 [(.validate.rules) = { ... }</code>
        * @param value The name to set.
        * @return This builder for chaining.
        */
@@ -3246,7 +3153,7 @@ public final class RegularReplyOuterClass {
           java.lang.String value) {
         if (value == null) { throw new NullPointerException(); }
         name_ = value;
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -3255,12 +3162,12 @@ public final class RegularReplyOuterClass {
        * 回复名称
        * </pre>
        *
-       * <code>string name = 5 [(.validate.rules) = { ... }</code>
+       * <code>string name = 2 [(.validate.rules) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearName() {
         name_ = getDefaultInstance().getName();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -3269,7 +3176,7 @@ public final class RegularReplyOuterClass {
        * 回复名称
        * </pre>
        *
-       * <code>string name = 5 [(.validate.rules) = { ... }</code>
+       * <code>string name = 2 [(.validate.rules) = { ... }</code>
        * @param value The bytes for name to set.
        * @return This builder for chaining.
        */
@@ -3278,27 +3185,71 @@ public final class RegularReplyOuterClass {
         if (value == null) { throw new NullPointerException(); }
         checkByteStringIsUtf8(value);
         name_ = value;
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
 
-      private java.lang.Object content_ = "";
+      private long regularTimeFrist_ ;
       /**
        * <pre>
-       * 回复内容
+       * 间隔定时回复时间1，毫秒级
        * </pre>
        *
-       * <code>string content = 6 [(.validate.rules) = { ... }</code>
-       * @return The content.
+       * <code>uint64 regular_time_frist = 3 [(.validate.rules) = { ... }</code>
+       * @return The regularTimeFrist.
        */
-      public java.lang.String getContent() {
-        java.lang.Object ref = content_;
+      @java.lang.Override
+      public long getRegularTimeFrist() {
+        return regularTimeFrist_;
+      }
+      /**
+       * <pre>
+       * 间隔定时回复时间1，毫秒级
+       * </pre>
+       *
+       * <code>uint64 regular_time_frist = 3 [(.validate.rules) = { ... }</code>
+       * @param value The regularTimeFrist to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRegularTimeFrist(long value) {
+
+        regularTimeFrist_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 间隔定时回复时间1，毫秒级
+       * </pre>
+       *
+       * <code>uint64 regular_time_frist = 3 [(.validate.rules) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRegularTimeFrist() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        regularTimeFrist_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object contentFrist_ = "";
+      /**
+       * <pre>
+       * 回复内容1
+       * </pre>
+       *
+       * <code>string content_frist = 4 [(.validate.rules) = { ... }</code>
+       * @return The contentFrist.
+       */
+      public java.lang.String getContentFrist() {
+        java.lang.Object ref = contentFrist_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          content_ = s;
+          contentFrist_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -3306,20 +3257,20 @@ public final class RegularReplyOuterClass {
       }
       /**
        * <pre>
-       * 回复内容
+       * 回复内容1
        * </pre>
        *
-       * <code>string content = 6 [(.validate.rules) = { ... }</code>
-       * @return The bytes for content.
+       * <code>string content_frist = 4 [(.validate.rules) = { ... }</code>
+       * @return The bytes for contentFrist.
        */
       public com.google.protobuf.ByteString
-          getContentBytes() {
-        java.lang.Object ref = content_;
+          getContentFristBytes() {
+        java.lang.Object ref = contentFrist_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          content_ = b;
+          contentFrist_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -3327,209 +3278,276 @@ public final class RegularReplyOuterClass {
       }
       /**
        * <pre>
-       * 回复内容
+       * 回复内容1
        * </pre>
        *
-       * <code>string content = 6 [(.validate.rules) = { ... }</code>
-       * @param value The content to set.
+       * <code>string content_frist = 4 [(.validate.rules) = { ... }</code>
+       * @param value The contentFrist to set.
        * @return This builder for chaining.
        */
-      public Builder setContent(
+      public Builder setContentFrist(
           java.lang.String value) {
         if (value == null) { throw new NullPointerException(); }
-        content_ = value;
+        contentFrist_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 回复内容1
+       * </pre>
+       *
+       * <code>string content_frist = 4 [(.validate.rules) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearContentFrist() {
+        contentFrist_ = getDefaultInstance().getContentFrist();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 回复内容1
+       * </pre>
+       *
+       * <code>string content_frist = 4 [(.validate.rules) = { ... }</code>
+       * @param value The bytes for contentFrist to set.
+       * @return This builder for chaining.
+       */
+      public Builder setContentFristBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        contentFrist_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      private long regularTimeSecond_ ;
+      /**
+       * <pre>
+       * 间隔定时回复时间2，毫秒级
+       * </pre>
+       *
+       * <code>uint64 regular_time_second = 5 [(.validate.rules) = { ... }</code>
+       * @return The regularTimeSecond.
+       */
+      @java.lang.Override
+      public long getRegularTimeSecond() {
+        return regularTimeSecond_;
+      }
+      /**
+       * <pre>
+       * 间隔定时回复时间2，毫秒级
+       * </pre>
+       *
+       * <code>uint64 regular_time_second = 5 [(.validate.rules) = { ... }</code>
+       * @param value The regularTimeSecond to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRegularTimeSecond(long value) {
+
+        regularTimeSecond_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 间隔定时回复时间2，毫秒级
+       * </pre>
+       *
+       * <code>uint64 regular_time_second = 5 [(.validate.rules) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRegularTimeSecond() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        regularTimeSecond_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object contentSecond_ = "";
+      /**
+       * <pre>
+       * 回复内容2
+       * </pre>
+       *
+       * <code>string content_second = 6 [(.validate.rules) = { ... }</code>
+       * @return The contentSecond.
+       */
+      public java.lang.String getContentSecond() {
+        java.lang.Object ref = contentSecond_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          contentSecond_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * 回复内容2
+       * </pre>
+       *
+       * <code>string content_second = 6 [(.validate.rules) = { ... }</code>
+       * @return The bytes for contentSecond.
+       */
+      public com.google.protobuf.ByteString
+          getContentSecondBytes() {
+        java.lang.Object ref = contentSecond_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          contentSecond_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * 回复内容2
+       * </pre>
+       *
+       * <code>string content_second = 6 [(.validate.rules) = { ... }</code>
+       * @param value The contentSecond to set.
+       * @return This builder for chaining.
+       */
+      public Builder setContentSecond(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        contentSecond_ = value;
         bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * 回复内容
+       * 回复内容2
        * </pre>
        *
-       * <code>string content = 6 [(.validate.rules) = { ... }</code>
+       * <code>string content_second = 6 [(.validate.rules) = { ... }</code>
        * @return This builder for chaining.
        */
-      public Builder clearContent() {
-        content_ = getDefaultInstance().getContent();
+      public Builder clearContentSecond() {
+        contentSecond_ = getDefaultInstance().getContentSecond();
         bitField0_ = (bitField0_ & ~0x00000020);
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * 回复内容
+       * 回复内容2
        * </pre>
        *
-       * <code>string content = 6 [(.validate.rules) = { ... }</code>
-       * @param value The bytes for content to set.
+       * <code>string content_second = 6 [(.validate.rules) = { ... }</code>
+       * @param value The bytes for contentSecond to set.
        * @return This builder for chaining.
        */
-      public Builder setContentBytes(
+      public Builder setContentSecondBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) { throw new NullPointerException(); }
         checkByteStringIsUtf8(value);
-        content_ = value;
+        contentSecond_ = value;
         bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
 
-      private com.teneasyChat.api.common.CBase.ListString imageUrls_;
-      private com.google.protobuf.SingleFieldBuilder<
-          com.teneasyChat.api.common.CBase.ListString, com.teneasyChat.api.common.CBase.ListString.Builder, com.teneasyChat.api.common.CBase.ListStringOrBuilder> imageUrlsBuilder_;
+      private long consultId_ ;
       /**
        * <pre>
-       * 回复图片
+       * 咨询组Id
        * </pre>
        *
-       * <code>.api.common.ListString image_urls = 7;</code>
-       * @return Whether the imageUrls field is set.
+       * <code>int64 consult_id = 7;</code>
+       * @return The consultId.
        */
-      public boolean hasImageUrls() {
-        return ((bitField0_ & 0x00000040) != 0);
+      @java.lang.Override
+      public long getConsultId() {
+        return consultId_;
       }
       /**
        * <pre>
-       * 回复图片
+       * 咨询组Id
        * </pre>
        *
-       * <code>.api.common.ListString image_urls = 7;</code>
-       * @return The imageUrls.
+       * <code>int64 consult_id = 7;</code>
+       * @param value The consultId to set.
+       * @return This builder for chaining.
        */
-      public com.teneasyChat.api.common.CBase.ListString getImageUrls() {
-        if (imageUrlsBuilder_ == null) {
-          return imageUrls_ == null ? com.teneasyChat.api.common.CBase.ListString.getDefaultInstance() : imageUrls_;
-        } else {
-          return imageUrlsBuilder_.getMessage();
-        }
-      }
-      /**
-       * <pre>
-       * 回复图片
-       * </pre>
-       *
-       * <code>.api.common.ListString image_urls = 7;</code>
-       */
-      public Builder setImageUrls(com.teneasyChat.api.common.CBase.ListString value) {
-        if (imageUrlsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          imageUrls_ = value;
-        } else {
-          imageUrlsBuilder_.setMessage(value);
-        }
+      public Builder setConsultId(long value) {
+
+        consultId_ = value;
         bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * 回复图片
+       * 咨询组Id
        * </pre>
        *
-       * <code>.api.common.ListString image_urls = 7;</code>
+       * <code>int64 consult_id = 7;</code>
+       * @return This builder for chaining.
        */
-      public Builder setImageUrls(
-          com.teneasyChat.api.common.CBase.ListString.Builder builderForValue) {
-        if (imageUrlsBuilder_ == null) {
-          imageUrls_ = builderForValue.build();
-        } else {
-          imageUrlsBuilder_.setMessage(builderForValue.build());
-        }
-        bitField0_ |= 0x00000040;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * 回复图片
-       * </pre>
-       *
-       * <code>.api.common.ListString image_urls = 7;</code>
-       */
-      public Builder mergeImageUrls(com.teneasyChat.api.common.CBase.ListString value) {
-        if (imageUrlsBuilder_ == null) {
-          if (((bitField0_ & 0x00000040) != 0) &&
-            imageUrls_ != null &&
-            imageUrls_ != com.teneasyChat.api.common.CBase.ListString.getDefaultInstance()) {
-            getImageUrlsBuilder().mergeFrom(value);
-          } else {
-            imageUrls_ = value;
-          }
-        } else {
-          imageUrlsBuilder_.mergeFrom(value);
-        }
-        if (imageUrls_ != null) {
-          bitField0_ |= 0x00000040;
-          onChanged();
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * 回复图片
-       * </pre>
-       *
-       * <code>.api.common.ListString image_urls = 7;</code>
-       */
-      public Builder clearImageUrls() {
+      public Builder clearConsultId() {
         bitField0_ = (bitField0_ & ~0x00000040);
-        imageUrls_ = null;
-        if (imageUrlsBuilder_ != null) {
-          imageUrlsBuilder_.dispose();
-          imageUrlsBuilder_ = null;
-        }
+        consultId_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private int replyType_ ;
+      /**
+       * <pre>
+       * 0-全部关闭,1-开启回复1，2-开启回复2
+       * </pre>
+       *
+       * <code>int32 reply_type = 8;</code>
+       * @return The replyType.
+       */
+      @java.lang.Override
+      public int getReplyType() {
+        return replyType_;
+      }
+      /**
+       * <pre>
+       * 0-全部关闭,1-开启回复1，2-开启回复2
+       * </pre>
+       *
+       * <code>int32 reply_type = 8;</code>
+       * @param value The replyType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setReplyType(int value) {
+
+        replyType_ = value;
+        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * 回复图片
+       * 0-全部关闭,1-开启回复1，2-开启回复2
        * </pre>
        *
-       * <code>.api.common.ListString image_urls = 7;</code>
+       * <code>int32 reply_type = 8;</code>
+       * @return This builder for chaining.
        */
-      public com.teneasyChat.api.common.CBase.ListString.Builder getImageUrlsBuilder() {
-        bitField0_ |= 0x00000040;
+      public Builder clearReplyType() {
+        bitField0_ = (bitField0_ & ~0x00000080);
+        replyType_ = 0;
         onChanged();
-        return getImageUrlsFieldBuilder().getBuilder();
-      }
-      /**
-       * <pre>
-       * 回复图片
-       * </pre>
-       *
-       * <code>.api.common.ListString image_urls = 7;</code>
-       */
-      public com.teneasyChat.api.common.CBase.ListStringOrBuilder getImageUrlsOrBuilder() {
-        if (imageUrlsBuilder_ != null) {
-          return imageUrlsBuilder_.getMessageOrBuilder();
-        } else {
-          return imageUrls_ == null ?
-              com.teneasyChat.api.common.CBase.ListString.getDefaultInstance() : imageUrls_;
-        }
-      }
-      /**
-       * <pre>
-       * 回复图片
-       * </pre>
-       *
-       * <code>.api.common.ListString image_urls = 7;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilder<
-          com.teneasyChat.api.common.CBase.ListString, com.teneasyChat.api.common.CBase.ListString.Builder, com.teneasyChat.api.common.CBase.ListStringOrBuilder> 
-          getImageUrlsFieldBuilder() {
-        if (imageUrlsBuilder_ == null) {
-          imageUrlsBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-              com.teneasyChat.api.common.CBase.ListString, com.teneasyChat.api.common.CBase.ListString.Builder, com.teneasyChat.api.common.CBase.ListStringOrBuilder>(
-                  getImageUrls(),
-                  getParentForChildren(),
-                  isClean());
-          imageUrls_ = null;
-        }
-        return imageUrlsBuilder_;
+        return this;
       }
 
       // @@protoc_insertion_point(builder_scope:api.core.RegularReplyUpdateRequest)
@@ -4431,70 +4449,10 @@ public final class RegularReplyOuterClass {
 
     /**
      * <pre>
-     * 间隔定时回复时间，毫秒级
-     * </pre>
-     *
-     * <code>uint64 regular_time = 2;</code>
-     * @return The regularTime.
-     */
-    long getRegularTime();
-
-    /**
-     * <pre>
-     * 咨询组Id
-     * </pre>
-     *
-     * <code>int64 consult_id = 3;</code>
-     * @return The consultId.
-     */
-    long getConsultId();
-
-    /**
-     * <pre>
-     * 咨询组name
-     * </pre>
-     *
-     * <code>string consult_name = 4;</code>
-     * @return The consultName.
-     */
-    java.lang.String getConsultName();
-    /**
-     * <pre>
-     * 咨询组name
-     * </pre>
-     *
-     * <code>string consult_name = 4;</code>
-     * @return The bytes for consultName.
-     */
-    com.google.protobuf.ByteString
-        getConsultNameBytes();
-
-    /**
-     * <pre>
-     * 1-开启，2-关闭
-     * </pre>
-     *
-     * <code>int32 reply_type = 5;</code>
-     * @return The replyType.
-     */
-    int getReplyType();
-
-    /**
-     * <pre>
-     * 绑定的商户ID
-     * </pre>
-     *
-     * <code>int64 tenant_id = 6;</code>
-     * @return The tenantId.
-     */
-    long getTenantId();
-
-    /**
-     * <pre>
      * 回复名称
      * </pre>
      *
-     * <code>string name = 7;</code>
+     * <code>string name = 2;</code>
      * @return The name.
      */
     java.lang.String getName();
@@ -4503,7 +4461,7 @@ public final class RegularReplyOuterClass {
      * 回复名称
      * </pre>
      *
-     * <code>string name = 7;</code>
+     * <code>string name = 2;</code>
      * @return The bytes for name.
      */
     com.google.protobuf.ByteString
@@ -4511,50 +4469,103 @@ public final class RegularReplyOuterClass {
 
     /**
      * <pre>
-     * 回复内容
+     * 间隔定时回复时间1，毫秒级
      * </pre>
      *
-     * <code>string content = 8;</code>
-     * @return The content.
+     * <code>uint64 regular_time_frist = 3;</code>
+     * @return The regularTimeFrist.
      */
-    java.lang.String getContent();
-    /**
-     * <pre>
-     * 回复内容
-     * </pre>
-     *
-     * <code>string content = 8;</code>
-     * @return The bytes for content.
-     */
-    com.google.protobuf.ByteString
-        getContentBytes();
+    long getRegularTimeFrist();
 
     /**
      * <pre>
-     * 回复图片
+     * 回复内容1
      * </pre>
      *
-     * <code>.api.common.ListString image_urls = 9;</code>
-     * @return Whether the imageUrls field is set.
+     * <code>string content_frist = 4;</code>
+     * @return The contentFrist.
      */
-    boolean hasImageUrls();
+    java.lang.String getContentFrist();
     /**
      * <pre>
-     * 回复图片
+     * 回复内容1
      * </pre>
      *
-     * <code>.api.common.ListString image_urls = 9;</code>
-     * @return The imageUrls.
+     * <code>string content_frist = 4;</code>
+     * @return The bytes for contentFrist.
      */
-    com.teneasyChat.api.common.CBase.ListString getImageUrls();
+    com.google.protobuf.ByteString
+        getContentFristBytes();
+
     /**
      * <pre>
-     * 回复图片
+     * 间隔定时回复时间2，毫秒级
      * </pre>
      *
-     * <code>.api.common.ListString image_urls = 9;</code>
+     * <code>uint64 regular_time_second = 5;</code>
+     * @return The regularTimeSecond.
      */
-    com.teneasyChat.api.common.CBase.ListStringOrBuilder getImageUrlsOrBuilder();
+    long getRegularTimeSecond();
+
+    /**
+     * <pre>
+     * 回复内容2
+     * </pre>
+     *
+     * <code>string content_second = 6;</code>
+     * @return The contentSecond.
+     */
+    java.lang.String getContentSecond();
+    /**
+     * <pre>
+     * 回复内容2
+     * </pre>
+     *
+     * <code>string content_second = 6;</code>
+     * @return The bytes for contentSecond.
+     */
+    com.google.protobuf.ByteString
+        getContentSecondBytes();
+
+    /**
+     * <pre>
+     * 咨询组Id
+     * </pre>
+     *
+     * <code>int64 consult_id = 7;</code>
+     * @return The consultId.
+     */
+    long getConsultId();
+
+    /**
+     * <pre>
+     * 0-全部关闭,1-开启回复1，2-开启回复2
+     * </pre>
+     *
+     * <code>int32 reply_type = 8;</code>
+     * @return The replyType.
+     */
+    int getReplyType();
+
+    /**
+     * <pre>
+     * 绑定的咨询组name
+     * </pre>
+     *
+     * <code>string consult_name = 9;</code>
+     * @return The consultName.
+     */
+    java.lang.String getConsultName();
+    /**
+     * <pre>
+     * 绑定的咨询组name
+     * </pre>
+     *
+     * <code>string consult_name = 9;</code>
+     * @return The bytes for consultName.
+     */
+    com.google.protobuf.ByteString
+        getConsultNameBytes();
   }
   /**
    * Protobuf type {@code api.core.RegularReplyItem}
@@ -4578,9 +4589,10 @@ public final class RegularReplyOuterClass {
       super(builder);
     }
     private RegularReplyItem() {
-      consultName_ = "";
       name_ = "";
-      content_ = "";
+      contentFrist_ = "";
+      contentSecond_ = "";
+      consultName_ = "";
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
@@ -4596,7 +4608,6 @@ public final class RegularReplyOuterClass {
               com.teneasyChat.api.core.RegularReplyOuterClass.RegularReplyItem.class, com.teneasyChat.api.core.RegularReplyOuterClass.RegularReplyItem.Builder.class);
     }
 
-    private int bitField0_;
     public static final int ID_FIELD_NUMBER = 1;
     private long id_ = 0L;
     /**
@@ -4612,114 +4623,7 @@ public final class RegularReplyOuterClass {
       return id_;
     }
 
-    public static final int REGULAR_TIME_FIELD_NUMBER = 2;
-    private long regularTime_ = 0L;
-    /**
-     * <pre>
-     * 间隔定时回复时间，毫秒级
-     * </pre>
-     *
-     * <code>uint64 regular_time = 2;</code>
-     * @return The regularTime.
-     */
-    @java.lang.Override
-    public long getRegularTime() {
-      return regularTime_;
-    }
-
-    public static final int CONSULT_ID_FIELD_NUMBER = 3;
-    private long consultId_ = 0L;
-    /**
-     * <pre>
-     * 咨询组Id
-     * </pre>
-     *
-     * <code>int64 consult_id = 3;</code>
-     * @return The consultId.
-     */
-    @java.lang.Override
-    public long getConsultId() {
-      return consultId_;
-    }
-
-    public static final int CONSULT_NAME_FIELD_NUMBER = 4;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object consultName_ = "";
-    /**
-     * <pre>
-     * 咨询组name
-     * </pre>
-     *
-     * <code>string consult_name = 4;</code>
-     * @return The consultName.
-     */
-    @java.lang.Override
-    public java.lang.String getConsultName() {
-      java.lang.Object ref = consultName_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        consultName_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * 咨询组name
-     * </pre>
-     *
-     * <code>string consult_name = 4;</code>
-     * @return The bytes for consultName.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getConsultNameBytes() {
-      java.lang.Object ref = consultName_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        consultName_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int REPLY_TYPE_FIELD_NUMBER = 5;
-    private int replyType_ = 0;
-    /**
-     * <pre>
-     * 1-开启，2-关闭
-     * </pre>
-     *
-     * <code>int32 reply_type = 5;</code>
-     * @return The replyType.
-     */
-    @java.lang.Override
-    public int getReplyType() {
-      return replyType_;
-    }
-
-    public static final int TENANT_ID_FIELD_NUMBER = 6;
-    private long tenantId_ = 0L;
-    /**
-     * <pre>
-     * 绑定的商户ID
-     * </pre>
-     *
-     * <code>int64 tenant_id = 6;</code>
-     * @return The tenantId.
-     */
-    @java.lang.Override
-    public long getTenantId() {
-      return tenantId_;
-    }
-
-    public static final int NAME_FIELD_NUMBER = 7;
+    public static final int NAME_FIELD_NUMBER = 2;
     @SuppressWarnings("serial")
     private volatile java.lang.Object name_ = "";
     /**
@@ -4727,7 +4631,7 @@ public final class RegularReplyOuterClass {
      * 回复名称
      * </pre>
      *
-     * <code>string name = 7;</code>
+     * <code>string name = 2;</code>
      * @return The name.
      */
     @java.lang.Override
@@ -4748,7 +4652,7 @@ public final class RegularReplyOuterClass {
      * 回复名称
      * </pre>
      *
-     * <code>string name = 7;</code>
+     * <code>string name = 2;</code>
      * @return The bytes for name.
      */
     @java.lang.Override
@@ -4766,89 +4670,205 @@ public final class RegularReplyOuterClass {
       }
     }
 
-    public static final int CONTENT_FIELD_NUMBER = 8;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object content_ = "";
+    public static final int REGULAR_TIME_FRIST_FIELD_NUMBER = 3;
+    private long regularTimeFrist_ = 0L;
     /**
      * <pre>
-     * 回复内容
+     * 间隔定时回复时间1，毫秒级
      * </pre>
      *
-     * <code>string content = 8;</code>
-     * @return The content.
+     * <code>uint64 regular_time_frist = 3;</code>
+     * @return The regularTimeFrist.
      */
     @java.lang.Override
-    public java.lang.String getContent() {
-      java.lang.Object ref = content_;
+    public long getRegularTimeFrist() {
+      return regularTimeFrist_;
+    }
+
+    public static final int CONTENT_FRIST_FIELD_NUMBER = 4;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object contentFrist_ = "";
+    /**
+     * <pre>
+     * 回复内容1
+     * </pre>
+     *
+     * <code>string content_frist = 4;</code>
+     * @return The contentFrist.
+     */
+    @java.lang.Override
+    public java.lang.String getContentFrist() {
+      java.lang.Object ref = contentFrist_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        content_ = s;
+        contentFrist_ = s;
         return s;
       }
     }
     /**
      * <pre>
-     * 回复内容
+     * 回复内容1
      * </pre>
      *
-     * <code>string content = 8;</code>
-     * @return The bytes for content.
+     * <code>string content_frist = 4;</code>
+     * @return The bytes for contentFrist.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getContentBytes() {
-      java.lang.Object ref = content_;
+        getContentFristBytes() {
+      java.lang.Object ref = contentFrist_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        content_ = b;
+        contentFrist_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
 
-    public static final int IMAGE_URLS_FIELD_NUMBER = 9;
-    private com.teneasyChat.api.common.CBase.ListString imageUrls_;
+    public static final int REGULAR_TIME_SECOND_FIELD_NUMBER = 5;
+    private long regularTimeSecond_ = 0L;
     /**
      * <pre>
-     * 回复图片
+     * 间隔定时回复时间2，毫秒级
      * </pre>
      *
-     * <code>.api.common.ListString image_urls = 9;</code>
-     * @return Whether the imageUrls field is set.
+     * <code>uint64 regular_time_second = 5;</code>
+     * @return The regularTimeSecond.
      */
     @java.lang.Override
-    public boolean hasImageUrls() {
-      return ((bitField0_ & 0x00000001) != 0);
+    public long getRegularTimeSecond() {
+      return regularTimeSecond_;
+    }
+
+    public static final int CONTENT_SECOND_FIELD_NUMBER = 6;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object contentSecond_ = "";
+    /**
+     * <pre>
+     * 回复内容2
+     * </pre>
+     *
+     * <code>string content_second = 6;</code>
+     * @return The contentSecond.
+     */
+    @java.lang.Override
+    public java.lang.String getContentSecond() {
+      java.lang.Object ref = contentSecond_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        contentSecond_ = s;
+        return s;
+      }
     }
     /**
      * <pre>
-     * 回复图片
+     * 回复内容2
      * </pre>
      *
-     * <code>.api.common.ListString image_urls = 9;</code>
-     * @return The imageUrls.
+     * <code>string content_second = 6;</code>
+     * @return The bytes for contentSecond.
      */
     @java.lang.Override
-    public com.teneasyChat.api.common.CBase.ListString getImageUrls() {
-      return imageUrls_ == null ? com.teneasyChat.api.common.CBase.ListString.getDefaultInstance() : imageUrls_;
+    public com.google.protobuf.ByteString
+        getContentSecondBytes() {
+      java.lang.Object ref = contentSecond_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        contentSecond_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CONSULT_ID_FIELD_NUMBER = 7;
+    private long consultId_ = 0L;
+    /**
+     * <pre>
+     * 咨询组Id
+     * </pre>
+     *
+     * <code>int64 consult_id = 7;</code>
+     * @return The consultId.
+     */
+    @java.lang.Override
+    public long getConsultId() {
+      return consultId_;
+    }
+
+    public static final int REPLY_TYPE_FIELD_NUMBER = 8;
+    private int replyType_ = 0;
+    /**
+     * <pre>
+     * 0-全部关闭,1-开启回复1，2-开启回复2
+     * </pre>
+     *
+     * <code>int32 reply_type = 8;</code>
+     * @return The replyType.
+     */
+    @java.lang.Override
+    public int getReplyType() {
+      return replyType_;
+    }
+
+    public static final int CONSULT_NAME_FIELD_NUMBER = 9;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object consultName_ = "";
+    /**
+     * <pre>
+     * 绑定的咨询组name
+     * </pre>
+     *
+     * <code>string consult_name = 9;</code>
+     * @return The consultName.
+     */
+    @java.lang.Override
+    public java.lang.String getConsultName() {
+      java.lang.Object ref = consultName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        consultName_ = s;
+        return s;
+      }
     }
     /**
      * <pre>
-     * 回复图片
+     * 绑定的咨询组name
      * </pre>
      *
-     * <code>.api.common.ListString image_urls = 9;</code>
+     * <code>string consult_name = 9;</code>
+     * @return The bytes for consultName.
      */
     @java.lang.Override
-    public com.teneasyChat.api.common.CBase.ListStringOrBuilder getImageUrlsOrBuilder() {
-      return imageUrls_ == null ? com.teneasyChat.api.common.CBase.ListString.getDefaultInstance() : imageUrls_;
+    public com.google.protobuf.ByteString
+        getConsultNameBytes() {
+      java.lang.Object ref = consultName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        consultName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     private byte memoizedIsInitialized = -1;
@@ -4868,29 +4888,29 @@ public final class RegularReplyOuterClass {
       if (id_ != 0L) {
         output.writeInt64(1, id_);
       }
-      if (regularTime_ != 0L) {
-        output.writeUInt64(2, regularTime_);
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 2, name_);
+      }
+      if (regularTimeFrist_ != 0L) {
+        output.writeUInt64(3, regularTimeFrist_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(contentFrist_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 4, contentFrist_);
+      }
+      if (regularTimeSecond_ != 0L) {
+        output.writeUInt64(5, regularTimeSecond_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(contentSecond_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 6, contentSecond_);
       }
       if (consultId_ != 0L) {
-        output.writeInt64(3, consultId_);
-      }
-      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(consultName_)) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 4, consultName_);
+        output.writeInt64(7, consultId_);
       }
       if (replyType_ != 0) {
-        output.writeInt32(5, replyType_);
+        output.writeInt32(8, replyType_);
       }
-      if (tenantId_ != 0L) {
-        output.writeInt64(6, tenantId_);
-      }
-      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 7, name_);
-      }
-      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(content_)) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 8, content_);
-      }
-      if (((bitField0_ & 0x00000001) != 0)) {
-        output.writeMessage(9, getImageUrls());
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(consultName_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 9, consultName_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -4905,34 +4925,33 @@ public final class RegularReplyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(1, id_);
       }
-      if (regularTime_ != 0L) {
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(2, name_);
+      }
+      if (regularTimeFrist_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(2, regularTime_);
+          .computeUInt64Size(3, regularTimeFrist_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(contentFrist_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(4, contentFrist_);
+      }
+      if (regularTimeSecond_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(5, regularTimeSecond_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(contentSecond_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(6, contentSecond_);
       }
       if (consultId_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(3, consultId_);
-      }
-      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(consultName_)) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(4, consultName_);
+          .computeInt64Size(7, consultId_);
       }
       if (replyType_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(5, replyType_);
+          .computeInt32Size(8, replyType_);
       }
-      if (tenantId_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(6, tenantId_);
-      }
-      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(7, name_);
-      }
-      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(content_)) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(8, content_);
-      }
-      if (((bitField0_ & 0x00000001) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(9, getImageUrls());
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(consultName_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(9, consultName_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -4951,25 +4970,22 @@ public final class RegularReplyOuterClass {
 
       if (getId()
           != other.getId()) return false;
-      if (getRegularTime()
-          != other.getRegularTime()) return false;
-      if (getConsultId()
-          != other.getConsultId()) return false;
-      if (!getConsultName()
-          .equals(other.getConsultName())) return false;
-      if (getReplyType()
-          != other.getReplyType()) return false;
-      if (getTenantId()
-          != other.getTenantId()) return false;
       if (!getName()
           .equals(other.getName())) return false;
-      if (!getContent()
-          .equals(other.getContent())) return false;
-      if (hasImageUrls() != other.hasImageUrls()) return false;
-      if (hasImageUrls()) {
-        if (!getImageUrls()
-            .equals(other.getImageUrls())) return false;
-      }
+      if (getRegularTimeFrist()
+          != other.getRegularTimeFrist()) return false;
+      if (!getContentFrist()
+          .equals(other.getContentFrist())) return false;
+      if (getRegularTimeSecond()
+          != other.getRegularTimeSecond()) return false;
+      if (!getContentSecond()
+          .equals(other.getContentSecond())) return false;
+      if (getConsultId()
+          != other.getConsultId()) return false;
+      if (getReplyType()
+          != other.getReplyType()) return false;
+      if (!getConsultName()
+          .equals(other.getConsultName())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -4984,27 +5000,25 @@ public final class RegularReplyOuterClass {
       hash = (37 * hash) + ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getId());
-      hash = (37 * hash) + REGULAR_TIME_FIELD_NUMBER;
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+      hash = (37 * hash) + REGULAR_TIME_FRIST_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getRegularTime());
+          getRegularTimeFrist());
+      hash = (37 * hash) + CONTENT_FRIST_FIELD_NUMBER;
+      hash = (53 * hash) + getContentFrist().hashCode();
+      hash = (37 * hash) + REGULAR_TIME_SECOND_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getRegularTimeSecond());
+      hash = (37 * hash) + CONTENT_SECOND_FIELD_NUMBER;
+      hash = (53 * hash) + getContentSecond().hashCode();
       hash = (37 * hash) + CONSULT_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getConsultId());
-      hash = (37 * hash) + CONSULT_NAME_FIELD_NUMBER;
-      hash = (53 * hash) + getConsultName().hashCode();
       hash = (37 * hash) + REPLY_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + getReplyType();
-      hash = (37 * hash) + TENANT_ID_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getTenantId());
-      hash = (37 * hash) + NAME_FIELD_NUMBER;
-      hash = (53 * hash) + getName().hashCode();
-      hash = (37 * hash) + CONTENT_FIELD_NUMBER;
-      hash = (53 * hash) + getContent().hashCode();
-      if (hasImageUrls()) {
-        hash = (37 * hash) + IMAGE_URLS_FIELD_NUMBER;
-        hash = (53 * hash) + getImageUrls().hashCode();
-      }
+      hash = (37 * hash) + CONSULT_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getConsultName().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -5124,37 +5138,27 @@ public final class RegularReplyOuterClass {
 
       // Construct using com.teneasyChat.api.core.RegularReplyOuterClass.RegularReplyItem.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessage.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessage
-                .alwaysUseFieldBuilders) {
-          getImageUrlsFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
         id_ = 0L;
-        regularTime_ = 0L;
-        consultId_ = 0L;
-        consultName_ = "";
-        replyType_ = 0;
-        tenantId_ = 0L;
         name_ = "";
-        content_ = "";
-        imageUrls_ = null;
-        if (imageUrlsBuilder_ != null) {
-          imageUrlsBuilder_.dispose();
-          imageUrlsBuilder_ = null;
-        }
+        regularTimeFrist_ = 0L;
+        contentFrist_ = "";
+        regularTimeSecond_ = 0L;
+        contentSecond_ = "";
+        consultId_ = 0L;
+        replyType_ = 0;
+        consultName_ = "";
         return this;
       }
 
@@ -5192,34 +5196,29 @@ public final class RegularReplyOuterClass {
           result.id_ = id_;
         }
         if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.regularTime_ = regularTime_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.consultId_ = consultId_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.consultName_ = consultName_;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.replyType_ = replyType_;
-        }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.tenantId_ = tenantId_;
-        }
-        if (((from_bitField0_ & 0x00000040) != 0)) {
           result.name_ = name_;
         }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.regularTimeFrist_ = regularTimeFrist_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.contentFrist_ = contentFrist_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.regularTimeSecond_ = regularTimeSecond_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.contentSecond_ = contentSecond_;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.consultId_ = consultId_;
+        }
         if (((from_bitField0_ & 0x00000080) != 0)) {
-          result.content_ = content_;
+          result.replyType_ = replyType_;
         }
-        int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000100) != 0)) {
-          result.imageUrls_ = imageUrlsBuilder_ == null
-              ? imageUrls_
-              : imageUrlsBuilder_.build();
-          to_bitField0_ |= 0x00000001;
+          result.consultName_ = consultName_;
         }
-        result.bitField0_ |= to_bitField0_;
       }
 
       @java.lang.Override
@@ -5237,35 +5236,37 @@ public final class RegularReplyOuterClass {
         if (other.getId() != 0L) {
           setId(other.getId());
         }
-        if (other.getRegularTime() != 0L) {
-          setRegularTime(other.getRegularTime());
+        if (!other.getName().isEmpty()) {
+          name_ = other.name_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        if (other.getRegularTimeFrist() != 0L) {
+          setRegularTimeFrist(other.getRegularTimeFrist());
+        }
+        if (!other.getContentFrist().isEmpty()) {
+          contentFrist_ = other.contentFrist_;
+          bitField0_ |= 0x00000008;
+          onChanged();
+        }
+        if (other.getRegularTimeSecond() != 0L) {
+          setRegularTimeSecond(other.getRegularTimeSecond());
+        }
+        if (!other.getContentSecond().isEmpty()) {
+          contentSecond_ = other.contentSecond_;
+          bitField0_ |= 0x00000020;
+          onChanged();
         }
         if (other.getConsultId() != 0L) {
           setConsultId(other.getConsultId());
         }
-        if (!other.getConsultName().isEmpty()) {
-          consultName_ = other.consultName_;
-          bitField0_ |= 0x00000008;
-          onChanged();
-        }
         if (other.getReplyType() != 0) {
           setReplyType(other.getReplyType());
         }
-        if (other.getTenantId() != 0L) {
-          setTenantId(other.getTenantId());
-        }
-        if (!other.getName().isEmpty()) {
-          name_ = other.name_;
-          bitField0_ |= 0x00000040;
+        if (!other.getConsultName().isEmpty()) {
+          consultName_ = other.consultName_;
+          bitField0_ |= 0x00000100;
           onChanged();
-        }
-        if (!other.getContent().isEmpty()) {
-          content_ = other.content_;
-          bitField0_ |= 0x00000080;
-          onChanged();
-        }
-        if (other.hasImageUrls()) {
-          mergeImageUrls(other.getImageUrls());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -5298,45 +5299,43 @@ public final class RegularReplyOuterClass {
                 bitField0_ |= 0x00000001;
                 break;
               } // case 8
-              case 16: {
-                regularTime_ = input.readUInt64();
+              case 18: {
+                name_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000002;
                 break;
-              } // case 16
+              } // case 18
               case 24: {
-                consultId_ = input.readInt64();
+                regularTimeFrist_ = input.readUInt64();
                 bitField0_ |= 0x00000004;
                 break;
               } // case 24
               case 34: {
-                consultName_ = input.readStringRequireUtf8();
+                contentFrist_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000008;
                 break;
               } // case 34
               case 40: {
-                replyType_ = input.readInt32();
+                regularTimeSecond_ = input.readUInt64();
                 bitField0_ |= 0x00000010;
                 break;
               } // case 40
-              case 48: {
-                tenantId_ = input.readInt64();
+              case 50: {
+                contentSecond_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000020;
                 break;
-              } // case 48
-              case 58: {
-                name_ = input.readStringRequireUtf8();
+              } // case 50
+              case 56: {
+                consultId_ = input.readInt64();
                 bitField0_ |= 0x00000040;
                 break;
-              } // case 58
-              case 66: {
-                content_ = input.readStringRequireUtf8();
+              } // case 56
+              case 64: {
+                replyType_ = input.readInt32();
                 bitField0_ |= 0x00000080;
                 break;
-              } // case 66
+              } // case 64
               case 74: {
-                input.readMessage(
-                    getImageUrlsFieldBuilder().getBuilder(),
-                    extensionRegistry);
+                consultName_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000100;
                 break;
               } // case 74
@@ -5401,281 +5400,13 @@ public final class RegularReplyOuterClass {
         return this;
       }
 
-      private long regularTime_ ;
-      /**
-       * <pre>
-       * 间隔定时回复时间，毫秒级
-       * </pre>
-       *
-       * <code>uint64 regular_time = 2;</code>
-       * @return The regularTime.
-       */
-      @java.lang.Override
-      public long getRegularTime() {
-        return regularTime_;
-      }
-      /**
-       * <pre>
-       * 间隔定时回复时间，毫秒级
-       * </pre>
-       *
-       * <code>uint64 regular_time = 2;</code>
-       * @param value The regularTime to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRegularTime(long value) {
-
-        regularTime_ = value;
-        bitField0_ |= 0x00000002;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * 间隔定时回复时间，毫秒级
-       * </pre>
-       *
-       * <code>uint64 regular_time = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearRegularTime() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        regularTime_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private long consultId_ ;
-      /**
-       * <pre>
-       * 咨询组Id
-       * </pre>
-       *
-       * <code>int64 consult_id = 3;</code>
-       * @return The consultId.
-       */
-      @java.lang.Override
-      public long getConsultId() {
-        return consultId_;
-      }
-      /**
-       * <pre>
-       * 咨询组Id
-       * </pre>
-       *
-       * <code>int64 consult_id = 3;</code>
-       * @param value The consultId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setConsultId(long value) {
-
-        consultId_ = value;
-        bitField0_ |= 0x00000004;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * 咨询组Id
-       * </pre>
-       *
-       * <code>int64 consult_id = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearConsultId() {
-        bitField0_ = (bitField0_ & ~0x00000004);
-        consultId_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object consultName_ = "";
-      /**
-       * <pre>
-       * 咨询组name
-       * </pre>
-       *
-       * <code>string consult_name = 4;</code>
-       * @return The consultName.
-       */
-      public java.lang.String getConsultName() {
-        java.lang.Object ref = consultName_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          consultName_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * 咨询组name
-       * </pre>
-       *
-       * <code>string consult_name = 4;</code>
-       * @return The bytes for consultName.
-       */
-      public com.google.protobuf.ByteString
-          getConsultNameBytes() {
-        java.lang.Object ref = consultName_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          consultName_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * 咨询组name
-       * </pre>
-       *
-       * <code>string consult_name = 4;</code>
-       * @param value The consultName to set.
-       * @return This builder for chaining.
-       */
-      public Builder setConsultName(
-          java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
-        consultName_ = value;
-        bitField0_ |= 0x00000008;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * 咨询组name
-       * </pre>
-       *
-       * <code>string consult_name = 4;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearConsultName() {
-        consultName_ = getDefaultInstance().getConsultName();
-        bitField0_ = (bitField0_ & ~0x00000008);
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * 咨询组name
-       * </pre>
-       *
-       * <code>string consult_name = 4;</code>
-       * @param value The bytes for consultName to set.
-       * @return This builder for chaining.
-       */
-      public Builder setConsultNameBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
-        consultName_ = value;
-        bitField0_ |= 0x00000008;
-        onChanged();
-        return this;
-      }
-
-      private int replyType_ ;
-      /**
-       * <pre>
-       * 1-开启，2-关闭
-       * </pre>
-       *
-       * <code>int32 reply_type = 5;</code>
-       * @return The replyType.
-       */
-      @java.lang.Override
-      public int getReplyType() {
-        return replyType_;
-      }
-      /**
-       * <pre>
-       * 1-开启，2-关闭
-       * </pre>
-       *
-       * <code>int32 reply_type = 5;</code>
-       * @param value The replyType to set.
-       * @return This builder for chaining.
-       */
-      public Builder setReplyType(int value) {
-
-        replyType_ = value;
-        bitField0_ |= 0x00000010;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * 1-开启，2-关闭
-       * </pre>
-       *
-       * <code>int32 reply_type = 5;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearReplyType() {
-        bitField0_ = (bitField0_ & ~0x00000010);
-        replyType_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private long tenantId_ ;
-      /**
-       * <pre>
-       * 绑定的商户ID
-       * </pre>
-       *
-       * <code>int64 tenant_id = 6;</code>
-       * @return The tenantId.
-       */
-      @java.lang.Override
-      public long getTenantId() {
-        return tenantId_;
-      }
-      /**
-       * <pre>
-       * 绑定的商户ID
-       * </pre>
-       *
-       * <code>int64 tenant_id = 6;</code>
-       * @param value The tenantId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTenantId(long value) {
-
-        tenantId_ = value;
-        bitField0_ |= 0x00000020;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * 绑定的商户ID
-       * </pre>
-       *
-       * <code>int64 tenant_id = 6;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearTenantId() {
-        bitField0_ = (bitField0_ & ~0x00000020);
-        tenantId_ = 0L;
-        onChanged();
-        return this;
-      }
-
       private java.lang.Object name_ = "";
       /**
        * <pre>
        * 回复名称
        * </pre>
        *
-       * <code>string name = 7;</code>
+       * <code>string name = 2;</code>
        * @return The name.
        */
       public java.lang.String getName() {
@@ -5695,7 +5426,7 @@ public final class RegularReplyOuterClass {
        * 回复名称
        * </pre>
        *
-       * <code>string name = 7;</code>
+       * <code>string name = 2;</code>
        * @return The bytes for name.
        */
       public com.google.protobuf.ByteString
@@ -5716,7 +5447,7 @@ public final class RegularReplyOuterClass {
        * 回复名称
        * </pre>
        *
-       * <code>string name = 7;</code>
+       * <code>string name = 2;</code>
        * @param value The name to set.
        * @return This builder for chaining.
        */
@@ -5724,7 +5455,7 @@ public final class RegularReplyOuterClass {
           java.lang.String value) {
         if (value == null) { throw new NullPointerException(); }
         name_ = value;
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -5733,12 +5464,12 @@ public final class RegularReplyOuterClass {
        * 回复名称
        * </pre>
        *
-       * <code>string name = 7;</code>
+       * <code>string name = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearName() {
         name_ = getDefaultInstance().getName();
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -5747,7 +5478,7 @@ public final class RegularReplyOuterClass {
        * 回复名称
        * </pre>
        *
-       * <code>string name = 7;</code>
+       * <code>string name = 2;</code>
        * @param value The bytes for name to set.
        * @return This builder for chaining.
        */
@@ -5756,27 +5487,71 @@ public final class RegularReplyOuterClass {
         if (value == null) { throw new NullPointerException(); }
         checkByteStringIsUtf8(value);
         name_ = value;
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
 
-      private java.lang.Object content_ = "";
+      private long regularTimeFrist_ ;
       /**
        * <pre>
-       * 回复内容
+       * 间隔定时回复时间1，毫秒级
        * </pre>
        *
-       * <code>string content = 8;</code>
-       * @return The content.
+       * <code>uint64 regular_time_frist = 3;</code>
+       * @return The regularTimeFrist.
        */
-      public java.lang.String getContent() {
-        java.lang.Object ref = content_;
+      @java.lang.Override
+      public long getRegularTimeFrist() {
+        return regularTimeFrist_;
+      }
+      /**
+       * <pre>
+       * 间隔定时回复时间1，毫秒级
+       * </pre>
+       *
+       * <code>uint64 regular_time_frist = 3;</code>
+       * @param value The regularTimeFrist to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRegularTimeFrist(long value) {
+
+        regularTimeFrist_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 间隔定时回复时间1，毫秒级
+       * </pre>
+       *
+       * <code>uint64 regular_time_frist = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRegularTimeFrist() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        regularTimeFrist_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object contentFrist_ = "";
+      /**
+       * <pre>
+       * 回复内容1
+       * </pre>
+       *
+       * <code>string content_frist = 4;</code>
+       * @return The contentFrist.
+       */
+      public java.lang.String getContentFrist() {
+        java.lang.Object ref = contentFrist_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          content_ = s;
+          contentFrist_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -5784,20 +5559,20 @@ public final class RegularReplyOuterClass {
       }
       /**
        * <pre>
-       * 回复内容
+       * 回复内容1
        * </pre>
        *
-       * <code>string content = 8;</code>
-       * @return The bytes for content.
+       * <code>string content_frist = 4;</code>
+       * @return The bytes for contentFrist.
        */
       public com.google.protobuf.ByteString
-          getContentBytes() {
-        java.lang.Object ref = content_;
+          getContentFristBytes() {
+        java.lang.Object ref = contentFrist_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          content_ = b;
+          contentFrist_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -5805,209 +5580,368 @@ public final class RegularReplyOuterClass {
       }
       /**
        * <pre>
-       * 回复内容
+       * 回复内容1
        * </pre>
        *
-       * <code>string content = 8;</code>
-       * @param value The content to set.
+       * <code>string content_frist = 4;</code>
+       * @param value The contentFrist to set.
        * @return This builder for chaining.
        */
-      public Builder setContent(
+      public Builder setContentFrist(
           java.lang.String value) {
         if (value == null) { throw new NullPointerException(); }
-        content_ = value;
-        bitField0_ |= 0x00000080;
+        contentFrist_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * 回复内容
+       * 回复内容1
        * </pre>
        *
-       * <code>string content = 8;</code>
+       * <code>string content_frist = 4;</code>
        * @return This builder for chaining.
        */
-      public Builder clearContent() {
-        content_ = getDefaultInstance().getContent();
-        bitField0_ = (bitField0_ & ~0x00000080);
+      public Builder clearContentFrist() {
+        contentFrist_ = getDefaultInstance().getContentFrist();
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * 回复内容
+       * 回复内容1
        * </pre>
        *
-       * <code>string content = 8;</code>
-       * @param value The bytes for content to set.
+       * <code>string content_frist = 4;</code>
+       * @param value The bytes for contentFrist to set.
        * @return This builder for chaining.
        */
-      public Builder setContentBytes(
+      public Builder setContentFristBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) { throw new NullPointerException(); }
         checkByteStringIsUtf8(value);
-        content_ = value;
-        bitField0_ |= 0x00000080;
+        contentFrist_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
 
-      private com.teneasyChat.api.common.CBase.ListString imageUrls_;
-      private com.google.protobuf.SingleFieldBuilder<
-          com.teneasyChat.api.common.CBase.ListString, com.teneasyChat.api.common.CBase.ListString.Builder, com.teneasyChat.api.common.CBase.ListStringOrBuilder> imageUrlsBuilder_;
+      private long regularTimeSecond_ ;
       /**
        * <pre>
-       * 回复图片
+       * 间隔定时回复时间2，毫秒级
        * </pre>
        *
-       * <code>.api.common.ListString image_urls = 9;</code>
-       * @return Whether the imageUrls field is set.
+       * <code>uint64 regular_time_second = 5;</code>
+       * @return The regularTimeSecond.
        */
-      public boolean hasImageUrls() {
-        return ((bitField0_ & 0x00000100) != 0);
+      @java.lang.Override
+      public long getRegularTimeSecond() {
+        return regularTimeSecond_;
       }
       /**
        * <pre>
-       * 回复图片
+       * 间隔定时回复时间2，毫秒级
        * </pre>
        *
-       * <code>.api.common.ListString image_urls = 9;</code>
-       * @return The imageUrls.
+       * <code>uint64 regular_time_second = 5;</code>
+       * @param value The regularTimeSecond to set.
+       * @return This builder for chaining.
        */
-      public com.teneasyChat.api.common.CBase.ListString getImageUrls() {
-        if (imageUrlsBuilder_ == null) {
-          return imageUrls_ == null ? com.teneasyChat.api.common.CBase.ListString.getDefaultInstance() : imageUrls_;
+      public Builder setRegularTimeSecond(long value) {
+
+        regularTimeSecond_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 间隔定时回复时间2，毫秒级
+       * </pre>
+       *
+       * <code>uint64 regular_time_second = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRegularTimeSecond() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        regularTimeSecond_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object contentSecond_ = "";
+      /**
+       * <pre>
+       * 回复内容2
+       * </pre>
+       *
+       * <code>string content_second = 6;</code>
+       * @return The contentSecond.
+       */
+      public java.lang.String getContentSecond() {
+        java.lang.Object ref = contentSecond_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          contentSecond_ = s;
+          return s;
         } else {
-          return imageUrlsBuilder_.getMessage();
+          return (java.lang.String) ref;
         }
       }
       /**
        * <pre>
-       * 回复图片
+       * 回复内容2
        * </pre>
        *
-       * <code>.api.common.ListString image_urls = 9;</code>
+       * <code>string content_second = 6;</code>
+       * @return The bytes for contentSecond.
        */
-      public Builder setImageUrls(com.teneasyChat.api.common.CBase.ListString value) {
-        if (imageUrlsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          imageUrls_ = value;
+      public com.google.protobuf.ByteString
+          getContentSecondBytes() {
+        java.lang.Object ref = contentSecond_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          contentSecond_ = b;
+          return b;
         } else {
-          imageUrlsBuilder_.setMessage(value);
+          return (com.google.protobuf.ByteString) ref;
         }
+      }
+      /**
+       * <pre>
+       * 回复内容2
+       * </pre>
+       *
+       * <code>string content_second = 6;</code>
+       * @param value The contentSecond to set.
+       * @return This builder for chaining.
+       */
+      public Builder setContentSecond(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        contentSecond_ = value;
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 回复内容2
+       * </pre>
+       *
+       * <code>string content_second = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearContentSecond() {
+        contentSecond_ = getDefaultInstance().getContentSecond();
+        bitField0_ = (bitField0_ & ~0x00000020);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 回复内容2
+       * </pre>
+       *
+       * <code>string content_second = 6;</code>
+       * @param value The bytes for contentSecond to set.
+       * @return This builder for chaining.
+       */
+      public Builder setContentSecondBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        contentSecond_ = value;
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+
+      private long consultId_ ;
+      /**
+       * <pre>
+       * 咨询组Id
+       * </pre>
+       *
+       * <code>int64 consult_id = 7;</code>
+       * @return The consultId.
+       */
+      @java.lang.Override
+      public long getConsultId() {
+        return consultId_;
+      }
+      /**
+       * <pre>
+       * 咨询组Id
+       * </pre>
+       *
+       * <code>int64 consult_id = 7;</code>
+       * @param value The consultId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setConsultId(long value) {
+
+        consultId_ = value;
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 咨询组Id
+       * </pre>
+       *
+       * <code>int64 consult_id = 7;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearConsultId() {
+        bitField0_ = (bitField0_ & ~0x00000040);
+        consultId_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private int replyType_ ;
+      /**
+       * <pre>
+       * 0-全部关闭,1-开启回复1，2-开启回复2
+       * </pre>
+       *
+       * <code>int32 reply_type = 8;</code>
+       * @return The replyType.
+       */
+      @java.lang.Override
+      public int getReplyType() {
+        return replyType_;
+      }
+      /**
+       * <pre>
+       * 0-全部关闭,1-开启回复1，2-开启回复2
+       * </pre>
+       *
+       * <code>int32 reply_type = 8;</code>
+       * @param value The replyType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setReplyType(int value) {
+
+        replyType_ = value;
+        bitField0_ |= 0x00000080;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 0-全部关闭,1-开启回复1，2-开启回复2
+       * </pre>
+       *
+       * <code>int32 reply_type = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearReplyType() {
+        bitField0_ = (bitField0_ & ~0x00000080);
+        replyType_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object consultName_ = "";
+      /**
+       * <pre>
+       * 绑定的咨询组name
+       * </pre>
+       *
+       * <code>string consult_name = 9;</code>
+       * @return The consultName.
+       */
+      public java.lang.String getConsultName() {
+        java.lang.Object ref = consultName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          consultName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * 绑定的咨询组name
+       * </pre>
+       *
+       * <code>string consult_name = 9;</code>
+       * @return The bytes for consultName.
+       */
+      public com.google.protobuf.ByteString
+          getConsultNameBytes() {
+        java.lang.Object ref = consultName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          consultName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * 绑定的咨询组name
+       * </pre>
+       *
+       * <code>string consult_name = 9;</code>
+       * @param value The consultName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setConsultName(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        consultName_ = value;
         bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * 回复图片
+       * 绑定的咨询组name
        * </pre>
        *
-       * <code>.api.common.ListString image_urls = 9;</code>
+       * <code>string consult_name = 9;</code>
+       * @return This builder for chaining.
        */
-      public Builder setImageUrls(
-          com.teneasyChat.api.common.CBase.ListString.Builder builderForValue) {
-        if (imageUrlsBuilder_ == null) {
-          imageUrls_ = builderForValue.build();
-        } else {
-          imageUrlsBuilder_.setMessage(builderForValue.build());
-        }
-        bitField0_ |= 0x00000100;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * 回复图片
-       * </pre>
-       *
-       * <code>.api.common.ListString image_urls = 9;</code>
-       */
-      public Builder mergeImageUrls(com.teneasyChat.api.common.CBase.ListString value) {
-        if (imageUrlsBuilder_ == null) {
-          if (((bitField0_ & 0x00000100) != 0) &&
-            imageUrls_ != null &&
-            imageUrls_ != com.teneasyChat.api.common.CBase.ListString.getDefaultInstance()) {
-            getImageUrlsBuilder().mergeFrom(value);
-          } else {
-            imageUrls_ = value;
-          }
-        } else {
-          imageUrlsBuilder_.mergeFrom(value);
-        }
-        if (imageUrls_ != null) {
-          bitField0_ |= 0x00000100;
-          onChanged();
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * 回复图片
-       * </pre>
-       *
-       * <code>.api.common.ListString image_urls = 9;</code>
-       */
-      public Builder clearImageUrls() {
+      public Builder clearConsultName() {
+        consultName_ = getDefaultInstance().getConsultName();
         bitField0_ = (bitField0_ & ~0x00000100);
-        imageUrls_ = null;
-        if (imageUrlsBuilder_ != null) {
-          imageUrlsBuilder_.dispose();
-          imageUrlsBuilder_ = null;
-        }
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * 回复图片
+       * 绑定的咨询组name
        * </pre>
        *
-       * <code>.api.common.ListString image_urls = 9;</code>
+       * <code>string consult_name = 9;</code>
+       * @param value The bytes for consultName to set.
+       * @return This builder for chaining.
        */
-      public com.teneasyChat.api.common.CBase.ListString.Builder getImageUrlsBuilder() {
+      public Builder setConsultNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        consultName_ = value;
         bitField0_ |= 0x00000100;
         onChanged();
-        return getImageUrlsFieldBuilder().getBuilder();
-      }
-      /**
-       * <pre>
-       * 回复图片
-       * </pre>
-       *
-       * <code>.api.common.ListString image_urls = 9;</code>
-       */
-      public com.teneasyChat.api.common.CBase.ListStringOrBuilder getImageUrlsOrBuilder() {
-        if (imageUrlsBuilder_ != null) {
-          return imageUrlsBuilder_.getMessageOrBuilder();
-        } else {
-          return imageUrls_ == null ?
-              com.teneasyChat.api.common.CBase.ListString.getDefaultInstance() : imageUrls_;
-        }
-      }
-      /**
-       * <pre>
-       * 回复图片
-       * </pre>
-       *
-       * <code>.api.common.ListString image_urls = 9;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilder<
-          com.teneasyChat.api.common.CBase.ListString, com.teneasyChat.api.common.CBase.ListString.Builder, com.teneasyChat.api.common.CBase.ListStringOrBuilder> 
-          getImageUrlsFieldBuilder() {
-        if (imageUrlsBuilder_ == null) {
-          imageUrlsBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-              com.teneasyChat.api.common.CBase.ListString, com.teneasyChat.api.common.CBase.ListString.Builder, com.teneasyChat.api.common.CBase.ListStringOrBuilder>(
-                  getImageUrls(),
-                  getParentForChildren(),
-                  isClean());
-          imageUrls_ = null;
-        }
-        return imageUrlsBuilder_;
+        return this;
       }
 
       // @@protoc_insertion_point(builder_scope:api.core.RegularReplyItem)
@@ -6056,6 +5990,1843 @@ public final class RegularReplyOuterClass {
 
     @java.lang.Override
     public com.teneasyChat.api.core.RegularReplyOuterClass.RegularReplyItem getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface UnBindRegularReplyConsultItemResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:api.core.UnBindRegularReplyConsultItemResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>repeated .api.core.UnBindRegularReplyConsultItem items = 1;</code>
+     */
+    java.util.List<com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItem> 
+        getItemsList();
+    /**
+     * <code>repeated .api.core.UnBindRegularReplyConsultItem items = 1;</code>
+     */
+    com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItem getItems(int index);
+    /**
+     * <code>repeated .api.core.UnBindRegularReplyConsultItem items = 1;</code>
+     */
+    int getItemsCount();
+    /**
+     * <code>repeated .api.core.UnBindRegularReplyConsultItem items = 1;</code>
+     */
+    java.util.List<? extends com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItemOrBuilder> 
+        getItemsOrBuilderList();
+    /**
+     * <code>repeated .api.core.UnBindRegularReplyConsultItem items = 1;</code>
+     */
+    com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItemOrBuilder getItemsOrBuilder(
+        int index);
+  }
+  /**
+   * <pre>
+   * 返回未建立定时回复的咨询组下拉列表，去重
+   * </pre>
+   *
+   * Protobuf type {@code api.core.UnBindRegularReplyConsultItemResponse}
+   */
+  public static final class UnBindRegularReplyConsultItemResponse extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:api.core.UnBindRegularReplyConsultItemResponse)
+      UnBindRegularReplyConsultItemResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 26,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        UnBindRegularReplyConsultItemResponse.class.getName());
+    }
+    // Use UnBindRegularReplyConsultItemResponse.newBuilder() to construct.
+    private UnBindRegularReplyConsultItemResponse(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private UnBindRegularReplyConsultItemResponse() {
+      items_ = java.util.Collections.emptyList();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.teneasyChat.api.core.RegularReplyOuterClass.internal_static_api_core_UnBindRegularReplyConsultItemResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.teneasyChat.api.core.RegularReplyOuterClass.internal_static_api_core_UnBindRegularReplyConsultItemResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItemResponse.class, com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItemResponse.Builder.class);
+    }
+
+    public static final int ITEMS_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
+    private java.util.List<com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItem> items_;
+    /**
+     * <code>repeated .api.core.UnBindRegularReplyConsultItem items = 1;</code>
+     */
+    @java.lang.Override
+    public java.util.List<com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItem> getItemsList() {
+      return items_;
+    }
+    /**
+     * <code>repeated .api.core.UnBindRegularReplyConsultItem items = 1;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItemOrBuilder> 
+        getItemsOrBuilderList() {
+      return items_;
+    }
+    /**
+     * <code>repeated .api.core.UnBindRegularReplyConsultItem items = 1;</code>
+     */
+    @java.lang.Override
+    public int getItemsCount() {
+      return items_.size();
+    }
+    /**
+     * <code>repeated .api.core.UnBindRegularReplyConsultItem items = 1;</code>
+     */
+    @java.lang.Override
+    public com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItem getItems(int index) {
+      return items_.get(index);
+    }
+    /**
+     * <code>repeated .api.core.UnBindRegularReplyConsultItem items = 1;</code>
+     */
+    @java.lang.Override
+    public com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItemOrBuilder getItemsOrBuilder(
+        int index) {
+      return items_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < items_.size(); i++) {
+        output.writeMessage(1, items_.get(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < items_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, items_.get(i));
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItemResponse)) {
+        return super.equals(obj);
+      }
+      com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItemResponse other = (com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItemResponse) obj;
+
+      if (!getItemsList()
+          .equals(other.getItemsList())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getItemsCount() > 0) {
+        hash = (37 * hash) + ITEMS_FIELD_NUMBER;
+        hash = (53 * hash) + getItemsList().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItemResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItemResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItemResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItemResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItemResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItemResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItemResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItemResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItemResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItemResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItemResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItemResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItemResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * 返回未建立定时回复的咨询组下拉列表，去重
+     * </pre>
+     *
+     * Protobuf type {@code api.core.UnBindRegularReplyConsultItemResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:api.core.UnBindRegularReplyConsultItemResponse)
+        com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItemResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.teneasyChat.api.core.RegularReplyOuterClass.internal_static_api_core_UnBindRegularReplyConsultItemResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.teneasyChat.api.core.RegularReplyOuterClass.internal_static_api_core_UnBindRegularReplyConsultItemResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItemResponse.class, com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItemResponse.Builder.class);
+      }
+
+      // Construct using com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItemResponse.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        if (itemsBuilder_ == null) {
+          items_ = java.util.Collections.emptyList();
+        } else {
+          items_ = null;
+          itemsBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.teneasyChat.api.core.RegularReplyOuterClass.internal_static_api_core_UnBindRegularReplyConsultItemResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItemResponse getDefaultInstanceForType() {
+        return com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItemResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItemResponse build() {
+        com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItemResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItemResponse buildPartial() {
+        com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItemResponse result = new com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItemResponse(this);
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItemResponse result) {
+        if (itemsBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            items_ = java.util.Collections.unmodifiableList(items_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.items_ = items_;
+        } else {
+          result.items_ = itemsBuilder_.build();
+        }
+      }
+
+      private void buildPartial0(com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItemResponse result) {
+        int from_bitField0_ = bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItemResponse) {
+          return mergeFrom((com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItemResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItemResponse other) {
+        if (other == com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItemResponse.getDefaultInstance()) return this;
+        if (itemsBuilder_ == null) {
+          if (!other.items_.isEmpty()) {
+            if (items_.isEmpty()) {
+              items_ = other.items_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureItemsIsMutable();
+              items_.addAll(other.items_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.items_.isEmpty()) {
+            if (itemsBuilder_.isEmpty()) {
+              itemsBuilder_.dispose();
+              itemsBuilder_ = null;
+              items_ = other.items_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              itemsBuilder_ = 
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
+                   getItemsFieldBuilder() : null;
+            } else {
+              itemsBuilder_.addAllMessages(other.items_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItem m =
+                    input.readMessage(
+                        com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItem.parser(),
+                        extensionRegistry);
+                if (itemsBuilder_ == null) {
+                  ensureItemsIsMutable();
+                  items_.add(m);
+                } else {
+                  itemsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 10
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private java.util.List<com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItem> items_ =
+        java.util.Collections.emptyList();
+      private void ensureItemsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          items_ = new java.util.ArrayList<com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItem>(items_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilder<
+          com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItem, com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItem.Builder, com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItemOrBuilder> itemsBuilder_;
+
+      /**
+       * <code>repeated .api.core.UnBindRegularReplyConsultItem items = 1;</code>
+       */
+      public java.util.List<com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItem> getItemsList() {
+        if (itemsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(items_);
+        } else {
+          return itemsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .api.core.UnBindRegularReplyConsultItem items = 1;</code>
+       */
+      public int getItemsCount() {
+        if (itemsBuilder_ == null) {
+          return items_.size();
+        } else {
+          return itemsBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .api.core.UnBindRegularReplyConsultItem items = 1;</code>
+       */
+      public com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItem getItems(int index) {
+        if (itemsBuilder_ == null) {
+          return items_.get(index);
+        } else {
+          return itemsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .api.core.UnBindRegularReplyConsultItem items = 1;</code>
+       */
+      public Builder setItems(
+          int index, com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItem value) {
+        if (itemsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureItemsIsMutable();
+          items_.set(index, value);
+          onChanged();
+        } else {
+          itemsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .api.core.UnBindRegularReplyConsultItem items = 1;</code>
+       */
+      public Builder setItems(
+          int index, com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItem.Builder builderForValue) {
+        if (itemsBuilder_ == null) {
+          ensureItemsIsMutable();
+          items_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          itemsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .api.core.UnBindRegularReplyConsultItem items = 1;</code>
+       */
+      public Builder addItems(com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItem value) {
+        if (itemsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureItemsIsMutable();
+          items_.add(value);
+          onChanged();
+        } else {
+          itemsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .api.core.UnBindRegularReplyConsultItem items = 1;</code>
+       */
+      public Builder addItems(
+          int index, com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItem value) {
+        if (itemsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureItemsIsMutable();
+          items_.add(index, value);
+          onChanged();
+        } else {
+          itemsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .api.core.UnBindRegularReplyConsultItem items = 1;</code>
+       */
+      public Builder addItems(
+          com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItem.Builder builderForValue) {
+        if (itemsBuilder_ == null) {
+          ensureItemsIsMutable();
+          items_.add(builderForValue.build());
+          onChanged();
+        } else {
+          itemsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .api.core.UnBindRegularReplyConsultItem items = 1;</code>
+       */
+      public Builder addItems(
+          int index, com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItem.Builder builderForValue) {
+        if (itemsBuilder_ == null) {
+          ensureItemsIsMutable();
+          items_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          itemsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .api.core.UnBindRegularReplyConsultItem items = 1;</code>
+       */
+      public Builder addAllItems(
+          java.lang.Iterable<? extends com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItem> values) {
+        if (itemsBuilder_ == null) {
+          ensureItemsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, items_);
+          onChanged();
+        } else {
+          itemsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .api.core.UnBindRegularReplyConsultItem items = 1;</code>
+       */
+      public Builder clearItems() {
+        if (itemsBuilder_ == null) {
+          items_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          itemsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .api.core.UnBindRegularReplyConsultItem items = 1;</code>
+       */
+      public Builder removeItems(int index) {
+        if (itemsBuilder_ == null) {
+          ensureItemsIsMutable();
+          items_.remove(index);
+          onChanged();
+        } else {
+          itemsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .api.core.UnBindRegularReplyConsultItem items = 1;</code>
+       */
+      public com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItem.Builder getItemsBuilder(
+          int index) {
+        return getItemsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .api.core.UnBindRegularReplyConsultItem items = 1;</code>
+       */
+      public com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItemOrBuilder getItemsOrBuilder(
+          int index) {
+        if (itemsBuilder_ == null) {
+          return items_.get(index);  } else {
+          return itemsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .api.core.UnBindRegularReplyConsultItem items = 1;</code>
+       */
+      public java.util.List<? extends com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItemOrBuilder> 
+           getItemsOrBuilderList() {
+        if (itemsBuilder_ != null) {
+          return itemsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(items_);
+        }
+      }
+      /**
+       * <code>repeated .api.core.UnBindRegularReplyConsultItem items = 1;</code>
+       */
+      public com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItem.Builder addItemsBuilder() {
+        return getItemsFieldBuilder().addBuilder(
+            com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItem.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .api.core.UnBindRegularReplyConsultItem items = 1;</code>
+       */
+      public com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItem.Builder addItemsBuilder(
+          int index) {
+        return getItemsFieldBuilder().addBuilder(
+            index, com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItem.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .api.core.UnBindRegularReplyConsultItem items = 1;</code>
+       */
+      public java.util.List<com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItem.Builder> 
+           getItemsBuilderList() {
+        return getItemsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilder<
+          com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItem, com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItem.Builder, com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItemOrBuilder> 
+          getItemsFieldBuilder() {
+        if (itemsBuilder_ == null) {
+          itemsBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
+              com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItem, com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItem.Builder, com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItemOrBuilder>(
+                  items_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          items_ = null;
+        }
+        return itemsBuilder_;
+      }
+
+      // @@protoc_insertion_point(builder_scope:api.core.UnBindRegularReplyConsultItemResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:api.core.UnBindRegularReplyConsultItemResponse)
+    private static final com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItemResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItemResponse();
+    }
+
+    public static com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItemResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<UnBindRegularReplyConsultItemResponse>
+        PARSER = new com.google.protobuf.AbstractParser<UnBindRegularReplyConsultItemResponse>() {
+      @java.lang.Override
+      public UnBindRegularReplyConsultItemResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<UnBindRegularReplyConsultItemResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<UnBindRegularReplyConsultItemResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItemResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface UnBindRegularReplyConsultItemReqOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:api.core.UnBindRegularReplyConsultItemReq)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>int32 consult_id = 1;</code>
+     * @return The consultId.
+     */
+    int getConsultId();
+  }
+  /**
+   * <pre>
+   * 请求咨询列表
+   * </pre>
+   *
+   * Protobuf type {@code api.core.UnBindRegularReplyConsultItemReq}
+   */
+  public static final class UnBindRegularReplyConsultItemReq extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:api.core.UnBindRegularReplyConsultItemReq)
+      UnBindRegularReplyConsultItemReqOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 26,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        UnBindRegularReplyConsultItemReq.class.getName());
+    }
+    // Use UnBindRegularReplyConsultItemReq.newBuilder() to construct.
+    private UnBindRegularReplyConsultItemReq(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private UnBindRegularReplyConsultItemReq() {
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.teneasyChat.api.core.RegularReplyOuterClass.internal_static_api_core_UnBindRegularReplyConsultItemReq_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.teneasyChat.api.core.RegularReplyOuterClass.internal_static_api_core_UnBindRegularReplyConsultItemReq_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItemReq.class, com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItemReq.Builder.class);
+    }
+
+    public static final int CONSULT_ID_FIELD_NUMBER = 1;
+    private int consultId_ = 0;
+    /**
+     * <code>int32 consult_id = 1;</code>
+     * @return The consultId.
+     */
+    @java.lang.Override
+    public int getConsultId() {
+      return consultId_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (consultId_ != 0) {
+        output.writeInt32(1, consultId_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (consultId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, consultId_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItemReq)) {
+        return super.equals(obj);
+      }
+      com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItemReq other = (com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItemReq) obj;
+
+      if (getConsultId()
+          != other.getConsultId()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + CONSULT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getConsultId();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItemReq parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItemReq parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItemReq parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItemReq parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItemReq parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItemReq parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItemReq parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItemReq parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItemReq parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItemReq parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItemReq parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItemReq parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItemReq prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * 请求咨询列表
+     * </pre>
+     *
+     * Protobuf type {@code api.core.UnBindRegularReplyConsultItemReq}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:api.core.UnBindRegularReplyConsultItemReq)
+        com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItemReqOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.teneasyChat.api.core.RegularReplyOuterClass.internal_static_api_core_UnBindRegularReplyConsultItemReq_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.teneasyChat.api.core.RegularReplyOuterClass.internal_static_api_core_UnBindRegularReplyConsultItemReq_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItemReq.class, com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItemReq.Builder.class);
+      }
+
+      // Construct using com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItemReq.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        consultId_ = 0;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.teneasyChat.api.core.RegularReplyOuterClass.internal_static_api_core_UnBindRegularReplyConsultItemReq_descriptor;
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItemReq getDefaultInstanceForType() {
+        return com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItemReq.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItemReq build() {
+        com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItemReq result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItemReq buildPartial() {
+        com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItemReq result = new com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItemReq(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItemReq result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.consultId_ = consultId_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItemReq) {
+          return mergeFrom((com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItemReq)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItemReq other) {
+        if (other == com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItemReq.getDefaultInstance()) return this;
+        if (other.getConsultId() != 0) {
+          setConsultId(other.getConsultId());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                consultId_ = input.readInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private int consultId_ ;
+      /**
+       * <code>int32 consult_id = 1;</code>
+       * @return The consultId.
+       */
+      @java.lang.Override
+      public int getConsultId() {
+        return consultId_;
+      }
+      /**
+       * <code>int32 consult_id = 1;</code>
+       * @param value The consultId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setConsultId(int value) {
+
+        consultId_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 consult_id = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearConsultId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        consultId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:api.core.UnBindRegularReplyConsultItemReq)
+    }
+
+    // @@protoc_insertion_point(class_scope:api.core.UnBindRegularReplyConsultItemReq)
+    private static final com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItemReq DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItemReq();
+    }
+
+    public static com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItemReq getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<UnBindRegularReplyConsultItemReq>
+        PARSER = new com.google.protobuf.AbstractParser<UnBindRegularReplyConsultItemReq>() {
+      @java.lang.Override
+      public UnBindRegularReplyConsultItemReq parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<UnBindRegularReplyConsultItemReq> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<UnBindRegularReplyConsultItemReq> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItemReq getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface UnBindRegularReplyConsultItemOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:api.core.UnBindRegularReplyConsultItem)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * 咨询组id 
+     * </pre>
+     *
+     * <code>int64 consult_id = 1;</code>
+     * @return The consultId.
+     */
+    long getConsultId();
+
+    /**
+     * <pre>
+     * 绑定的咨询组name
+     * </pre>
+     *
+     * <code>string consult_name = 2;</code>
+     * @return The consultName.
+     */
+    java.lang.String getConsultName();
+    /**
+     * <pre>
+     * 绑定的咨询组name
+     * </pre>
+     *
+     * <code>string consult_name = 2;</code>
+     * @return The bytes for consultName.
+     */
+    com.google.protobuf.ByteString
+        getConsultNameBytes();
+  }
+  /**
+   * <pre>
+   * 返回未建立定时回复的咨询组下来列表，去重
+   * </pre>
+   *
+   * Protobuf type {@code api.core.UnBindRegularReplyConsultItem}
+   */
+  public static final class UnBindRegularReplyConsultItem extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:api.core.UnBindRegularReplyConsultItem)
+      UnBindRegularReplyConsultItemOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 26,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        UnBindRegularReplyConsultItem.class.getName());
+    }
+    // Use UnBindRegularReplyConsultItem.newBuilder() to construct.
+    private UnBindRegularReplyConsultItem(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private UnBindRegularReplyConsultItem() {
+      consultName_ = "";
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.teneasyChat.api.core.RegularReplyOuterClass.internal_static_api_core_UnBindRegularReplyConsultItem_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.teneasyChat.api.core.RegularReplyOuterClass.internal_static_api_core_UnBindRegularReplyConsultItem_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItem.class, com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItem.Builder.class);
+    }
+
+    public static final int CONSULT_ID_FIELD_NUMBER = 1;
+    private long consultId_ = 0L;
+    /**
+     * <pre>
+     * 咨询组id 
+     * </pre>
+     *
+     * <code>int64 consult_id = 1;</code>
+     * @return The consultId.
+     */
+    @java.lang.Override
+    public long getConsultId() {
+      return consultId_;
+    }
+
+    public static final int CONSULT_NAME_FIELD_NUMBER = 2;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object consultName_ = "";
+    /**
+     * <pre>
+     * 绑定的咨询组name
+     * </pre>
+     *
+     * <code>string consult_name = 2;</code>
+     * @return The consultName.
+     */
+    @java.lang.Override
+    public java.lang.String getConsultName() {
+      java.lang.Object ref = consultName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        consultName_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * 绑定的咨询组name
+     * </pre>
+     *
+     * <code>string consult_name = 2;</code>
+     * @return The bytes for consultName.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getConsultNameBytes() {
+      java.lang.Object ref = consultName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        consultName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (consultId_ != 0L) {
+        output.writeInt64(1, consultId_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(consultName_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 2, consultName_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (consultId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(1, consultId_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(consultName_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(2, consultName_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItem)) {
+        return super.equals(obj);
+      }
+      com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItem other = (com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItem) obj;
+
+      if (getConsultId()
+          != other.getConsultId()) return false;
+      if (!getConsultName()
+          .equals(other.getConsultName())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + CONSULT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getConsultId());
+      hash = (37 * hash) + CONSULT_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getConsultName().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItem parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItem parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItem parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItem parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItem parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItem parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItem parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItem parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItem parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItem parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItem parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItem parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItem prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * 返回未建立定时回复的咨询组下来列表，去重
+     * </pre>
+     *
+     * Protobuf type {@code api.core.UnBindRegularReplyConsultItem}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:api.core.UnBindRegularReplyConsultItem)
+        com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItemOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.teneasyChat.api.core.RegularReplyOuterClass.internal_static_api_core_UnBindRegularReplyConsultItem_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.teneasyChat.api.core.RegularReplyOuterClass.internal_static_api_core_UnBindRegularReplyConsultItem_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItem.class, com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItem.Builder.class);
+      }
+
+      // Construct using com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItem.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        consultId_ = 0L;
+        consultName_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.teneasyChat.api.core.RegularReplyOuterClass.internal_static_api_core_UnBindRegularReplyConsultItem_descriptor;
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItem getDefaultInstanceForType() {
+        return com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItem.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItem build() {
+        com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItem result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItem buildPartial() {
+        com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItem result = new com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItem(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItem result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.consultId_ = consultId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.consultName_ = consultName_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItem) {
+          return mergeFrom((com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItem)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItem other) {
+        if (other == com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItem.getDefaultInstance()) return this;
+        if (other.getConsultId() != 0L) {
+          setConsultId(other.getConsultId());
+        }
+        if (!other.getConsultName().isEmpty()) {
+          consultName_ = other.consultName_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                consultId_ = input.readInt64();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 18: {
+                consultName_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private long consultId_ ;
+      /**
+       * <pre>
+       * 咨询组id 
+       * </pre>
+       *
+       * <code>int64 consult_id = 1;</code>
+       * @return The consultId.
+       */
+      @java.lang.Override
+      public long getConsultId() {
+        return consultId_;
+      }
+      /**
+       * <pre>
+       * 咨询组id 
+       * </pre>
+       *
+       * <code>int64 consult_id = 1;</code>
+       * @param value The consultId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setConsultId(long value) {
+
+        consultId_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 咨询组id 
+       * </pre>
+       *
+       * <code>int64 consult_id = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearConsultId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        consultId_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object consultName_ = "";
+      /**
+       * <pre>
+       * 绑定的咨询组name
+       * </pre>
+       *
+       * <code>string consult_name = 2;</code>
+       * @return The consultName.
+       */
+      public java.lang.String getConsultName() {
+        java.lang.Object ref = consultName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          consultName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * 绑定的咨询组name
+       * </pre>
+       *
+       * <code>string consult_name = 2;</code>
+       * @return The bytes for consultName.
+       */
+      public com.google.protobuf.ByteString
+          getConsultNameBytes() {
+        java.lang.Object ref = consultName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          consultName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * 绑定的咨询组name
+       * </pre>
+       *
+       * <code>string consult_name = 2;</code>
+       * @param value The consultName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setConsultName(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        consultName_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 绑定的咨询组name
+       * </pre>
+       *
+       * <code>string consult_name = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearConsultName() {
+        consultName_ = getDefaultInstance().getConsultName();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 绑定的咨询组name
+       * </pre>
+       *
+       * <code>string consult_name = 2;</code>
+       * @param value The bytes for consultName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setConsultNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        consultName_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:api.core.UnBindRegularReplyConsultItem)
+    }
+
+    // @@protoc_insertion_point(class_scope:api.core.UnBindRegularReplyConsultItem)
+    private static final com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItem DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItem();
+    }
+
+    public static com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItem getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<UnBindRegularReplyConsultItem>
+        PARSER = new com.google.protobuf.AbstractParser<UnBindRegularReplyConsultItem>() {
+      @java.lang.Override
+      public UnBindRegularReplyConsultItem parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<UnBindRegularReplyConsultItem> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<UnBindRegularReplyConsultItem> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.teneasyChat.api.core.RegularReplyOuterClass.UnBindRegularReplyConsultItem getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -6912,6 +8683,21 @@ public final class RegularReplyOuterClass {
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_api_core_RegularReplyItem_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_api_core_UnBindRegularReplyConsultItemResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_api_core_UnBindRegularReplyConsultItemResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_api_core_UnBindRegularReplyConsultItemReq_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_api_core_UnBindRegularReplyConsultItemReq_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_api_core_UnBindRegularReplyConsultItem_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_api_core_UnBindRegularReplyConsultItem_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_api_core_RegularReplyResponse_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -6929,44 +8715,55 @@ public final class RegularReplyOuterClass {
       "\032\020api/option.proto\032\033google/protobuf/empt" +
       "y.proto\032\027validate/validate.proto\032\030api/co" +
       "mmon/c_reply.proto\032\027api/common/c_base.pr" +
-      "oto\"\324\001\n\031RegularReplyCreateRequest\022\"\n\014reg" +
-      "ular_time\030\001 \001(\004B\014\372B\t2\007\030\200\335\333\001(\000\022\022\n\nconsult" +
-      "_id\030\002 \001(\003\022\035\n\nreply_type\030\003 \001(\005B\t\372B\006\032\004\030\002(\001" +
-      "\022\027\n\004name\030\004 \001(\tB\t\372B\006r\004 \001(\024\022\033\n\007content\030\005 \001" +
-      "(\tB\n\372B\007r\005 \000(\310\001\022*\n\nimage_urls\030\006 \001(\0132\026.api" +
-      ".common.ListString\"(\n\032RegularReplyCreate" +
-      "Response\022\n\n\002id\030\001 \001(\003\"0\n\031RegularReplyDele" +
-      "teRequest\022\023\n\002id\030\001 \001(\003B\007\372B\004\"\0028\000\"\351\001\n\031Regul" +
-      "arReplyUpdateRequest\022\023\n\002id\030\001 \001(\003B\007\372B\004\"\0028" +
-      "\000\022\"\n\014regular_time\030\002 \001(\004B\014\372B\t2\007\030\200\335\333\001(\000\022\022\n" +
-      "\nconsult_id\030\003 \001(\003\022\035\n\nreply_type\030\004 \001(\005B\t\372" +
-      "B\006\032\004\030\002(\001\022\027\n\004name\030\005 \001(\tB\t\372B\006r\004 \001(\024\022\033\n\007con" +
-      "tent\030\006 \001(\tB\n\372B\007r\005 \000(\310\001\022*\n\nimage_urls\030\007 \001" +
-      "(\0132\026.api.common.ListString\"n\n\030RegularRep" +
-      "lyQueryRequest\022\n\n\002id\030\001 \001(\003\022\022\n\nconsult_id" +
-      "\030\002 \001(\003\022\022\n\nreply_type\030\003 \001(\005\022\014\n\004page\030\004 \001(\r" +
-      "\022\020\n\010pageSize\030\005 \001(\r\"\320\001\n\020RegularReplyItem\022" +
-      "\n\n\002id\030\001 \001(\003\022\024\n\014regular_time\030\002 \001(\004\022\022\n\ncon" +
-      "sult_id\030\003 \001(\003\022\024\n\014consult_name\030\004 \001(\t\022\022\n\nr" +
-      "eply_type\030\005 \001(\005\022\021\n\ttenant_id\030\006 \001(\003\022\014\n\004na" +
-      "me\030\007 \001(\t\022\017\n\007content\030\010 \001(\t\022*\n\nimage_urls\030" +
-      "\t \001(\0132\026.api.common.ListString\"P\n\024Regular" +
-      "ReplyResponse\022)\n\005items\030\001 \003(\0132\032.api.core." +
-      "RegularReplyItem\022\r\n\005total\030\002 \001(\0052\277\003\n\014Regu" +
-      "larReply\022g\n\006Create\022#.api.core.RegularRep" +
-      "lyCreateRequest\032$.api.core.RegularReplyC" +
-      "reateResponse\"\022\272\276\031\016\010\322\001\030\001\322\014\006create\022Y\n\006Del" +
-      "ete\022#.api.core.RegularReplyDeleteRequest" +
-      "\032\026.google.protobuf.Empty\"\022\272\276\031\016\010\323\001\030\001\322\014\006de" +
-      "lete\022Y\n\006Update\022#.api.core.RegularReplyUp" +
-      "dateRequest\032\026.google.protobuf.Empty\"\022\272\276\031" +
-      "\016\010\324\001\030\001\322\014\006update\022^\n\005Query\022\".api.core.Regu" +
-      "larReplyQueryRequest\032\036.api.core.RegularR" +
-      "eplyResponse\"\021\272\276\031\r\010\325\001\030\001\322\014\005query\0320\272\276\031,\272\006\r" +
-      "regular_reply\312\014\001\020\322\014\025/tenant/regular-repl" +
-      "yBM\n\030com.teneasyChat.api.coreZ\021wcs/api/c" +
-      "ore;core\272\276\031\034\242\006\005mango\242\006\004jeff\262\006\n2022-12-10" +
-      "b\006proto3"
+      "oto\"\371\001\n\031RegularReplyCreateRequest\022\030\n\004nam" +
+      "e\030\001 \001(\tB\n\372B\007r\005 \001(\310\001\022(\n\022regular_time_fris" +
+      "t\030\002 \001(\004B\014\372B\t2\007\030\200\335\333\001(\000\022!\n\rcontent_frist\030\003" +
+      " \001(\tB\n\372B\007r\005 \000(\320\017\022)\n\023regular_time_second\030" +
+      "\004 \001(\004B\014\372B\t2\007\030\200\335\333\001(\000\022\"\n\016content_second\030\005 " +
+      "\001(\tB\n\372B\007r\005 \000(\320\017\022\022\n\nconsult_id\030\006 \001(\003\022\022\n\nr" +
+      "eply_type\030\007 \001(\005\"(\n\032RegularReplyCreateRes" +
+      "ponse\022\n\n\002id\030\001 \001(\003\"\'\n\031RegularReplyDeleteR" +
+      "equest\022\n\n\002id\030\001 \001(\003\"\205\002\n\031RegularReplyUpdat" +
+      "eRequest\022\n\n\002id\030\001 \001(\003\022\030\n\004name\030\002 \001(\tB\n\372B\007r" +
+      "\005 \001(\310\001\022(\n\022regular_time_frist\030\003 \001(\004B\014\372B\t2" +
+      "\007\030\200\335\333\001(\000\022!\n\rcontent_frist\030\004 \001(\tB\n\372B\007r\005 \000" +
+      "(\320\017\022)\n\023regular_time_second\030\005 \001(\004B\014\372B\t2\007\030" +
+      "\200\335\333\001(\000\022\"\n\016content_second\030\006 \001(\tB\n\372B\007r\005 \000(" +
+      "\320\017\022\022\n\nconsult_id\030\007 \001(\003\022\022\n\nreply_type\030\010 \001" +
+      "(\005\"n\n\030RegularReplyQueryRequest\022\n\n\002id\030\001 \001" +
+      "(\003\022\022\n\nconsult_id\030\002 \001(\003\022\022\n\nreply_type\030\003 \001" +
+      "(\005\022\014\n\004page\030\004 \001(\r\022\020\n\010pageSize\030\005 \001(\r\"\322\001\n\020R" +
+      "egularReplyItem\022\n\n\002id\030\001 \001(\003\022\014\n\004name\030\002 \001(" +
+      "\t\022\032\n\022regular_time_frist\030\003 \001(\004\022\025\n\rcontent" +
+      "_frist\030\004 \001(\t\022\033\n\023regular_time_second\030\005 \001(" +
+      "\004\022\026\n\016content_second\030\006 \001(\t\022\022\n\nconsult_id\030" +
+      "\007 \001(\003\022\022\n\nreply_type\030\010 \001(\005\022\024\n\014consult_nam" +
+      "e\030\t \001(\t\"_\n%UnBindRegularReplyConsultItem" +
+      "Response\0226\n\005items\030\001 \003(\0132\'.api.core.UnBin" +
+      "dRegularReplyConsultItem\"6\n UnBindRegula" +
+      "rReplyConsultItemReq\022\022\n\nconsult_id\030\001 \001(\005" +
+      "\"I\n\035UnBindRegularReplyConsultItem\022\022\n\ncon" +
+      "sult_id\030\001 \001(\003\022\024\n\014consult_name\030\002 \001(\t\"P\n\024R" +
+      "egularReplyResponse\022)\n\005items\030\001 \003(\0132\032.api" +
+      ".core.RegularReplyItem\022\r\n\005total\030\002 \001(\0052\325\004" +
+      "\n\014RegularReply\022g\n\006Create\022#.api.core.Regu" +
+      "larReplyCreateRequest\032$.api.core.Regular" +
+      "ReplyCreateResponse\"\022\272\276\031\016\010\322\001\030\001\322\014\006create\022" +
+      "Y\n\006Delete\022#.api.core.RegularReplyDeleteR" +
+      "equest\032\026.google.protobuf.Empty\"\022\272\276\031\016\010\323\001\030" +
+      "\001\322\014\006delete\022Y\n\006Update\022#.api.core.RegularR" +
+      "eplyUpdateRequest\032\026.google.protobuf.Empt" +
+      "y\"\022\272\276\031\016\010\324\001\030\001\322\014\006update\022^\n\005Query\022\".api.cor" +
+      "e.RegularReplyQueryRequest\032\036.api.core.Re" +
+      "gularReplyResponse\"\021\272\276\031\r\010\325\001\030\001\322\014\005query\022\223\001" +
+      "\n\022QueryUnBindConsult\022*.api.core.UnBindRe" +
+      "gularReplyConsultItemReq\032/.api.core.UnBi" +
+      "ndRegularReplyConsultItemResponse\" \272\276\031\034\010" +
+      "\326\001\030\001\322\014\024query-unbind-consult\0320\272\276\031,\272\006\rregu" +
+      "lar_reply\312\014\001\020\322\014\025/tenant/regular-replyBM\n" +
+      "\030com.teneasyChat.api.coreZ\021wcs/api/core;" +
+      "core\272\276\031\034\242\006\005mango\242\006\004jeff\262\006\n2022-12-10b\006pr" +
+      "oto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -6982,7 +8779,7 @@ public final class RegularReplyOuterClass {
     internal_static_api_core_RegularReplyCreateRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_core_RegularReplyCreateRequest_descriptor,
-        new java.lang.String[] { "RegularTime", "ConsultId", "ReplyType", "Name", "Content", "ImageUrls", });
+        new java.lang.String[] { "Name", "RegularTimeFrist", "ContentFrist", "RegularTimeSecond", "ContentSecond", "ConsultId", "ReplyType", });
     internal_static_api_core_RegularReplyCreateResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_api_core_RegularReplyCreateResponse_fieldAccessorTable = new
@@ -7000,7 +8797,7 @@ public final class RegularReplyOuterClass {
     internal_static_api_core_RegularReplyUpdateRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_core_RegularReplyUpdateRequest_descriptor,
-        new java.lang.String[] { "Id", "RegularTime", "ConsultId", "ReplyType", "Name", "Content", "ImageUrls", });
+        new java.lang.String[] { "Id", "Name", "RegularTimeFrist", "ContentFrist", "RegularTimeSecond", "ContentSecond", "ConsultId", "ReplyType", });
     internal_static_api_core_RegularReplyQueryRequest_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_api_core_RegularReplyQueryRequest_fieldAccessorTable = new
@@ -7012,9 +8809,27 @@ public final class RegularReplyOuterClass {
     internal_static_api_core_RegularReplyItem_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_core_RegularReplyItem_descriptor,
-        new java.lang.String[] { "Id", "RegularTime", "ConsultId", "ConsultName", "ReplyType", "TenantId", "Name", "Content", "ImageUrls", });
-    internal_static_api_core_RegularReplyResponse_descriptor =
+        new java.lang.String[] { "Id", "Name", "RegularTimeFrist", "ContentFrist", "RegularTimeSecond", "ContentSecond", "ConsultId", "ReplyType", "ConsultName", });
+    internal_static_api_core_UnBindRegularReplyConsultItemResponse_descriptor =
       getDescriptor().getMessageTypes().get(6);
+    internal_static_api_core_UnBindRegularReplyConsultItemResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_api_core_UnBindRegularReplyConsultItemResponse_descriptor,
+        new java.lang.String[] { "Items", });
+    internal_static_api_core_UnBindRegularReplyConsultItemReq_descriptor =
+      getDescriptor().getMessageTypes().get(7);
+    internal_static_api_core_UnBindRegularReplyConsultItemReq_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_api_core_UnBindRegularReplyConsultItemReq_descriptor,
+        new java.lang.String[] { "ConsultId", });
+    internal_static_api_core_UnBindRegularReplyConsultItem_descriptor =
+      getDescriptor().getMessageTypes().get(8);
+    internal_static_api_core_UnBindRegularReplyConsultItem_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_api_core_UnBindRegularReplyConsultItem_descriptor,
+        new java.lang.String[] { "ConsultId", "ConsultName", });
+    internal_static_api_core_RegularReplyResponse_descriptor =
+      getDescriptor().getMessageTypes().get(9);
     internal_static_api_core_RegularReplyResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_core_RegularReplyResponse_descriptor,

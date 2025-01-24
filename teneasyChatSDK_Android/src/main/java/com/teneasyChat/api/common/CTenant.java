@@ -512,7 +512,7 @@ public final class CTenant {
 
     /**
      * <pre>
-     * 用户平台 1-IOS 2-安卓端;
+     * 用户平台 1-IOS 2-Android 3-H5 4-WEB_IOS 5-WEB_WINDOWS 6-WINDOWS 7-MAC
      * </pre>
      *
      * <code>int32 platform = 2;</code>
@@ -623,7 +623,7 @@ public final class CTenant {
     private int platform_ = 0;
     /**
      * <pre>
-     * 用户平台 1-IOS 2-安卓端;
+     * 用户平台 1-IOS 2-Android 3-H5 4-WEB_IOS 5-WEB_WINDOWS 6-WINDOWS 7-MAC
      * </pre>
      *
      * <code>int32 platform = 2;</code>
@@ -1088,7 +1088,7 @@ public final class CTenant {
       private int platform_ ;
       /**
        * <pre>
-       * 用户平台 1-IOS 2-安卓端;
+       * 用户平台 1-IOS 2-Android 3-H5 4-WEB_IOS 5-WEB_WINDOWS 6-WINDOWS 7-MAC
        * </pre>
        *
        * <code>int32 platform = 2;</code>
@@ -1100,7 +1100,7 @@ public final class CTenant {
       }
       /**
        * <pre>
-       * 用户平台 1-IOS 2-安卓端;
+       * 用户平台 1-IOS 2-Android 3-H5 4-WEB_IOS 5-WEB_WINDOWS 6-WINDOWS 7-MAC
        * </pre>
        *
        * <code>int32 platform = 2;</code>
@@ -1116,7 +1116,7 @@ public final class CTenant {
       }
       /**
        * <pre>
-       * 用户平台 1-IOS 2-安卓端;
+       * 用户平台 1-IOS 2-Android 3-H5 4-WEB_IOS 5-WEB_WINDOWS 6-WINDOWS 7-MAC
        * </pre>
        *
        * <code>int32 platform = 2;</code>
