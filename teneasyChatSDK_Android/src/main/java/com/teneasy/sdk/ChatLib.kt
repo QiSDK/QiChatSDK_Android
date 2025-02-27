@@ -480,8 +480,8 @@ EntranceNotExistsFlag = 0x4
                 //}
                 //payloadId = payLoad.id
                 print("初始payloadId:" + payloadId + "\n")
-                listener?.connected(msg)
                 isConnected = true
+                listener?.connected(msg)
                 startTimer()
             } else if(recvPayLoad.act == GAction.Action.ActionForward) {
                 val msg = GGateway.CSForward.parseFrom(msgData)
