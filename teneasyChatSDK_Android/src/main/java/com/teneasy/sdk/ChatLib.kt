@@ -98,6 +98,7 @@ class ChatLib constructor(cert: String, token:String, baseUrl:String = "", userI
     private var maxSessionMinutes = 9000000//相当于不设置会话实际限制 //测试放1分钟，上线放120或90
     private var withAutoReply: WithAutoReply? = null
     private var custom: String? = custom
+    private var msgFormat: MessageFormat = MessageFormat.MSG_TEXT
 
     init {
         this.chatId = chatID
@@ -168,6 +169,7 @@ class ChatLib constructor(cert: String, token:String, baseUrl:String = "", userI
         this.replyMsgId = replyMsgId;
          this.consultId = consultId;
         this.withAutoReply = withAutoReply
+        this.msgFormat = type
       if (type == MessageFormat.MSG_TEXT){
           sendTextMessage(msg)
       }else if (type == MessageFormat.MSG_IMG){
@@ -217,6 +219,7 @@ class ChatLib constructor(cert: String, token:String, baseUrl:String = "", userI
         msg.replyMsgId = this.replyMsgId
         msg.chatId = chatId
         msg.worker = 0
+        msg.msgFmt = this.msgFormat
         msg.msgTime = TimeUtil.msgTime()
 
         if (withAutoReply != null && (withAutoReply?.id ?: 0) > 0) {
@@ -245,6 +248,7 @@ class ChatLib constructor(cert: String, token:String, baseUrl:String = "", userI
         msg.sender = 0
         msg.chatId = chatId
         msg.worker = 0
+        msg.msgFmt = this.msgFormat
         msg.msgTime = TimeUtil.msgTime()
 
         if (withAutoReply != null && (withAutoReply?.id ?: 0) > 0) {
@@ -278,6 +282,7 @@ class ChatLib constructor(cert: String, token:String, baseUrl:String = "", userI
         msg.replyMsgId = this.replyMsgId
         msg.chatId = chatId
         msg.worker = 0
+        msg.msgFmt = MessageFormat.MSG_VIDEO
         msg.msgTime = TimeUtil.msgTime()
 
         if (withAutoReply != null && (withAutoReply?.id ?: 0) > 0) {
@@ -307,6 +312,7 @@ class ChatLib constructor(cert: String, token:String, baseUrl:String = "", userI
         msg.sender = 0
         msg.replyMsgId = this.replyMsgId
         msg.chatId = chatId
+        msg.msgFmt = this.msgFormat
         msg.worker = 0
         msg.msgTime = TimeUtil.msgTime()
 
