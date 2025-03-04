@@ -99,6 +99,8 @@ class ChatLib constructor(cert: String, token:String, baseUrl:String = "", userI
     private var withAutoReply: WithAutoReply? = null
     private var custom: String? = custom
     private var msgFormat: MessageFormat = MessageFormat.MSG_TEXT
+    private var fileSize = 0
+    private var fileName = ""
 
     init {
         this.chatId = chatID
@@ -165,10 +167,12 @@ class ChatLib constructor(cert: String, token:String, baseUrl:String = "", userI
      * 发送文本类型、图片类型的消息
      * @param msg   消息内容或图片url,音频url...
      */
-     fun sendMessage(msg: String, type: MessageFormat, consultId: Long, replyMsgId: Long = 0, withAutoReply: WithAutoReply? = null) {
+     fun sendMessage(msg: String, type: MessageFormat, consultId: Long, replyMsgId: Long = 0, withAutoReply: WithAutoReply? = null, fileSize: Int = 0, fileName: String = "") {
         this.replyMsgId = replyMsgId;
          this.consultId = consultId;
         this.withAutoReply = withAutoReply
+        this.fileSize = fileSize
+        this.fileName = fileName
         this.msgFormat = type
       if (type == MessageFormat.MSG_TEXT){
           sendTextMessage(msg)
@@ -327,6 +331,8 @@ class ChatLib constructor(cert: String, token:String, baseUrl:String = "", userI
         //第一层
         val content = CMessage.MessageFile.newBuilder()
         content.uri = url
+        content.fileName = this.fileName
+        content.size = this.fileSize
 
         //第二层
         val msg = CMessage.Message.newBuilder()
