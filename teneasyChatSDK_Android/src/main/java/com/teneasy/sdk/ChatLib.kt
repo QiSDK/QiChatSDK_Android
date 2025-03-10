@@ -338,6 +338,7 @@ class ChatLib constructor(cert: String, token:String, baseUrl:String = "", userI
         val msg = CMessage.Message.newBuilder()
         msg.setConsultId(this.consultId)
         msg.setFile(content)
+        msg.msgFmt = MessageFormat.MSG_FILE
         msg.sender = 0
         msg.replyMsgId = this.replyMsgId
         msg.chatId = chatId
