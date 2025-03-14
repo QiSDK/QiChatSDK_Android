@@ -1,6 +1,8 @@
 package com.teneasy.sdk
 
+import android.content.Context
 import android.util.Log
+import android.webkit.WebSettings
 import com.google.protobuf.Timestamp
 import com.teneasyChat.api.common.CEntrance.ClientType
 import com.teneasyChat.api.common.CMessage
@@ -122,6 +124,11 @@ class ChatLib constructor(cert: String, token:String, baseUrl:String = "", userI
         this.maxSessionMinutes = maxSessionMinutes
     }
 
+    fun getHeaders(context: Context): Map<String, String> {
+        val userAgent = WebSettings.getDefaultUserAgent(context)
+        return mapOf("User-Agent" to userAgent)
+    }
+
     /**
      * 启动socket连接
       */
@@ -130,8 +137,14 @@ class ChatLib constructor(cert: String, token:String, baseUrl:String = "", userI
         var dt = Date().time
         val url = baseUrl + "cert=" + this.cert + "&token=" + token + "&userid=" + this.userId + "&custom=" + custom + "&ty=" + ClientType.CLIENT_TYPE_USER_APP_ANDROID.number + "&dt=" + dt + "&sign=" + mySign + "&rd=" + rd
         Log.i(TAG, "连接WSS")
+        //val header = mapOf("x-trace-id" to "ddd")
+        val headers = mapOf(
+            "x-trace-id" to UUID.randomUUID().toString(),
+            //"Authorization" to "Bearer your_token_here"
+        )
+        print(headers["x-trace-id"])
         socket =
-            object : WebSocketClient(URI(url), Draft_6455()) {
+            object : WebSocketClient(URI(url), Draft_6455(), headers) {
                 override fun onMessage(message: String) {
                 }
 
