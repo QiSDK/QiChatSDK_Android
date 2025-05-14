@@ -16,13 +16,17 @@ import com.teneasy.sdk.LineDetectDelegate
 import com.teneasy.sdk.LineDetectLib
 import com.teneasy.sdk.Result
 import com.teneasy.sdk.TeneasySDKDelegate
+import com.teneasy.sdk.UploadListener
+import com.teneasy.sdk.UploadUtil
+import com.teneasy.sdk.Urls
 import com.teneasyChat.api.common.CMessage
 import com.teneasyChat.gateway.GGateway
 import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import java.io.File
 
-class MainActivity : AppCompatActivity(), TeneasySDKDelegate {
+class MainActivity : AppCompatActivity(), TeneasySDKDelegate, UploadListener {
 
     private lateinit var chatLib: ChatLib
     private lateinit var binding: ActivityMainBinding
@@ -252,6 +256,10 @@ class MainActivity : AppCompatActivity(), TeneasySDKDelegate {
         Log.i(Tag, "token:" + c.token)
         isConnected = true
         appendText("成功连接")
+
+//        val uploadUtil = UploadUtil(this, "domain", c.token)
+//        val f = File("ddd.png")
+//        uploadUtil.uploadFile(f)
     }
 
     override fun workChanged(msg: GGateway.SCWorkerChanged) {
@@ -291,6 +299,18 @@ class MainActivity : AppCompatActivity(), TeneasySDKDelegate {
     override fun onPause() {
         super.onPause()
 
+    }
+
+    override fun uploadSuccess(path: Urls, isVideo: Boolean) {
+      //  TODO("Not yet implemented")
+    }
+
+    override fun uploadProgress(progress: Int) {
+      //  TODO("Not yet implemented")
+    }
+
+    override fun uploadFailed(msg: String) {
+      //  TODO("Not yet implemented")
     }
 
 }
