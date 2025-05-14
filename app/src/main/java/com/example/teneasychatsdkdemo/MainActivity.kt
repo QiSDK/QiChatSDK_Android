@@ -256,7 +256,6 @@ class MainActivity : AppCompatActivity(), TeneasySDKDelegate, UploadListener {
         Log.i(Tag, "token:" + c.token)
         isConnected = true
         appendText("成功连接")
-
 //        val uploadUtil = UploadUtil(this, "domain", c.token)
 //        val f = File("ddd.png")
 //        uploadUtil.uploadFile(f)
