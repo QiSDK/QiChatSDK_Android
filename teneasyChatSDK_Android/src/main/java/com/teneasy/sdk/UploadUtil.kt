@@ -62,7 +62,7 @@ class UploadUtil(lis: UploadListener, baseApiUrl: String, xToken: String) {
                     .build()// + file.extension
 
                 println("上传地址：" + this.baseUrlApi + "/v1/assets/upload-v4" + "\n" + file.path)
-                val request2 = Request.Builder().url("https://" + this.baseUrlApi + "/v1/assets/upload-v4")
+                val request2 = Request.Builder().url(this.baseUrlApi + "/v1/assets/upload-v4")
                     .addHeader("X-Token", xToken)
                     .post(multipartBody).build()
 
@@ -110,7 +110,7 @@ class UploadUtil(lis: UploadListener, baseApiUrl: String, xToken: String) {
                                 listener?.uploadProgress(uploadProgress)
                                 var b = gson.fromJson(bodyStr, ReturnData<String>()::class.java)
                                 subscribeToSSE(
-                                    "https://" + baseUrlApi + "/v1/assets/upload-v4?uploadId=" + b.data,
+                                    baseUrlApi + "/v1/assets/upload-v4?uploadId=" + b.data,
                                     file.extension
                                 )
                             }else{
