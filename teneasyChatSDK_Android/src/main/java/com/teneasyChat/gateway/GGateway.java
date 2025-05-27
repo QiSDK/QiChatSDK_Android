@@ -1137,6 +1137,40 @@ public final class GGateway {
      * @return The data.
      */
     com.google.protobuf.ByteString getData();
+
+    /**
+     * <code>map&lt;string, string&gt; headers = 5;</code>
+     */
+    int getHeadersCount();
+    /**
+     * <code>map&lt;string, string&gt; headers = 5;</code>
+     */
+    boolean containsHeaders(
+        java.lang.String key);
+    /**
+     * Use {@link #getHeadersMap()} instead.
+     */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, java.lang.String>
+    getHeaders();
+    /**
+     * <code>map&lt;string, string&gt; headers = 5;</code>
+     */
+    java.util.Map<java.lang.String, java.lang.String>
+    getHeadersMap();
+    /**
+     * <code>map&lt;string, string&gt; headers = 5;</code>
+     */
+    /* nullable */
+java.lang.String getHeadersOrDefault(
+        java.lang.String key,
+        /* nullable */
+java.lang.String defaultValue);
+    /**
+     * <code>map&lt;string, string&gt; headers = 5;</code>
+     */
+    java.lang.String getHeadersOrThrow(
+        java.lang.String key);
   }
   /**
    * Protobuf type {@code gateway.CSForward}
@@ -1171,6 +1205,18 @@ public final class GGateway {
       return com.teneasyChat.gateway.GGateway.internal_static_gateway_CSForward_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    @java.lang.Override
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 5:
+          return internalGetHeaders();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -1307,6 +1353,85 @@ public final class GGateway {
       return data_;
     }
 
+    public static final int HEADERS_FIELD_NUMBER = 5;
+    private static final class HeadersDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+          java.lang.String, java.lang.String> defaultEntry =
+              com.google.protobuf.MapEntry
+              .<java.lang.String, java.lang.String>newDefaultInstance(
+                  com.teneasyChat.gateway.GGateway.internal_static_gateway_CSForward_HeadersEntry_descriptor, 
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "",
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "");
+    }
+    @SuppressWarnings("serial")
+    private com.google.protobuf.MapField<
+        java.lang.String, java.lang.String> headers_;
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+    internalGetHeaders() {
+      if (headers_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            HeadersDefaultEntryHolder.defaultEntry);
+      }
+      return headers_;
+    }
+    public int getHeadersCount() {
+      return internalGetHeaders().getMap().size();
+    }
+    /**
+     * <code>map&lt;string, string&gt; headers = 5;</code>
+     */
+    @java.lang.Override
+    public boolean containsHeaders(
+        java.lang.String key) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      return internalGetHeaders().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getHeadersMap()} instead.
+     */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getHeaders() {
+      return getHeadersMap();
+    }
+    /**
+     * <code>map&lt;string, string&gt; headers = 5;</code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.String> getHeadersMap() {
+      return internalGetHeaders().getMap();
+    }
+    /**
+     * <code>map&lt;string, string&gt; headers = 5;</code>
+     */
+    @java.lang.Override
+    public /* nullable */
+java.lang.String getHeadersOrDefault(
+        java.lang.String key,
+        /* nullable */
+java.lang.String defaultValue) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetHeaders().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <code>map&lt;string, string&gt; headers = 5;</code>
+     */
+    @java.lang.Override
+    public java.lang.String getHeadersOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetHeaders().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -1333,6 +1458,12 @@ public final class GGateway {
       if (!data_.isEmpty()) {
         output.writeBytes(4, data_);
       }
+      com.google.protobuf.GeneratedMessage
+        .serializeStringMapTo(
+          output,
+          internalGetHeaders(),
+          HeadersDefaultEntryHolder.defaultEntry,
+          5);
       getUnknownFields().writeTo(output);
     }
 
@@ -1354,6 +1485,16 @@ public final class GGateway {
       if (!data_.isEmpty()) {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(4, data_);
+      }
+      for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
+           : internalGetHeaders().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+        headers__ = HeadersDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
+        size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(5, headers__);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -1378,6 +1519,8 @@ public final class GGateway {
           .equals(other.getVerb())) return false;
       if (!getData()
           .equals(other.getData())) return false;
+      if (!internalGetHeaders().equals(
+          other.internalGetHeaders())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -1397,6 +1540,10 @@ public final class GGateway {
       hash = (53 * hash) + getVerb().hashCode();
       hash = (37 * hash) + DATA_FIELD_NUMBER;
       hash = (53 * hash) + getData().hashCode();
+      if (!internalGetHeaders().getMap().isEmpty()) {
+        hash = (37 * hash) + HEADERS_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetHeaders().hashCode();
+      }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1506,6 +1653,28 @@ public final class GGateway {
         return com.teneasyChat.gateway.GGateway.internal_static_gateway_CSForward_descriptor;
       }
 
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+          int number) {
+        switch (number) {
+          case 5:
+            return internalGetHeaders();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapFieldReflectionAccessor internalGetMutableMapFieldReflection(
+          int number) {
+        switch (number) {
+          case 5:
+            return internalGetMutableHeaders();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
@@ -1532,6 +1701,7 @@ public final class GGateway {
         url_ = "";
         verb_ = "";
         data_ = com.google.protobuf.ByteString.EMPTY;
+        internalGetMutableHeaders().clear();
         return this;
       }
 
@@ -1577,6 +1747,10 @@ public final class GGateway {
         if (((from_bitField0_ & 0x00000008) != 0)) {
           result.data_ = data_;
         }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.headers_ = internalGetHeaders();
+          result.headers_.makeImmutable();
+        }
       }
 
       @java.lang.Override
@@ -1609,6 +1783,9 @@ public final class GGateway {
         if (other.getData() != com.google.protobuf.ByteString.EMPTY) {
           setData(other.getData());
         }
+        internalGetMutableHeaders().mergeFrom(
+            other.internalGetHeaders());
+        bitField0_ |= 0x00000010;
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -1655,6 +1832,15 @@ public final class GGateway {
                 bitField0_ |= 0x00000008;
                 break;
               } // case 34
+              case 42: {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+                headers__ = input.readMessage(
+                    HeadersDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                internalGetMutableHeaders().getMutableMap().put(
+                    headers__.getKey(), headers__.getValue());
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 42
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -1917,6 +2103,133 @@ public final class GGateway {
         bitField0_ = (bitField0_ & ~0x00000008);
         data_ = getDefaultInstance().getData();
         onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.MapField<
+          java.lang.String, java.lang.String> headers_;
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+          internalGetHeaders() {
+        if (headers_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              HeadersDefaultEntryHolder.defaultEntry);
+        }
+        return headers_;
+      }
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+          internalGetMutableHeaders() {
+        if (headers_ == null) {
+          headers_ = com.google.protobuf.MapField.newMapField(
+              HeadersDefaultEntryHolder.defaultEntry);
+        }
+        if (!headers_.isMutable()) {
+          headers_ = headers_.copy();
+        }
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return headers_;
+      }
+      public int getHeadersCount() {
+        return internalGetHeaders().getMap().size();
+      }
+      /**
+       * <code>map&lt;string, string&gt; headers = 5;</code>
+       */
+      @java.lang.Override
+      public boolean containsHeaders(
+          java.lang.String key) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        return internalGetHeaders().getMap().containsKey(key);
+      }
+      /**
+       * Use {@link #getHeadersMap()} instead.
+       */
+      @java.lang.Override
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String> getHeaders() {
+        return getHeadersMap();
+      }
+      /**
+       * <code>map&lt;string, string&gt; headers = 5;</code>
+       */
+      @java.lang.Override
+      public java.util.Map<java.lang.String, java.lang.String> getHeadersMap() {
+        return internalGetHeaders().getMap();
+      }
+      /**
+       * <code>map&lt;string, string&gt; headers = 5;</code>
+       */
+      @java.lang.Override
+      public /* nullable */
+java.lang.String getHeadersOrDefault(
+          java.lang.String key,
+          /* nullable */
+java.lang.String defaultValue) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetHeaders().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <code>map&lt;string, string&gt; headers = 5;</code>
+       */
+      @java.lang.Override
+      public java.lang.String getHeadersOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetHeaders().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+      public Builder clearHeaders() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        internalGetMutableHeaders().getMutableMap()
+            .clear();
+        return this;
+      }
+      /**
+       * <code>map&lt;string, string&gt; headers = 5;</code>
+       */
+      public Builder removeHeaders(
+          java.lang.String key) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        internalGetMutableHeaders().getMutableMap()
+            .remove(key);
+        return this;
+      }
+      /**
+       * Use alternate mutation accessors instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String>
+          getMutableHeaders() {
+        bitField0_ |= 0x00000010;
+        return internalGetMutableHeaders().getMutableMap();
+      }
+      /**
+       * <code>map&lt;string, string&gt; headers = 5;</code>
+       */
+      public Builder putHeaders(
+          java.lang.String key,
+          java.lang.String value) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        if (value == null) { throw new NullPointerException("map value"); }
+        internalGetMutableHeaders().getMutableMap()
+            .put(key, value);
+        bitField0_ |= 0x00000010;
+        return this;
+      }
+      /**
+       * <code>map&lt;string, string&gt; headers = 5;</code>
+       */
+      public Builder putAllHeaders(
+          java.util.Map<java.lang.String, java.lang.String> values) {
+        internalGetMutableHeaders().getMutableMap()
+            .putAll(values);
+        bitField0_ |= 0x00000010;
         return this;
       }
 
@@ -14449,6 +14762,11 @@ public final class GGateway {
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_gateway_CSForward_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_gateway_CSForward_HeadersEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_gateway_CSForward_HeadersEntry_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_gateway_SCForward_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -14552,54 +14870,57 @@ public final class GGateway {
       "c_message.proto\032\031api/common/c_worker.pro" +
       "to\032\027api/common/c_chat.proto\"N\n\004SCHi\022\n\n\002i" +
       "d\030\001 \001(\003\022\r\n\005token\030\002 \001(\t\022\021\n\tworker_id\030\003 \001(" +
-      "\005\022\030\n\020chat_expire_time\030\004 \001(\003\"C\n\tCSForward" +
-      "\022\r\n\005appId\030\001 \001(\t\022\013\n\003url\030\002 \001(\t\022\014\n\004verb\030\003 \001" +
-      "(\t\022\014\n\004data\030\004 \001(\014\"&\n\tSCForward\022\013\n\003err\030\002 \001" +
-      "(\t\022\014\n\004data\030\003 \001(\014\"1\n\rCSSendMessage\022 \n\003msg" +
-      "\030\001 \001(\0132\023.api.common.Message\"o\n\rSCSendMes" +
-      "sage\022\017\n\007chat_id\030\001 \001(\003\022\016\n\006msg_id\030\002 \001(\003\022,\n" +
-      "\010msg_time\030\003 \001(\0132\032.google.protobuf.Timest" +
-      "amp\022\017\n\007err_msg\030\004 \001(\t\"A\n\rSCRecvMessage\022 \n" +
-      "\003msg\030\001 \001(\0132\023.api.common.Message\022\016\n\006targe" +
-      "t\030\002 \001(\003\"0\n\rCSRecvMessage\022\017\n\007chat_id\030\001 \001(" +
-      "\003\022\016\n\006msg_id\030\002 \001(\003\"0\n\rCSReadMessage\022\017\n\007ch" +
-      "at_id\030\001 \001(\003\022\016\n\006msg_id\030\002 \001(\003\"0\n\rSCReadMes" +
-      "sage\022\017\n\007chat_id\030\001 \001(\003\022\016\n\006msg_id\030\002 \001(\003\"Z\n" +
-      "\016InputtingBegin\022\014\n\004self\030\001 \001(\003\022\016\n\006target\030" +
-      "\002 \001(\003\022*\n\007msg_fmt\030\003 \001(\0162\031.api.common.Mess" +
-      "ageFormat\",\n\014InputtingEnd\022\014\n\004self\030\001 \001(\003\022" +
-      "\016\n\006target\030\002 \001(\003\"2\n\016WorkerTransfer\022 \n\003msg" +
-      "\030\001 \001(\0132\023.api.common.Message\"\234\001\n\rSCChatCh" +
-      "anged\022#\n\004from\030\001 \001(\0162\025.api.common.ChatSta" +
-      "te\022!\n\002to\030\002 \001(\0162\025.api.common.ChatState\022\017\n" +
-      "\007chat_id\030\003 \001(\003\022\"\n\004chat\030\004 \001(\0132\024.api.commo" +
-      "n.ChatItem\022\016\n\006target\030\005 \001(\003\"d\n\027SCUserConn" +
-      "ectionChanged\022\021\n\tclient_id\030\001 \001(\003\022&\n\004conn" +
-      "\030\002 \001(\0162\030.api.common.ConnectState\022\016\n\006targ" +
-      "et\030\003 \001(\003\"\242\001\n\017SCWorkerChanged\022\021\n\tworker_i" +
-      "d\030\001 \001(\005\022\023\n\013worker_name\030\002 \001(\t\022\025\n\rworker_a" +
-      "vatar\030\003 \001(\t\022\016\n\006target\030\004 \001(\003\022,\n\006reason\030\005 " +
-      "\001(\0162\034.gateway.WorkerChangedReason\022\022\n\ncon" +
-      "sult_id\030\006 \001(\003\"P\n\006SCKick\022\016\n\006target\030\001 \001(\003\022" +
-      "#\n\006reason\030\002 \001(\0162\023.gateway.KickReason\022\021\n\t" +
-      "socket_id\030\003 \001(\004\"U\n\020SCSimSendMessage\022!\n\004m" +
-      "sgs\030\001 \003(\0132\023.api.common.Message\022\016\n\006worker" +
-      "\030\002 \001(\003\022\016\n\006target\030\003 \001(\003\"M\n\030SCSimSendMessa" +
-      "geToWorker\022!\n\004msgs\030\001 \003(\0132\023.api.common.Me" +
-      "ssage\022\016\n\006target\030\002 \001(\003\"]\n\rSystemMessage\022\016" +
-      "\n\006target\030\001 \001(\003\0221\n\013StateChange\030\002 \001(\0132\032.ga" +
-      "teway.WorkerStateChangeH\000B\t\n\007content\"o\n\021" +
-      "WorkerStateChange\022%\n\004from\030\001 \001(\0162\027.api.co" +
-      "mmon.OnlineState\022#\n\002to\030\002 \001(\0162\027.api.commo" +
-      "n.OnlineState\022\016\n\006access\030\003 \001(\010*\255\001\n\023Worker" +
-      "ChangedReason\022\036\n\032WorkerChangedReasonUnkn" +
-      "own\020\000\022)\n%WorkerChangedReasonMissAssigned" +
-      "Worker\020\001\022%\n!WorkerChangedReasonTransferW" +
-      "orker\020\002\022$\n WorkerChangedReasonWorkerDele" +
-      "ted\020\003*=\n\nKickReason\022\024\n\020KickReasonCommon\020" +
-      "\000\022\031\n\025KickReasonPermChanged\020\001B@\n\027com.tene" +
-      "asyChat.gatewayZ%wcs/service/gateway/pro" +
-      "tocol;protocolb\006proto3"
+      "\005\022\030\n\020chat_expire_time\030\004 \001(\003\"\245\001\n\tCSForwar" +
+      "d\022\r\n\005appId\030\001 \001(\t\022\013\n\003url\030\002 \001(\t\022\014\n\004verb\030\003 " +
+      "\001(\t\022\014\n\004data\030\004 \001(\014\0220\n\007headers\030\005 \003(\0132\037.gat" +
+      "eway.CSForward.HeadersEntry\032.\n\014HeadersEn" +
+      "try\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"&\n\tS" +
+      "CForward\022\013\n\003err\030\002 \001(\t\022\014\n\004data\030\003 \001(\014\"1\n\rC" +
+      "SSendMessage\022 \n\003msg\030\001 \001(\0132\023.api.common.M" +
+      "essage\"o\n\rSCSendMessage\022\017\n\007chat_id\030\001 \001(\003" +
+      "\022\016\n\006msg_id\030\002 \001(\003\022,\n\010msg_time\030\003 \001(\0132\032.goo" +
+      "gle.protobuf.Timestamp\022\017\n\007err_msg\030\004 \001(\t\"" +
+      "A\n\rSCRecvMessage\022 \n\003msg\030\001 \001(\0132\023.api.comm" +
+      "on.Message\022\016\n\006target\030\002 \001(\003\"0\n\rCSRecvMess" +
+      "age\022\017\n\007chat_id\030\001 \001(\003\022\016\n\006msg_id\030\002 \001(\003\"0\n\r" +
+      "CSReadMessage\022\017\n\007chat_id\030\001 \001(\003\022\016\n\006msg_id" +
+      "\030\002 \001(\003\"0\n\rSCReadMessage\022\017\n\007chat_id\030\001 \001(\003" +
+      "\022\016\n\006msg_id\030\002 \001(\003\"Z\n\016InputtingBegin\022\014\n\004se" +
+      "lf\030\001 \001(\003\022\016\n\006target\030\002 \001(\003\022*\n\007msg_fmt\030\003 \001(" +
+      "\0162\031.api.common.MessageFormat\",\n\014Inputtin" +
+      "gEnd\022\014\n\004self\030\001 \001(\003\022\016\n\006target\030\002 \001(\003\"2\n\016Wo" +
+      "rkerTransfer\022 \n\003msg\030\001 \001(\0132\023.api.common.M" +
+      "essage\"\234\001\n\rSCChatChanged\022#\n\004from\030\001 \001(\0162\025" +
+      ".api.common.ChatState\022!\n\002to\030\002 \001(\0162\025.api." +
+      "common.ChatState\022\017\n\007chat_id\030\003 \001(\003\022\"\n\004cha" +
+      "t\030\004 \001(\0132\024.api.common.ChatItem\022\016\n\006target\030" +
+      "\005 \001(\003\"d\n\027SCUserConnectionChanged\022\021\n\tclie" +
+      "nt_id\030\001 \001(\003\022&\n\004conn\030\002 \001(\0162\030.api.common.C" +
+      "onnectState\022\016\n\006target\030\003 \001(\003\"\242\001\n\017SCWorker" +
+      "Changed\022\021\n\tworker_id\030\001 \001(\005\022\023\n\013worker_nam" +
+      "e\030\002 \001(\t\022\025\n\rworker_avatar\030\003 \001(\t\022\016\n\006target" +
+      "\030\004 \001(\003\022,\n\006reason\030\005 \001(\0162\034.gateway.WorkerC" +
+      "hangedReason\022\022\n\nconsult_id\030\006 \001(\003\"P\n\006SCKi" +
+      "ck\022\016\n\006target\030\001 \001(\003\022#\n\006reason\030\002 \001(\0162\023.gat" +
+      "eway.KickReason\022\021\n\tsocket_id\030\003 \001(\004\"U\n\020SC" +
+      "SimSendMessage\022!\n\004msgs\030\001 \003(\0132\023.api.commo" +
+      "n.Message\022\016\n\006worker\030\002 \001(\003\022\016\n\006target\030\003 \001(" +
+      "\003\"M\n\030SCSimSendMessageToWorker\022!\n\004msgs\030\001 " +
+      "\003(\0132\023.api.common.Message\022\016\n\006target\030\002 \001(\003" +
+      "\"]\n\rSystemMessage\022\016\n\006target\030\001 \001(\003\0221\n\013Sta" +
+      "teChange\030\002 \001(\0132\032.gateway.WorkerStateChan" +
+      "geH\000B\t\n\007content\"o\n\021WorkerStateChange\022%\n\004" +
+      "from\030\001 \001(\0162\027.api.common.OnlineState\022#\n\002t" +
+      "o\030\002 \001(\0162\027.api.common.OnlineState\022\016\n\006acce" +
+      "ss\030\003 \001(\010*\255\001\n\023WorkerChangedReason\022\036\n\032Work" +
+      "erChangedReasonUnknown\020\000\022)\n%WorkerChange" +
+      "dReasonMissAssignedWorker\020\001\022%\n!WorkerCha" +
+      "ngedReasonTransferWorker\020\002\022$\n WorkerChan" +
+      "gedReasonWorkerDeleted\020\003*=\n\nKickReason\022\024" +
+      "\n\020KickReasonCommon\020\000\022\031\n\025KickReasonPermCh" +
+      "anged\020\001B@\n\027com.teneasyChat.gatewayZ%wcs/" +
+      "service/gateway/protocol;protocolb\006proto" +
+      "3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -14620,7 +14941,13 @@ public final class GGateway {
     internal_static_gateway_CSForward_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_gateway_CSForward_descriptor,
-        new java.lang.String[] { "AppId", "Url", "Verb", "Data", });
+        new java.lang.String[] { "AppId", "Url", "Verb", "Data", "Headers", });
+    internal_static_gateway_CSForward_HeadersEntry_descriptor =
+      internal_static_gateway_CSForward_descriptor.getNestedTypes().get(0);
+    internal_static_gateway_CSForward_HeadersEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_gateway_CSForward_HeadersEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
     internal_static_gateway_SCForward_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_gateway_SCForward_fieldAccessorTable = new

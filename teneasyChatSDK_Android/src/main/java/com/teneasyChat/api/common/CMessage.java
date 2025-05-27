@@ -682,6 +682,30 @@ public final class CMessage {
      * <code>MST_SYSTEM_CUSTOMER = 4;</code>
      */
     MST_SYSTEM_CUSTOMER(4),
+    /**
+     * <pre>
+     * 转接消息
+     * </pre>
+     *
+     * <code>MST_SYSTEM_TRANSFER = 5;</code>
+     */
+    MST_SYSTEM_TRANSFER(5),
+    /**
+     * <pre>
+     * 自动定时回复消息
+     * </pre>
+     *
+     * <code>MST_SYSTEM_AUTO_TRANSFER = 6;</code>
+     */
+    MST_SYSTEM_AUTO_TRANSFER(6),
+    /**
+     * <pre>
+     * 一键群发消息
+     * </pre>
+     *
+     * <code>MST_MASS_TRANSFER = 7;</code>
+     */
+    MST_MASS_TRANSFER(7),
     UNRECOGNIZED(-1),
     ;
 
@@ -730,6 +754,30 @@ public final class CMessage {
      * <code>MST_SYSTEM_CUSTOMER = 4;</code>
      */
     public static final int MST_SYSTEM_CUSTOMER_VALUE = 4;
+    /**
+     * <pre>
+     * 转接消息
+     * </pre>
+     *
+     * <code>MST_SYSTEM_TRANSFER = 5;</code>
+     */
+    public static final int MST_SYSTEM_TRANSFER_VALUE = 5;
+    /**
+     * <pre>
+     * 自动定时回复消息
+     * </pre>
+     *
+     * <code>MST_SYSTEM_AUTO_TRANSFER = 6;</code>
+     */
+    public static final int MST_SYSTEM_AUTO_TRANSFER_VALUE = 6;
+    /**
+     * <pre>
+     * 一键群发消息
+     * </pre>
+     *
+     * <code>MST_MASS_TRANSFER = 7;</code>
+     */
+    public static final int MST_MASS_TRANSFER_VALUE = 7;
 
 
     public final int getNumber() {
@@ -761,6 +809,9 @@ public final class CMessage {
         case 2: return MST_CUSTOMER;
         case 3: return MST_SYSTEM_WORKER;
         case 4: return MST_SYSTEM_CUSTOMER;
+        case 5: return MST_SYSTEM_TRANSFER;
+        case 6: return MST_SYSTEM_AUTO_TRANSFER;
+        case 7: return MST_MASS_TRANSFER;
         default: return null;
       }
     }
@@ -2652,6 +2703,46 @@ public final class CMessage {
      */
     com.google.protobuf.ByteString
         getUriBytes();
+
+    /**
+     * <pre>
+     * hls uri
+     * </pre>
+     *
+     * <code>string hls_uri = 2;</code>
+     * @return The hlsUri.
+     */
+    java.lang.String getHlsUri();
+    /**
+     * <pre>
+     * hls uri
+     * </pre>
+     *
+     * <code>string hls_uri = 2;</code>
+     * @return The bytes for hlsUri.
+     */
+    com.google.protobuf.ByteString
+        getHlsUriBytes();
+
+    /**
+     * <pre>
+     * thumbnail
+     * </pre>
+     *
+     * <code>string thumbnail_uri = 3;</code>
+     * @return The thumbnailUri.
+     */
+    java.lang.String getThumbnailUri();
+    /**
+     * <pre>
+     * thumbnail
+     * </pre>
+     *
+     * <code>string thumbnail_uri = 3;</code>
+     * @return The bytes for thumbnailUri.
+     */
+    com.google.protobuf.ByteString
+        getThumbnailUriBytes();
   }
   /**
    * <pre>
@@ -2680,6 +2771,8 @@ public final class CMessage {
     }
     private MessageVideo() {
       uri_ = "";
+      hlsUri_ = "";
+      thumbnailUri_ = "";
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
@@ -2742,6 +2835,100 @@ public final class CMessage {
       }
     }
 
+    public static final int HLS_URI_FIELD_NUMBER = 2;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object hlsUri_ = "";
+    /**
+     * <pre>
+     * hls uri
+     * </pre>
+     *
+     * <code>string hls_uri = 2;</code>
+     * @return The hlsUri.
+     */
+    @java.lang.Override
+    public java.lang.String getHlsUri() {
+      java.lang.Object ref = hlsUri_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        hlsUri_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * hls uri
+     * </pre>
+     *
+     * <code>string hls_uri = 2;</code>
+     * @return The bytes for hlsUri.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getHlsUriBytes() {
+      java.lang.Object ref = hlsUri_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        hlsUri_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int THUMBNAIL_URI_FIELD_NUMBER = 3;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object thumbnailUri_ = "";
+    /**
+     * <pre>
+     * thumbnail
+     * </pre>
+     *
+     * <code>string thumbnail_uri = 3;</code>
+     * @return The thumbnailUri.
+     */
+    @java.lang.Override
+    public java.lang.String getThumbnailUri() {
+      java.lang.Object ref = thumbnailUri_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        thumbnailUri_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * thumbnail
+     * </pre>
+     *
+     * <code>string thumbnail_uri = 3;</code>
+     * @return The bytes for thumbnailUri.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getThumbnailUriBytes() {
+      java.lang.Object ref = thumbnailUri_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        thumbnailUri_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -2759,6 +2946,12 @@ public final class CMessage {
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(uri_)) {
         com.google.protobuf.GeneratedMessage.writeString(output, 1, uri_);
       }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(hlsUri_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 2, hlsUri_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(thumbnailUri_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 3, thumbnailUri_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -2770,6 +2963,12 @@ public final class CMessage {
       size = 0;
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(uri_)) {
         size += com.google.protobuf.GeneratedMessage.computeStringSize(1, uri_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(hlsUri_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(2, hlsUri_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(thumbnailUri_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(3, thumbnailUri_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -2788,6 +2987,10 @@ public final class CMessage {
 
       if (!getUri()
           .equals(other.getUri())) return false;
+      if (!getHlsUri()
+          .equals(other.getHlsUri())) return false;
+      if (!getThumbnailUri()
+          .equals(other.getThumbnailUri())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -2801,6 +3004,10 @@ public final class CMessage {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + URI_FIELD_NUMBER;
       hash = (53 * hash) + getUri().hashCode();
+      hash = (37 * hash) + HLS_URI_FIELD_NUMBER;
+      hash = (53 * hash) + getHlsUri().hashCode();
+      hash = (37 * hash) + THUMBNAIL_URI_FIELD_NUMBER;
+      hash = (53 * hash) + getThumbnailUri().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -2937,6 +3144,8 @@ public final class CMessage {
         super.clear();
         bitField0_ = 0;
         uri_ = "";
+        hlsUri_ = "";
+        thumbnailUri_ = "";
         return this;
       }
 
@@ -2973,6 +3182,12 @@ public final class CMessage {
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.uri_ = uri_;
         }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.hlsUri_ = hlsUri_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.thumbnailUri_ = thumbnailUri_;
+        }
       }
 
       @java.lang.Override
@@ -2990,6 +3205,16 @@ public final class CMessage {
         if (!other.getUri().isEmpty()) {
           uri_ = other.uri_;
           bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (!other.getHlsUri().isEmpty()) {
+          hlsUri_ = other.hlsUri_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        if (!other.getThumbnailUri().isEmpty()) {
+          thumbnailUri_ = other.thumbnailUri_;
+          bitField0_ |= 0x00000004;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -3023,6 +3248,16 @@ public final class CMessage {
                 bitField0_ |= 0x00000001;
                 break;
               } // case 10
+              case 18: {
+                hlsUri_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+              case 26: {
+                thumbnailUri_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -3128,6 +3363,190 @@ public final class CMessage {
         checkByteStringIsUtf8(value);
         uri_ = value;
         bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object hlsUri_ = "";
+      /**
+       * <pre>
+       * hls uri
+       * </pre>
+       *
+       * <code>string hls_uri = 2;</code>
+       * @return The hlsUri.
+       */
+      public java.lang.String getHlsUri() {
+        java.lang.Object ref = hlsUri_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          hlsUri_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * hls uri
+       * </pre>
+       *
+       * <code>string hls_uri = 2;</code>
+       * @return The bytes for hlsUri.
+       */
+      public com.google.protobuf.ByteString
+          getHlsUriBytes() {
+        java.lang.Object ref = hlsUri_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          hlsUri_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * hls uri
+       * </pre>
+       *
+       * <code>string hls_uri = 2;</code>
+       * @param value The hlsUri to set.
+       * @return This builder for chaining.
+       */
+      public Builder setHlsUri(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        hlsUri_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * hls uri
+       * </pre>
+       *
+       * <code>string hls_uri = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearHlsUri() {
+        hlsUri_ = getDefaultInstance().getHlsUri();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * hls uri
+       * </pre>
+       *
+       * <code>string hls_uri = 2;</code>
+       * @param value The bytes for hlsUri to set.
+       * @return This builder for chaining.
+       */
+      public Builder setHlsUriBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        hlsUri_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object thumbnailUri_ = "";
+      /**
+       * <pre>
+       * thumbnail
+       * </pre>
+       *
+       * <code>string thumbnail_uri = 3;</code>
+       * @return The thumbnailUri.
+       */
+      public java.lang.String getThumbnailUri() {
+        java.lang.Object ref = thumbnailUri_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          thumbnailUri_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * thumbnail
+       * </pre>
+       *
+       * <code>string thumbnail_uri = 3;</code>
+       * @return The bytes for thumbnailUri.
+       */
+      public com.google.protobuf.ByteString
+          getThumbnailUriBytes() {
+        java.lang.Object ref = thumbnailUri_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          thumbnailUri_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * thumbnail
+       * </pre>
+       *
+       * <code>string thumbnail_uri = 3;</code>
+       * @param value The thumbnailUri to set.
+       * @return This builder for chaining.
+       */
+      public Builder setThumbnailUri(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        thumbnailUri_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * thumbnail
+       * </pre>
+       *
+       * <code>string thumbnail_uri = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearThumbnailUri() {
+        thumbnailUri_ = getDefaultInstance().getThumbnailUri();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * thumbnail
+       * </pre>
+       *
+       * <code>string thumbnail_uri = 3;</code>
+       * @param value The bytes for thumbnailUri to set.
+       * @return This builder for chaining.
+       */
+      public Builder setThumbnailUriBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        thumbnailUri_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -11343,6 +11762,16 @@ public final class CMessage {
     com.teneasyChat.api.common.CMessage.MsgSourceType getMsgSourceType();
 
     /**
+     * <pre>
+     * 客户端ack id
+     * </pre>
+     *
+     * <code>int64 payload_id = 99;</code>
+     * @return The payloadId.
+     */
+    long getPayloadId();
+
+    /**
      * <code>.api.common.MessageContent content = 100;</code>
      * @return Whether the content field is set.
      */
@@ -11981,6 +12410,21 @@ public final class CMessage {
       return result == null ? com.teneasyChat.api.common.CMessage.MsgSourceType.UNRECOGNIZED : result;
     }
 
+    public static final int PAYLOAD_ID_FIELD_NUMBER = 99;
+    private long payloadId_ = 0L;
+    /**
+     * <pre>
+     * 客户端ack id
+     * </pre>
+     *
+     * <code>int64 payload_id = 99;</code>
+     * @return The payloadId.
+     */
+    @java.lang.Override
+    public long getPayloadId() {
+      return payloadId_;
+    }
+
     public static final int CONTENT_FIELD_NUMBER = 100;
     /**
      * <code>.api.common.MessageContent content = 100;</code>
@@ -12432,6 +12876,9 @@ public final class CMessage {
       if (msgSourceType_ != com.teneasyChat.api.common.CMessage.MsgSourceType.MST_DEFAULT.getNumber()) {
         output.writeEnum(12, msgSourceType_);
       }
+      if (payloadId_ != 0L) {
+        output.writeInt64(99, payloadId_);
+      }
       if (payloadCase_ == 100) {
         output.writeMessage(100, (com.teneasyChat.api.common.CMessage.MessageContent) payload_);
       }
@@ -12522,6 +12969,10 @@ public final class CMessage {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(12, msgSourceType_);
       }
+      if (payloadId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(99, payloadId_);
+      }
       if (payloadCase_ == 100) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(100, (com.teneasyChat.api.common.CMessage.MessageContent) payload_);
@@ -12608,6 +13059,8 @@ public final class CMessage {
       if (!getWithAutoRepliesList()
           .equals(other.getWithAutoRepliesList())) return false;
       if (msgSourceType_ != other.msgSourceType_) return false;
+      if (getPayloadId()
+          != other.getPayloadId()) return false;
       if (!getPayloadCase().equals(other.getPayloadCase())) return false;
       switch (payloadCase_) {
         case 100:
@@ -12703,6 +13156,9 @@ public final class CMessage {
       }
       hash = (37 * hash) + MSG_SOURCE_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + msgSourceType_;
+      hash = (37 * hash) + PAYLOAD_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getPayloadId());
       switch (payloadCase_) {
         case 100:
           hash = (37 * hash) + CONTENT_FIELD_NUMBER;
@@ -12916,6 +13372,7 @@ public final class CMessage {
         }
         bitField0_ = (bitField0_ & ~0x00000400);
         msgSourceType_ = 0;
+        payloadId_ = 0L;
         if (contentBuilder_ != null) {
           contentBuilder_.clear();
         }
@@ -13037,6 +13494,9 @@ public final class CMessage {
         }
         if (((from_bitField0_ & 0x00000800) != 0)) {
           result.msgSourceType_ = msgSourceType_;
+        }
+        if (((from_bitField0_ & 0x00001000) != 0)) {
+          result.payloadId_ = payloadId_;
         }
         result.bitField0_ |= to_bitField0_;
       }
@@ -13160,6 +13620,9 @@ public final class CMessage {
         }
         if (other.msgSourceType_ != 0) {
           setMsgSourceTypeValue(other.getMsgSourceTypeValue());
+        }
+        if (other.getPayloadId() != 0L) {
+          setPayloadId(other.getPayloadId());
         }
         switch (other.getPayloadCase()) {
           case CONTENT: {
@@ -13308,6 +13771,11 @@ public final class CMessage {
                 bitField0_ |= 0x00000800;
                 break;
               } // case 96
+              case 792: {
+                payloadId_ = input.readInt64();
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 792
               case 802: {
                 input.readMessage(
                     getContentFieldBuilder().getBuilder(),
@@ -14537,6 +15005,50 @@ public final class CMessage {
       public Builder clearMsgSourceType() {
         bitField0_ = (bitField0_ & ~0x00000800);
         msgSourceType_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private long payloadId_ ;
+      /**
+       * <pre>
+       * 客户端ack id
+       * </pre>
+       *
+       * <code>int64 payload_id = 99;</code>
+       * @return The payloadId.
+       */
+      @java.lang.Override
+      public long getPayloadId() {
+        return payloadId_;
+      }
+      /**
+       * <pre>
+       * 客户端ack id
+       * </pre>
+       *
+       * <code>int64 payload_id = 99;</code>
+       * @param value The payloadId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPayloadId(long value) {
+
+        payloadId_ = value;
+        bitField0_ |= 0x00001000;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 客户端ack id
+       * </pre>
+       *
+       * <code>int64 payload_id = 99;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPayloadId() {
+        bitField0_ = (bitField0_ & ~0x00001000);
+        payloadId_ = 0L;
         onChanged();
         return this;
       }
@@ -19591,8 +20103,9 @@ public final class CMessage {
       ".proto\032\036google/protobuf/wrappers.proto\032\027" +
       "validate/validate.proto\"\036\n\016MessageConten" +
       "t\022\014\n\004data\030\001 \001(\t\"\033\n\014MessageImage\022\013\n\003uri\030\001" +
-      " \001(\t\"\033\n\014MessageAudio\022\013\n\003uri\030\001 \001(\t\"\033\n\014Mes" +
-      "sageVideo\022\013\n\003uri\030\001 \001(\t\"1\n\nMessageGeo\022\021\n\t" +
+      " \001(\t\"\033\n\014MessageAudio\022\013\n\003uri\030\001 \001(\t\"C\n\014Mes" +
+      "sageVideo\022\013\n\003uri\030\001 \001(\t\022\017\n\007hls_uri\030\002 \001(\t\022" +
+      "\025\n\rthumbnail_uri\030\003 \001(\t\"1\n\nMessageGeo\022\021\n\t" +
       "longitude\030\001 \001(\t\022\020\n\010latitude\030\002 \001(\t\";\n\013Mes" +
       "sageFile\022\013\n\003uri\030\001 \001(\t\022\021\n\tfile_name\030\002 \001(\t" +
       "\022\014\n\004size\030\003 \001(\005\"\231\002\n\014MessageUnion\022-\n\007conte" +
@@ -19615,7 +20128,7 @@ public final class CMessage {
       "id\030\001 \001(\003\022\021\n\tworker_id\030\002 \001(\005\022\014\n\004name\030\003 \001(" +
       "\t\022\016\n\006avatar\030\004 \001(\t\022\020\n\010greeting\030\005 \001(\t\022$\n\005S" +
       "tate\030\006 \001(\0162\025.api.common.ChatState\022\022\n\ncon" +
-      "sult_id\030\007 \001(\003\"\300\007\n\007Message\022\017\n\007chat_id\030\001 \001" +
+      "sult_id\030\007 \001(\003\"\324\007\n\007Message\022\017\n\007chat_id\030\001 \001" +
       "(\003\022\016\n\006msg_id\030\002 \001(\003\022,\n\010msg_time\030\003 \001(\0132\032.g" +
       "oogle.protobuf.Timestamp\022\016\n\006sender\030\004 \001(\003" +
       "\022\024\n\014reply_msg_id\030\005 \001(\003\022*\n\006msg_op\030\006 \001(\0162\032" +
@@ -19625,46 +20138,49 @@ public final class CMessage {
       ".api.common.MessageFormat\022\022\n\nconsult_id\030" +
       "\n \001(\003\0224\n\021with_auto_replies\030\013 \003(\0132\031.api.c" +
       "ommon.WithAutoReply\0222\n\017msg_source_type\030\014" +
-      " \001(\0162\031.api.common.MsgSourceType\022-\n\007conte" +
-      "nt\030d \001(\0132\032.api.common.MessageContentH\000\022)" +
-      "\n\005image\030e \001(\0132\030.api.common.MessageImageH" +
-      "\000\022)\n\005audio\030f \001(\0132\030.api.common.MessageAud" +
-      "ioH\000\022)\n\005video\030g \001(\0132\030.api.common.Message" +
-      "VideoH\000\022%\n\003geo\030h \001(\0132\026.api.common.Messag" +
-      "eGeoH\000\022\'\n\004file\030i \001(\0132\027.api.common.Messag" +
-      "eFileH\000\0222\n\014worker_trans\030j \001(\0132\032.api.comm" +
-      "on.WorkerTransferH\000\0225\n\017blacklist_apply\030k" +
-      " \001(\0132\032.api.common.BlackListApplyH\000\0229\n\021bl" +
-      "acklist_confirm\030l \001(\0132\034.api.common.Black" +
-      "ListConfirmH\000\0222\n\nauto_reply\030m \001(\0132\034.api." +
-      "common.MessageAutoReplyH\000\022:\n\016worker_chan" +
-      "ged\030n \001(\0132 .api.common.MessageWorkerChan" +
-      "gedH\000B\t\n\007payload\"\207\001\n\rWithAutoReply\022\n\n\002id" +
-      "\030\001 \001(\003\022\r\n\005title\030\002 \001(\t\0220\n\014created_time\030\003 " +
-      "\001(\0132\032.google.protobuf.Timestamp\022)\n\007answe" +
-      "rs\030\004 \003(\0132\030.api.common.MessageUnion\"c\n\016Wo" +
-      "rkerTransfer\022\021\n\tworker_id\030\001 \001(\005\022\023\n\013worke" +
-      "r_name\030\002 \001(\t\022\025\n\rworker_avatar\030\003 \001(\t\022\022\n\nc" +
-      "onsult_id\030\004 \001(\r\"#\n\016BlackListApply\022\021\n\twor" +
-      "ker_id\030\001 \001(\005\"%\n\020BlackListConfirm\022\021\n\twork" +
-      "er_id\030\001 \001(\005*\347\001\n\tChatState\022\025\n\021CHAT_STATE_" +
-      "COMMON\020\000\022\027\n\023CHAT_STATE_TRANSFER\020\001\022\037\n\033CHA" +
-      "T_STATE_UNPROCESSED_3MIN\020\002\022\026\n\022CHAT_STATE" +
-      "_TIMEOUT\020\003\022\030\n\024CHAT_STATE_PROCESSED\020\004\022\036\n\032" +
-      "CHAT_STATE_BLACKLIST_APPLY\020\005\022\"\n\036CHAT_STA" +
-      "TE_BLACKLIST_CONFIRMED\020\006\022\023\n\017CHAT_STATE_F" +
-      "REE\020\007*c\n\rMessageFormat\022\014\n\010MSG_TEXT\020\000\022\013\n\007" +
-      "MSG_IMG\020\001\022\r\n\tMSG_VOICE\020\002\022\r\n\tMSG_VIDEO\020\003\022" +
-      "\013\n\007MSG_GEO\020\004\022\014\n\010MSG_FILE\020\006*f\n\013MessageRol" +
-      "e\022\023\n\017MSG_ROLE_SYSTEM\020\000\022\023\n\017MSG_ROLE_WORKE" +
-      "R\020\001\022\025\n\021MSG_ROLE_CUSTOMER\020\002\022\026\n\022MSG_ROLE_A" +
-      "NONYMOUS\020\003*r\n\rMsgSourceType\022\017\n\013MST_DEFAU" +
-      "LT\020\000\022\016\n\nMST_WORKER\020\001\022\020\n\014MST_CUSTOMER\020\002\022\025" +
-      "\n\021MST_SYSTEM_WORKER\020\003\022\027\n\023MST_SYSTEM_CUST" +
-      "OMER\020\004*E\n\016MessageOperate\022\017\n\013MSG_OP_POST\020" +
-      "\000\022\017\n\013MSG_OP_EDIT\020\001\022\021\n\rMSG_OP_DELETE\020\002B<\n" +
-      "\032com.teneasyChat.api.commonZ\025wcs/api/com" +
-      "mon;common\272\002\006Commonb\006proto3"
+      " \001(\0162\031.api.common.MsgSourceType\022\022\n\npaylo" +
+      "ad_id\030c \001(\003\022-\n\007content\030d \001(\0132\032.api.commo" +
+      "n.MessageContentH\000\022)\n\005image\030e \001(\0132\030.api." +
+      "common.MessageImageH\000\022)\n\005audio\030f \001(\0132\030.a" +
+      "pi.common.MessageAudioH\000\022)\n\005video\030g \001(\0132" +
+      "\030.api.common.MessageVideoH\000\022%\n\003geo\030h \001(\013" +
+      "2\026.api.common.MessageGeoH\000\022\'\n\004file\030i \001(\013" +
+      "2\027.api.common.MessageFileH\000\0222\n\014worker_tr" +
+      "ans\030j \001(\0132\032.api.common.WorkerTransferH\000\022" +
+      "5\n\017blacklist_apply\030k \001(\0132\032.api.common.Bl" +
+      "ackListApplyH\000\0229\n\021blacklist_confirm\030l \001(" +
+      "\0132\034.api.common.BlackListConfirmH\000\0222\n\naut" +
+      "o_reply\030m \001(\0132\034.api.common.MessageAutoRe" +
+      "plyH\000\022:\n\016worker_changed\030n \001(\0132 .api.comm" +
+      "on.MessageWorkerChangedH\000B\t\n\007payload\"\207\001\n" +
+      "\rWithAutoReply\022\n\n\002id\030\001 \001(\003\022\r\n\005title\030\002 \001(" +
+      "\t\0220\n\014created_time\030\003 \001(\0132\032.google.protobu" +
+      "f.Timestamp\022)\n\007answers\030\004 \003(\0132\030.api.commo" +
+      "n.MessageUnion\"c\n\016WorkerTransfer\022\021\n\twork" +
+      "er_id\030\001 \001(\005\022\023\n\013worker_name\030\002 \001(\t\022\025\n\rwork" +
+      "er_avatar\030\003 \001(\t\022\022\n\nconsult_id\030\004 \001(\r\"#\n\016B" +
+      "lackListApply\022\021\n\tworker_id\030\001 \001(\005\"%\n\020Blac" +
+      "kListConfirm\022\021\n\tworker_id\030\001 \001(\005*\347\001\n\tChat" +
+      "State\022\025\n\021CHAT_STATE_COMMON\020\000\022\027\n\023CHAT_STA" +
+      "TE_TRANSFER\020\001\022\037\n\033CHAT_STATE_UNPROCESSED_" +
+      "3MIN\020\002\022\026\n\022CHAT_STATE_TIMEOUT\020\003\022\030\n\024CHAT_S" +
+      "TATE_PROCESSED\020\004\022\036\n\032CHAT_STATE_BLACKLIST" +
+      "_APPLY\020\005\022\"\n\036CHAT_STATE_BLACKLIST_CONFIRM" +
+      "ED\020\006\022\023\n\017CHAT_STATE_FREE\020\007*c\n\rMessageForm" +
+      "at\022\014\n\010MSG_TEXT\020\000\022\013\n\007MSG_IMG\020\001\022\r\n\tMSG_VOI" +
+      "CE\020\002\022\r\n\tMSG_VIDEO\020\003\022\013\n\007MSG_GEO\020\004\022\014\n\010MSG_" +
+      "FILE\020\006*f\n\013MessageRole\022\023\n\017MSG_ROLE_SYSTEM" +
+      "\020\000\022\023\n\017MSG_ROLE_WORKER\020\001\022\025\n\021MSG_ROLE_CUST" +
+      "OMER\020\002\022\026\n\022MSG_ROLE_ANONYMOUS\020\003*\300\001\n\rMsgSo" +
+      "urceType\022\017\n\013MST_DEFAULT\020\000\022\016\n\nMST_WORKER\020" +
+      "\001\022\020\n\014MST_CUSTOMER\020\002\022\025\n\021MST_SYSTEM_WORKER" +
+      "\020\003\022\027\n\023MST_SYSTEM_CUSTOMER\020\004\022\027\n\023MST_SYSTE" +
+      "M_TRANSFER\020\005\022\034\n\030MST_SYSTEM_AUTO_TRANSFER" +
+      "\020\006\022\025\n\021MST_MASS_TRANSFER\020\007*E\n\016MessageOper" +
+      "ate\022\017\n\013MSG_OP_POST\020\000\022\017\n\013MSG_OP_EDIT\020\001\022\021\n" +
+      "\rMSG_OP_DELETE\020\002B<\n\032com.teneasyChat.api." +
+      "commonZ\025wcs/api/common;common\272\002\006Commonb\006" +
+      "proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -19698,7 +20214,7 @@ public final class CMessage {
     internal_static_api_common_MessageVideo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_common_MessageVideo_descriptor,
-        new java.lang.String[] { "Uri", });
+        new java.lang.String[] { "Uri", "HlsUri", "ThumbnailUri", });
     internal_static_api_common_MessageGeo_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_api_common_MessageGeo_fieldAccessorTable = new
@@ -19752,7 +20268,7 @@ public final class CMessage {
     internal_static_api_common_Message_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_common_Message_descriptor,
-        new java.lang.String[] { "ChatId", "MsgId", "MsgTime", "Sender", "ReplyMsgId", "MsgOp", "Worker", "AutoReplyFlag", "MsgFmt", "ConsultId", "WithAutoReplies", "MsgSourceType", "Content", "Image", "Audio", "Video", "Geo", "File", "WorkerTrans", "BlacklistApply", "BlacklistConfirm", "AutoReply", "WorkerChanged", "Payload", });
+        new java.lang.String[] { "ChatId", "MsgId", "MsgTime", "Sender", "ReplyMsgId", "MsgOp", "Worker", "AutoReplyFlag", "MsgFmt", "ConsultId", "WithAutoReplies", "MsgSourceType", "PayloadId", "Content", "Image", "Audio", "Video", "Geo", "File", "WorkerTrans", "BlacklistApply", "BlacklistConfirm", "AutoReply", "WorkerChanged", "Payload", });
     internal_static_api_common_WithAutoReply_descriptor =
       getDescriptor().getMessageTypes().get(13);
     internal_static_api_common_WithAutoReply_fieldAccessorTable = new

@@ -169,6 +169,10 @@ public final class CEntrance {
   }
 
   /**
+   * <pre>
+   * 用户平台 1-IOS 2-Android 3-H5 4-WEB_IOS 5-WEB_WINDOWS 6-WINDOWS 7-MAC
+   * </pre>
+   *
    * Protobuf enum {@code api.common.ClientType}
    */
   public enum ClientType
@@ -202,13 +206,101 @@ public final class CEntrance {
      */
     CLIENT_TYPE_USER_H5(102),
     /**
+     * <pre>
+     * web端 兼容旧版
+     * </pre>
+     *
      * <code>CLIENT_TYPE_USER_WEB = 103;</code>
      */
     CLIENT_TYPE_USER_WEB(103),
     /**
+     * <pre>
+     * app端 兼容旧版
+     * </pre>
+     *
      * <code>CLIENT_TYPE_USER_APP = 104;</code>
      */
     CLIENT_TYPE_USER_APP(104),
+    /**
+     * <pre>
+     * web端IOS
+     * </pre>
+     *
+     * <code>CLIENT_TYPE_USER_WEB_IOS = 105;</code>
+     */
+    CLIENT_TYPE_USER_WEB_IOS(105),
+    /**
+     * <pre>
+     * web端ANDROID
+     * </pre>
+     *
+     * <code>CLIENT_TYPE_USER_WEB_ANDROID = 111;</code>
+     */
+    CLIENT_TYPE_USER_WEB_ANDROID(111),
+    /**
+     * <pre>
+     * web端windows
+     * </pre>
+     *
+     * <code>CLIENT_TYPE_USER_WEB_WINDOWS = 106;</code>
+     */
+    CLIENT_TYPE_USER_WEB_WINDOWS(106),
+    /**
+     * <pre>
+     * web端HARMONYOS
+     * </pre>
+     *
+     * <code>CLIENT_TYPE_USER_WEB_HARMONYOS = 112;</code>
+     */
+    CLIENT_TYPE_USER_WEB_HARMONYOS(112),
+    /**
+     * <pre>
+     * app端IOS
+     * </pre>
+     *
+     * <code>CLIENT_TYPE_USER_APP_IOS = 107;</code>
+     */
+    CLIENT_TYPE_USER_APP_IOS(107),
+    /**
+     * <pre>
+     * app端android
+     * </pre>
+     *
+     * <code>CLIENT_TYPE_USER_APP_ANDROID = 108;</code>
+     */
+    CLIENT_TYPE_USER_APP_ANDROID(108),
+    /**
+     * <pre>
+     * app端HARMONYOS
+     * </pre>
+     *
+     * <code>CLIENT_TYPE_USER_APP_HARMONYOS = 113;</code>
+     */
+    CLIENT_TYPE_USER_APP_HARMONYOS(113),
+    /**
+     * <pre>
+     * PC windows端
+     * </pre>
+     *
+     * <code>CLIENT_TYPE_USER_WINDOWS = 109;</code>
+     */
+    CLIENT_TYPE_USER_WINDOWS(109),
+    /**
+     * <pre>
+     * PC mac端
+     * </pre>
+     *
+     * <code>CLIENT_TYPE_USER_MAC = 110;</code>
+     */
+    CLIENT_TYPE_USER_MAC(110),
+    /**
+     * <pre>
+     * PC web端ANDROID
+     * </pre>
+     *
+     * <code>CLIENT_TYPE_USER_HARMONYOS = 114;</code>
+     */
+    CLIENT_TYPE_USER_HARMONYOS(114),
     /**
      * <pre>
      * 用户端在此加入新类型
@@ -258,13 +350,101 @@ public final class CEntrance {
      */
     public static final int CLIENT_TYPE_USER_H5_VALUE = 102;
     /**
+     * <pre>
+     * web端 兼容旧版
+     * </pre>
+     *
      * <code>CLIENT_TYPE_USER_WEB = 103;</code>
      */
     public static final int CLIENT_TYPE_USER_WEB_VALUE = 103;
     /**
+     * <pre>
+     * app端 兼容旧版
+     * </pre>
+     *
      * <code>CLIENT_TYPE_USER_APP = 104;</code>
      */
     public static final int CLIENT_TYPE_USER_APP_VALUE = 104;
+    /**
+     * <pre>
+     * web端IOS
+     * </pre>
+     *
+     * <code>CLIENT_TYPE_USER_WEB_IOS = 105;</code>
+     */
+    public static final int CLIENT_TYPE_USER_WEB_IOS_VALUE = 105;
+    /**
+     * <pre>
+     * web端ANDROID
+     * </pre>
+     *
+     * <code>CLIENT_TYPE_USER_WEB_ANDROID = 111;</code>
+     */
+    public static final int CLIENT_TYPE_USER_WEB_ANDROID_VALUE = 111;
+    /**
+     * <pre>
+     * web端windows
+     * </pre>
+     *
+     * <code>CLIENT_TYPE_USER_WEB_WINDOWS = 106;</code>
+     */
+    public static final int CLIENT_TYPE_USER_WEB_WINDOWS_VALUE = 106;
+    /**
+     * <pre>
+     * web端HARMONYOS
+     * </pre>
+     *
+     * <code>CLIENT_TYPE_USER_WEB_HARMONYOS = 112;</code>
+     */
+    public static final int CLIENT_TYPE_USER_WEB_HARMONYOS_VALUE = 112;
+    /**
+     * <pre>
+     * app端IOS
+     * </pre>
+     *
+     * <code>CLIENT_TYPE_USER_APP_IOS = 107;</code>
+     */
+    public static final int CLIENT_TYPE_USER_APP_IOS_VALUE = 107;
+    /**
+     * <pre>
+     * app端android
+     * </pre>
+     *
+     * <code>CLIENT_TYPE_USER_APP_ANDROID = 108;</code>
+     */
+    public static final int CLIENT_TYPE_USER_APP_ANDROID_VALUE = 108;
+    /**
+     * <pre>
+     * app端HARMONYOS
+     * </pre>
+     *
+     * <code>CLIENT_TYPE_USER_APP_HARMONYOS = 113;</code>
+     */
+    public static final int CLIENT_TYPE_USER_APP_HARMONYOS_VALUE = 113;
+    /**
+     * <pre>
+     * PC windows端
+     * </pre>
+     *
+     * <code>CLIENT_TYPE_USER_WINDOWS = 109;</code>
+     */
+    public static final int CLIENT_TYPE_USER_WINDOWS_VALUE = 109;
+    /**
+     * <pre>
+     * PC mac端
+     * </pre>
+     *
+     * <code>CLIENT_TYPE_USER_MAC = 110;</code>
+     */
+    public static final int CLIENT_TYPE_USER_MAC_VALUE = 110;
+    /**
+     * <pre>
+     * PC web端ANDROID
+     * </pre>
+     *
+     * <code>CLIENT_TYPE_USER_HARMONYOS = 114;</code>
+     */
+    public static final int CLIENT_TYPE_USER_HARMONYOS_VALUE = 114;
     /**
      * <pre>
      * 用户端在此加入新类型
@@ -307,6 +487,16 @@ public final class CEntrance {
         case 102: return CLIENT_TYPE_USER_H5;
         case 103: return CLIENT_TYPE_USER_WEB;
         case 104: return CLIENT_TYPE_USER_APP;
+        case 105: return CLIENT_TYPE_USER_WEB_IOS;
+        case 111: return CLIENT_TYPE_USER_WEB_ANDROID;
+        case 106: return CLIENT_TYPE_USER_WEB_WINDOWS;
+        case 112: return CLIENT_TYPE_USER_WEB_HARMONYOS;
+        case 107: return CLIENT_TYPE_USER_APP_IOS;
+        case 108: return CLIENT_TYPE_USER_APP_ANDROID;
+        case 113: return CLIENT_TYPE_USER_APP_HARMONYOS;
+        case 109: return CLIENT_TYPE_USER_WINDOWS;
+        case 110: return CLIENT_TYPE_USER_MAC;
+        case 114: return CLIENT_TYPE_USER_HARMONYOS;
         case 200: return CLIENT_TYPE_USER_END;
         default: return null;
       }
@@ -362,6 +552,139 @@ public final class CEntrance {
     }
 
     // @@protoc_insertion_point(enum_scope:api.common.ClientType)
+  }
+
+  /**
+   * Protobuf enum {@code api.common.VersionType}
+   */
+  public enum VersionType
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <pre>
+     * 试用版
+     * </pre>
+     *
+     * <code>Pre = 0;</code>
+     */
+    Pre(0),
+    /**
+     * <pre>
+     * 正式版
+     * </pre>
+     *
+     * <code>Official = 1;</code>
+     */
+    Official(1),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 26,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        VersionType.class.getName());
+    }
+    /**
+     * <pre>
+     * 试用版
+     * </pre>
+     *
+     * <code>Pre = 0;</code>
+     */
+    public static final int Pre_VALUE = 0;
+    /**
+     * <pre>
+     * 正式版
+     * </pre>
+     *
+     * <code>Official = 1;</code>
+     */
+    public static final int Official_VALUE = 1;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static VersionType valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static VersionType forNumber(int value) {
+      switch (value) {
+        case 0: return Pre;
+        case 1: return Official;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<VersionType>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        VersionType> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<VersionType>() {
+            public VersionType findValueByNumber(int number) {
+              return VersionType.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return com.teneasyChat.api.common.CEntrance.getDescriptor().getEnumTypes().get(2);
+    }
+
+    private static final VersionType[] VALUES = values();
+
+    public static VersionType valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private VersionType(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:api.common.VersionType)
   }
 
   public interface EntranceOrBuilder extends
@@ -6425,13 +6748,22 @@ public final class CEntrance {
       "PERATION_TYPE_UNKNOWN\020\000\022\032\n\026OPERATION_TYP" +
       "E_WINDOWS\020\n\022\034\n\030OPERATION_TYPE_MAC_INTEL\020" +
       "\024\022\030\n\024OPERATION_TYPE_MAC_M\020\025\022\027\n\022OPERATION" +
-      "_TYPE_END\020\310\001*\376\001\n\nClientType\022\027\n\023CLIENT_TY" +
+      "_TYPE_END\020\310\001*\300\004\n\nClientType\022\027\n\023CLIENT_TY" +
       "PE_UNKNOWN\020\000\022\034\n\030CLIENT_TYPE_WORKER_BEGIN" +
       "\020\001\022\031\n\025CLIENT_TYPE_WORKER_PC\020\002\022\032\n\026CLIENT_" +
       "TYPE_WORKER_END\020d\022\032\n\026CLIENT_TYPE_USER_BE" +
       "GIN\020e\022\027\n\023CLIENT_TYPE_USER_H5\020f\022\030\n\024CLIENT" +
       "_TYPE_USER_WEB\020g\022\030\n\024CLIENT_TYPE_USER_APP" +
-      "\020h\022\031\n\024CLIENT_TYPE_USER_END\020\310\001B3\n\032com.ten" +
+      "\020h\022\034\n\030CLIENT_TYPE_USER_WEB_IOS\020i\022 \n\034CLIE" +
+      "NT_TYPE_USER_WEB_ANDROID\020o\022 \n\034CLIENT_TYP" +
+      "E_USER_WEB_WINDOWS\020j\022\"\n\036CLIENT_TYPE_USER" +
+      "_WEB_HARMONYOS\020p\022\034\n\030CLIENT_TYPE_USER_APP" +
+      "_IOS\020k\022 \n\034CLIENT_TYPE_USER_APP_ANDROID\020l" +
+      "\022\"\n\036CLIENT_TYPE_USER_APP_HARMONYOS\020q\022\034\n\030" +
+      "CLIENT_TYPE_USER_WINDOWS\020m\022\030\n\024CLIENT_TYP" +
+      "E_USER_MAC\020n\022\036\n\032CLIENT_TYPE_USER_HARMONY" +
+      "OS\020r\022\031\n\024CLIENT_TYPE_USER_END\020\310\001*$\n\013Versi" +
+      "onType\022\007\n\003Pre\020\000\022\014\n\010Official\020\001B3\n\032com.ten" +
       "easyChat.api.commonZ\025wcs/api/common;comm" +
       "onb\006proto3"
     };
