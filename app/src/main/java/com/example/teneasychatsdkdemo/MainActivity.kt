@@ -16,13 +16,17 @@ import com.teneasy.sdk.LineDetectDelegate
 import com.teneasy.sdk.LineDetectLib
 import com.teneasy.sdk.Result
 import com.teneasy.sdk.TeneasySDKDelegate
+import com.teneasy.sdk.UploadListener
+import com.teneasy.sdk.UploadUtil
+import com.teneasy.sdk.Urls
 import com.teneasyChat.api.common.CMessage
 import com.teneasyChat.gateway.GGateway
 import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import java.io.File
 
-class MainActivity : AppCompatActivity(), TeneasySDKDelegate {
+class MainActivity : AppCompatActivity(), TeneasySDKDelegate, UploadListener {
 
     private lateinit var chatLib: ChatLib
     private lateinit var binding: ActivityMainBinding
@@ -89,10 +93,6 @@ class MainActivity : AppCompatActivity(), TeneasySDKDelegate {
                 imm.hideSoftInputFromWindow(binding.etInput.windowToken, 0)
                 false
         })
-
-        if (!BuildConfig.DEBUG) {
-           binding.btnSend.visibility = View.GONE
-        }
     }
 
     private fun appendText(msg: String){
@@ -118,9 +118,7 @@ class MainActivity : AppCompatActivity(), TeneasySDKDelegate {
                 Log.i("LineLib", "使用线路："+ line)
                 appendText("Wss: " + line + "\n")
                 domain = line
-                if (BuildConfig.DEBUG) {
-                    initChatSDK(line)
-                }
+                initChatSDK(line)
             }
             override fun lineError(error: Result) {
                 if (error.code == 1008){
@@ -140,7 +138,7 @@ class MainActivity : AppCompatActivity(), TeneasySDKDelegate {
         var wssUrl = "wss://" + baseUrl + "/v1/gateway/h5?"
         //token: COYBEAIYzNdEIPIBKJDZrOP3MQ.maPNGL2-vih71Eg4ghU4aTMSY6Sl0Zt8GTH6colScbTZQiTM5hak9do9qyxvhxSes-HuKbsNMLlBE72Z3J-4Bg
         //666668，364154
-        chatLib = ChatLib("COYBEAUYASDyASiG2piD9zE.te46qua5ha2r-Caz03Vx2JXH5OLSRRV2GqdYcn9UslwibsxBSP98GhUKSGEI0Z84FRMkp16ZK8eS-y72QVE2AQ", "", wssUrl, 666665, "9zgd9YUc")
+        chatLib = ChatLib("COYBEAUYASDyASiG2piD9zE.te46qua5ha2r-Caz03Vx2JXH5OLSRRV2GqdYcn9UslwibsxBSP98GhUKSGEI0Z84FRMkp16ZK8eS-y72QVE2AQ", "", wssUrl, 666665, "9zgd9YUc", 0, "", 5)
         chatLib.listener = this
         chatLib.makeConnect()
 
@@ -179,7 +177,16 @@ class MainActivity : AppCompatActivity(), TeneasySDKDelegate {
         uAnswer.content = uQC.build()
         withAutoReplyBuilder.addAnswers(uAnswer)
 
-        chatLib.sendMessage(sayHello, CMessage.MessageFormat.MSG_TEXT, 1, 0, withAutoReplyBuilder.build())
+        //chatLib.sendMessage(sayHello, CMessage.MessageFormat.MSG_TEXT, 1, 0, withAutoReplyBuilder.build())
+        /*
+                  "video": {
+                    "uri": "/session/tenant_230/20250102/Videos/3137333537393937343830373166696c65d41d8cd98f00b204e9800998ecf8427e/index.mp4",
+                    "hlsUri": "/session/tenant_230/20250102/Videos/3137333537393937343830373166696c65d41d8cd98f00b204e9800998ecf8427e/master.m3u8",
+                    "thumbnailUri": "/session/tenant_230/20250102/Videos/3137333537393937343830373166696c65d41d8cd98f00b204e9800998ecf8427e/thumb.jpg"
+                }
+         */
+        //chatLib.sendVideoMessage("/session/tenant_230/20250102/Videos/3137333537393937343830373166696c65d41d8cd98f00b204e9800998ecf8427e/index.mp4","/session/tenant_230/20250102/Videos/3137333537393937343830373166696c65d41d8cd98f00b204e9800998ecf8427e/thumb.jpg", "/session/tenant_230/20250102/Videos/3137333537393937343830373166696c65d41d8cd98f00b204e9800998ecf8427e/master.m3u8", 1, 0, withAutoReplyBuilder.build())
+        chatLib.sendMessage("/session/tenant_230/20250304/Documents/3137343130393736323137353066696c65d41d8cd98f00b204e9800998ecf8427e_1741097622234561429.pdf",CMessage.MessageFormat.MSG_FILE,  1, 0, withAutoReplyBuilder.build(), 882828, "dowodath.pdf")
         val payloadId = chatLib.payloadId
         val sendingMsg = chatLib.sendingMessage
 
@@ -236,7 +243,8 @@ class MainActivity : AppCompatActivity(), TeneasySDKDelegate {
             //失去链接，重试连接
             //startTimer()
         }
-        appendText(msg.msg + "\n")
+        print("${msg.code} ${msg.msg} ")
+        appendText("${msg.code} ${msg.msg} \n")
     }
 
     //成功连接，并返回相关信息，例如workerId
@@ -248,6 +256,9 @@ class MainActivity : AppCompatActivity(), TeneasySDKDelegate {
         Log.i(Tag, "token:" + c.token)
         isConnected = true
         appendText("成功连接")
+//        val uploadUtil = UploadUtil(this, "domain", c.token)
+//        val f = File("ddd.png")
+//        uploadUtil.uploadFile(f)
     }
 
     override fun workChanged(msg: GGateway.SCWorkerChanged) {
@@ -287,6 +298,18 @@ class MainActivity : AppCompatActivity(), TeneasySDKDelegate {
     override fun onPause() {
         super.onPause()
 
+    }
+
+    override fun uploadSuccess(path: Urls, isVideo: Boolean) {
+      //  TODO("Not yet implemented")
+    }
+
+    override fun uploadProgress(progress: Int) {
+      //  TODO("Not yet implemented")
+    }
+
+    override fun uploadFailed(msg: String) {
+      //  TODO("Not yet implemented")
     }
 
 }

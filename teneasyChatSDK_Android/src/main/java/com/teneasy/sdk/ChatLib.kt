@@ -1,6 +1,8 @@
 package com.teneasy.sdk
 
+import android.content.Context
 import android.util.Log
+import android.webkit.WebSettings
 import com.google.protobuf.Timestamp
 import com.teneasyChat.api.common.CEntrance.ClientType
 import com.teneasyChat.api.common.CMessage
@@ -62,7 +64,7 @@ interface TeneasySDKDelegate {
 /**
  * 通讯核心类，提供了发送消息、解析消息等功能
  */
-class ChatLib constructor(cert: String, token:String, baseUrl:String = "", userId: Int, sign:String,  chatID: Long = 0, custom: String = ""){
+class ChatLib constructor(cert: String, token:String, baseUrl:String = "", userId: Int, sign:String,  chatID: Long = 0, custom: String = "", maxSessionMinutes: Int = 9000000){
     private val TAG = "ChatLib"
     // 通讯地址
    private var baseUrl = ""
@@ -98,6 +100,9 @@ class ChatLib constructor(cert: String, token:String, baseUrl:String = "", userI
     private var maxSessionMinutes = 9000000//相当于不设置会话实际限制 //测试放1分钟，上线放120或90
     private var withAutoReply: WithAutoReply? = null
     private var custom: String? = custom
+    private var msgFormat: MessageFormat = MessageFormat.MSG_TEXT
+    private var fileSize = 0
+    private var fileName = ""
 
     init {
         this.chatId = chatID
@@ -116,6 +121,12 @@ class ChatLib constructor(cert: String, token:String, baseUrl:String = "", userI
         }
         sessionTime = 0
         beatTimes = 0
+        this.maxSessionMinutes = maxSessionMinutes
+    }
+
+    fun getHeaders(context: Context): Map<String, String> {
+        val userAgent = WebSettings.getDefaultUserAgent(context)
+        return mapOf("User-Agent" to userAgent)
     }
 
     /**
@@ -124,10 +135,16 @@ class ChatLib constructor(cert: String, token:String, baseUrl:String = "", userI
     fun makeConnect(){
         var rd = Random().nextInt(1000000) + 1000000
         var dt = Date().time
-        val url = baseUrl + "cert=" + this.cert + "&token=" + token + "&userid=" + this.userId + "&custom=" + custom + "&ty=" + ClientType.CLIENT_TYPE_USER_APP.number + "&dt=" + dt + "&sign=" + mySign + "&rd=" + rd
+        val url = baseUrl + "cert=" + this.cert + "&token=" + token + "&userid=" + this.userId + "&custom=" + custom + "&ty=" + ClientType.CLIENT_TYPE_USER_APP_ANDROID.number + "&dt=" + dt + "&sign=" + mySign + "&rd=" + rd
         Log.i(TAG, "连接WSS")
+        //val header = mapOf("x-trace-id" to "ddd")
+        val headers = mapOf(
+            "x-trace-id" to UUID.randomUUID().toString(),
+            //"Authorization" to "Bearer your_token_here"
+        )
+        print(headers["x-trace-id"])
         socket =
-            object : WebSocketClient(URI(url), Draft_6455()) {
+            object : WebSocketClient(URI(url), Draft_6455(), headers) {
                 override fun onMessage(message: String) {
                 }
 
@@ -160,19 +177,20 @@ class ChatLib constructor(cert: String, token:String, baseUrl:String = "", userI
     }
 
     /**
-     * 发送文本类型的消息
-     * @param msg   消息内容或图片url,音频url,视频url...
+     * 发送文本类型、图片类型的消息
+     * @param msg   消息内容或图片url,音频url...
      */
-     fun sendMessage(msg: String, type: MessageFormat, consultId: Long, replyMsgId: Long = 0, withAutoReply: WithAutoReply? = null) {
+     fun sendMessage(msg: String, type: MessageFormat, consultId: Long, replyMsgId: Long = 0, withAutoReply: WithAutoReply? = null, fileSize: Int = 0, fileName: String = "") {
         this.replyMsgId = replyMsgId;
          this.consultId = consultId;
         this.withAutoReply = withAutoReply
+        this.fileSize = fileSize
+        this.fileName = fileName
+        this.msgFormat = type
       if (type == MessageFormat.MSG_TEXT){
           sendTextMessage(msg)
       }else if (type == MessageFormat.MSG_IMG){
           sendImageMessage(msg)
-      }else if (type == MessageFormat.MSG_VIDEO){
-          sendVideoMessage(msg)
       }else if (type == MessageFormat.MSG_VOICE){
           sendAudioMessage(msg)
       }else if (type == MessageFormat.MSG_FILE){
@@ -218,6 +236,7 @@ class ChatLib constructor(cert: String, token:String, baseUrl:String = "", userI
         msg.replyMsgId = this.replyMsgId
         msg.chatId = chatId
         msg.worker = 0
+        msg.msgFmt = this.msgFormat
         msg.msgTime = TimeUtil.msgTime()
 
         if (withAutoReply != null && (withAutoReply?.id ?: 0) > 0) {
@@ -246,7 +265,14 @@ class ChatLib constructor(cert: String, token:String, baseUrl:String = "", userI
         msg.sender = 0
         msg.chatId = chatId
         msg.worker = 0
+        msg.msgFmt = this.msgFormat
         msg.msgTime = TimeUtil.msgTime()
+
+        if (withAutoReply != null && (withAutoReply?.id ?: 0) > 0) {
+            var aList = ArrayList<WithAutoReply>()
+            aList.add(withAutoReply!!)
+            msg.addAllWithAutoReplies(aList)
+        }
 
         sendingMessage = msg.build()
     }
@@ -255,9 +281,14 @@ class ChatLib constructor(cert: String, token:String, baseUrl:String = "", userI
      * 发送视频类型的消息
      * @param url   视频地址
      */
-    private fun sendVideoMessage(url: String) {
+     fun sendVideoMessage(url: String, thumbnail: String = "", hlsUri: String = "", consultId: Long, replyMsgId: Long = 0, withAutoReply: WithAutoReply? = null) {
+        this.replyMsgId = replyMsgId;
+        this.consultId = consultId;
+        this.withAutoReply = withAutoReply
         //第一层
         val content = CMessage.MessageVideo.newBuilder()
+        content.thumbnailUri = thumbnail
+        content.hlsUri = hlsUri
         content.uri = url
 
         //第二层
@@ -268,9 +299,18 @@ class ChatLib constructor(cert: String, token:String, baseUrl:String = "", userI
         msg.replyMsgId = this.replyMsgId
         msg.chatId = chatId
         msg.worker = 0
+        msg.msgFmt = MessageFormat.MSG_VIDEO
         msg.msgTime = TimeUtil.msgTime()
 
+        if (withAutoReply != null && (withAutoReply?.id ?: 0) > 0) {
+            var aList = ArrayList<WithAutoReply>()
+            aList.add(withAutoReply!!)
+            msg.addAllWithAutoReplies(aList)
+        }
         sendingMessage = msg.build()
+        sendingMessage?.let {
+            doSendMsg(it)
+        }
     }
 
     /**
@@ -289,6 +329,7 @@ class ChatLib constructor(cert: String, token:String, baseUrl:String = "", userI
         msg.sender = 0
         msg.replyMsgId = this.replyMsgId
         msg.chatId = chatId
+        msg.msgFmt = this.msgFormat
         msg.worker = 0
         msg.msgTime = TimeUtil.msgTime()
 
@@ -303,11 +344,14 @@ class ChatLib constructor(cert: String, token:String, baseUrl:String = "", userI
         //第一层
         val content = CMessage.MessageFile.newBuilder()
         content.uri = url
+        content.fileName = this.fileName
+        content.size = this.fileSize
 
         //第二层
         val msg = CMessage.Message.newBuilder()
         msg.setConsultId(this.consultId)
         msg.setFile(content)
+        msg.msgFmt = MessageFormat.MSG_FILE
         msg.sender = 0
         msg.replyMsgId = this.replyMsgId
         msg.chatId = chatId
@@ -358,7 +402,13 @@ class ChatLib constructor(cert: String, token:String, baseUrl:String = "", userI
             payload.id = payloadId
         }
         Log.i(TAG, "sending payloadId: ${payload.id}")
-        socket?.send(payload.build().toByteArray())
+        if (!isConnected || socket == null || socket?.isOpen == false) return
+
+        try {
+            socket?.send(payload.build().toByteArray())
+        }catch (ex: Exception){
+            Log.i(TAG, "尝试在断开状态发消息")
+        }
     }
 
   private fun updateSecond() {
@@ -366,24 +416,28 @@ class ChatLib constructor(cert: String, token:String, baseUrl:String = "", userI
         if (sessionTime % 30 == 0) { // Send a heartbeat every 8 seconds
             beatTimes++
             // Log the sending of the heartbeat
-            Log.d(TAG, "Sending heartbeat $beatTimes")
+            Log.d(TAG, "Sending heartbeat $beatTimes ${Date()}")
             sendHeartBeat()
         }
 
         if (sessionTime > maxSessionMinutes * 60) { // Stop sending heartbeats after the maximum session time
-           disConnect()
+           disConnected(1005, "会话超时")
+           // disConnect()//停止计时器等
         }
     }
-
-
 
     /**
      *  心跳，一般建议每隔60秒调用
      */
    private fun sendHeartBeat(){
+       if (!isConnected || socket == null || socket?.isOpen == false) return
         val buffer = ByteArray(1)
         buffer[0] = 0
-        socket?.send(buffer)
+        try {
+            socket?.send(buffer)
+        }catch (ex: Exception){
+            Log.i(TAG, "尝试在断开状态发消息")
+        }
     }
 
     /**
@@ -452,8 +506,8 @@ EntranceNotExistsFlag = 0x4
                 //}
                 //payloadId = payLoad.id
                 print("初始payloadId:" + payloadId + "\n")
-                listener?.connected(msg)
                 isConnected = true
+                listener?.connected(msg)
                 startTimer()
             } else if(recvPayLoad.act == GAction.Action.ActionForward) {
                 val msg = GGateway.CSForward.parseFrom(msgData)
@@ -540,6 +594,7 @@ EntranceNotExistsFlag = 0x4
         disConnect()
         sendingMessage = null
         isConnected = false
+        Log.i(TAG, "ChatLib disConnected code:" + code + "msg:" + msg);
     }
 
     // 启动计时器，持续调用心跳方法
