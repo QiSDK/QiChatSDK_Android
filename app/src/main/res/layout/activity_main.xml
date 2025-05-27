@@ -12,7 +12,7 @@
             android:id="@+id/etInput"
             android:layout_margin="10dp"
             android:hint="输入线路txt文件地址，以逗号分开"
-            android:text="https://csh5.hfxg.xyz,https://csapi.dev.stream,https://61.184.8.23:7040"
+            android:text="https://csh5.hfxg.xyz,https://csapi.dev.stream,https://62.184.8.21:7040"
             android:layout_width="match_parent"
             android:layout_height="150dp"
             android:imeOptions="actionDone"
