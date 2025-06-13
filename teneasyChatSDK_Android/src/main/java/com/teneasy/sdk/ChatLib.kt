@@ -482,6 +482,8 @@ EntranceNotExistsFlag = 0x4
         else {
             val recvPayLoad = GPayload.Payload.parseFrom(data)
             val msgData = recvPayLoad.data
+            //有收到消息，就重设超时时间。
+            resetSessionTime()
             //收到消息
             if(recvPayLoad.act == GAction.Action.ActionSCRecvMsg) {
                 val recvMsg = GGateway.SCRecvMessage.parseFrom(msgData)
@@ -557,6 +559,10 @@ EntranceNotExistsFlag = 0x4
             else
                 Log.i(TAG, "received data: $data")
         }
+    }
+
+    public fun resetSessionTime(){
+        sessionTime = 0
     }
 
     /**
