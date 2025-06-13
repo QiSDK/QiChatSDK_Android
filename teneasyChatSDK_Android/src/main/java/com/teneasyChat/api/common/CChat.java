@@ -3937,6 +3937,33 @@ public final class CChat {
      * @return The isWorkerReply.
      */
     boolean getIsWorkerReply();
+
+    /**
+     * <pre>
+     * 首条未读消息
+     * </pre>
+     *
+     * <code>.api.common.Message first_unread_msg = 12;</code>
+     * @return Whether the firstUnreadMsg field is set.
+     */
+    boolean hasFirstUnreadMsg();
+    /**
+     * <pre>
+     * 首条未读消息
+     * </pre>
+     *
+     * <code>.api.common.Message first_unread_msg = 12;</code>
+     * @return The firstUnreadMsg.
+     */
+    com.teneasyChat.api.common.CMessage.Message getFirstUnreadMsg();
+    /**
+     * <pre>
+     * 首条未读消息
+     * </pre>
+     *
+     * <code>.api.common.Message first_unread_msg = 12;</code>
+     */
+    com.teneasyChat.api.common.CMessage.MessageOrBuilder getFirstUnreadMsgOrBuilder();
   }
   /**
    * Protobuf type {@code api.common.ChatItem}
@@ -4263,6 +4290,44 @@ public final class CChat {
       return isWorkerReply_;
     }
 
+    public static final int FIRST_UNREAD_MSG_FIELD_NUMBER = 12;
+    private com.teneasyChat.api.common.CMessage.Message firstUnreadMsg_;
+    /**
+     * <pre>
+     * 首条未读消息
+     * </pre>
+     *
+     * <code>.api.common.Message first_unread_msg = 12;</code>
+     * @return Whether the firstUnreadMsg field is set.
+     */
+    @java.lang.Override
+    public boolean hasFirstUnreadMsg() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+    /**
+     * <pre>
+     * 首条未读消息
+     * </pre>
+     *
+     * <code>.api.common.Message first_unread_msg = 12;</code>
+     * @return The firstUnreadMsg.
+     */
+    @java.lang.Override
+    public com.teneasyChat.api.common.CMessage.Message getFirstUnreadMsg() {
+      return firstUnreadMsg_ == null ? com.teneasyChat.api.common.CMessage.Message.getDefaultInstance() : firstUnreadMsg_;
+    }
+    /**
+     * <pre>
+     * 首条未读消息
+     * </pre>
+     *
+     * <code>.api.common.Message first_unread_msg = 12;</code>
+     */
+    @java.lang.Override
+    public com.teneasyChat.api.common.CMessage.MessageOrBuilder getFirstUnreadMsgOrBuilder() {
+      return firstUnreadMsg_ == null ? com.teneasyChat.api.common.CMessage.Message.getDefaultInstance() : firstUnreadMsg_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -4309,6 +4374,9 @@ public final class CChat {
       }
       if (isWorkerReply_ != false) {
         output.writeBool(11, isWorkerReply_);
+      }
+      if (((bitField0_ & 0x00000040) != 0)) {
+        output.writeMessage(12, getFirstUnreadMsg());
       }
       getUnknownFields().writeTo(output);
     }
@@ -4362,6 +4430,10 @@ public final class CChat {
       if (isWorkerReply_ != false) {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(11, isWorkerReply_);
+      }
+      if (((bitField0_ & 0x00000040) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(12, getFirstUnreadMsg());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -4417,6 +4489,11 @@ public final class CChat {
           != other.getVisible()) return false;
       if (getIsWorkerReply()
           != other.getIsWorkerReply()) return false;
+      if (hasFirstUnreadMsg() != other.hasFirstUnreadMsg()) return false;
+      if (hasFirstUnreadMsg()) {
+        if (!getFirstUnreadMsg()
+            .equals(other.getFirstUnreadMsg())) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -4465,6 +4542,10 @@ public final class CChat {
       hash = (37 * hash) + IS_WORKER_REPLY_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsWorkerReply());
+      if (hasFirstUnreadMsg()) {
+        hash = (37 * hash) + FIRST_UNREAD_MSG_FIELD_NUMBER;
+        hash = (53 * hash) + getFirstUnreadMsg().hashCode();
+      }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -4601,6 +4682,7 @@ public final class CChat {
           getBeginAtFieldBuilder();
           getDetailFieldBuilder();
           getResetAtFieldBuilder();
+          getFirstUnreadMsgFieldBuilder();
         }
       }
       @java.lang.Override
@@ -4642,6 +4724,11 @@ public final class CChat {
         }
         visible_ = false;
         isWorkerReply_ = false;
+        firstUnreadMsg_ = null;
+        if (firstUnreadMsgBuilder_ != null) {
+          firstUnreadMsgBuilder_.dispose();
+          firstUnreadMsgBuilder_ = null;
+        }
         return this;
       }
 
@@ -4727,6 +4814,12 @@ public final class CChat {
         if (((from_bitField0_ & 0x00000400) != 0)) {
           result.isWorkerReply_ = isWorkerReply_;
         }
+        if (((from_bitField0_ & 0x00000800) != 0)) {
+          result.firstUnreadMsg_ = firstUnreadMsgBuilder_ == null
+              ? firstUnreadMsg_
+              : firstUnreadMsgBuilder_.build();
+          to_bitField0_ |= 0x00000040;
+        }
         result.bitField0_ |= to_bitField0_;
       }
 
@@ -4774,6 +4867,9 @@ public final class CChat {
         }
         if (other.getIsWorkerReply() != false) {
           setIsWorkerReply(other.getIsWorkerReply());
+        }
+        if (other.hasFirstUnreadMsg()) {
+          mergeFirstUnreadMsg(other.getFirstUnreadMsg());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -4868,6 +4964,13 @@ public final class CChat {
                 bitField0_ |= 0x00000400;
                 break;
               } // case 88
+              case 98: {
+                input.readMessage(
+                    getFirstUnreadMsgFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 98
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -5996,6 +6099,163 @@ public final class CChat {
         return this;
       }
 
+      private com.teneasyChat.api.common.CMessage.Message firstUnreadMsg_;
+      private com.google.protobuf.SingleFieldBuilder<
+          com.teneasyChat.api.common.CMessage.Message, com.teneasyChat.api.common.CMessage.Message.Builder, com.teneasyChat.api.common.CMessage.MessageOrBuilder> firstUnreadMsgBuilder_;
+      /**
+       * <pre>
+       * 首条未读消息
+       * </pre>
+       *
+       * <code>.api.common.Message first_unread_msg = 12;</code>
+       * @return Whether the firstUnreadMsg field is set.
+       */
+      public boolean hasFirstUnreadMsg() {
+        return ((bitField0_ & 0x00000800) != 0);
+      }
+      /**
+       * <pre>
+       * 首条未读消息
+       * </pre>
+       *
+       * <code>.api.common.Message first_unread_msg = 12;</code>
+       * @return The firstUnreadMsg.
+       */
+      public com.teneasyChat.api.common.CMessage.Message getFirstUnreadMsg() {
+        if (firstUnreadMsgBuilder_ == null) {
+          return firstUnreadMsg_ == null ? com.teneasyChat.api.common.CMessage.Message.getDefaultInstance() : firstUnreadMsg_;
+        } else {
+          return firstUnreadMsgBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * 首条未读消息
+       * </pre>
+       *
+       * <code>.api.common.Message first_unread_msg = 12;</code>
+       */
+      public Builder setFirstUnreadMsg(com.teneasyChat.api.common.CMessage.Message value) {
+        if (firstUnreadMsgBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          firstUnreadMsg_ = value;
+        } else {
+          firstUnreadMsgBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000800;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 首条未读消息
+       * </pre>
+       *
+       * <code>.api.common.Message first_unread_msg = 12;</code>
+       */
+      public Builder setFirstUnreadMsg(
+          com.teneasyChat.api.common.CMessage.Message.Builder builderForValue) {
+        if (firstUnreadMsgBuilder_ == null) {
+          firstUnreadMsg_ = builderForValue.build();
+        } else {
+          firstUnreadMsgBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000800;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 首条未读消息
+       * </pre>
+       *
+       * <code>.api.common.Message first_unread_msg = 12;</code>
+       */
+      public Builder mergeFirstUnreadMsg(com.teneasyChat.api.common.CMessage.Message value) {
+        if (firstUnreadMsgBuilder_ == null) {
+          if (((bitField0_ & 0x00000800) != 0) &&
+            firstUnreadMsg_ != null &&
+            firstUnreadMsg_ != com.teneasyChat.api.common.CMessage.Message.getDefaultInstance()) {
+            getFirstUnreadMsgBuilder().mergeFrom(value);
+          } else {
+            firstUnreadMsg_ = value;
+          }
+        } else {
+          firstUnreadMsgBuilder_.mergeFrom(value);
+        }
+        if (firstUnreadMsg_ != null) {
+          bitField0_ |= 0x00000800;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 首条未读消息
+       * </pre>
+       *
+       * <code>.api.common.Message first_unread_msg = 12;</code>
+       */
+      public Builder clearFirstUnreadMsg() {
+        bitField0_ = (bitField0_ & ~0x00000800);
+        firstUnreadMsg_ = null;
+        if (firstUnreadMsgBuilder_ != null) {
+          firstUnreadMsgBuilder_.dispose();
+          firstUnreadMsgBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 首条未读消息
+       * </pre>
+       *
+       * <code>.api.common.Message first_unread_msg = 12;</code>
+       */
+      public com.teneasyChat.api.common.CMessage.Message.Builder getFirstUnreadMsgBuilder() {
+        bitField0_ |= 0x00000800;
+        onChanged();
+        return getFirstUnreadMsgFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * 首条未读消息
+       * </pre>
+       *
+       * <code>.api.common.Message first_unread_msg = 12;</code>
+       */
+      public com.teneasyChat.api.common.CMessage.MessageOrBuilder getFirstUnreadMsgOrBuilder() {
+        if (firstUnreadMsgBuilder_ != null) {
+          return firstUnreadMsgBuilder_.getMessageOrBuilder();
+        } else {
+          return firstUnreadMsg_ == null ?
+              com.teneasyChat.api.common.CMessage.Message.getDefaultInstance() : firstUnreadMsg_;
+        }
+      }
+      /**
+       * <pre>
+       * 首条未读消息
+       * </pre>
+       *
+       * <code>.api.common.Message first_unread_msg = 12;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          com.teneasyChat.api.common.CMessage.Message, com.teneasyChat.api.common.CMessage.Message.Builder, com.teneasyChat.api.common.CMessage.MessageOrBuilder> 
+          getFirstUnreadMsgFieldBuilder() {
+        if (firstUnreadMsgBuilder_ == null) {
+          firstUnreadMsgBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              com.teneasyChat.api.common.CMessage.Message, com.teneasyChat.api.common.CMessage.Message.Builder, com.teneasyChat.api.common.CMessage.MessageOrBuilder>(
+                  getFirstUnreadMsg(),
+                  getParentForChildren(),
+                  isClean());
+          firstUnreadMsg_ = null;
+        }
+        return firstUnreadMsgBuilder_;
+      }
+
       // @@protoc_insertion_point(builder_scope:api.common.ChatItem)
     }
 
@@ -6083,7 +6343,7 @@ public final class CChat {
       "\030\017 \001(\005\022$\n\005state\030\020 \001(\0162\025.api.common.ChatS" +
       "tate\022-\n\tcopy_type\030\021 \001(\0162\032.api.common.Ten" +
       "antCopyType\022\017\n\007account\030\022 \001(\t\022\023\n\013chat_rem" +
-      "ark\030\023 \001(\tB\n\n\010_nimName\"\207\003\n\010ChatItem\022\017\n\007ch" +
+      "ark\030\023 \001(\tB\n\n\010_nimName\"\266\003\n\010ChatItem\022\017\n\007ch" +
       "at_id\030\001 \001(\003\022$\n\005state\030\002 \001(\0162\025.api.common." +
       "ChatState\022\016\n\006unread\030\003 \001(\005\022\'\n\nlatest_msg\030" +
       "\004 \001(\0132\023.api.common.Message\022-\n\tcreate_at\030" +
@@ -6093,9 +6353,10 @@ public final class CChat {
       "mestamp\022&\n\006detail\030\007 \001(\0132\026.api.common.Cha" +
       "tDetail\022,\n\010reset_at\030\010 \001(\0132\032.google.proto" +
       "buf.Timestamp\022\017\n\007visible\030\t \001(\010\022\027\n\017is_wor" +
-      "ker_reply\030\013 \001(\010B<\n\032com.teneasyChat.api.c" +
-      "ommonZ\025wcs/api/common;common\272\002\006Commonb\006p" +
-      "roto3"
+      "ker_reply\030\013 \001(\010\022-\n\020first_unread_msg\030\014 \001(" +
+      "\0132\023.api.common.MessageB<\n\032com.teneasyCha" +
+      "t.api.commonZ\025wcs/api/common;common\272\002\006Co" +
+      "mmonb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -6117,7 +6378,7 @@ public final class CChat {
     internal_static_api_common_ChatItem_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_common_ChatItem_descriptor,
-        new java.lang.String[] { "ChatId", "State", "Unread", "LatestMsg", "CreateAt", "ServiceAt", "BeginAt", "Detail", "ResetAt", "Visible", "IsWorkerReply", });
+        new java.lang.String[] { "ChatId", "State", "Unread", "LatestMsg", "CreateAt", "ServiceAt", "BeginAt", "Detail", "ResetAt", "Visible", "IsWorkerReply", "FirstUnreadMsg", });
     descriptor.resolveAllFeaturesImmutable();
     io.envoyproxy.pgv.validate.Validate.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();

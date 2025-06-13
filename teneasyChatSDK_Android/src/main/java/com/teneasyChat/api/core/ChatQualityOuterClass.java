@@ -13348,10 +13348,10 @@ public final class ChatQualityOuterClass {
      * 极差比例
      * </pre>
      *
-     * <code>int32 very_bad_rate = 13;</code>
+     * <code>double very_bad_rate = 13;</code>
      * @return The veryBadRate.
      */
-    int getVeryBadRate();
+    double getVeryBadRate();
 
     /**
      * <pre>
@@ -13368,10 +13368,10 @@ public final class ChatQualityOuterClass {
      * 较差比例
      * </pre>
      *
-     * <code>int32 bad_rate = 15;</code>
+     * <code>double bad_rate = 15;</code>
      * @return The badRate.
      */
-    int getBadRate();
+    double getBadRate();
 
     /**
      * <pre>
@@ -13388,10 +13388,10 @@ public final class ChatQualityOuterClass {
      * 正常比例
      * </pre>
      *
-     * <code>int32 normal_rate = 17;</code>
+     * <code>double normal_rate = 17;</code>
      * @return The normalRate.
      */
-    int getNormalRate();
+    double getNormalRate();
 
     /**
      * <pre>
@@ -13408,10 +13408,10 @@ public final class ChatQualityOuterClass {
      * 优异比例
      * </pre>
      *
-     * <code>int32 excellent_rate = 19;</code>
+     * <code>double excellent_rate = 19;</code>
      * @return The excellentRate.
      */
-    int getExcellentRate();
+    double getExcellentRate();
 
     /**
      * <pre>
@@ -13428,10 +13428,10 @@ public final class ChatQualityOuterClass {
      * 合格率
      * </pre>
      *
-     * <code>int32 qualified_rate = 21;</code>
+     * <code>double qualified_rate = 21;</code>
      * @return The qualifiedRate.
      */
-    int getQualifiedRate();
+    double getQualifiedRate();
 
     /**
      * <pre>
@@ -13730,17 +13730,17 @@ public final class ChatQualityOuterClass {
     }
 
     public static final int VERY_BAD_RATE_FIELD_NUMBER = 13;
-    private int veryBadRate_ = 0;
+    private double veryBadRate_ = 0D;
     /**
      * <pre>
      * 极差比例
      * </pre>
      *
-     * <code>int32 very_bad_rate = 13;</code>
+     * <code>double very_bad_rate = 13;</code>
      * @return The veryBadRate.
      */
     @java.lang.Override
-    public int getVeryBadRate() {
+    public double getVeryBadRate() {
       return veryBadRate_;
     }
 
@@ -13760,17 +13760,17 @@ public final class ChatQualityOuterClass {
     }
 
     public static final int BAD_RATE_FIELD_NUMBER = 15;
-    private int badRate_ = 0;
+    private double badRate_ = 0D;
     /**
      * <pre>
      * 较差比例
      * </pre>
      *
-     * <code>int32 bad_rate = 15;</code>
+     * <code>double bad_rate = 15;</code>
      * @return The badRate.
      */
     @java.lang.Override
-    public int getBadRate() {
+    public double getBadRate() {
       return badRate_;
     }
 
@@ -13790,17 +13790,17 @@ public final class ChatQualityOuterClass {
     }
 
     public static final int NORMAL_RATE_FIELD_NUMBER = 17;
-    private int normalRate_ = 0;
+    private double normalRate_ = 0D;
     /**
      * <pre>
      * 正常比例
      * </pre>
      *
-     * <code>int32 normal_rate = 17;</code>
+     * <code>double normal_rate = 17;</code>
      * @return The normalRate.
      */
     @java.lang.Override
-    public int getNormalRate() {
+    public double getNormalRate() {
       return normalRate_;
     }
 
@@ -13820,17 +13820,17 @@ public final class ChatQualityOuterClass {
     }
 
     public static final int EXCELLENT_RATE_FIELD_NUMBER = 19;
-    private int excellentRate_ = 0;
+    private double excellentRate_ = 0D;
     /**
      * <pre>
      * 优异比例
      * </pre>
      *
-     * <code>int32 excellent_rate = 19;</code>
+     * <code>double excellent_rate = 19;</code>
      * @return The excellentRate.
      */
     @java.lang.Override
-    public int getExcellentRate() {
+    public double getExcellentRate() {
       return excellentRate_;
     }
 
@@ -13850,17 +13850,17 @@ public final class ChatQualityOuterClass {
     }
 
     public static final int QUALIFIED_RATE_FIELD_NUMBER = 21;
-    private int qualifiedRate_ = 0;
+    private double qualifiedRate_ = 0D;
     /**
      * <pre>
      * 合格率
      * </pre>
      *
-     * <code>int32 qualified_rate = 21;</code>
+     * <code>double qualified_rate = 21;</code>
      * @return The qualifiedRate.
      */
     @java.lang.Override
-    public int getQualifiedRate() {
+    public double getQualifiedRate() {
       return qualifiedRate_;
     }
 
@@ -14008,32 +14008,32 @@ public final class ChatQualityOuterClass {
       if (veryBadCount_ != 0) {
         output.writeInt32(12, veryBadCount_);
       }
-      if (veryBadRate_ != 0) {
-        output.writeInt32(13, veryBadRate_);
+      if (java.lang.Double.doubleToRawLongBits(veryBadRate_) != 0) {
+        output.writeDouble(13, veryBadRate_);
       }
       if (badCount_ != 0) {
         output.writeInt32(14, badCount_);
       }
-      if (badRate_ != 0) {
-        output.writeInt32(15, badRate_);
+      if (java.lang.Double.doubleToRawLongBits(badRate_) != 0) {
+        output.writeDouble(15, badRate_);
       }
       if (normalCount_ != 0) {
         output.writeInt32(16, normalCount_);
       }
-      if (normalRate_ != 0) {
-        output.writeInt32(17, normalRate_);
+      if (java.lang.Double.doubleToRawLongBits(normalRate_) != 0) {
+        output.writeDouble(17, normalRate_);
       }
       if (excellentCount_ != 0) {
         output.writeInt32(18, excellentCount_);
       }
-      if (excellentRate_ != 0) {
-        output.writeInt32(19, excellentRate_);
+      if (java.lang.Double.doubleToRawLongBits(excellentRate_) != 0) {
+        output.writeDouble(19, excellentRate_);
       }
       if (qualifiedCount_ != 0) {
         output.writeInt32(20, qualifiedCount_);
       }
-      if (qualifiedRate_ != 0) {
-        output.writeInt32(21, qualifiedRate_);
+      if (java.lang.Double.doubleToRawLongBits(qualifiedRate_) != 0) {
+        output.writeDouble(21, qualifiedRate_);
       }
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(totalCheckDuration_)) {
         com.google.protobuf.GeneratedMessage.writeString(output, 22, totalCheckDuration_);
@@ -14097,41 +14097,41 @@ public final class ChatQualityOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(12, veryBadCount_);
       }
-      if (veryBadRate_ != 0) {
+      if (java.lang.Double.doubleToRawLongBits(veryBadRate_) != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(13, veryBadRate_);
+          .computeDoubleSize(13, veryBadRate_);
       }
       if (badCount_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(14, badCount_);
       }
-      if (badRate_ != 0) {
+      if (java.lang.Double.doubleToRawLongBits(badRate_) != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(15, badRate_);
+          .computeDoubleSize(15, badRate_);
       }
       if (normalCount_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(16, normalCount_);
       }
-      if (normalRate_ != 0) {
+      if (java.lang.Double.doubleToRawLongBits(normalRate_) != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(17, normalRate_);
+          .computeDoubleSize(17, normalRate_);
       }
       if (excellentCount_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(18, excellentCount_);
       }
-      if (excellentRate_ != 0) {
+      if (java.lang.Double.doubleToRawLongBits(excellentRate_) != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(19, excellentRate_);
+          .computeDoubleSize(19, excellentRate_);
       }
       if (qualifiedCount_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(20, qualifiedCount_);
       }
-      if (qualifiedRate_ != 0) {
+      if (java.lang.Double.doubleToRawLongBits(qualifiedRate_) != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(21, qualifiedRate_);
+          .computeDoubleSize(21, qualifiedRate_);
       }
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(totalCheckDuration_)) {
         size += com.google.protobuf.GeneratedMessage.computeStringSize(22, totalCheckDuration_);
@@ -14178,24 +14178,29 @@ public final class ChatQualityOuterClass {
           != other.getReviewCheckRate()) return false;
       if (getVeryBadCount()
           != other.getVeryBadCount()) return false;
-      if (getVeryBadRate()
-          != other.getVeryBadRate()) return false;
+      if (java.lang.Double.doubleToLongBits(getVeryBadRate())
+          != java.lang.Double.doubleToLongBits(
+              other.getVeryBadRate())) return false;
       if (getBadCount()
           != other.getBadCount()) return false;
-      if (getBadRate()
-          != other.getBadRate()) return false;
+      if (java.lang.Double.doubleToLongBits(getBadRate())
+          != java.lang.Double.doubleToLongBits(
+              other.getBadRate())) return false;
       if (getNormalCount()
           != other.getNormalCount()) return false;
-      if (getNormalRate()
-          != other.getNormalRate()) return false;
+      if (java.lang.Double.doubleToLongBits(getNormalRate())
+          != java.lang.Double.doubleToLongBits(
+              other.getNormalRate())) return false;
       if (getExcellentCount()
           != other.getExcellentCount()) return false;
-      if (getExcellentRate()
-          != other.getExcellentRate()) return false;
+      if (java.lang.Double.doubleToLongBits(getExcellentRate())
+          != java.lang.Double.doubleToLongBits(
+              other.getExcellentRate())) return false;
       if (getQualifiedCount()
           != other.getQualifiedCount()) return false;
-      if (getQualifiedRate()
-          != other.getQualifiedRate()) return false;
+      if (java.lang.Double.doubleToLongBits(getQualifiedRate())
+          != java.lang.Double.doubleToLongBits(
+              other.getQualifiedRate())) return false;
       if (!getTotalCheckDuration()
           .equals(other.getTotalCheckDuration())) return false;
       if (!getAvgCheckDuration()
@@ -14236,23 +14241,28 @@ public final class ChatQualityOuterClass {
       hash = (37 * hash) + VERY_BAD_COUNT_FIELD_NUMBER;
       hash = (53 * hash) + getVeryBadCount();
       hash = (37 * hash) + VERY_BAD_RATE_FIELD_NUMBER;
-      hash = (53 * hash) + getVeryBadRate();
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getVeryBadRate()));
       hash = (37 * hash) + BAD_COUNT_FIELD_NUMBER;
       hash = (53 * hash) + getBadCount();
       hash = (37 * hash) + BAD_RATE_FIELD_NUMBER;
-      hash = (53 * hash) + getBadRate();
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getBadRate()));
       hash = (37 * hash) + NORMAL_COUNT_FIELD_NUMBER;
       hash = (53 * hash) + getNormalCount();
       hash = (37 * hash) + NORMAL_RATE_FIELD_NUMBER;
-      hash = (53 * hash) + getNormalRate();
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getNormalRate()));
       hash = (37 * hash) + EXCELLENT_COUNT_FIELD_NUMBER;
       hash = (53 * hash) + getExcellentCount();
       hash = (37 * hash) + EXCELLENT_RATE_FIELD_NUMBER;
-      hash = (53 * hash) + getExcellentRate();
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getExcellentRate()));
       hash = (37 * hash) + QUALIFIED_COUNT_FIELD_NUMBER;
       hash = (53 * hash) + getQualifiedCount();
       hash = (37 * hash) + QUALIFIED_RATE_FIELD_NUMBER;
-      hash = (53 * hash) + getQualifiedRate();
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getQualifiedRate()));
       hash = (37 * hash) + TOTAL_CHECK_DURATION_FIELD_NUMBER;
       hash = (53 * hash) + getTotalCheckDuration().hashCode();
       hash = (37 * hash) + AVG_CHECK_DURATION_FIELD_NUMBER;
@@ -14404,15 +14414,15 @@ public final class ChatQualityOuterClass {
         reviewCheckCount_ = 0;
         reviewCheckRate_ = 0;
         veryBadCount_ = 0;
-        veryBadRate_ = 0;
+        veryBadRate_ = 0D;
         badCount_ = 0;
-        badRate_ = 0;
+        badRate_ = 0D;
         normalCount_ = 0;
-        normalRate_ = 0;
+        normalRate_ = 0D;
         excellentCount_ = 0;
-        excellentRate_ = 0;
+        excellentRate_ = 0D;
         qualifiedCount_ = 0;
-        qualifiedRate_ = 0;
+        qualifiedRate_ = 0D;
         totalCheckDuration_ = "";
         avgCheckDuration_ = "";
         return this;
@@ -14569,31 +14579,31 @@ public final class ChatQualityOuterClass {
         if (other.getVeryBadCount() != 0) {
           setVeryBadCount(other.getVeryBadCount());
         }
-        if (other.getVeryBadRate() != 0) {
+        if (other.getVeryBadRate() != 0D) {
           setVeryBadRate(other.getVeryBadRate());
         }
         if (other.getBadCount() != 0) {
           setBadCount(other.getBadCount());
         }
-        if (other.getBadRate() != 0) {
+        if (other.getBadRate() != 0D) {
           setBadRate(other.getBadRate());
         }
         if (other.getNormalCount() != 0) {
           setNormalCount(other.getNormalCount());
         }
-        if (other.getNormalRate() != 0) {
+        if (other.getNormalRate() != 0D) {
           setNormalRate(other.getNormalRate());
         }
         if (other.getExcellentCount() != 0) {
           setExcellentCount(other.getExcellentCount());
         }
-        if (other.getExcellentRate() != 0) {
+        if (other.getExcellentRate() != 0D) {
           setExcellentRate(other.getExcellentRate());
         }
         if (other.getQualifiedCount() != 0) {
           setQualifiedCount(other.getQualifiedCount());
         }
-        if (other.getQualifiedRate() != 0) {
+        if (other.getQualifiedRate() != 0D) {
           setQualifiedRate(other.getQualifiedRate());
         }
         if (!other.getTotalCheckDuration().isEmpty()) {
@@ -14692,51 +14702,51 @@ public final class ChatQualityOuterClass {
                 bitField0_ |= 0x00000800;
                 break;
               } // case 96
-              case 104: {
-                veryBadRate_ = input.readInt32();
+              case 105: {
+                veryBadRate_ = input.readDouble();
                 bitField0_ |= 0x00001000;
                 break;
-              } // case 104
+              } // case 105
               case 112: {
                 badCount_ = input.readInt32();
                 bitField0_ |= 0x00002000;
                 break;
               } // case 112
-              case 120: {
-                badRate_ = input.readInt32();
+              case 121: {
+                badRate_ = input.readDouble();
                 bitField0_ |= 0x00004000;
                 break;
-              } // case 120
+              } // case 121
               case 128: {
                 normalCount_ = input.readInt32();
                 bitField0_ |= 0x00008000;
                 break;
               } // case 128
-              case 136: {
-                normalRate_ = input.readInt32();
+              case 137: {
+                normalRate_ = input.readDouble();
                 bitField0_ |= 0x00010000;
                 break;
-              } // case 136
+              } // case 137
               case 144: {
                 excellentCount_ = input.readInt32();
                 bitField0_ |= 0x00020000;
                 break;
               } // case 144
-              case 152: {
-                excellentRate_ = input.readInt32();
+              case 153: {
+                excellentRate_ = input.readDouble();
                 bitField0_ |= 0x00040000;
                 break;
-              } // case 152
+              } // case 153
               case 160: {
                 qualifiedCount_ = input.readInt32();
                 bitField0_ |= 0x00080000;
                 break;
               } // case 160
-              case 168: {
-                qualifiedRate_ = input.readInt32();
+              case 169: {
+                qualifiedRate_ = input.readDouble();
                 bitField0_ |= 0x00100000;
                 break;
-              } // case 168
+              } // case 169
               case 178: {
                 totalCheckDuration_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00200000;
@@ -15340,17 +15350,17 @@ public final class ChatQualityOuterClass {
         return this;
       }
 
-      private int veryBadRate_ ;
+      private double veryBadRate_ ;
       /**
        * <pre>
        * 极差比例
        * </pre>
        *
-       * <code>int32 very_bad_rate = 13;</code>
+       * <code>double very_bad_rate = 13;</code>
        * @return The veryBadRate.
        */
       @java.lang.Override
-      public int getVeryBadRate() {
+      public double getVeryBadRate() {
         return veryBadRate_;
       }
       /**
@@ -15358,11 +15368,11 @@ public final class ChatQualityOuterClass {
        * 极差比例
        * </pre>
        *
-       * <code>int32 very_bad_rate = 13;</code>
+       * <code>double very_bad_rate = 13;</code>
        * @param value The veryBadRate to set.
        * @return This builder for chaining.
        */
-      public Builder setVeryBadRate(int value) {
+      public Builder setVeryBadRate(double value) {
 
         veryBadRate_ = value;
         bitField0_ |= 0x00001000;
@@ -15374,12 +15384,12 @@ public final class ChatQualityOuterClass {
        * 极差比例
        * </pre>
        *
-       * <code>int32 very_bad_rate = 13;</code>
+       * <code>double very_bad_rate = 13;</code>
        * @return This builder for chaining.
        */
       public Builder clearVeryBadRate() {
         bitField0_ = (bitField0_ & ~0x00001000);
-        veryBadRate_ = 0;
+        veryBadRate_ = 0D;
         onChanged();
         return this;
       }
@@ -15428,17 +15438,17 @@ public final class ChatQualityOuterClass {
         return this;
       }
 
-      private int badRate_ ;
+      private double badRate_ ;
       /**
        * <pre>
        * 较差比例
        * </pre>
        *
-       * <code>int32 bad_rate = 15;</code>
+       * <code>double bad_rate = 15;</code>
        * @return The badRate.
        */
       @java.lang.Override
-      public int getBadRate() {
+      public double getBadRate() {
         return badRate_;
       }
       /**
@@ -15446,11 +15456,11 @@ public final class ChatQualityOuterClass {
        * 较差比例
        * </pre>
        *
-       * <code>int32 bad_rate = 15;</code>
+       * <code>double bad_rate = 15;</code>
        * @param value The badRate to set.
        * @return This builder for chaining.
        */
-      public Builder setBadRate(int value) {
+      public Builder setBadRate(double value) {
 
         badRate_ = value;
         bitField0_ |= 0x00004000;
@@ -15462,12 +15472,12 @@ public final class ChatQualityOuterClass {
        * 较差比例
        * </pre>
        *
-       * <code>int32 bad_rate = 15;</code>
+       * <code>double bad_rate = 15;</code>
        * @return This builder for chaining.
        */
       public Builder clearBadRate() {
         bitField0_ = (bitField0_ & ~0x00004000);
-        badRate_ = 0;
+        badRate_ = 0D;
         onChanged();
         return this;
       }
@@ -15516,17 +15526,17 @@ public final class ChatQualityOuterClass {
         return this;
       }
 
-      private int normalRate_ ;
+      private double normalRate_ ;
       /**
        * <pre>
        * 正常比例
        * </pre>
        *
-       * <code>int32 normal_rate = 17;</code>
+       * <code>double normal_rate = 17;</code>
        * @return The normalRate.
        */
       @java.lang.Override
-      public int getNormalRate() {
+      public double getNormalRate() {
         return normalRate_;
       }
       /**
@@ -15534,11 +15544,11 @@ public final class ChatQualityOuterClass {
        * 正常比例
        * </pre>
        *
-       * <code>int32 normal_rate = 17;</code>
+       * <code>double normal_rate = 17;</code>
        * @param value The normalRate to set.
        * @return This builder for chaining.
        */
-      public Builder setNormalRate(int value) {
+      public Builder setNormalRate(double value) {
 
         normalRate_ = value;
         bitField0_ |= 0x00010000;
@@ -15550,12 +15560,12 @@ public final class ChatQualityOuterClass {
        * 正常比例
        * </pre>
        *
-       * <code>int32 normal_rate = 17;</code>
+       * <code>double normal_rate = 17;</code>
        * @return This builder for chaining.
        */
       public Builder clearNormalRate() {
         bitField0_ = (bitField0_ & ~0x00010000);
-        normalRate_ = 0;
+        normalRate_ = 0D;
         onChanged();
         return this;
       }
@@ -15604,17 +15614,17 @@ public final class ChatQualityOuterClass {
         return this;
       }
 
-      private int excellentRate_ ;
+      private double excellentRate_ ;
       /**
        * <pre>
        * 优异比例
        * </pre>
        *
-       * <code>int32 excellent_rate = 19;</code>
+       * <code>double excellent_rate = 19;</code>
        * @return The excellentRate.
        */
       @java.lang.Override
-      public int getExcellentRate() {
+      public double getExcellentRate() {
         return excellentRate_;
       }
       /**
@@ -15622,11 +15632,11 @@ public final class ChatQualityOuterClass {
        * 优异比例
        * </pre>
        *
-       * <code>int32 excellent_rate = 19;</code>
+       * <code>double excellent_rate = 19;</code>
        * @param value The excellentRate to set.
        * @return This builder for chaining.
        */
-      public Builder setExcellentRate(int value) {
+      public Builder setExcellentRate(double value) {
 
         excellentRate_ = value;
         bitField0_ |= 0x00040000;
@@ -15638,12 +15648,12 @@ public final class ChatQualityOuterClass {
        * 优异比例
        * </pre>
        *
-       * <code>int32 excellent_rate = 19;</code>
+       * <code>double excellent_rate = 19;</code>
        * @return This builder for chaining.
        */
       public Builder clearExcellentRate() {
         bitField0_ = (bitField0_ & ~0x00040000);
-        excellentRate_ = 0;
+        excellentRate_ = 0D;
         onChanged();
         return this;
       }
@@ -15692,17 +15702,17 @@ public final class ChatQualityOuterClass {
         return this;
       }
 
-      private int qualifiedRate_ ;
+      private double qualifiedRate_ ;
       /**
        * <pre>
        * 合格率
        * </pre>
        *
-       * <code>int32 qualified_rate = 21;</code>
+       * <code>double qualified_rate = 21;</code>
        * @return The qualifiedRate.
        */
       @java.lang.Override
-      public int getQualifiedRate() {
+      public double getQualifiedRate() {
         return qualifiedRate_;
       }
       /**
@@ -15710,11 +15720,11 @@ public final class ChatQualityOuterClass {
        * 合格率
        * </pre>
        *
-       * <code>int32 qualified_rate = 21;</code>
+       * <code>double qualified_rate = 21;</code>
        * @param value The qualifiedRate to set.
        * @return This builder for chaining.
        */
-      public Builder setQualifiedRate(int value) {
+      public Builder setQualifiedRate(double value) {
 
         qualifiedRate_ = value;
         bitField0_ |= 0x00100000;
@@ -15726,12 +15736,12 @@ public final class ChatQualityOuterClass {
        * 合格率
        * </pre>
        *
-       * <code>int32 qualified_rate = 21;</code>
+       * <code>double qualified_rate = 21;</code>
        * @return This builder for chaining.
        */
       public Builder clearQualifiedRate() {
         bitField0_ = (bitField0_ & ~0x00100000);
-        qualifiedRate_ = 0;
+        qualifiedRate_ = 0D;
         onChanged();
         return this;
       }
@@ -36323,11 +36333,11 @@ com.teneasyChat.api.core.ChatQualityOuterClass.WorkersMapUseBySearchEntityList d
       "\022\027\n\017must_check_rate\030\t \001(\005\022\032\n\022review_chec" +
       "k_count\030\n \001(\005\022\031\n\021review_check_rate\030\013 \001(\005" +
       "\022\026\n\016very_bad_count\030\014 \001(\005\022\025\n\rvery_bad_rat" +
-      "e\030\r \001(\005\022\021\n\tbad_count\030\016 \001(\005\022\020\n\010bad_rate\030\017" +
-      " \001(\005\022\024\n\014normal_count\030\020 \001(\005\022\023\n\013normal_rat" +
-      "e\030\021 \001(\005\022\027\n\017excellent_count\030\022 \001(\005\022\026\n\016exce" +
-      "llent_rate\030\023 \001(\005\022\027\n\017qualified_count\030\024 \001(" +
-      "\005\022\026\n\016qualified_rate\030\025 \001(\005\022\034\n\024total_check" +
+      "e\030\r \001(\001\022\021\n\tbad_count\030\016 \001(\005\022\020\n\010bad_rate\030\017" +
+      " \001(\001\022\024\n\014normal_count\030\020 \001(\005\022\023\n\013normal_rat" +
+      "e\030\021 \001(\001\022\027\n\017excellent_count\030\022 \001(\005\022\026\n\016exce" +
+      "llent_rate\030\023 \001(\001\022\027\n\017qualified_count\030\024 \001(" +
+      "\005\022\026\n\016qualified_rate\030\025 \001(\001\022\034\n\024total_check" +
       "_duration\030\026 \001(\t\022\032\n\022Avg_check_duration\030\027 " +
       "\001(\t\"\202\004\n\034QualityWorkerReportStatistic\022\032\n\022" +
       "check_worker_count\030\001 \001(\005\022\023\n\013check_count\030" +

@@ -1170,6 +1170,14 @@ public final class CWorker {
      * <code>ONLINE_STATE_AFK = 2;</code>
      */
     ONLINE_STATE_AFK(2),
+    /**
+     * <pre>
+     * 一键解绑
+     * </pre>
+     *
+     * <code>ONLINE_STATE_UNBIND_ALL = 3;</code>
+     */
+    ONLINE_STATE_UNBIND_ALL(3),
     UNRECOGNIZED(-1),
     ;
 
@@ -1206,6 +1214,14 @@ public final class CWorker {
      * <code>ONLINE_STATE_AFK = 2;</code>
      */
     public static final int ONLINE_STATE_AFK_VALUE = 2;
+    /**
+     * <pre>
+     * 一键解绑
+     * </pre>
+     *
+     * <code>ONLINE_STATE_UNBIND_ALL = 3;</code>
+     */
+    public static final int ONLINE_STATE_UNBIND_ALL_VALUE = 3;
 
 
     public final int getNumber() {
@@ -1235,6 +1251,7 @@ public final class CWorker {
         case 0: return ONLINE_STATE_IDLE;
         case 1: return ONLINE_STATE_BUSY;
         case 2: return ONLINE_STATE_AFK;
+        case 3: return ONLINE_STATE_UNBIND_ALL;
         default: return null;
       }
     }
@@ -4262,6 +4279,1128 @@ public final class CWorker {
 
   }
 
+  public interface WorkerBaseInfoOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:api.common.WorkerBaseInfo)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>int32 worker_id = 1;</code>
+     * @return The workerId.
+     */
+    int getWorkerId();
+
+    /**
+     * <code>string account = 2;</code>
+     * @return The account.
+     */
+    java.lang.String getAccount();
+    /**
+     * <code>string account = 2;</code>
+     * @return The bytes for account.
+     */
+    com.google.protobuf.ByteString
+        getAccountBytes();
+
+    /**
+     * <code>int32 perm_mask = 3;</code>
+     * @return The permMask.
+     */
+    int getPermMask();
+
+    /**
+     * <pre>
+     * 客服名
+     * </pre>
+     *
+     * <code>string name = 4;</code>
+     * @return The name.
+     */
+    java.lang.String getName();
+    /**
+     * <pre>
+     * 客服名
+     * </pre>
+     *
+     * <code>string name = 4;</code>
+     * @return The bytes for name.
+     */
+    com.google.protobuf.ByteString
+        getNameBytes();
+
+    /**
+     * <pre>
+     * 头像url
+     * </pre>
+     *
+     * <code>string avatar = 5;</code>
+     * @return The avatar.
+     */
+    java.lang.String getAvatar();
+    /**
+     * <pre>
+     * 头像url
+     * </pre>
+     *
+     * <code>string avatar = 5;</code>
+     * @return The bytes for avatar.
+     */
+    com.google.protobuf.ByteString
+        getAvatarBytes();
+
+    /**
+     * <pre>
+     * 商户ID
+     * </pre>
+     *
+     * <code>int32 tenant_id = 6;</code>
+     * @return The tenantId.
+     */
+    int getTenantId();
+  }
+  /**
+   * <pre>
+   * 返回全量商户下的客服基础信息列表
+   * </pre>
+   *
+   * Protobuf type {@code api.common.WorkerBaseInfo}
+   */
+  public static final class WorkerBaseInfo extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:api.common.WorkerBaseInfo)
+      WorkerBaseInfoOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 26,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        WorkerBaseInfo.class.getName());
+    }
+    // Use WorkerBaseInfo.newBuilder() to construct.
+    private WorkerBaseInfo(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private WorkerBaseInfo() {
+      account_ = "";
+      name_ = "";
+      avatar_ = "";
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.teneasyChat.api.common.CWorker.internal_static_api_common_WorkerBaseInfo_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.teneasyChat.api.common.CWorker.internal_static_api_common_WorkerBaseInfo_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.teneasyChat.api.common.CWorker.WorkerBaseInfo.class, com.teneasyChat.api.common.CWorker.WorkerBaseInfo.Builder.class);
+    }
+
+    public static final int WORKER_ID_FIELD_NUMBER = 1;
+    private int workerId_ = 0;
+    /**
+     * <code>int32 worker_id = 1;</code>
+     * @return The workerId.
+     */
+    @java.lang.Override
+    public int getWorkerId() {
+      return workerId_;
+    }
+
+    public static final int ACCOUNT_FIELD_NUMBER = 2;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object account_ = "";
+    /**
+     * <code>string account = 2;</code>
+     * @return The account.
+     */
+    @java.lang.Override
+    public java.lang.String getAccount() {
+      java.lang.Object ref = account_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        account_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string account = 2;</code>
+     * @return The bytes for account.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getAccountBytes() {
+      java.lang.Object ref = account_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        account_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PERM_MASK_FIELD_NUMBER = 3;
+    private int permMask_ = 0;
+    /**
+     * <code>int32 perm_mask = 3;</code>
+     * @return The permMask.
+     */
+    @java.lang.Override
+    public int getPermMask() {
+      return permMask_;
+    }
+
+    public static final int NAME_FIELD_NUMBER = 4;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object name_ = "";
+    /**
+     * <pre>
+     * 客服名
+     * </pre>
+     *
+     * <code>string name = 4;</code>
+     * @return The name.
+     */
+    @java.lang.Override
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * 客服名
+     * </pre>
+     *
+     * <code>string name = 4;</code>
+     * @return The bytes for name.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int AVATAR_FIELD_NUMBER = 5;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object avatar_ = "";
+    /**
+     * <pre>
+     * 头像url
+     * </pre>
+     *
+     * <code>string avatar = 5;</code>
+     * @return The avatar.
+     */
+    @java.lang.Override
+    public java.lang.String getAvatar() {
+      java.lang.Object ref = avatar_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        avatar_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * 头像url
+     * </pre>
+     *
+     * <code>string avatar = 5;</code>
+     * @return The bytes for avatar.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getAvatarBytes() {
+      java.lang.Object ref = avatar_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        avatar_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TENANT_ID_FIELD_NUMBER = 6;
+    private int tenantId_ = 0;
+    /**
+     * <pre>
+     * 商户ID
+     * </pre>
+     *
+     * <code>int32 tenant_id = 6;</code>
+     * @return The tenantId.
+     */
+    @java.lang.Override
+    public int getTenantId() {
+      return tenantId_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (workerId_ != 0) {
+        output.writeInt32(1, workerId_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(account_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 2, account_);
+      }
+      if (permMask_ != 0) {
+        output.writeInt32(3, permMask_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 4, name_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(avatar_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 5, avatar_);
+      }
+      if (tenantId_ != 0) {
+        output.writeInt32(6, tenantId_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (workerId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, workerId_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(account_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(2, account_);
+      }
+      if (permMask_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(3, permMask_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(4, name_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(avatar_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(5, avatar_);
+      }
+      if (tenantId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(6, tenantId_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.teneasyChat.api.common.CWorker.WorkerBaseInfo)) {
+        return super.equals(obj);
+      }
+      com.teneasyChat.api.common.CWorker.WorkerBaseInfo other = (com.teneasyChat.api.common.CWorker.WorkerBaseInfo) obj;
+
+      if (getWorkerId()
+          != other.getWorkerId()) return false;
+      if (!getAccount()
+          .equals(other.getAccount())) return false;
+      if (getPermMask()
+          != other.getPermMask()) return false;
+      if (!getName()
+          .equals(other.getName())) return false;
+      if (!getAvatar()
+          .equals(other.getAvatar())) return false;
+      if (getTenantId()
+          != other.getTenantId()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + WORKER_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getWorkerId();
+      hash = (37 * hash) + ACCOUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getAccount().hashCode();
+      hash = (37 * hash) + PERM_MASK_FIELD_NUMBER;
+      hash = (53 * hash) + getPermMask();
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+      hash = (37 * hash) + AVATAR_FIELD_NUMBER;
+      hash = (53 * hash) + getAvatar().hashCode();
+      hash = (37 * hash) + TENANT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getTenantId();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.teneasyChat.api.common.CWorker.WorkerBaseInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.common.CWorker.WorkerBaseInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.common.CWorker.WorkerBaseInfo parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.common.CWorker.WorkerBaseInfo parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.common.CWorker.WorkerBaseInfo parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.common.CWorker.WorkerBaseInfo parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.common.CWorker.WorkerBaseInfo parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.teneasyChat.api.common.CWorker.WorkerBaseInfo parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.teneasyChat.api.common.CWorker.WorkerBaseInfo parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.teneasyChat.api.common.CWorker.WorkerBaseInfo parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.teneasyChat.api.common.CWorker.WorkerBaseInfo parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.teneasyChat.api.common.CWorker.WorkerBaseInfo parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.teneasyChat.api.common.CWorker.WorkerBaseInfo prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * 返回全量商户下的客服基础信息列表
+     * </pre>
+     *
+     * Protobuf type {@code api.common.WorkerBaseInfo}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:api.common.WorkerBaseInfo)
+        com.teneasyChat.api.common.CWorker.WorkerBaseInfoOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.teneasyChat.api.common.CWorker.internal_static_api_common_WorkerBaseInfo_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.teneasyChat.api.common.CWorker.internal_static_api_common_WorkerBaseInfo_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.teneasyChat.api.common.CWorker.WorkerBaseInfo.class, com.teneasyChat.api.common.CWorker.WorkerBaseInfo.Builder.class);
+      }
+
+      // Construct using com.teneasyChat.api.common.CWorker.WorkerBaseInfo.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        workerId_ = 0;
+        account_ = "";
+        permMask_ = 0;
+        name_ = "";
+        avatar_ = "";
+        tenantId_ = 0;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.teneasyChat.api.common.CWorker.internal_static_api_common_WorkerBaseInfo_descriptor;
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.common.CWorker.WorkerBaseInfo getDefaultInstanceForType() {
+        return com.teneasyChat.api.common.CWorker.WorkerBaseInfo.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.common.CWorker.WorkerBaseInfo build() {
+        com.teneasyChat.api.common.CWorker.WorkerBaseInfo result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.common.CWorker.WorkerBaseInfo buildPartial() {
+        com.teneasyChat.api.common.CWorker.WorkerBaseInfo result = new com.teneasyChat.api.common.CWorker.WorkerBaseInfo(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.teneasyChat.api.common.CWorker.WorkerBaseInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.workerId_ = workerId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.account_ = account_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.permMask_ = permMask_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.name_ = name_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.avatar_ = avatar_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.tenantId_ = tenantId_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.teneasyChat.api.common.CWorker.WorkerBaseInfo) {
+          return mergeFrom((com.teneasyChat.api.common.CWorker.WorkerBaseInfo)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.teneasyChat.api.common.CWorker.WorkerBaseInfo other) {
+        if (other == com.teneasyChat.api.common.CWorker.WorkerBaseInfo.getDefaultInstance()) return this;
+        if (other.getWorkerId() != 0) {
+          setWorkerId(other.getWorkerId());
+        }
+        if (!other.getAccount().isEmpty()) {
+          account_ = other.account_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        if (other.getPermMask() != 0) {
+          setPermMask(other.getPermMask());
+        }
+        if (!other.getName().isEmpty()) {
+          name_ = other.name_;
+          bitField0_ |= 0x00000008;
+          onChanged();
+        }
+        if (!other.getAvatar().isEmpty()) {
+          avatar_ = other.avatar_;
+          bitField0_ |= 0x00000010;
+          onChanged();
+        }
+        if (other.getTenantId() != 0) {
+          setTenantId(other.getTenantId());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                workerId_ = input.readInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 18: {
+                account_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+              case 24: {
+                permMask_ = input.readInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 24
+              case 34: {
+                name_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 34
+              case 42: {
+                avatar_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 42
+              case 48: {
+                tenantId_ = input.readInt32();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 48
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private int workerId_ ;
+      /**
+       * <code>int32 worker_id = 1;</code>
+       * @return The workerId.
+       */
+      @java.lang.Override
+      public int getWorkerId() {
+        return workerId_;
+      }
+      /**
+       * <code>int32 worker_id = 1;</code>
+       * @param value The workerId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setWorkerId(int value) {
+
+        workerId_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 worker_id = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearWorkerId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        workerId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object account_ = "";
+      /**
+       * <code>string account = 2;</code>
+       * @return The account.
+       */
+      public java.lang.String getAccount() {
+        java.lang.Object ref = account_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          account_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string account = 2;</code>
+       * @return The bytes for account.
+       */
+      public com.google.protobuf.ByteString
+          getAccountBytes() {
+        java.lang.Object ref = account_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          account_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string account = 2;</code>
+       * @param value The account to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAccount(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        account_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string account = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAccount() {
+        account_ = getDefaultInstance().getAccount();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string account = 2;</code>
+       * @param value The bytes for account to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAccountBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        account_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      private int permMask_ ;
+      /**
+       * <code>int32 perm_mask = 3;</code>
+       * @return The permMask.
+       */
+      @java.lang.Override
+      public int getPermMask() {
+        return permMask_;
+      }
+      /**
+       * <code>int32 perm_mask = 3;</code>
+       * @param value The permMask to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPermMask(int value) {
+
+        permMask_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 perm_mask = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPermMask() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        permMask_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object name_ = "";
+      /**
+       * <pre>
+       * 客服名
+       * </pre>
+       *
+       * <code>string name = 4;</code>
+       * @return The name.
+       */
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          name_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * 客服名
+       * </pre>
+       *
+       * <code>string name = 4;</code>
+       * @return The bytes for name.
+       */
+      public com.google.protobuf.ByteString
+          getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * 客服名
+       * </pre>
+       *
+       * <code>string name = 4;</code>
+       * @param value The name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setName(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        name_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 客服名
+       * </pre>
+       *
+       * <code>string name = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearName() {
+        name_ = getDefaultInstance().getName();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 客服名
+       * </pre>
+       *
+       * <code>string name = 4;</code>
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        name_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object avatar_ = "";
+      /**
+       * <pre>
+       * 头像url
+       * </pre>
+       *
+       * <code>string avatar = 5;</code>
+       * @return The avatar.
+       */
+      public java.lang.String getAvatar() {
+        java.lang.Object ref = avatar_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          avatar_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * 头像url
+       * </pre>
+       *
+       * <code>string avatar = 5;</code>
+       * @return The bytes for avatar.
+       */
+      public com.google.protobuf.ByteString
+          getAvatarBytes() {
+        java.lang.Object ref = avatar_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          avatar_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * 头像url
+       * </pre>
+       *
+       * <code>string avatar = 5;</code>
+       * @param value The avatar to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAvatar(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        avatar_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 头像url
+       * </pre>
+       *
+       * <code>string avatar = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAvatar() {
+        avatar_ = getDefaultInstance().getAvatar();
+        bitField0_ = (bitField0_ & ~0x00000010);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 头像url
+       * </pre>
+       *
+       * <code>string avatar = 5;</code>
+       * @param value The bytes for avatar to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAvatarBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        avatar_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+
+      private int tenantId_ ;
+      /**
+       * <pre>
+       * 商户ID
+       * </pre>
+       *
+       * <code>int32 tenant_id = 6;</code>
+       * @return The tenantId.
+       */
+      @java.lang.Override
+      public int getTenantId() {
+        return tenantId_;
+      }
+      /**
+       * <pre>
+       * 商户ID
+       * </pre>
+       *
+       * <code>int32 tenant_id = 6;</code>
+       * @param value The tenantId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTenantId(int value) {
+
+        tenantId_ = value;
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 商户ID
+       * </pre>
+       *
+       * <code>int32 tenant_id = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTenantId() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        tenantId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:api.common.WorkerBaseInfo)
+    }
+
+    // @@protoc_insertion_point(class_scope:api.common.WorkerBaseInfo)
+    private static final com.teneasyChat.api.common.CWorker.WorkerBaseInfo DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.teneasyChat.api.common.CWorker.WorkerBaseInfo();
+    }
+
+    public static com.teneasyChat.api.common.CWorker.WorkerBaseInfo getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<WorkerBaseInfo>
+        PARSER = new com.google.protobuf.AbstractParser<WorkerBaseInfo>() {
+      @java.lang.Override
+      public WorkerBaseInfo parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<WorkerBaseInfo> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<WorkerBaseInfo> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.teneasyChat.api.common.CWorker.WorkerBaseInfo getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface WorkerOrBuilder extends
       // @@protoc_insertion_point(interface_extends:api.common.Worker)
       com.google.protobuf.MessageOrBuilder {
@@ -4792,6 +5931,16 @@ public final class CWorker {
      */
     com.google.protobuf.ByteString
         getMenuItemsBytes(int index);
+
+    /**
+     * <pre>
+     * 客服监控状态
+     * </pre>
+     *
+     * <code>bool is_monitored = 25;</code>
+     * @return The isMonitored.
+     */
+    boolean getIsMonitored();
   }
   /**
    * Protobuf type {@code api.common.Worker}
@@ -5742,6 +6891,21 @@ public final class CWorker {
       return menuItems_.getByteString(index);
     }
 
+    public static final int IS_MONITORED_FIELD_NUMBER = 25;
+    private boolean isMonitored_ = false;
+    /**
+     * <pre>
+     * 客服监控状态
+     * </pre>
+     *
+     * <code>bool is_monitored = 25;</code>
+     * @return The isMonitored.
+     */
+    @java.lang.Override
+    public boolean getIsMonitored() {
+      return isMonitored_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -5832,6 +6996,9 @@ public final class CWorker {
       }
       for (int i = 0; i < menuItems_.size(); i++) {
         com.google.protobuf.GeneratedMessage.writeString(output, 24, menuItems_.getRaw(i));
+      }
+      if (isMonitored_ != false) {
+        output.writeBool(25, isMonitored_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -5948,6 +7115,10 @@ public final class CWorker {
         size += dataSize;
         size += 2 * getMenuItemsList().size();
       }
+      if (isMonitored_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(25, isMonitored_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -6017,6 +7188,8 @@ public final class CWorker {
           .equals(other.getRoutesItemsList())) return false;
       if (!getMenuItemsList()
           .equals(other.getMenuItemsList())) return false;
+      if (getIsMonitored()
+          != other.getIsMonitored()) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -6093,6 +7266,9 @@ public final class CWorker {
         hash = (37 * hash) + MENUITEMS_FIELD_NUMBER;
         hash = (53 * hash) + getMenuItemsList().hashCode();
       }
+      hash = (37 * hash) + IS_MONITORED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsMonitored());
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -6284,6 +7460,7 @@ public final class CWorker {
             com.google.protobuf.LazyStringArrayList.emptyList();
         menuItems_ =
             com.google.protobuf.LazyStringArrayList.emptyList();
+        isMonitored_ = false;
         return this;
       }
 
@@ -6417,6 +7594,9 @@ public final class CWorker {
         if (((from_bitField0_ & 0x00800000) != 0)) {
           menuItems_.makeImmutable();
           result.menuItems_ = menuItems_;
+        }
+        if (((from_bitField0_ & 0x01000000) != 0)) {
+          result.isMonitored_ = isMonitored_;
         }
         result.bitField0_ |= to_bitField0_;
       }
@@ -6588,6 +7768,9 @@ public final class CWorker {
             menuItems_.addAll(other.menuItems_);
           }
           onChanged();
+        }
+        if (other.getIsMonitored() != false) {
+          setIsMonitored(other.getIsMonitored());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -6770,6 +7953,11 @@ public final class CWorker {
                 menuItems_.add(s);
                 break;
               } // case 194
+              case 200: {
+                isMonitored_ = input.readBool();
+                bitField0_ |= 0x01000000;
+                break;
+              } // case 200
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -9407,6 +10595,50 @@ public final class CWorker {
         ensureMenuItemsIsMutable();
         menuItems_.add(value);
         bitField0_ |= 0x00800000;
+        onChanged();
+        return this;
+      }
+
+      private boolean isMonitored_ ;
+      /**
+       * <pre>
+       * 客服监控状态
+       * </pre>
+       *
+       * <code>bool is_monitored = 25;</code>
+       * @return The isMonitored.
+       */
+      @java.lang.Override
+      public boolean getIsMonitored() {
+        return isMonitored_;
+      }
+      /**
+       * <pre>
+       * 客服监控状态
+       * </pre>
+       *
+       * <code>bool is_monitored = 25;</code>
+       * @param value The isMonitored to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsMonitored(boolean value) {
+
+        isMonitored_ = value;
+        bitField0_ |= 0x01000000;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 客服监控状态
+       * </pre>
+       *
+       * <code>bool is_monitored = 25;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIsMonitored() {
+        bitField0_ = (bitField0_ & ~0x01000000);
+        isMonitored_ = false;
         onChanged();
         return this;
       }
@@ -25145,6 +26377,11 @@ public final class CWorker {
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_api_common_WorkerEvent_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_api_common_WorkerBaseInfo_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_api_common_WorkerBaseInfo_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_api_common_Worker_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -25220,142 +26457,147 @@ public final class CWorker {
       "\tworker_id\030\002 \001(\005\022\021\n\tsocket_id\030\003 \001(\004\022\022\n\ng" +
       "ateway_id\030\006 \001(\005\022/\n\nevent_type\030\004 \001(\0162\033.ap" +
       "i.common.WorkerEventType\022\022\n\nevent_code\030\005" +
-      " \001(\005\"\252\005\n\006Worker\022\021\n\tworker_id\030\001 \001(\005\022\017\n\007ac" +
-      "count\030\002 \001(\t\022&\n\005group\030\003 \003(\0132\027.api.common." +
-      "WorkerGroup\022\021\n\tperm_mask\030\004 \001(\005\022\014\n\004name\030\005" +
-      " \001(\t\022\016\n\006avatar\030\006 \001(\t\022-\n\014online_state\030\007 \001" +
-      "(\0162\027.api.common.OnlineState\022\020\n\010password\030" +
-      "\010 \001(\t\022/\n\rconnect_state\030\t \001(\0162\030.api.commo" +
-      "n.ConnectState\022\021\n\ttenant_id\030\n \001(\005\022\024\n\014wor" +
-      "ker_nimid\030\013 \001(\t\022\031\n\021worker_nimsession\030\014 \001" +
-      "(\t\022\020\n\010bneednim\030\r \001(\010\022,\n\013group_child\030\016 \003(" +
-      "\0132\027.api.common.WorkerGroup\022\014\n\004tips\030\017 \001(\t" +
-      "\022\023\n\013consult_ids\030\020 \003(\r\022-\n\tdelete_at\030\021 \001(\013" +
-      "2\032.google.protobuf.Timestamp\022-\n\tcreate_a" +
-      "t\030\022 \001(\0132\032.google.protobuf.Timestamp\022-\n\tu" +
-      "pdate_at\030\023 \001(\0132\032.google.protobuf.Timesta" +
-      "mp\0221\n\016disable_status\030\024 \001(\0162\031.api.common." +
-      "DisableStatus\022\017\n\007role_id\030\025 \001(\005\022\021\n\trole_n" +
-      "ame\030\026 \001(\t\022\023\n\013routesItems\030\027 \003(\t\022\021\n\tmenuIt" +
-      "ems\030\030 \003(\t\"\352\001\n\013WorkerGroup\022\n\n\002id\030\001 \001(\003\022\014\n" +
-      "\004name\030\002 \001(\t\022\020\n\010priority\030\003 \001(\005\022\r\n\005count\030\004" +
-      " \001(\005\022\020\n\010parentId\030\005 \001(\003\022\030\n\005ratio\030\006 \001(\005B\t\372" +
-      "B\006\032\004\030d(\000\022\022\n\nconsult_id\030\007 \001(\r\022-\n\tdelete_a" +
-      "t\030\010 \001(\0132\032.google.protobuf.Timestamp\0221\n\016d" +
-      "isable_status\030\t \001(\0162\031.api.common.Disable" +
-      "Status\":\n\014Distribution\022\n\n\002id\030\001 \001(\003\022\014\n\004na" +
-      "me\030\002 \001(\t\022\020\n\010priority\030\003 \001(\005\":\n\014TenantCliq" +
-      "ue\022\n\n\002id\030\001 \001(\005\022\014\n\004name\030\002 \001(\t\022\020\n\010priority" +
-      "\030\003 \001(\005\"\314\002\n\020ApplyWorkerState\022\n\n\002id\030\001 \001(\005\022" +
-      "\021\n\ttenant_id\030\002 \001(\005\022\021\n\tworker_id\030\003 \001(\005\022\014\n" +
-      "\004name\030\004 \001(\t\022\031\n\021worker_group_name\030\005 \001(\t\022\037" +
-      "\n\027worker_group_child_name\030\006 \001(\t\0221\n\020onlin" +
-      "e_state_now\030\007 \001(\0162\027.api.common.OnlineSta" +
-      "te\0223\n\022online_state_apply\030\010 \001(\0162\027.api.com" +
-      "mon.OnlineState\022\023\n\013apply_state\030\t \001(\005\022\022\n\n" +
-      "apply_time\030\n \001(\003\022\022\n\ncheck_time\030\013 \001(\003\022\027\n\017" +
-      "update_username\030\014 \001(\t\"\235\005\n\024WorkerQualityS" +
-      "ession\022\n\n\002id\030\001 \001(\003\022\032\n\022binding_session_id" +
-      "\030\002 \001(\003\022\021\n\ttenant_id\030\003 \001(\005\022\022\n\nconsult_id\030" +
-      "\004 \001(\r\022\021\n\tworker_id\030\005 \001(\005\022\013\n\003uid\030\006 \001(\005\022\021\n" +
-      "\tuser_role\030\007 \001(\005\022\022\n\nuser_level\030\010 \001(\005\022/\n\n" +
-      "check_type\030\t \001(\0162\033.api.common.WorkerChec" +
-      "kType\022\027\n\017first_send_time\030\n \001(\005\022\030\n\020first_" +
-      "reply_time\030\013 \001(\005\022\030\n\020service_duration\030\014 \001" +
-      "(\005\022!\n\031client_send_message_count\030\r \001(\005\022!\n" +
-      "\031worker_send_message_count\030\016 \001(\005\022.\n\ncrea" +
-      "ted_at\030\017 \001(\0132\032.google.protobuf.Timestamp" +
-      "\022\027\n\017score_worker_id\030\020 \001(\005\022/\n\nscore_type\030" +
-      "\021 \001(\0162\033.api.common.WorkerScoreType\022.\n\nsc" +
-      "ore_time\030\022 \001(\0132\032.google.protobuf.Timesta" +
-      "mp\022\030\n\020review_worker_id\030\023 \001(\005\0226\n\021review_s" +
-      "core_type\030\024 \001(\0162\033.api.common.WorkerScore" +
-      "Type\022/\n\013review_time\030\025 \001(\0132\032.google.proto" +
-      "buf.Timestamp\"\256\002\n\013WorkerRoute\022\n\n\002id\030\001 \001(" +
-      "\005\022\014\n\004name\030\002 \001(\t\022\013\n\003url\030\003 \001(\t\022\013\n\003pid\030\004 \001(" +
-      "\005\022\014\n\004sort\030\005 \001(\005\022\016\n\006remark\030\006 \001(\t\022-\n\trole_" +
-      "type\030\007 \001(\0162\032.api.common.WorkerRoleType\022-" +
-      "\n\tcreate_at\030\010 \001(\0132\032.google.protobuf.Time" +
-      "stamp\022-\n\tupdate_at\030\t \001(\0132\032.google.protob" +
-      "uf.Timestamp\022-\n\rbindingStatus\030\n \001(\0162\026.ap" +
-      "i.common.BindStatus\022\021\n\tshow_type\030\013 \001(\005\"\242" +
-      "\001\n\nWorkerRole\022\n\n\002id\030\001 \001(\005\022\014\n\004name\030\002 \001(\t\022" +
-      "\014\n\004sort\030\003 \001(\005\022\016\n\006remark\030\004 \001(\t\022-\n\tcreate_" +
-      "at\030\005 \001(\0132\032.google.protobuf.Timestamp\022-\n\t" +
-      "update_at\030\006 \001(\0132\032.google.protobuf.Timest" +
-      "amp\"4\n\017WorkerRoleRoute\022\017\n\007role_id\030\001 \001(\005\022" +
-      "\020\n\010route_id\030\002 \001(\005\"\311\001\n\025WorkerRouteTypeRou" +
-      "tes\022-\n\trole_type\030\001 \001(\0162\032.api.common.Work" +
-      "erRoleType\022\026\n\016role_type_name\030\002 \001(\t\022-\n\rbi" +
-      "ndingStatus\030\003 \001(\0162\026.api.common.BindStatu" +
-      "s\022:\n\020route_with_items\030\004 \003(\0132 .api.common" +
-      ".WorkerRouteWithItems\"\356\001\n\024WorkerRouteWit" +
-      "hItems\022\n\n\002id\030\001 \001(\005\022\014\n\004name\030\002 \001(\t\022\013\n\003url\030" +
-      "\003 \001(\t\022\013\n\003pid\030\004 \001(\005\022\014\n\004sort\030\005 \001(\005\022\016\n\006rema" +
-      "rk\030\006 \001(\t\022-\n\trole_type\030\007 \001(\0162\032.api.common" +
-      ".WorkerRoleType\022-\n\rbindingStatus\030\010 \001(\0162\026" +
-      ".api.common.BindStatus\022&\n\005items\030\t \003(\0132\027." +
-      "api.common.WorkerRoute\"\200\001\n\nDeviceInfo\022\017\n" +
-      "\007os_type\030\001 \001(\t\022\022\n\nos_version\030\002 \001(\t\022\014\n\004ar" +
-      "ch\030\003 \001(\t\022\026\n\016kernel_version\030\004 \001(\t\022\021\n\tcpu_" +
-      "cores\030\005 \001(\005\022\024\n\014total_memory\030\006 \001(\005*\241\001\n\024Re" +
-      "sponseDurationType\022\017\n\013RDT_UNKNOWN\020\000\022\026\n\022R" +
-      "DT_QUICK_RESPONSE\020\001\022\026\n\022RDT_SHORT_RESPONS" +
-      "E\020\002\022\027\n\023RDT_MEDIUM_RESPONSE\020\003\022\025\n\021RDT_LONG" +
-      "_RESPONSE\020\004\022\030\n\024RDT_DELAYED_RESPONSE\020\005*u\n" +
-      "\031FirstResponseDurationType\022\017\n\013RRT_UNKNOW" +
-      "N\020\000\022\026\n\022RRT_QUICK_RESPONSE\020\001\022\026\n\022RRT_SHORT" +
-      "_RESPONSE\020\002\022\027\n\023RRT_MEDIUM_RESPONSE\020\003*G\n\014" +
-      "TransferType\022\016\n\nTT_UNKNOWN\020\000\022\022\n\016TT_TRANS" +
-      "FER_IN\020\001\022\023\n\017TT_TRANSFER_OUT\020\002*y\n\020Distrib" +
-      "utionType\022\030\n\024DISTRIBUTION_LEISURE\020\000\022\025\n\021D" +
-      "ISTRIBUTION_BUSY\020\001\022\030\n\024DISTRIBUTION_OFFLI" +
-      "NE\020\002\022\032\n\026DISTRIBUTION_NOT_LOGIN\020\003*\336\002\n\020Wor" +
-      "kerPermission\022\024\n\020WORKER_PERM_NONE\020\000\022\023\n\017W" +
-      "ORKER_PERM_TOP\020\001\022\025\n\021WORKER_PERM_ADMIN\020\002\022" +
-      "\026\n\022WORKER_PERM_LEADER\020\004\022\027\n\023WORKER_PERM_F" +
-      "RONTER\020\010\022\030\n\024WORKER_PERM_TRANSFER\020\020\022\030\n\024WO" +
-      "RKER_PERM_SEARCHER\020 \022\027\n\023WORKER_PERM_Qual" +
-      "ity\020@\022\037\n\032WORKER_PERM_Quality_Result\020\200\001\022\037" +
-      "\n\032WORKER_PERM_Quality_Report\020\200\002\022&\n!WORKE" +
-      "R_PERM_Quality_Worker_Result\020\200\004\022 \n\033WORKE" +
-      "R_PERM_Quality_Setting\020\200\010*C\n\014ConnectStat" +
-      "e\022\031\n\025CONNECT_STATE_OFFLINE\020\000\022\030\n\024CONNECT_" +
-      "STATE_ONLINE\020\001*Q\n\013OnlineState\022\025\n\021ONLINE_" +
-      "STATE_IDLE\020\000\022\025\n\021ONLINE_STATE_BUSY\020\001\022\024\n\020O" +
-      "NLINE_STATE_AFK\020\002*U\n\013WorkerState\022\022\n\016WORK" +
-      "ER_OFFLINE\020\000\022\020\n\014WORKER_READY\020\001\022\017\n\013WORKER" +
-      "_BUSY\020\002\022\017\n\013WORKER_LOST\020\003*\240\001\n\017WorkerEvent" +
-      "Type\022\027\n\023WORKER_EVENT_ONLINE\020\000\022\025\n\021WORKER_" +
-      "EVENT_PING\020\001\022\026\n\022WORKER_EVENT_ERROR\020\002\022\025\n\021" +
-      "WORKER_EVENT_AWAY\020\003\022\025\n\021WORKER_EVENT_BUSY" +
-      "\020\004\022\027\n\023WORKER_EVENT_LOGOUT\020\005*F\n\021SessionSo" +
-      "urceType\022\017\n\013SST_UNKNOWN\020\000\022\016\n\nSST_ASSIGN\020" +
-      "\001\022\020\n\014SST_TRANSFER\020\002*A\n\017WorkerCheckType\022\016" +
-      "\n\nWQT_COMMON\020\000\022\014\n\010WQT_MUST\020\001\022\020\n\014WQT_COMB" +
-      "INED\020\002*d\n\017WorkerScoreType\022\017\n\013WST_UNKNOWN" +
-      "\020\000\022\017\n\013PWST_ERFECT\020\001\022\016\n\nWST_NORMAL\020\002\022\014\n\010W" +
-      "ST_POOR\020\003\022\021\n\rWST_VERY_POOR\020\004*O\n\017CheckVie" +
-      "wSource\022\031\n\025WORKER_QUALITY_SOURCE\020\000\022!\n\035QU" +
-      "ALITY_WORKER_SESSION_SOURCE\020\001*N\n\022Session" +
-      "ScoreStatus\022\017\n\013SSS_UNKNOWN\020\000\022\021\n\rSSS_NOT_" +
-      "SCORE\020\001\022\024\n\020SSS_FINISH_SCORE\020\002*\207\001\n\rThresh" +
-      "oldType\022\030\n\024serve_time_threshold\020\000\022\037\n\033cus" +
-      "tomer_messages_threshold\020\001\022\035\n\031worker_mes" +
-      "sages_threshold\020\002\022\034\n\030total_messages_thre" +
-      "shold\020\003*I\n\026ChatQACheckSettingType\022\017\n\013Nor" +
-      "malCheck\020\000\022\r\n\tMustCheck\020\001\022\017\n\013CollabCheck" +
-      "\020\002*\327\001\n\035WorkerQualitySessionSortField\022\031\n\025" +
-      "QualitySessionDefault\020\000\022\022\n\016SortByChatTim" +
-      "e\020\001\022\026\n\022SortByUserMsgCount\020\002\022\030\n\024SortByWor" +
-      "kerMsgCount\020\003\022\031\n\025SortByQualityDuration\020\004" +
-      "\022\017\n\013SortByScore\020\005\022\025\n\021SortByQualityTime\020\006" +
-      "\022\022\n\016SortByPushTime\020\007*A\n\016WorkerRoleType\022\017" +
-      "\n\013WRT_DEFAULT\020\000\022\r\n\tWRT_ADMIN\020\001\022\017\n\013WRT_FR" +
-      "ONTER\020\002*N\n\027WorkerRouteSelectStatus\022\022\n\016SE" +
-      "LECT_DEFAULT\020\000\022\017\n\013SELECT_PART\020\001\022\016\n\nSELEC" +
-      "T_ALL\020\002B3\n\032com.teneasyChat.api.commonZ\025w" +
-      "cs/api/common;commonb\006proto3"
+      " \001(\005\"x\n\016WorkerBaseInfo\022\021\n\tworker_id\030\001 \001(" +
+      "\005\022\017\n\007account\030\002 \001(\t\022\021\n\tperm_mask\030\003 \001(\005\022\014\n" +
+      "\004name\030\004 \001(\t\022\016\n\006avatar\030\005 \001(\t\022\021\n\ttenant_id" +
+      "\030\006 \001(\005\"\300\005\n\006Worker\022\021\n\tworker_id\030\001 \001(\005\022\017\n\007" +
+      "account\030\002 \001(\t\022&\n\005group\030\003 \003(\0132\027.api.commo" +
+      "n.WorkerGroup\022\021\n\tperm_mask\030\004 \001(\005\022\014\n\004name" +
+      "\030\005 \001(\t\022\016\n\006avatar\030\006 \001(\t\022-\n\014online_state\030\007" +
+      " \001(\0162\027.api.common.OnlineState\022\020\n\010passwor" +
+      "d\030\010 \001(\t\022/\n\rconnect_state\030\t \001(\0162\030.api.com" +
+      "mon.ConnectState\022\021\n\ttenant_id\030\n \001(\005\022\024\n\014w" +
+      "orker_nimid\030\013 \001(\t\022\031\n\021worker_nimsession\030\014" +
+      " \001(\t\022\020\n\010bneednim\030\r \001(\010\022,\n\013group_child\030\016 " +
+      "\003(\0132\027.api.common.WorkerGroup\022\014\n\004tips\030\017 \001" +
+      "(\t\022\023\n\013consult_ids\030\020 \003(\r\022-\n\tdelete_at\030\021 \001" +
+      "(\0132\032.google.protobuf.Timestamp\022-\n\tcreate" +
+      "_at\030\022 \001(\0132\032.google.protobuf.Timestamp\022-\n" +
+      "\tupdate_at\030\023 \001(\0132\032.google.protobuf.Times" +
+      "tamp\0221\n\016disable_status\030\024 \001(\0162\031.api.commo" +
+      "n.DisableStatus\022\017\n\007role_id\030\025 \001(\005\022\021\n\trole" +
+      "_name\030\026 \001(\t\022\023\n\013routesItems\030\027 \003(\t\022\021\n\tmenu" +
+      "Items\030\030 \003(\t\022\024\n\014is_monitored\030\031 \001(\010\"\352\001\n\013Wo" +
+      "rkerGroup\022\n\n\002id\030\001 \001(\003\022\014\n\004name\030\002 \001(\t\022\020\n\010p" +
+      "riority\030\003 \001(\005\022\r\n\005count\030\004 \001(\005\022\020\n\010parentId" +
+      "\030\005 \001(\003\022\030\n\005ratio\030\006 \001(\005B\t\372B\006\032\004\030d(\000\022\022\n\ncons" +
+      "ult_id\030\007 \001(\r\022-\n\tdelete_at\030\010 \001(\0132\032.google" +
+      ".protobuf.Timestamp\0221\n\016disable_status\030\t " +
+      "\001(\0162\031.api.common.DisableStatus\":\n\014Distri" +
+      "bution\022\n\n\002id\030\001 \001(\003\022\014\n\004name\030\002 \001(\t\022\020\n\010prio" +
+      "rity\030\003 \001(\005\":\n\014TenantClique\022\n\n\002id\030\001 \001(\005\022\014" +
+      "\n\004name\030\002 \001(\t\022\020\n\010priority\030\003 \001(\005\"\314\002\n\020Apply" +
+      "WorkerState\022\n\n\002id\030\001 \001(\005\022\021\n\ttenant_id\030\002 \001" +
+      "(\005\022\021\n\tworker_id\030\003 \001(\005\022\014\n\004name\030\004 \001(\t\022\031\n\021w" +
+      "orker_group_name\030\005 \001(\t\022\037\n\027worker_group_c" +
+      "hild_name\030\006 \001(\t\0221\n\020online_state_now\030\007 \001(" +
+      "\0162\027.api.common.OnlineState\0223\n\022online_sta" +
+      "te_apply\030\010 \001(\0162\027.api.common.OnlineState\022" +
+      "\023\n\013apply_state\030\t \001(\005\022\022\n\napply_time\030\n \001(\003" +
+      "\022\022\n\ncheck_time\030\013 \001(\003\022\027\n\017update_username\030" +
+      "\014 \001(\t\"\235\005\n\024WorkerQualitySession\022\n\n\002id\030\001 \001" +
+      "(\003\022\032\n\022binding_session_id\030\002 \001(\003\022\021\n\ttenant" +
+      "_id\030\003 \001(\005\022\022\n\nconsult_id\030\004 \001(\r\022\021\n\tworker_" +
+      "id\030\005 \001(\005\022\013\n\003uid\030\006 \001(\005\022\021\n\tuser_role\030\007 \001(\005" +
+      "\022\022\n\nuser_level\030\010 \001(\005\022/\n\ncheck_type\030\t \001(\016" +
+      "2\033.api.common.WorkerCheckType\022\027\n\017first_s" +
+      "end_time\030\n \001(\005\022\030\n\020first_reply_time\030\013 \001(\005" +
+      "\022\030\n\020service_duration\030\014 \001(\005\022!\n\031client_sen" +
+      "d_message_count\030\r \001(\005\022!\n\031worker_send_mes" +
+      "sage_count\030\016 \001(\005\022.\n\ncreated_at\030\017 \001(\0132\032.g" +
+      "oogle.protobuf.Timestamp\022\027\n\017score_worker" +
+      "_id\030\020 \001(\005\022/\n\nscore_type\030\021 \001(\0162\033.api.comm" +
+      "on.WorkerScoreType\022.\n\nscore_time\030\022 \001(\0132\032" +
+      ".google.protobuf.Timestamp\022\030\n\020review_wor" +
+      "ker_id\030\023 \001(\005\0226\n\021review_score_type\030\024 \001(\0162" +
+      "\033.api.common.WorkerScoreType\022/\n\013review_t" +
+      "ime\030\025 \001(\0132\032.google.protobuf.Timestamp\"\256\002" +
+      "\n\013WorkerRoute\022\n\n\002id\030\001 \001(\005\022\014\n\004name\030\002 \001(\t\022" +
+      "\013\n\003url\030\003 \001(\t\022\013\n\003pid\030\004 \001(\005\022\014\n\004sort\030\005 \001(\005\022" +
+      "\016\n\006remark\030\006 \001(\t\022-\n\trole_type\030\007 \001(\0162\032.api" +
+      ".common.WorkerRoleType\022-\n\tcreate_at\030\010 \001(" +
+      "\0132\032.google.protobuf.Timestamp\022-\n\tupdate_" +
+      "at\030\t \001(\0132\032.google.protobuf.Timestamp\022-\n\r" +
+      "bindingStatus\030\n \001(\0162\026.api.common.BindSta" +
+      "tus\022\021\n\tshow_type\030\013 \001(\005\"\242\001\n\nWorkerRole\022\n\n" +
+      "\002id\030\001 \001(\005\022\014\n\004name\030\002 \001(\t\022\014\n\004sort\030\003 \001(\005\022\016\n" +
+      "\006remark\030\004 \001(\t\022-\n\tcreate_at\030\005 \001(\0132\032.googl" +
+      "e.protobuf.Timestamp\022-\n\tupdate_at\030\006 \001(\0132" +
+      "\032.google.protobuf.Timestamp\"4\n\017WorkerRol" +
+      "eRoute\022\017\n\007role_id\030\001 \001(\005\022\020\n\010route_id\030\002 \001(" +
+      "\005\"\311\001\n\025WorkerRouteTypeRoutes\022-\n\trole_type" +
+      "\030\001 \001(\0162\032.api.common.WorkerRoleType\022\026\n\016ro" +
+      "le_type_name\030\002 \001(\t\022-\n\rbindingStatus\030\003 \001(" +
+      "\0162\026.api.common.BindStatus\022:\n\020route_with_" +
+      "items\030\004 \003(\0132 .api.common.WorkerRouteWith" +
+      "Items\"\356\001\n\024WorkerRouteWithItems\022\n\n\002id\030\001 \001" +
+      "(\005\022\014\n\004name\030\002 \001(\t\022\013\n\003url\030\003 \001(\t\022\013\n\003pid\030\004 \001" +
+      "(\005\022\014\n\004sort\030\005 \001(\005\022\016\n\006remark\030\006 \001(\t\022-\n\trole" +
+      "_type\030\007 \001(\0162\032.api.common.WorkerRoleType\022" +
+      "-\n\rbindingStatus\030\010 \001(\0162\026.api.common.Bind" +
+      "Status\022&\n\005items\030\t \003(\0132\027.api.common.Worke" +
+      "rRoute\"\200\001\n\nDeviceInfo\022\017\n\007os_type\030\001 \001(\t\022\022" +
+      "\n\nos_version\030\002 \001(\t\022\014\n\004arch\030\003 \001(\t\022\026\n\016kern" +
+      "el_version\030\004 \001(\t\022\021\n\tcpu_cores\030\005 \001(\005\022\024\n\014t" +
+      "otal_memory\030\006 \001(\005*\241\001\n\024ResponseDurationTy" +
+      "pe\022\017\n\013RDT_UNKNOWN\020\000\022\026\n\022RDT_QUICK_RESPONS" +
+      "E\020\001\022\026\n\022RDT_SHORT_RESPONSE\020\002\022\027\n\023RDT_MEDIU" +
+      "M_RESPONSE\020\003\022\025\n\021RDT_LONG_RESPONSE\020\004\022\030\n\024R" +
+      "DT_DELAYED_RESPONSE\020\005*u\n\031FirstResponseDu" +
+      "rationType\022\017\n\013RRT_UNKNOWN\020\000\022\026\n\022RRT_QUICK" +
+      "_RESPONSE\020\001\022\026\n\022RRT_SHORT_RESPONSE\020\002\022\027\n\023R" +
+      "RT_MEDIUM_RESPONSE\020\003*G\n\014TransferType\022\016\n\n" +
+      "TT_UNKNOWN\020\000\022\022\n\016TT_TRANSFER_IN\020\001\022\023\n\017TT_T" +
+      "RANSFER_OUT\020\002*y\n\020DistributionType\022\030\n\024DIS" +
+      "TRIBUTION_LEISURE\020\000\022\025\n\021DISTRIBUTION_BUSY" +
+      "\020\001\022\030\n\024DISTRIBUTION_OFFLINE\020\002\022\032\n\026DISTRIBU" +
+      "TION_NOT_LOGIN\020\003*\336\002\n\020WorkerPermission\022\024\n" +
+      "\020WORKER_PERM_NONE\020\000\022\023\n\017WORKER_PERM_TOP\020\001" +
+      "\022\025\n\021WORKER_PERM_ADMIN\020\002\022\026\n\022WORKER_PERM_L" +
+      "EADER\020\004\022\027\n\023WORKER_PERM_FRONTER\020\010\022\030\n\024WORK" +
+      "ER_PERM_TRANSFER\020\020\022\030\n\024WORKER_PERM_SEARCH" +
+      "ER\020 \022\027\n\023WORKER_PERM_Quality\020@\022\037\n\032WORKER_" +
+      "PERM_Quality_Result\020\200\001\022\037\n\032WORKER_PERM_Qu" +
+      "ality_Report\020\200\002\022&\n!WORKER_PERM_Quality_W" +
+      "orker_Result\020\200\004\022 \n\033WORKER_PERM_Quality_S" +
+      "etting\020\200\010*C\n\014ConnectState\022\031\n\025CONNECT_STA" +
+      "TE_OFFLINE\020\000\022\030\n\024CONNECT_STATE_ONLINE\020\001*n" +
+      "\n\013OnlineState\022\025\n\021ONLINE_STATE_IDLE\020\000\022\025\n\021" +
+      "ONLINE_STATE_BUSY\020\001\022\024\n\020ONLINE_STATE_AFK\020" +
+      "\002\022\033\n\027ONLINE_STATE_UNBIND_ALL\020\003*U\n\013Worker" +
+      "State\022\022\n\016WORKER_OFFLINE\020\000\022\020\n\014WORKER_READ" +
+      "Y\020\001\022\017\n\013WORKER_BUSY\020\002\022\017\n\013WORKER_LOST\020\003*\240\001" +
+      "\n\017WorkerEventType\022\027\n\023WORKER_EVENT_ONLINE" +
+      "\020\000\022\025\n\021WORKER_EVENT_PING\020\001\022\026\n\022WORKER_EVEN" +
+      "T_ERROR\020\002\022\025\n\021WORKER_EVENT_AWAY\020\003\022\025\n\021WORK" +
+      "ER_EVENT_BUSY\020\004\022\027\n\023WORKER_EVENT_LOGOUT\020\005" +
+      "*F\n\021SessionSourceType\022\017\n\013SST_UNKNOWN\020\000\022\016" +
+      "\n\nSST_ASSIGN\020\001\022\020\n\014SST_TRANSFER\020\002*A\n\017Work" +
+      "erCheckType\022\016\n\nWQT_COMMON\020\000\022\014\n\010WQT_MUST\020" +
+      "\001\022\020\n\014WQT_COMBINED\020\002*d\n\017WorkerScoreType\022\017" +
+      "\n\013WST_UNKNOWN\020\000\022\017\n\013PWST_ERFECT\020\001\022\016\n\nWST_" +
+      "NORMAL\020\002\022\014\n\010WST_POOR\020\003\022\021\n\rWST_VERY_POOR\020" +
+      "\004*O\n\017CheckViewSource\022\031\n\025WORKER_QUALITY_S" +
+      "OURCE\020\000\022!\n\035QUALITY_WORKER_SESSION_SOURCE" +
+      "\020\001*N\n\022SessionScoreStatus\022\017\n\013SSS_UNKNOWN\020" +
+      "\000\022\021\n\rSSS_NOT_SCORE\020\001\022\024\n\020SSS_FINISH_SCORE" +
+      "\020\002*\207\001\n\rThresholdType\022\030\n\024serve_time_thres" +
+      "hold\020\000\022\037\n\033customer_messages_threshold\020\001\022" +
+      "\035\n\031worker_messages_threshold\020\002\022\034\n\030total_" +
+      "messages_threshold\020\003*I\n\026ChatQACheckSetti" +
+      "ngType\022\017\n\013NormalCheck\020\000\022\r\n\tMustCheck\020\001\022\017" +
+      "\n\013CollabCheck\020\002*\327\001\n\035WorkerQualitySession" +
+      "SortField\022\031\n\025QualitySessionDefault\020\000\022\022\n\016" +
+      "SortByChatTime\020\001\022\026\n\022SortByUserMsgCount\020\002" +
+      "\022\030\n\024SortByWorkerMsgCount\020\003\022\031\n\025SortByQual" +
+      "ityDuration\020\004\022\017\n\013SortByScore\020\005\022\025\n\021SortBy" +
+      "QualityTime\020\006\022\022\n\016SortByPushTime\020\007*A\n\016Wor" +
+      "kerRoleType\022\017\n\013WRT_DEFAULT\020\000\022\r\n\tWRT_ADMI" +
+      "N\020\001\022\017\n\013WRT_FRONTER\020\002*N\n\027WorkerRouteSelec" +
+      "tStatus\022\022\n\016SELECT_DEFAULT\020\000\022\017\n\013SELECT_PA" +
+      "RT\020\001\022\016\n\nSELECT_ALL\020\002B3\n\032com.teneasyChat." +
+      "api.commonZ\025wcs/api/common;commonb\006proto" +
+      "3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -25370,74 +26612,80 @@ public final class CWorker {
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_common_WorkerEvent_descriptor,
         new java.lang.String[] { "TenantId", "WorkerId", "SocketId", "GatewayId", "EventType", "EventCode", });
-    internal_static_api_common_Worker_descriptor =
+    internal_static_api_common_WorkerBaseInfo_descriptor =
       getDescriptor().getMessageTypes().get(1);
+    internal_static_api_common_WorkerBaseInfo_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_api_common_WorkerBaseInfo_descriptor,
+        new java.lang.String[] { "WorkerId", "Account", "PermMask", "Name", "Avatar", "TenantId", });
+    internal_static_api_common_Worker_descriptor =
+      getDescriptor().getMessageTypes().get(2);
     internal_static_api_common_Worker_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_common_Worker_descriptor,
-        new java.lang.String[] { "WorkerId", "Account", "Group", "PermMask", "Name", "Avatar", "OnlineState", "Password", "ConnectState", "TenantId", "WorkerNimid", "WorkerNimsession", "Bneednim", "GroupChild", "Tips", "ConsultIds", "DeleteAt", "CreateAt", "UpdateAt", "DisableStatus", "RoleId", "RoleName", "RoutesItems", "MenuItems", });
+        new java.lang.String[] { "WorkerId", "Account", "Group", "PermMask", "Name", "Avatar", "OnlineState", "Password", "ConnectState", "TenantId", "WorkerNimid", "WorkerNimsession", "Bneednim", "GroupChild", "Tips", "ConsultIds", "DeleteAt", "CreateAt", "UpdateAt", "DisableStatus", "RoleId", "RoleName", "RoutesItems", "MenuItems", "IsMonitored", });
     internal_static_api_common_WorkerGroup_descriptor =
-      getDescriptor().getMessageTypes().get(2);
+      getDescriptor().getMessageTypes().get(3);
     internal_static_api_common_WorkerGroup_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_common_WorkerGroup_descriptor,
         new java.lang.String[] { "Id", "Name", "Priority", "Count", "ParentId", "Ratio", "ConsultId", "DeleteAt", "DisableStatus", });
     internal_static_api_common_Distribution_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(4);
     internal_static_api_common_Distribution_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_common_Distribution_descriptor,
         new java.lang.String[] { "Id", "Name", "Priority", });
     internal_static_api_common_TenantClique_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_api_common_TenantClique_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_common_TenantClique_descriptor,
         new java.lang.String[] { "Id", "Name", "Priority", });
     internal_static_api_common_ApplyWorkerState_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(6);
     internal_static_api_common_ApplyWorkerState_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_common_ApplyWorkerState_descriptor,
         new java.lang.String[] { "Id", "TenantId", "WorkerId", "Name", "WorkerGroupName", "WorkerGroupChildName", "OnlineStateNow", "OnlineStateApply", "ApplyState", "ApplyTime", "CheckTime", "UpdateUsername", });
     internal_static_api_common_WorkerQualitySession_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_api_common_WorkerQualitySession_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_common_WorkerQualitySession_descriptor,
         new java.lang.String[] { "Id", "BindingSessionId", "TenantId", "ConsultId", "WorkerId", "Uid", "UserRole", "UserLevel", "CheckType", "FirstSendTime", "FirstReplyTime", "ServiceDuration", "ClientSendMessageCount", "WorkerSendMessageCount", "CreatedAt", "ScoreWorkerId", "ScoreType", "ScoreTime", "ReviewWorkerId", "ReviewScoreType", "ReviewTime", });
     internal_static_api_common_WorkerRoute_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_api_common_WorkerRoute_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_common_WorkerRoute_descriptor,
         new java.lang.String[] { "Id", "Name", "Url", "Pid", "Sort", "Remark", "RoleType", "CreateAt", "UpdateAt", "BindingStatus", "ShowType", });
     internal_static_api_common_WorkerRole_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_api_common_WorkerRole_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_common_WorkerRole_descriptor,
         new java.lang.String[] { "Id", "Name", "Sort", "Remark", "CreateAt", "UpdateAt", });
     internal_static_api_common_WorkerRoleRoute_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_api_common_WorkerRoleRoute_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_common_WorkerRoleRoute_descriptor,
         new java.lang.String[] { "RoleId", "RouteId", });
     internal_static_api_common_WorkerRouteTypeRoutes_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_api_common_WorkerRouteTypeRoutes_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_common_WorkerRouteTypeRoutes_descriptor,
         new java.lang.String[] { "RoleType", "RoleTypeName", "BindingStatus", "RouteWithItems", });
     internal_static_api_common_WorkerRouteWithItems_descriptor =
-      getDescriptor().getMessageTypes().get(11);
+      getDescriptor().getMessageTypes().get(12);
     internal_static_api_common_WorkerRouteWithItems_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_common_WorkerRouteWithItems_descriptor,
         new java.lang.String[] { "Id", "Name", "Url", "Pid", "Sort", "Remark", "RoleType", "BindingStatus", "Items", });
     internal_static_api_common_DeviceInfo_descriptor =
-      getDescriptor().getMessageTypes().get(12);
+      getDescriptor().getMessageTypes().get(13);
     internal_static_api_common_DeviceInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_common_DeviceInfo_descriptor,

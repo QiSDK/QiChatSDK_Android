@@ -486,6 +486,1937 @@ public final class CTenant {
     // @@protoc_insertion_point(enum_scope:api.common.TenantCopyType)
   }
 
+  /**
+   * <pre>
+   * 预警类型
+   * </pre>
+   *
+   * Protobuf enum {@code api.common.TenantWarnEventType}
+   */
+  public enum TenantWarnEventType
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <pre>
+     * 未知
+     * </pre>
+     *
+     * <code>Warn_Unknown = 0;</code>
+     */
+    Warn_Unknown(0),
+    /**
+     * <pre>
+     * 离岗时长
+     * </pre>
+     *
+     * <code>Warn_Leave_Time = 1;</code>
+     */
+    Warn_Leave_Time(1),
+    /**
+     * <pre>
+     * 离岗次数
+     * </pre>
+     *
+     * <code>Warn_leave_Count = 2;</code>
+     */
+    Warn_leave_Count(2),
+    /**
+     * <pre>
+     * 待回复用户数
+     * </pre>
+     *
+     * <code>Warn_Wait_Reply = 3;</code>
+     */
+    Warn_Wait_Reply(3),
+    /**
+     * <pre>
+     * 异常离线
+     * </pre>
+     *
+     * <code>Warn_Abnormal_Logout = 4;</code>
+     */
+    Warn_Abnormal_Logout(4),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 26,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        TenantWarnEventType.class.getName());
+    }
+    /**
+     * <pre>
+     * 未知
+     * </pre>
+     *
+     * <code>Warn_Unknown = 0;</code>
+     */
+    public static final int Warn_Unknown_VALUE = 0;
+    /**
+     * <pre>
+     * 离岗时长
+     * </pre>
+     *
+     * <code>Warn_Leave_Time = 1;</code>
+     */
+    public static final int Warn_Leave_Time_VALUE = 1;
+    /**
+     * <pre>
+     * 离岗次数
+     * </pre>
+     *
+     * <code>Warn_leave_Count = 2;</code>
+     */
+    public static final int Warn_leave_Count_VALUE = 2;
+    /**
+     * <pre>
+     * 待回复用户数
+     * </pre>
+     *
+     * <code>Warn_Wait_Reply = 3;</code>
+     */
+    public static final int Warn_Wait_Reply_VALUE = 3;
+    /**
+     * <pre>
+     * 异常离线
+     * </pre>
+     *
+     * <code>Warn_Abnormal_Logout = 4;</code>
+     */
+    public static final int Warn_Abnormal_Logout_VALUE = 4;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static TenantWarnEventType valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static TenantWarnEventType forNumber(int value) {
+      switch (value) {
+        case 0: return Warn_Unknown;
+        case 1: return Warn_Leave_Time;
+        case 2: return Warn_leave_Count;
+        case 3: return Warn_Wait_Reply;
+        case 4: return Warn_Abnormal_Logout;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<TenantWarnEventType>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        TenantWarnEventType> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<TenantWarnEventType>() {
+            public TenantWarnEventType findValueByNumber(int number) {
+              return TenantWarnEventType.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return com.teneasyChat.api.common.CTenant.getDescriptor().getEnumTypes().get(3);
+    }
+
+    private static final TenantWarnEventType[] VALUES = values();
+
+    public static TenantWarnEventType valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private TenantWarnEventType(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:api.common.TenantWarnEventType)
+  }
+
+  /**
+   * <pre>
+   * 预警等级
+   * </pre>
+   *
+   * Protobuf enum {@code api.common.EventAlarmLevel}
+   */
+  public enum EventAlarmLevel
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <pre>
+     * 无效事件
+     * </pre>
+     *
+     * <code>Level_None = 0;</code>
+     */
+    Level_None(0),
+    /**
+     * <pre>
+     * 常规事件
+     * </pre>
+     *
+     * <code>Level_Normal = 1;</code>
+     */
+    Level_Normal(1),
+    /**
+     * <pre>
+     * 豁免预警事件
+     * </pre>
+     *
+     * <code>Level_Alarm_Free = 2;</code>
+     */
+    Level_Alarm_Free(2),
+    /**
+     * <pre>
+     * 触发预警事件
+     * </pre>
+     *
+     * <code>Level_Alarm = 3;</code>
+     */
+    Level_Alarm(3),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 26,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        EventAlarmLevel.class.getName());
+    }
+    /**
+     * <pre>
+     * 无效事件
+     * </pre>
+     *
+     * <code>Level_None = 0;</code>
+     */
+    public static final int Level_None_VALUE = 0;
+    /**
+     * <pre>
+     * 常规事件
+     * </pre>
+     *
+     * <code>Level_Normal = 1;</code>
+     */
+    public static final int Level_Normal_VALUE = 1;
+    /**
+     * <pre>
+     * 豁免预警事件
+     * </pre>
+     *
+     * <code>Level_Alarm_Free = 2;</code>
+     */
+    public static final int Level_Alarm_Free_VALUE = 2;
+    /**
+     * <pre>
+     * 触发预警事件
+     * </pre>
+     *
+     * <code>Level_Alarm = 3;</code>
+     */
+    public static final int Level_Alarm_VALUE = 3;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static EventAlarmLevel valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static EventAlarmLevel forNumber(int value) {
+      switch (value) {
+        case 0: return Level_None;
+        case 1: return Level_Normal;
+        case 2: return Level_Alarm_Free;
+        case 3: return Level_Alarm;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<EventAlarmLevel>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        EventAlarmLevel> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<EventAlarmLevel>() {
+            public EventAlarmLevel findValueByNumber(int number) {
+              return EventAlarmLevel.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return com.teneasyChat.api.common.CTenant.getDescriptor().getEnumTypes().get(4);
+    }
+
+    private static final EventAlarmLevel[] VALUES = values();
+
+    public static EventAlarmLevel valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private EventAlarmLevel(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:api.common.EventAlarmLevel)
+  }
+
+  public interface WarnInfoOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:api.common.WarnInfo)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * 告警类型
+     * </pre>
+     *
+     * <code>.api.common.TenantWarnEventType warn_type = 1;</code>
+     * @return The enum numeric value on the wire for warnType.
+     */
+    int getWarnTypeValue();
+    /**
+     * <pre>
+     * 告警类型
+     * </pre>
+     *
+     * <code>.api.common.TenantWarnEventType warn_type = 1;</code>
+     * @return The warnType.
+     */
+    com.teneasyChat.api.common.CTenant.TenantWarnEventType getWarnType();
+
+    /**
+     * <pre>
+     * 客服名
+     * </pre>
+     *
+     * <code>string name = 2;</code>
+     * @return The name.
+     */
+    java.lang.String getName();
+    /**
+     * <pre>
+     * 客服名
+     * </pre>
+     *
+     * <code>string name = 2;</code>
+     * @return The bytes for name.
+     */
+    com.google.protobuf.ByteString
+        getNameBytes();
+
+    /**
+     * <pre>
+     * 客服账号
+     * </pre>
+     *
+     * <code>string account = 3;</code>
+     * @return The account.
+     */
+    java.lang.String getAccount();
+    /**
+     * <pre>
+     * 客服账号
+     * </pre>
+     *
+     * <code>string account = 3;</code>
+     * @return The bytes for account.
+     */
+    com.google.protobuf.ByteString
+        getAccountBytes();
+
+    /**
+     * <pre>
+     * 商户ID
+     * </pre>
+     *
+     * <code>int32 tenant_id = 4;</code>
+     * @return The tenantId.
+     */
+    int getTenantId();
+
+    /**
+     * <pre>
+     * 客服id
+     * </pre>
+     *
+     * <code>int32 worker_id = 5;</code>
+     * @return The workerId.
+     */
+    int getWorkerId();
+
+    /**
+     * <pre>
+     * 触发阈值
+     * </pre>
+     *
+     * <code>int32 threshold = 7;</code>
+     * @return The threshold.
+     */
+    int getThreshold();
+
+    /**
+     * <pre>
+     * 累计次数
+     * </pre>
+     *
+     * <code>int32 times = 8;</code>
+     * @return The times.
+     */
+    int getTimes();
+
+    /**
+     * <pre>
+     * 创建时间
+     * </pre>
+     *
+     * <code>string create_time = 9;</code>
+     * @return The createTime.
+     */
+    java.lang.String getCreateTime();
+    /**
+     * <pre>
+     * 创建时间
+     * </pre>
+     *
+     * <code>string create_time = 9;</code>
+     * @return The bytes for createTime.
+     */
+    com.google.protobuf.ByteString
+        getCreateTimeBytes();
+
+    /**
+     * <pre>
+     * 警告等级
+     * </pre>
+     *
+     * <code>.api.common.EventAlarmLevel alarm_level = 10;</code>
+     * @return The enum numeric value on the wire for alarmLevel.
+     */
+    int getAlarmLevelValue();
+    /**
+     * <pre>
+     * 警告等级
+     * </pre>
+     *
+     * <code>.api.common.EventAlarmLevel alarm_level = 10;</code>
+     * @return The alarmLevel.
+     */
+    com.teneasyChat.api.common.CTenant.EventAlarmLevel getAlarmLevel();
+  }
+  /**
+   * <pre>
+   * 预警弹框格式
+   * </pre>
+   *
+   * Protobuf type {@code api.common.WarnInfo}
+   */
+  public static final class WarnInfo extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:api.common.WarnInfo)
+      WarnInfoOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 26,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        WarnInfo.class.getName());
+    }
+    // Use WarnInfo.newBuilder() to construct.
+    private WarnInfo(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private WarnInfo() {
+      warnType_ = 0;
+      name_ = "";
+      account_ = "";
+      createTime_ = "";
+      alarmLevel_ = 0;
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.teneasyChat.api.common.CTenant.internal_static_api_common_WarnInfo_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.teneasyChat.api.common.CTenant.internal_static_api_common_WarnInfo_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.teneasyChat.api.common.CTenant.WarnInfo.class, com.teneasyChat.api.common.CTenant.WarnInfo.Builder.class);
+    }
+
+    public static final int WARN_TYPE_FIELD_NUMBER = 1;
+    private int warnType_ = 0;
+    /**
+     * <pre>
+     * 告警类型
+     * </pre>
+     *
+     * <code>.api.common.TenantWarnEventType warn_type = 1;</code>
+     * @return The enum numeric value on the wire for warnType.
+     */
+    @java.lang.Override public int getWarnTypeValue() {
+      return warnType_;
+    }
+    /**
+     * <pre>
+     * 告警类型
+     * </pre>
+     *
+     * <code>.api.common.TenantWarnEventType warn_type = 1;</code>
+     * @return The warnType.
+     */
+    @java.lang.Override public com.teneasyChat.api.common.CTenant.TenantWarnEventType getWarnType() {
+      com.teneasyChat.api.common.CTenant.TenantWarnEventType result = com.teneasyChat.api.common.CTenant.TenantWarnEventType.forNumber(warnType_);
+      return result == null ? com.teneasyChat.api.common.CTenant.TenantWarnEventType.UNRECOGNIZED : result;
+    }
+
+    public static final int NAME_FIELD_NUMBER = 2;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object name_ = "";
+    /**
+     * <pre>
+     * 客服名
+     * </pre>
+     *
+     * <code>string name = 2;</code>
+     * @return The name.
+     */
+    @java.lang.Override
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * 客服名
+     * </pre>
+     *
+     * <code>string name = 2;</code>
+     * @return The bytes for name.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ACCOUNT_FIELD_NUMBER = 3;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object account_ = "";
+    /**
+     * <pre>
+     * 客服账号
+     * </pre>
+     *
+     * <code>string account = 3;</code>
+     * @return The account.
+     */
+    @java.lang.Override
+    public java.lang.String getAccount() {
+      java.lang.Object ref = account_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        account_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * 客服账号
+     * </pre>
+     *
+     * <code>string account = 3;</code>
+     * @return The bytes for account.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getAccountBytes() {
+      java.lang.Object ref = account_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        account_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TENANT_ID_FIELD_NUMBER = 4;
+    private int tenantId_ = 0;
+    /**
+     * <pre>
+     * 商户ID
+     * </pre>
+     *
+     * <code>int32 tenant_id = 4;</code>
+     * @return The tenantId.
+     */
+    @java.lang.Override
+    public int getTenantId() {
+      return tenantId_;
+    }
+
+    public static final int WORKER_ID_FIELD_NUMBER = 5;
+    private int workerId_ = 0;
+    /**
+     * <pre>
+     * 客服id
+     * </pre>
+     *
+     * <code>int32 worker_id = 5;</code>
+     * @return The workerId.
+     */
+    @java.lang.Override
+    public int getWorkerId() {
+      return workerId_;
+    }
+
+    public static final int THRESHOLD_FIELD_NUMBER = 7;
+    private int threshold_ = 0;
+    /**
+     * <pre>
+     * 触发阈值
+     * </pre>
+     *
+     * <code>int32 threshold = 7;</code>
+     * @return The threshold.
+     */
+    @java.lang.Override
+    public int getThreshold() {
+      return threshold_;
+    }
+
+    public static final int TIMES_FIELD_NUMBER = 8;
+    private int times_ = 0;
+    /**
+     * <pre>
+     * 累计次数
+     * </pre>
+     *
+     * <code>int32 times = 8;</code>
+     * @return The times.
+     */
+    @java.lang.Override
+    public int getTimes() {
+      return times_;
+    }
+
+    public static final int CREATE_TIME_FIELD_NUMBER = 9;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object createTime_ = "";
+    /**
+     * <pre>
+     * 创建时间
+     * </pre>
+     *
+     * <code>string create_time = 9;</code>
+     * @return The createTime.
+     */
+    @java.lang.Override
+    public java.lang.String getCreateTime() {
+      java.lang.Object ref = createTime_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        createTime_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * 创建时间
+     * </pre>
+     *
+     * <code>string create_time = 9;</code>
+     * @return The bytes for createTime.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getCreateTimeBytes() {
+      java.lang.Object ref = createTime_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        createTime_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ALARM_LEVEL_FIELD_NUMBER = 10;
+    private int alarmLevel_ = 0;
+    /**
+     * <pre>
+     * 警告等级
+     * </pre>
+     *
+     * <code>.api.common.EventAlarmLevel alarm_level = 10;</code>
+     * @return The enum numeric value on the wire for alarmLevel.
+     */
+    @java.lang.Override public int getAlarmLevelValue() {
+      return alarmLevel_;
+    }
+    /**
+     * <pre>
+     * 警告等级
+     * </pre>
+     *
+     * <code>.api.common.EventAlarmLevel alarm_level = 10;</code>
+     * @return The alarmLevel.
+     */
+    @java.lang.Override public com.teneasyChat.api.common.CTenant.EventAlarmLevel getAlarmLevel() {
+      com.teneasyChat.api.common.CTenant.EventAlarmLevel result = com.teneasyChat.api.common.CTenant.EventAlarmLevel.forNumber(alarmLevel_);
+      return result == null ? com.teneasyChat.api.common.CTenant.EventAlarmLevel.UNRECOGNIZED : result;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (warnType_ != com.teneasyChat.api.common.CTenant.TenantWarnEventType.Warn_Unknown.getNumber()) {
+        output.writeEnum(1, warnType_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 2, name_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(account_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 3, account_);
+      }
+      if (tenantId_ != 0) {
+        output.writeInt32(4, tenantId_);
+      }
+      if (workerId_ != 0) {
+        output.writeInt32(5, workerId_);
+      }
+      if (threshold_ != 0) {
+        output.writeInt32(7, threshold_);
+      }
+      if (times_ != 0) {
+        output.writeInt32(8, times_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(createTime_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 9, createTime_);
+      }
+      if (alarmLevel_ != com.teneasyChat.api.common.CTenant.EventAlarmLevel.Level_None.getNumber()) {
+        output.writeEnum(10, alarmLevel_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (warnType_ != com.teneasyChat.api.common.CTenant.TenantWarnEventType.Warn_Unknown.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(1, warnType_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(2, name_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(account_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(3, account_);
+      }
+      if (tenantId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(4, tenantId_);
+      }
+      if (workerId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(5, workerId_);
+      }
+      if (threshold_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(7, threshold_);
+      }
+      if (times_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(8, times_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(createTime_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(9, createTime_);
+      }
+      if (alarmLevel_ != com.teneasyChat.api.common.CTenant.EventAlarmLevel.Level_None.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(10, alarmLevel_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.teneasyChat.api.common.CTenant.WarnInfo)) {
+        return super.equals(obj);
+      }
+      com.teneasyChat.api.common.CTenant.WarnInfo other = (com.teneasyChat.api.common.CTenant.WarnInfo) obj;
+
+      if (warnType_ != other.warnType_) return false;
+      if (!getName()
+          .equals(other.getName())) return false;
+      if (!getAccount()
+          .equals(other.getAccount())) return false;
+      if (getTenantId()
+          != other.getTenantId()) return false;
+      if (getWorkerId()
+          != other.getWorkerId()) return false;
+      if (getThreshold()
+          != other.getThreshold()) return false;
+      if (getTimes()
+          != other.getTimes()) return false;
+      if (!getCreateTime()
+          .equals(other.getCreateTime())) return false;
+      if (alarmLevel_ != other.alarmLevel_) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + WARN_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + warnType_;
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+      hash = (37 * hash) + ACCOUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getAccount().hashCode();
+      hash = (37 * hash) + TENANT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getTenantId();
+      hash = (37 * hash) + WORKER_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getWorkerId();
+      hash = (37 * hash) + THRESHOLD_FIELD_NUMBER;
+      hash = (53 * hash) + getThreshold();
+      hash = (37 * hash) + TIMES_FIELD_NUMBER;
+      hash = (53 * hash) + getTimes();
+      hash = (37 * hash) + CREATE_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getCreateTime().hashCode();
+      hash = (37 * hash) + ALARM_LEVEL_FIELD_NUMBER;
+      hash = (53 * hash) + alarmLevel_;
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.teneasyChat.api.common.CTenant.WarnInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.common.CTenant.WarnInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.common.CTenant.WarnInfo parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.common.CTenant.WarnInfo parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.common.CTenant.WarnInfo parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.common.CTenant.WarnInfo parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.common.CTenant.WarnInfo parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.teneasyChat.api.common.CTenant.WarnInfo parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.teneasyChat.api.common.CTenant.WarnInfo parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.teneasyChat.api.common.CTenant.WarnInfo parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.teneasyChat.api.common.CTenant.WarnInfo parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.teneasyChat.api.common.CTenant.WarnInfo parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.teneasyChat.api.common.CTenant.WarnInfo prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * 预警弹框格式
+     * </pre>
+     *
+     * Protobuf type {@code api.common.WarnInfo}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:api.common.WarnInfo)
+        com.teneasyChat.api.common.CTenant.WarnInfoOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.teneasyChat.api.common.CTenant.internal_static_api_common_WarnInfo_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.teneasyChat.api.common.CTenant.internal_static_api_common_WarnInfo_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.teneasyChat.api.common.CTenant.WarnInfo.class, com.teneasyChat.api.common.CTenant.WarnInfo.Builder.class);
+      }
+
+      // Construct using com.teneasyChat.api.common.CTenant.WarnInfo.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        warnType_ = 0;
+        name_ = "";
+        account_ = "";
+        tenantId_ = 0;
+        workerId_ = 0;
+        threshold_ = 0;
+        times_ = 0;
+        createTime_ = "";
+        alarmLevel_ = 0;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.teneasyChat.api.common.CTenant.internal_static_api_common_WarnInfo_descriptor;
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.common.CTenant.WarnInfo getDefaultInstanceForType() {
+        return com.teneasyChat.api.common.CTenant.WarnInfo.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.common.CTenant.WarnInfo build() {
+        com.teneasyChat.api.common.CTenant.WarnInfo result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.common.CTenant.WarnInfo buildPartial() {
+        com.teneasyChat.api.common.CTenant.WarnInfo result = new com.teneasyChat.api.common.CTenant.WarnInfo(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.teneasyChat.api.common.CTenant.WarnInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.warnType_ = warnType_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.name_ = name_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.account_ = account_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.tenantId_ = tenantId_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.workerId_ = workerId_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.threshold_ = threshold_;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.times_ = times_;
+        }
+        if (((from_bitField0_ & 0x00000080) != 0)) {
+          result.createTime_ = createTime_;
+        }
+        if (((from_bitField0_ & 0x00000100) != 0)) {
+          result.alarmLevel_ = alarmLevel_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.teneasyChat.api.common.CTenant.WarnInfo) {
+          return mergeFrom((com.teneasyChat.api.common.CTenant.WarnInfo)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.teneasyChat.api.common.CTenant.WarnInfo other) {
+        if (other == com.teneasyChat.api.common.CTenant.WarnInfo.getDefaultInstance()) return this;
+        if (other.warnType_ != 0) {
+          setWarnTypeValue(other.getWarnTypeValue());
+        }
+        if (!other.getName().isEmpty()) {
+          name_ = other.name_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        if (!other.getAccount().isEmpty()) {
+          account_ = other.account_;
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        if (other.getTenantId() != 0) {
+          setTenantId(other.getTenantId());
+        }
+        if (other.getWorkerId() != 0) {
+          setWorkerId(other.getWorkerId());
+        }
+        if (other.getThreshold() != 0) {
+          setThreshold(other.getThreshold());
+        }
+        if (other.getTimes() != 0) {
+          setTimes(other.getTimes());
+        }
+        if (!other.getCreateTime().isEmpty()) {
+          createTime_ = other.createTime_;
+          bitField0_ |= 0x00000080;
+          onChanged();
+        }
+        if (other.alarmLevel_ != 0) {
+          setAlarmLevelValue(other.getAlarmLevelValue());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                warnType_ = input.readEnum();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 18: {
+                name_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+              case 26: {
+                account_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
+              case 32: {
+                tenantId_ = input.readInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 32
+              case 40: {
+                workerId_ = input.readInt32();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 40
+              case 56: {
+                threshold_ = input.readInt32();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 56
+              case 64: {
+                times_ = input.readInt32();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 64
+              case 74: {
+                createTime_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 74
+              case 80: {
+                alarmLevel_ = input.readEnum();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 80
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private int warnType_ = 0;
+      /**
+       * <pre>
+       * 告警类型
+       * </pre>
+       *
+       * <code>.api.common.TenantWarnEventType warn_type = 1;</code>
+       * @return The enum numeric value on the wire for warnType.
+       */
+      @java.lang.Override public int getWarnTypeValue() {
+        return warnType_;
+      }
+      /**
+       * <pre>
+       * 告警类型
+       * </pre>
+       *
+       * <code>.api.common.TenantWarnEventType warn_type = 1;</code>
+       * @param value The enum numeric value on the wire for warnType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setWarnTypeValue(int value) {
+        warnType_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 告警类型
+       * </pre>
+       *
+       * <code>.api.common.TenantWarnEventType warn_type = 1;</code>
+       * @return The warnType.
+       */
+      @java.lang.Override
+      public com.teneasyChat.api.common.CTenant.TenantWarnEventType getWarnType() {
+        com.teneasyChat.api.common.CTenant.TenantWarnEventType result = com.teneasyChat.api.common.CTenant.TenantWarnEventType.forNumber(warnType_);
+        return result == null ? com.teneasyChat.api.common.CTenant.TenantWarnEventType.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * 告警类型
+       * </pre>
+       *
+       * <code>.api.common.TenantWarnEventType warn_type = 1;</code>
+       * @param value The warnType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setWarnType(com.teneasyChat.api.common.CTenant.TenantWarnEventType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000001;
+        warnType_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 告警类型
+       * </pre>
+       *
+       * <code>.api.common.TenantWarnEventType warn_type = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearWarnType() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        warnType_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object name_ = "";
+      /**
+       * <pre>
+       * 客服名
+       * </pre>
+       *
+       * <code>string name = 2;</code>
+       * @return The name.
+       */
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          name_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * 客服名
+       * </pre>
+       *
+       * <code>string name = 2;</code>
+       * @return The bytes for name.
+       */
+      public com.google.protobuf.ByteString
+          getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * 客服名
+       * </pre>
+       *
+       * <code>string name = 2;</code>
+       * @param value The name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setName(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        name_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 客服名
+       * </pre>
+       *
+       * <code>string name = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearName() {
+        name_ = getDefaultInstance().getName();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 客服名
+       * </pre>
+       *
+       * <code>string name = 2;</code>
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        name_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object account_ = "";
+      /**
+       * <pre>
+       * 客服账号
+       * </pre>
+       *
+       * <code>string account = 3;</code>
+       * @return The account.
+       */
+      public java.lang.String getAccount() {
+        java.lang.Object ref = account_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          account_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * 客服账号
+       * </pre>
+       *
+       * <code>string account = 3;</code>
+       * @return The bytes for account.
+       */
+      public com.google.protobuf.ByteString
+          getAccountBytes() {
+        java.lang.Object ref = account_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          account_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * 客服账号
+       * </pre>
+       *
+       * <code>string account = 3;</code>
+       * @param value The account to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAccount(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        account_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 客服账号
+       * </pre>
+       *
+       * <code>string account = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAccount() {
+        account_ = getDefaultInstance().getAccount();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 客服账号
+       * </pre>
+       *
+       * <code>string account = 3;</code>
+       * @param value The bytes for account to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAccountBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        account_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      private int tenantId_ ;
+      /**
+       * <pre>
+       * 商户ID
+       * </pre>
+       *
+       * <code>int32 tenant_id = 4;</code>
+       * @return The tenantId.
+       */
+      @java.lang.Override
+      public int getTenantId() {
+        return tenantId_;
+      }
+      /**
+       * <pre>
+       * 商户ID
+       * </pre>
+       *
+       * <code>int32 tenant_id = 4;</code>
+       * @param value The tenantId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTenantId(int value) {
+
+        tenantId_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 商户ID
+       * </pre>
+       *
+       * <code>int32 tenant_id = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTenantId() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        tenantId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int workerId_ ;
+      /**
+       * <pre>
+       * 客服id
+       * </pre>
+       *
+       * <code>int32 worker_id = 5;</code>
+       * @return The workerId.
+       */
+      @java.lang.Override
+      public int getWorkerId() {
+        return workerId_;
+      }
+      /**
+       * <pre>
+       * 客服id
+       * </pre>
+       *
+       * <code>int32 worker_id = 5;</code>
+       * @param value The workerId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setWorkerId(int value) {
+
+        workerId_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 客服id
+       * </pre>
+       *
+       * <code>int32 worker_id = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearWorkerId() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        workerId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int threshold_ ;
+      /**
+       * <pre>
+       * 触发阈值
+       * </pre>
+       *
+       * <code>int32 threshold = 7;</code>
+       * @return The threshold.
+       */
+      @java.lang.Override
+      public int getThreshold() {
+        return threshold_;
+      }
+      /**
+       * <pre>
+       * 触发阈值
+       * </pre>
+       *
+       * <code>int32 threshold = 7;</code>
+       * @param value The threshold to set.
+       * @return This builder for chaining.
+       */
+      public Builder setThreshold(int value) {
+
+        threshold_ = value;
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 触发阈值
+       * </pre>
+       *
+       * <code>int32 threshold = 7;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearThreshold() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        threshold_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int times_ ;
+      /**
+       * <pre>
+       * 累计次数
+       * </pre>
+       *
+       * <code>int32 times = 8;</code>
+       * @return The times.
+       */
+      @java.lang.Override
+      public int getTimes() {
+        return times_;
+      }
+      /**
+       * <pre>
+       * 累计次数
+       * </pre>
+       *
+       * <code>int32 times = 8;</code>
+       * @param value The times to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTimes(int value) {
+
+        times_ = value;
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 累计次数
+       * </pre>
+       *
+       * <code>int32 times = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTimes() {
+        bitField0_ = (bitField0_ & ~0x00000040);
+        times_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object createTime_ = "";
+      /**
+       * <pre>
+       * 创建时间
+       * </pre>
+       *
+       * <code>string create_time = 9;</code>
+       * @return The createTime.
+       */
+      public java.lang.String getCreateTime() {
+        java.lang.Object ref = createTime_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          createTime_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * 创建时间
+       * </pre>
+       *
+       * <code>string create_time = 9;</code>
+       * @return The bytes for createTime.
+       */
+      public com.google.protobuf.ByteString
+          getCreateTimeBytes() {
+        java.lang.Object ref = createTime_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          createTime_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * 创建时间
+       * </pre>
+       *
+       * <code>string create_time = 9;</code>
+       * @param value The createTime to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCreateTime(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        createTime_ = value;
+        bitField0_ |= 0x00000080;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 创建时间
+       * </pre>
+       *
+       * <code>string create_time = 9;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCreateTime() {
+        createTime_ = getDefaultInstance().getCreateTime();
+        bitField0_ = (bitField0_ & ~0x00000080);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 创建时间
+       * </pre>
+       *
+       * <code>string create_time = 9;</code>
+       * @param value The bytes for createTime to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCreateTimeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        createTime_ = value;
+        bitField0_ |= 0x00000080;
+        onChanged();
+        return this;
+      }
+
+      private int alarmLevel_ = 0;
+      /**
+       * <pre>
+       * 警告等级
+       * </pre>
+       *
+       * <code>.api.common.EventAlarmLevel alarm_level = 10;</code>
+       * @return The enum numeric value on the wire for alarmLevel.
+       */
+      @java.lang.Override public int getAlarmLevelValue() {
+        return alarmLevel_;
+      }
+      /**
+       * <pre>
+       * 警告等级
+       * </pre>
+       *
+       * <code>.api.common.EventAlarmLevel alarm_level = 10;</code>
+       * @param value The enum numeric value on the wire for alarmLevel to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAlarmLevelValue(int value) {
+        alarmLevel_ = value;
+        bitField0_ |= 0x00000100;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 警告等级
+       * </pre>
+       *
+       * <code>.api.common.EventAlarmLevel alarm_level = 10;</code>
+       * @return The alarmLevel.
+       */
+      @java.lang.Override
+      public com.teneasyChat.api.common.CTenant.EventAlarmLevel getAlarmLevel() {
+        com.teneasyChat.api.common.CTenant.EventAlarmLevel result = com.teneasyChat.api.common.CTenant.EventAlarmLevel.forNumber(alarmLevel_);
+        return result == null ? com.teneasyChat.api.common.CTenant.EventAlarmLevel.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * 警告等级
+       * </pre>
+       *
+       * <code>.api.common.EventAlarmLevel alarm_level = 10;</code>
+       * @param value The alarmLevel to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAlarmLevel(com.teneasyChat.api.common.CTenant.EventAlarmLevel value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000100;
+        alarmLevel_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 警告等级
+       * </pre>
+       *
+       * <code>.api.common.EventAlarmLevel alarm_level = 10;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAlarmLevel() {
+        bitField0_ = (bitField0_ & ~0x00000100);
+        alarmLevel_ = 0;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:api.common.WarnInfo)
+    }
+
+    // @@protoc_insertion_point(class_scope:api.common.WarnInfo)
+    private static final com.teneasyChat.api.common.CTenant.WarnInfo DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.teneasyChat.api.common.CTenant.WarnInfo();
+    }
+
+    public static com.teneasyChat.api.common.CTenant.WarnInfo getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<WarnInfo>
+        PARSER = new com.google.protobuf.AbstractParser<WarnInfo>() {
+      @java.lang.Override
+      public WarnInfo parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<WarnInfo> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<WarnInfo> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.teneasyChat.api.common.CTenant.WarnInfo getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface WSConnCustomOrBuilder extends
       // @@protoc_insertion_point(interface_extends:api.common.WSConnCustom)
       com.google.protobuf.MessageOrBuilder {
@@ -10899,6 +12830,11 @@ public final class CTenant {
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_api_common_WarnInfo_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_api_common_WarnInfo_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_api_common_WSConnCustom_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -10945,47 +12881,58 @@ public final class CTenant {
       "\n\031api/common/c_tenant.proto\022\napi.common\032" +
       "\027api/common/c_base.proto\032\027validate/valid" +
       "ate.proto\032\037google/protobuf/timestamp.pro" +
-      "to\"E\n\014WSConnCustom\022\020\n\010username\030\001 \001(\t\022\020\n\010" +
-      "platform\030\002 \001(\005\022\021\n\tuserlevel\030\003 \001(\r\"\325\002\n\020Te" +
-      "nantsLineGroup\022\n\n\002id\030\001 \001(\005\022\014\n\004name\030\002 \001(\t" +
-      "\022(\n\010h5_lines\030\003 \001(\0132\026.api.common.ListStri" +
-      "ng\0220\n\020background_lines\030\004 \001(\0132\026.api.commo" +
-      "n.ListString\022\023\n\013operate_uid\030\005 \001(\005\022\023\n\013des" +
-      "cription\030\006 \001(\t\022-\n\tcreate_at\030\007 \001(\0132\032.goog" +
-      "le.protobuf.Timestamp\022-\n\tupdate_at\030\010 \001(\013" +
-      "2\032.google.protobuf.Timestamp\022-\n\tdelete_a" +
-      "t\030\t \001(\0132\032.google.protobuf.Timestamp\022\024\n\014o" +
-      "perate_name\030\n \001(\t\"\334\001\n\013TenantRoute\022\n\n\002id\030" +
-      "\001 \001(\005\022\014\n\004name\030\002 \001(\t\022\013\n\003url\030\003 \001(\t\022\013\n\003pid\030" +
-      "\004 \001(\005\022\014\n\004sort\030\005 \001(\005\022-\n\tcreate_at\030\006 \001(\0132\032" +
-      ".google.protobuf.Timestamp\022-\n\tupdate_at\030" +
-      "\007 \001(\0132\032.google.protobuf.Timestamp\022-\n\rbin" +
-      "dingStatus\030\010 \001(\0162\026.api.common.BindStatus" +
-      "\"\335\001\n\023TenantRouteWithItem\022\n\n\002id\030\001 \001(\005\022\014\n\004" +
-      "name\030\002 \001(\t\022\013\n\003url\030\003 \001(\t\022\013\n\003pid\030\004 \001(\005\022\014\n\004" +
-      "sort\030\005 \001(\005\022-\n\tcreate_at\030\006 \001(\0132\032.google.p" +
-      "rotobuf.Timestamp\022-\n\tupdate_at\030\007 \001(\0132\032.g" +
-      "oogle.protobuf.Timestamp\022&\n\005items\030\t \003(\0132" +
-      "\027.api.common.TenantRoute\"\261\001\n\nTenantRole\022" +
-      "\n\n\002id\030\001 \001(\005\022\014\n\004name\030\002 \001(\t\022+\n\010is_super\030\003 " +
-      "\001(\0162\031.api.common.TenantIsSuper\022-\n\tcreate" +
-      "_at\030\004 \001(\0132\032.google.protobuf.Timestamp\022-\n" +
-      "\tupdate_at\030\005 \001(\0132\032.google.protobuf.Times" +
-      "tamp\"G\n\017TenantRoleRoute\022\017\n\007role_id\030\001 \001(\005" +
-      "\022\020\n\010route_id\030\002 \001(\005\022\021\n\troute_url\030\003 \001(\t\"\330\001" +
-      "\n\rTenantManager\022\n\n\002id\030\001 \001(\005\022\017\n\007account\030\002" +
-      " \001(\t\022\020\n\010password\030\003 \001(\t\022\017\n\007role_id\030\004 \001(\005\022" +
-      ")\n\006status\030\005 \001(\0162\031.api.common.DisableStat" +
-      "us\022-\n\tcreate_at\030\006 \001(\0132\032.google.protobuf." +
-      "Timestamp\022-\n\tupdate_at\030\007 \001(\0132\032.google.pr" +
-      "otobuf.Timestamp*F\n\022CommonConfigStatus\022\017" +
-      "\n\013VCS_UNKNOWN\020\000\022\016\n\nVCS_ENABLE\020\001\022\017\n\013VCS_D" +
-      "ISABLE\020\002*H\n\rTenantIsSuper\022\024\n\020IS_SUPER_DE" +
-      "FAULT\020\000\022\017\n\013IS_SUPER_NO\020\001\022\020\n\014IS_SUPER_YES" +
-      "\020\002*?\n\016TenantCopyType\022\017\n\013TCT_UNKNOWN\020\000\022\013\n" +
-      "\007TCT_UID\020\001\022\017\n\013TCT_ACCOUNT\020\002B3\n\032com.tenea" +
-      "syChat.api.commonZ\025wcs/api/common;common" +
-      "b\006proto3"
+      "to\"\354\001\n\010WarnInfo\0222\n\twarn_type\030\001 \001(\0162\037.api" +
+      ".common.TenantWarnEventType\022\014\n\004name\030\002 \001(" +
+      "\t\022\017\n\007account\030\003 \001(\t\022\021\n\ttenant_id\030\004 \001(\005\022\021\n" +
+      "\tworker_id\030\005 \001(\005\022\021\n\tthreshold\030\007 \001(\005\022\r\n\005t" +
+      "imes\030\010 \001(\005\022\023\n\013create_time\030\t \001(\t\0220\n\013alarm" +
+      "_level\030\n \001(\0162\033.api.common.EventAlarmLeve" +
+      "l\"E\n\014WSConnCustom\022\020\n\010username\030\001 \001(\t\022\020\n\010p" +
+      "latform\030\002 \001(\005\022\021\n\tuserlevel\030\003 \001(\r\"\325\002\n\020Ten" +
+      "antsLineGroup\022\n\n\002id\030\001 \001(\005\022\014\n\004name\030\002 \001(\t\022" +
+      "(\n\010h5_lines\030\003 \001(\0132\026.api.common.ListStrin" +
+      "g\0220\n\020background_lines\030\004 \001(\0132\026.api.common" +
+      ".ListString\022\023\n\013operate_uid\030\005 \001(\005\022\023\n\013desc" +
+      "ription\030\006 \001(\t\022-\n\tcreate_at\030\007 \001(\0132\032.googl" +
+      "e.protobuf.Timestamp\022-\n\tupdate_at\030\010 \001(\0132" +
+      "\032.google.protobuf.Timestamp\022-\n\tdelete_at" +
+      "\030\t \001(\0132\032.google.protobuf.Timestamp\022\024\n\014op" +
+      "erate_name\030\n \001(\t\"\334\001\n\013TenantRoute\022\n\n\002id\030\001" +
+      " \001(\005\022\014\n\004name\030\002 \001(\t\022\013\n\003url\030\003 \001(\t\022\013\n\003pid\030\004" +
+      " \001(\005\022\014\n\004sort\030\005 \001(\005\022-\n\tcreate_at\030\006 \001(\0132\032." +
+      "google.protobuf.Timestamp\022-\n\tupdate_at\030\007" +
+      " \001(\0132\032.google.protobuf.Timestamp\022-\n\rbind" +
+      "ingStatus\030\010 \001(\0162\026.api.common.BindStatus\"" +
+      "\335\001\n\023TenantRouteWithItem\022\n\n\002id\030\001 \001(\005\022\014\n\004n" +
+      "ame\030\002 \001(\t\022\013\n\003url\030\003 \001(\t\022\013\n\003pid\030\004 \001(\005\022\014\n\004s" +
+      "ort\030\005 \001(\005\022-\n\tcreate_at\030\006 \001(\0132\032.google.pr" +
+      "otobuf.Timestamp\022-\n\tupdate_at\030\007 \001(\0132\032.go" +
+      "ogle.protobuf.Timestamp\022&\n\005items\030\t \003(\0132\027" +
+      ".api.common.TenantRoute\"\261\001\n\nTenantRole\022\n" +
+      "\n\002id\030\001 \001(\005\022\014\n\004name\030\002 \001(\t\022+\n\010is_super\030\003 \001" +
+      "(\0162\031.api.common.TenantIsSuper\022-\n\tcreate_" +
+      "at\030\004 \001(\0132\032.google.protobuf.Timestamp\022-\n\t" +
+      "update_at\030\005 \001(\0132\032.google.protobuf.Timest" +
+      "amp\"G\n\017TenantRoleRoute\022\017\n\007role_id\030\001 \001(\005\022" +
+      "\020\n\010route_id\030\002 \001(\005\022\021\n\troute_url\030\003 \001(\t\"\330\001\n" +
+      "\rTenantManager\022\n\n\002id\030\001 \001(\005\022\017\n\007account\030\002 " +
+      "\001(\t\022\020\n\010password\030\003 \001(\t\022\017\n\007role_id\030\004 \001(\005\022)" +
+      "\n\006status\030\005 \001(\0162\031.api.common.DisableStatu" +
+      "s\022-\n\tcreate_at\030\006 \001(\0132\032.google.protobuf.T" +
+      "imestamp\022-\n\tupdate_at\030\007 \001(\0132\032.google.pro" +
+      "tobuf.Timestamp*F\n\022CommonConfigStatus\022\017\n" +
+      "\013VCS_UNKNOWN\020\000\022\016\n\nVCS_ENABLE\020\001\022\017\n\013VCS_DI" +
+      "SABLE\020\002*H\n\rTenantIsSuper\022\024\n\020IS_SUPER_DEF" +
+      "AULT\020\000\022\017\n\013IS_SUPER_NO\020\001\022\020\n\014IS_SUPER_YES\020" +
+      "\002*?\n\016TenantCopyType\022\017\n\013TCT_UNKNOWN\020\000\022\013\n\007" +
+      "TCT_UID\020\001\022\017\n\013TCT_ACCOUNT\020\002*\201\001\n\023TenantWar" +
+      "nEventType\022\020\n\014Warn_Unknown\020\000\022\023\n\017Warn_Lea" +
+      "ve_Time\020\001\022\024\n\020Warn_leave_Count\020\002\022\023\n\017Warn_" +
+      "Wait_Reply\020\003\022\030\n\024Warn_Abnormal_Logout\020\004*Z" +
+      "\n\017EventAlarmLevel\022\016\n\nLevel_None\020\000\022\020\n\014Lev" +
+      "el_Normal\020\001\022\024\n\020Level_Alarm_Free\020\002\022\017\n\013Lev" +
+      "el_Alarm\020\003B3\n\032com.teneasyChat.api.common" +
+      "Z\025wcs/api/common;commonb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -10994,44 +12941,50 @@ public final class CTenant {
           io.envoyproxy.pgv.validate.Validate.getDescriptor(),
           com.google.protobuf.TimestampProto.getDescriptor(),
         });
-    internal_static_api_common_WSConnCustom_descriptor =
+    internal_static_api_common_WarnInfo_descriptor =
       getDescriptor().getMessageTypes().get(0);
+    internal_static_api_common_WarnInfo_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_api_common_WarnInfo_descriptor,
+        new java.lang.String[] { "WarnType", "Name", "Account", "TenantId", "WorkerId", "Threshold", "Times", "CreateTime", "AlarmLevel", });
+    internal_static_api_common_WSConnCustom_descriptor =
+      getDescriptor().getMessageTypes().get(1);
     internal_static_api_common_WSConnCustom_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_common_WSConnCustom_descriptor,
         new java.lang.String[] { "Username", "Platform", "Userlevel", });
     internal_static_api_common_TenantsLineGroup_descriptor =
-      getDescriptor().getMessageTypes().get(1);
+      getDescriptor().getMessageTypes().get(2);
     internal_static_api_common_TenantsLineGroup_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_common_TenantsLineGroup_descriptor,
         new java.lang.String[] { "Id", "Name", "H5Lines", "BackgroundLines", "OperateUid", "Description", "CreateAt", "UpdateAt", "DeleteAt", "OperateName", });
     internal_static_api_common_TenantRoute_descriptor =
-      getDescriptor().getMessageTypes().get(2);
+      getDescriptor().getMessageTypes().get(3);
     internal_static_api_common_TenantRoute_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_common_TenantRoute_descriptor,
         new java.lang.String[] { "Id", "Name", "Url", "Pid", "Sort", "CreateAt", "UpdateAt", "BindingStatus", });
     internal_static_api_common_TenantRouteWithItem_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(4);
     internal_static_api_common_TenantRouteWithItem_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_common_TenantRouteWithItem_descriptor,
         new java.lang.String[] { "Id", "Name", "Url", "Pid", "Sort", "CreateAt", "UpdateAt", "Items", });
     internal_static_api_common_TenantRole_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_api_common_TenantRole_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_common_TenantRole_descriptor,
         new java.lang.String[] { "Id", "Name", "IsSuper", "CreateAt", "UpdateAt", });
     internal_static_api_common_TenantRoleRoute_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(6);
     internal_static_api_common_TenantRoleRoute_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_common_TenantRoleRoute_descriptor,
         new java.lang.String[] { "RoleId", "RouteId", "RouteUrl", });
     internal_static_api_common_TenantManager_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_api_common_TenantManager_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_common_TenantManager_descriptor,

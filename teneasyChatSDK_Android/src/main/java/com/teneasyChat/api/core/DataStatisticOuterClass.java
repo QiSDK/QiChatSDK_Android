@@ -70885,6 +70885,2934 @@ public final class DataStatisticOuterClass {
 
   }
 
+  public interface ReplyRelUidRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:api.core.ReplyRelUidRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * 客服id
+     * </pre>
+     *
+     * <code>int32 worker_id = 1;</code>
+     * @return The workerId.
+     */
+    int getWorkerId();
+
+    /**
+     * <pre>
+     * 回复时长类型
+     * </pre>
+     *
+     * <code>int32 reply_type = 2;</code>
+     * @return The replyType.
+     */
+    int getReplyType();
+
+    /**
+     * <pre>
+     * 开始统计时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp start_time = 3;</code>
+     * @return Whether the startTime field is set.
+     */
+    boolean hasStartTime();
+    /**
+     * <pre>
+     * 开始统计时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp start_time = 3;</code>
+     * @return The startTime.
+     */
+    com.google.protobuf.Timestamp getStartTime();
+    /**
+     * <pre>
+     * 开始统计时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp start_time = 3;</code>
+     */
+    com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder();
+
+    /**
+     * <pre>
+     * 结束统计时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp end_time = 4;</code>
+     * @return Whether the endTime field is set.
+     */
+    boolean hasEndTime();
+    /**
+     * <pre>
+     * 结束统计时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp end_time = 4;</code>
+     * @return The endTime.
+     */
+    com.google.protobuf.Timestamp getEndTime();
+    /**
+     * <pre>
+     * 结束统计时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp end_time = 4;</code>
+     */
+    com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder();
+
+    /**
+     * <pre>
+     * 页数
+     * </pre>
+     *
+     * <code>uint32 page = 5;</code>
+     * @return The page.
+     */
+    int getPage();
+
+    /**
+     * <pre>
+     * 每页大小
+     * </pre>
+     *
+     * <code>uint32 pageSize = 6;</code>
+     * @return The pageSize.
+     */
+    int getPageSize();
+  }
+  /**
+   * <pre>
+   * 服务时长对应的相关用户查询
+   * </pre>
+   *
+   * Protobuf type {@code api.core.ReplyRelUidRequest}
+   */
+  public static final class ReplyRelUidRequest extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:api.core.ReplyRelUidRequest)
+      ReplyRelUidRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 26,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        ReplyRelUidRequest.class.getName());
+    }
+    // Use ReplyRelUidRequest.newBuilder() to construct.
+    private ReplyRelUidRequest(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private ReplyRelUidRequest() {
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.teneasyChat.api.core.DataStatisticOuterClass.internal_static_api_core_ReplyRelUidRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.teneasyChat.api.core.DataStatisticOuterClass.internal_static_api_core_ReplyRelUidRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidRequest.class, com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidRequest.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int WORKER_ID_FIELD_NUMBER = 1;
+    private int workerId_ = 0;
+    /**
+     * <pre>
+     * 客服id
+     * </pre>
+     *
+     * <code>int32 worker_id = 1;</code>
+     * @return The workerId.
+     */
+    @java.lang.Override
+    public int getWorkerId() {
+      return workerId_;
+    }
+
+    public static final int REPLY_TYPE_FIELD_NUMBER = 2;
+    private int replyType_ = 0;
+    /**
+     * <pre>
+     * 回复时长类型
+     * </pre>
+     *
+     * <code>int32 reply_type = 2;</code>
+     * @return The replyType.
+     */
+    @java.lang.Override
+    public int getReplyType() {
+      return replyType_;
+    }
+
+    public static final int START_TIME_FIELD_NUMBER = 3;
+    private com.google.protobuf.Timestamp startTime_;
+    /**
+     * <pre>
+     * 开始统计时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp start_time = 3;</code>
+     * @return Whether the startTime field is set.
+     */
+    @java.lang.Override
+    public boolean hasStartTime() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     * <pre>
+     * 开始统计时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp start_time = 3;</code>
+     * @return The startTime.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Timestamp getStartTime() {
+      return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
+    }
+    /**
+     * <pre>
+     * 开始统计时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp start_time = 3;</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder() {
+      return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
+    }
+
+    public static final int END_TIME_FIELD_NUMBER = 4;
+    private com.google.protobuf.Timestamp endTime_;
+    /**
+     * <pre>
+     * 结束统计时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp end_time = 4;</code>
+     * @return Whether the endTime field is set.
+     */
+    @java.lang.Override
+    public boolean hasEndTime() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     * <pre>
+     * 结束统计时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp end_time = 4;</code>
+     * @return The endTime.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Timestamp getEndTime() {
+      return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
+    }
+    /**
+     * <pre>
+     * 结束统计时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp end_time = 4;</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder() {
+      return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
+    }
+
+    public static final int PAGE_FIELD_NUMBER = 5;
+    private int page_ = 0;
+    /**
+     * <pre>
+     * 页数
+     * </pre>
+     *
+     * <code>uint32 page = 5;</code>
+     * @return The page.
+     */
+    @java.lang.Override
+    public int getPage() {
+      return page_;
+    }
+
+    public static final int PAGESIZE_FIELD_NUMBER = 6;
+    private int pageSize_ = 0;
+    /**
+     * <pre>
+     * 每页大小
+     * </pre>
+     *
+     * <code>uint32 pageSize = 6;</code>
+     * @return The pageSize.
+     */
+    @java.lang.Override
+    public int getPageSize() {
+      return pageSize_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (workerId_ != 0) {
+        output.writeInt32(1, workerId_);
+      }
+      if (replyType_ != 0) {
+        output.writeInt32(2, replyType_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(3, getStartTime());
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        output.writeMessage(4, getEndTime());
+      }
+      if (page_ != 0) {
+        output.writeUInt32(5, page_);
+      }
+      if (pageSize_ != 0) {
+        output.writeUInt32(6, pageSize_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (workerId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, workerId_);
+      }
+      if (replyType_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, replyType_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, getStartTime());
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, getEndTime());
+      }
+      if (page_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(5, page_);
+      }
+      if (pageSize_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(6, pageSize_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidRequest)) {
+        return super.equals(obj);
+      }
+      com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidRequest other = (com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidRequest) obj;
+
+      if (getWorkerId()
+          != other.getWorkerId()) return false;
+      if (getReplyType()
+          != other.getReplyType()) return false;
+      if (hasStartTime() != other.hasStartTime()) return false;
+      if (hasStartTime()) {
+        if (!getStartTime()
+            .equals(other.getStartTime())) return false;
+      }
+      if (hasEndTime() != other.hasEndTime()) return false;
+      if (hasEndTime()) {
+        if (!getEndTime()
+            .equals(other.getEndTime())) return false;
+      }
+      if (getPage()
+          != other.getPage()) return false;
+      if (getPageSize()
+          != other.getPageSize()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + WORKER_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getWorkerId();
+      hash = (37 * hash) + REPLY_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getReplyType();
+      if (hasStartTime()) {
+        hash = (37 * hash) + START_TIME_FIELD_NUMBER;
+        hash = (53 * hash) + getStartTime().hashCode();
+      }
+      if (hasEndTime()) {
+        hash = (37 * hash) + END_TIME_FIELD_NUMBER;
+        hash = (53 * hash) + getEndTime().hashCode();
+      }
+      hash = (37 * hash) + PAGE_FIELD_NUMBER;
+      hash = (53 * hash) + getPage();
+      hash = (37 * hash) + PAGESIZE_FIELD_NUMBER;
+      hash = (53 * hash) + getPageSize();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * 服务时长对应的相关用户查询
+     * </pre>
+     *
+     * Protobuf type {@code api.core.ReplyRelUidRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:api.core.ReplyRelUidRequest)
+        com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.teneasyChat.api.core.DataStatisticOuterClass.internal_static_api_core_ReplyRelUidRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.teneasyChat.api.core.DataStatisticOuterClass.internal_static_api_core_ReplyRelUidRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidRequest.class, com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidRequest.Builder.class);
+      }
+
+      // Construct using com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage
+                .alwaysUseFieldBuilders) {
+          getStartTimeFieldBuilder();
+          getEndTimeFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        workerId_ = 0;
+        replyType_ = 0;
+        startTime_ = null;
+        if (startTimeBuilder_ != null) {
+          startTimeBuilder_.dispose();
+          startTimeBuilder_ = null;
+        }
+        endTime_ = null;
+        if (endTimeBuilder_ != null) {
+          endTimeBuilder_.dispose();
+          endTimeBuilder_ = null;
+        }
+        page_ = 0;
+        pageSize_ = 0;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.teneasyChat.api.core.DataStatisticOuterClass.internal_static_api_core_ReplyRelUidRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidRequest getDefaultInstanceForType() {
+        return com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidRequest build() {
+        com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidRequest buildPartial() {
+        com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidRequest result = new com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidRequest(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidRequest result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.workerId_ = workerId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.replyType_ = replyType_;
+        }
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.startTime_ = startTimeBuilder_ == null
+              ? startTime_
+              : startTimeBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.endTime_ = endTimeBuilder_ == null
+              ? endTime_
+              : endTimeBuilder_.build();
+          to_bitField0_ |= 0x00000002;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.page_ = page_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.pageSize_ = pageSize_;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidRequest) {
+          return mergeFrom((com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidRequest other) {
+        if (other == com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidRequest.getDefaultInstance()) return this;
+        if (other.getWorkerId() != 0) {
+          setWorkerId(other.getWorkerId());
+        }
+        if (other.getReplyType() != 0) {
+          setReplyType(other.getReplyType());
+        }
+        if (other.hasStartTime()) {
+          mergeStartTime(other.getStartTime());
+        }
+        if (other.hasEndTime()) {
+          mergeEndTime(other.getEndTime());
+        }
+        if (other.getPage() != 0) {
+          setPage(other.getPage());
+        }
+        if (other.getPageSize() != 0) {
+          setPageSize(other.getPageSize());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                workerId_ = input.readInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 16: {
+                replyType_ = input.readInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
+              case 26: {
+                input.readMessage(
+                    getStartTimeFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
+              case 34: {
+                input.readMessage(
+                    getEndTimeFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 34
+              case 40: {
+                page_ = input.readUInt32();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 40
+              case 48: {
+                pageSize_ = input.readUInt32();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 48
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private int workerId_ ;
+      /**
+       * <pre>
+       * 客服id
+       * </pre>
+       *
+       * <code>int32 worker_id = 1;</code>
+       * @return The workerId.
+       */
+      @java.lang.Override
+      public int getWorkerId() {
+        return workerId_;
+      }
+      /**
+       * <pre>
+       * 客服id
+       * </pre>
+       *
+       * <code>int32 worker_id = 1;</code>
+       * @param value The workerId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setWorkerId(int value) {
+
+        workerId_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 客服id
+       * </pre>
+       *
+       * <code>int32 worker_id = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearWorkerId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        workerId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int replyType_ ;
+      /**
+       * <pre>
+       * 回复时长类型
+       * </pre>
+       *
+       * <code>int32 reply_type = 2;</code>
+       * @return The replyType.
+       */
+      @java.lang.Override
+      public int getReplyType() {
+        return replyType_;
+      }
+      /**
+       * <pre>
+       * 回复时长类型
+       * </pre>
+       *
+       * <code>int32 reply_type = 2;</code>
+       * @param value The replyType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setReplyType(int value) {
+
+        replyType_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 回复时长类型
+       * </pre>
+       *
+       * <code>int32 reply_type = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearReplyType() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        replyType_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.Timestamp startTime_;
+      private com.google.protobuf.SingleFieldBuilder<
+          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> startTimeBuilder_;
+      /**
+       * <pre>
+       * 开始统计时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp start_time = 3;</code>
+       * @return Whether the startTime field is set.
+       */
+      public boolean hasStartTime() {
+        return ((bitField0_ & 0x00000004) != 0);
+      }
+      /**
+       * <pre>
+       * 开始统计时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp start_time = 3;</code>
+       * @return The startTime.
+       */
+      public com.google.protobuf.Timestamp getStartTime() {
+        if (startTimeBuilder_ == null) {
+          return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
+        } else {
+          return startTimeBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * 开始统计时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp start_time = 3;</code>
+       */
+      public Builder setStartTime(com.google.protobuf.Timestamp value) {
+        if (startTimeBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          startTime_ = value;
+        } else {
+          startTimeBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 开始统计时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp start_time = 3;</code>
+       */
+      public Builder setStartTime(
+          com.google.protobuf.Timestamp.Builder builderForValue) {
+        if (startTimeBuilder_ == null) {
+          startTime_ = builderForValue.build();
+        } else {
+          startTimeBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 开始统计时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp start_time = 3;</code>
+       */
+      public Builder mergeStartTime(com.google.protobuf.Timestamp value) {
+        if (startTimeBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) != 0) &&
+            startTime_ != null &&
+            startTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getStartTimeBuilder().mergeFrom(value);
+          } else {
+            startTime_ = value;
+          }
+        } else {
+          startTimeBuilder_.mergeFrom(value);
+        }
+        if (startTime_ != null) {
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 开始统计时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp start_time = 3;</code>
+       */
+      public Builder clearStartTime() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        startTime_ = null;
+        if (startTimeBuilder_ != null) {
+          startTimeBuilder_.dispose();
+          startTimeBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 开始统计时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp start_time = 3;</code>
+       */
+      public com.google.protobuf.Timestamp.Builder getStartTimeBuilder() {
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return getStartTimeFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * 开始统计时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp start_time = 3;</code>
+       */
+      public com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder() {
+        if (startTimeBuilder_ != null) {
+          return startTimeBuilder_.getMessageOrBuilder();
+        } else {
+          return startTime_ == null ?
+              com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
+        }
+      }
+      /**
+       * <pre>
+       * 开始统计时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp start_time = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+          getStartTimeFieldBuilder() {
+        if (startTimeBuilder_ == null) {
+          startTimeBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                  getStartTime(),
+                  getParentForChildren(),
+                  isClean());
+          startTime_ = null;
+        }
+        return startTimeBuilder_;
+      }
+
+      private com.google.protobuf.Timestamp endTime_;
+      private com.google.protobuf.SingleFieldBuilder<
+          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> endTimeBuilder_;
+      /**
+       * <pre>
+       * 结束统计时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp end_time = 4;</code>
+       * @return Whether the endTime field is set.
+       */
+      public boolean hasEndTime() {
+        return ((bitField0_ & 0x00000008) != 0);
+      }
+      /**
+       * <pre>
+       * 结束统计时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp end_time = 4;</code>
+       * @return The endTime.
+       */
+      public com.google.protobuf.Timestamp getEndTime() {
+        if (endTimeBuilder_ == null) {
+          return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
+        } else {
+          return endTimeBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * 结束统计时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp end_time = 4;</code>
+       */
+      public Builder setEndTime(com.google.protobuf.Timestamp value) {
+        if (endTimeBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          endTime_ = value;
+        } else {
+          endTimeBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 结束统计时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp end_time = 4;</code>
+       */
+      public Builder setEndTime(
+          com.google.protobuf.Timestamp.Builder builderForValue) {
+        if (endTimeBuilder_ == null) {
+          endTime_ = builderForValue.build();
+        } else {
+          endTimeBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 结束统计时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp end_time = 4;</code>
+       */
+      public Builder mergeEndTime(com.google.protobuf.Timestamp value) {
+        if (endTimeBuilder_ == null) {
+          if (((bitField0_ & 0x00000008) != 0) &&
+            endTime_ != null &&
+            endTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getEndTimeBuilder().mergeFrom(value);
+          } else {
+            endTime_ = value;
+          }
+        } else {
+          endTimeBuilder_.mergeFrom(value);
+        }
+        if (endTime_ != null) {
+          bitField0_ |= 0x00000008;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 结束统计时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp end_time = 4;</code>
+       */
+      public Builder clearEndTime() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        endTime_ = null;
+        if (endTimeBuilder_ != null) {
+          endTimeBuilder_.dispose();
+          endTimeBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 结束统计时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp end_time = 4;</code>
+       */
+      public com.google.protobuf.Timestamp.Builder getEndTimeBuilder() {
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return getEndTimeFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * 结束统计时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp end_time = 4;</code>
+       */
+      public com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder() {
+        if (endTimeBuilder_ != null) {
+          return endTimeBuilder_.getMessageOrBuilder();
+        } else {
+          return endTime_ == null ?
+              com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
+        }
+      }
+      /**
+       * <pre>
+       * 结束统计时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp end_time = 4;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+          getEndTimeFieldBuilder() {
+        if (endTimeBuilder_ == null) {
+          endTimeBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                  getEndTime(),
+                  getParentForChildren(),
+                  isClean());
+          endTime_ = null;
+        }
+        return endTimeBuilder_;
+      }
+
+      private int page_ ;
+      /**
+       * <pre>
+       * 页数
+       * </pre>
+       *
+       * <code>uint32 page = 5;</code>
+       * @return The page.
+       */
+      @java.lang.Override
+      public int getPage() {
+        return page_;
+      }
+      /**
+       * <pre>
+       * 页数
+       * </pre>
+       *
+       * <code>uint32 page = 5;</code>
+       * @param value The page to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPage(int value) {
+
+        page_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 页数
+       * </pre>
+       *
+       * <code>uint32 page = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPage() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        page_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int pageSize_ ;
+      /**
+       * <pre>
+       * 每页大小
+       * </pre>
+       *
+       * <code>uint32 pageSize = 6;</code>
+       * @return The pageSize.
+       */
+      @java.lang.Override
+      public int getPageSize() {
+        return pageSize_;
+      }
+      /**
+       * <pre>
+       * 每页大小
+       * </pre>
+       *
+       * <code>uint32 pageSize = 6;</code>
+       * @param value The pageSize to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPageSize(int value) {
+
+        pageSize_ = value;
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 每页大小
+       * </pre>
+       *
+       * <code>uint32 pageSize = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPageSize() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        pageSize_ = 0;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:api.core.ReplyRelUidRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:api.core.ReplyRelUidRequest)
+    private static final com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidRequest();
+    }
+
+    public static com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ReplyRelUidRequest>
+        PARSER = new com.google.protobuf.AbstractParser<ReplyRelUidRequest>() {
+      @java.lang.Override
+      public ReplyRelUidRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<ReplyRelUidRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ReplyRelUidRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ReplyRelUidResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:api.core.ReplyRelUidResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>repeated .api.core.ReplyRelUidList list = 1;</code>
+     */
+    java.util.List<com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidList> 
+        getListList();
+    /**
+     * <code>repeated .api.core.ReplyRelUidList list = 1;</code>
+     */
+    com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidList getList(int index);
+    /**
+     * <code>repeated .api.core.ReplyRelUidList list = 1;</code>
+     */
+    int getListCount();
+    /**
+     * <code>repeated .api.core.ReplyRelUidList list = 1;</code>
+     */
+    java.util.List<? extends com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidListOrBuilder> 
+        getListOrBuilderList();
+    /**
+     * <code>repeated .api.core.ReplyRelUidList list = 1;</code>
+     */
+    com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidListOrBuilder getListOrBuilder(
+        int index);
+
+    /**
+     * <pre>
+     * 总数
+     * </pre>
+     *
+     * <code>int32 total = 2;</code>
+     * @return The total.
+     */
+    int getTotal();
+  }
+  /**
+   * <pre>
+   * 服务时长对应的相关用户查询
+   * </pre>
+   *
+   * Protobuf type {@code api.core.ReplyRelUidResponse}
+   */
+  public static final class ReplyRelUidResponse extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:api.core.ReplyRelUidResponse)
+      ReplyRelUidResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 26,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        ReplyRelUidResponse.class.getName());
+    }
+    // Use ReplyRelUidResponse.newBuilder() to construct.
+    private ReplyRelUidResponse(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private ReplyRelUidResponse() {
+      list_ = java.util.Collections.emptyList();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.teneasyChat.api.core.DataStatisticOuterClass.internal_static_api_core_ReplyRelUidResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.teneasyChat.api.core.DataStatisticOuterClass.internal_static_api_core_ReplyRelUidResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidResponse.class, com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidResponse.Builder.class);
+    }
+
+    public static final int LIST_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
+    private java.util.List<com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidList> list_;
+    /**
+     * <code>repeated .api.core.ReplyRelUidList list = 1;</code>
+     */
+    @java.lang.Override
+    public java.util.List<com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidList> getListList() {
+      return list_;
+    }
+    /**
+     * <code>repeated .api.core.ReplyRelUidList list = 1;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidListOrBuilder> 
+        getListOrBuilderList() {
+      return list_;
+    }
+    /**
+     * <code>repeated .api.core.ReplyRelUidList list = 1;</code>
+     */
+    @java.lang.Override
+    public int getListCount() {
+      return list_.size();
+    }
+    /**
+     * <code>repeated .api.core.ReplyRelUidList list = 1;</code>
+     */
+    @java.lang.Override
+    public com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidList getList(int index) {
+      return list_.get(index);
+    }
+    /**
+     * <code>repeated .api.core.ReplyRelUidList list = 1;</code>
+     */
+    @java.lang.Override
+    public com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidListOrBuilder getListOrBuilder(
+        int index) {
+      return list_.get(index);
+    }
+
+    public static final int TOTAL_FIELD_NUMBER = 2;
+    private int total_ = 0;
+    /**
+     * <pre>
+     * 总数
+     * </pre>
+     *
+     * <code>int32 total = 2;</code>
+     * @return The total.
+     */
+    @java.lang.Override
+    public int getTotal() {
+      return total_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < list_.size(); i++) {
+        output.writeMessage(1, list_.get(i));
+      }
+      if (total_ != 0) {
+        output.writeInt32(2, total_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < list_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, list_.get(i));
+      }
+      if (total_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, total_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidResponse)) {
+        return super.equals(obj);
+      }
+      com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidResponse other = (com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidResponse) obj;
+
+      if (!getListList()
+          .equals(other.getListList())) return false;
+      if (getTotal()
+          != other.getTotal()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getListCount() > 0) {
+        hash = (37 * hash) + LIST_FIELD_NUMBER;
+        hash = (53 * hash) + getListList().hashCode();
+      }
+      hash = (37 * hash) + TOTAL_FIELD_NUMBER;
+      hash = (53 * hash) + getTotal();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * 服务时长对应的相关用户查询
+     * </pre>
+     *
+     * Protobuf type {@code api.core.ReplyRelUidResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:api.core.ReplyRelUidResponse)
+        com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.teneasyChat.api.core.DataStatisticOuterClass.internal_static_api_core_ReplyRelUidResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.teneasyChat.api.core.DataStatisticOuterClass.internal_static_api_core_ReplyRelUidResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidResponse.class, com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidResponse.Builder.class);
+      }
+
+      // Construct using com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidResponse.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        if (listBuilder_ == null) {
+          list_ = java.util.Collections.emptyList();
+        } else {
+          list_ = null;
+          listBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000001);
+        total_ = 0;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.teneasyChat.api.core.DataStatisticOuterClass.internal_static_api_core_ReplyRelUidResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidResponse getDefaultInstanceForType() {
+        return com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidResponse build() {
+        com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidResponse buildPartial() {
+        com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidResponse result = new com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidResponse(this);
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidResponse result) {
+        if (listBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            list_ = java.util.Collections.unmodifiableList(list_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.list_ = list_;
+        } else {
+          result.list_ = listBuilder_.build();
+        }
+      }
+
+      private void buildPartial0(com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidResponse result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.total_ = total_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidResponse) {
+          return mergeFrom((com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidResponse other) {
+        if (other == com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidResponse.getDefaultInstance()) return this;
+        if (listBuilder_ == null) {
+          if (!other.list_.isEmpty()) {
+            if (list_.isEmpty()) {
+              list_ = other.list_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureListIsMutable();
+              list_.addAll(other.list_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.list_.isEmpty()) {
+            if (listBuilder_.isEmpty()) {
+              listBuilder_.dispose();
+              listBuilder_ = null;
+              list_ = other.list_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              listBuilder_ = 
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
+                   getListFieldBuilder() : null;
+            } else {
+              listBuilder_.addAllMessages(other.list_);
+            }
+          }
+        }
+        if (other.getTotal() != 0) {
+          setTotal(other.getTotal());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidList m =
+                    input.readMessage(
+                        com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidList.parser(),
+                        extensionRegistry);
+                if (listBuilder_ == null) {
+                  ensureListIsMutable();
+                  list_.add(m);
+                } else {
+                  listBuilder_.addMessage(m);
+                }
+                break;
+              } // case 10
+              case 16: {
+                total_ = input.readInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private java.util.List<com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidList> list_ =
+        java.util.Collections.emptyList();
+      private void ensureListIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          list_ = new java.util.ArrayList<com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidList>(list_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilder<
+          com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidList, com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidList.Builder, com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidListOrBuilder> listBuilder_;
+
+      /**
+       * <code>repeated .api.core.ReplyRelUidList list = 1;</code>
+       */
+      public java.util.List<com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidList> getListList() {
+        if (listBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(list_);
+        } else {
+          return listBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .api.core.ReplyRelUidList list = 1;</code>
+       */
+      public int getListCount() {
+        if (listBuilder_ == null) {
+          return list_.size();
+        } else {
+          return listBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .api.core.ReplyRelUidList list = 1;</code>
+       */
+      public com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidList getList(int index) {
+        if (listBuilder_ == null) {
+          return list_.get(index);
+        } else {
+          return listBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .api.core.ReplyRelUidList list = 1;</code>
+       */
+      public Builder setList(
+          int index, com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidList value) {
+        if (listBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureListIsMutable();
+          list_.set(index, value);
+          onChanged();
+        } else {
+          listBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .api.core.ReplyRelUidList list = 1;</code>
+       */
+      public Builder setList(
+          int index, com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidList.Builder builderForValue) {
+        if (listBuilder_ == null) {
+          ensureListIsMutable();
+          list_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          listBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .api.core.ReplyRelUidList list = 1;</code>
+       */
+      public Builder addList(com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidList value) {
+        if (listBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureListIsMutable();
+          list_.add(value);
+          onChanged();
+        } else {
+          listBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .api.core.ReplyRelUidList list = 1;</code>
+       */
+      public Builder addList(
+          int index, com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidList value) {
+        if (listBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureListIsMutable();
+          list_.add(index, value);
+          onChanged();
+        } else {
+          listBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .api.core.ReplyRelUidList list = 1;</code>
+       */
+      public Builder addList(
+          com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidList.Builder builderForValue) {
+        if (listBuilder_ == null) {
+          ensureListIsMutable();
+          list_.add(builderForValue.build());
+          onChanged();
+        } else {
+          listBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .api.core.ReplyRelUidList list = 1;</code>
+       */
+      public Builder addList(
+          int index, com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidList.Builder builderForValue) {
+        if (listBuilder_ == null) {
+          ensureListIsMutable();
+          list_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          listBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .api.core.ReplyRelUidList list = 1;</code>
+       */
+      public Builder addAllList(
+          java.lang.Iterable<? extends com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidList> values) {
+        if (listBuilder_ == null) {
+          ensureListIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, list_);
+          onChanged();
+        } else {
+          listBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .api.core.ReplyRelUidList list = 1;</code>
+       */
+      public Builder clearList() {
+        if (listBuilder_ == null) {
+          list_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          listBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .api.core.ReplyRelUidList list = 1;</code>
+       */
+      public Builder removeList(int index) {
+        if (listBuilder_ == null) {
+          ensureListIsMutable();
+          list_.remove(index);
+          onChanged();
+        } else {
+          listBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .api.core.ReplyRelUidList list = 1;</code>
+       */
+      public com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidList.Builder getListBuilder(
+          int index) {
+        return getListFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .api.core.ReplyRelUidList list = 1;</code>
+       */
+      public com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidListOrBuilder getListOrBuilder(
+          int index) {
+        if (listBuilder_ == null) {
+          return list_.get(index);  } else {
+          return listBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .api.core.ReplyRelUidList list = 1;</code>
+       */
+      public java.util.List<? extends com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidListOrBuilder> 
+           getListOrBuilderList() {
+        if (listBuilder_ != null) {
+          return listBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(list_);
+        }
+      }
+      /**
+       * <code>repeated .api.core.ReplyRelUidList list = 1;</code>
+       */
+      public com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidList.Builder addListBuilder() {
+        return getListFieldBuilder().addBuilder(
+            com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidList.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .api.core.ReplyRelUidList list = 1;</code>
+       */
+      public com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidList.Builder addListBuilder(
+          int index) {
+        return getListFieldBuilder().addBuilder(
+            index, com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidList.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .api.core.ReplyRelUidList list = 1;</code>
+       */
+      public java.util.List<com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidList.Builder> 
+           getListBuilderList() {
+        return getListFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilder<
+          com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidList, com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidList.Builder, com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidListOrBuilder> 
+          getListFieldBuilder() {
+        if (listBuilder_ == null) {
+          listBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
+              com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidList, com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidList.Builder, com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidListOrBuilder>(
+                  list_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          list_ = null;
+        }
+        return listBuilder_;
+      }
+
+      private int total_ ;
+      /**
+       * <pre>
+       * 总数
+       * </pre>
+       *
+       * <code>int32 total = 2;</code>
+       * @return The total.
+       */
+      @java.lang.Override
+      public int getTotal() {
+        return total_;
+      }
+      /**
+       * <pre>
+       * 总数
+       * </pre>
+       *
+       * <code>int32 total = 2;</code>
+       * @param value The total to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTotal(int value) {
+
+        total_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 总数
+       * </pre>
+       *
+       * <code>int32 total = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTotal() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        total_ = 0;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:api.core.ReplyRelUidResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:api.core.ReplyRelUidResponse)
+    private static final com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidResponse();
+    }
+
+    public static com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ReplyRelUidResponse>
+        PARSER = new com.google.protobuf.AbstractParser<ReplyRelUidResponse>() {
+      @java.lang.Override
+      public ReplyRelUidResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<ReplyRelUidResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ReplyRelUidResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ReplyRelUidListOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:api.core.ReplyRelUidList)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * 用户ID
+     * </pre>
+     *
+     * <code>int32 user_id = 1;</code>
+     * @return The userId.
+     */
+    int getUserId();
+
+    /**
+     * <pre>
+     * 用户名
+     * </pre>
+     *
+     * <code>string user_name = 2;</code>
+     * @return The userName.
+     */
+    java.lang.String getUserName();
+    /**
+     * <pre>
+     * 用户名
+     * </pre>
+     *
+     * <code>string user_name = 2;</code>
+     * @return The bytes for userName.
+     */
+    com.google.protobuf.ByteString
+        getUserNameBytes();
+
+    /**
+     * <pre>
+     * 创建时间
+     * </pre>
+     *
+     * <code>int32 created_at = 3;</code>
+     * @return The createdAt.
+     */
+    int getCreatedAt();
+
+    /**
+     * <pre>
+     * 用户角色
+     * </pre>
+     *
+     * <code>int32 user_role = 4;</code>
+     * @return The userRole.
+     */
+    int getUserRole();
+  }
+  /**
+   * Protobuf type {@code api.core.ReplyRelUidList}
+   */
+  public static final class ReplyRelUidList extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:api.core.ReplyRelUidList)
+      ReplyRelUidListOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 26,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        ReplyRelUidList.class.getName());
+    }
+    // Use ReplyRelUidList.newBuilder() to construct.
+    private ReplyRelUidList(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private ReplyRelUidList() {
+      userName_ = "";
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.teneasyChat.api.core.DataStatisticOuterClass.internal_static_api_core_ReplyRelUidList_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.teneasyChat.api.core.DataStatisticOuterClass.internal_static_api_core_ReplyRelUidList_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidList.class, com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidList.Builder.class);
+    }
+
+    public static final int USER_ID_FIELD_NUMBER = 1;
+    private int userId_ = 0;
+    /**
+     * <pre>
+     * 用户ID
+     * </pre>
+     *
+     * <code>int32 user_id = 1;</code>
+     * @return The userId.
+     */
+    @java.lang.Override
+    public int getUserId() {
+      return userId_;
+    }
+
+    public static final int USER_NAME_FIELD_NUMBER = 2;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object userName_ = "";
+    /**
+     * <pre>
+     * 用户名
+     * </pre>
+     *
+     * <code>string user_name = 2;</code>
+     * @return The userName.
+     */
+    @java.lang.Override
+    public java.lang.String getUserName() {
+      java.lang.Object ref = userName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        userName_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * 用户名
+     * </pre>
+     *
+     * <code>string user_name = 2;</code>
+     * @return The bytes for userName.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getUserNameBytes() {
+      java.lang.Object ref = userName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        userName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CREATED_AT_FIELD_NUMBER = 3;
+    private int createdAt_ = 0;
+    /**
+     * <pre>
+     * 创建时间
+     * </pre>
+     *
+     * <code>int32 created_at = 3;</code>
+     * @return The createdAt.
+     */
+    @java.lang.Override
+    public int getCreatedAt() {
+      return createdAt_;
+    }
+
+    public static final int USER_ROLE_FIELD_NUMBER = 4;
+    private int userRole_ = 0;
+    /**
+     * <pre>
+     * 用户角色
+     * </pre>
+     *
+     * <code>int32 user_role = 4;</code>
+     * @return The userRole.
+     */
+    @java.lang.Override
+    public int getUserRole() {
+      return userRole_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (userId_ != 0) {
+        output.writeInt32(1, userId_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(userName_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 2, userName_);
+      }
+      if (createdAt_ != 0) {
+        output.writeInt32(3, createdAt_);
+      }
+      if (userRole_ != 0) {
+        output.writeInt32(4, userRole_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (userId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, userId_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(userName_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(2, userName_);
+      }
+      if (createdAt_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(3, createdAt_);
+      }
+      if (userRole_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(4, userRole_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidList)) {
+        return super.equals(obj);
+      }
+      com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidList other = (com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidList) obj;
+
+      if (getUserId()
+          != other.getUserId()) return false;
+      if (!getUserName()
+          .equals(other.getUserName())) return false;
+      if (getCreatedAt()
+          != other.getCreatedAt()) return false;
+      if (getUserRole()
+          != other.getUserRole()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + USER_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getUserId();
+      hash = (37 * hash) + USER_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getUserName().hashCode();
+      hash = (37 * hash) + CREATED_AT_FIELD_NUMBER;
+      hash = (53 * hash) + getCreatedAt();
+      hash = (37 * hash) + USER_ROLE_FIELD_NUMBER;
+      hash = (53 * hash) + getUserRole();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidList parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidList parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidList parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidList parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidList parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidList parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidList parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidList parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidList parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidList parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidList parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidList parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidList prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code api.core.ReplyRelUidList}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:api.core.ReplyRelUidList)
+        com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidListOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.teneasyChat.api.core.DataStatisticOuterClass.internal_static_api_core_ReplyRelUidList_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.teneasyChat.api.core.DataStatisticOuterClass.internal_static_api_core_ReplyRelUidList_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidList.class, com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidList.Builder.class);
+      }
+
+      // Construct using com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidList.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        userId_ = 0;
+        userName_ = "";
+        createdAt_ = 0;
+        userRole_ = 0;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.teneasyChat.api.core.DataStatisticOuterClass.internal_static_api_core_ReplyRelUidList_descriptor;
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidList getDefaultInstanceForType() {
+        return com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidList.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidList build() {
+        com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidList result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidList buildPartial() {
+        com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidList result = new com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidList(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidList result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.userId_ = userId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.userName_ = userName_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.createdAt_ = createdAt_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.userRole_ = userRole_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidList) {
+          return mergeFrom((com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidList)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidList other) {
+        if (other == com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidList.getDefaultInstance()) return this;
+        if (other.getUserId() != 0) {
+          setUserId(other.getUserId());
+        }
+        if (!other.getUserName().isEmpty()) {
+          userName_ = other.userName_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        if (other.getCreatedAt() != 0) {
+          setCreatedAt(other.getCreatedAt());
+        }
+        if (other.getUserRole() != 0) {
+          setUserRole(other.getUserRole());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                userId_ = input.readInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 18: {
+                userName_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+              case 24: {
+                createdAt_ = input.readInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 24
+              case 32: {
+                userRole_ = input.readInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 32
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private int userId_ ;
+      /**
+       * <pre>
+       * 用户ID
+       * </pre>
+       *
+       * <code>int32 user_id = 1;</code>
+       * @return The userId.
+       */
+      @java.lang.Override
+      public int getUserId() {
+        return userId_;
+      }
+      /**
+       * <pre>
+       * 用户ID
+       * </pre>
+       *
+       * <code>int32 user_id = 1;</code>
+       * @param value The userId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUserId(int value) {
+
+        userId_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 用户ID
+       * </pre>
+       *
+       * <code>int32 user_id = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUserId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        userId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object userName_ = "";
+      /**
+       * <pre>
+       * 用户名
+       * </pre>
+       *
+       * <code>string user_name = 2;</code>
+       * @return The userName.
+       */
+      public java.lang.String getUserName() {
+        java.lang.Object ref = userName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          userName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * 用户名
+       * </pre>
+       *
+       * <code>string user_name = 2;</code>
+       * @return The bytes for userName.
+       */
+      public com.google.protobuf.ByteString
+          getUserNameBytes() {
+        java.lang.Object ref = userName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          userName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * 用户名
+       * </pre>
+       *
+       * <code>string user_name = 2;</code>
+       * @param value The userName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUserName(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        userName_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 用户名
+       * </pre>
+       *
+       * <code>string user_name = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUserName() {
+        userName_ = getDefaultInstance().getUserName();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 用户名
+       * </pre>
+       *
+       * <code>string user_name = 2;</code>
+       * @param value The bytes for userName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUserNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        userName_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      private int createdAt_ ;
+      /**
+       * <pre>
+       * 创建时间
+       * </pre>
+       *
+       * <code>int32 created_at = 3;</code>
+       * @return The createdAt.
+       */
+      @java.lang.Override
+      public int getCreatedAt() {
+        return createdAt_;
+      }
+      /**
+       * <pre>
+       * 创建时间
+       * </pre>
+       *
+       * <code>int32 created_at = 3;</code>
+       * @param value The createdAt to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCreatedAt(int value) {
+
+        createdAt_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 创建时间
+       * </pre>
+       *
+       * <code>int32 created_at = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCreatedAt() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        createdAt_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int userRole_ ;
+      /**
+       * <pre>
+       * 用户角色
+       * </pre>
+       *
+       * <code>int32 user_role = 4;</code>
+       * @return The userRole.
+       */
+      @java.lang.Override
+      public int getUserRole() {
+        return userRole_;
+      }
+      /**
+       * <pre>
+       * 用户角色
+       * </pre>
+       *
+       * <code>int32 user_role = 4;</code>
+       * @param value The userRole to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUserRole(int value) {
+
+        userRole_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 用户角色
+       * </pre>
+       *
+       * <code>int32 user_role = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUserRole() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        userRole_ = 0;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:api.core.ReplyRelUidList)
+    }
+
+    // @@protoc_insertion_point(class_scope:api.core.ReplyRelUidList)
+    private static final com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidList DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidList();
+    }
+
+    public static com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidList getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ReplyRelUidList>
+        PARSER = new com.google.protobuf.AbstractParser<ReplyRelUidList>() {
+      @java.lang.Override
+      public ReplyRelUidList parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<ReplyRelUidList> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ReplyRelUidList> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.teneasyChat.api.core.DataStatisticOuterClass.ReplyRelUidList getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface WorkerSessionStatsResponseOrBuilder extends
       // @@protoc_insertion_point(interface_extends:api.core.WorkerSessionStatsResponse)
       com.google.protobuf.MessageOrBuilder {
@@ -73776,6 +76704,36 @@ public final class DataStatisticOuterClass {
      * @return The delayedResponseCount.
      */
     int getDelayedResponseCount();
+
+    /**
+     * <pre>
+     * 客服累计在线时长
+     * </pre>
+     *
+     * <code>int32 total_online_duration = 36;</code>
+     * @return The totalOnlineDuration.
+     */
+    int getTotalOnlineDuration();
+
+    /**
+     * <pre>
+     * 客服账号备注人
+     * </pre>
+     *
+     * <code>string worker_remark = 37;</code>
+     * @return The workerRemark.
+     */
+    java.lang.String getWorkerRemark();
+    /**
+     * <pre>
+     * 客服账号备注人
+     * </pre>
+     *
+     * <code>string worker_remark = 37;</code>
+     * @return The bytes for workerRemark.
+     */
+    com.google.protobuf.ByteString
+        getWorkerRemarkBytes();
   }
   /**
    * Protobuf type {@code api.core.WorkerSessionStat}
@@ -73808,6 +76766,7 @@ public final class DataStatisticOuterClass {
       averageReceptionDuration_ = "";
       averageFirstResponseDuration_ = "";
       averageResponseDuration_ = "";
+      workerRemark_ = "";
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
@@ -74504,6 +77463,68 @@ public final class DataStatisticOuterClass {
       return delayedResponseCount_;
     }
 
+    public static final int TOTAL_ONLINE_DURATION_FIELD_NUMBER = 36;
+    private int totalOnlineDuration_ = 0;
+    /**
+     * <pre>
+     * 客服累计在线时长
+     * </pre>
+     *
+     * <code>int32 total_online_duration = 36;</code>
+     * @return The totalOnlineDuration.
+     */
+    @java.lang.Override
+    public int getTotalOnlineDuration() {
+      return totalOnlineDuration_;
+    }
+
+    public static final int WORKER_REMARK_FIELD_NUMBER = 37;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object workerRemark_ = "";
+    /**
+     * <pre>
+     * 客服账号备注人
+     * </pre>
+     *
+     * <code>string worker_remark = 37;</code>
+     * @return The workerRemark.
+     */
+    @java.lang.Override
+    public java.lang.String getWorkerRemark() {
+      java.lang.Object ref = workerRemark_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        workerRemark_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * 客服账号备注人
+     * </pre>
+     *
+     * <code>string worker_remark = 37;</code>
+     * @return The bytes for workerRemark.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getWorkerRemarkBytes() {
+      java.lang.Object ref = workerRemark_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        workerRemark_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -74604,6 +77625,12 @@ public final class DataStatisticOuterClass {
       }
       if (delayedResponseCount_ != 0) {
         output.writeInt32(35, delayedResponseCount_);
+      }
+      if (totalOnlineDuration_ != 0) {
+        output.writeInt32(36, totalOnlineDuration_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(workerRemark_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 37, workerRemark_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -74723,6 +77750,13 @@ public final class DataStatisticOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(35, delayedResponseCount_);
       }
+      if (totalOnlineDuration_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(36, totalOnlineDuration_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(workerRemark_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(37, workerRemark_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -74795,6 +77829,10 @@ public final class DataStatisticOuterClass {
           != other.getLongResponseCount()) return false;
       if (getDelayedResponseCount()
           != other.getDelayedResponseCount()) return false;
+      if (getTotalOnlineDuration()
+          != other.getTotalOnlineDuration()) return false;
+      if (!getWorkerRemark()
+          .equals(other.getWorkerRemark())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -74865,6 +77903,10 @@ public final class DataStatisticOuterClass {
       hash = (53 * hash) + getLongResponseCount();
       hash = (37 * hash) + DELAYED_RESPONSE_COUNT_FIELD_NUMBER;
       hash = (53 * hash) + getDelayedResponseCount();
+      hash = (37 * hash) + TOTAL_ONLINE_DURATION_FIELD_NUMBER;
+      hash = (53 * hash) + getTotalOnlineDuration();
+      hash = (37 * hash) + WORKER_REMARK_FIELD_NUMBER;
+      hash = (53 * hash) + getWorkerRemark().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -75025,6 +78067,8 @@ public final class DataStatisticOuterClass {
         mediumResponseCount_ = 0;
         longResponseCount_ = 0;
         delayedResponseCount_ = 0;
+        totalOnlineDuration_ = 0;
+        workerRemark_ = "";
         return this;
       }
 
@@ -75145,6 +78189,12 @@ public final class DataStatisticOuterClass {
         if (((from_bitField0_ & 0x10000000) != 0)) {
           result.delayedResponseCount_ = delayedResponseCount_;
         }
+        if (((from_bitField0_ & 0x20000000) != 0)) {
+          result.totalOnlineDuration_ = totalOnlineDuration_;
+        }
+        if (((from_bitField0_ & 0x40000000) != 0)) {
+          result.workerRemark_ = workerRemark_;
+        }
       }
 
       @java.lang.Override
@@ -75259,6 +78309,14 @@ public final class DataStatisticOuterClass {
         }
         if (other.getDelayedResponseCount() != 0) {
           setDelayedResponseCount(other.getDelayedResponseCount());
+        }
+        if (other.getTotalOnlineDuration() != 0) {
+          setTotalOnlineDuration(other.getTotalOnlineDuration());
+        }
+        if (!other.getWorkerRemark().isEmpty()) {
+          workerRemark_ = other.workerRemark_;
+          bitField0_ |= 0x40000000;
+          onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -75431,6 +78489,16 @@ public final class DataStatisticOuterClass {
                 bitField0_ |= 0x10000000;
                 break;
               } // case 280
+              case 288: {
+                totalOnlineDuration_ = input.readInt32();
+                bitField0_ |= 0x20000000;
+                break;
+              } // case 288
+              case 298: {
+                workerRemark_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x40000000;
+                break;
+              } // case 298
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -77114,6 +80182,142 @@ public final class DataStatisticOuterClass {
       public Builder clearDelayedResponseCount() {
         bitField0_ = (bitField0_ & ~0x10000000);
         delayedResponseCount_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int totalOnlineDuration_ ;
+      /**
+       * <pre>
+       * 客服累计在线时长
+       * </pre>
+       *
+       * <code>int32 total_online_duration = 36;</code>
+       * @return The totalOnlineDuration.
+       */
+      @java.lang.Override
+      public int getTotalOnlineDuration() {
+        return totalOnlineDuration_;
+      }
+      /**
+       * <pre>
+       * 客服累计在线时长
+       * </pre>
+       *
+       * <code>int32 total_online_duration = 36;</code>
+       * @param value The totalOnlineDuration to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTotalOnlineDuration(int value) {
+
+        totalOnlineDuration_ = value;
+        bitField0_ |= 0x20000000;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 客服累计在线时长
+       * </pre>
+       *
+       * <code>int32 total_online_duration = 36;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTotalOnlineDuration() {
+        bitField0_ = (bitField0_ & ~0x20000000);
+        totalOnlineDuration_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object workerRemark_ = "";
+      /**
+       * <pre>
+       * 客服账号备注人
+       * </pre>
+       *
+       * <code>string worker_remark = 37;</code>
+       * @return The workerRemark.
+       */
+      public java.lang.String getWorkerRemark() {
+        java.lang.Object ref = workerRemark_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          workerRemark_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * 客服账号备注人
+       * </pre>
+       *
+       * <code>string worker_remark = 37;</code>
+       * @return The bytes for workerRemark.
+       */
+      public com.google.protobuf.ByteString
+          getWorkerRemarkBytes() {
+        java.lang.Object ref = workerRemark_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          workerRemark_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * 客服账号备注人
+       * </pre>
+       *
+       * <code>string worker_remark = 37;</code>
+       * @param value The workerRemark to set.
+       * @return This builder for chaining.
+       */
+      public Builder setWorkerRemark(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        workerRemark_ = value;
+        bitField0_ |= 0x40000000;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 客服账号备注人
+       * </pre>
+       *
+       * <code>string worker_remark = 37;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearWorkerRemark() {
+        workerRemark_ = getDefaultInstance().getWorkerRemark();
+        bitField0_ = (bitField0_ & ~0x40000000);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 客服账号备注人
+       * </pre>
+       *
+       * <code>string worker_remark = 37;</code>
+       * @param value The bytes for workerRemark to set.
+       * @return This builder for chaining.
+       */
+      public Builder setWorkerRemarkBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        workerRemark_ = value;
+        bitField0_ |= 0x40000000;
         onChanged();
         return this;
       }
@@ -79209,6 +82413,21 @@ public final class DataStatisticOuterClass {
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_api_core_WorkerSessionStatsRequest_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_api_core_ReplyRelUidRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_api_core_ReplyRelUidRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_api_core_ReplyRelUidResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_api_core_ReplyRelUidResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_api_core_ReplyRelUidList_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_api_core_ReplyRelUidList_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_api_core_WorkerSessionStatsResponse_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -79506,197 +82725,211 @@ public final class DataStatisticOuterClass {
       "te\022.\n\nstart_time\030\007 \001(\0132\032.google.protobuf" +
       ".Timestamp\022,\n\010end_time\030\010 \001(\0132\032.google.pr" +
       "otobuf.Timestamp\022\014\n\004page\030\t \001(\r\022\020\n\010pageSi" +
-      "ze\030\n \001(\r\"\252\004\n\032WorkerSessionStatsResponse\022" +
-      "\030\n\020max_worker_count\030\001 \001(\005\022\034\n\024current_wor" +
-      "ker_count\030\002 \001(\005\022\035\n\025assigned_people_count" +
-      "\030\003 \001(\005\022\036\n\026first_quick_reply_rate\030\004 \001(\002\022\'" +
-      "\n\037average_first_response_duration\030\005 \001(\t\022" +
-      "!\n\031average_response_duration\030\006 \001(\t\022\036\n\026tr" +
-      "ansferred_task_count\030\010 \001(\005\022\033\n\023received_t" +
-      "ask_count\030\t \001(\005\022\037\n\027effective_session_cou" +
-      "nt\030\n \001(\005\022!\n\031auto_pushed_session_count\030\014 " +
-      "\001(\005\022\032\n\022sent_message_count\030\017 \001(\005\022\036\n\026recei" +
-      "ved_message_count\030\020 \001(\005\022\"\n\032average_recep" +
-      "tion_duration\030\021 \001(\t\022\036\n\026actual_reception_" +
-      "count\030\022 \001(\005\0229\n\024worker_session_stats\030\026 \003(" +
-      "\0132\033.api.core.WorkerSessionStat\022\r\n\005count\030" +
-      "\027 \001(\005\"\252\007\n\021WorkerSessionStat\022\021\n\tworker_id" +
-      "\030\001 \001(\005\022\026\n\016worker_account\030\002 \001(\t\022\027\n\017worker" +
-      "_nickname\030\003 \001(\t\0225\n\017worker_identity\030\004 \001(\016" +
-      "2\034.api.common.WorkerPermission\022-\n\014worker" +
-      "_state\030\005 \001(\0162\027.api.common.WorkerState\022\020\n" +
-      "\010group_id\030\006 \001(\005\022\026\n\016group_nickname\030\007 \001(\t\022" +
-      "\024\n\014sub_group_id\030\010 \001(\005\022\032\n\022sub_group_nickn" +
-      "ame\030\t \001(\t\022\035\n\025assigned_people_count\030\n \001(\005" +
-      "\022\036\n\026transferred_task_count\030\014 \001(\005\022\033\n\023rece" +
-      "ived_task_count\030\r \001(\005\022\037\n\027effective_sessi" +
-      "on_count\030\017 \001(\005\022!\n\031auto_pushed_session_co" +
-      "unt\030\020 \001(\005\022\036\n\026actual_reception_count\030\021 \001(" +
-      "\005\022\032\n\022sent_message_count\030\022 \001(\005\022\036\n\026receive" +
-      "d_message_count\030\024 \001(\005\022\"\n\032average_recepti" +
-      "on_duration\030\026 \001(\t\022\036\n\026first_quick_reply_r" +
-      "ate\030\027 \001(\002\022\'\n\037average_first_response_dura" +
-      "tion\030\030 \001(\t\022\"\n\032frist_quick_response_count" +
-      "\030\031 \001(\005\022\"\n\032frist_short_response_count\030\032 \001" +
-      "(\005\022#\n\033frist_medium_response_count\030\033 \001(\005\022" +
-      "!\n\031average_response_duration\030\034 \001(\t\022\034\n\024qu" +
-      "ick_response_count\030\035 \001(\005\022\034\n\024short_respon" +
-      "se_count\030\036 \001(\005\022\035\n\025medium_response_count\030" +
-      "  \001(\005\022\033\n\023long_response_count\030! \001(\005\022\036\n\026de" +
-      "layed_response_count\030# \001(\005\"\272\002\n\037ExportWor" +
-      "kerSessionStatsRequest\022\020\n\010group_id\030\001 \001(\005" +
-      "\0225\n\017worker_identity\030\002 \001(\0162\034.api.common.W" +
-      "orkerPermission\022\021\n\tworker_id\030\003 \001(\005\022\016\n\006se" +
-      "arch\030\004 \001(\t\022-\n\014worker_state\030\006 \001(\0162\027.api.c" +
-      "ommon.WorkerState\022.\n\nstart_time\030\007 \001(\0132\032." +
-      "google.protobuf.Timestamp\022,\n\010end_time\030\010 " +
-      "\001(\0132\032.google.protobuf.Timestamp\022\014\n\004page\030" +
-      "\t \001(\r\022\020\n\010pageSize\030\n \001(\r2\334,\n\rDataStatisti" +
-      "c\022\211\001\n\020WorkerStatistics\022!.api.core.Worker" +
-      "StatisticsRequest\032\".api.core.WorkerStati" +
-      "sticsResponse\".\272\276\031*\010\225\n\030\001\262\006\n2024-05-27\312\014\001" +
-      " \322\014\021worker-statistics\022\226\001\n\023WorkerReceptio" +
-      "nLogs\022$.api.core.WorkerReceptionLogsRequ" +
-      "est\032%.api.core.WorkerReceptionLogsRespon" +
-      "se\"2\272\276\031.\010\226\n\030\001\262\006\n2024-06-21\312\014\001 \322\014\025worker-" +
-      "reception-logs\022\232\001\n\031ExportWorkerReception" +
-      "Logs\022*.api.core.ExportWorkerReceptionLog" +
-      "sRequest\032\026.google.protobuf.Empty\"9\272\276\0315\010\227" +
-      "\n\030\001\262\006\n2024-06-24\312\014\001 \322\014\034export-worker-rec" +
-      "eption-logs\022}\n\rQuestionTypes\022\036.api.core." +
-      "QuestionTypesRequest\032\037.api.core.Question" +
-      "TypesResponse\"+\272\276\031\'\010\321\017\030\001\262\006\n2024-07-03\312\014\001" +
-      " \322\014\016question-types\022\253\001\n\030ConsultTypeQuesti" +
-      "onStats\022).api.core.ConsultTypeQuestionSt" +
-      "atsRequest\032*.api.core.ConsultTypeQuestio" +
-      "nStatsResponse\"8\272\276\0314\010\323\017\030\001\262\006\n2024-07-03\312\014" +
-      "\001 \322\014\033consult-type-question-stats\022\234\001\n\024Con" +
-      "sultTypeQuestions\022%.api.core.ConsultType" +
-      "QuestionsRequest\032&.api.core.ConsultTypeQ" +
-      "uestionsResponse\"5\272\276\0311\010\324\017\030\001\262\006\n2024-07-03" +
-      "\312\014\003 \020\004\322\014\026consult-type-questions\022\221\001\n\026AddC" +
-      "onsultTypeQuestion\022\'.api.core.AddConsult" +
-      "TypeQuestionRequest\032\026.google.protobuf.Em" +
-      "pty\"6\272\276\0312\010\325\017\030\001\262\006\n2024-07-03\312\014\001 \322\014\031add-co" +
-      "nsult-type-question\022\232\001\n\031DeleteConsultTyp" +
-      "eQuestion\022*.api.core.DeleteConsultTypeQu" +
-      "estionRequest\032\026.google.protobuf.Empty\"9\272" +
-      "\276\0315\010\326\017\030\001\262\006\n2024-07-03\312\014\001 \322\014\034delete-consu" +
-      "lt-type-question\022\232\001\n\031UpdateConsultTypeQu" +
-      "estion\022*.api.core.UpdateConsultTypeQuest" +
-      "ionRequest\032\026.google.protobuf.Empty\"9\272\276\0315" +
-      "\010\327\017\030\001\262\006\n2024-07-03\312\014\001 \322\014\034update-consult-" +
-      "type-question\022\212\001\n\025AddQuestionTypeRemark\022" +
-      "&.api.core.AddQuestionTypeRemarkRequest\032" +
-      "\026.google.protobuf.Empty\"1\272\276\031-\010\330\017\030\001\262\006\n202" +
-      "4-07-04\322\014\030add-question-type-remark\022\226\001\n\023Q" +
-      "uestionTypeRemarks\022$.api.core.QuestionTy" +
-      "peRemarksRequest\032%.api.core.QuestionType" +
-      "RemarksResponse\"2\272\276\031.\010\331\017\030\001\262\006\n2024-07-04\312" +
-      "\014\001 \322\014\025question-type-remarks\022\232\001\n\031ExportQu" +
-      "estionTypeRemarks\022*.api.core.ExportQuest" +
-      "ionTypeRemarksRequest\032\026.google.protobuf." +
-      "Empty\"9\272\276\0315\010\332\017\030\001\262\006\n2024-09-09\312\014\001 \322\014\034expo" +
-      "rt-question-type-remarks\022\270\001\n\033QuestionTyp" +
-      "eWithWorkerStats\022,.api.core.QuestionType" +
-      "WithWorkerStatsRequest\032-.api.core.Questi" +
-      "onTypeWithWorkerStatsResponse\"<\272\276\0318\010\333\017\030\001" +
-      "\262\006\n2024-07-05\312\014\001 \322\014\037question-type-with-w" +
-      "orker-stats\022\264\001\n!ExportQuestionTypeWithWo" +
-      "rkerStats\0222.api.core.ExportQuestionTypeW" +
-      "ithWorkerStatsRequest\032\026.google.protobuf." +
-      "Empty\"C\272\276\031?\010\334\017\030\001\262\006\n2024-09-10\312\014\001 \322\014&expo" +
-      "rt-question-type-with-worker-stats\022\247\001\n\027Q" +
-      "uestionTypeRemarkStats\022(.api.core.Questi" +
-      "onTypeRemarkStatsRequest\032).api.core.Ques" +
-      "tionTypeRemarkStatsResponse\"7\272\276\0313\010\335\017\030\001\262\006" +
-      "\n2024-07-05\312\014\001 \322\014\032question-type-remark-s" +
-      "tats\022\247\001\n\035ExportQuestionTypeRemarkStats\022." +
-      ".api.core.ExportQuestionTypeRemarkStatsR" +
-      "equest\032\026.google.protobuf.Empty\">\272\276\031:\010\336\017\030" +
-      "\001\262\006\n2024-09-18\312\014\001 \322\014!export-question-typ" +
-      "e-remark-stats\022\300\001\n\035QuestionTypeWorkerRem" +
-      "arkStats\022..api.core.QuestionTypeWorkerRe" +
-      "markStatsRequest\032/.api.core.QuestionType" +
-      "WorkerRemarkStatsResponse\">\272\276\031:\010\337\017\030\001\262\006\n2" +
-      "024-07-15\312\014\001 \322\014!question-type-worker-rem" +
-      "ark-stats\022\272\001\n#ExportQuestionTypeWorkerRe" +
-      "markStats\0224.api.core.ExportQuestionTypeW" +
-      "orkerRemarkStatsRequest\032\026.google.protobu" +
-      "f.Empty\"E\272\276\031A\010\340\017\030\001\262\006\n2024-09-18\312\014\001 \322\014(ex" +
-      "port-question-type-worker-remark-stats\022\243" +
-      "\001\n\026ConsultTypeRemarkStats\022\'.api.core.Con" +
-      "sultTypeRemarkStatsRequest\032(.api.core.Co" +
-      "nsultTypeRemarkStatsResponse\"6\272\276\0312\010\341\017\030\001\262" +
-      "\006\n2024-07-05\312\014\001 \322\014\031consult-type-remark-s" +
-      "tats\022\244\001\n\034ExportConsultTypeRemarkStats\022-." +
-      "api.core.ExportConsultTypeRemarkStatsReq" +
-      "uest\032\026.google.protobuf.Empty\"=\272\276\0319\010\342\017\030\001\262",
-      "\006\n2024-09-19\312\014\001 \322\014 export-consult-type-r" +
-      "emark-stats\022\274\001\n\034ConsultTypeWorkerRemarkS" +
-      "tats\022-.api.core.ConsultTypeWorkerRemarkS" +
-      "tatsRequest\032..api.core.ConsultTypeWorker" +
-      "RemarkStatsResponse\"=\272\276\0319\010\343\017\030\001\262\006\n2024-07" +
-      "-05\312\014\001 \322\014 consult-type-worker-remark-sta" +
-      "ts\022\267\001\n\"ExportConsultTypeWorkerRemarkStat" +
-      "s\0223.api.core.ExportConsultTypeWorkerRema" +
-      "rkStatsRequest\032\026.google.protobuf.Empty\"D" +
-      "\272\276\031@\010\344\017\030\001\262\006\n2024-09-10\312\014\001 \322\014\'export-cons" +
-      "ult-type-worker-remark-stats\022\216\001\n\021Questio" +
-      "nTypeStats\022\".api.core.QuestionTypeStatsR" +
-      "equest\032#.api.core.QuestionTypeStatsRespo" +
-      "nse\"0\272\276\031,\010\345\017\030\001\262\006\n2024-07-05\312\014\001 \322\014\023questi" +
-      "on-type-stats\022\224\001\n\027ExportQuestionTypeStat" +
-      "s\022(.api.core.ExportQuestionTypeStatsRequ" +
-      "est\032\026.google.protobuf.Empty\"7\272\276\0313\010\346\017\030\001\262\006" +
-      "\n2024-09-10\312\014\001 \322\014\032export-question-type-s" +
-      "tats\022\204\001\n\022UpdateQuestionType\022#.api.core.U" +
-      "pdateQuestionTypeRequest\032\026.google.protob" +
-      "uf.Empty\"1\272\276\031-\010\347\017\030\001\262\006\n2024-08-02\312\014\001 \322\014\024u" +
-      "pdate-question-type\022\204\001\n\022DeleteQuestionTy" +
-      "pe\022#.api.core.DeleteQuestionTypeRequest\032" +
-      "\026.google.protobuf.Empty\"1\272\276\031-\010\351\017\030\001\262\006\n202" +
-      "4-08-02\312\014\001 \322\014\024delete-question-type\022{\n\017Ad" +
-      "dQuestionType\022 .api.core.AddQuestionType" +
-      "Request\032\026.google.protobuf.Empty\".\272\276\031*\010\353\017" +
-      "\030\001\262\006\n2024-08-07\312\014\001 \322\014\021add-question-type\022" +
-      "\247\001\n\027MsgServiceDurationStats\022(.api.core.M" +
-      "sgServiceDurationStatsRequest\032).api.core" +
-      ".MsgServiceDurationStatsResponse\"7\272\276\0313\010\356" +
-      "\017\030\001\262\006\n2024-10-30\312\014\001 \322\014\032msg-service-durat" +
-      "ion-stats\022\247\001\n\035ExportMsgServiceDurationSt" +
-      "ats\022..api.core.ExportMsgServiceDurationS" +
-      "tatsRequest\032\026.google.protobuf.Empty\">\272\276\031" +
-      ":\010\361\017\030\001\262\006\n2024-10-31\312\014\001 \322\014!export-msg-ser" +
-      "vice-duration-stats\022\222\001\n\022WorkerSessionSta" +
-      "ts\022#.api.core.WorkerSessionStatsRequest\032" +
-      "$.api.core.WorkerSessionStatsResponse\"1\272" +
-      "\276\031-\010\363\017\030\001\262\006\n2024-11-22\312\014\001 \322\014\024worker-sessi" +
-      "on-stats\022\227\001\n\030ExportWorkerSessionStats\022)." +
-      "api.core.ExportWorkerSessionStatsRequest" +
-      "\032\026.google.protobuf.Empty\"8\272\276\0314\010\365\017\030\001\262\006\n20" +
-      "24-11-29\312\014\001 \322\014\033export-worker-session-sta" +
-      "ts\022\264\001\n\035WorkerRelConsultTypeQuestions\022*.a" +
-      "pi.core.WorkerRelConsultTypeStatsRequest" +
-      "\032*.api.core.WorkerRelConsultTypeStatResp" +
-      "onse\";\272\276\0317\010\366\017\030\001\262\006\n2024-12-24\312\014\003 \020\004\322\014\034wor" +
-      "ker-rel-consult-questions\022\263\001\n#ExportWork" +
-      "erRelConsultTypeQuestions\0220.api.core.Exp" +
-      "ortWorkerRelConsultTypeStatsRequest\032\026.go" +
-      "ogle.protobuf.Empty\"B\272\276\031>\010\367\017\030\001\262\006\n2024-12" +
-      "-24\312\014\003 \020\004\322\014#export-worker-rel-consult-qu" +
-      "estions\022\257\001\n\033ConsultTypeRelQuestionsList\022" +
-      "0.api.core.WorkerRelConsultTypeStatsDeta" +
-      "ilRequest\032(.api.core.ConsultRelQuestionS" +
-      "tatResponse\"4\272\276\0310\010\370\017\030\001\262\006\n2024-12-24\312\014\003 \020" +
-      "\004\322\014\025consult-rel-questions\022\252\001\n!ExportCons" +
-      "ultTypeRelQuestionsList\0220.api.core.Worke" +
-      "rRelConsultTypeStatsDetailRequest\032\026.goog" +
-      "le.protobuf.Empty\";\272\276\0317\010\371\017\030\001\262\006\n2024-12-2" +
-      "4\312\014\003 \020\004\322\014\034export-consult-rel-questions\032\036" +
-      "\272\276\031\032\272\006\004data\312\014\002\020\004\322\014\013tenant/dataBH\n\030com.te" +
-      "neasyChat.api.coreZ\021wcs/api/core;core\272\276\031" +
-      "\027\242\006\007yueleng\262\006\n2024-05-27b\006proto3"
+      "ze\030\n \001(\r\"\271\001\n\022ReplyRelUidRequest\022\021\n\tworke" +
+      "r_id\030\001 \001(\005\022\022\n\nreply_type\030\002 \001(\005\022.\n\nstart_" +
+      "time\030\003 \001(\0132\032.google.protobuf.Timestamp\022," +
+      "\n\010end_time\030\004 \001(\0132\032.google.protobuf.Times" +
+      "tamp\022\014\n\004page\030\005 \001(\r\022\020\n\010pageSize\030\006 \001(\r\"M\n\023" +
+      "ReplyRelUidResponse\022\'\n\004list\030\001 \003(\0132\031.api." +
+      "core.ReplyRelUidList\022\r\n\005total\030\002 \001(\005\"\\\n\017R" +
+      "eplyRelUidList\022\017\n\007user_id\030\001 \001(\005\022\021\n\tuser_" +
+      "name\030\002 \001(\t\022\022\n\ncreated_at\030\003 \001(\005\022\021\n\tuser_r" +
+      "ole\030\004 \001(\005\"\252\004\n\032WorkerSessionStatsResponse" +
+      "\022\030\n\020max_worker_count\030\001 \001(\005\022\034\n\024current_wo" +
+      "rker_count\030\002 \001(\005\022\035\n\025assigned_people_coun" +
+      "t\030\003 \001(\005\022\036\n\026first_quick_reply_rate\030\004 \001(\002\022" +
+      "\'\n\037average_first_response_duration\030\005 \001(\t" +
+      "\022!\n\031average_response_duration\030\006 \001(\t\022\036\n\026t" +
+      "ransferred_task_count\030\010 \001(\005\022\033\n\023received_" +
+      "task_count\030\t \001(\005\022\037\n\027effective_session_co" +
+      "unt\030\n \001(\005\022!\n\031auto_pushed_session_count\030\014" +
+      " \001(\005\022\032\n\022sent_message_count\030\017 \001(\005\022\036\n\026rece" +
+      "ived_message_count\030\020 \001(\005\022\"\n\032average_rece" +
+      "ption_duration\030\021 \001(\t\022\036\n\026actual_reception" +
+      "_count\030\022 \001(\005\0229\n\024worker_session_stats\030\026 \003" +
+      "(\0132\033.api.core.WorkerSessionStat\022\r\n\005count" +
+      "\030\027 \001(\005\"\340\007\n\021WorkerSessionStat\022\021\n\tworker_i" +
+      "d\030\001 \001(\005\022\026\n\016worker_account\030\002 \001(\t\022\027\n\017worke" +
+      "r_nickname\030\003 \001(\t\0225\n\017worker_identity\030\004 \001(" +
+      "\0162\034.api.common.WorkerPermission\022-\n\014worke" +
+      "r_state\030\005 \001(\0162\027.api.common.WorkerState\022\020" +
+      "\n\010group_id\030\006 \001(\005\022\026\n\016group_nickname\030\007 \001(\t" +
+      "\022\024\n\014sub_group_id\030\010 \001(\005\022\032\n\022sub_group_nick" +
+      "name\030\t \001(\t\022\035\n\025assigned_people_count\030\n \001(" +
+      "\005\022\036\n\026transferred_task_count\030\014 \001(\005\022\033\n\023rec" +
+      "eived_task_count\030\r \001(\005\022\037\n\027effective_sess" +
+      "ion_count\030\017 \001(\005\022!\n\031auto_pushed_session_c" +
+      "ount\030\020 \001(\005\022\036\n\026actual_reception_count\030\021 \001" +
+      "(\005\022\032\n\022sent_message_count\030\022 \001(\005\022\036\n\026receiv" +
+      "ed_message_count\030\024 \001(\005\022\"\n\032average_recept" +
+      "ion_duration\030\026 \001(\t\022\036\n\026first_quick_reply_" +
+      "rate\030\027 \001(\002\022\'\n\037average_first_response_dur" +
+      "ation\030\030 \001(\t\022\"\n\032frist_quick_response_coun" +
+      "t\030\031 \001(\005\022\"\n\032frist_short_response_count\030\032 " +
+      "\001(\005\022#\n\033frist_medium_response_count\030\033 \001(\005" +
+      "\022!\n\031average_response_duration\030\034 \001(\t\022\034\n\024q" +
+      "uick_response_count\030\035 \001(\005\022\034\n\024short_respo" +
+      "nse_count\030\036 \001(\005\022\035\n\025medium_response_count" +
+      "\030  \001(\005\022\033\n\023long_response_count\030! \001(\005\022\036\n\026d" +
+      "elayed_response_count\030# \001(\005\022\035\n\025total_onl" +
+      "ine_duration\030$ \001(\005\022\025\n\rworker_remark\030% \001(" +
+      "\t\"\272\002\n\037ExportWorkerSessionStatsRequest\022\020\n" +
+      "\010group_id\030\001 \001(\005\0225\n\017worker_identity\030\002 \001(\016" +
+      "2\034.api.common.WorkerPermission\022\021\n\tworker" +
+      "_id\030\003 \001(\005\022\016\n\006search\030\004 \001(\t\022-\n\014worker_stat" +
+      "e\030\006 \001(\0162\027.api.common.WorkerState\022.\n\nstar" +
+      "t_time\030\007 \001(\0132\032.google.protobuf.Timestamp" +
+      "\022,\n\010end_time\030\010 \001(\0132\032.google.protobuf.Tim" +
+      "estamp\022\014\n\004page\030\t \001(\r\022\020\n\010pageSize\030\n \001(\r2\337" +
+      "-\n\rDataStatistic\022\211\001\n\020WorkerStatistics\022!." +
+      "api.core.WorkerStatisticsRequest\032\".api.c" +
+      "ore.WorkerStatisticsResponse\".\272\276\031*\010\225\n\030\001\262" +
+      "\006\n2024-05-27\312\014\001 \322\014\021worker-statistics\022\226\001\n" +
+      "\023WorkerReceptionLogs\022$.api.core.WorkerRe" +
+      "ceptionLogsRequest\032%.api.core.WorkerRece" +
+      "ptionLogsResponse\"2\272\276\031.\010\226\n\030\001\262\006\n2024-06-2" +
+      "1\312\014\001 \322\014\025worker-reception-logs\022\232\001\n\031Export" +
+      "WorkerReceptionLogs\022*.api.core.ExportWor" +
+      "kerReceptionLogsRequest\032\026.google.protobu" +
+      "f.Empty\"9\272\276\0315\010\227\n\030\001\262\006\n2024-06-24\312\014\001 \322\014\034ex" +
+      "port-worker-reception-logs\022}\n\rQuestionTy" +
+      "pes\022\036.api.core.QuestionTypesRequest\032\037.ap" +
+      "i.core.QuestionTypesResponse\"+\272\276\031\'\010\321\017\030\001\262" +
+      "\006\n2024-07-03\312\014\001 \322\014\016question-types\022\253\001\n\030Co" +
+      "nsultTypeQuestionStats\022).api.core.Consul" +
+      "tTypeQuestionStatsRequest\032*.api.core.Con" +
+      "sultTypeQuestionStatsResponse\"8\272\276\0314\010\323\017\030\001" +
+      "\262\006\n2024-07-03\312\014\001 \322\014\033consult-type-questio" +
+      "n-stats\022\234\001\n\024ConsultTypeQuestions\022%.api.c" +
+      "ore.ConsultTypeQuestionsRequest\032&.api.co" +
+      "re.ConsultTypeQuestionsResponse\"5\272\276\0311\010\324\017" +
+      "\030\001\262\006\n2024-07-03\312\014\003 \020\004\322\014\026consult-type-que" +
+      "stions\022\221\001\n\026AddConsultTypeQuestion\022\'.api." +
+      "core.AddConsultTypeQuestionRequest\032\026.goo" +
+      "gle.protobuf.Empty\"6\272\276\0312\010\325\017\030\001\262\006\n2024-07-" +
+      "03\312\014\001 \322\014\031add-consult-type-question\022\232\001\n\031D" +
+      "eleteConsultTypeQuestion\022*.api.core.Dele" +
+      "teConsultTypeQuestionRequest\032\026.google.pr" +
+      "otobuf.Empty\"9\272\276\0315\010\326\017\030\001\262\006\n2024-07-03\312\014\001 " +
+      "\322\014\034delete-consult-type-question\022\232\001\n\031Upda" +
+      "teConsultTypeQuestion\022*.api.core.UpdateC" +
+      "onsultTypeQuestionRequest\032\026.google.proto" +
+      "buf.Empty\"9\272\276\0315\010\327\017\030\001\262\006\n2024-07-03\312\014\001 \322\014\034" +
+      "update-consult-type-question\022\212\001\n\025AddQues" +
+      "tionTypeRemark\022&.api.core.AddQuestionTyp" +
+      "eRemarkRequest\032\026.google.protobuf.Empty\"1" +
+      "\272\276\031-\010\330\017\030\001\262\006\n2024-07-04\322\014\030add-question-ty" +
+      "pe-remark\022\226\001\n\023QuestionTypeRemarks\022$.api." +
+      "core.QuestionTypeRemarksRequest\032%.api.co" +
+      "re.QuestionTypeRemarksResponse\"2\272\276\031.\010\331\017\030" +
+      "\001\262\006\n2024-07-04\312\014\001 \322\014\025question-type-remar" +
+      "ks\022\232\001\n\031ExportQuestionTypeRemarks\022*.api.c" +
+      "ore.ExportQuestionTypeRemarksRequest\032\026.g" +
+      "oogle.protobuf.Empty\"9\272\276\0315\010\332\017\030\001\262\006\n2024-0" +
+      "9-09\312\014\001 \322\014\034export-question-type-remarks\022" +
+      "\270\001\n\033QuestionTypeWithWorkerStats\022,.api.co" +
+      "re.QuestionTypeWithWorkerStatsRequest\032-." +
+      "api.core.QuestionTypeWithWorkerStatsResp" +
+      "onse\"<\272\276\0318\010\333\017\030\001\262\006\n2024-07-05\312\014\001 \322\014\037quest" +
+      "ion-type-with-worker-stats\022\264\001\n!ExportQue" +
+      "stionTypeWithWorkerStats\0222.api.core.Expo" +
+      "rtQuestionTypeWithWorkerStatsRequest\032\026.g" +
+      "oogle.protobuf.Empty\"C\272\276\031?\010\334\017\030\001\262\006\n2024-0" +
+      "9-10\312\014\001 \322\014&export-question-type-with-wor" +
+      "ker-stats\022\247\001\n\027QuestionTypeRemarkStats\022(." +
+      "api.core.QuestionTypeRemarkStatsRequest\032" +
+      ").api.core.QuestionTypeRemarkStatsRespon" +
+      "se\"7\272\276\0313\010\335\017\030\001\262\006\n2024-07-05\312\014\001 \322\014\032questio" +
+      "n-type-remark-stats\022\247\001\n\035ExportQuestionTy" +
+      "peRemarkStats\022..api.core.ExportQuestionT" +
+      "ypeRemarkStatsRequest\032\026.google.protobuf." +
+      "Empty\">\272\276\031:\010\336\017\030\001\262\006\n2024-09-18\312\014\001 \322\014!expo" +
+      "rt-question-type-remark-stats\022\300\001\n\035Questi" +
+      "onTypeWorkerRemarkStats\022..api.core.Quest" +
+      "ionTypeWorkerRemarkStatsRequest\032/.api.co" +
+      "re.QuestionTypeWorkerRemarkStatsResponse" +
+      "\">\272\276\031:\010\337\017\030\001\262\006\n2024-07-15\312\014\001 \322\014!question-" +
+      "type-worker-remark-stats\022\272\001\n#ExportQuest" +
+      "ionTypeWorkerRemarkStats\0224.api.core.Expo",
+      "rtQuestionTypeWorkerRemarkStatsRequest\032\026" +
+      ".google.protobuf.Empty\"E\272\276\031A\010\340\017\030\001\262\006\n2024" +
+      "-09-18\312\014\001 \322\014(export-question-type-worker" +
+      "-remark-stats\022\243\001\n\026ConsultTypeRemarkStats" +
+      "\022\'.api.core.ConsultTypeRemarkStatsReques" +
+      "t\032(.api.core.ConsultTypeRemarkStatsRespo" +
+      "nse\"6\272\276\0312\010\341\017\030\001\262\006\n2024-07-05\312\014\001 \322\014\031consul" +
+      "t-type-remark-stats\022\244\001\n\034ExportConsultTyp" +
+      "eRemarkStats\022-.api.core.ExportConsultTyp" +
+      "eRemarkStatsRequest\032\026.google.protobuf.Em" +
+      "pty\"=\272\276\0319\010\342\017\030\001\262\006\n2024-09-19\312\014\001 \322\014 export" +
+      "-consult-type-remark-stats\022\274\001\n\034ConsultTy" +
+      "peWorkerRemarkStats\022-.api.core.ConsultTy" +
+      "peWorkerRemarkStatsRequest\032..api.core.Co" +
+      "nsultTypeWorkerRemarkStatsResponse\"=\272\276\0319" +
+      "\010\343\017\030\001\262\006\n2024-07-05\312\014\001 \322\014 consult-type-wo" +
+      "rker-remark-stats\022\267\001\n\"ExportConsultTypeW" +
+      "orkerRemarkStats\0223.api.core.ExportConsul" +
+      "tTypeWorkerRemarkStatsRequest\032\026.google.p" +
+      "rotobuf.Empty\"D\272\276\031@\010\344\017\030\001\262\006\n2024-09-10\312\014\001" +
+      " \322\014\'export-consult-type-worker-remark-st" +
+      "ats\022\216\001\n\021QuestionTypeStats\022\".api.core.Que" +
+      "stionTypeStatsRequest\032#.api.core.Questio" +
+      "nTypeStatsResponse\"0\272\276\031,\010\345\017\030\001\262\006\n2024-07-" +
+      "05\312\014\001 \322\014\023question-type-stats\022\224\001\n\027ExportQ" +
+      "uestionTypeStats\022(.api.core.ExportQuesti" +
+      "onTypeStatsRequest\032\026.google.protobuf.Emp" +
+      "ty\"7\272\276\0313\010\346\017\030\001\262\006\n2024-09-10\312\014\001 \322\014\032export-" +
+      "question-type-stats\022\204\001\n\022UpdateQuestionTy" +
+      "pe\022#.api.core.UpdateQuestionTypeRequest\032" +
+      "\026.google.protobuf.Empty\"1\272\276\031-\010\347\017\030\001\262\006\n202" +
+      "4-08-02\312\014\001 \322\014\024update-question-type\022\204\001\n\022D" +
+      "eleteQuestionType\022#.api.core.DeleteQuest" +
+      "ionTypeRequest\032\026.google.protobuf.Empty\"1" +
+      "\272\276\031-\010\351\017\030\001\262\006\n2024-08-02\312\014\001 \322\014\024delete-ques" +
+      "tion-type\022{\n\017AddQuestionType\022 .api.core." +
+      "AddQuestionTypeRequest\032\026.google.protobuf" +
+      ".Empty\".\272\276\031*\010\353\017\030\001\262\006\n2024-08-07\312\014\001 \322\014\021add" +
+      "-question-type\022\247\001\n\027MsgServiceDurationSta" +
+      "ts\022(.api.core.MsgServiceDurationStatsReq" +
+      "uest\032).api.core.MsgServiceDurationStatsR" +
+      "esponse\"7\272\276\0313\010\356\017\030\001\262\006\n2024-10-30\312\014\001 \322\014\032ms" +
+      "g-service-duration-stats\022\247\001\n\035ExportMsgSe" +
+      "rviceDurationStats\022..api.core.ExportMsgS" +
+      "erviceDurationStatsRequest\032\026.google.prot" +
+      "obuf.Empty\">\272\276\031:\010\361\017\030\001\262\006\n2024-10-31\312\014\001 \322\014" +
+      "!export-msg-service-duration-stats\022\222\001\n\022W" +
+      "orkerSessionStats\022#.api.core.WorkerSessi" +
+      "onStatsRequest\032$.api.core.WorkerSessionS" +
+      "tatsResponse\"1\272\276\031-\010\363\017\030\001\262\006\n2024-11-22\312\014\001 " +
+      "\322\014\024worker-session-stats\022\227\001\n\030ExportWorker" +
+      "SessionStats\022).api.core.ExportWorkerSess" +
+      "ionStatsRequest\032\026.google.protobuf.Empty\"" +
+      "8\272\276\0314\010\365\017\030\001\262\006\n2024-11-29\312\014\001 \322\014\033export-wor" +
+      "ker-session-stats\022\264\001\n\035WorkerRelConsultTy" +
+      "peQuestions\022*.api.core.WorkerRelConsultT" +
+      "ypeStatsRequest\032*.api.core.WorkerRelCons" +
+      "ultTypeStatResponse\";\272\276\0317\010\366\017\030\001\262\006\n2024-12" +
+      "-24\312\014\003 \020\004\322\014\034worker-rel-consult-questions" +
+      "\022\263\001\n#ExportWorkerRelConsultTypeQuestions" +
+      "\0220.api.core.ExportWorkerRelConsultTypeSt" +
+      "atsRequest\032\026.google.protobuf.Empty\"B\272\276\031>" +
+      "\010\367\017\030\001\262\006\n2024-12-24\312\014\003 \020\004\322\014#export-worker" +
+      "-rel-consult-questions\022\257\001\n\033ConsultTypeRe" +
+      "lQuestionsList\0220.api.core.WorkerRelConsu" +
+      "ltTypeStatsDetailRequest\032(.api.core.Cons" +
+      "ultRelQuestionStatResponse\"4\272\276\0310\010\370\017\030\001\262\006\n" +
+      "2024-12-24\312\014\003 \020\004\322\014\025consult-rel-questions" +
+      "\022\252\001\n!ExportConsultTypeRelQuestionsList\0220" +
+      ".api.core.WorkerRelConsultTypeStatsDetai" +
+      "lRequest\032\026.google.protobuf.Empty\";\272\276\0317\010\371" +
+      "\017\030\001\262\006\n2024-12-24\312\014\003 \020\004\322\014\034export-consult-" +
+      "rel-questions\022\200\001\n\024QueryReplyRelUidList\022\034" +
+      ".api.core.ReplyRelUidRequest\032\035.api.core." +
+      "ReplyRelUidResponse\"+\272\276\031\'\010\372\017\030\001\262\006\t2025-2-" +
+      "25\312\014\003 \020\004\322\014\rreply-rel-uid\032\036\272\276\031\032\272\006\004data\312\014\002" +
+      "\020\004\322\014\013tenant/dataBH\n\030com.teneasyChat.api." +
+      "coreZ\021wcs/api/core;core\272\276\031\027\242\006\007yueleng\262\006\n" +
+      "2024-05-27b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -80086,20 +83319,38 @@ public final class DataStatisticOuterClass {
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_core_WorkerSessionStatsRequest_descriptor,
         new java.lang.String[] { "GroupId", "WorkerIdentity", "WorkerId", "Search", "WorkerState", "StartTime", "EndTime", "Page", "PageSize", });
-    internal_static_api_core_WorkerSessionStatsResponse_descriptor =
+    internal_static_api_core_ReplyRelUidRequest_descriptor =
       getDescriptor().getMessageTypes().get(63);
+    internal_static_api_core_ReplyRelUidRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_api_core_ReplyRelUidRequest_descriptor,
+        new java.lang.String[] { "WorkerId", "ReplyType", "StartTime", "EndTime", "Page", "PageSize", });
+    internal_static_api_core_ReplyRelUidResponse_descriptor =
+      getDescriptor().getMessageTypes().get(64);
+    internal_static_api_core_ReplyRelUidResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_api_core_ReplyRelUidResponse_descriptor,
+        new java.lang.String[] { "List", "Total", });
+    internal_static_api_core_ReplyRelUidList_descriptor =
+      getDescriptor().getMessageTypes().get(65);
+    internal_static_api_core_ReplyRelUidList_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_api_core_ReplyRelUidList_descriptor,
+        new java.lang.String[] { "UserId", "UserName", "CreatedAt", "UserRole", });
+    internal_static_api_core_WorkerSessionStatsResponse_descriptor =
+      getDescriptor().getMessageTypes().get(66);
     internal_static_api_core_WorkerSessionStatsResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_core_WorkerSessionStatsResponse_descriptor,
         new java.lang.String[] { "MaxWorkerCount", "CurrentWorkerCount", "AssignedPeopleCount", "FirstQuickReplyRate", "AverageFirstResponseDuration", "AverageResponseDuration", "TransferredTaskCount", "ReceivedTaskCount", "EffectiveSessionCount", "AutoPushedSessionCount", "SentMessageCount", "ReceivedMessageCount", "AverageReceptionDuration", "ActualReceptionCount", "WorkerSessionStats", "Count", });
     internal_static_api_core_WorkerSessionStat_descriptor =
-      getDescriptor().getMessageTypes().get(64);
+      getDescriptor().getMessageTypes().get(67);
     internal_static_api_core_WorkerSessionStat_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_core_WorkerSessionStat_descriptor,
-        new java.lang.String[] { "WorkerId", "WorkerAccount", "WorkerNickname", "WorkerIdentity", "WorkerState", "GroupId", "GroupNickname", "SubGroupId", "SubGroupNickname", "AssignedPeopleCount", "TransferredTaskCount", "ReceivedTaskCount", "EffectiveSessionCount", "AutoPushedSessionCount", "ActualReceptionCount", "SentMessageCount", "ReceivedMessageCount", "AverageReceptionDuration", "FirstQuickReplyRate", "AverageFirstResponseDuration", "FristQuickResponseCount", "FristShortResponseCount", "FristMediumResponseCount", "AverageResponseDuration", "QuickResponseCount", "ShortResponseCount", "MediumResponseCount", "LongResponseCount", "DelayedResponseCount", });
+        new java.lang.String[] { "WorkerId", "WorkerAccount", "WorkerNickname", "WorkerIdentity", "WorkerState", "GroupId", "GroupNickname", "SubGroupId", "SubGroupNickname", "AssignedPeopleCount", "TransferredTaskCount", "ReceivedTaskCount", "EffectiveSessionCount", "AutoPushedSessionCount", "ActualReceptionCount", "SentMessageCount", "ReceivedMessageCount", "AverageReceptionDuration", "FirstQuickReplyRate", "AverageFirstResponseDuration", "FristQuickResponseCount", "FristShortResponseCount", "FristMediumResponseCount", "AverageResponseDuration", "QuickResponseCount", "ShortResponseCount", "MediumResponseCount", "LongResponseCount", "DelayedResponseCount", "TotalOnlineDuration", "WorkerRemark", });
     internal_static_api_core_ExportWorkerSessionStatsRequest_descriptor =
-      getDescriptor().getMessageTypes().get(65);
+      getDescriptor().getMessageTypes().get(68);
     internal_static_api_core_ExportWorkerSessionStatsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_core_ExportWorkerSessionStatsRequest_descriptor,

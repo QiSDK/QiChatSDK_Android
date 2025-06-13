@@ -55,6 +55,16 @@ public final class WorkerGroupOuterClass {
      * @return The disableStatus.
      */
     com.teneasyChat.api.common.CBase.DisableStatus getDisableStatus();
+
+    /**
+     * <pre>
+     * 跳过限制
+     * </pre>
+     *
+     * <code>int32 skip = 2;</code>
+     * @return The skip.
+     */
+    int getSkip();
   }
   /**
    * <pre>
@@ -136,6 +146,21 @@ public final class WorkerGroupOuterClass {
       return result == null ? com.teneasyChat.api.common.CBase.DisableStatus.UNRECOGNIZED : result;
     }
 
+    public static final int SKIP_FIELD_NUMBER = 2;
+    private int skip_ = 0;
+    /**
+     * <pre>
+     * 跳过限制
+     * </pre>
+     *
+     * <code>int32 skip = 2;</code>
+     * @return The skip.
+     */
+    @java.lang.Override
+    public int getSkip() {
+      return skip_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -153,6 +178,9 @@ public final class WorkerGroupOuterClass {
       if (((bitField0_ & 0x00000001) != 0)) {
         output.writeEnum(1, disableStatus_);
       }
+      if (skip_ != 0) {
+        output.writeInt32(2, skip_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -165,6 +193,10 @@ public final class WorkerGroupOuterClass {
       if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(1, disableStatus_);
+      }
+      if (skip_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, skip_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -185,6 +217,8 @@ public final class WorkerGroupOuterClass {
       if (hasDisableStatus()) {
         if (disableStatus_ != other.disableStatus_) return false;
       }
+      if (getSkip()
+          != other.getSkip()) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -200,6 +234,8 @@ public final class WorkerGroupOuterClass {
         hash = (37 * hash) + DISABLE_STATUS_FIELD_NUMBER;
         hash = (53 * hash) + disableStatus_;
       }
+      hash = (37 * hash) + SKIP_FIELD_NUMBER;
+      hash = (53 * hash) + getSkip();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -336,6 +372,7 @@ public final class WorkerGroupOuterClass {
         super.clear();
         bitField0_ = 0;
         disableStatus_ = 0;
+        skip_ = 0;
         return this;
       }
 
@@ -374,6 +411,9 @@ public final class WorkerGroupOuterClass {
           result.disableStatus_ = disableStatus_;
           to_bitField0_ |= 0x00000001;
         }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.skip_ = skip_;
+        }
         result.bitField0_ |= to_bitField0_;
       }
 
@@ -391,6 +431,9 @@ public final class WorkerGroupOuterClass {
         if (other == com.teneasyChat.api.core.WorkerGroupOuterClass.WorkerGroupQueryByPermRequest.getDefaultInstance()) return this;
         if (other.hasDisableStatus()) {
           setDisableStatus(other.getDisableStatus());
+        }
+        if (other.getSkip() != 0) {
+          setSkip(other.getSkip());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -423,6 +466,11 @@ public final class WorkerGroupOuterClass {
                 bitField0_ |= 0x00000001;
                 break;
               } // case 8
+              case 16: {
+                skip_ = input.readInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -520,6 +568,50 @@ public final class WorkerGroupOuterClass {
       public Builder clearDisableStatus() {
         bitField0_ = (bitField0_ & ~0x00000001);
         disableStatus_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int skip_ ;
+      /**
+       * <pre>
+       * 跳过限制
+       * </pre>
+       *
+       * <code>int32 skip = 2;</code>
+       * @return The skip.
+       */
+      @java.lang.Override
+      public int getSkip() {
+        return skip_;
+      }
+      /**
+       * <pre>
+       * 跳过限制
+       * </pre>
+       *
+       * <code>int32 skip = 2;</code>
+       * @param value The skip to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSkip(int value) {
+
+        skip_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 跳过限制
+       * </pre>
+       *
+       * <code>int32 skip = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSkip() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        skip_ = 0;
         onChanged();
         return this;
       }
@@ -11473,65 +11565,65 @@ public final class WorkerGroupOuterClass {
       "\020api/option.proto\032\031api/common/c_worker.p" +
       "roto\032\027api/common/c_base.proto\032\033google/pr" +
       "otobuf/empty.proto\032\027validate/validate.pr" +
-      "oto\"j\n\035WorkerGroupQueryByPermRequest\0226\n\016" +
+      "oto\"x\n\035WorkerGroupQueryByPermRequest\0226\n\016" +
       "disable_status\030\001 \001(\0162\031.api.common.Disabl" +
-      "eStatusH\000\210\001\001B\021\n\017_disable_status\"B\n\030Worke" +
-      "rGroupQueryResponse\022&\n\005items\030\001 \003(\0132\027.api" +
-      ".common.WorkerGroup\"|\n\030WorkerGroupCreate" +
-      "Request\022\027\n\004name\030\001 \001(\tB\t\372B\006r\004\020\001\030\024\022\034\n\010prio" +
-      "rity\030\002 \001(\005B\n\372B\007\032\005\020\350\007(\000\022)\n\010children\030\003 \003(\013" +
-      "2\027.api.common.WorkerGroup\"r\n\031WorkerGroup" +
-      "CreateResponse\022\n\n\002id\030\001 \001(\003\022\014\n\004name\030\002 \001(\t" +
-      "\022\020\n\010priority\030\003 \001(\005\022)\n\010children\030\004 \003(\0132\027.a" +
-      "pi.common.WorkerGroup\"\210\001\n\030WorkerGroupUpd" +
-      "ateRequest\022\n\n\002id\030\001 \001(\003\022\027\n\004name\030\002 \001(\tB\t\372B" +
-      "\006r\004\020\001\030\024\022\034\n\010priority\030\003 \001(\005B\n\372B\007\032\005\020\350\007(\000\022)\n" +
-      "\010children\030\004 \003(\0132\027.api.common.WorkerGroup" +
-      "\"r\n\031WorkerGroupUpdateResponse\022\n\n\002id\030\001 \001(" +
-      "\003\022\014\n\004name\030\002 \001(\t\022\020\n\010priority\030\003 \001(\005\022)\n\010chi" +
-      "ldren\030\004 \003(\0132\027.api.common.WorkerGroup\"/\n\030" +
-      "WorkerGroupDeleteRequest\022\023\n\002id\030\001 \001(\003B\007\372B" +
-      "\004\"\002 \000\"k\n\031WorkerGroupDisableRequest\022\023\n\002id" +
-      "\030\001 \001(\003B\007\372B\004\"\002 \000\0229\n\016disable_status\030\002 \001(\0162" +
-      "\031.api.common.DisableStatusB\006\372B\003\202\001\000\"\320\001\n\017G" +
-      "roupQueryModel\022\n\n\002id\030\001 \001(\003\022\014\n\004name\030\002 \001(\t" +
-      "\022\020\n\010priority\030\003 \001(\005\022\r\n\005count\030\004 \001(\005\022\022\n\nGro" +
-      "upAdmin\030\005 \003(\t\022\023\n\013GroupLeader\030\006 \003(\t\022&\n\005ch" +
-      "ild\030\007 \003(\0132\027.api.common.WorkerGroup\0221\n\016di" +
-      "sable_status\030\010 \001(\0162\031.api.common.DisableS" +
-      "tatus\"\322\001\n\027WorkerGroupQueryRequest\022\026\n\tgro" +
-      "up_pid\030\001 \001(\003H\000\210\001\001\022\026\n\tgroup_cid\030\002 \001(\003H\001\210\001" +
-      "\001\022 \n\005batch\030\003 \001(\0132\021.api.common.Batch\0226\n\016d" +
-      "isable_status\030\004 \001(\0162\031.api.common.Disable" +
-      "StatusH\002\210\001\001B\014\n\n_group_pidB\014\n\n_group_cidB" +
-      "\021\n\017_disable_status\"q\n\024WorkerGroupQueryRe" +
-      "sp\022(\n\005items\030\001 \003(\0132\031.api.core.GroupQueryM" +
-      "odel\022 \n\005batch\030\002 \001(\0132\021.api.common.Batch\022\r" +
-      "\n\005total\030\003 \001(\005\")\n\024QueryWorksByGroupReq\022\021\n" +
-      "\tgroup_pid\030\001 \001(\003\":\n\025QueryWorksByGroupRes" +
-      "p\022!\n\005items\030\001 \003(\0132\022.api.common.Worker2\215\006\n" +
-      "\013WorkerGroup\022]\n\005Query\022!.api.core.WorkerG" +
-      "roupQueryRequest\032\036.api.core.WorkerGroupQ" +
-      "ueryResp\"\021\272\276\031\r\010\220\003\030\001\322\014\005query\022e\n\006Create\022\"." +
-      "api.core.WorkerGroupCreateRequest\032#.api." +
-      "core.WorkerGroupCreateResponse\"\022\272\276\031\016\010\221\003\030" +
-      "\001\322\014\006create\022e\n\006Update\022\".api.core.WorkerGr" +
-      "oupUpdateRequest\032#.api.core.WorkerGroupU" +
-      "pdateResponse\"\022\272\276\031\016\010\222\003\030\001\322\014\006update\022X\n\006Del" +
-      "ete\022\".api.core.WorkerGroupDeleteRequest\032" +
-      "\026.google.protobuf.Empty\"\022\272\276\031\016\010\223\003\030\001\322\014\006del" +
-      "ete\022u\n\013QueryByPerm\022\'.api.core.WorkerGrou" +
-      "pQueryByPermRequest\032\".api.core.WorkerGro" +
-      "upQueryResponse\"\031\272\276\031\025\010\224\003\030\001\322\014\rquery-by-pe" +
-      "rm\022s\n\021QueryWorksByGroup\022\036.api.core.Query" +
-      "WorksByGroupReq\032\037.api.core.QueryWorksByG" +
-      "roupResp\"\035\272\276\031\031\010\225\003\030\001\322\014\021query-group-works\022" +
-      "[\n\007Disable\022#.api.core.WorkerGroupDisable" +
-      "Request\032\026.google.protobuf.Empty\"\023\272\276\031\017\010\226\003" +
-      "\030\001\322\014\007disable\032.\272\276\031*\272\006\014worker_group\312\014\001\020\322\014\024" +
-      "/tenant/worker-groupBE\n\030com.teneasyChat." +
-      "api.coreZ\021wcs/api/core;core\272\276\031\024\242\006\004jeff\262\006" +
-      "\n2022-12-06b\006proto3"
+      "eStatusH\000\210\001\001\022\014\n\004skip\030\002 \001(\005B\021\n\017_disable_s" +
+      "tatus\"B\n\030WorkerGroupQueryResponse\022&\n\005ite" +
+      "ms\030\001 \003(\0132\027.api.common.WorkerGroup\"|\n\030Wor" +
+      "kerGroupCreateRequest\022\027\n\004name\030\001 \001(\tB\t\372B\006" +
+      "r\004\020\001\030\024\022\034\n\010priority\030\002 \001(\005B\n\372B\007\032\005\020\350\007(\000\022)\n\010" +
+      "children\030\003 \003(\0132\027.api.common.WorkerGroup\"" +
+      "r\n\031WorkerGroupCreateResponse\022\n\n\002id\030\001 \001(\003" +
+      "\022\014\n\004name\030\002 \001(\t\022\020\n\010priority\030\003 \001(\005\022)\n\010chil" +
+      "dren\030\004 \003(\0132\027.api.common.WorkerGroup\"\210\001\n\030" +
+      "WorkerGroupUpdateRequest\022\n\n\002id\030\001 \001(\003\022\027\n\004" +
+      "name\030\002 \001(\tB\t\372B\006r\004\020\001\030\024\022\034\n\010priority\030\003 \001(\005B" +
+      "\n\372B\007\032\005\020\350\007(\000\022)\n\010children\030\004 \003(\0132\027.api.comm" +
+      "on.WorkerGroup\"r\n\031WorkerGroupUpdateRespo" +
+      "nse\022\n\n\002id\030\001 \001(\003\022\014\n\004name\030\002 \001(\t\022\020\n\010priorit" +
+      "y\030\003 \001(\005\022)\n\010children\030\004 \003(\0132\027.api.common.W" +
+      "orkerGroup\"/\n\030WorkerGroupDeleteRequest\022\023" +
+      "\n\002id\030\001 \001(\003B\007\372B\004\"\002 \000\"k\n\031WorkerGroupDisabl" +
+      "eRequest\022\023\n\002id\030\001 \001(\003B\007\372B\004\"\002 \000\0229\n\016disable" +
+      "_status\030\002 \001(\0162\031.api.common.DisableStatus" +
+      "B\006\372B\003\202\001\000\"\320\001\n\017GroupQueryModel\022\n\n\002id\030\001 \001(\003" +
+      "\022\014\n\004name\030\002 \001(\t\022\020\n\010priority\030\003 \001(\005\022\r\n\005coun" +
+      "t\030\004 \001(\005\022\022\n\nGroupAdmin\030\005 \003(\t\022\023\n\013GroupLead" +
+      "er\030\006 \003(\t\022&\n\005child\030\007 \003(\0132\027.api.common.Wor" +
+      "kerGroup\0221\n\016disable_status\030\010 \001(\0162\031.api.c" +
+      "ommon.DisableStatus\"\322\001\n\027WorkerGroupQuery" +
+      "Request\022\026\n\tgroup_pid\030\001 \001(\003H\000\210\001\001\022\026\n\tgroup" +
+      "_cid\030\002 \001(\003H\001\210\001\001\022 \n\005batch\030\003 \001(\0132\021.api.com" +
+      "mon.Batch\0226\n\016disable_status\030\004 \001(\0162\031.api." +
+      "common.DisableStatusH\002\210\001\001B\014\n\n_group_pidB" +
+      "\014\n\n_group_cidB\021\n\017_disable_status\"q\n\024Work" +
+      "erGroupQueryResp\022(\n\005items\030\001 \003(\0132\031.api.co" +
+      "re.GroupQueryModel\022 \n\005batch\030\002 \001(\0132\021.api." +
+      "common.Batch\022\r\n\005total\030\003 \001(\005\")\n\024QueryWork" +
+      "sByGroupReq\022\021\n\tgroup_pid\030\001 \001(\003\":\n\025QueryW" +
+      "orksByGroupResp\022!\n\005items\030\001 \003(\0132\022.api.com" +
+      "mon.Worker2\215\006\n\013WorkerGroup\022]\n\005Query\022!.ap" +
+      "i.core.WorkerGroupQueryRequest\032\036.api.cor" +
+      "e.WorkerGroupQueryResp\"\021\272\276\031\r\010\220\003\030\001\322\014\005quer" +
+      "y\022e\n\006Create\022\".api.core.WorkerGroupCreate" +
+      "Request\032#.api.core.WorkerGroupCreateResp" +
+      "onse\"\022\272\276\031\016\010\221\003\030\001\322\014\006create\022e\n\006Update\022\".api" +
+      ".core.WorkerGroupUpdateRequest\032#.api.cor" +
+      "e.WorkerGroupUpdateResponse\"\022\272\276\031\016\010\222\003\030\001\322\014" +
+      "\006update\022X\n\006Delete\022\".api.core.WorkerGroup" +
+      "DeleteRequest\032\026.google.protobuf.Empty\"\022\272" +
+      "\276\031\016\010\223\003\030\001\322\014\006delete\022u\n\013QueryByPerm\022\'.api.c" +
+      "ore.WorkerGroupQueryByPermRequest\032\".api." +
+      "core.WorkerGroupQueryResponse\"\031\272\276\031\025\010\224\003\030\001" +
+      "\322\014\rquery-by-perm\022s\n\021QueryWorksByGroup\022\036." +
+      "api.core.QueryWorksByGroupReq\032\037.api.core" +
+      ".QueryWorksByGroupResp\"\035\272\276\031\031\010\225\003\030\001\322\014\021quer" +
+      "y-group-works\022[\n\007Disable\022#.api.core.Work" +
+      "erGroupDisableRequest\032\026.google.protobuf." +
+      "Empty\"\023\272\276\031\017\010\226\003\030\001\322\014\007disable\032.\272\276\031*\272\006\014worke" +
+      "r_group\312\014\001\020\322\014\024/tenant/worker-groupBE\n\030co" +
+      "m.teneasyChat.api.coreZ\021wcs/api/core;cor" +
+      "e\272\276\031\024\242\006\004jeff\262\006\n2022-12-06b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -11547,7 +11639,7 @@ public final class WorkerGroupOuterClass {
     internal_static_api_core_WorkerGroupQueryByPermRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_core_WorkerGroupQueryByPermRequest_descriptor,
-        new java.lang.String[] { "DisableStatus", });
+        new java.lang.String[] { "DisableStatus", "Skip", });
     internal_static_api_core_WorkerGroupQueryResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_api_core_WorkerGroupQueryResponse_fieldAccessorTable = new
