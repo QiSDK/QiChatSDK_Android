@@ -64,21 +64,22 @@ interface TeneasySDKDelegate {
 /**
  * 通讯核心类，提供了发送消息、解析消息等功能
  */
-class ChatLib constructor(cert: String, token:String, baseUrl:String = "", userId: Int, sign:String,  chatID: Long = 0, custom: String = "", maxSessionMinutes: Int = 9000000){
+class ChatLib {
+
+    companion object {
+        @Volatile
+        private var instance: ChatLib? = null
+
+        fun getInstance(): ChatLib {
+            return instance ?: synchronized(this) {
+                instance ?: ChatLib().also { instance = it }
+            }
+        }
+    }
     private val TAG = "ChatLib"
     // 通讯地址
    private var baseUrl = ""
      var isConnected = false
-   /*private fun isConnection() : Boolean {
-        if (socket == null) return false
-        try {
-            println("Socket is open: ${socket.isOpen}")
-            return socket.isOpen
-        }catch (e: Exception) {
-            println(e.message)
-            return false;
-        }
-    }*/
 
     // 当前发送的消息实体，便于上层调用的逻辑处理
     var sendingMessage: CMessage.Message? = null
@@ -99,12 +100,12 @@ class ChatLib constructor(cert: String, token:String, baseUrl:String = "", userI
     private var beatTimes = 0
     private var maxSessionMinutes = 9000000//相当于不设置会话实际限制 //测试放1分钟，上线放120或90
     private var withAutoReply: WithAutoReply? = null
-    private var custom: String? = custom
+    private var custom: String = ""
     private var msgFormat: MessageFormat = MessageFormat.MSG_TEXT
     private var fileSize = 0
     private var fileName = ""
 
-    init {
+    fun init(cert: String, token:String, baseUrl:String = "", userId: Int, sign:String,  chatID: Long = 0, custom: String = "", maxSessionMinutes: Int = 9000000) {
         this.chatId = chatID
         if (token.length > 10) {
             this.token = token
@@ -121,6 +122,7 @@ class ChatLib constructor(cert: String, token:String, baseUrl:String = "", userI
         }
         sessionTime = 0
         beatTimes = 0
+        this.custom = custom
         this.maxSessionMinutes = maxSessionMinutes
     }
 
