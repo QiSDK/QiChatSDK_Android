@@ -107,19 +107,15 @@ class ChatLib {
 
     fun init(cert: String, token:String, baseUrl:String = "", userId: Int, sign:String,  chatID: Long = 0, custom: String = "", maxSessionMinutes: Int = 9000000) {
         this.chatId = chatID
-        if (token.length > 10) {
-            this.token = token
-        }
-        if (baseUrl.length > 10) {
-            this.baseUrl = baseUrl
-        }
+        this.token = token
 
+        fileSize = 0
+        fileName = ""
+        this.baseUrl = baseUrl
         this.userId = userId;
         this.mySign = sign
+        this.cert = cert
 
-        if (cert.length > 10) {
-            this.cert = cert
-        }
         sessionTime = 0
         beatTimes = 0
         this.custom = custom
