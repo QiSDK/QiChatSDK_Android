@@ -1,6 +1,10 @@
 package com.teneasy.sdk
 
 import android.content.Context
+import android.net.ConnectivityManager
+import android.net.Network
+import android.net.NetworkCapabilities
+import android.net.NetworkRequest
 import android.util.Log
 import android.webkit.WebSettings
 import com.google.protobuf.Timestamp
@@ -19,10 +23,14 @@ import org.java_websocket.client.WebSocketClient
 import org.java_websocket.drafts.Draft_6455
 import org.java_websocket.handshake.ServerHandshake
 import java.net.URI
+import java.net.URLEncoder
 import java.nio.ByteBuffer
 import java.nio.charset.StandardCharsets
 import java.util.*
 import kotlin.collections.ArrayList
+import kotlinx.coroutines.*
+import kotlinx.coroutines.sync.Mutex
+import kotlinx.coroutines.sync.withLock
 
 
 interface TeneasySDKDelegate {
@@ -77,9 +85,28 @@ class ChatLib {
         }
     }
     private val TAG = "ChatLib"
+
+    // 协程作用域和调度器
+    private val scope = CoroutineScope(SupervisorJob() + Dispatchers.Default)
+    private val websocketDispatcher = Dispatchers.IO
+    private val messageDispatcher = Dispatchers.Default
+    private val timerDispatcher = Dispatchers.Default
+    private val stateDispatcher = Dispatchers.Default
+
+    // 线程安全的锁
+    private val stateMutex = Mutex()
+
     // 通讯地址
    private var baseUrl = ""
      var isConnected = false
+        private set
+
+    // 连接状态标识
+    private var isConnecting = false
+
+    // 待发送的消息队列
+    private data class PendingPayload(val id: Long?, val data: ByteArray)
+    private val pendingPayloads = mutableListOf<PendingPayload>()
 
     // 当前发送的消息实体，便于上层调用的逻辑处理
     var sendingMessage: CMessage.Message? = null
@@ -105,7 +132,12 @@ class ChatLib {
     private var fileSize = 0
     private var fileName = ""
 
-    fun init(cert: String, token:String, baseUrl:String = "", userId: Int, sign:String,  chatID: Long = 0, custom: String = "", maxSessionMinutes: Int = 9000000) {
+    // 网络监听
+    private var connectivityManager: ConnectivityManager? = null
+    private var networkCallback: ConnectivityManager.NetworkCallback? = null
+    private var applicationContext: Context? = null
+
+    fun init(cert: String, token:String, baseUrl:String = "", userId: Int, sign:String,  chatID: Long = 0, custom: String = "", maxSessionMinutes: Int = 9000000, context: Context? = null) {
         this.chatId = chatID
         this.token = token
 
@@ -120,6 +152,70 @@ class ChatLib {
         beatTimes = 0
         this.custom = custom
         this.maxSessionMinutes = maxSessionMinutes
+
+        // 初始化网络监听
+        context?.let {
+            this.applicationContext = it.applicationContext
+            setupNetworkMonitoring()
+        }
+    }
+
+    /**
+     * 设置网络状态监听
+     */
+    private fun setupNetworkMonitoring() {
+        applicationContext?.let { context ->
+            connectivityManager = context.getSystemService(Context.CONNECTIVITY_SERVICE) as? ConnectivityManager
+
+            networkCallback = object : ConnectivityManager.NetworkCallback() {
+                override fun onAvailable(network: Network) {
+                    Log.d(TAG, "网络可用")
+                    // 如果之前因网络问题断开，可以尝试重连
+                }
+
+                override fun onLost(network: Network) {
+                    Log.d(TAG, "网络断开")
+                    scope.launch(stateDispatcher) {
+                        stateMutex.withLock {
+                            if (isConnected) {
+                                disConnected(1009, "网络中断了")
+                            }
+                        }
+                    }
+                }
+
+                override fun onCapabilitiesChanged(network: Network, networkCapabilities: NetworkCapabilities) {
+                    val hasWifi = networkCapabilities.hasTransport(NetworkCapabilities.TRANSPORT_WIFI)
+                    val hasCellular = networkCapabilities.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR)
+                    Log.d(TAG, "网络类型变化: WiFi=$hasWifi, Cellular=$hasCellular")
+                }
+            }
+
+            val networkRequest = NetworkRequest.Builder()
+                .addCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET)
+                .build()
+
+            try {
+                connectivityManager?.registerNetworkCallback(networkRequest, networkCallback!!)
+            } catch (e: Exception) {
+                Log.e(TAG, "注册网络监听失败: ${e.message}")
+            }
+        }
+    }
+
+    /**
+     * 停止网络监听
+     */
+    private fun stopNetworkMonitoring() {
+        networkCallback?.let {
+            try {
+                connectivityManager?.unregisterNetworkCallback(it)
+            } catch (e: Exception) {
+                Log.e(TAG, "取消网络监听失败: ${e.message}")
+            }
+        }
+        networkCallback = null
+        connectivityManager = null
     }
 
     fun getHeaders(context: Context): Map<String, String> {
@@ -131,52 +227,104 @@ class ChatLib {
      * 启动socket连接
       */
     fun makeConnect(){
-        var rd = Random().nextInt(1000000) + 1000000
-        var dt = Date().time
-        val url = baseUrl + "cert=" + this.cert + "&token=" + token + "&userid=" + this.userId + "&custom=" + custom + "&ty=" + ClientType.CLIENT_TYPE_USER_APP_ANDROID.number + "&dt=" + dt + "&sign=" + mySign + "&rd=" + rd
-        Log.i(TAG, "连接WSS")
-        //val header = mapOf("x-trace-id" to "ddd")
-        val headers = mapOf(
-            "x-trace-id" to UUID.randomUUID().toString(),
-            //"Authorization" to "Bearer your_token_here"
-        )
-        print(headers["x-trace-id"])
-        socket =
-            object : WebSocketClient(URI(url), Draft_6455(), headers) {
-                override fun onMessage(message: String) {
+        scope.launch(stateDispatcher) {
+            stateMutex.withLock {
+                if (isConnecting || isConnected) {
+                    Log.i(TAG, "已经在连接中或已连接，跳过重复连接")
+                    return@launch
                 }
-
-                override fun onMessage(bytes: ByteBuffer?) {
-                    super.onMessage(bytes)
-                    if (this@ChatLib.socket != this) return
-                    if (bytes != null)
-                        receiveMsg(bytes.array())
-                }
-                override fun onOpen(handshake: ServerHandshake?) {
-                    Log.i(TAG, "opened connection")
-                    //onOpen可能判断不正确，所以注释掉
-                    /*result.code = 0
-                    result.msg = "已连接上服务器"
-                    listener?.systemMsg(result)*/
-                    if (this@ChatLib.socket != this) return
-                }
-                override fun onClose(code: Int, reason: String, remote: Boolean) {
-                    Log.i(TAG, "closed connection code: $code reason: $reason")
-                    if (this@ChatLib.socket != this) return
-                    disConnected(code)
-                }
-                override fun onError(ex: Exception) {
-                    if (this@ChatLib.socket != this) return
-                    disConnected(1001,"未知错误")
-                    Log.i(TAG, ex.message ?:"未知错误")
-                }
+                isConnecting = true
             }
-        socket?.connect()
+
+            enqueueWebsocketConnection()
+        }
+    }
+
+    /**
+     * 安全构建 WebSocket URL
+     */
+    private fun buildWebSocketUrl(): String? {
+        try {
+            val rd = Random().nextInt(1000000) + 1000000
+            val dt = Date().time
+
+            // 使用 URLEncoder 安全编码参数
+            val params = mutableMapOf<String, String>()
+            params["cert"] = cert ?: ""
+            params["token"] = token ?: ""
+            params["userid"] = userId.toString()
+            params["custom"] = custom
+            params["ty"] = ClientType.CLIENT_TYPE_USER_APP_ANDROID.number.toString()
+            params["dt"] = dt.toString()
+            params["sign"] = mySign ?: ""
+            params["rd"] = rd.toString()
+
+            val queryString = params.entries.joinToString("&") { (key, value) ->
+                "$key=${URLEncoder.encode(value, "UTF-8")}"
+            }
+
+            return "$baseUrl$queryString"
+        } catch (e: Exception) {
+            Log.e(TAG, "构建URL失败: ${e.message}")
+            return null
+        }
+    }
+
+    /**
+     * 将 WebSocket 连接加入队列
+     */
+    private fun enqueueWebsocketConnection() {
+        scope.launch(websocketDispatcher) {
+            val url = buildWebSocketUrl()
+            if (url == null) {
+                stateMutex.withLock {
+                    isConnecting = false
+                }
+                Log.e(TAG, "URL构建失败，连接中止")
+                return@launch
+            }
+
+            Log.i(TAG, "连接WSS (URL已安全编码)")
+
+            val headers = mapOf(
+                "x-trace-id" to UUID.randomUUID().toString(),
+            )
+            Log.d(TAG, "x-trace-id: ${headers["x-trace-id"]}")
+
+            withContext(Dispatchers.Main) {
+                socket = object : WebSocketClient(URI(url), Draft_6455(), headers) {
+                    override fun onMessage(message: String) {
+                    }
+
+                    override fun onMessage(bytes: ByteBuffer?) {
+                        super.onMessage(bytes)
+                        if (this@ChatLib.socket != this) return
+                        if (bytes != null)
+                            receiveMsg(bytes.array())
+                    }
+                    override fun onOpen(handshake: ServerHandshake?) {
+                        Log.i(TAG, "opened connection")
+                        if (this@ChatLib.socket != this) return
+                    }
+                    override fun onClose(code: Int, reason: String, remote: Boolean) {
+                        Log.i(TAG, "closed connection code: $code reason: $reason")
+                        if (this@ChatLib.socket != this) return
+                        disConnected(code)
+                    }
+                    override fun onError(ex: Exception) {
+                        if (this@ChatLib.socket != this) return
+                        disConnected(1001,"未知错误")
+                        Log.i(TAG, ex.message ?:"未知错误")
+                    }
+                }
+                socket?.connect()
+            }
+        }
     }
 
     /**
      * 发送文本类型、图片类型的消息
-     * @param msg   消息内容或图片url,音频url...
+     * @param msg   消息内容或图片url,音频url..。
      */
      fun sendMessage(msg: String, type: MessageFormat, consultId: Long, replyMsgId: Long = 0, withAutoReply: WithAutoReply? = null, fileSize: Int = 0, fileName: String = "") {
         this.replyMsgId = replyMsgId;
@@ -373,39 +521,143 @@ class ChatLib {
      * @param textMsg MessageItem
      */
     private fun doSendMsg(cMsg: CMessage.Message, act: GAction.Action = GAction.Action.ActionCSSendMsg, payload_Id: Long = 0) {
-        //payload_id != 0的时候，可能是重发，重发不需要+1
-        if (sendingMessage?.msgOp == CMessage.MessageOperate.MSG_OP_POST && payload_Id == 0L) {
-            payloadId += 1
-            Log.i(TAG, "payloadId + 1: ${payloadId}")
-            msgList[payloadId] = cMsg
+        scope.launch(messageDispatcher) {
+            var payloadIdentifier = payload_Id
+            var shouldTrackMessage = false
+
+            stateMutex.withLock {
+                //payload_id != 0的时候，可能是重发，重发不需要+1
+                if (sendingMessage?.msgOp == CMessage.MessageOperate.MSG_OP_POST && payload_Id == 0L) {
+                    payloadId += 1
+                    payloadIdentifier = payloadId
+                    Log.i(TAG, "payloadId + 1: ${payloadId}")
+                    msgList[payloadId] = cMsg
+                    shouldTrackMessage = true
+                } else if (payload_Id == 0L) {
+                    payloadIdentifier = payloadId
+                } else if (sendingMessage?.msgOp == CMessage.MessageOperate.MSG_OP_POST) {
+                    shouldTrackMessage = true
+                    msgList[payloadIdentifier] = cMsg
+                }
+
+                if(!isConnected && payload_Id == 0L) {
+                    // 将消息加入待发送队列
+                    val cSendMsg = GGateway.CSSendMessage.newBuilder()
+                    cSendMsg.msg = cMsg
+                    val cSendMsgData = cSendMsg.build().toByteString()
+
+                    val payload = GPayload.Payload.newBuilder()
+                    payload.data = cSendMsgData
+                    payload.act = act
+                    payload.id = payloadIdentifier
+
+                    try {
+                        val payloadData = payload.build().toByteArray()
+                        pendingPayloads.add(PendingPayload(payloadIdentifier, payloadData))
+                        Log.i(TAG, "消息已加入待发送队列: payloadId=$payloadIdentifier")
+                    } catch (e: Exception) {
+                        Log.e(TAG, "序列化消息失败: ${e.message}")
+                        if (shouldTrackMessage) {
+                            msgList.remove(payloadIdentifier)
+                        }
+                    }
+
+                    // 如果未连接且未在连接中，尝试连接
+                    if (!isConnecting) {
+                        isConnecting = true
+                        scope.launch(websocketDispatcher) {
+                            enqueueWebsocketConnection()
+                        }
+                    }
+                    return@launch
+                }
+            }
+
+            // 第三层
+            val cSendMsg = GGateway.CSSendMessage.newBuilder()
+            cSendMsg.msg = cMsg
+
+            val cSendMsgData = cSendMsg.build().toByteString()
+
+            //第四层
+            val payload = GPayload.Payload.newBuilder()
+            payload.data = cSendMsgData
+            payload.act = act
+            payload.id = payloadIdentifier
+
+            Log.i(TAG, "sending payloadId: ${payload.id}")
+
+            stateMutex.withLock {
+                if (!isConnected || socket == null || socket?.isOpen == false) {
+                    Log.w(TAG, "连接未就绪，消息未发送")
+                    return@launch
+                }
+            }
+
+            try {
+                val payloadData = payload.build().toByteArray()
+                writeToSocket(payloadData, payloadIdentifier)
+            }catch (ex: Exception){
+                Log.e(TAG, "发送消息异常: ${ex.message}")
+                if (shouldTrackMessage) {
+                    stateMutex.withLock {
+                        msgList.remove(payloadIdentifier)
+                    }
+                }
+            }
         }
-        if(!isConnected && payload_Id == 0L) {
-            makeConnect()
-            return
+    }
+
+    /**
+     * 写入 Socket 数据
+     */
+    private fun writeToSocket(data: ByteArray, payloadId: Long? = null) {
+        scope.launch(Dispatchers.Main) {
+            val currentSocket = socket
+            if (currentSocket == null || !currentSocket.isOpen) {
+                stateMutex.withLock {
+                    // 检查是否已在队列中
+                    val exists = pendingPayloads.any { it.id == payloadId && it.data.contentEquals(data) }
+                    if (!exists) {
+                        pendingPayloads.add(PendingPayload(payloadId, data))
+                    }
+
+                    if (!isConnecting) {
+                        isConnecting = true
+                        scope.launch(websocketDispatcher) {
+                            enqueueWebsocketConnection()
+                        }
+                    }
+                    isConnected = false
+                }
+                return@launch
+            }
+
+            try {
+                Log.d(TAG, "开始发送 payloadId=$payloadId")
+                currentSocket.send(data)
+                Log.d(TAG, "消息已发送 payloadId=$payloadId")
+            } catch (e: Exception) {
+                Log.e(TAG, "发送失败: ${e.message}")
+            }
         }
-        // 第三层
-        val cSendMsg = GGateway.CSSendMessage.newBuilder()
-        cSendMsg.msg = cMsg
+    }
 
-        val cSendMsgData = cSendMsg.build().toByteString()
+    /**
+     * 刷新待发送队列
+     */
+    private fun flushPendingPayloads() {
+        scope.launch(messageDispatcher) {
+            val queuedItems = stateMutex.withLock {
+                val items = pendingPayloads.toList()
+                pendingPayloads.clear()
+                items
+            }
 
-        //第四层
-        val payload = GPayload.Payload.newBuilder()
-        payload.data = cSendMsgData
-        payload.act = act
-
-        if (payload_Id != 0L){
-            payload.id = payload_Id;
-        }else {
-            payload.id = payloadId
-        }
-        Log.i(TAG, "sending payloadId: ${payload.id}")
-        if (!isConnected || socket == null || socket?.isOpen == false) return
-
-        try {
-            socket?.send(payload.build().toByteArray())
-        }catch (ex: Exception){
-            Log.i(TAG, "尝试在断开状态发消息")
+            Log.i(TAG, "刷新待发送队列: ${queuedItems.size} 条消息")
+            for (item in queuedItems) {
+                writeToSocket(item.data, item.id)
+            }
         }
     }
 
@@ -428,14 +680,21 @@ class ChatLib {
      *  心跳，一般建议每隔60秒调用
      */
    private fun sendHeartBeat(){
-       if (!isConnected || socket == null || socket?.isOpen == false) return
-        val buffer = ByteArray(1)
-        buffer[0] = 0
-        try {
-            socket?.send(buffer)
-        }catch (ex: Exception){
-            Log.i(TAG, "尝试在断开状态发消息")
-        }
+       scope.launch(stateDispatcher) {
+           stateMutex.withLock {
+               if (!isConnected || socket == null || socket?.isOpen == false) return@launch
+           }
+
+           val buffer = ByteArray(1)
+           buffer[0] = 0
+           try {
+               withContext(Dispatchers.Main) {
+                   socket?.send(buffer)
+               }
+           }catch (ex: Exception){
+               Log.i(TAG, "心跳发送失败: ${ex.message}")
+           }
+       }
     }
 
     /**
@@ -443,124 +702,128 @@ class ChatLib {
      * @param data
      */
     private fun receiveMsg(data: ByteArray) {
-        /*
-        walter, [17 May 2024 at 3:32:00 PM (17 May 2024 at 3:32:23 PM)]:
-...HeartBeatFlag         = 0x0
-KickFlag              = 0x1
-InvalidTokenFlag      = 0x2
-PermChangedFlag       = 0x3
-EntranceNotExistsFlag = 0x4
+        scope.launch(messageDispatcher) {
+            /*
+            walter, [17 May 2024 at 3:32:00 PM (17 May 2024 at 3:32:23 PM)]:\n...HeartBeatFlag         = 0x0\nKickFlag              = 0x1\nInvalidTokenFlag      = 0x2\n PermChangedFlag       = 0x3\nEntranceNotExistsFlag = 0x4\n\n如果这个字节的值是 0 ，表示心跳...
+             */
+            if (data.size == 1) {
+                val d = String(data, StandardCharsets.UTF_8)
 
-如果这个字节的值是 0 ，表示心跳...
-         */
-        if (data.size == 1) {
-            val d = String(data, StandardCharsets.UTF_8)
-
-            when {
-                d.contains("\u0000") -> {
-                    Log.i(TAG, "收到心跳回执\n")
-                }
-                d.contains("\u0001") -> {
-                    disConnected(1010, "在别处登录了")
-                    Log.i(TAG, "收到1字节回执$d 在别处登录了\n{$token")
-                }
-                d.contains("\u0002") -> {
-                    disConnected(1002, "无效的Token\n")
-                    Log.i(TAG, "收到1字节回执$d 无效的Token\n")
-                }
-                d.contains("\u0003") -> {
-                    //disConnected(1003, "PermChangedFlag\n")
-                    Log.i(TAG, "收到1字节回执 0003")
-                }
-                else -> {
-                    Log.i(TAG, "收到1字节回执$d\n")
-                }
-            }
-        }
-        else {
-            val recvPayLoad = GPayload.Payload.parseFrom(data)
-            val msgData = recvPayLoad.data
-            //有收到消息，就重设超时时间。
-            resetSessionTime()
-            //收到消息
-            if(recvPayLoad.act == GAction.Action.ActionSCRecvMsg) {
-                val recvMsg = GGateway.SCRecvMessage.parseFrom(msgData)
-                //收到对方撤回消息
-                if (recvMsg.msg.msgOp == CMessage.MessageOperate.MSG_OP_DELETE){
-                    listener?.msgDeleted(recvMsg.msg, recvPayLoad.id, -1)
-                }else{
-                    recvMsg.msg.let {
-                        listener?.receivedMsg(it)
+                when {
+                    d.contains("\u0000") -> {
+                        Log.i(TAG, "收到心跳回执\n")
+                    }
+                    d.contains("\u0001") -> {
+                        disConnected(1010, "在别处登录了")
+                        Log.i(TAG, "收到1字节回执$d 在别处登录了\n{$token")
+                    }
+                    d.contains("\u0002") -> {
+                        disConnected(1002, "无效的Token\n")
+                        Log.i(TAG, "收到1字节回执$d 无效的Token\n")
+                    }
+                    d.contains("\u0003") -> {
+                        //disConnected(1003, "PermChangedFlag\n")
+                        Log.i(TAG, "收到1字节回执 0003")
+                    }
+                    else -> {
+                        Log.i(TAG, "收到1字节回执$d\n")
                     }
                 }
-            } else if(recvPayLoad.act == GAction.Action.ActionSCHi) {
-                val msg = GGateway.SCHi.parseFrom(msgData)
-                token = msg.token
-//                sendingMessage?.let {
-//                    resendMSg(it, this.payloadId)
-//                    Log.i(TAG, "自动重发未发出的最后一个消息$payloadId")
-//                }
-//                //如果有未发消息，继续使用这消息的payload作为最后一个消息的payload，不然使用系统产生的id
-//                if (sendingMessage == null) {
-                    payloadId = recvPayLoad.id
-                //}
-                //payloadId = payLoad.id
-                print("初始payloadId:" + payloadId + "\n")
-                isConnected = true
-                listener?.connected(msg)
-                startTimer()
-            } else if(recvPayLoad.act == GAction.Action.ActionForward) {
-                val msg = GGateway.CSForward.parseFrom(msgData)
-                Log.i(TAG, "forward: ${msg.data}")
-            }  else if(recvPayLoad.act == GAction.Action.ActionSCDeleteMsgACK) {
-                //手机端撤回消息，并收到成功回执
-                val scMsg = GGateway.SCSendMessage.parseFrom(msgData)
-                val msg = Message.newBuilder()
-                msg.msgId = scMsg.msgId;
-                msg.msgOp = CMessage.MessageOperate.MSG_OP_DELETE;
-                Log.i(TAG, "删除回执收到A：消息ID: ${msg.msgId}")
-                //var cMsg = msgList[payLoad.id]
-                //if (cMsg != null) {
-                    Log.i(TAG, "删除成功")
-                    listener?.msgDeleted(msg.build(), recvPayLoad.id, -1)
-                //}
-            }  else if(recvPayLoad.act == GAction.Action.ActionSCDeleteMsg) {
-                val scMsg = GGateway.SCRecvMessage.parseFrom(msgData)
-                val msg = CMessage.Message.newBuilder()
-                msg.msgId = scMsg.msg.msgId;
-                msg.msgOp = CMessage.MessageOperate.MSG_OP_DELETE
-                listener?.msgDeleted(msg.build(), recvPayLoad.id, -1)
-                Log.i(TAG, "对方删除了消息： payload ID${recvPayLoad.id}")
-            } else if(recvPayLoad.act == GAction.Action.ActionSCSendMsgACK) {//消息回执
-                val scMsg = GGateway.SCSendMessage.parseFrom(msgData)
-                chatId = scMsg.chatId
-                Log.i(TAG, "收到消息回执 ActionSCSendMsgACK")
-
-                val cMsg: Message? = msgList[recvPayLoad.id]
-                //if (cMsg != null){
-                Log.i(TAG, "收到消息回执: ${scMsg.msgId} : ${recvPayLoad.id}")
-                if (sendingMessage?.msgOp == CMessage.MessageOperate.MSG_OP_DELETE){
-                    listener?.msgDeleted(cMsg, recvPayLoad.id, -1)
-                    Log.i(TAG, "删除成功")
-                }else{
-                    listener?.msgReceipt(cMsg, recvPayLoad.id, scMsg.msgId, scMsg.errMsg)
-                }
-                //}
-                Log.i(TAG, "消息ID: ${scMsg.msgId}")
-            } else if(recvPayLoad.act == GAction.Action.ActionSCWorkerChanged){
-                val scMsg = GGateway.SCWorkerChanged.parseFrom(msgData)
-                consultId = scMsg.consultId
-                scMsg.apply {
-                    listener?.workChanged(scMsg);
-                }
             }
-            else
-                Log.i(TAG, "received data: $data")
+            else {
+                val recvPayLoad = GPayload.Payload.parseFrom(data)
+                val msgData = recvPayLoad.data
+                //有收到消息，就重设超时时间。
+                resetSessionTime()
+                //收到消息
+                if(recvPayLoad.act == GAction.Action.ActionSCRecvMsg) {
+                    val recvMsg = GGateway.SCRecvMessage.parseFrom(msgData)
+                    //收到对方撤回消息
+                    if (recvMsg.msg.msgOp == CMessage.MessageOperate.MSG_OP_DELETE){
+                        listener?.msgDeleted(recvMsg.msg, recvPayLoad.id, -1)
+                    }else{
+                        recvMsg.msg.let {
+                            listener?.receivedMsg(it)
+                        }
+                    }
+                } else if(recvPayLoad.act == GAction.Action.ActionSCHi) {
+                    val msg = GGateway.SCHi.parseFrom(msgData)
+
+                    stateMutex.withLock {
+                        token = msg.token
+                        payloadId = recvPayLoad.id
+                        isConnected = true
+                        isConnecting = false
+                    }
+
+                    Log.i(TAG, "初始payloadId:" + payloadId + "\n")
+
+                    withContext(Dispatchers.Main) {
+                        listener?.connected(msg)
+                    }
+
+                    startTimer()
+
+                    // 刷新待发送队列
+                    flushPendingPayloads()
+
+                } else if(recvPayLoad.act == GAction.Action.ActionForward) {
+                    val msg = GGateway.CSForward.parseFrom(msgData)
+                    Log.i(TAG, "forward: ${msg.data}")
+                }  else if(recvPayLoad.act == GAction.Action.ActionSCDeleteMsgACK) {
+                    //手机端撤回消息，并收到成功回执
+                    val scMsg = GGateway.SCSendMessage.parseFrom(msgData)
+                    val msg = Message.newBuilder()
+                    msg.msgId = scMsg.msgId;
+                    msg.msgOp = CMessage.MessageOperate.MSG_OP_DELETE;
+                    Log.i(TAG, "删除回执收到A：消息ID: ${msg.msgId}")
+                    //var cMsg = msgList[payLoad.id]
+                    //if (cMsg != null) {
+                        Log.i(TAG, "删除成功")
+                        listener?.msgDeleted(msg.build(), recvPayLoad.id, -1)
+                    //}
+                }  else if(recvPayLoad.act == GAction.Action.ActionSCDeleteMsg) {
+                    val scMsg = GGateway.SCRecvMessage.parseFrom(msgData)
+                    val msg = CMessage.Message.newBuilder()
+                    msg.msgId = scMsg.msg.msgId;
+                    msg.msgOp = CMessage.MessageOperate.MSG_OP_DELETE
+                    listener?.msgDeleted(msg.build(), recvPayLoad.id, -1)
+                    Log.i(TAG, "对方删除了消息： payload ID${recvPayLoad.id}")
+                } else if(recvPayLoad.act == GAction.Action.ActionSCSendMsgACK) {//消息回执
+                    val scMsg = GGateway.SCSendMessage.parseFrom(msgData)
+                    chatId = scMsg.chatId
+                    Log.i(TAG, "收到消息回执 ActionSCSendMsgACK")
+
+                    val cMsg: Message? = stateMutex.withLock {
+                        msgList[recvPayLoad.id]
+                    }
+                    //if (cMsg != null){
+                    Log.i(TAG, "收到消息回执: ${scMsg.msgId} : ${recvPayLoad.id}")
+                    if (sendingMessage?.msgOp == CMessage.MessageOperate.MSG_OP_DELETE){
+                        listener?.msgDeleted(cMsg, recvPayLoad.id, -1)
+                        Log.i(TAG, "删除成功")
+                    }else{
+                        listener?.msgReceipt(cMsg, recvPayLoad.id, scMsg.msgId, scMsg.errMsg)
+                    }
+                    //}
+                    Log.i(TAG, "消息ID: ${scMsg.msgId}")
+                } else if(recvPayLoad.act == GAction.Action.ActionSCWorkerChanged){
+                    val scMsg = GGateway.SCWorkerChanged.parseFrom(msgData)
+                    consultId = scMsg.consultId
+                    scMsg.apply {
+                        listener?.workChanged(scMsg);
+                    }
+                }
+                else
+                    Log.i(TAG, "received data: $data")
+            }
         }
     }
 
-    public fun resetSessionTime(){
-        sessionTime = 0
+    fun resetSessionTime(){
+        scope.launch(timerDispatcher) {
+            sessionTime = 0
+        }
     }
 
     /**
@@ -591,26 +854,56 @@ EntranceNotExistsFlag = 0x4
     }
 
     private fun disConnected(code: Int = 1006, msg: String = "已断开通信"){
-        var result = Result();
-        result.code = code
-        result.msg = msg
-        listener?.systemMsg(result)
-        disConnect()
-        sendingMessage = null
-        isConnected = false
-        Log.i(TAG, "ChatLib disConnected code:" + code + "msg:" + msg);
+        scope.launch(messageDispatcher) {
+            var result = Result();
+            result.code = code
+            result.msg = msg
+
+            withContext(Dispatchers.Main) {
+                listener?.systemMsg(result)
+            }
+
+            disConnectInternal()
+            sendingMessage = null
+
+            stateMutex.withLock {
+                isConnected = false
+                isConnecting = false
+            }
+
+            Log.i(TAG, "ChatLib disConnected code:" + code + " msg:" + msg);
+        }
+    }
+
+    /**
+     * 内部断开连接方法
+     */
+    private suspend fun disConnectInternal() {
+        withContext(Dispatchers.Main) {
+            stopTimer()
+            socket?.close()
+            socket = null
+        }
     }
 
     // 启动计时器，持续调用心跳方法
     private fun startTimer() {
-        if (heartTimer == null) {
-            heartTimer = Timer()
-            heartTimer?.schedule(object : TimerTask() {
-                override fun run() {
-                    //需要执行的任务
-                    updateSecond()
-                }
-            }, 0,1000)
+        scope.launch(timerDispatcher) {
+            if (heartTimer == null) {
+                heartTimer = Timer()
+                heartTimer?.schedule(object : TimerTask() {
+                    override fun run() {
+                        //需要执行的任务
+                        scope.launch(timerDispatcher) {
+                            stateMutex.withLock {
+                                if (isConnected) {
+                                    updateSecond()
+                                }
+                            }
+                        }
+                    }
+                }, 0,1000)
+            }
         }
     }
 
@@ -628,10 +921,27 @@ EntranceNotExistsFlag = 0x4
      * 关闭socket连接，在停止使用时，需调用该方法。
      */
     fun disConnect(){
-        stopTimer()
-        if (socket != null) {
-            socket?.close()
-            socket = null
+        scope.launch(websocketDispatcher) {
+            stopTimer()
+            stopNetworkMonitoring()
+
+            withContext(Dispatchers.Main) {
+                if (socket != null) {
+                    socket?.close()
+                    socket = null
+                }
+            }
+
+            stateMutex.withLock {
+                isConnected = false
+                isConnecting = false
+                pendingPayloads.clear()
+                msgList.clear()
+                payloadId = 0
+            }
+
+            sendingMessage = null
+            Log.i(TAG, "ChatLib 已断开并清理资源")
         }
     }
 }
