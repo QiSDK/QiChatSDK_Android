@@ -10,6 +10,7 @@ import androidx.lifecycle.lifecycleScope
 import com.example.teneasychatsdk.databinding.ActivityMainBinding
 import com.example.teneasychatsdkdemo.ReadTextDelegate
 import com.example.teneasychatsdkdemo.ReadTxtLib
+import com.google.gson.Gson
 import com.teneasy.sdk.ChatLib
 import com.teneasy.sdk.Line
 import com.teneasy.sdk.LineDetectDelegate
@@ -25,6 +26,8 @@ import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import java.io.File
+import java.io.Serializable
+import java.net.URLEncoder
 
 class MainActivity : AppCompatActivity(), TeneasySDKDelegate, UploadListener {
 
@@ -138,7 +141,7 @@ class MainActivity : AppCompatActivity(), TeneasySDKDelegate, UploadListener {
         var wssUrl = "wss://" + baseUrl + "/v1/gateway/h5?"
         //token: COYBEAIYzNdEIPIBKJDZrOP3MQ.maPNGL2-vih71Eg4ghU4aTMSY6Sl0Zt8GTH6colScbTZQiTM5hak9do9qyxvhxSes-HuKbsNMLlBE72Z3J-4Bg
         //666668，364154
-        chatLib.init("COYBEAUYASDyASiG2piD9zE.te46qua5ha2r-Caz03Vx2JXH5OLSRRV2GqdYcn9UslwibsxBSP98GhUKSGEI0Z84FRMkp16ZK8eS-y72QVE2AQ", "", wssUrl, 666665, "9zgd9YUc", 0, "", 20)
+        chatLib.init("COYBEAUYASDyASiG2piD9zE.te46qua5ha2r-Caz03Vx2JXH5OLSRRV2GqdYcn9UslwibsxBSP98GhUKSGEI0Z84FRMkp16ZK8eS-y72QVE2AQ", "", wssUrl, 666665, "9zgd9YUc", 0, getCustomParam(), 20, this)
         chatLib.listener = this
         chatLib.makeConnect()
 
@@ -157,6 +160,20 @@ class MainActivity : AppCompatActivity(), TeneasySDKDelegate, UploadListener {
         1125324  1125397 1125417
         //1125324, "9zgd9YUc"
          */
+    }
+
+    /**
+     * 获取自定义参数
+     * 用于SDK初始化时传递额外的用户信息
+     * @return URL编码后的JSON字符串
+     */
+    fun getCustomParam(): String {
+        val custom = Custom().apply {
+          platform = 2
+            username = "小成友"
+        }
+        return Gson().toJson(custom)
+        //return URLEncoder.encode(Gson().toJson(custom), "utf-8")
     }
 
     private fun sendMsg(){
@@ -314,4 +331,11 @@ class MainActivity : AppCompatActivity(), TeneasySDKDelegate, UploadListener {
       //  TODO("Not yet implemented")
     }
 
+}
+
+class Custom : Serializable {
+    var username: String? = null
+    var platform: Int = 2
+    var userlevel: Int = 28
+    var usertype: Int = 2
 }
