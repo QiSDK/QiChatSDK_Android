@@ -73,12 +73,15 @@ interface TeneasySDKDelegate {
  * 通讯核心类，提供了发送消息、解析消息等功能
  */
 class ChatLib {
-
+//你可以在不创建类实例的情况下，直接通过类名来调用伴生对象里的方法和属性（例如 ChatLib.getInstance()）
     companion object {
+        //确保了对 instance 变量的读写操作对于所有线程都是立即可见的。简单来说，当一个线程修改了 instance 的值，其他线程会立刻看到这个修改，这对于防止多线程环境下的初始化问题至关重要。
         @Volatile
         private var instance: ChatLib? = null
 
+       //双重检查锁定（Double-Checked Locking） 模式来实现线程安全的懒汉式单例。
         fun getInstance(): ChatLib {
+            //这个同步块确保在同一时间只有一个线程可以执行内部的代码
             return instance ?: synchronized(this) {
                 instance ?: ChatLib().also { instance = it }
             }
@@ -220,7 +223,10 @@ class ChatLib {
 
     fun getHeaders(context: Context): Map<String, String> {
         val userAgent = WebSettings.getDefaultUserAgent(context)
-        return mapOf("User-Agent" to userAgent)
+        return mapOf(
+            "User-Agent" to userAgent,
+            "x-trace-id" to UUID.randomUUID().toString()
+        )
     }
 
     /**
@@ -286,8 +292,8 @@ class ChatLib {
 
             Log.i(TAG, "连接WSS (URL已安全编码)")
 
-            val headers = mapOf(
-                "x-trace-id" to UUID.randomUUID().toString(),
+            val headers = applicationContext?.let { getHeaders(it) } ?: mapOf(
+                "x-trace-id" to UUID.randomUUID().toString()
             )
             Log.d(TAG, "x-trace-id: ${headers["x-trace-id"]}")
 

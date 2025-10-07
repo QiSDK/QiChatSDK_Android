@@ -173,7 +173,7 @@ class MainActivity : AppCompatActivity(), TeneasySDKDelegate, UploadListener {
             username = "小成友"
         }
         return Gson().toJson(custom)
-        //return URLEncoder.encode(Gson().toJson(custom), "utf-8")
+        //return URLEncoder.encode(Gson().toJson(custom), "utf-8") //从sdk 2.0.0开始，由sdk来做encode，所以注释掉了
     }
 
     private fun sendMsg(){
