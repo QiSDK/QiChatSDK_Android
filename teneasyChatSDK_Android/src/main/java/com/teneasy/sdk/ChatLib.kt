@@ -523,14 +523,14 @@ class ChatLib {
     }
 
     /**
-     * 发送文本消息
+     * 发送文本消息（同步执行，匹配iOS实现）
      * @param textMsg MessageItem
      */
     private fun doSendMsg(cMsg: CMessage.Message, act: GAction.Action = GAction.Action.ActionCSSendMsg, payload_Id: Long = 0) {
-        scope.launch(messageDispatcher) {
-            var payloadIdentifier = payload_Id
-            var shouldTrackMessage = false
+        var payloadIdentifier = payload_Id
+        var shouldTrackMessage = false
 
+        runBlocking {
             stateMutex.withLock {
                 //payload_id != 0的时候，可能是重发，重发不需要+1
                 if (sendingMessage?.msgOp == CMessage.MessageOperate.MSG_OP_POST && payload_Id == 0L) {
@@ -575,37 +575,43 @@ class ChatLib {
                             enqueueWebsocketConnection()
                         }
                     }
-                    return@launch
+                    return@runBlocking
                 }
             }
+        }
 
-            // 第三层
-            val cSendMsg = GGateway.CSSendMessage.newBuilder()
-            cSendMsg.msg = cMsg
+        // 第三层
+        val cSendMsg = GGateway.CSSendMessage.newBuilder()
+        cSendMsg.msg = cMsg
 
-            val cSendMsgData = cSendMsg.build().toByteString()
+        val cSendMsgData = cSendMsg.build().toByteString()
 
-            //第四层
-            val payload = GPayload.Payload.newBuilder()
-            payload.data = cSendMsgData
-            payload.act = act
-            payload.id = payloadIdentifier
+        //第四层
+        val payload = GPayload.Payload.newBuilder()
+        payload.data = cSendMsgData
+        payload.act = act
+        payload.id = payloadIdentifier
 
-            Log.i(TAG, "sending payloadId: ${payload.id}")
+        Log.i(TAG, "sending payloadId: ${payload.id}")
 
+        val canSend = runBlocking {
             stateMutex.withLock {
-                if (!isConnected || socket == null || socket?.isOpen == false) {
-                    Log.w(TAG, "连接未就绪，消息未发送")
-                    return@launch
-                }
+                isConnected && socket != null && socket?.isOpen == true
             }
+        }
 
-            try {
-                val payloadData = payload.build().toByteArray()
-                writeToSocket(payloadData, payloadIdentifier)
-            }catch (ex: Exception){
-                Log.e(TAG, "发送消息异常: ${ex.message}")
-                if (shouldTrackMessage) {
+        if (!canSend) {
+            Log.w(TAG, "连接未就绪，消息未发送")
+            return
+        }
+
+        try {
+            val payloadData = payload.build().toByteArray()
+            writeToSocket(payloadData, payloadIdentifier)
+        } catch (ex: Exception) {
+            Log.e(TAG, "发送消息异常: ${ex.message}")
+            if (shouldTrackMessage) {
+                runBlocking {
                     stateMutex.withLock {
                         msgList.remove(payloadIdentifier)
                     }
