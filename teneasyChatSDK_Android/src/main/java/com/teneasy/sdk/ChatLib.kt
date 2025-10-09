@@ -527,9 +527,9 @@ class ChatLib {
      * @param textMsg MessageItem
      */
     private fun doSendMsg(cMsg: CMessage.Message, act: GAction.Action = GAction.Action.ActionCSSendMsg, payload_Id: Long = 0) {
+        //scope.launch(messageDispatcher) { //这是异步，会导致App拿不到对应的payloadId
         var payloadIdentifier = payload_Id
         var shouldTrackMessage = false
-
         runBlocking {
             stateMutex.withLock {
                 //payload_id != 0的时候，可能是重发，重发不需要+1
