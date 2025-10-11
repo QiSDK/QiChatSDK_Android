@@ -297,34 +297,33 @@ class ChatLib {
             )
             Log.d(TAG, "x-trace-id: ${headers["x-trace-id"]}")
 
-            withContext(Dispatchers.Main) {
-                socket = object : WebSocketClient(URI(url), Draft_6455(), headers) {
-                    override fun onMessage(message: String) {
-                    }
-
-                    override fun onMessage(bytes: ByteBuffer?) {
-                        super.onMessage(bytes)
-                        if (this@ChatLib.socket != this) return
-                        if (bytes != null)
-                            receiveMsg(bytes.array())
-                    }
-                    override fun onOpen(handshake: ServerHandshake?) {
-                        Log.i(TAG, "opened connection")
-                        if (this@ChatLib.socket != this) return
-                    }
-                    override fun onClose(code: Int, reason: String, remote: Boolean) {
-                        Log.i(TAG, "closed connection code: $code reason: $reason")
-                        if (this@ChatLib.socket != this) return
-                        disConnected(code)
-                    }
-                    override fun onError(ex: Exception) {
-                        if (this@ChatLib.socket != this) return
-                        disConnected(1001,"未知错误")
-                        Log.i(TAG, ex.message ?:"未知错误")
-                    }
+            // 直接在IO线程创建WebSocket，避免主线程生命周期影响连接
+            socket = object : WebSocketClient(URI(url), Draft_6455(), headers) {
+                override fun onMessage(message: String) {
                 }
-                socket?.connect()
+
+                override fun onMessage(bytes: ByteBuffer?) {
+                    super.onMessage(bytes)
+                    if (this@ChatLib.socket != this) return
+                    if (bytes != null)
+                        receiveMsg(bytes.array())
+                }
+                override fun onOpen(handshake: ServerHandshake?) {
+                    Log.i(TAG, "opened connection")
+                    if (this@ChatLib.socket != this) return
+                }
+                override fun onClose(code: Int, reason: String, remote: Boolean) {
+                    Log.i(TAG, "closed connection code: $code reason: $reason")
+                    if (this@ChatLib.socket != this) return
+                    disConnected(code)
+                }
+                override fun onError(ex: Exception) {
+                    if (this@ChatLib.socket != this) return
+                    disConnected(1001,"未知错误")
+                    Log.i(TAG, ex.message ?:"未知错误")
+                }
             }
+            socket?.connect()
         }
     }
 
@@ -624,7 +623,7 @@ class ChatLib {
      * 写入 Socket 数据
      */
     private fun writeToSocket(data: ByteArray, payloadId: Long? = null) {
-        scope.launch(Dispatchers.Main) {
+        scope.launch(websocketDispatcher) {
             val currentSocket = socket
             if (currentSocket == null || !currentSocket.isOpen) {
                 stateMutex.withLock {
@@ -692,7 +691,7 @@ class ChatLib {
      *  心跳，一般建议每隔60秒调用
      */
    private fun sendHeartBeat(){
-       scope.launch(stateDispatcher) {
+       scope.launch(websocketDispatcher) {
            stateMutex.withLock {
                if (!isConnected || socket == null || socket?.isOpen == false) return@launch
            }
@@ -700,9 +699,7 @@ class ChatLib {
            val buffer = ByteArray(1)
            buffer[0] = 0
            try {
-               withContext(Dispatchers.Main) {
-                   socket?.send(buffer)
-               }
+               socket?.send(buffer)
            }catch (ex: Exception){
                Log.i(TAG, "心跳发送失败: ${ex.message}")
            }
@@ -891,7 +888,7 @@ class ChatLib {
      * 内部断开连接方法
      */
     private suspend fun disConnectInternal() {
-        withContext(Dispatchers.Main) {
+        withContext(websocketDispatcher) {
             stopTimer()
             socket?.close()
             socket = null
@@ -937,11 +934,9 @@ class ChatLib {
             stopTimer()
             stopNetworkMonitoring()
 
-            withContext(Dispatchers.Main) {
-                if (socket != null) {
-                    socket?.close()
-                    socket = null
-                }
+            if (socket != null) {
+                socket?.close()
+                socket = null
             }
 
             stateMutex.withLock {
