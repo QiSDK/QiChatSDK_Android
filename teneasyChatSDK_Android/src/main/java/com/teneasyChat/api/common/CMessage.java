@@ -738,6 +738,14 @@ public final class CMessage {
      * <code>MST_AI_BEGIN = 11;</code>
      */
     MST_AI_BEGIN(11),
+    /**
+     * <pre>
+     * 触发评价消息
+     * </pre>
+     *
+     * <code>MST_EVALUATE = 12;</code>
+     */
+    MST_EVALUATE(12),
     UNRECOGNIZED(-1),
     ;
 
@@ -842,6 +850,14 @@ public final class CMessage {
      * <code>MST_AI_BEGIN = 11;</code>
      */
     public static final int MST_AI_BEGIN_VALUE = 11;
+    /**
+     * <pre>
+     * 触发评价消息
+     * </pre>
+     *
+     * <code>MST_EVALUATE = 12;</code>
+     */
+    public static final int MST_EVALUATE_VALUE = 12;
 
 
     public final int getNumber() {
@@ -880,6 +896,7 @@ public final class CMessage {
         case 9: return MST_AI_TRANSFER;
         case 10: return MST_AI_LINK_WORD;
         case 11: return MST_AI_BEGIN;
+        case 12: return MST_EVALUATE;
         default: return null;
       }
     }
@@ -20239,17 +20256,18 @@ public final class CMessage {
       "CE\020\002\022\r\n\tMSG_VIDEO\020\003\022\013\n\007MSG_GEO\020\004\022\014\n\010MSG_" +
       "FILE\020\006*f\n\013MessageRole\022\023\n\017MSG_ROLE_SYSTEM" +
       "\020\000\022\023\n\017MSG_ROLE_WORKER\020\001\022\025\n\021MSG_ROLE_CUST" +
-      "OMER\020\002\022\026\n\022MSG_ROLE_ANONYMOUS\020\003*\211\002\n\rMsgSo" +
+      "OMER\020\002\022\026\n\022MSG_ROLE_ANONYMOUS\020\003*\233\002\n\rMsgSo" +
       "urceType\022\017\n\013MST_DEFAULT\020\000\022\016\n\nMST_WORKER\020" +
       "\001\022\020\n\014MST_CUSTOMER\020\002\022\025\n\021MST_SYSTEM_WORKER" +
       "\020\003\022\027\n\023MST_SYSTEM_CUSTOMER\020\004\022\027\n\023MST_SYSTE" +
       "M_TRANSFER\020\005\022\034\n\030MST_SYSTEM_AUTO_TRANSFER" +
       "\020\006\022\025\n\021MST_MASS_TRANSFER\020\007\022\n\n\006MST_AI\020\010\022\023\n" +
       "\017MST_AI_TRANSFER\020\t\022\024\n\020MST_AI_LINK_WORD\020\n" +
-      "\022\020\n\014MST_AI_BEGIN\020\013*E\n\016MessageOperate\022\017\n\013" +
-      "MSG_OP_POST\020\000\022\017\n\013MSG_OP_EDIT\020\001\022\021\n\rMSG_OP" +
-      "_DELETE\020\002B<\n\032com.teneasyChat.api.commonZ" +
-      "\025wcs/api/common;common\272\002\006Commonb\006proto3"
+      "\022\020\n\014MST_AI_BEGIN\020\013\022\020\n\014MST_EVALUATE\020\014*E\n\016" +
+      "MessageOperate\022\017\n\013MSG_OP_POST\020\000\022\017\n\013MSG_O" +
+      "P_EDIT\020\001\022\021\n\rMSG_OP_DELETE\020\002B<\n\032com.tenea" +
+      "syChat.api.commonZ\025wcs/api/common;common" +
+      "\272\002\006Commonb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -218,9 +218,9 @@ class MainActivity : AppCompatActivity(), TeneasySDKDelegate, UploadListener {
     }
 
     override fun receivedMsg(msg: CMessage.Message) {
-//        if (msg.msgSourceType == CMessage.MsgSourceType.MST_) {
-//
-//        }
+        if (msg.msgSourceType == CMessage.MsgSourceType.MST_EVALUATE) {
+
+        }
         if (msg.content != null) {
             appendText(msg.content.toString() + "\n")
         }else if (msg.video != null){
