@@ -264,6 +264,7 @@ class ChatLib {
             params["dt"] = dt.toString()
             params["sign"] = mySign ?: ""
             params["rd"] = rd.toString()
+            params["registTime"] = (System.currentTimeMillis() / 1000).toString()
 
             val queryString = params.entries.joinToString("&") { (key, value) ->
                 "$key=${URLEncoder.encode(value, "UTF-8")}"
@@ -291,6 +292,7 @@ class ChatLib {
             }
 
             Log.i(TAG, "连接WSS (URL已安全编码)")
+            Log.d(TAG, url)
 
             val headers = applicationContext?.let { getHeaders(it) } ?: mapOf(
                 "x-trace-id" to UUID.randomUUID().toString()
