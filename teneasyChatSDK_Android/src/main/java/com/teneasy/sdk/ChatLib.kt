@@ -134,13 +134,14 @@ class ChatLib {
     private var msgFormat: MessageFormat = MessageFormat.MSG_TEXT
     private var fileSize = 0
     private var fileName = ""
+    private var registTime = 0
 
     // 网络监听
     private var connectivityManager: ConnectivityManager? = null
     private var networkCallback: ConnectivityManager.NetworkCallback? = null
     private var applicationContext: Context? = null
 
-    fun init(cert: String, token:String, baseUrl:String = "", userId: Int, sign:String,  chatID: Long = 0, custom: String = "", maxSessionMinutes: Int = 9000000, context: Context? = null) {
+    fun init(cert: String, token:String, baseUrl:String = "", userId: Int, sign:String,  chatID: Long = 0, custom: String = "", maxSessionMinutes: Int = 9000000, context: Context? = null, registTime: Int = 0) {
         this.chatId = chatID
         this.token = token
 
@@ -155,6 +156,7 @@ class ChatLib {
         beatTimes = 0
         this.custom = custom
         this.maxSessionMinutes = maxSessionMinutes
+        this.registTime = registTime
 
         // 初始化网络监听
         context?.let {
@@ -264,7 +266,7 @@ class ChatLib {
             params["dt"] = dt.toString()
             params["sign"] = mySign ?: ""
             params["rd"] = rd.toString()
-            params["registTime"] = (System.currentTimeMillis() / 1000).toString()
+            params["registTime"] = registTime.toString()
 
             val queryString = params.entries.joinToString("&") { (key, value) ->
                 "$key=${URLEncoder.encode(value, "UTF-8")}"

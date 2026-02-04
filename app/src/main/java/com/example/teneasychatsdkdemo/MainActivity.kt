@@ -141,7 +141,7 @@ class MainActivity : AppCompatActivity(), TeneasySDKDelegate, UploadListener {
         var wssUrl = "wss://" + baseUrl + "/v1/gateway/h5?"
         //token: COYBEAIYzNdEIPIBKJDZrOP3MQ.maPNGL2-vih71Eg4ghU4aTMSY6Sl0Zt8GTH6colScbTZQiTM5hak9do9qyxvhxSes-HuKbsNMLlBE72Z3J-4Bg
         //666668，364154
-        chatLib.init("COYBEAUYASDyASiG2piD9zE.te46qua5ha2r-Caz03Vx2JXH5OLSRRV2GqdYcn9UslwibsxBSP98GhUKSGEI0Z84FRMkp16ZK8eS-y72QVE2AQ", "", wssUrl, 666665, "9zgd9YUc", 0, getCustomParam(), 20, this)
+        chatLib.init("COYBEAUYASDyASiG2piD9zE.te46qua5ha2r-Caz03Vx2JXH5OLSRRV2GqdYcn9UslwibsxBSP98GhUKSGEI0Z84FRMkp16ZK8eS-y72QVE2AQ", "", wssUrl, 666665, "9zgd9YUc", 0, getCustomParam(), 20, this, 1769174999)
         chatLib.listener = this
         chatLib.makeConnect()
 
