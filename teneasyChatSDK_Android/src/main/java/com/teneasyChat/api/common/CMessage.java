@@ -746,6 +746,14 @@ public final class CMessage {
      * <code>MST_EVALUATE = 12;</code>
      */
     MST_EVALUATE(12),
+    /**
+     * <pre>
+     * 卡片消息
+     * </pre>
+     *
+     * <code>MST_CARD = 13;</code>
+     */
+    MST_CARD(13),
     UNRECOGNIZED(-1),
     ;
 
@@ -858,6 +866,14 @@ public final class CMessage {
      * <code>MST_EVALUATE = 12;</code>
      */
     public static final int MST_EVALUATE_VALUE = 12;
+    /**
+     * <pre>
+     * 卡片消息
+     * </pre>
+     *
+     * <code>MST_CARD = 13;</code>
+     */
+    public static final int MST_CARD_VALUE = 13;
 
 
     public final int getNumber() {
@@ -897,6 +913,7 @@ public final class CMessage {
         case 10: return MST_AI_LINK_WORD;
         case 11: return MST_AI_BEGIN;
         case 12: return MST_EVALUATE;
+        case 13: return MST_CARD;
         default: return null;
       }
     }
@@ -20088,6 +20105,2380 @@ public final class CMessage {
 
   }
 
+  public interface WorkerFileLogOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:api.common.WorkerFileLog)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * id
+     * </pre>
+     *
+     * <code>int64 id = 1;</code>
+     * @return The id.
+     */
+    long getId();
+
+    /**
+     * <pre>
+     * 商户id
+     * </pre>
+     *
+     * <code>int32 tenant_id = 2;</code>
+     * @return The tenantId.
+     */
+    int getTenantId();
+
+    /**
+     * <pre>
+     * 客服id
+     * </pre>
+     *
+     * <code>int32 worker_id = 3;</code>
+     * @return The workerId.
+     */
+    int getWorkerId();
+
+    /**
+     * <pre>
+     * 打卡人ID
+     * </pre>
+     *
+     * <code>int32 worker_check_id = 4;</code>
+     * @return The workerCheckId.
+     */
+    int getWorkerCheckId();
+
+    /**
+     * <pre>
+     * 打卡人name
+     * </pre>
+     *
+     * <code>string worker_check_name = 5;</code>
+     * @return The workerCheckName.
+     */
+    java.lang.String getWorkerCheckName();
+    /**
+     * <pre>
+     * 打卡人name
+     * </pre>
+     *
+     * <code>string worker_check_name = 5;</code>
+     * @return The bytes for workerCheckName.
+     */
+    com.google.protobuf.ByteString
+        getWorkerCheckNameBytes();
+
+    /**
+     * <pre>
+     * chat_id
+     * </pre>
+     *
+     * <code>int64 chat_id = 6;</code>
+     * @return The chatId.
+     */
+    long getChatId();
+
+    /**
+     * <pre>
+     * 文件名
+     * </pre>
+     *
+     * <code>string file_name = 7;</code>
+     * @return The fileName.
+     */
+    java.lang.String getFileName();
+    /**
+     * <pre>
+     * 文件名
+     * </pre>
+     *
+     * <code>string file_name = 7;</code>
+     * @return The bytes for fileName.
+     */
+    com.google.protobuf.ByteString
+        getFileNameBytes();
+
+    /**
+     * <pre>
+     * 文件url
+     * </pre>
+     *
+     * <code>string file_url = 8;</code>
+     * @return The fileUrl.
+     */
+    java.lang.String getFileUrl();
+    /**
+     * <pre>
+     * 文件url
+     * </pre>
+     *
+     * <code>string file_url = 8;</code>
+     * @return The bytes for fileUrl.
+     */
+    com.google.protobuf.ByteString
+        getFileUrlBytes();
+
+    /**
+     * <pre>
+     * 文件大小，单位字节
+     * </pre>
+     *
+     * <code>int32 file_size = 9;</code>
+     * @return The fileSize.
+     */
+    int getFileSize();
+
+    /**
+     * <pre>
+     * 文件详情
+     * </pre>
+     *
+     * <code>string detail = 10;</code>
+     * @return The detail.
+     */
+    java.lang.String getDetail();
+    /**
+     * <pre>
+     * 文件详情
+     * </pre>
+     *
+     * <code>string detail = 10;</code>
+     * @return The bytes for detail.
+     */
+    com.google.protobuf.ByteString
+        getDetailBytes();
+
+    /**
+     * <pre>
+     * 消息ID
+     * </pre>
+     *
+     * <code>int64 msg_id = 11;</code>
+     * @return The msgId.
+     */
+    long getMsgId();
+
+    /**
+     * <pre>
+     * payload_id
+     * </pre>
+     *
+     * <code>int64 payload_id = 12;</code>
+     * @return The payloadId.
+     */
+    long getPayloadId();
+
+    /**
+     * <pre>
+     * 创建时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_at = 13;</code>
+     * @return Whether the createAt field is set.
+     */
+    boolean hasCreateAt();
+    /**
+     * <pre>
+     * 创建时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_at = 13;</code>
+     * @return The createAt.
+     */
+    com.google.protobuf.Timestamp getCreateAt();
+    /**
+     * <pre>
+     * 创建时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_at = 13;</code>
+     */
+    com.google.protobuf.TimestampOrBuilder getCreateAtOrBuilder();
+
+    /**
+     * <pre>
+     * 客服 info
+     * </pre>
+     *
+     * <code>.api.common.WorkerBaseInfo worker = 24;</code>
+     * @return Whether the worker field is set.
+     */
+    boolean hasWorker();
+    /**
+     * <pre>
+     * 客服 info
+     * </pre>
+     *
+     * <code>.api.common.WorkerBaseInfo worker = 24;</code>
+     * @return The worker.
+     */
+    com.teneasyChat.api.common.CWorker.WorkerBaseInfo getWorker();
+    /**
+     * <pre>
+     * 客服 info
+     * </pre>
+     *
+     * <code>.api.common.WorkerBaseInfo worker = 24;</code>
+     */
+    com.teneasyChat.api.common.CWorker.WorkerBaseInfoOrBuilder getWorkerOrBuilder();
+  }
+  /**
+   * <pre>
+   * 客服发送文件记录列表
+   * </pre>
+   *
+   * Protobuf type {@code api.common.WorkerFileLog}
+   */
+  public static final class WorkerFileLog extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:api.common.WorkerFileLog)
+      WorkerFileLogOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 26,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        WorkerFileLog.class.getName());
+    }
+    // Use WorkerFileLog.newBuilder() to construct.
+    private WorkerFileLog(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private WorkerFileLog() {
+      workerCheckName_ = "";
+      fileName_ = "";
+      fileUrl_ = "";
+      detail_ = "";
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.teneasyChat.api.common.CMessage.internal_static_api_common_WorkerFileLog_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.teneasyChat.api.common.CMessage.internal_static_api_common_WorkerFileLog_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.teneasyChat.api.common.CMessage.WorkerFileLog.class, com.teneasyChat.api.common.CMessage.WorkerFileLog.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int ID_FIELD_NUMBER = 1;
+    private long id_ = 0L;
+    /**
+     * <pre>
+     * id
+     * </pre>
+     *
+     * <code>int64 id = 1;</code>
+     * @return The id.
+     */
+    @java.lang.Override
+    public long getId() {
+      return id_;
+    }
+
+    public static final int TENANT_ID_FIELD_NUMBER = 2;
+    private int tenantId_ = 0;
+    /**
+     * <pre>
+     * 商户id
+     * </pre>
+     *
+     * <code>int32 tenant_id = 2;</code>
+     * @return The tenantId.
+     */
+    @java.lang.Override
+    public int getTenantId() {
+      return tenantId_;
+    }
+
+    public static final int WORKER_ID_FIELD_NUMBER = 3;
+    private int workerId_ = 0;
+    /**
+     * <pre>
+     * 客服id
+     * </pre>
+     *
+     * <code>int32 worker_id = 3;</code>
+     * @return The workerId.
+     */
+    @java.lang.Override
+    public int getWorkerId() {
+      return workerId_;
+    }
+
+    public static final int WORKER_CHECK_ID_FIELD_NUMBER = 4;
+    private int workerCheckId_ = 0;
+    /**
+     * <pre>
+     * 打卡人ID
+     * </pre>
+     *
+     * <code>int32 worker_check_id = 4;</code>
+     * @return The workerCheckId.
+     */
+    @java.lang.Override
+    public int getWorkerCheckId() {
+      return workerCheckId_;
+    }
+
+    public static final int WORKER_CHECK_NAME_FIELD_NUMBER = 5;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object workerCheckName_ = "";
+    /**
+     * <pre>
+     * 打卡人name
+     * </pre>
+     *
+     * <code>string worker_check_name = 5;</code>
+     * @return The workerCheckName.
+     */
+    @java.lang.Override
+    public java.lang.String getWorkerCheckName() {
+      java.lang.Object ref = workerCheckName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        workerCheckName_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * 打卡人name
+     * </pre>
+     *
+     * <code>string worker_check_name = 5;</code>
+     * @return The bytes for workerCheckName.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getWorkerCheckNameBytes() {
+      java.lang.Object ref = workerCheckName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        workerCheckName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CHAT_ID_FIELD_NUMBER = 6;
+    private long chatId_ = 0L;
+    /**
+     * <pre>
+     * chat_id
+     * </pre>
+     *
+     * <code>int64 chat_id = 6;</code>
+     * @return The chatId.
+     */
+    @java.lang.Override
+    public long getChatId() {
+      return chatId_;
+    }
+
+    public static final int FILE_NAME_FIELD_NUMBER = 7;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object fileName_ = "";
+    /**
+     * <pre>
+     * 文件名
+     * </pre>
+     *
+     * <code>string file_name = 7;</code>
+     * @return The fileName.
+     */
+    @java.lang.Override
+    public java.lang.String getFileName() {
+      java.lang.Object ref = fileName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        fileName_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * 文件名
+     * </pre>
+     *
+     * <code>string file_name = 7;</code>
+     * @return The bytes for fileName.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getFileNameBytes() {
+      java.lang.Object ref = fileName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        fileName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int FILE_URL_FIELD_NUMBER = 8;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object fileUrl_ = "";
+    /**
+     * <pre>
+     * 文件url
+     * </pre>
+     *
+     * <code>string file_url = 8;</code>
+     * @return The fileUrl.
+     */
+    @java.lang.Override
+    public java.lang.String getFileUrl() {
+      java.lang.Object ref = fileUrl_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        fileUrl_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * 文件url
+     * </pre>
+     *
+     * <code>string file_url = 8;</code>
+     * @return The bytes for fileUrl.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getFileUrlBytes() {
+      java.lang.Object ref = fileUrl_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        fileUrl_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int FILE_SIZE_FIELD_NUMBER = 9;
+    private int fileSize_ = 0;
+    /**
+     * <pre>
+     * 文件大小，单位字节
+     * </pre>
+     *
+     * <code>int32 file_size = 9;</code>
+     * @return The fileSize.
+     */
+    @java.lang.Override
+    public int getFileSize() {
+      return fileSize_;
+    }
+
+    public static final int DETAIL_FIELD_NUMBER = 10;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object detail_ = "";
+    /**
+     * <pre>
+     * 文件详情
+     * </pre>
+     *
+     * <code>string detail = 10;</code>
+     * @return The detail.
+     */
+    @java.lang.Override
+    public java.lang.String getDetail() {
+      java.lang.Object ref = detail_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        detail_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * 文件详情
+     * </pre>
+     *
+     * <code>string detail = 10;</code>
+     * @return The bytes for detail.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getDetailBytes() {
+      java.lang.Object ref = detail_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        detail_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int MSG_ID_FIELD_NUMBER = 11;
+    private long msgId_ = 0L;
+    /**
+     * <pre>
+     * 消息ID
+     * </pre>
+     *
+     * <code>int64 msg_id = 11;</code>
+     * @return The msgId.
+     */
+    @java.lang.Override
+    public long getMsgId() {
+      return msgId_;
+    }
+
+    public static final int PAYLOAD_ID_FIELD_NUMBER = 12;
+    private long payloadId_ = 0L;
+    /**
+     * <pre>
+     * payload_id
+     * </pre>
+     *
+     * <code>int64 payload_id = 12;</code>
+     * @return The payloadId.
+     */
+    @java.lang.Override
+    public long getPayloadId() {
+      return payloadId_;
+    }
+
+    public static final int CREATE_AT_FIELD_NUMBER = 13;
+    private com.google.protobuf.Timestamp createAt_;
+    /**
+     * <pre>
+     * 创建时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_at = 13;</code>
+     * @return Whether the createAt field is set.
+     */
+    @java.lang.Override
+    public boolean hasCreateAt() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     * <pre>
+     * 创建时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_at = 13;</code>
+     * @return The createAt.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Timestamp getCreateAt() {
+      return createAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createAt_;
+    }
+    /**
+     * <pre>
+     * 创建时间
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_at = 13;</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.TimestampOrBuilder getCreateAtOrBuilder() {
+      return createAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createAt_;
+    }
+
+    public static final int WORKER_FIELD_NUMBER = 24;
+    private com.teneasyChat.api.common.CWorker.WorkerBaseInfo worker_;
+    /**
+     * <pre>
+     * 客服 info
+     * </pre>
+     *
+     * <code>.api.common.WorkerBaseInfo worker = 24;</code>
+     * @return Whether the worker field is set.
+     */
+    @java.lang.Override
+    public boolean hasWorker() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     * <pre>
+     * 客服 info
+     * </pre>
+     *
+     * <code>.api.common.WorkerBaseInfo worker = 24;</code>
+     * @return The worker.
+     */
+    @java.lang.Override
+    public com.teneasyChat.api.common.CWorker.WorkerBaseInfo getWorker() {
+      return worker_ == null ? com.teneasyChat.api.common.CWorker.WorkerBaseInfo.getDefaultInstance() : worker_;
+    }
+    /**
+     * <pre>
+     * 客服 info
+     * </pre>
+     *
+     * <code>.api.common.WorkerBaseInfo worker = 24;</code>
+     */
+    @java.lang.Override
+    public com.teneasyChat.api.common.CWorker.WorkerBaseInfoOrBuilder getWorkerOrBuilder() {
+      return worker_ == null ? com.teneasyChat.api.common.CWorker.WorkerBaseInfo.getDefaultInstance() : worker_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (id_ != 0L) {
+        output.writeInt64(1, id_);
+      }
+      if (tenantId_ != 0) {
+        output.writeInt32(2, tenantId_);
+      }
+      if (workerId_ != 0) {
+        output.writeInt32(3, workerId_);
+      }
+      if (workerCheckId_ != 0) {
+        output.writeInt32(4, workerCheckId_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(workerCheckName_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 5, workerCheckName_);
+      }
+      if (chatId_ != 0L) {
+        output.writeInt64(6, chatId_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(fileName_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 7, fileName_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(fileUrl_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 8, fileUrl_);
+      }
+      if (fileSize_ != 0) {
+        output.writeInt32(9, fileSize_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(detail_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 10, detail_);
+      }
+      if (msgId_ != 0L) {
+        output.writeInt64(11, msgId_);
+      }
+      if (payloadId_ != 0L) {
+        output.writeInt64(12, payloadId_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(13, getCreateAt());
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        output.writeMessage(24, getWorker());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (id_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(1, id_);
+      }
+      if (tenantId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, tenantId_);
+      }
+      if (workerId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(3, workerId_);
+      }
+      if (workerCheckId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(4, workerCheckId_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(workerCheckName_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(5, workerCheckName_);
+      }
+      if (chatId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(6, chatId_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(fileName_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(7, fileName_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(fileUrl_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(8, fileUrl_);
+      }
+      if (fileSize_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(9, fileSize_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(detail_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(10, detail_);
+      }
+      if (msgId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(11, msgId_);
+      }
+      if (payloadId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(12, payloadId_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(13, getCreateAt());
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(24, getWorker());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.teneasyChat.api.common.CMessage.WorkerFileLog)) {
+        return super.equals(obj);
+      }
+      com.teneasyChat.api.common.CMessage.WorkerFileLog other = (com.teneasyChat.api.common.CMessage.WorkerFileLog) obj;
+
+      if (getId()
+          != other.getId()) return false;
+      if (getTenantId()
+          != other.getTenantId()) return false;
+      if (getWorkerId()
+          != other.getWorkerId()) return false;
+      if (getWorkerCheckId()
+          != other.getWorkerCheckId()) return false;
+      if (!getWorkerCheckName()
+          .equals(other.getWorkerCheckName())) return false;
+      if (getChatId()
+          != other.getChatId()) return false;
+      if (!getFileName()
+          .equals(other.getFileName())) return false;
+      if (!getFileUrl()
+          .equals(other.getFileUrl())) return false;
+      if (getFileSize()
+          != other.getFileSize()) return false;
+      if (!getDetail()
+          .equals(other.getDetail())) return false;
+      if (getMsgId()
+          != other.getMsgId()) return false;
+      if (getPayloadId()
+          != other.getPayloadId()) return false;
+      if (hasCreateAt() != other.hasCreateAt()) return false;
+      if (hasCreateAt()) {
+        if (!getCreateAt()
+            .equals(other.getCreateAt())) return false;
+      }
+      if (hasWorker() != other.hasWorker()) return false;
+      if (hasWorker()) {
+        if (!getWorker()
+            .equals(other.getWorker())) return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getId());
+      hash = (37 * hash) + TENANT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getTenantId();
+      hash = (37 * hash) + WORKER_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getWorkerId();
+      hash = (37 * hash) + WORKER_CHECK_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getWorkerCheckId();
+      hash = (37 * hash) + WORKER_CHECK_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getWorkerCheckName().hashCode();
+      hash = (37 * hash) + CHAT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getChatId());
+      hash = (37 * hash) + FILE_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getFileName().hashCode();
+      hash = (37 * hash) + FILE_URL_FIELD_NUMBER;
+      hash = (53 * hash) + getFileUrl().hashCode();
+      hash = (37 * hash) + FILE_SIZE_FIELD_NUMBER;
+      hash = (53 * hash) + getFileSize();
+      hash = (37 * hash) + DETAIL_FIELD_NUMBER;
+      hash = (53 * hash) + getDetail().hashCode();
+      hash = (37 * hash) + MSG_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getMsgId());
+      hash = (37 * hash) + PAYLOAD_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getPayloadId());
+      if (hasCreateAt()) {
+        hash = (37 * hash) + CREATE_AT_FIELD_NUMBER;
+        hash = (53 * hash) + getCreateAt().hashCode();
+      }
+      if (hasWorker()) {
+        hash = (37 * hash) + WORKER_FIELD_NUMBER;
+        hash = (53 * hash) + getWorker().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.teneasyChat.api.common.CMessage.WorkerFileLog parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.common.CMessage.WorkerFileLog parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.common.CMessage.WorkerFileLog parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.common.CMessage.WorkerFileLog parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.common.CMessage.WorkerFileLog parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.teneasyChat.api.common.CMessage.WorkerFileLog parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.teneasyChat.api.common.CMessage.WorkerFileLog parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.teneasyChat.api.common.CMessage.WorkerFileLog parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.teneasyChat.api.common.CMessage.WorkerFileLog parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.teneasyChat.api.common.CMessage.WorkerFileLog parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.teneasyChat.api.common.CMessage.WorkerFileLog parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.teneasyChat.api.common.CMessage.WorkerFileLog parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.teneasyChat.api.common.CMessage.WorkerFileLog prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * 客服发送文件记录列表
+     * </pre>
+     *
+     * Protobuf type {@code api.common.WorkerFileLog}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:api.common.WorkerFileLog)
+        com.teneasyChat.api.common.CMessage.WorkerFileLogOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.teneasyChat.api.common.CMessage.internal_static_api_common_WorkerFileLog_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.teneasyChat.api.common.CMessage.internal_static_api_common_WorkerFileLog_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.teneasyChat.api.common.CMessage.WorkerFileLog.class, com.teneasyChat.api.common.CMessage.WorkerFileLog.Builder.class);
+      }
+
+      // Construct using com.teneasyChat.api.common.CMessage.WorkerFileLog.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage
+                .alwaysUseFieldBuilders) {
+          getCreateAtFieldBuilder();
+          getWorkerFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        id_ = 0L;
+        tenantId_ = 0;
+        workerId_ = 0;
+        workerCheckId_ = 0;
+        workerCheckName_ = "";
+        chatId_ = 0L;
+        fileName_ = "";
+        fileUrl_ = "";
+        fileSize_ = 0;
+        detail_ = "";
+        msgId_ = 0L;
+        payloadId_ = 0L;
+        createAt_ = null;
+        if (createAtBuilder_ != null) {
+          createAtBuilder_.dispose();
+          createAtBuilder_ = null;
+        }
+        worker_ = null;
+        if (workerBuilder_ != null) {
+          workerBuilder_.dispose();
+          workerBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.teneasyChat.api.common.CMessage.internal_static_api_common_WorkerFileLog_descriptor;
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.common.CMessage.WorkerFileLog getDefaultInstanceForType() {
+        return com.teneasyChat.api.common.CMessage.WorkerFileLog.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.common.CMessage.WorkerFileLog build() {
+        com.teneasyChat.api.common.CMessage.WorkerFileLog result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.teneasyChat.api.common.CMessage.WorkerFileLog buildPartial() {
+        com.teneasyChat.api.common.CMessage.WorkerFileLog result = new com.teneasyChat.api.common.CMessage.WorkerFileLog(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.teneasyChat.api.common.CMessage.WorkerFileLog result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.id_ = id_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.tenantId_ = tenantId_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.workerId_ = workerId_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.workerCheckId_ = workerCheckId_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.workerCheckName_ = workerCheckName_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.chatId_ = chatId_;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.fileName_ = fileName_;
+        }
+        if (((from_bitField0_ & 0x00000080) != 0)) {
+          result.fileUrl_ = fileUrl_;
+        }
+        if (((from_bitField0_ & 0x00000100) != 0)) {
+          result.fileSize_ = fileSize_;
+        }
+        if (((from_bitField0_ & 0x00000200) != 0)) {
+          result.detail_ = detail_;
+        }
+        if (((from_bitField0_ & 0x00000400) != 0)) {
+          result.msgId_ = msgId_;
+        }
+        if (((from_bitField0_ & 0x00000800) != 0)) {
+          result.payloadId_ = payloadId_;
+        }
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00001000) != 0)) {
+          result.createAt_ = createAtBuilder_ == null
+              ? createAt_
+              : createAtBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00002000) != 0)) {
+          result.worker_ = workerBuilder_ == null
+              ? worker_
+              : workerBuilder_.build();
+          to_bitField0_ |= 0x00000002;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.teneasyChat.api.common.CMessage.WorkerFileLog) {
+          return mergeFrom((com.teneasyChat.api.common.CMessage.WorkerFileLog)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.teneasyChat.api.common.CMessage.WorkerFileLog other) {
+        if (other == com.teneasyChat.api.common.CMessage.WorkerFileLog.getDefaultInstance()) return this;
+        if (other.getId() != 0L) {
+          setId(other.getId());
+        }
+        if (other.getTenantId() != 0) {
+          setTenantId(other.getTenantId());
+        }
+        if (other.getWorkerId() != 0) {
+          setWorkerId(other.getWorkerId());
+        }
+        if (other.getWorkerCheckId() != 0) {
+          setWorkerCheckId(other.getWorkerCheckId());
+        }
+        if (!other.getWorkerCheckName().isEmpty()) {
+          workerCheckName_ = other.workerCheckName_;
+          bitField0_ |= 0x00000010;
+          onChanged();
+        }
+        if (other.getChatId() != 0L) {
+          setChatId(other.getChatId());
+        }
+        if (!other.getFileName().isEmpty()) {
+          fileName_ = other.fileName_;
+          bitField0_ |= 0x00000040;
+          onChanged();
+        }
+        if (!other.getFileUrl().isEmpty()) {
+          fileUrl_ = other.fileUrl_;
+          bitField0_ |= 0x00000080;
+          onChanged();
+        }
+        if (other.getFileSize() != 0) {
+          setFileSize(other.getFileSize());
+        }
+        if (!other.getDetail().isEmpty()) {
+          detail_ = other.detail_;
+          bitField0_ |= 0x00000200;
+          onChanged();
+        }
+        if (other.getMsgId() != 0L) {
+          setMsgId(other.getMsgId());
+        }
+        if (other.getPayloadId() != 0L) {
+          setPayloadId(other.getPayloadId());
+        }
+        if (other.hasCreateAt()) {
+          mergeCreateAt(other.getCreateAt());
+        }
+        if (other.hasWorker()) {
+          mergeWorker(other.getWorker());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                id_ = input.readInt64();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 16: {
+                tenantId_ = input.readInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
+              case 24: {
+                workerId_ = input.readInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 24
+              case 32: {
+                workerCheckId_ = input.readInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 32
+              case 42: {
+                workerCheckName_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 42
+              case 48: {
+                chatId_ = input.readInt64();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 48
+              case 58: {
+                fileName_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 58
+              case 66: {
+                fileUrl_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 66
+              case 72: {
+                fileSize_ = input.readInt32();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 72
+              case 82: {
+                detail_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 82
+              case 88: {
+                msgId_ = input.readInt64();
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 88
+              case 96: {
+                payloadId_ = input.readInt64();
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 96
+              case 106: {
+                input.readMessage(
+                    getCreateAtFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 106
+              case 194: {
+                input.readMessage(
+                    getWorkerFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00002000;
+                break;
+              } // case 194
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private long id_ ;
+      /**
+       * <pre>
+       * id
+       * </pre>
+       *
+       * <code>int64 id = 1;</code>
+       * @return The id.
+       */
+      @java.lang.Override
+      public long getId() {
+        return id_;
+      }
+      /**
+       * <pre>
+       * id
+       * </pre>
+       *
+       * <code>int64 id = 1;</code>
+       * @param value The id to set.
+       * @return This builder for chaining.
+       */
+      public Builder setId(long value) {
+
+        id_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * id
+       * </pre>
+       *
+       * <code>int64 id = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        id_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private int tenantId_ ;
+      /**
+       * <pre>
+       * 商户id
+       * </pre>
+       *
+       * <code>int32 tenant_id = 2;</code>
+       * @return The tenantId.
+       */
+      @java.lang.Override
+      public int getTenantId() {
+        return tenantId_;
+      }
+      /**
+       * <pre>
+       * 商户id
+       * </pre>
+       *
+       * <code>int32 tenant_id = 2;</code>
+       * @param value The tenantId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTenantId(int value) {
+
+        tenantId_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 商户id
+       * </pre>
+       *
+       * <code>int32 tenant_id = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTenantId() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        tenantId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int workerId_ ;
+      /**
+       * <pre>
+       * 客服id
+       * </pre>
+       *
+       * <code>int32 worker_id = 3;</code>
+       * @return The workerId.
+       */
+      @java.lang.Override
+      public int getWorkerId() {
+        return workerId_;
+      }
+      /**
+       * <pre>
+       * 客服id
+       * </pre>
+       *
+       * <code>int32 worker_id = 3;</code>
+       * @param value The workerId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setWorkerId(int value) {
+
+        workerId_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 客服id
+       * </pre>
+       *
+       * <code>int32 worker_id = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearWorkerId() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        workerId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int workerCheckId_ ;
+      /**
+       * <pre>
+       * 打卡人ID
+       * </pre>
+       *
+       * <code>int32 worker_check_id = 4;</code>
+       * @return The workerCheckId.
+       */
+      @java.lang.Override
+      public int getWorkerCheckId() {
+        return workerCheckId_;
+      }
+      /**
+       * <pre>
+       * 打卡人ID
+       * </pre>
+       *
+       * <code>int32 worker_check_id = 4;</code>
+       * @param value The workerCheckId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setWorkerCheckId(int value) {
+
+        workerCheckId_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 打卡人ID
+       * </pre>
+       *
+       * <code>int32 worker_check_id = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearWorkerCheckId() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        workerCheckId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object workerCheckName_ = "";
+      /**
+       * <pre>
+       * 打卡人name
+       * </pre>
+       *
+       * <code>string worker_check_name = 5;</code>
+       * @return The workerCheckName.
+       */
+      public java.lang.String getWorkerCheckName() {
+        java.lang.Object ref = workerCheckName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          workerCheckName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * 打卡人name
+       * </pre>
+       *
+       * <code>string worker_check_name = 5;</code>
+       * @return The bytes for workerCheckName.
+       */
+      public com.google.protobuf.ByteString
+          getWorkerCheckNameBytes() {
+        java.lang.Object ref = workerCheckName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          workerCheckName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * 打卡人name
+       * </pre>
+       *
+       * <code>string worker_check_name = 5;</code>
+       * @param value The workerCheckName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setWorkerCheckName(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        workerCheckName_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 打卡人name
+       * </pre>
+       *
+       * <code>string worker_check_name = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearWorkerCheckName() {
+        workerCheckName_ = getDefaultInstance().getWorkerCheckName();
+        bitField0_ = (bitField0_ & ~0x00000010);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 打卡人name
+       * </pre>
+       *
+       * <code>string worker_check_name = 5;</code>
+       * @param value The bytes for workerCheckName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setWorkerCheckNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        workerCheckName_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+
+      private long chatId_ ;
+      /**
+       * <pre>
+       * chat_id
+       * </pre>
+       *
+       * <code>int64 chat_id = 6;</code>
+       * @return The chatId.
+       */
+      @java.lang.Override
+      public long getChatId() {
+        return chatId_;
+      }
+      /**
+       * <pre>
+       * chat_id
+       * </pre>
+       *
+       * <code>int64 chat_id = 6;</code>
+       * @param value The chatId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setChatId(long value) {
+
+        chatId_ = value;
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * chat_id
+       * </pre>
+       *
+       * <code>int64 chat_id = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearChatId() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        chatId_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object fileName_ = "";
+      /**
+       * <pre>
+       * 文件名
+       * </pre>
+       *
+       * <code>string file_name = 7;</code>
+       * @return The fileName.
+       */
+      public java.lang.String getFileName() {
+        java.lang.Object ref = fileName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          fileName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * 文件名
+       * </pre>
+       *
+       * <code>string file_name = 7;</code>
+       * @return The bytes for fileName.
+       */
+      public com.google.protobuf.ByteString
+          getFileNameBytes() {
+        java.lang.Object ref = fileName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          fileName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * 文件名
+       * </pre>
+       *
+       * <code>string file_name = 7;</code>
+       * @param value The fileName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFileName(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        fileName_ = value;
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 文件名
+       * </pre>
+       *
+       * <code>string file_name = 7;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearFileName() {
+        fileName_ = getDefaultInstance().getFileName();
+        bitField0_ = (bitField0_ & ~0x00000040);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 文件名
+       * </pre>
+       *
+       * <code>string file_name = 7;</code>
+       * @param value The bytes for fileName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFileNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        fileName_ = value;
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object fileUrl_ = "";
+      /**
+       * <pre>
+       * 文件url
+       * </pre>
+       *
+       * <code>string file_url = 8;</code>
+       * @return The fileUrl.
+       */
+      public java.lang.String getFileUrl() {
+        java.lang.Object ref = fileUrl_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          fileUrl_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * 文件url
+       * </pre>
+       *
+       * <code>string file_url = 8;</code>
+       * @return The bytes for fileUrl.
+       */
+      public com.google.protobuf.ByteString
+          getFileUrlBytes() {
+        java.lang.Object ref = fileUrl_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          fileUrl_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * 文件url
+       * </pre>
+       *
+       * <code>string file_url = 8;</code>
+       * @param value The fileUrl to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFileUrl(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        fileUrl_ = value;
+        bitField0_ |= 0x00000080;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 文件url
+       * </pre>
+       *
+       * <code>string file_url = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearFileUrl() {
+        fileUrl_ = getDefaultInstance().getFileUrl();
+        bitField0_ = (bitField0_ & ~0x00000080);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 文件url
+       * </pre>
+       *
+       * <code>string file_url = 8;</code>
+       * @param value The bytes for fileUrl to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFileUrlBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        fileUrl_ = value;
+        bitField0_ |= 0x00000080;
+        onChanged();
+        return this;
+      }
+
+      private int fileSize_ ;
+      /**
+       * <pre>
+       * 文件大小，单位字节
+       * </pre>
+       *
+       * <code>int32 file_size = 9;</code>
+       * @return The fileSize.
+       */
+      @java.lang.Override
+      public int getFileSize() {
+        return fileSize_;
+      }
+      /**
+       * <pre>
+       * 文件大小，单位字节
+       * </pre>
+       *
+       * <code>int32 file_size = 9;</code>
+       * @param value The fileSize to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFileSize(int value) {
+
+        fileSize_ = value;
+        bitField0_ |= 0x00000100;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 文件大小，单位字节
+       * </pre>
+       *
+       * <code>int32 file_size = 9;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearFileSize() {
+        bitField0_ = (bitField0_ & ~0x00000100);
+        fileSize_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object detail_ = "";
+      /**
+       * <pre>
+       * 文件详情
+       * </pre>
+       *
+       * <code>string detail = 10;</code>
+       * @return The detail.
+       */
+      public java.lang.String getDetail() {
+        java.lang.Object ref = detail_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          detail_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * 文件详情
+       * </pre>
+       *
+       * <code>string detail = 10;</code>
+       * @return The bytes for detail.
+       */
+      public com.google.protobuf.ByteString
+          getDetailBytes() {
+        java.lang.Object ref = detail_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          detail_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * 文件详情
+       * </pre>
+       *
+       * <code>string detail = 10;</code>
+       * @param value The detail to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDetail(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        detail_ = value;
+        bitField0_ |= 0x00000200;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 文件详情
+       * </pre>
+       *
+       * <code>string detail = 10;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDetail() {
+        detail_ = getDefaultInstance().getDetail();
+        bitField0_ = (bitField0_ & ~0x00000200);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 文件详情
+       * </pre>
+       *
+       * <code>string detail = 10;</code>
+       * @param value The bytes for detail to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDetailBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        detail_ = value;
+        bitField0_ |= 0x00000200;
+        onChanged();
+        return this;
+      }
+
+      private long msgId_ ;
+      /**
+       * <pre>
+       * 消息ID
+       * </pre>
+       *
+       * <code>int64 msg_id = 11;</code>
+       * @return The msgId.
+       */
+      @java.lang.Override
+      public long getMsgId() {
+        return msgId_;
+      }
+      /**
+       * <pre>
+       * 消息ID
+       * </pre>
+       *
+       * <code>int64 msg_id = 11;</code>
+       * @param value The msgId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMsgId(long value) {
+
+        msgId_ = value;
+        bitField0_ |= 0x00000400;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 消息ID
+       * </pre>
+       *
+       * <code>int64 msg_id = 11;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMsgId() {
+        bitField0_ = (bitField0_ & ~0x00000400);
+        msgId_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long payloadId_ ;
+      /**
+       * <pre>
+       * payload_id
+       * </pre>
+       *
+       * <code>int64 payload_id = 12;</code>
+       * @return The payloadId.
+       */
+      @java.lang.Override
+      public long getPayloadId() {
+        return payloadId_;
+      }
+      /**
+       * <pre>
+       * payload_id
+       * </pre>
+       *
+       * <code>int64 payload_id = 12;</code>
+       * @param value The payloadId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPayloadId(long value) {
+
+        payloadId_ = value;
+        bitField0_ |= 0x00000800;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * payload_id
+       * </pre>
+       *
+       * <code>int64 payload_id = 12;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPayloadId() {
+        bitField0_ = (bitField0_ & ~0x00000800);
+        payloadId_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.Timestamp createAt_;
+      private com.google.protobuf.SingleFieldBuilder<
+          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> createAtBuilder_;
+      /**
+       * <pre>
+       * 创建时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp create_at = 13;</code>
+       * @return Whether the createAt field is set.
+       */
+      public boolean hasCreateAt() {
+        return ((bitField0_ & 0x00001000) != 0);
+      }
+      /**
+       * <pre>
+       * 创建时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp create_at = 13;</code>
+       * @return The createAt.
+       */
+      public com.google.protobuf.Timestamp getCreateAt() {
+        if (createAtBuilder_ == null) {
+          return createAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createAt_;
+        } else {
+          return createAtBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * 创建时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp create_at = 13;</code>
+       */
+      public Builder setCreateAt(com.google.protobuf.Timestamp value) {
+        if (createAtBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          createAt_ = value;
+        } else {
+          createAtBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00001000;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 创建时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp create_at = 13;</code>
+       */
+      public Builder setCreateAt(
+          com.google.protobuf.Timestamp.Builder builderForValue) {
+        if (createAtBuilder_ == null) {
+          createAt_ = builderForValue.build();
+        } else {
+          createAtBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00001000;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 创建时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp create_at = 13;</code>
+       */
+      public Builder mergeCreateAt(com.google.protobuf.Timestamp value) {
+        if (createAtBuilder_ == null) {
+          if (((bitField0_ & 0x00001000) != 0) &&
+            createAt_ != null &&
+            createAt_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getCreateAtBuilder().mergeFrom(value);
+          } else {
+            createAt_ = value;
+          }
+        } else {
+          createAtBuilder_.mergeFrom(value);
+        }
+        if (createAt_ != null) {
+          bitField0_ |= 0x00001000;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 创建时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp create_at = 13;</code>
+       */
+      public Builder clearCreateAt() {
+        bitField0_ = (bitField0_ & ~0x00001000);
+        createAt_ = null;
+        if (createAtBuilder_ != null) {
+          createAtBuilder_.dispose();
+          createAtBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 创建时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp create_at = 13;</code>
+       */
+      public com.google.protobuf.Timestamp.Builder getCreateAtBuilder() {
+        bitField0_ |= 0x00001000;
+        onChanged();
+        return getCreateAtFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * 创建时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp create_at = 13;</code>
+       */
+      public com.google.protobuf.TimestampOrBuilder getCreateAtOrBuilder() {
+        if (createAtBuilder_ != null) {
+          return createAtBuilder_.getMessageOrBuilder();
+        } else {
+          return createAt_ == null ?
+              com.google.protobuf.Timestamp.getDefaultInstance() : createAt_;
+        }
+      }
+      /**
+       * <pre>
+       * 创建时间
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp create_at = 13;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+          getCreateAtFieldBuilder() {
+        if (createAtBuilder_ == null) {
+          createAtBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                  getCreateAt(),
+                  getParentForChildren(),
+                  isClean());
+          createAt_ = null;
+        }
+        return createAtBuilder_;
+      }
+
+      private com.teneasyChat.api.common.CWorker.WorkerBaseInfo worker_;
+      private com.google.protobuf.SingleFieldBuilder<
+          com.teneasyChat.api.common.CWorker.WorkerBaseInfo, com.teneasyChat.api.common.CWorker.WorkerBaseInfo.Builder, com.teneasyChat.api.common.CWorker.WorkerBaseInfoOrBuilder> workerBuilder_;
+      /**
+       * <pre>
+       * 客服 info
+       * </pre>
+       *
+       * <code>.api.common.WorkerBaseInfo worker = 24;</code>
+       * @return Whether the worker field is set.
+       */
+      public boolean hasWorker() {
+        return ((bitField0_ & 0x00002000) != 0);
+      }
+      /**
+       * <pre>
+       * 客服 info
+       * </pre>
+       *
+       * <code>.api.common.WorkerBaseInfo worker = 24;</code>
+       * @return The worker.
+       */
+      public com.teneasyChat.api.common.CWorker.WorkerBaseInfo getWorker() {
+        if (workerBuilder_ == null) {
+          return worker_ == null ? com.teneasyChat.api.common.CWorker.WorkerBaseInfo.getDefaultInstance() : worker_;
+        } else {
+          return workerBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * 客服 info
+       * </pre>
+       *
+       * <code>.api.common.WorkerBaseInfo worker = 24;</code>
+       */
+      public Builder setWorker(com.teneasyChat.api.common.CWorker.WorkerBaseInfo value) {
+        if (workerBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          worker_ = value;
+        } else {
+          workerBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00002000;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 客服 info
+       * </pre>
+       *
+       * <code>.api.common.WorkerBaseInfo worker = 24;</code>
+       */
+      public Builder setWorker(
+          com.teneasyChat.api.common.CWorker.WorkerBaseInfo.Builder builderForValue) {
+        if (workerBuilder_ == null) {
+          worker_ = builderForValue.build();
+        } else {
+          workerBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00002000;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 客服 info
+       * </pre>
+       *
+       * <code>.api.common.WorkerBaseInfo worker = 24;</code>
+       */
+      public Builder mergeWorker(com.teneasyChat.api.common.CWorker.WorkerBaseInfo value) {
+        if (workerBuilder_ == null) {
+          if (((bitField0_ & 0x00002000) != 0) &&
+            worker_ != null &&
+            worker_ != com.teneasyChat.api.common.CWorker.WorkerBaseInfo.getDefaultInstance()) {
+            getWorkerBuilder().mergeFrom(value);
+          } else {
+            worker_ = value;
+          }
+        } else {
+          workerBuilder_.mergeFrom(value);
+        }
+        if (worker_ != null) {
+          bitField0_ |= 0x00002000;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 客服 info
+       * </pre>
+       *
+       * <code>.api.common.WorkerBaseInfo worker = 24;</code>
+       */
+      public Builder clearWorker() {
+        bitField0_ = (bitField0_ & ~0x00002000);
+        worker_ = null;
+        if (workerBuilder_ != null) {
+          workerBuilder_.dispose();
+          workerBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 客服 info
+       * </pre>
+       *
+       * <code>.api.common.WorkerBaseInfo worker = 24;</code>
+       */
+      public com.teneasyChat.api.common.CWorker.WorkerBaseInfo.Builder getWorkerBuilder() {
+        bitField0_ |= 0x00002000;
+        onChanged();
+        return getWorkerFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * 客服 info
+       * </pre>
+       *
+       * <code>.api.common.WorkerBaseInfo worker = 24;</code>
+       */
+      public com.teneasyChat.api.common.CWorker.WorkerBaseInfoOrBuilder getWorkerOrBuilder() {
+        if (workerBuilder_ != null) {
+          return workerBuilder_.getMessageOrBuilder();
+        } else {
+          return worker_ == null ?
+              com.teneasyChat.api.common.CWorker.WorkerBaseInfo.getDefaultInstance() : worker_;
+        }
+      }
+      /**
+       * <pre>
+       * 客服 info
+       * </pre>
+       *
+       * <code>.api.common.WorkerBaseInfo worker = 24;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          com.teneasyChat.api.common.CWorker.WorkerBaseInfo, com.teneasyChat.api.common.CWorker.WorkerBaseInfo.Builder, com.teneasyChat.api.common.CWorker.WorkerBaseInfoOrBuilder> 
+          getWorkerFieldBuilder() {
+        if (workerBuilder_ == null) {
+          workerBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              com.teneasyChat.api.common.CWorker.WorkerBaseInfo, com.teneasyChat.api.common.CWorker.WorkerBaseInfo.Builder, com.teneasyChat.api.common.CWorker.WorkerBaseInfoOrBuilder>(
+                  getWorker(),
+                  getParentForChildren(),
+                  isClean());
+          worker_ = null;
+        }
+        return workerBuilder_;
+      }
+
+      // @@protoc_insertion_point(builder_scope:api.common.WorkerFileLog)
+    }
+
+    // @@protoc_insertion_point(class_scope:api.common.WorkerFileLog)
+    private static final com.teneasyChat.api.common.CMessage.WorkerFileLog DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.teneasyChat.api.common.CMessage.WorkerFileLog();
+    }
+
+    public static com.teneasyChat.api.common.CMessage.WorkerFileLog getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<WorkerFileLog>
+        PARSER = new com.google.protobuf.AbstractParser<WorkerFileLog>() {
+      @java.lang.Override
+      public WorkerFileLog parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<WorkerFileLog> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<WorkerFileLog> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.teneasyChat.api.common.CMessage.WorkerFileLog getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_api_common_MessageContent_descriptor;
   private static final 
@@ -20173,6 +22564,11 @@ public final class CMessage {
   private static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_api_common_BlackListConfirm_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_api_common_WorkerFileLog_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_api_common_WorkerFileLog_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -20186,88 +22582,97 @@ public final class CMessage {
       "\032\037google/protobuf/timestamp.proto\032\030api/c" +
       "ommon/c_asset.proto\032\031api/common/c_device" +
       ".proto\032\036google/protobuf/wrappers.proto\032\027" +
-      "validate/validate.proto\"\036\n\016MessageConten" +
-      "t\022\014\n\004data\030\001 \001(\t\"\033\n\014MessageImage\022\013\n\003uri\030\001" +
-      " \001(\t\"\033\n\014MessageAudio\022\013\n\003uri\030\001 \001(\t\"C\n\014Mes" +
-      "sageVideo\022\013\n\003uri\030\001 \001(\t\022\017\n\007hls_uri\030\002 \001(\t\022" +
-      "\025\n\rthumbnail_uri\030\003 \001(\t\"1\n\nMessageGeo\022\021\n\t" +
-      "longitude\030\001 \001(\t\022\020\n\010latitude\030\002 \001(\t\";\n\013Mes" +
-      "sageFile\022\013\n\003uri\030\001 \001(\t\022\021\n\tfile_name\030\002 \001(\t" +
-      "\022\014\n\004size\030\003 \001(\005\"\231\002\n\014MessageUnion\022-\n\007conte" +
-      "nt\030\001 \001(\0132\032.api.common.MessageContentH\000\022)" +
-      "\n\005image\030\002 \001(\0132\030.api.common.MessageImageH" +
-      "\000\022)\n\005audio\030\003 \001(\0132\030.api.common.MessageAud" +
-      "ioH\000\022)\n\005video\030\004 \001(\0132\030.api.common.Message" +
-      "VideoH\000\022%\n\003geo\030\005 \001(\0132\026.api.common.Messag" +
-      "eGeoH\000\022\'\n\004file\030\006 \001(\0132\027.api.common.Messag" +
-      "eFileH\000B\t\n\007payload\"\200\001\n\022MessageAutoReplyQ" +
-      "A\022\n\n\002id\030\001 \001(\005\022*\n\010question\030\002 \001(\0132\030.api.co" +
-      "mmon.MessageUnion\0222\n\006answer\030\003 \003(\0132\030.api." +
-      "common.MessageUnionB\010\372B\005\222\001\002\020\n\"l\n\020Message" +
-      "AutoReply\022\n\n\002id\030\001 \001(\003\022\r\n\005title\030\002 \001(\t\022\021\n\t" +
-      "delay_sec\030\003 \001(\005\022*\n\002qa\030\004 \003(\0132\036.api.common" +
-      ".MessageAutoReplyQA\"-\n\nMessageKey\022\017\n\007cha" +
-      "t_id\030\001 \001(\003\022\016\n\006msg_id\030\002 \001(\003\"1\n\024MessageAut" +
-      "oReplyFlag\022\n\n\002id\030\001 \001(\003\022\r\n\005qa_id\030\002 \001(\005\"\255\001" +
-      "\n\024MessageWorkerChanged\022\030\n\020worker_client_" +
-      "id\030\001 \001(\003\022\021\n\tworker_id\030\002 \001(\005\022\014\n\004name\030\003 \001(" +
-      "\t\022\016\n\006avatar\030\004 \001(\t\022\020\n\010greeting\030\005 \001(\t\022$\n\005S" +
-      "tate\030\006 \001(\0162\025.api.common.ChatState\022\022\n\ncon" +
-      "sult_id\030\007 \001(\003\"\324\007\n\007Message\022\017\n\007chat_id\030\001 \001" +
-      "(\003\022\016\n\006msg_id\030\002 \001(\003\022,\n\010msg_time\030\003 \001(\0132\032.g" +
-      "oogle.protobuf.Timestamp\022\016\n\006sender\030\004 \001(\003" +
-      "\022\024\n\014reply_msg_id\030\005 \001(\003\022*\n\006msg_op\030\006 \001(\0162\032" +
-      ".api.common.MessageOperate\022\016\n\006worker\030\007 \001" +
-      "(\005\0229\n\017auto_reply_flag\030\010 \001(\0132 .api.common" +
-      ".MessageAutoReplyFlag\022*\n\007msg_fmt\030\t \001(\0162\031" +
-      ".api.common.MessageFormat\022\022\n\nconsult_id\030" +
-      "\n \001(\003\0224\n\021with_auto_replies\030\013 \003(\0132\031.api.c" +
-      "ommon.WithAutoReply\0222\n\017msg_source_type\030\014" +
-      " \001(\0162\031.api.common.MsgSourceType\022\022\n\npaylo" +
-      "ad_id\030c \001(\003\022-\n\007content\030d \001(\0132\032.api.commo" +
-      "n.MessageContentH\000\022)\n\005image\030e \001(\0132\030.api." +
-      "common.MessageImageH\000\022)\n\005audio\030f \001(\0132\030.a" +
-      "pi.common.MessageAudioH\000\022)\n\005video\030g \001(\0132" +
-      "\030.api.common.MessageVideoH\000\022%\n\003geo\030h \001(\013" +
-      "2\026.api.common.MessageGeoH\000\022\'\n\004file\030i \001(\013" +
-      "2\027.api.common.MessageFileH\000\0222\n\014worker_tr" +
-      "ans\030j \001(\0132\032.api.common.WorkerTransferH\000\022" +
-      "5\n\017blacklist_apply\030k \001(\0132\032.api.common.Bl" +
-      "ackListApplyH\000\0229\n\021blacklist_confirm\030l \001(" +
-      "\0132\034.api.common.BlackListConfirmH\000\0222\n\naut" +
-      "o_reply\030m \001(\0132\034.api.common.MessageAutoRe" +
-      "plyH\000\022:\n\016worker_changed\030n \001(\0132 .api.comm" +
-      "on.MessageWorkerChangedH\000B\t\n\007payload\"\207\001\n" +
-      "\rWithAutoReply\022\n\n\002id\030\001 \001(\003\022\r\n\005title\030\002 \001(" +
-      "\t\0220\n\014created_time\030\003 \001(\0132\032.google.protobu" +
-      "f.Timestamp\022)\n\007answers\030\004 \003(\0132\030.api.commo" +
-      "n.MessageUnion\"c\n\016WorkerTransfer\022\021\n\twork" +
-      "er_id\030\001 \001(\005\022\023\n\013worker_name\030\002 \001(\t\022\025\n\rwork" +
-      "er_avatar\030\003 \001(\t\022\022\n\nconsult_id\030\004 \001(\r\"#\n\016B" +
-      "lackListApply\022\021\n\tworker_id\030\001 \001(\005\"%\n\020Blac" +
-      "kListConfirm\022\021\n\tworker_id\030\001 \001(\005*\347\001\n\tChat" +
-      "State\022\025\n\021CHAT_STATE_COMMON\020\000\022\027\n\023CHAT_STA" +
-      "TE_TRANSFER\020\001\022\037\n\033CHAT_STATE_UNPROCESSED_" +
-      "3MIN\020\002\022\026\n\022CHAT_STATE_TIMEOUT\020\003\022\030\n\024CHAT_S" +
-      "TATE_PROCESSED\020\004\022\036\n\032CHAT_STATE_BLACKLIST" +
-      "_APPLY\020\005\022\"\n\036CHAT_STATE_BLACKLIST_CONFIRM" +
-      "ED\020\006\022\023\n\017CHAT_STATE_FREE\020\007*c\n\rMessageForm" +
-      "at\022\014\n\010MSG_TEXT\020\000\022\013\n\007MSG_IMG\020\001\022\r\n\tMSG_VOI" +
-      "CE\020\002\022\r\n\tMSG_VIDEO\020\003\022\013\n\007MSG_GEO\020\004\022\014\n\010MSG_" +
-      "FILE\020\006*f\n\013MessageRole\022\023\n\017MSG_ROLE_SYSTEM" +
-      "\020\000\022\023\n\017MSG_ROLE_WORKER\020\001\022\025\n\021MSG_ROLE_CUST" +
-      "OMER\020\002\022\026\n\022MSG_ROLE_ANONYMOUS\020\003*\233\002\n\rMsgSo" +
-      "urceType\022\017\n\013MST_DEFAULT\020\000\022\016\n\nMST_WORKER\020" +
-      "\001\022\020\n\014MST_CUSTOMER\020\002\022\025\n\021MST_SYSTEM_WORKER" +
-      "\020\003\022\027\n\023MST_SYSTEM_CUSTOMER\020\004\022\027\n\023MST_SYSTE" +
-      "M_TRANSFER\020\005\022\034\n\030MST_SYSTEM_AUTO_TRANSFER" +
-      "\020\006\022\025\n\021MST_MASS_TRANSFER\020\007\022\n\n\006MST_AI\020\010\022\023\n" +
-      "\017MST_AI_TRANSFER\020\t\022\024\n\020MST_AI_LINK_WORD\020\n" +
-      "\022\020\n\014MST_AI_BEGIN\020\013\022\020\n\014MST_EVALUATE\020\014*E\n\016" +
-      "MessageOperate\022\017\n\013MSG_OP_POST\020\000\022\017\n\013MSG_O" +
-      "P_EDIT\020\001\022\021\n\rMSG_OP_DELETE\020\002B<\n\032com.tenea" +
-      "syChat.api.commonZ\025wcs/api/common;common" +
-      "\272\002\006Commonb\006proto3"
+      "validate/validate.proto\032\031api/common/c_wo" +
+      "rker.proto\"\036\n\016MessageContent\022\014\n\004data\030\001 \001" +
+      "(\t\"\033\n\014MessageImage\022\013\n\003uri\030\001 \001(\t\"\033\n\014Messa" +
+      "geAudio\022\013\n\003uri\030\001 \001(\t\"C\n\014MessageVideo\022\013\n\003" +
+      "uri\030\001 \001(\t\022\017\n\007hls_uri\030\002 \001(\t\022\025\n\rthumbnail_" +
+      "uri\030\003 \001(\t\"1\n\nMessageGeo\022\021\n\tlongitude\030\001 \001" +
+      "(\t\022\020\n\010latitude\030\002 \001(\t\";\n\013MessageFile\022\013\n\003u" +
+      "ri\030\001 \001(\t\022\021\n\tfile_name\030\002 \001(\t\022\014\n\004size\030\003 \001(" +
+      "\005\"\231\002\n\014MessageUnion\022-\n\007content\030\001 \001(\0132\032.ap" +
+      "i.common.MessageContentH\000\022)\n\005image\030\002 \001(\013" +
+      "2\030.api.common.MessageImageH\000\022)\n\005audio\030\003 " +
+      "\001(\0132\030.api.common.MessageAudioH\000\022)\n\005video" +
+      "\030\004 \001(\0132\030.api.common.MessageVideoH\000\022%\n\003ge" +
+      "o\030\005 \001(\0132\026.api.common.MessageGeoH\000\022\'\n\004fil" +
+      "e\030\006 \001(\0132\027.api.common.MessageFileH\000B\t\n\007pa" +
+      "yload\"\200\001\n\022MessageAutoReplyQA\022\n\n\002id\030\001 \001(\005" +
+      "\022*\n\010question\030\002 \001(\0132\030.api.common.MessageU" +
+      "nion\0222\n\006answer\030\003 \003(\0132\030.api.common.Messag" +
+      "eUnionB\010\372B\005\222\001\002\020\n\"l\n\020MessageAutoReply\022\n\n\002" +
+      "id\030\001 \001(\003\022\r\n\005title\030\002 \001(\t\022\021\n\tdelay_sec\030\003 \001" +
+      "(\005\022*\n\002qa\030\004 \003(\0132\036.api.common.MessageAutoR" +
+      "eplyQA\"-\n\nMessageKey\022\017\n\007chat_id\030\001 \001(\003\022\016\n" +
+      "\006msg_id\030\002 \001(\003\"1\n\024MessageAutoReplyFlag\022\n\n" +
+      "\002id\030\001 \001(\003\022\r\n\005qa_id\030\002 \001(\005\"\255\001\n\024MessageWork" +
+      "erChanged\022\030\n\020worker_client_id\030\001 \001(\003\022\021\n\tw" +
+      "orker_id\030\002 \001(\005\022\014\n\004name\030\003 \001(\t\022\016\n\006avatar\030\004" +
+      " \001(\t\022\020\n\010greeting\030\005 \001(\t\022$\n\005State\030\006 \001(\0162\025." +
+      "api.common.ChatState\022\022\n\nconsult_id\030\007 \001(\003" +
+      "\"\324\007\n\007Message\022\017\n\007chat_id\030\001 \001(\003\022\016\n\006msg_id\030" +
+      "\002 \001(\003\022,\n\010msg_time\030\003 \001(\0132\032.google.protobu" +
+      "f.Timestamp\022\016\n\006sender\030\004 \001(\003\022\024\n\014reply_msg" +
+      "_id\030\005 \001(\003\022*\n\006msg_op\030\006 \001(\0162\032.api.common.M" +
+      "essageOperate\022\016\n\006worker\030\007 \001(\005\0229\n\017auto_re" +
+      "ply_flag\030\010 \001(\0132 .api.common.MessageAutoR" +
+      "eplyFlag\022*\n\007msg_fmt\030\t \001(\0162\031.api.common.M" +
+      "essageFormat\022\022\n\nconsult_id\030\n \001(\003\0224\n\021with" +
+      "_auto_replies\030\013 \003(\0132\031.api.common.WithAut" +
+      "oReply\0222\n\017msg_source_type\030\014 \001(\0162\031.api.co" +
+      "mmon.MsgSourceType\022\022\n\npayload_id\030c \001(\003\022-" +
+      "\n\007content\030d \001(\0132\032.api.common.MessageCont" +
+      "entH\000\022)\n\005image\030e \001(\0132\030.api.common.Messag" +
+      "eImageH\000\022)\n\005audio\030f \001(\0132\030.api.common.Mes" +
+      "sageAudioH\000\022)\n\005video\030g \001(\0132\030.api.common." +
+      "MessageVideoH\000\022%\n\003geo\030h \001(\0132\026.api.common" +
+      ".MessageGeoH\000\022\'\n\004file\030i \001(\0132\027.api.common" +
+      ".MessageFileH\000\0222\n\014worker_trans\030j \001(\0132\032.a" +
+      "pi.common.WorkerTransferH\000\0225\n\017blacklist_" +
+      "apply\030k \001(\0132\032.api.common.BlackListApplyH" +
+      "\000\0229\n\021blacklist_confirm\030l \001(\0132\034.api.commo" +
+      "n.BlackListConfirmH\000\0222\n\nauto_reply\030m \001(\013" +
+      "2\034.api.common.MessageAutoReplyH\000\022:\n\016work" +
+      "er_changed\030n \001(\0132 .api.common.MessageWor" +
+      "kerChangedH\000B\t\n\007payload\"\207\001\n\rWithAutoRepl" +
+      "y\022\n\n\002id\030\001 \001(\003\022\r\n\005title\030\002 \001(\t\0220\n\014created_" +
+      "time\030\003 \001(\0132\032.google.protobuf.Timestamp\022)" +
+      "\n\007answers\030\004 \003(\0132\030.api.common.MessageUnio" +
+      "n\"c\n\016WorkerTransfer\022\021\n\tworker_id\030\001 \001(\005\022\023" +
+      "\n\013worker_name\030\002 \001(\t\022\025\n\rworker_avatar\030\003 \001" +
+      "(\t\022\022\n\nconsult_id\030\004 \001(\r\"#\n\016BlackListApply" +
+      "\022\021\n\tworker_id\030\001 \001(\005\"%\n\020BlackListConfirm\022" +
+      "\021\n\tworker_id\030\001 \001(\005\"\315\002\n\rWorkerFileLog\022\n\n\002" +
+      "id\030\001 \001(\003\022\021\n\ttenant_id\030\002 \001(\005\022\021\n\tworker_id" +
+      "\030\003 \001(\005\022\027\n\017worker_check_id\030\004 \001(\005\022\031\n\021worke" +
+      "r_check_name\030\005 \001(\t\022\017\n\007chat_id\030\006 \001(\003\022\021\n\tf" +
+      "ile_name\030\007 \001(\t\022\020\n\010file_url\030\010 \001(\t\022\021\n\tfile" +
+      "_size\030\t \001(\005\022\016\n\006detail\030\n \001(\t\022\016\n\006msg_id\030\013 " +
+      "\001(\003\022\022\n\npayload_id\030\014 \001(\003\022-\n\tcreate_at\030\r \001" +
+      "(\0132\032.google.protobuf.Timestamp\022*\n\006worker" +
+      "\030\030 \001(\0132\032.api.common.WorkerBaseInfo*\347\001\n\tC" +
+      "hatState\022\025\n\021CHAT_STATE_COMMON\020\000\022\027\n\023CHAT_" +
+      "STATE_TRANSFER\020\001\022\037\n\033CHAT_STATE_UNPROCESS" +
+      "ED_3MIN\020\002\022\026\n\022CHAT_STATE_TIMEOUT\020\003\022\030\n\024CHA" +
+      "T_STATE_PROCESSED\020\004\022\036\n\032CHAT_STATE_BLACKL" +
+      "IST_APPLY\020\005\022\"\n\036CHAT_STATE_BLACKLIST_CONF" +
+      "IRMED\020\006\022\023\n\017CHAT_STATE_FREE\020\007*c\n\rMessageF" +
+      "ormat\022\014\n\010MSG_TEXT\020\000\022\013\n\007MSG_IMG\020\001\022\r\n\tMSG_" +
+      "VOICE\020\002\022\r\n\tMSG_VIDEO\020\003\022\013\n\007MSG_GEO\020\004\022\014\n\010M" +
+      "SG_FILE\020\006*f\n\013MessageRole\022\023\n\017MSG_ROLE_SYS" +
+      "TEM\020\000\022\023\n\017MSG_ROLE_WORKER\020\001\022\025\n\021MSG_ROLE_C" +
+      "USTOMER\020\002\022\026\n\022MSG_ROLE_ANONYMOUS\020\003*\251\002\n\rMs" +
+      "gSourceType\022\017\n\013MST_DEFAULT\020\000\022\016\n\nMST_WORK" +
+      "ER\020\001\022\020\n\014MST_CUSTOMER\020\002\022\025\n\021MST_SYSTEM_WOR" +
+      "KER\020\003\022\027\n\023MST_SYSTEM_CUSTOMER\020\004\022\027\n\023MST_SY" +
+      "STEM_TRANSFER\020\005\022\034\n\030MST_SYSTEM_AUTO_TRANS" +
+      "FER\020\006\022\025\n\021MST_MASS_TRANSFER\020\007\022\n\n\006MST_AI\020\010" +
+      "\022\023\n\017MST_AI_TRANSFER\020\t\022\024\n\020MST_AI_LINK_WOR" +
+      "D\020\n\022\020\n\014MST_AI_BEGIN\020\013\022\020\n\014MST_EVALUATE\020\014\022" +
+      "\014\n\010MST_CARD\020\r*E\n\016MessageOperate\022\017\n\013MSG_O" +
+      "P_POST\020\000\022\017\n\013MSG_OP_EDIT\020\001\022\021\n\rMSG_OP_DELE" +
+      "TE\020\002B<\n\032com.teneasyChat.api.commonZ\025wcs/" +
+      "api/common;common\272\002\006Commonb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -20277,6 +22682,7 @@ public final class CMessage {
           com.teneasyChat.api.common.CDevice.getDescriptor(),
           com.google.protobuf.WrappersProto.getDescriptor(),
           io.envoyproxy.pgv.validate.Validate.getDescriptor(),
+          com.teneasyChat.api.common.CWorker.getDescriptor(),
         });
     internal_static_api_common_MessageContent_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -20380,12 +22786,19 @@ public final class CMessage {
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_api_common_BlackListConfirm_descriptor,
         new java.lang.String[] { "WorkerId", });
+    internal_static_api_common_WorkerFileLog_descriptor =
+      getDescriptor().getMessageTypes().get(17);
+    internal_static_api_common_WorkerFileLog_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_api_common_WorkerFileLog_descriptor,
+        new java.lang.String[] { "Id", "TenantId", "WorkerId", "WorkerCheckId", "WorkerCheckName", "ChatId", "FileName", "FileUrl", "FileSize", "Detail", "MsgId", "PayloadId", "CreateAt", "Worker", });
     descriptor.resolveAllFeaturesImmutable();
     com.google.protobuf.TimestampProto.getDescriptor();
     com.teneasyChat.api.common.CAsset.getDescriptor();
     com.teneasyChat.api.common.CDevice.getDescriptor();
     com.google.protobuf.WrappersProto.getDescriptor();
     io.envoyproxy.pgv.validate.Validate.getDescriptor();
+    com.teneasyChat.api.common.CWorker.getDescriptor();
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(io.envoyproxy.pgv.validate.Validate.rules);
