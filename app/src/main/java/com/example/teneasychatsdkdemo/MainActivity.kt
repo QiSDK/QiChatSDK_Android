@@ -192,7 +192,7 @@ class MainActivity : AppCompatActivity(), TeneasySDKDelegate, UploadListener {
         uQC.data = "txtAnswer"
         uAnswer.content = uQC.build()
         withAutoReplyBuilder.addAnswers(uAnswer)
-
+        //chatLib.sendMessage(sayHello, CMessage.MessageFormat.MSG_TEXT, 1, 0, withAutoReplyBuilder.build())
         //chatLib.sendMessage(sayHello, CMessage.MessageFormat.MSG_TEXT, 1, 0, withAutoReplyBuilder.build())
         /*
                   "video": {

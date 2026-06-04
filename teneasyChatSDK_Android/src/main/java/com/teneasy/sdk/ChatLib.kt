@@ -135,6 +135,7 @@ class ChatLib {
     private var fileSize = 0
     private var fileName = ""
     private var registTime = 0
+    private var msgSourceType = CMessage.MsgSourceType.MST_DEFAULT
 
     // 网络监听
     private var connectivityManager: ConnectivityManager? = null
@@ -335,7 +336,7 @@ class ChatLib {
      * 发送文本类型、图片类型的消息
      * @param msg   消息内容或图片url,音频url..。
      */
-     fun sendMessage(msg: String, type: MessageFormat, consultId: Long, replyMsgId: Long = 0, withAutoReply: WithAutoReply? = null, fileSize: Int = 0, fileName: String = "") {
+     fun sendMessage(msg: String, type: MessageFormat, consultId: Long, replyMsgId: Long = 0, withAutoReply: WithAutoReply? = null, fileSize: Int = 0, fileName: String = "", msgSourceType: CMessage.MsgSourceType = CMessage.MsgSourceType.MST_DEFAULT) {
         this.replyMsgId = replyMsgId;
          this.consultId = consultId;
         this.withAutoReply = withAutoReply
@@ -393,6 +394,7 @@ class ChatLib {
         msg.worker = 0
         msg.msgFmt = this.msgFormat
         msg.msgTime = TimeUtil.msgTime()
+        msg.msgSourceType = this.msgSourceType
 
         if (withAutoReply != null && (withAutoReply?.id ?: 0) > 0) {
             var aList = ArrayList<WithAutoReply>()
