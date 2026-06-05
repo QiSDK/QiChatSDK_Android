@@ -748,12 +748,20 @@ public final class CMessage {
     MST_EVALUATE(12),
     /**
      * <pre>
-     * 卡片消息
+     * 用户卡片消息
      * </pre>
      *
      * <code>MST_CARD = 13;</code>
      */
     MST_CARD(13),
+    /**
+     * <pre>
+     * 客服自动回复的卡片消息
+     * </pre>
+     *
+     * <code>MST_AUTO_CARD = 14;</code>
+     */
+    MST_AUTO_CARD(14),
     UNRECOGNIZED(-1),
     ;
 
@@ -868,12 +876,20 @@ public final class CMessage {
     public static final int MST_EVALUATE_VALUE = 12;
     /**
      * <pre>
-     * 卡片消息
+     * 用户卡片消息
      * </pre>
      *
      * <code>MST_CARD = 13;</code>
      */
     public static final int MST_CARD_VALUE = 13;
+    /**
+     * <pre>
+     * 客服自动回复的卡片消息
+     * </pre>
+     *
+     * <code>MST_AUTO_CARD = 14;</code>
+     */
+    public static final int MST_AUTO_CARD_VALUE = 14;
 
 
     public final int getNumber() {
@@ -914,6 +930,7 @@ public final class CMessage {
         case 11: return MST_AI_BEGIN;
         case 12: return MST_EVALUATE;
         case 13: return MST_CARD;
+        case 14: return MST_AUTO_CARD;
         default: return null;
       }
     }
@@ -22661,7 +22678,7 @@ public final class CMessage {
       "VOICE\020\002\022\r\n\tMSG_VIDEO\020\003\022\013\n\007MSG_GEO\020\004\022\014\n\010M" +
       "SG_FILE\020\006*f\n\013MessageRole\022\023\n\017MSG_ROLE_SYS" +
       "TEM\020\000\022\023\n\017MSG_ROLE_WORKER\020\001\022\025\n\021MSG_ROLE_C" +
-      "USTOMER\020\002\022\026\n\022MSG_ROLE_ANONYMOUS\020\003*\251\002\n\rMs" +
+      "USTOMER\020\002\022\026\n\022MSG_ROLE_ANONYMOUS\020\003*\274\002\n\rMs" +
       "gSourceType\022\017\n\013MST_DEFAULT\020\000\022\016\n\nMST_WORK" +
       "ER\020\001\022\020\n\014MST_CUSTOMER\020\002\022\025\n\021MST_SYSTEM_WOR" +
       "KER\020\003\022\027\n\023MST_SYSTEM_CUSTOMER\020\004\022\027\n\023MST_SY" +
@@ -22669,10 +22686,11 @@ public final class CMessage {
       "FER\020\006\022\025\n\021MST_MASS_TRANSFER\020\007\022\n\n\006MST_AI\020\010" +
       "\022\023\n\017MST_AI_TRANSFER\020\t\022\024\n\020MST_AI_LINK_WOR" +
       "D\020\n\022\020\n\014MST_AI_BEGIN\020\013\022\020\n\014MST_EVALUATE\020\014\022" +
-      "\014\n\010MST_CARD\020\r*E\n\016MessageOperate\022\017\n\013MSG_O" +
-      "P_POST\020\000\022\017\n\013MSG_OP_EDIT\020\001\022\021\n\rMSG_OP_DELE" +
-      "TE\020\002B<\n\032com.teneasyChat.api.commonZ\025wcs/" +
-      "api/common;common\272\002\006Commonb\006proto3"
+      "\014\n\010MST_CARD\020\r\022\021\n\rMST_AUTO_CARD\020\016*E\n\016Mess" +
+      "ageOperate\022\017\n\013MSG_OP_POST\020\000\022\017\n\013MSG_OP_ED" +
+      "IT\020\001\022\021\n\rMSG_OP_DELETE\020\002B<\n\032com.teneasyCh" +
+      "at.api.commonZ\025wcs/api/common;common\272\002\006C" +
+      "ommonb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
