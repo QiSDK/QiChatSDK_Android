@@ -343,6 +343,7 @@ class ChatLib {
         this.fileSize = fileSize
         this.fileName = fileName
         this.msgFormat = type
+        this.msgSourceType = msgSourceType
       if (type == MessageFormat.MSG_TEXT){
           sendTextMessage(msg)
       }else if (type == MessageFormat.MSG_IMG){
