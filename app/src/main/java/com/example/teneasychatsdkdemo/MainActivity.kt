@@ -192,7 +192,7 @@ class MainActivity : AppCompatActivity(), TeneasySDKDelegate, UploadListener {
         uQC.data = "txtAnswer"
         uAnswer.content = uQC.build()
         withAutoReplyBuilder.addAnswers(uAnswer)
-        //chatLib.sendMessage(sayHello, CMessage.MessageFormat.MSG_TEXT, 1, 0, withAutoReplyBuilder.build())
+        chatLib.sendMessage(sayHello, CMessage.MessageFormat.MSG_TEXT, 1, 0, withAutoReplyBuilder.build(), 0, "", CMessage.MsgSourceType.MST_CARD)//, CMessage.MsgSourceType.MST_CARD
         //chatLib.sendMessage(sayHello, CMessage.MessageFormat.MSG_TEXT, 1, 0, withAutoReplyBuilder.build())
         /*
                   "video": {
@@ -202,7 +202,7 @@ class MainActivity : AppCompatActivity(), TeneasySDKDelegate, UploadListener {
                 }
          */
         //chatLib.sendVideoMessage("/session/tenant_230/20250102/Videos/3137333537393937343830373166696c65d41d8cd98f00b204e9800998ecf8427e/index.mp4","/session/tenant_230/20250102/Videos/3137333537393937343830373166696c65d41d8cd98f00b204e9800998ecf8427e/thumb.jpg", "/session/tenant_230/20250102/Videos/3137333537393937343830373166696c65d41d8cd98f00b204e9800998ecf8427e/master.m3u8", 1, 0, withAutoReplyBuilder.build())
-        chatLib.sendMessage("/session/tenant_230/20250304/Documents/3137343130393736323137353066696c65d41d8cd98f00b204e9800998ecf8427e_1741097622234561429.pdf",CMessage.MessageFormat.MSG_FILE,  1, 0, withAutoReplyBuilder.build(), 882828, "dowodath.pdf")
+        //chatLib.sendMessage("/session/tenant_230/20250304/Documents/3137343130393736323137353066696c65d41d8cd98f00b204e9800998ecf8427e_1741097622234561429.pdf",CMessage.MessageFormat.MSG_FILE,  1, 0, withAutoReplyBuilder.build(), 882828, "dowodath.pdf")
         val payloadId = chatLib.payloadId
         val sendingMsg = chatLib.sendingMessage
 
