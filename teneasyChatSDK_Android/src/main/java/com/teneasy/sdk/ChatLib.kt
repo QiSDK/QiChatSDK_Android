@@ -131,6 +131,7 @@ class ChatLib {
     private var maxSessionMinutes = 9000000//相当于不设置会话实际限制 //测试放1分钟，上线放120或90
     private var withAutoReply: WithAutoReply? = null
     private var custom: String = ""
+    private var sitecode: String = ""
     private var msgFormat: MessageFormat = MessageFormat.MSG_TEXT
     private var fileSize = 0
     private var fileName = ""
@@ -142,7 +143,7 @@ class ChatLib {
     private var networkCallback: ConnectivityManager.NetworkCallback? = null
     private var applicationContext: Context? = null
 
-    fun init(cert: String, token:String, baseUrl:String = "", userId: Int, sign:String,  chatID: Long = 0, custom: String = "", maxSessionMinutes: Int = 9000000, context: Context? = null, registTime: Int = 0) {
+    fun init(cert: String, token:String, baseUrl:String = "", userId: Int, sign:String,  chatID: Long = 0, custom: String = "", maxSessionMinutes: Int = 9000000, context: Context? = null, registTime: Int = 0, sitecode: String = "") {
         this.chatId = chatID
         this.token = token
 
@@ -156,6 +157,7 @@ class ChatLib {
         sessionTime = 0
         beatTimes = 0
         this.custom = custom
+        this.sitecode = sitecode
         this.maxSessionMinutes = maxSessionMinutes
         this.registTime = registTime
 
@@ -263,6 +265,7 @@ class ChatLib {
             params["token"] = token ?: ""
             params["userid"] = userId.toString()
             params["custom"] = custom
+            params["sitecode"] = sitecode
             params["ty"] = ClientType.CLIENT_TYPE_USER_APP_ANDROID.number.toString()
             params["dt"] = dt.toString()
             params["sign"] = mySign ?: ""
