@@ -103,7 +103,7 @@ afterEvaluate {
                 from components.release
                 groupId = 'com.github.QiSDK'
                 artifactId = 'qi-chatsdk'
-                version = '2.1.2'
+                version = '2.1.4'
             }
         }
     }
